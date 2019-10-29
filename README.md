@@ -5,11 +5,11 @@ To use these SDKs, you will need App SID and App Key which can be looked up at [
 ## How to use the SDK?
 The complete source code is available in the GIT repository. 
 
-### Install Aspose.Email for Cloud via NPM
-You can either directly use it in your project via source code or get [nmpjs distribution](https://www.npmjs.com/package/@asposecloud/aspose-email-cloud) (recommended for development with Node.JS ).
+### Install Aspose.Email for Cloud via Composer
+You can either directly use it in your project via source code or get [Packagegist distribution](https://packagist.org/packages/aspose/email-sdk-php).
 From the command line:
 
-	npm install @asposecloud/aspose-email-cloud --save
+	composer require aspose/email-sdk-php:dev-master
 
 # Licensing
 All Aspose.Email for Cloud SDKs, helper scripts and templates are licensed under [MIT License](LICENSE).
