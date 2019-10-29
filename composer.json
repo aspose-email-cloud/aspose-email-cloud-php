@@ -1,34 +1,36 @@
 {
-    "name": "aspose/email-sdk-php",
-    "description": "Aspose.Email SDK for Cloud",
-    "keywords": [
-        "Aspose",
-        "Cloud",
-        "SDK",
-		"email",
-		"PHP"
-    ],
+    "description": 	"This repository contains Aspose Cloud SDK for PHP source code. Aspose Cloud SDK for PHP lets PHP developers convert and process a variety of file formats in the cloud quickly and easily.",
+    "name": 		"aspose-cloud/php-sdk",
+    "type": 		"library",
+    "keywords" : 	["aspose", "php", "aspose cloud"],
     "homepage": "https://github.com/aspose-email-cloud/aspose-email-cloud-php",
-    "license": "MIT",
     "authors": [
         {
-            "name": "Aspose Pty Ltd",
-            "homepage": "https://www.aspose.com"
+            "name": "vs-aspose",
+            "homepage": "https://github.com/aspose-email-cloud"
+        },
+        {
+            "name": "Vladislav-Koliesnikov",
+            "homepage": "https://github.com/aspose-email-cloud"
         }
     ],
+    "config": {
+        "platform": {
+            "php": "5.6.32"
+        }
+    },
     "require": {
         "php": ">=5.5",
-        "ext-curl": "*",
         "ext-json": "*",
-        "ext-mbstring": "*",
         "guzzlehttp/guzzle": "^6.2"
     },
     "require-dev": {
-        "phpunit/phpunit": "^4.8",
-        "squizlabs/php_codesniffer": "~2.6",
-        "friendsofphp/php-cs-fixer": "^1.12 || ^2.10"
+        "squizlabs/php_codesniffer": "3.*",
+        "phpunit/phpunit": "^4.8"
     },
     "autoload": {
-        "psr-4": { "Aspose\\Email\\" : "src/" }
+        "psr-0": {
+            "Aspose": "src/"
+        }
     }
 }
