@@ -182,7 +182,7 @@ class BaseObject implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['type'] = 'BaseObject';
+        $this->container['type'] = (new \ReflectionClass($this))->getShortName();
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('Type', self::$attributeMap);
@@ -245,7 +245,7 @@ class BaseObject implements ArrayAccess
      */
     public function getType()
     {
-        return 'BaseObject';
+        return $this->container['type'];
     }
 
     /*
@@ -255,7 +255,7 @@ class BaseObject implements ArrayAccess
      *
      * @return $this
      */
-    public function setType($type) { throw new Exception('Method should not be used'); }
+    public function setType($type) { /* Does nothing */ }
     /*
      * Returns true if offset exists. False otherwise.
      *
