@@ -37,9 +37,9 @@ use GuzzleHttp\RequestOptions;
 use Aspose\Email\Model\Requests;
 
 /*
- * EmailApi Aspose.Email for Cloud API.
+ * CalendarApi Aspose.Email for Cloud API.
  */
-class EmailApi
+class CalendarApi
 {
     /*
      * Stores client instance
@@ -82,43 +82,41 @@ class EmailApi
     }
 
     /*
-     * Operation addEmailAttachment
+     * Operation addCalendarAttachment
      *
-     * Adds an attachment to Email document
+     * Adds an attachment to iCalendar file
      *
-     * @param Requests\addEmailAttachmentRequest $request is a request object for operation
+     * @param Requests\addCalendarAttachmentRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Aspose\Email\Model\EmailDocumentResponse
+     * @return void
      */
-    public function addEmailAttachment(Requests\addEmailAttachmentRequest $request)
+    public function addCalendarAttachment(Requests\addCalendarAttachmentRequest $request)
     {
         try {
-             list($response) = $this->addEmailAttachmentWithHttpInfo($request);
-             return $response;
+             $this->addCalendarAttachmentWithHttpInfo($request);
         }
         catch(RepeatRequestException $e) {
-             list($response) = $this->addEmailAttachmentWithHttpInfo($request);
-             return $response;
+             $this->addCalendarAttachmentWithHttpInfo($request);
         } 
     }
 
     /*
-     * Operation addEmailAttachmentWithHttpInfo
+     * Operation addCalendarAttachmentWithHttpInfo
      *
-     * Adds an attachment to Email document
+     * Adds an attachment to iCalendar file
      *
-     * @param Requests\addEmailAttachmentRequest $request is a request object for operation
+     * @param Requests\addCalendarAttachmentRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Aspose\Email\Model\EmailDocumentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addEmailAttachmentWithHttpInfo(Requests\addEmailAttachmentRequest $request)
+    public function addCalendarAttachmentWithHttpInfo(Requests\addCalendarAttachmentRequest $request)
     {
-        $returnType = '\Aspose\Email\Model\EmailDocumentResponse';
-        $request = $this->addEmailAttachmentRequest($request);
+        $returnType = '';
+        $request = $this->addCalendarAttachmentRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -139,50 +137,28 @@ class EmailApi
                 throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-            
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return [null, $statusCode, $response->getHeaders()];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
-            case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Email\Model\EmailDocumentResponse', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                break;
             }
             throw $e;
         }
     }
 
     /*
-     * Operation addEmailAttachmentAsync
+     * Operation addCalendarAttachmentAsync
      *
-     * Adds an attachment to Email document
+     * Adds an attachment to iCalendar file
      *
-     * @param Requests\addEmailAttachmentRequest $request is a request object for operation
+     * @param Requests\addCalendarAttachmentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addEmailAttachmentAsync(Requests\addEmailAttachmentRequest $request) 
+    public function addCalendarAttachmentAsync(Requests\addCalendarAttachmentRequest $request) 
     {
-        return $this->addEmailAttachmentAsyncWithHttpInfo($request)
+        return $this->addCalendarAttachmentAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -191,43 +167,25 @@ class EmailApi
     }
 
     /*
-     * Operation addEmailAttachmentAsyncWithHttpInfo
+     * Operation addCalendarAttachmentAsyncWithHttpInfo
      *
-     * Adds an attachment to Email document
+     * Adds an attachment to iCalendar file
      *
-     * @param Requests\addEmailAttachmentRequest $request is a request object for operation
+     * @param Requests\addCalendarAttachmentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addEmailAttachmentAsyncWithHttpInfo(Requests\addEmailAttachmentRequest $request) 
+    public function addCalendarAttachmentAsyncWithHttpInfo(Requests\addCalendarAttachmentRequest $request) 
     {
-        $returnType = '\Aspose\Email\Model\EmailDocumentResponse';
-        $request = $this->addEmailAttachmentRequest($request);
+        $returnType = '';
+        $request = $this->addCalendarAttachmentRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-                    
-                    if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {        
                     $response = $exception->getResponse();
@@ -246,29 +204,29 @@ class EmailApi
     }
 
     /*
-     * Create request for operation 'addEmailAttachment'
+     * Create request for operation 'addCalendarAttachment'
      *
-     * @param Requests\addEmailAttachmentRequest $request is a request object for operation
+     * @param Requests\addCalendarAttachmentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function addEmailAttachmentRequest(Requests\addEmailAttachmentRequest $request)
+    protected function addCalendarAttachmentRequest(Requests\addCalendarAttachmentRequest $request)
     {
-        // verify the required parameter 'attachment_name' is set
-        if ($request->attachment_name === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $attachment_name when calling addEmailAttachment');
+        // verify the required parameter 'name' is set
+        if ($request->name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $name when calling addCalendarAttachment');
         }
-        // verify the required parameter 'file_name' is set
-        if ($request->file_name === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $file_name when calling addEmailAttachment');
+        // verify the required parameter 'attachment' is set
+        if ($request->attachment === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $attachment when calling addCalendarAttachment');
         }
         // verify the required parameter 'request' is set
         if ($request->request === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $request when calling addEmailAttachment');
+            throw new \InvalidArgumentException('Missing the required parameter $request when calling addCalendarAttachment');
         }
 
-        $resourcePath = '/email/{fileName}/attachments/{attachmentName}';
+        $resourcePath = '/email/Calendar/{name}/attachments/{attachment}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -276,296 +234,14 @@ class EmailApi
         $multipart = false;
     
         // path params
-        if ($request->attachment_name !== null) {
-            $localName = lcfirst('attachmentName');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->attachment_name), $resourcePath);
+        if ($request->name !== null) {
+            $localName = lcfirst('name');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
         }
         // path params
-        if ($request->file_name !== null) {
-            $localName = lcfirst('fileName');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->file_name), $resourcePath);
-        }
-
-    
-    
-        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
-        // body params
-        $_tempBody = null;
-        if (isset($request->request)) {
-            if (is_string($request->request)) {
-                $_tempBody = "\"" . $request->request . "\"";   
-            } else {
-                $_tempBody = $request->request;
-            }
-        }
-
-        if ($multipart) {
-            $headers= $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($httpBody);
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = $formParams["data"];
-            }
-        }
-    
-        $this->_requestToken();
-
-        if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
-        }
-    
-        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-    
-        $req = new Request(
-            'POST',
-            $this->config->getHost() . $resourcePath,
-            $headers,
-            $httpBody
-        );
-        if ($this->config->getDebug()) {
-            $this->_writeRequestLog('POST', $this->config->getHost() . $resourcePath, $headers, $httpBody);
-        }
-        
-        return $req;
-    }
-
-    /*
-     * Operation createEmail
-     *
-     * Create an email document
-     *
-     * @param Requests\createEmailRequest $request is a request object for operation
-     *
-     * @throws \Aspose\Email\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \Aspose\Email\Model\EmailDocumentResponse
-     */
-    public function createEmail(Requests\createEmailRequest $request)
-    {
-        try {
-             list($response) = $this->createEmailWithHttpInfo($request);
-             return $response;
-        }
-        catch(RepeatRequestException $e) {
-             list($response) = $this->createEmailWithHttpInfo($request);
-             return $response;
-        } 
-    }
-
-    /*
-     * Operation createEmailWithHttpInfo
-     *
-     * Create an email document
-     *
-     * @param Requests\createEmailRequest $request is a request object for operation
-     *
-     * @throws \Aspose\Email\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \Aspose\Email\Model\EmailDocumentResponse, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function createEmailWithHttpInfo(Requests\createEmailRequest $request)
-    {
-        $returnType = '\Aspose\Email\Model\EmailDocumentResponse';
-        $request = $this->createEmailRequest($request);
-
-        try {
-            $options = $this->_createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null);
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                if ($statusCode === 401) {
-                    $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
-                }
-          
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
-            }
-
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-            
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Email\Model\EmailDocumentResponse', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                break;
-            }
-            throw $e;
-        }
-    }
-
-    /*
-     * Operation createEmailAsync
-     *
-     * Create an email document
-     *
-     * @param Requests\createEmailRequest $request is a request object for operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function createEmailAsync(Requests\createEmailRequest $request) 
-    {
-        return $this->createEmailAsyncWithHttpInfo($request)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /*
-     * Operation createEmailAsyncWithHttpInfo
-     *
-     * Create an email document
-     *
-     * @param Requests\createEmailRequest $request is a request object for operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function createEmailAsyncWithHttpInfo(Requests\createEmailRequest $request) 
-    {
-        $returnType = '\Aspose\Email\Model\EmailDocumentResponse';
-        $request = $this->createEmailRequest($request);
-
-        return $this->client
-            ->sendAsync($request, $this->_createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-                    
-                    if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {        
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-          
-                    if ($exception instanceof RepeatRequestException) {
-                        $this->_requestToken();
-                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
-                    }
-          
-                    throw new ApiException(
-                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /*
-     * Create request for operation 'createEmail'
-     *
-     * @param Requests\createEmailRequest $request is a request object for operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    protected function createEmailRequest(Requests\createEmailRequest $request)
-    {
-        // verify the required parameter 'file_name' is set
-        if ($request->file_name === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $file_name when calling createEmail');
-        }
-        // verify the required parameter 'request' is set
-        if ($request->request === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $request when calling createEmail');
-        }
-
-        $resourcePath = '/email/{fileName}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = "";
-        $multipart = false;
-    
-        // path params
-        if ($request->file_name !== null) {
-            $localName = lcfirst('fileName');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->file_name), $resourcePath);
+        if ($request->attachment !== null) {
+            $localName = lcfirst('attachment');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->attachment), $resourcePath);
         }
 
     
@@ -655,43 +331,541 @@ class EmailApi
     }
 
     /*
-     * Operation getEmail
+     * Operation createCalendar
      *
-     * Get email document
+     * Create calendar file
      *
-     * @param Requests\getEmailRequest $request is a request object for operation
+     * @param Requests\createCalendarRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Aspose\Email\Model\EmailDocument
+     * @return void
      */
-    public function getEmail(Requests\getEmailRequest $request)
+    public function createCalendar(Requests\createCalendarRequest $request)
     {
         try {
-             list($response) = $this->getEmailWithHttpInfo($request);
+             $this->createCalendarWithHttpInfo($request);
+        }
+        catch(RepeatRequestException $e) {
+             $this->createCalendarWithHttpInfo($request);
+        } 
+    }
+
+    /*
+     * Operation createCalendarWithHttpInfo
+     *
+     * Create calendar file
+     *
+     * @param Requests\createCalendarRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createCalendarWithHttpInfo(Requests\createCalendarRequest $request)
+    {
+        $returnType = '';
+        $request = $this->createCalendarRequest($request);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null);
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                if ($statusCode === 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                }
+          
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+            throw $e;
+        }
+    }
+
+    /*
+     * Operation createCalendarAsync
+     *
+     * Create calendar file
+     *
+     * @param Requests\createCalendarRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createCalendarAsync(Requests\createCalendarRequest $request) 
+    {
+        return $this->createCalendarAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /*
+     * Operation createCalendarAsyncWithHttpInfo
+     *
+     * Create calendar file
+     *
+     * @param Requests\createCalendarRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createCalendarAsyncWithHttpInfo(Requests\createCalendarRequest $request) 
+    {
+        $returnType = '';
+        $request = $this->createCalendarRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+          
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    }
+          
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /*
+     * Create request for operation 'createCalendar'
+     *
+     * @param Requests\createCalendarRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function createCalendarRequest(Requests\createCalendarRequest $request)
+    {
+        // verify the required parameter 'name' is set
+        if ($request->name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $name when calling createCalendar');
+        }
+        // verify the required parameter 'request' is set
+        if ($request->request === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $request when calling createCalendar');
+        }
+
+        $resourcePath = '/email/Calendar/{name}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $multipart = false;
+    
+        // path params
+        if ($request->name !== null) {
+            $localName = lcfirst('name');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+        }
+
+    
+    
+        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
+
+        // body params
+        $_tempBody = null;
+        if (isset($request->request)) {
+            if (is_string($request->request)) {
+                $_tempBody = "\"" . $request->request . "\"";   
+            } else {
+                $_tempBody = $request->request;
+            }
+        }
+
+        if ($multipart) {
+            $headers= $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = $formParams["data"];
+            }
+        }
+    
+        $this->_requestToken();
+
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
+        }
+    
+        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+    
+        $req = new Request(
+            'PUT',
+            $this->config->getHost() . $resourcePath,
+            $headers,
+            $httpBody
+        );
+        if ($this->config->getDebug()) {
+            $this->_writeRequestLog('PUT', $this->config->getHost() . $resourcePath, $headers, $httpBody);
+        }
+        
+        return $req;
+    }
+
+    /*
+     * Operation deleteCalendarProperty
+     *
+     * Deletes indexed property by index and name. To delete Reminder attachment, use path ReminderAttachment/{ReminderIndex}/{AttachmentIndex}
+     *
+     * @param Requests\deleteCalendarPropertyRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function deleteCalendarProperty(Requests\deleteCalendarPropertyRequest $request)
+    {
+        try {
+             $this->deleteCalendarPropertyWithHttpInfo($request);
+        }
+        catch(RepeatRequestException $e) {
+             $this->deleteCalendarPropertyWithHttpInfo($request);
+        } 
+    }
+
+    /*
+     * Operation deleteCalendarPropertyWithHttpInfo
+     *
+     * Deletes indexed property by index and name. To delete Reminder attachment, use path ReminderAttachment/{ReminderIndex}/{AttachmentIndex}
+     *
+     * @param Requests\deleteCalendarPropertyRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function deleteCalendarPropertyWithHttpInfo(Requests\deleteCalendarPropertyRequest $request)
+    {
+        $returnType = '';
+        $request = $this->deleteCalendarPropertyRequest($request);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null);
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                if ($statusCode === 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                }
+          
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+            throw $e;
+        }
+    }
+
+    /*
+     * Operation deleteCalendarPropertyAsync
+     *
+     * Deletes indexed property by index and name. To delete Reminder attachment, use path ReminderAttachment/{ReminderIndex}/{AttachmentIndex}
+     *
+     * @param Requests\deleteCalendarPropertyRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteCalendarPropertyAsync(Requests\deleteCalendarPropertyRequest $request) 
+    {
+        return $this->deleteCalendarPropertyAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /*
+     * Operation deleteCalendarPropertyAsyncWithHttpInfo
+     *
+     * Deletes indexed property by index and name. To delete Reminder attachment, use path ReminderAttachment/{ReminderIndex}/{AttachmentIndex}
+     *
+     * @param Requests\deleteCalendarPropertyRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteCalendarPropertyAsyncWithHttpInfo(Requests\deleteCalendarPropertyRequest $request) 
+    {
+        $returnType = '';
+        $request = $this->deleteCalendarPropertyRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+          
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    }
+          
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /*
+     * Create request for operation 'deleteCalendarProperty'
+     *
+     * @param Requests\deleteCalendarPropertyRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function deleteCalendarPropertyRequest(Requests\deleteCalendarPropertyRequest $request)
+    {
+        // verify the required parameter 'name' is set
+        if ($request->name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $name when calling deleteCalendarProperty');
+        }
+        // verify the required parameter 'member_name' is set
+        if ($request->member_name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $member_name when calling deleteCalendarProperty');
+        }
+        // verify the required parameter 'index' is set
+        if ($request->index === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $index when calling deleteCalendarProperty');
+        }
+        // verify the required parameter 'request' is set
+        if ($request->request === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $request when calling deleteCalendarProperty');
+        }
+
+        $resourcePath = '/email/Calendar/{name}/properties/{memberName}/{index}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $multipart = false;
+    
+        // path params
+        if ($request->name !== null) {
+            $localName = lcfirst('name');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+        }
+        // path params
+        if ($request->member_name !== null) {
+            $localName = lcfirst('memberName');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->member_name), $resourcePath);
+        }
+        // path params
+        if ($request->index !== null) {
+            $localName = lcfirst('index');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->index), $resourcePath);
+        }
+
+    
+    
+        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
+
+        // body params
+        $_tempBody = null;
+        if (isset($request->request)) {
+            if (is_string($request->request)) {
+                $_tempBody = "\"" . $request->request . "\"";   
+            } else {
+                $_tempBody = $request->request;
+            }
+        }
+
+        if ($multipart) {
+            $headers= $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = $formParams["data"];
+            }
+        }
+    
+        $this->_requestToken();
+
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
+        }
+    
+        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+    
+        $req = new Request(
+            'DELETE',
+            $this->config->getHost() . $resourcePath,
+            $headers,
+            $httpBody
+        );
+        if ($this->config->getDebug()) {
+            $this->_writeRequestLog('DELETE', $this->config->getHost() . $resourcePath, $headers, $httpBody);
+        }
+        
+        return $req;
+    }
+
+    /*
+     * Operation getCalendar
+     *
+     * Get calendar file properties
+     *
+     * @param Requests\getCalendarRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Email\Model\HierarchicalObject
+     */
+    public function getCalendar(Requests\getCalendarRequest $request)
+    {
+        try {
+             list($response) = $this->getCalendarWithHttpInfo($request);
              return $response;
         }
         catch(RepeatRequestException $e) {
-             list($response) = $this->getEmailWithHttpInfo($request);
+             list($response) = $this->getCalendarWithHttpInfo($request);
              return $response;
         } 
     }
 
     /*
-     * Operation getEmailWithHttpInfo
+     * Operation getCalendarWithHttpInfo
      *
-     * Get email document
+     * Get calendar file properties
      *
-     * @param Requests\getEmailRequest $request is a request object for operation
+     * @param Requests\getCalendarRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Aspose\Email\Model\EmailDocument, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Email\Model\HierarchicalObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getEmailWithHttpInfo(Requests\getEmailRequest $request)
+    public function getCalendarWithHttpInfo(Requests\getCalendarRequest $request)
     {
-        $returnType = '\Aspose\Email\Model\EmailDocument';
-        $request = $this->getEmailRequest($request);
+        $returnType = '\Aspose\Email\Model\HierarchicalObject';
+        $request = $this->getCalendarRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -735,7 +909,7 @@ class EmailApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Email\Model\EmailDocument', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Email\Model\HierarchicalObject', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -744,18 +918,18 @@ class EmailApi
     }
 
     /*
-     * Operation getEmailAsync
+     * Operation getCalendarAsync
      *
-     * Get email document
+     * Get calendar file properties
      *
-     * @param Requests\getEmailRequest $request is a request object for operation
+     * @param Requests\getCalendarRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEmailAsync(Requests\getEmailRequest $request) 
+    public function getCalendarAsync(Requests\getCalendarRequest $request) 
     {
-        return $this->getEmailAsyncWithHttpInfo($request)
+        return $this->getCalendarAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -764,19 +938,19 @@ class EmailApi
     }
 
     /*
-     * Operation getEmailAsyncWithHttpInfo
+     * Operation getCalendarAsyncWithHttpInfo
      *
-     * Get email document
+     * Get calendar file properties
      *
-     * @param Requests\getEmailRequest $request is a request object for operation
+     * @param Requests\getCalendarRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEmailAsyncWithHttpInfo(Requests\getEmailRequest $request) 
+    public function getCalendarAsyncWithHttpInfo(Requests\getCalendarRequest $request) 
     {
-        $returnType = '\Aspose\Email\Model\EmailDocument';
-        $request = $this->getEmailRequest($request);
+        $returnType = '\Aspose\Email\Model\HierarchicalObject';
+        $request = $this->getCalendarRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -819,21 +993,21 @@ class EmailApi
     }
 
     /*
-     * Create request for operation 'getEmail'
+     * Create request for operation 'getCalendar'
      *
-     * @param Requests\getEmailRequest $request is a request object for operation
+     * @param Requests\getCalendarRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getEmailRequest(Requests\getEmailRequest $request)
+    protected function getCalendarRequest(Requests\getCalendarRequest $request)
     {
-        // verify the required parameter 'file_name' is set
-        if ($request->file_name === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $file_name when calling getEmail');
+        // verify the required parameter 'name' is set
+        if ($request->name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $name when calling getCalendar');
         }
 
-        $resourcePath = '/email/{fileName}';
+        $resourcePath = '/email/Calendar/{name}/properties';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -841,15 +1015,15 @@ class EmailApi
         $multipart = false;
     
         // path params
-        if ($request->file_name !== null) {
-            $localName = lcfirst('fileName');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->file_name), $resourcePath);
+        if ($request->name !== null) {
+            $localName = lcfirst('name');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
         }
 
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->folder !== null) {
+            $localName = lcfirst('folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -857,9 +1031,9 @@ class EmailApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -946,43 +1120,43 @@ class EmailApi
     }
 
     /*
-     * Operation getEmailAttachment
+     * Operation getCalendarAttachment
      *
-     * Get email attachment by name
+     * Get iCalendar document attachment by name
      *
-     * @param Requests\getEmailAttachmentRequest $request is a request object for operation
+     * @param Requests\getCalendarAttachmentRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
-    public function getEmailAttachment(Requests\getEmailAttachmentRequest $request)
+    public function getCalendarAttachment(Requests\getCalendarAttachmentRequest $request)
     {
         try {
-             list($response) = $this->getEmailAttachmentWithHttpInfo($request);
+             list($response) = $this->getCalendarAttachmentWithHttpInfo($request);
              return $response;
         }
         catch(RepeatRequestException $e) {
-             list($response) = $this->getEmailAttachmentWithHttpInfo($request);
+             list($response) = $this->getCalendarAttachmentWithHttpInfo($request);
              return $response;
         } 
     }
 
     /*
-     * Operation getEmailAttachmentWithHttpInfo
+     * Operation getCalendarAttachmentWithHttpInfo
      *
-     * Get email attachment by name
+     * Get iCalendar document attachment by name
      *
-     * @param Requests\getEmailAttachmentRequest $request is a request object for operation
+     * @param Requests\getCalendarAttachmentRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getEmailAttachmentWithHttpInfo(Requests\getEmailAttachmentRequest $request)
+    public function getCalendarAttachmentWithHttpInfo(Requests\getCalendarAttachmentRequest $request)
     {
         $returnType = '\SplFileObject';
-        $request = $this->getEmailAttachmentRequest($request);
+        $request = $this->getCalendarAttachmentRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -1035,18 +1209,18 @@ class EmailApi
     }
 
     /*
-     * Operation getEmailAttachmentAsync
+     * Operation getCalendarAttachmentAsync
      *
-     * Get email attachment by name
+     * Get iCalendar document attachment by name
      *
-     * @param Requests\getEmailAttachmentRequest $request is a request object for operation
+     * @param Requests\getCalendarAttachmentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEmailAttachmentAsync(Requests\getEmailAttachmentRequest $request) 
+    public function getCalendarAttachmentAsync(Requests\getCalendarAttachmentRequest $request) 
     {
-        return $this->getEmailAttachmentAsyncWithHttpInfo($request)
+        return $this->getCalendarAttachmentAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1055,19 +1229,19 @@ class EmailApi
     }
 
     /*
-     * Operation getEmailAttachmentAsyncWithHttpInfo
+     * Operation getCalendarAttachmentAsyncWithHttpInfo
      *
-     * Get email attachment by name
+     * Get iCalendar document attachment by name
      *
-     * @param Requests\getEmailAttachmentRequest $request is a request object for operation
+     * @param Requests\getCalendarAttachmentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEmailAttachmentAsyncWithHttpInfo(Requests\getEmailAttachmentRequest $request) 
+    public function getCalendarAttachmentAsyncWithHttpInfo(Requests\getCalendarAttachmentRequest $request) 
     {
         $returnType = '\SplFileObject';
-        $request = $this->getEmailAttachmentRequest($request);
+        $request = $this->getCalendarAttachmentRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -1110,46 +1284,46 @@ class EmailApi
     }
 
     /*
-     * Create request for operation 'getEmailAttachment'
+     * Create request for operation 'getCalendarAttachment'
      *
-     * @param Requests\getEmailAttachmentRequest $request is a request object for operation
+     * @param Requests\getCalendarAttachmentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getEmailAttachmentRequest(Requests\getEmailAttachmentRequest $request)
+    protected function getCalendarAttachmentRequest(Requests\getCalendarAttachmentRequest $request)
     {
+        // verify the required parameter 'name' is set
+        if ($request->name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $name when calling getCalendarAttachment');
+        }
         // verify the required parameter 'attachment' is set
         if ($request->attachment === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $attachment when calling getEmailAttachment');
-        }
-        // verify the required parameter 'file_name' is set
-        if ($request->file_name === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $file_name when calling getEmailAttachment');
+            throw new \InvalidArgumentException('Missing the required parameter $attachment when calling getCalendarAttachment');
         }
 
-        $resourcePath = '/email/{fileName}/attachments/{attachment}';
+        $resourcePath = '/email/Calendar/{name}/attachments/{attachment}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = "";
         $multipart = false;
     
+        // path params
+        if ($request->name !== null) {
+            $localName = lcfirst('name');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+        }
         // path params
         if ($request->attachment !== null) {
             $localName = lcfirst('attachment');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->attachment), $resourcePath);
         }
-        // path params
-        if ($request->file_name !== null) {
-            $localName = lcfirst('fileName');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->file_name), $resourcePath);
-        }
 
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->folder !== null) {
+            $localName = lcfirst('folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -1157,9 +1331,9 @@ class EmailApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage !== null) {
+            $localName = lcfirst('storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -1246,43 +1420,43 @@ class EmailApi
     }
 
     /*
-     * Operation getEmailProperty
+     * Operation getCalendarList
      *
-     * Get an email document property by its name
+     * Get iCalendar files list in folder on storage
      *
-     * @param Requests\getEmailPropertyRequest $request is a request object for operation
+     * @param Requests\getCalendarListRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Aspose\Email\Model\EmailPropertyResponse
+     * @return \Aspose\Email\Model\ListResponseOfHierarchicalObjectResponse
      */
-    public function getEmailProperty(Requests\getEmailPropertyRequest $request)
+    public function getCalendarList(Requests\getCalendarListRequest $request)
     {
         try {
-             list($response) = $this->getEmailPropertyWithHttpInfo($request);
+             list($response) = $this->getCalendarListWithHttpInfo($request);
              return $response;
         }
         catch(RepeatRequestException $e) {
-             list($response) = $this->getEmailPropertyWithHttpInfo($request);
+             list($response) = $this->getCalendarListWithHttpInfo($request);
              return $response;
         } 
     }
 
     /*
-     * Operation getEmailPropertyWithHttpInfo
+     * Operation getCalendarListWithHttpInfo
      *
-     * Get an email document property by its name
+     * Get iCalendar files list in folder on storage
      *
-     * @param Requests\getEmailPropertyRequest $request is a request object for operation
+     * @param Requests\getCalendarListRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Aspose\Email\Model\EmailPropertyResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Email\Model\ListResponseOfHierarchicalObjectResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getEmailPropertyWithHttpInfo(Requests\getEmailPropertyRequest $request)
+    public function getCalendarListWithHttpInfo(Requests\getCalendarListRequest $request)
     {
-        $returnType = '\Aspose\Email\Model\EmailPropertyResponse';
-        $request = $this->getEmailPropertyRequest($request);
+        $returnType = '\Aspose\Email\Model\ListResponseOfHierarchicalObjectResponse';
+        $request = $this->getCalendarListRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -1326,7 +1500,7 @@ class EmailApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Email\Model\EmailPropertyResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Email\Model\ListResponseOfHierarchicalObjectResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -1335,18 +1509,18 @@ class EmailApi
     }
 
     /*
-     * Operation getEmailPropertyAsync
+     * Operation getCalendarListAsync
      *
-     * Get an email document property by its name
+     * Get iCalendar files list in folder on storage
      *
-     * @param Requests\getEmailPropertyRequest $request is a request object for operation
+     * @param Requests\getCalendarListRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEmailPropertyAsync(Requests\getEmailPropertyRequest $request) 
+    public function getCalendarListAsync(Requests\getCalendarListRequest $request) 
     {
-        return $this->getEmailPropertyAsyncWithHttpInfo($request)
+        return $this->getCalendarListAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1355,19 +1529,19 @@ class EmailApi
     }
 
     /*
-     * Operation getEmailPropertyAsyncWithHttpInfo
+     * Operation getCalendarListAsyncWithHttpInfo
      *
-     * Get an email document property by its name
+     * Get iCalendar files list in folder on storage
      *
-     * @param Requests\getEmailPropertyRequest $request is a request object for operation
+     * @param Requests\getCalendarListRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEmailPropertyAsyncWithHttpInfo(Requests\getEmailPropertyRequest $request) 
+    public function getCalendarListAsyncWithHttpInfo(Requests\getCalendarListRequest $request) 
     {
-        $returnType = '\Aspose\Email\Model\EmailPropertyResponse';
-        $request = $this->getEmailPropertyRequest($request);
+        $returnType = '\Aspose\Email\Model\ListResponseOfHierarchicalObjectResponse';
+        $request = $this->getCalendarListRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -1410,46 +1584,40 @@ class EmailApi
     }
 
     /*
-     * Create request for operation 'getEmailProperty'
+     * Create request for operation 'getCalendarList'
      *
-     * @param Requests\getEmailPropertyRequest $request is a request object for operation
+     * @param Requests\getCalendarListRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getEmailPropertyRequest(Requests\getEmailPropertyRequest $request)
+    protected function getCalendarListRequest(Requests\getCalendarListRequest $request)
     {
-        // verify the required parameter 'property_name' is set
-        if ($request->property_name === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $property_name when calling getEmailProperty');
+        // verify the required parameter 'folder' is set
+        if ($request->folder === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $folder when calling getCalendarList');
         }
-        // verify the required parameter 'file_name' is set
-        if ($request->file_name === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $file_name when calling getEmailProperty');
+        // verify the required parameter 'items_per_page' is set
+        if ($request->items_per_page === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $items_per_page when calling getCalendarList');
+        }
+        // verify the required parameter 'page_number' is set
+        if ($request->page_number === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $page_number when calling getCalendarList');
         }
 
-        $resourcePath = '/email/{fileName}/properties/{propertyName}';
+        $resourcePath = '/email/Calendar';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = "";
         $multipart = false;
     
-        // path params
-        if ($request->property_name !== null) {
-            $localName = lcfirst('propertyName');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->property_name), $resourcePath);
-        }
-        // path params
-        if ($request->file_name !== null) {
-            $localName = lcfirst('fileName');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->file_name), $resourcePath);
-        }
 
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->folder !== null) {
+            $localName = lcfirst('folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -1457,9 +1625,29 @@ class EmailApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->items_per_page !== null) {
+            $localName = lcfirst('itemsPerPage');
+            $localValue = is_bool($request->items_per_page) ? ($request->items_per_page ? 'true' : 'false') : $request->items_per_page;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->page_number !== null) {
+            $localName = lcfirst('pageNumber');
+            $localValue = is_bool($request->page_number) ? ($request->page_number ? 'true' : 'false') : $request->page_number;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -1546,43 +1734,41 @@ class EmailApi
     }
 
     /*
-     * Operation setEmailProperty
+     * Operation updateCalendarProperties
      *
-     * Set email document property value
+     * Update calendar file properties
      *
-     * @param Requests\setEmailPropertyRequest $request is a request object for operation
+     * @param Requests\updateCalendarPropertiesRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Aspose\Email\Model\EmailPropertyResponse
+     * @return void
      */
-    public function setEmailProperty(Requests\setEmailPropertyRequest $request)
+    public function updateCalendarProperties(Requests\updateCalendarPropertiesRequest $request)
     {
         try {
-             list($response) = $this->setEmailPropertyWithHttpInfo($request);
-             return $response;
+             $this->updateCalendarPropertiesWithHttpInfo($request);
         }
         catch(RepeatRequestException $e) {
-             list($response) = $this->setEmailPropertyWithHttpInfo($request);
-             return $response;
+             $this->updateCalendarPropertiesWithHttpInfo($request);
         } 
     }
 
     /*
-     * Operation setEmailPropertyWithHttpInfo
+     * Operation updateCalendarPropertiesWithHttpInfo
      *
-     * Set email document property value
+     * Update calendar file properties
      *
-     * @param Requests\setEmailPropertyRequest $request is a request object for operation
+     * @param Requests\updateCalendarPropertiesRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Aspose\Email\Model\EmailPropertyResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function setEmailPropertyWithHttpInfo(Requests\setEmailPropertyRequest $request)
+    public function updateCalendarPropertiesWithHttpInfo(Requests\updateCalendarPropertiesRequest $request)
     {
-        $returnType = '\Aspose\Email\Model\EmailPropertyResponse';
-        $request = $this->setEmailPropertyRequest($request);
+        $returnType = '';
+        $request = $this->updateCalendarPropertiesRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -1603,50 +1789,28 @@ class EmailApi
                 throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-            
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return [null, $statusCode, $response->getHeaders()];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
-            case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Email\Model\EmailPropertyResponse', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                break;
             }
             throw $e;
         }
     }
 
     /*
-     * Operation setEmailPropertyAsync
+     * Operation updateCalendarPropertiesAsync
      *
-     * Set email document property value
+     * Update calendar file properties
      *
-     * @param Requests\setEmailPropertyRequest $request is a request object for operation
+     * @param Requests\updateCalendarPropertiesRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function setEmailPropertyAsync(Requests\setEmailPropertyRequest $request) 
+    public function updateCalendarPropertiesAsync(Requests\updateCalendarPropertiesRequest $request) 
     {
-        return $this->setEmailPropertyAsyncWithHttpInfo($request)
+        return $this->updateCalendarPropertiesAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1655,43 +1819,25 @@ class EmailApi
     }
 
     /*
-     * Operation setEmailPropertyAsyncWithHttpInfo
+     * Operation updateCalendarPropertiesAsyncWithHttpInfo
      *
-     * Set email document property value
+     * Update calendar file properties
      *
-     * @param Requests\setEmailPropertyRequest $request is a request object for operation
+     * @param Requests\updateCalendarPropertiesRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function setEmailPropertyAsyncWithHttpInfo(Requests\setEmailPropertyRequest $request) 
+    public function updateCalendarPropertiesAsyncWithHttpInfo(Requests\updateCalendarPropertiesRequest $request) 
     {
-        $returnType = '\Aspose\Email\Model\EmailPropertyResponse';
-        $request = $this->setEmailPropertyRequest($request);
+        $returnType = '';
+        $request = $this->updateCalendarPropertiesRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-                    
-                    if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {        
                     $response = $exception->getResponse();
@@ -1710,29 +1856,25 @@ class EmailApi
     }
 
     /*
-     * Create request for operation 'setEmailProperty'
+     * Create request for operation 'updateCalendarProperties'
      *
-     * @param Requests\setEmailPropertyRequest $request is a request object for operation
+     * @param Requests\updateCalendarPropertiesRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function setEmailPropertyRequest(Requests\setEmailPropertyRequest $request)
+    protected function updateCalendarPropertiesRequest(Requests\updateCalendarPropertiesRequest $request)
     {
-        // verify the required parameter 'property_name' is set
-        if ($request->property_name === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $property_name when calling setEmailProperty');
-        }
-        // verify the required parameter 'file_name' is set
-        if ($request->file_name === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $file_name when calling setEmailProperty');
+        // verify the required parameter 'name' is set
+        if ($request->name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $name when calling updateCalendarProperties');
         }
         // verify the required parameter 'request' is set
         if ($request->request === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $request when calling setEmailProperty');
+            throw new \InvalidArgumentException('Missing the required parameter $request when calling updateCalendarProperties');
         }
 
-        $resourcePath = '/email/{fileName}/properties/{propertyName}';
+        $resourcePath = '/email/Calendar/{name}/properties';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1740,14 +1882,9 @@ class EmailApi
         $multipart = false;
     
         // path params
-        if ($request->property_name !== null) {
-            $localName = lcfirst('propertyName');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->property_name), $resourcePath);
-        }
-        // path params
-        if ($request->file_name !== null) {
-            $localName = lcfirst('fileName');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->file_name), $resourcePath);
+        if ($request->name !== null) {
+            $localName = lcfirst('name');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
         }
 
     
@@ -1911,5 +2048,467 @@ class EmailApi
         $result = json_decode($response->getBody()->getContents(), true);
         $this->config->setAccessToken($result["access_token"]);
     }
+}
+?>
+<?php
+/*
+ * --------------------------------------------------------------------------------------------------------------------
+ * <copyright company="Aspose" file="addCalendarAttachmentRequest.php">
+ *   Copyright (c) 2018 Aspose.Email for Cloud
+ * </copyright>
+ * <summary>
+ *   Permission is hereby granted, free of charge, to any person obtaining a copy
+ *  of this software and associated documentation files (the "Software"), to deal
+ *  in the Software without restriction, including without limitation the rights
+ *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ *  copies of the Software, and to permit persons to whom the Software is
+ *  furnished to do so, subject to the following conditions:
+ * 
+ *  The above copyright notice and this permission notice shall be included in all
+ *  copies or substantial portions of the Software.
+ * 
+ *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ *  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ *  SOFTWARE.
+ * </summary>
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+
+namespace Aspose\Email\Model\Requests;
+
+/*
+ * Request model for addCalendarAttachment" operation.
+ */
+class addCalendarAttachmentRequest
+{
+    /*
+     * Initializes a new instance of the addCalendarAttachmentRequest class.
+     *  
+     * @param string $name Calendar file name in storage
+     * @param string $attachment Attachment file name in storage
+     * @param \Aspose\Email\Model\AddAttachmentRequest $request Storage name and folder path for calendar and attachment files
+     */
+    public function __construct($name, $attachment, $request)             
+    {
+        $this->name = $name;
+        $this->attachment = $attachment;
+        $this->request = $request;
+    }
+
+    /*
+     * Calendar file name in storage
+     */
+    public $name;
+	
+    /*
+     * Attachment file name in storage
+     */
+    public $attachment;
+	
+    /*
+     * Storage name and folder path for calendar and attachment files
+     */
+    public $request;
+}
+?>
+<?php
+/*
+ * --------------------------------------------------------------------------------------------------------------------
+ * <copyright company="Aspose" file="createCalendarRequest.php">
+ *   Copyright (c) 2018 Aspose.Email for Cloud
+ * </copyright>
+ * <summary>
+ *   Permission is hereby granted, free of charge, to any person obtaining a copy
+ *  of this software and associated documentation files (the "Software"), to deal
+ *  in the Software without restriction, including without limitation the rights
+ *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ *  copies of the Software, and to permit persons to whom the Software is
+ *  furnished to do so, subject to the following conditions:
+ * 
+ *  The above copyright notice and this permission notice shall be included in all
+ *  copies or substantial portions of the Software.
+ * 
+ *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ *  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ *  SOFTWARE.
+ * </summary>
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+
+namespace Aspose\Email\Model\Requests;
+
+/*
+ * Request model for createCalendar" operation.
+ */
+class createCalendarRequest
+{
+    /*
+     * Initializes a new instance of the createCalendarRequest class.
+     *  
+     * @param string $name Calendar file name in storage
+     * @param \Aspose\Email\Model\HierarchicalObjectRequest $request 
+     */
+    public function __construct($name, $request)             
+    {
+        $this->name = $name;
+        $this->request = $request;
+    }
+
+    /*
+     * Calendar file name in storage
+     */
+    public $name;
+	
+    /*
+     * Gets or sets request
+     */
+    public $request;
+}
+?>
+<?php
+/*
+ * --------------------------------------------------------------------------------------------------------------------
+ * <copyright company="Aspose" file="deleteCalendarPropertyRequest.php">
+ *   Copyright (c) 2018 Aspose.Email for Cloud
+ * </copyright>
+ * <summary>
+ *   Permission is hereby granted, free of charge, to any person obtaining a copy
+ *  of this software and associated documentation files (the "Software"), to deal
+ *  in the Software without restriction, including without limitation the rights
+ *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ *  copies of the Software, and to permit persons to whom the Software is
+ *  furnished to do so, subject to the following conditions:
+ * 
+ *  The above copyright notice and this permission notice shall be included in all
+ *  copies or substantial portions of the Software.
+ * 
+ *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ *  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ *  SOFTWARE.
+ * </summary>
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+
+namespace Aspose\Email\Model\Requests;
+
+/*
+ * Request model for deleteCalendarProperty" operation.
+ */
+class deleteCalendarPropertyRequest
+{
+    /*
+     * Initializes a new instance of the deleteCalendarPropertyRequest class.
+     *  
+     * @param string $name iCalendar file name in storage
+     * @param string $member_name Indexed property name
+     * @param string $index Property index path
+     * @param \Aspose\Email\Model\StorageFolderLocation $request Storage detail to specify iCalendar file location
+     */
+    public function __construct($name, $member_name, $index, $request)             
+    {
+        $this->name = $name;
+        $this->member_name = $member_name;
+        $this->index = $index;
+        $this->request = $request;
+    }
+
+    /*
+     * iCalendar file name in storage
+     */
+    public $name;
+	
+    /*
+     * Indexed property name
+     */
+    public $member_name;
+	
+    /*
+     * Property index path
+     */
+    public $index;
+	
+    /*
+     * Storage detail to specify iCalendar file location
+     */
+    public $request;
+}
+?>
+<?php
+/*
+ * --------------------------------------------------------------------------------------------------------------------
+ * <copyright company="Aspose" file="getCalendarRequest.php">
+ *   Copyright (c) 2018 Aspose.Email for Cloud
+ * </copyright>
+ * <summary>
+ *   Permission is hereby granted, free of charge, to any person obtaining a copy
+ *  of this software and associated documentation files (the "Software"), to deal
+ *  in the Software without restriction, including without limitation the rights
+ *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ *  copies of the Software, and to permit persons to whom the Software is
+ *  furnished to do so, subject to the following conditions:
+ * 
+ *  The above copyright notice and this permission notice shall be included in all
+ *  copies or substantial portions of the Software.
+ * 
+ *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ *  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ *  SOFTWARE.
+ * </summary>
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+
+namespace Aspose\Email\Model\Requests;
+
+/*
+ * Request model for getCalendar" operation.
+ */
+class getCalendarRequest
+{
+    /*
+     * Initializes a new instance of the getCalendarRequest class.
+     *  
+     * @param string $name iCalendar file name in storage
+     * @param string $folder Path to folder in storage
+     * @param string $storage Storage name
+     */
+    public function __construct($name, $folder = null, $storage = null)             
+    {
+        $this->name = $name;
+        $this->folder = $folder;
+        $this->storage = $storage;
+    }
+
+    /*
+     * iCalendar file name in storage
+     */
+    public $name;
+	
+    /*
+     * Path to folder in storage
+     */
+    public $folder;
+	
+    /*
+     * Storage name
+     */
+    public $storage;
+}
+?>
+<?php
+/*
+ * --------------------------------------------------------------------------------------------------------------------
+ * <copyright company="Aspose" file="getCalendarAttachmentRequest.php">
+ *   Copyright (c) 2018 Aspose.Email for Cloud
+ * </copyright>
+ * <summary>
+ *   Permission is hereby granted, free of charge, to any person obtaining a copy
+ *  of this software and associated documentation files (the "Software"), to deal
+ *  in the Software without restriction, including without limitation the rights
+ *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ *  copies of the Software, and to permit persons to whom the Software is
+ *  furnished to do so, subject to the following conditions:
+ * 
+ *  The above copyright notice and this permission notice shall be included in all
+ *  copies or substantial portions of the Software.
+ * 
+ *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ *  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ *  SOFTWARE.
+ * </summary>
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+
+namespace Aspose\Email\Model\Requests;
+
+/*
+ * Request model for getCalendarAttachment" operation.
+ */
+class getCalendarAttachmentRequest
+{
+    /*
+     * Initializes a new instance of the getCalendarAttachmentRequest class.
+     *  
+     * @param string $name iCalendar document file name
+     * @param string $attachment Attachment name or index
+     * @param string $folder Path to folder in storage
+     * @param string $storage Storage name
+     */
+    public function __construct($name, $attachment, $folder = null, $storage = null)             
+    {
+        $this->name = $name;
+        $this->attachment = $attachment;
+        $this->folder = $folder;
+        $this->storage = $storage;
+    }
+
+    /*
+     * iCalendar document file name
+     */
+    public $name;
+	
+    /*
+     * Attachment name or index
+     */
+    public $attachment;
+	
+    /*
+     * Path to folder in storage
+     */
+    public $folder;
+	
+    /*
+     * Storage name
+     */
+    public $storage;
+}
+?>
+<?php
+/*
+ * --------------------------------------------------------------------------------------------------------------------
+ * <copyright company="Aspose" file="getCalendarListRequest.php">
+ *   Copyright (c) 2018 Aspose.Email for Cloud
+ * </copyright>
+ * <summary>
+ *   Permission is hereby granted, free of charge, to any person obtaining a copy
+ *  of this software and associated documentation files (the "Software"), to deal
+ *  in the Software without restriction, including without limitation the rights
+ *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ *  copies of the Software, and to permit persons to whom the Software is
+ *  furnished to do so, subject to the following conditions:
+ * 
+ *  The above copyright notice and this permission notice shall be included in all
+ *  copies or substantial portions of the Software.
+ * 
+ *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ *  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ *  SOFTWARE.
+ * </summary>
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+
+namespace Aspose\Email\Model\Requests;
+
+/*
+ * Request model for getCalendarList" operation.
+ */
+class getCalendarListRequest
+{
+    /*
+     * Initializes a new instance of the getCalendarListRequest class.
+     *  
+     * @param string $folder Path to folder in storage
+     * @param int $items_per_page Count of items on page
+     * @param int $page_number Page number
+     * @param string $storage Storage name
+     */
+    public function __construct($folder, $items_per_page, $page_number, $storage = null)             
+    {
+        $this->folder = $folder;
+        $this->items_per_page = $items_per_page;
+        $this->page_number = $page_number;
+        $this->storage = $storage;
+    }
+
+    /*
+     * Path to folder in storage
+     */
+    public $folder;
+	
+    /*
+     * Count of items on page
+     */
+    public $items_per_page;
+	
+    /*
+     * Page number
+     */
+    public $page_number;
+	
+    /*
+     * Storage name
+     */
+    public $storage;
+}
+?>
+<?php
+/*
+ * --------------------------------------------------------------------------------------------------------------------
+ * <copyright company="Aspose" file="updateCalendarPropertiesRequest.php">
+ *   Copyright (c) 2018 Aspose.Email for Cloud
+ * </copyright>
+ * <summary>
+ *   Permission is hereby granted, free of charge, to any person obtaining a copy
+ *  of this software and associated documentation files (the "Software"), to deal
+ *  in the Software without restriction, including without limitation the rights
+ *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ *  copies of the Software, and to permit persons to whom the Software is
+ *  furnished to do so, subject to the following conditions:
+ * 
+ *  The above copyright notice and this permission notice shall be included in all
+ *  copies or substantial portions of the Software.
+ * 
+ *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ *  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ *  SOFTWARE.
+ * </summary>
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+
+namespace Aspose\Email\Model\Requests;
+
+/*
+ * Request model for updateCalendarProperties" operation.
+ */
+class updateCalendarPropertiesRequest
+{
+    /*
+     * Initializes a new instance of the updateCalendarPropertiesRequest class.
+     *  
+     * @param string $name iCalendar file name in storage
+     * @param \Aspose\Email\Model\HierarchicalObjectRequest $request Calendar properties update request
+     */
+    public function __construct($name, $request)             
+    {
+        $this->name = $name;
+        $this->request = $request;
+    }
+
+    /*
+     * iCalendar file name in storage
+     */
+    public $name;
+	
+    /*
+     * Calendar properties update request
+     */
+    public $request;
 }
 ?>

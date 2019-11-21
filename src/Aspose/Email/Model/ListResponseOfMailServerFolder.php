@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ListMessagesResponse.php">
+ * <copyright company="Aspose" file="ListResponseOfMailServerFolder.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,18 +26,19 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /*
- * ListMessagesResponse
+ * ListResponseOfMailServerFolder
  */
 
 namespace Aspose\Email\Model;
+
+use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
 /*
- * ListMessagesResponse
+ * ListResponseOfMailServerFolder
  *
- * @description Email messages list
  */
-class ListMessagesResponse extends AsposeResponse 
+class ListResponseOfMailServerFolder implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -46,7 +47,7 @@ class ListMessagesResponse extends AsposeResponse
      *
      * @var string
      */
-    protected static $swaggerModelName = "ListMessagesResponse";
+    protected static $swaggerModelName = "ListResponseOfMailServerFolder";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -54,7 +55,7 @@ class ListMessagesResponse extends AsposeResponse
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'value' => 'string[]'
+        'value' => '\Aspose\Email\Model\MailServerFolder[]'
     ];
 
     /*
@@ -73,7 +74,7 @@ class ListMessagesResponse extends AsposeResponse
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes + parent::swaggerTypes();
+        return self::$swaggerTypes;
     }
 
     /*
@@ -83,7 +84,7 @@ class ListMessagesResponse extends AsposeResponse
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats + parent::swaggerFormats();
+        return self::$swaggerFormats;
     }
 
     /*
@@ -122,7 +123,7 @@ class ListMessagesResponse extends AsposeResponse
      */
     public static function attributeMap()
     {
-        return parent::attributeMap() + self::$attributeMap;
+        return self::$attributeMap;
     }
 
     /*
@@ -132,7 +133,7 @@ class ListMessagesResponse extends AsposeResponse
      */
     public static function setters()
     {
-        return parent::setters() + self::$setters;
+        return self::$setters;
     }
 
     /*
@@ -142,7 +143,7 @@ class ListMessagesResponse extends AsposeResponse
      */
     public static function getters()
     {
-        return parent::getters() + self::$getters;
+        return self::$getters;
     }
 
     /*
@@ -159,6 +160,12 @@ class ListMessagesResponse extends AsposeResponse
 
     
 
+    /*
+     * Associative array for storing property values
+     *
+     * @var mixed[]
+     */
+    protected $container = [];
 
     /*
      * Constructor
@@ -168,8 +175,6 @@ class ListMessagesResponse extends AsposeResponse
      */
     public function __construct(array $data = null)
     {
-        parent::__construct($data);
-
         $this->container['value'] = isset($data['value']) ? $data['value'] : null;
     }
 
@@ -180,7 +185,7 @@ class ListMessagesResponse extends AsposeResponse
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = parent::listInvalidProperties();
+        $invalidProperties = [];
 
         return $invalidProperties;
     }
@@ -193,9 +198,6 @@ class ListMessagesResponse extends AsposeResponse
      */
     public function valid()
     {
-        if (!parent::valid()) {
-            return false;
-        }
 
         return true;
     }
@@ -204,7 +206,7 @@ class ListMessagesResponse extends AsposeResponse
     /*
      * Gets value
      *
-     * @return string[]
+     * @return \Aspose\Email\Model\MailServerFolder[]
      */
     public function getValue()
     {
@@ -214,7 +216,7 @@ class ListMessagesResponse extends AsposeResponse
     /*
      * Sets value
      *
-     * @param string[] $value Email messages serialized as MIME strings
+     * @param \Aspose\Email\Model\MailServerFolder[] $value value
      *
      * @return $this
      */

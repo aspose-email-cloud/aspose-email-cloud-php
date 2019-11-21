@@ -30,6 +30,8 @@
  */
 
 namespace Aspose\Email\Model;
+
+use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
 /*
@@ -37,7 +39,7 @@ use \Aspose\Email\ObjectSerializer;
  *
  * @description Email document property DTO.
  */
-class MimeResponse extends AsposeResponse 
+class MimeResponse implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -73,7 +75,7 @@ class MimeResponse extends AsposeResponse
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes + parent::swaggerTypes();
+        return self::$swaggerTypes;
     }
 
     /*
@@ -83,7 +85,7 @@ class MimeResponse extends AsposeResponse
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats + parent::swaggerFormats();
+        return self::$swaggerFormats;
     }
 
     /*
@@ -122,7 +124,7 @@ class MimeResponse extends AsposeResponse
      */
     public static function attributeMap()
     {
-        return parent::attributeMap() + self::$attributeMap;
+        return self::$attributeMap;
     }
 
     /*
@@ -132,7 +134,7 @@ class MimeResponse extends AsposeResponse
      */
     public static function setters()
     {
-        return parent::setters() + self::$setters;
+        return self::$setters;
     }
 
     /*
@@ -142,7 +144,7 @@ class MimeResponse extends AsposeResponse
      */
     public static function getters()
     {
-        return parent::getters() + self::$getters;
+        return self::$getters;
     }
 
     /*
@@ -159,6 +161,12 @@ class MimeResponse extends AsposeResponse
 
     
 
+    /*
+     * Associative array for storing property values
+     *
+     * @var mixed[]
+     */
+    protected $container = [];
 
     /*
      * Constructor
@@ -168,8 +176,6 @@ class MimeResponse extends AsposeResponse
      */
     public function __construct(array $data = null)
     {
-        parent::__construct($data);
-
         $this->container['mime'] = isset($data['mime']) ? $data['mime'] : null;
     }
 
@@ -180,7 +186,7 @@ class MimeResponse extends AsposeResponse
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = parent::listInvalidProperties();
+        $invalidProperties = [];
 
         return $invalidProperties;
     }
@@ -193,9 +199,6 @@ class MimeResponse extends AsposeResponse
      */
     public function valid()
     {
-        if (!parent::valid()) {
-            return false;
-        }
 
         return true;
     }

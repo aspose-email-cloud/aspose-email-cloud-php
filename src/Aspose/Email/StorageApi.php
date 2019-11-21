@@ -37,9 +37,9 @@ use GuzzleHttp\RequestOptions;
 use Aspose\Email\Model\Requests;
 
 /*
- * EmailApi Aspose.Email for Cloud API.
+ * StorageApi Aspose.Email for Cloud API.
  */
-class EmailApi
+class StorageApi
 {
     /*
      * Stores client instance
@@ -82,43 +82,43 @@ class EmailApi
     }
 
     /*
-     * Operation addEmailAttachment
+     * Operation getDiscUsage
      *
-     * Adds an attachment to Email document
+     * Get disc usage
      *
-     * @param Requests\addEmailAttachmentRequest $request is a request object for operation
+     * @param Requests\getDiscUsageRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Aspose\Email\Model\EmailDocumentResponse
+     * @return \Aspose\Email\Model\DiscUsage
      */
-    public function addEmailAttachment(Requests\addEmailAttachmentRequest $request)
+    public function getDiscUsage(Requests\getDiscUsageRequest $request)
     {
         try {
-             list($response) = $this->addEmailAttachmentWithHttpInfo($request);
+             list($response) = $this->getDiscUsageWithHttpInfo($request);
              return $response;
         }
         catch(RepeatRequestException $e) {
-             list($response) = $this->addEmailAttachmentWithHttpInfo($request);
+             list($response) = $this->getDiscUsageWithHttpInfo($request);
              return $response;
         } 
     }
 
     /*
-     * Operation addEmailAttachmentWithHttpInfo
+     * Operation getDiscUsageWithHttpInfo
      *
-     * Adds an attachment to Email document
+     * Get disc usage
      *
-     * @param Requests\addEmailAttachmentRequest $request is a request object for operation
+     * @param Requests\getDiscUsageRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Aspose\Email\Model\EmailDocumentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Email\Model\DiscUsage, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addEmailAttachmentWithHttpInfo(Requests\addEmailAttachmentRequest $request)
+    public function getDiscUsageWithHttpInfo(Requests\getDiscUsageRequest $request)
     {
-        $returnType = '\Aspose\Email\Model\EmailDocumentResponse';
-        $request = $this->addEmailAttachmentRequest($request);
+        $returnType = '\Aspose\Email\Model\DiscUsage';
+        $request = $this->getDiscUsageRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -162,7 +162,7 @@ class EmailApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Email\Model\EmailDocumentResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Email\Model\DiscUsage', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -171,18 +171,18 @@ class EmailApi
     }
 
     /*
-     * Operation addEmailAttachmentAsync
+     * Operation getDiscUsageAsync
      *
-     * Adds an attachment to Email document
+     * Get disc usage
      *
-     * @param Requests\addEmailAttachmentRequest $request is a request object for operation
+     * @param Requests\getDiscUsageRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addEmailAttachmentAsync(Requests\addEmailAttachmentRequest $request) 
+    public function getDiscUsageAsync(Requests\getDiscUsageRequest $request) 
     {
-        return $this->addEmailAttachmentAsyncWithHttpInfo($request)
+        return $this->getDiscUsageAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -191,19 +191,19 @@ class EmailApi
     }
 
     /*
-     * Operation addEmailAttachmentAsyncWithHttpInfo
+     * Operation getDiscUsageAsyncWithHttpInfo
      *
-     * Adds an attachment to Email document
+     * Get disc usage
      *
-     * @param Requests\addEmailAttachmentRequest $request is a request object for operation
+     * @param Requests\getDiscUsageRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addEmailAttachmentAsyncWithHttpInfo(Requests\addEmailAttachmentRequest $request) 
+    public function getDiscUsageAsyncWithHttpInfo(Requests\getDiscUsageRequest $request) 
     {
-        $returnType = '\Aspose\Email\Model\EmailDocumentResponse';
-        $request = $this->addEmailAttachmentRequest($request);
+        $returnType = '\Aspose\Email\Model\DiscUsage';
+        $request = $this->getDiscUsageRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -246,620 +246,28 @@ class EmailApi
     }
 
     /*
-     * Create request for operation 'addEmailAttachment'
+     * Create request for operation 'getDiscUsage'
      *
-     * @param Requests\addEmailAttachmentRequest $request is a request object for operation
+     * @param Requests\getDiscUsageRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function addEmailAttachmentRequest(Requests\addEmailAttachmentRequest $request)
+    protected function getDiscUsageRequest(Requests\getDiscUsageRequest $request)
     {
-        // verify the required parameter 'attachment_name' is set
-        if ($request->attachment_name === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $attachment_name when calling addEmailAttachment');
-        }
-        // verify the required parameter 'file_name' is set
-        if ($request->file_name === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $file_name when calling addEmailAttachment');
-        }
-        // verify the required parameter 'request' is set
-        if ($request->request === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $request when calling addEmailAttachment');
-        }
 
-        $resourcePath = '/email/{fileName}/attachments/{attachmentName}';
+        $resourcePath = '/email/storage/disc';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = "";
         $multipart = false;
     
-        // path params
-        if ($request->attachment_name !== null) {
-            $localName = lcfirst('attachmentName');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->attachment_name), $resourcePath);
-        }
-        // path params
-        if ($request->file_name !== null) {
-            $localName = lcfirst('fileName');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->file_name), $resourcePath);
-        }
-
-    
-    
-        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
-        // body params
-        $_tempBody = null;
-        if (isset($request->request)) {
-            if (is_string($request->request)) {
-                $_tempBody = "\"" . $request->request . "\"";   
-            } else {
-                $_tempBody = $request->request;
-            }
-        }
-
-        if ($multipart) {
-            $headers= $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($httpBody);
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = $formParams["data"];
-            }
-        }
-    
-        $this->_requestToken();
-
-        if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
-        }
-    
-        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-    
-        $req = new Request(
-            'POST',
-            $this->config->getHost() . $resourcePath,
-            $headers,
-            $httpBody
-        );
-        if ($this->config->getDebug()) {
-            $this->_writeRequestLog('POST', $this->config->getHost() . $resourcePath, $headers, $httpBody);
-        }
-        
-        return $req;
-    }
-
-    /*
-     * Operation createEmail
-     *
-     * Create an email document
-     *
-     * @param Requests\createEmailRequest $request is a request object for operation
-     *
-     * @throws \Aspose\Email\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \Aspose\Email\Model\EmailDocumentResponse
-     */
-    public function createEmail(Requests\createEmailRequest $request)
-    {
-        try {
-             list($response) = $this->createEmailWithHttpInfo($request);
-             return $response;
-        }
-        catch(RepeatRequestException $e) {
-             list($response) = $this->createEmailWithHttpInfo($request);
-             return $response;
-        } 
-    }
-
-    /*
-     * Operation createEmailWithHttpInfo
-     *
-     * Create an email document
-     *
-     * @param Requests\createEmailRequest $request is a request object for operation
-     *
-     * @throws \Aspose\Email\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \Aspose\Email\Model\EmailDocumentResponse, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function createEmailWithHttpInfo(Requests\createEmailRequest $request)
-    {
-        $returnType = '\Aspose\Email\Model\EmailDocumentResponse';
-        $request = $this->createEmailRequest($request);
-
-        try {
-            $options = $this->_createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null);
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                if ($statusCode === 401) {
-                    $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
-                }
-          
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
-            }
-
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-            
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Email\Model\EmailDocumentResponse', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                break;
-            }
-            throw $e;
-        }
-    }
-
-    /*
-     * Operation createEmailAsync
-     *
-     * Create an email document
-     *
-     * @param Requests\createEmailRequest $request is a request object for operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function createEmailAsync(Requests\createEmailRequest $request) 
-    {
-        return $this->createEmailAsyncWithHttpInfo($request)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /*
-     * Operation createEmailAsyncWithHttpInfo
-     *
-     * Create an email document
-     *
-     * @param Requests\createEmailRequest $request is a request object for operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function createEmailAsyncWithHttpInfo(Requests\createEmailRequest $request) 
-    {
-        $returnType = '\Aspose\Email\Model\EmailDocumentResponse';
-        $request = $this->createEmailRequest($request);
-
-        return $this->client
-            ->sendAsync($request, $this->_createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-                    
-                    if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {        
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-          
-                    if ($exception instanceof RepeatRequestException) {
-                        $this->_requestToken();
-                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
-                    }
-          
-                    throw new ApiException(
-                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /*
-     * Create request for operation 'createEmail'
-     *
-     * @param Requests\createEmailRequest $request is a request object for operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    protected function createEmailRequest(Requests\createEmailRequest $request)
-    {
-        // verify the required parameter 'file_name' is set
-        if ($request->file_name === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $file_name when calling createEmail');
-        }
-        // verify the required parameter 'request' is set
-        if ($request->request === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $request when calling createEmail');
-        }
-
-        $resourcePath = '/email/{fileName}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = "";
-        $multipart = false;
-    
-        // path params
-        if ($request->file_name !== null) {
-            $localName = lcfirst('fileName');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->file_name), $resourcePath);
-        }
-
-    
-    
-        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
-        // body params
-        $_tempBody = null;
-        if (isset($request->request)) {
-            if (is_string($request->request)) {
-                $_tempBody = "\"" . $request->request . "\"";   
-            } else {
-                $_tempBody = $request->request;
-            }
-        }
-
-        if ($multipart) {
-            $headers= $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($httpBody);
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = $formParams["data"];
-            }
-        }
-    
-        $this->_requestToken();
-
-        if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
-        }
-    
-        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-    
-        $req = new Request(
-            'PUT',
-            $this->config->getHost() . $resourcePath,
-            $headers,
-            $httpBody
-        );
-        if ($this->config->getDebug()) {
-            $this->_writeRequestLog('PUT', $this->config->getHost() . $resourcePath, $headers, $httpBody);
-        }
-        
-        return $req;
-    }
-
-    /*
-     * Operation getEmail
-     *
-     * Get email document
-     *
-     * @param Requests\getEmailRequest $request is a request object for operation
-     *
-     * @throws \Aspose\Email\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \Aspose\Email\Model\EmailDocument
-     */
-    public function getEmail(Requests\getEmailRequest $request)
-    {
-        try {
-             list($response) = $this->getEmailWithHttpInfo($request);
-             return $response;
-        }
-        catch(RepeatRequestException $e) {
-             list($response) = $this->getEmailWithHttpInfo($request);
-             return $response;
-        } 
-    }
-
-    /*
-     * Operation getEmailWithHttpInfo
-     *
-     * Get email document
-     *
-     * @param Requests\getEmailRequest $request is a request object for operation
-     *
-     * @throws \Aspose\Email\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \Aspose\Email\Model\EmailDocument, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function getEmailWithHttpInfo(Requests\getEmailRequest $request)
-    {
-        $returnType = '\Aspose\Email\Model\EmailDocument';
-        $request = $this->getEmailRequest($request);
-
-        try {
-            $options = $this->_createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null);
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                if ($statusCode === 401) {
-                    $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
-                }
-          
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
-            }
-
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-            
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Email\Model\EmailDocument', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                break;
-            }
-            throw $e;
-        }
-    }
-
-    /*
-     * Operation getEmailAsync
-     *
-     * Get email document
-     *
-     * @param Requests\getEmailRequest $request is a request object for operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function getEmailAsync(Requests\getEmailRequest $request) 
-    {
-        return $this->getEmailAsyncWithHttpInfo($request)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /*
-     * Operation getEmailAsyncWithHttpInfo
-     *
-     * Get email document
-     *
-     * @param Requests\getEmailRequest $request is a request object for operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function getEmailAsyncWithHttpInfo(Requests\getEmailRequest $request) 
-    {
-        $returnType = '\Aspose\Email\Model\EmailDocument';
-        $request = $this->getEmailRequest($request);
-
-        return $this->client
-            ->sendAsync($request, $this->_createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-                    
-                    if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {        
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-          
-                    if ($exception instanceof RepeatRequestException) {
-                        $this->_requestToken();
-                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
-                    }
-          
-                    throw new ApiException(
-                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /*
-     * Create request for operation 'getEmail'
-     *
-     * @param Requests\getEmailRequest $request is a request object for operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    protected function getEmailRequest(Requests\getEmailRequest $request)
-    {
-        // verify the required parameter 'file_name' is set
-        if ($request->file_name === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $file_name when calling getEmail');
-        }
-
-        $resourcePath = '/email/{fileName}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = "";
-        $multipart = false;
-    
-        // path params
-        if ($request->file_name !== null) {
-            $localName = lcfirst('fileName');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->file_name), $resourcePath);
-        }
 
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage_name !== null) {
+            $localName = lcfirst('storageName');
+            $localValue = is_bool($request->storage_name) ? ($request->storage_name ? 'true' : 'false') : $request->storage_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -946,43 +354,43 @@ class EmailApi
     }
 
     /*
-     * Operation getEmailAttachment
+     * Operation getFileVersions
      *
-     * Get email attachment by name
+     * Get file versions
      *
-     * @param Requests\getEmailAttachmentRequest $request is a request object for operation
+     * @param Requests\getFileVersionsRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \SplFileObject
+     * @return \Aspose\Email\Model\FileVersions
      */
-    public function getEmailAttachment(Requests\getEmailAttachmentRequest $request)
+    public function getFileVersions(Requests\getFileVersionsRequest $request)
     {
         try {
-             list($response) = $this->getEmailAttachmentWithHttpInfo($request);
+             list($response) = $this->getFileVersionsWithHttpInfo($request);
              return $response;
         }
         catch(RepeatRequestException $e) {
-             list($response) = $this->getEmailAttachmentWithHttpInfo($request);
+             list($response) = $this->getFileVersionsWithHttpInfo($request);
              return $response;
         } 
     }
 
     /*
-     * Operation getEmailAttachmentWithHttpInfo
+     * Operation getFileVersionsWithHttpInfo
      *
-     * Get email attachment by name
+     * Get file versions
      *
-     * @param Requests\getEmailAttachmentRequest $request is a request object for operation
+     * @param Requests\getFileVersionsRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Email\Model\FileVersions, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getEmailAttachmentWithHttpInfo(Requests\getEmailAttachmentRequest $request)
+    public function getFileVersionsWithHttpInfo(Requests\getFileVersionsRequest $request)
     {
-        $returnType = '\SplFileObject';
-        $request = $this->getEmailAttachmentRequest($request);
+        $returnType = '\Aspose\Email\Model\FileVersions';
+        $request = $this->getFileVersionsRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -1026,7 +434,7 @@ class EmailApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\SplFileObject', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Email\Model\FileVersions', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -1035,18 +443,18 @@ class EmailApi
     }
 
     /*
-     * Operation getEmailAttachmentAsync
+     * Operation getFileVersionsAsync
      *
-     * Get email attachment by name
+     * Get file versions
      *
-     * @param Requests\getEmailAttachmentRequest $request is a request object for operation
+     * @param Requests\getFileVersionsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEmailAttachmentAsync(Requests\getEmailAttachmentRequest $request) 
+    public function getFileVersionsAsync(Requests\getFileVersionsRequest $request) 
     {
-        return $this->getEmailAttachmentAsyncWithHttpInfo($request)
+        return $this->getFileVersionsAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1055,19 +463,19 @@ class EmailApi
     }
 
     /*
-     * Operation getEmailAttachmentAsyncWithHttpInfo
+     * Operation getFileVersionsAsyncWithHttpInfo
      *
-     * Get email attachment by name
+     * Get file versions
      *
-     * @param Requests\getEmailAttachmentRequest $request is a request object for operation
+     * @param Requests\getFileVersionsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEmailAttachmentAsyncWithHttpInfo(Requests\getEmailAttachmentRequest $request) 
+    public function getFileVersionsAsyncWithHttpInfo(Requests\getFileVersionsRequest $request) 
     {
-        $returnType = '\SplFileObject';
-        $request = $this->getEmailAttachmentRequest($request);
+        $returnType = '\Aspose\Email\Model\FileVersions';
+        $request = $this->getFileVersionsRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -1110,25 +518,21 @@ class EmailApi
     }
 
     /*
-     * Create request for operation 'getEmailAttachment'
+     * Create request for operation 'getFileVersions'
      *
-     * @param Requests\getEmailAttachmentRequest $request is a request object for operation
+     * @param Requests\getFileVersionsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getEmailAttachmentRequest(Requests\getEmailAttachmentRequest $request)
+    protected function getFileVersionsRequest(Requests\getFileVersionsRequest $request)
     {
-        // verify the required parameter 'attachment' is set
-        if ($request->attachment === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $attachment when calling getEmailAttachment');
-        }
-        // verify the required parameter 'file_name' is set
-        if ($request->file_name === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $file_name when calling getEmailAttachment');
+        // verify the required parameter 'path' is set
+        if ($request->path === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $path when calling getFileVersions');
         }
 
-        $resourcePath = '/email/{fileName}/attachments/{attachment}';
+        $resourcePath = '/email/storage/version/{path}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1136,30 +540,15 @@ class EmailApi
         $multipart = false;
     
         // path params
-        if ($request->attachment !== null) {
-            $localName = lcfirst('attachment');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->attachment), $resourcePath);
-        }
-        // path params
-        if ($request->file_name !== null) {
-            $localName = lcfirst('fileName');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->file_name), $resourcePath);
+        if ($request->path !== null) {
+            $localName = lcfirst('path');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->path), $resourcePath);
         }
 
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
-            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
-                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
-            } else {
-                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
-            }
-        }
-        // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->storage_name !== null) {
+            $localName = lcfirst('storageName');
+            $localValue = is_bool($request->storage_name) ? ($request->storage_name ? 'true' : 'false') : $request->storage_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -1246,43 +635,43 @@ class EmailApi
     }
 
     /*
-     * Operation getEmailProperty
+     * Operation objectExists
      *
-     * Get an email document property by its name
+     * Check if file or folder exists
      *
-     * @param Requests\getEmailPropertyRequest $request is a request object for operation
+     * @param Requests\objectExistsRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Aspose\Email\Model\EmailPropertyResponse
+     * @return \Aspose\Email\Model\ObjectExist
      */
-    public function getEmailProperty(Requests\getEmailPropertyRequest $request)
+    public function objectExists(Requests\objectExistsRequest $request)
     {
         try {
-             list($response) = $this->getEmailPropertyWithHttpInfo($request);
+             list($response) = $this->objectExistsWithHttpInfo($request);
              return $response;
         }
         catch(RepeatRequestException $e) {
-             list($response) = $this->getEmailPropertyWithHttpInfo($request);
+             list($response) = $this->objectExistsWithHttpInfo($request);
              return $response;
         } 
     }
 
     /*
-     * Operation getEmailPropertyWithHttpInfo
+     * Operation objectExistsWithHttpInfo
      *
-     * Get an email document property by its name
+     * Check if file or folder exists
      *
-     * @param Requests\getEmailPropertyRequest $request is a request object for operation
+     * @param Requests\objectExistsRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Aspose\Email\Model\EmailPropertyResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Email\Model\ObjectExist, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getEmailPropertyWithHttpInfo(Requests\getEmailPropertyRequest $request)
+    public function objectExistsWithHttpInfo(Requests\objectExistsRequest $request)
     {
-        $returnType = '\Aspose\Email\Model\EmailPropertyResponse';
-        $request = $this->getEmailPropertyRequest($request);
+        $returnType = '\Aspose\Email\Model\ObjectExist';
+        $request = $this->objectExistsRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -1326,7 +715,7 @@ class EmailApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Email\Model\EmailPropertyResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Email\Model\ObjectExist', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -1335,18 +724,18 @@ class EmailApi
     }
 
     /*
-     * Operation getEmailPropertyAsync
+     * Operation objectExistsAsync
      *
-     * Get an email document property by its name
+     * Check if file or folder exists
      *
-     * @param Requests\getEmailPropertyRequest $request is a request object for operation
+     * @param Requests\objectExistsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEmailPropertyAsync(Requests\getEmailPropertyRequest $request) 
+    public function objectExistsAsync(Requests\objectExistsRequest $request) 
     {
-        return $this->getEmailPropertyAsyncWithHttpInfo($request)
+        return $this->objectExistsAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1355,19 +744,19 @@ class EmailApi
     }
 
     /*
-     * Operation getEmailPropertyAsyncWithHttpInfo
+     * Operation objectExistsAsyncWithHttpInfo
      *
-     * Get an email document property by its name
+     * Check if file or folder exists
      *
-     * @param Requests\getEmailPropertyRequest $request is a request object for operation
+     * @param Requests\objectExistsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEmailPropertyAsyncWithHttpInfo(Requests\getEmailPropertyRequest $request) 
+    public function objectExistsAsyncWithHttpInfo(Requests\objectExistsRequest $request) 
     {
-        $returnType = '\Aspose\Email\Model\EmailPropertyResponse';
-        $request = $this->getEmailPropertyRequest($request);
+        $returnType = '\Aspose\Email\Model\ObjectExist';
+        $request = $this->objectExistsRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -1410,25 +799,21 @@ class EmailApi
     }
 
     /*
-     * Create request for operation 'getEmailProperty'
+     * Create request for operation 'objectExists'
      *
-     * @param Requests\getEmailPropertyRequest $request is a request object for operation
+     * @param Requests\objectExistsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getEmailPropertyRequest(Requests\getEmailPropertyRequest $request)
+    protected function objectExistsRequest(Requests\objectExistsRequest $request)
     {
-        // verify the required parameter 'property_name' is set
-        if ($request->property_name === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $property_name when calling getEmailProperty');
-        }
-        // verify the required parameter 'file_name' is set
-        if ($request->file_name === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $file_name when calling getEmailProperty');
+        // verify the required parameter 'path' is set
+        if ($request->path === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $path when calling objectExists');
         }
 
-        $resourcePath = '/email/{fileName}/properties/{propertyName}';
+        $resourcePath = '/email/storage/exist/{path}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1436,20 +821,15 @@ class EmailApi
         $multipart = false;
     
         // path params
-        if ($request->property_name !== null) {
-            $localName = lcfirst('propertyName');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->property_name), $resourcePath);
-        }
-        // path params
-        if ($request->file_name !== null) {
-            $localName = lcfirst('fileName');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->file_name), $resourcePath);
+        if ($request->path !== null) {
+            $localName = lcfirst('path');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->path), $resourcePath);
         }
 
         // query params
-        if ($request->storage !== null) {
-            $localName = lcfirst('storage');
-            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+        if ($request->storage_name !== null) {
+            $localName = lcfirst('storageName');
+            $localValue = is_bool($request->storage_name) ? ($request->storage_name ? 'true' : 'false') : $request->storage_name;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -1457,9 +837,9 @@ class EmailApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->version_id !== null) {
+            $localName = lcfirst('versionId');
+            $localValue = is_bool($request->version_id) ? ($request->version_id ? 'true' : 'false') : $request->version_id;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -1546,43 +926,43 @@ class EmailApi
     }
 
     /*
-     * Operation setEmailProperty
+     * Operation storageExists
      *
-     * Set email document property value
+     * Check if storage exists
      *
-     * @param Requests\setEmailPropertyRequest $request is a request object for operation
+     * @param Requests\storageExistsRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Aspose\Email\Model\EmailPropertyResponse
+     * @return \Aspose\Email\Model\StorageExist
      */
-    public function setEmailProperty(Requests\setEmailPropertyRequest $request)
+    public function storageExists(Requests\storageExistsRequest $request)
     {
         try {
-             list($response) = $this->setEmailPropertyWithHttpInfo($request);
+             list($response) = $this->storageExistsWithHttpInfo($request);
              return $response;
         }
         catch(RepeatRequestException $e) {
-             list($response) = $this->setEmailPropertyWithHttpInfo($request);
+             list($response) = $this->storageExistsWithHttpInfo($request);
              return $response;
         } 
     }
 
     /*
-     * Operation setEmailPropertyWithHttpInfo
+     * Operation storageExistsWithHttpInfo
      *
-     * Set email document property value
+     * Check if storage exists
      *
-     * @param Requests\setEmailPropertyRequest $request is a request object for operation
+     * @param Requests\storageExistsRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Aspose\Email\Model\EmailPropertyResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Email\Model\StorageExist, HTTP status code, HTTP response headers (array of strings)
      */
-    public function setEmailPropertyWithHttpInfo(Requests\setEmailPropertyRequest $request)
+    public function storageExistsWithHttpInfo(Requests\storageExistsRequest $request)
     {
-        $returnType = '\Aspose\Email\Model\EmailPropertyResponse';
-        $request = $this->setEmailPropertyRequest($request);
+        $returnType = '\Aspose\Email\Model\StorageExist';
+        $request = $this->storageExistsRequest($request);
 
         try {
             $options = $this->_createHttpClientOption();
@@ -1626,7 +1006,7 @@ class EmailApi
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Email\Model\EmailPropertyResponse', $e->getResponseHeaders());
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Email\Model\StorageExist', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                 break;
             }
@@ -1635,18 +1015,18 @@ class EmailApi
     }
 
     /*
-     * Operation setEmailPropertyAsync
+     * Operation storageExistsAsync
      *
-     * Set email document property value
+     * Check if storage exists
      *
-     * @param Requests\setEmailPropertyRequest $request is a request object for operation
+     * @param Requests\storageExistsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function setEmailPropertyAsync(Requests\setEmailPropertyRequest $request) 
+    public function storageExistsAsync(Requests\storageExistsRequest $request) 
     {
-        return $this->setEmailPropertyAsyncWithHttpInfo($request)
+        return $this->storageExistsAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1655,19 +1035,19 @@ class EmailApi
     }
 
     /*
-     * Operation setEmailPropertyAsyncWithHttpInfo
+     * Operation storageExistsAsyncWithHttpInfo
      *
-     * Set email document property value
+     * Check if storage exists
      *
-     * @param Requests\setEmailPropertyRequest $request is a request object for operation
+     * @param Requests\storageExistsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function setEmailPropertyAsyncWithHttpInfo(Requests\setEmailPropertyRequest $request) 
+    public function storageExistsAsyncWithHttpInfo(Requests\storageExistsRequest $request) 
     {
-        $returnType = '\Aspose\Email\Model\EmailPropertyResponse';
-        $request = $this->setEmailPropertyRequest($request);
+        $returnType = '\Aspose\Email\Model\StorageExist';
+        $request = $this->storageExistsRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
@@ -1710,29 +1090,21 @@ class EmailApi
     }
 
     /*
-     * Create request for operation 'setEmailProperty'
+     * Create request for operation 'storageExists'
      *
-     * @param Requests\setEmailPropertyRequest $request is a request object for operation
+     * @param Requests\storageExistsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function setEmailPropertyRequest(Requests\setEmailPropertyRequest $request)
+    protected function storageExistsRequest(Requests\storageExistsRequest $request)
     {
-        // verify the required parameter 'property_name' is set
-        if ($request->property_name === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $property_name when calling setEmailProperty');
-        }
-        // verify the required parameter 'file_name' is set
-        if ($request->file_name === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $file_name when calling setEmailProperty');
-        }
-        // verify the required parameter 'request' is set
-        if ($request->request === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $request when calling setEmailProperty');
+        // verify the required parameter 'storage_name' is set
+        if ($request->storage_name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $storage_name when calling storageExists');
         }
 
-        $resourcePath = '/email/{fileName}/properties/{propertyName}';
+        $resourcePath = '/email/storage/{storageName}/exist';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1740,14 +1112,9 @@ class EmailApi
         $multipart = false;
     
         // path params
-        if ($request->property_name !== null) {
-            $localName = lcfirst('propertyName');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->property_name), $resourcePath);
-        }
-        // path params
-        if ($request->file_name !== null) {
-            $localName = lcfirst('fileName');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->file_name), $resourcePath);
+        if ($request->storage_name !== null) {
+            $localName = lcfirst('storageName');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->storage_name), $resourcePath);
         }
 
     
@@ -1756,13 +1123,6 @@ class EmailApi
 
         // body params
         $_tempBody = null;
-        if (isset($request->request)) {
-            if (is_string($request->request)) {
-                $_tempBody = "\"" . $request->request . "\"";   
-            } else {
-                $_tempBody = $request->request;
-            }
-        }
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -1824,13 +1184,13 @@ class EmailApi
         );
     
         $req = new Request(
-            'PUT',
+            'GET',
             $this->config->getHost() . $resourcePath,
             $headers,
             $httpBody
         );
         if ($this->config->getDebug()) {
-            $this->_writeRequestLog('PUT', $this->config->getHost() . $resourcePath, $headers, $httpBody);
+            $this->_writeRequestLog('GET', $this->config->getHost() . $resourcePath, $headers, $httpBody);
         }
         
         return $req;
@@ -1911,5 +1271,230 @@ class EmailApi
         $result = json_decode($response->getBody()->getContents(), true);
         $this->config->setAccessToken($result["access_token"]);
     }
+}
+?>
+<?php
+/*
+ * --------------------------------------------------------------------------------------------------------------------
+ * <copyright company="Aspose" file="getDiscUsageRequest.php">
+ *   Copyright (c) 2018 Aspose.Email for Cloud
+ * </copyright>
+ * <summary>
+ *   Permission is hereby granted, free of charge, to any person obtaining a copy
+ *  of this software and associated documentation files (the "Software"), to deal
+ *  in the Software without restriction, including without limitation the rights
+ *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ *  copies of the Software, and to permit persons to whom the Software is
+ *  furnished to do so, subject to the following conditions:
+ * 
+ *  The above copyright notice and this permission notice shall be included in all
+ *  copies or substantial portions of the Software.
+ * 
+ *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ *  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ *  SOFTWARE.
+ * </summary>
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+
+namespace Aspose\Email\Model\Requests;
+
+/*
+ * Request model for getDiscUsage" operation.
+ */
+class getDiscUsageRequest
+{
+    /*
+     * Initializes a new instance of the getDiscUsageRequest class.
+     *  
+     * @param string $storage_name Storage name
+     */
+    public function __construct($storage_name = null)             
+    {
+        $this->storage_name = $storage_name;
+    }
+
+    /*
+     * Storage name
+     */
+    public $storage_name;
+}
+?>
+<?php
+/*
+ * --------------------------------------------------------------------------------------------------------------------
+ * <copyright company="Aspose" file="getFileVersionsRequest.php">
+ *   Copyright (c) 2018 Aspose.Email for Cloud
+ * </copyright>
+ * <summary>
+ *   Permission is hereby granted, free of charge, to any person obtaining a copy
+ *  of this software and associated documentation files (the "Software"), to deal
+ *  in the Software without restriction, including without limitation the rights
+ *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ *  copies of the Software, and to permit persons to whom the Software is
+ *  furnished to do so, subject to the following conditions:
+ * 
+ *  The above copyright notice and this permission notice shall be included in all
+ *  copies or substantial portions of the Software.
+ * 
+ *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ *  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ *  SOFTWARE.
+ * </summary>
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+
+namespace Aspose\Email\Model\Requests;
+
+/*
+ * Request model for getFileVersions" operation.
+ */
+class getFileVersionsRequest
+{
+    /*
+     * Initializes a new instance of the getFileVersionsRequest class.
+     *  
+     * @param string $path File path e.g. '/file.ext'
+     * @param string $storage_name Storage name
+     */
+    public function __construct($path, $storage_name = null)             
+    {
+        $this->path = $path;
+        $this->storage_name = $storage_name;
+    }
+
+    /*
+     * File path e.g. '/file.ext'
+     */
+    public $path;
+	
+    /*
+     * Storage name
+     */
+    public $storage_name;
+}
+?>
+<?php
+/*
+ * --------------------------------------------------------------------------------------------------------------------
+ * <copyright company="Aspose" file="objectExistsRequest.php">
+ *   Copyright (c) 2018 Aspose.Email for Cloud
+ * </copyright>
+ * <summary>
+ *   Permission is hereby granted, free of charge, to any person obtaining a copy
+ *  of this software and associated documentation files (the "Software"), to deal
+ *  in the Software without restriction, including without limitation the rights
+ *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ *  copies of the Software, and to permit persons to whom the Software is
+ *  furnished to do so, subject to the following conditions:
+ * 
+ *  The above copyright notice and this permission notice shall be included in all
+ *  copies or substantial portions of the Software.
+ * 
+ *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ *  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ *  SOFTWARE.
+ * </summary>
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+
+namespace Aspose\Email\Model\Requests;
+
+/*
+ * Request model for objectExists" operation.
+ */
+class objectExistsRequest
+{
+    /*
+     * Initializes a new instance of the objectExistsRequest class.
+     *  
+     * @param string $path File or folder path e.g. '/file.ext' or '/folder'
+     * @param string $storage_name Storage name
+     * @param string $version_id File version ID
+     */
+    public function __construct($path, $storage_name = null, $version_id = null)             
+    {
+        $this->path = $path;
+        $this->storage_name = $storage_name;
+        $this->version_id = $version_id;
+    }
+
+    /*
+     * File or folder path e.g. '/file.ext' or '/folder'
+     */
+    public $path;
+	
+    /*
+     * Storage name
+     */
+    public $storage_name;
+	
+    /*
+     * File version ID
+     */
+    public $version_id;
+}
+?>
+<?php
+/*
+ * --------------------------------------------------------------------------------------------------------------------
+ * <copyright company="Aspose" file="storageExistsRequest.php">
+ *   Copyright (c) 2018 Aspose.Email for Cloud
+ * </copyright>
+ * <summary>
+ *   Permission is hereby granted, free of charge, to any person obtaining a copy
+ *  of this software and associated documentation files (the "Software"), to deal
+ *  in the Software without restriction, including without limitation the rights
+ *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ *  copies of the Software, and to permit persons to whom the Software is
+ *  furnished to do so, subject to the following conditions:
+ * 
+ *  The above copyright notice and this permission notice shall be included in all
+ *  copies or substantial portions of the Software.
+ * 
+ *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ *  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ *  SOFTWARE.
+ * </summary>
+ * --------------------------------------------------------------------------------------------------------------------
+ */
+
+namespace Aspose\Email\Model\Requests;
+
+/*
+ * Request model for storageExists" operation.
+ */
+class storageExistsRequest
+{
+    /*
+     * Initializes a new instance of the storageExistsRequest class.
+     *  
+     * @param string $storage_name Storage name
+     */
+    public function __construct($storage_name)             
+    {
+        $this->storage_name = $storage_name;
+    }
+
+    /*
+     * Storage name
+     */
+    public $storage_name;
 }
 ?>
