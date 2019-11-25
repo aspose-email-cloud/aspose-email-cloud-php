@@ -3,6 +3,7 @@
   "name": "aspose-cloud/php-sdk",
   "type": "library",
   "version": "19.11.0",
+  "license": "MIT",
   "keywords": [
     "aspose",
     "php",
