@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="setEmailPropertyRequest.php">
+ * <copyright company="Aspose" file="aiNameExpandParsedRequest.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -29,36 +29,22 @@
 namespace Aspose\Email\Model\Requests;
 
 /*
- * Request model for setEmailProperty" operation.
+ * Request model for aiNameExpandParsed" operation.
  */
-class setEmailPropertyRequest
+class aiNameExpandParsedRequest
 {
     /*
-     * Initializes a new instance of the setEmailPropertyRequest class.
+     * Initializes a new instance of the aiNameExpandParsedRequest class.
      *  
-     * @param string $property_name A property name that should be changed
-     * @param string $file_name Email document file name
-     * @param \Aspose\Email\Model\SetEmailPropertyRequest $request A property that should be changed and optional Storage info to specify where the file located
+     * @param \Aspose\Email\Model\AiNameParsedRequest $request Parsed name with options
      */
-    public function __construct($property_name, $file_name, $request)             
+    public function __construct($request)             
     {
-        $this->property_name = $property_name;
-        $this->file_name = $file_name;
         $this->request = $request;
     }
 
     /*
-     * A property name that should be changed
-     */
-    public $property_name;
-	
-    /*
-     * Email document file name
-     */
-    public $file_name;
-	
-    /*
-     * A property that should be changed and optional Storage info to specify where the file located
+     * Parsed name with options
      */
     public $request;
 }

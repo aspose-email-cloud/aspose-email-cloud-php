@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="setEmailPropertyRequest.php">
+ * <copyright company="Aspose" file="aiNameParseRequest.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -29,37 +29,58 @@
 namespace Aspose\Email\Model\Requests;
 
 /*
- * Request model for setEmailProperty" operation.
+ * Request model for aiNameParse" operation.
  */
-class setEmailPropertyRequest
+class aiNameParseRequest
 {
     /*
-     * Initializes a new instance of the setEmailPropertyRequest class.
+     * Initializes a new instance of the aiNameParseRequest class.
      *  
-     * @param string $property_name A property name that should be changed
-     * @param string $file_name Email document file name
-     * @param \Aspose\Email\Model\SetEmailPropertyRequest $request A property that should be changed and optional Storage info to specify where the file located
+     * @param string $name A name to parse (required)
+     * @param string $language An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \"it\" or \"ita\" for Italian)
+     * @param string $location A geographic code such as an ISO-3166 two letter country code, for example \"FR\" for France
+     * @param string $encoding A character encoding name
+     * @param string $script A writing system code; starts with the ISO-15924 script name
+     * @param string $style Name writing style
      */
-    public function __construct($property_name, $file_name, $request)             
+    public function __construct($name, $language = null, $location = null, $encoding = null, $script = null, $style = null)             
     {
-        $this->property_name = $property_name;
-        $this->file_name = $file_name;
-        $this->request = $request;
+        $this->name = $name;
+        $this->language = $language;
+        $this->location = $location;
+        $this->encoding = $encoding;
+        $this->script = $script;
+        $this->style = $style;
     }
 
     /*
-     * A property name that should be changed
+     * A name to parse (required)
      */
-    public $property_name;
+    public $name;
 	
     /*
-     * Email document file name
+     * An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \"it\" or \"ita\" for Italian)
      */
-    public $file_name;
+    public $language;
 	
     /*
-     * A property that should be changed and optional Storage info to specify where the file located
+     * A geographic code such as an ISO-3166 two letter country code, for example \"FR\" for France
      */
-    public $request;
+    public $location;
+	
+    /*
+     * A character encoding name
+     */
+    public $encoding;
+	
+    /*
+     * A writing system code; starts with the ISO-15924 script name
+     */
+    public $script;
+	
+    /*
+     * Name writing style
+     */
+    public $style;
 }
 ?>

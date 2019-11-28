@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="setEmailPropertyRequest.php">
+ * <copyright company="Aspose" file="AiNameWritingStyle.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -25,41 +25,42 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
+/*
+ * AiNameWritingStyle
+ */
 
-namespace Aspose\Email\Model\Requests;
+namespace Aspose\Email\Model;
+use \Aspose\Email\ObjectSerializer;
 
 /*
- * Request model for setEmailProperty" operation.
+ * AiNameWritingStyle
+ *
+ * @description Name writing style
  */
-class setEmailPropertyRequest
+class AiNameWritingStyle
 {
     /*
-     * Initializes a new instance of the setEmailPropertyRequest class.
-     *  
-     * @param string $property_name A property name that should be changed
-     * @param string $file_name Email document file name
-     * @param \Aspose\Email\Model\SetEmailPropertyRequest $request A property that should be changed and optional Storage info to specify where the file located
+     * Possible values of this enum
      */
-    public function __construct($property_name, $file_name, $request)             
+    const FORMAL = 'Formal';
+    const INFORMAL = 'Informal';
+    const LEGAL = 'Legal';
+    const ACADEMIC = 'Academic';
+    
+    /*
+     * Gets allowable values of the enum
+     * @return string[]
+     */
+    public static function getAllowableEnumValues()
     {
-        $this->property_name = $property_name;
-        $this->file_name = $file_name;
-        $this->request = $request;
+        return [
+            self::FORMAL,
+            self::INFORMAL,
+            self::LEGAL,
+            self::ACADEMIC,
+        ];
     }
-
-    /*
-     * A property name that should be changed
-     */
-    public $property_name;
-	
-    /*
-     * Email document file name
-     */
-    public $file_name;
-	
-    /*
-     * A property that should be changed and optional Storage info to specify where the file located
-     */
-    public $request;
 }
+
+
 ?>
