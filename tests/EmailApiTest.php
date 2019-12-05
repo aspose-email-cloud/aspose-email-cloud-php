@@ -8,10 +8,12 @@ use Aspose\Email\Model\HierarchicalObjectRequest;
 use Aspose\Email\Model\IndexedHierarchicalObject;
 use Aspose\Email\Model\PrimitiveObject;
 use Aspose\Email\Model\Requests\createCalendarRequest;
+use Aspose\Email\Model\Requests\createContactRequest;
 use Aspose\Email\Model\Requests\createFolderRequest;
 use Aspose\Email\Model\Requests\deleteFolderRequest;
 use Aspose\Email\Model\Requests\downloadFileRequest;
 use Aspose\Email\Model\Requests\getCalendarRequest;
+use Aspose\Email\Model\Requests\getContactPropertiesRequest;
 use Aspose\Email\Model\Requests\objectExistsRequest;
 use Aspose\Email\Model\Requests\uploadFileRequest;
 use Aspose\Email\Model\StorageFolderLocation;
@@ -77,6 +79,38 @@ class EmailApiTest extends TestCase
         $calendarTempFile = self::getApi()->downloadFile(new downloadFileRequest($storagePath, self::$storage));
         $fileContent = $calendarTempFile->fread($calendarTempFile->getSize());
         $this->assertRegExp("/Access-A-Ride/", $fileContent);
+    }
+
+    public function testContactFormat(): void
+    {
+        foreach(array("vcard", "msg") as $format)
+        {
+            $extension = $format == "vcard" ? ".vcf" : ".msg";
+            $file = uniqid("", true).$extension;
+            self::getApi()->createContact(new createContactRequest($format, $file, (new HierarchicalObjectRequest())
+                ->setStorageFolder((new StorageFolderLocation())
+                    ->setFolderPath(self::$folder)
+                    ->setStorage(self::$storage))
+                ->setHierarchicalObject((new HierarchicalObject())
+                    ->setName("CONTACT")
+                    ->setInternalProperties([]))));
+            $exist = self::getApi()->objectExists(new objectExistsRequest(self::$folder."/".$file, self::$storage));
+            $this->assertTrue($exist->getExists());
+        }
+    }
+
+    public function testDateTime(): void
+    {
+        $startDate = new DateTime();
+        $calendarFile = $this->createCalendar($startDate);
+        $calendarData = self::getApi()->getCalendar(new getCalendarRequest($calendarFile, self::$folder, self::$storage));
+        $propertiesArray = array_filter($calendarData->getInternalProperties(), function($var) {
+            return $var->getName() == "STARTDATE";
+        });
+        $property = array_values($propertiesArray)[0];
+        $format = "Y-m-d H:i:sZ";
+        $factStartDate = DateTime::createFromFormat($format, $property->getValue());
+        $this->assertEqualsWithDelta($startDate->getTimestamp(), $factStartDate->getTimestamp(), 1);
     }
 
     private function createCalendar(DateTime $startDate = null) : string
