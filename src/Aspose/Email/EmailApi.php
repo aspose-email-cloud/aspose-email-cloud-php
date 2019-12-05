@@ -247,7 +247,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
         if (isset($request->request)) {
@@ -281,14 +281,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -505,7 +510,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
         if (isset($request->request)) {
@@ -539,14 +544,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -796,7 +806,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
         if (isset($request->request)) {
@@ -830,14 +840,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -1045,7 +1060,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
         if (isset($request->request)) {
@@ -1079,14 +1094,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -1318,7 +1338,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
         if (isset($request->request)) {
@@ -1352,14 +1372,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -1591,7 +1616,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
         if (isset($request->request)) {
@@ -1625,14 +1650,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -1864,7 +1894,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
         if (isset($request->request)) {
@@ -1898,14 +1928,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -2137,7 +2172,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
         if (isset($request->request)) {
@@ -2171,14 +2206,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -2410,7 +2450,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
         if (isset($request->request)) {
@@ -2444,14 +2484,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -2683,7 +2728,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
         if (isset($request->request)) {
@@ -2717,14 +2762,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -3016,7 +3066,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
 
@@ -3043,14 +3093,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -3342,7 +3397,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
 
@@ -3369,14 +3424,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -3608,7 +3668,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
         if (isset($request->request)) {
@@ -3642,14 +3702,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -3941,7 +4006,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
 
@@ -3968,14 +4033,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -4207,7 +4277,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
         if (isset($request->request)) {
@@ -4241,14 +4311,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -4540,7 +4615,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
 
@@ -4567,14 +4642,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -4806,7 +4886,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
         if (isset($request->request)) {
@@ -4840,14 +4920,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -5153,7 +5238,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
 
@@ -5180,14 +5265,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -5419,7 +5509,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
         if (isset($request->request)) {
@@ -5453,14 +5543,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -5752,7 +5847,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
 
@@ -5779,14 +5874,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -6078,7 +6178,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
 
@@ -6105,14 +6205,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -6344,7 +6449,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
         if (isset($request->request)) {
@@ -6378,14 +6483,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -6617,7 +6727,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
         if (isset($request->request)) {
@@ -6651,14 +6761,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -6897,7 +7012,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
 
@@ -6924,14 +7039,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -7160,7 +7280,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
 
@@ -7187,14 +7307,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -7393,7 +7518,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
         if (isset($request->request)) {
@@ -7427,14 +7552,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -7642,7 +7772,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
         if (isset($request->request)) {
@@ -7676,14 +7806,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -7924,7 +8059,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
         if (isset($request->request)) {
@@ -7958,14 +8093,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -8155,7 +8295,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
         if (isset($request->request)) {
@@ -8189,14 +8329,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -8401,7 +8546,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
 
@@ -8428,14 +8573,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -8634,7 +8784,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
         if (isset($request->request)) {
@@ -8668,14 +8818,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -8892,7 +9047,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
         if (isset($request->request)) {
@@ -8926,14 +9081,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -9159,7 +9319,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
         if (isset($request->folder)) {
@@ -9193,14 +9353,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -9390,7 +9555,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
         if (isset($request->request)) {
@@ -9424,14 +9589,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -9621,7 +9791,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
         if (isset($request->request)) {
@@ -9655,14 +9825,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -9877,7 +10052,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
 
@@ -9904,14 +10079,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -10126,7 +10306,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
 
@@ -10153,14 +10333,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -10368,7 +10553,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
         if (isset($request->storage)) {
@@ -10402,14 +10587,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -10608,7 +10798,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
         if (isset($request->request)) {
@@ -10642,14 +10832,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -10906,7 +11101,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
 
@@ -10933,14 +11128,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -11226,7 +11426,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
 
@@ -11253,14 +11453,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -11517,7 +11722,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
 
@@ -11544,14 +11749,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -11817,7 +12027,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
 
@@ -11844,14 +12054,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -12131,7 +12346,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
 
@@ -12158,14 +12373,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -12440,7 +12660,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
 
@@ -12467,14 +12687,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -12751,7 +12976,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
 
@@ -12778,14 +13003,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -13051,7 +13281,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
 
@@ -13078,14 +13308,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -13323,7 +13558,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
 
@@ -13350,14 +13585,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -13614,7 +13854,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
 
@@ -13641,14 +13881,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -13914,7 +14159,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
 
@@ -13941,14 +14186,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -14214,7 +14464,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
 
@@ -14241,14 +14491,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -14495,7 +14750,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
 
@@ -14522,14 +14777,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -14776,7 +15036,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
 
@@ -14803,14 +15063,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -15076,7 +15341,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
 
@@ -15103,14 +15368,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -15367,7 +15637,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
 
@@ -15394,14 +15664,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -15669,7 +15944,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
 
@@ -15696,14 +15971,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -15960,7 +16240,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
 
@@ -15987,14 +16267,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -16276,7 +16561,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
 
@@ -16303,14 +16588,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -16620,7 +16910,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
 
@@ -16647,14 +16937,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -16893,7 +17188,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
 
@@ -16920,14 +17215,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -17156,7 +17456,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
 
@@ -17183,14 +17483,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -17447,7 +17752,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
 
@@ -17474,14 +17779,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -17671,7 +17981,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
         if (isset($request->request)) {
@@ -17705,14 +18015,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -17902,7 +18217,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
         if (isset($request->request)) {
@@ -17936,14 +18251,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -18133,7 +18453,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
         if (isset($request->request)) {
@@ -18167,14 +18487,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -18364,7 +18689,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
         if (isset($request->request)) {
@@ -18398,14 +18723,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -18655,7 +18985,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
         if (isset($request->request)) {
@@ -18689,14 +19019,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -18886,7 +19221,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
         if (isset($request->request)) {
@@ -18920,14 +19255,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -19164,7 +19504,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
 
@@ -19191,14 +19531,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -19397,7 +19742,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
         if (isset($request->request)) {
@@ -19431,14 +19776,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -19646,7 +19996,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
         if (isset($request->request)) {
@@ -19680,14 +20030,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -19886,7 +20241,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // body params
         $_tempBody = null;
         if (isset($request->request)) {
@@ -19920,14 +20275,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 
@@ -20178,7 +20538,7 @@ class EmailApi
     
     
         $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-
+        $formFiles = [];
         // form params
         if ($request->file !== null) {
             $multipart = true;
@@ -20187,6 +20547,7 @@ class EmailApi
             $fsize = filesize($filename);
             $contents = fread($handle, $fsize);
             $formParams['file'] = $contents;
+            $formFiles['file'] = basename($filename);
         }
         // body params
         $_tempBody = null;
@@ -20214,14 +20575,19 @@ class EmailApi
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
+                    $multipartContent = [
                         'name' => $formParamName,
                         'contents' => $formParamValue
                     ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
             } elseif ($headers['Content-Type'] === 'application/json') {
                 $httpBody = \GuzzleHttp\json_encode($formParams);
 

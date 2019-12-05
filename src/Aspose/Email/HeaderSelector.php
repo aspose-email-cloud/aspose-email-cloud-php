@@ -65,6 +65,7 @@ class HeaderSelector
         $headers = $this->selectHeaders($accept, []);
 
         unset($headers['Content-Type']);
+        $headers['Content-Type'] = "multipart/form-data";
         return $headers;
     }
 
