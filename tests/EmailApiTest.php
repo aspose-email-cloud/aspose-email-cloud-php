@@ -10,7 +10,10 @@ use Aspose\Email\Model\PrimitiveObject;
 use Aspose\Email\Model\Requests\createCalendarRequest;
 use Aspose\Email\Model\Requests\createFolderRequest;
 use Aspose\Email\Model\Requests\deleteFolderRequest;
+use Aspose\Email\Model\Requests\downloadFileRequest;
 use Aspose\Email\Model\Requests\getCalendarRequest;
+use Aspose\Email\Model\Requests\objectExistsRequest;
+use Aspose\Email\Model\Requests\uploadFileRequest;
 use Aspose\Email\Model\StorageFolderLocation;
 
 class EmailApiTest extends TestCase
@@ -31,6 +34,7 @@ class EmailApiTest extends TestCase
         $configuration->setAppKey($_ENV["appKey"]);
         $configuration->setAppSid($_ENV["appSid"]);
         $configuration->setHost($_ENV["apiBaseUrl"]);
+        //$configuration->setDebug(true);
         self::$api = new EmailApi(null, $configuration);
         self::$api->createFolder(new createFolderRequest(self::$folder, self::$storage));
     }
@@ -44,7 +48,6 @@ class EmailApiTest extends TestCase
     {
         $calendarFile = $this->createCalendar();
         $calendar = self::getApi()->getCalendar(new getCalendarRequest($calendarFile, self::$folder, self::$storage));
-        //$calendar = new HierarchicalObject();
         $filtered = array_filter($calendar->getInternalProperties(), function($var) {
             return $var->getType() == "PrimitiveObject";
         });
@@ -52,6 +55,28 @@ class EmailApiTest extends TestCase
         $this->assertTrue($count >= 3);
         $firstValue = array_values($filtered)[0]->getValue();
         $this->assertNotNull($firstValue);
+    }
+
+    public function testAsync(): void
+    {
+        $calendarFile = $this->createCalendar();
+        $promise = self::getApi()->getCalendarAsync(new getCalendarRequest($calendarFile, self::$folder, self::$storage));
+        $result = $promise->wait();
+        $this->assertTrue(count($result->getInternalProperties()) >= 5);
+    }
+
+    public function testFile(): void
+    {
+        $path = dirname(__FILE__)."\\data\\sample.ics";
+        $storagePath = self::$folder."/".uniqid().".ics";
+        $what = self::getApi()->uploadFile(new uploadFileRequest($storagePath, $path, self::$storage));
+        $exists = self::getApi()
+            ->objectExists(new objectExistsRequest($storagePath, self::$storage));
+        $this->assertTrue(
+            $exists->getExists());
+        $calendarTempFile = self::getApi()->downloadFile(new downloadFileRequest($storagePath, self::$storage));
+        $fileContent = $calendarTempFile->fread($calendarTempFile->getSize());
+        $this->assertRegExp("/Access-A-Ride/", $fileContent);
     }
 
     private function createCalendar(DateTime $startDate = null) : string
