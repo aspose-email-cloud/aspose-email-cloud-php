@@ -36,7 +36,7 @@ class getContactPropertiesRequest
     /*
      * Initializes a new instance of the getContactPropertiesRequest class.
      *  
-     * @param string $format Contact document format
+     * @param string $format Contact document format. Enum, available values: VCard, WebDav, Msg
      * @param string $name Contact document file name
      * @param string $folder Path to folder in storage
      * @param string $storage Storage name
@@ -50,7 +50,7 @@ class getContactPropertiesRequest
     }
 
     /*
-     * Contact document format
+     * Contact document format. Enum, available values: VCard, WebDav, Msg
      */
     public $format;
 	

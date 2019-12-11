@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="AiBcrStorageImageRequest.php">
+ * <copyright company="Aspose" file="AiBcrStorageImageRq.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,18 +26,18 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /*
- * AiBcrStorageImageRequest
+ * AiBcrStorageImageRq
  */
 
 namespace Aspose\Email\Model;
 use \Aspose\Email\ObjectSerializer;
 
 /*
- * AiBcrStorageImageRequest
+ * AiBcrStorageImageRq
  *
  * @description Business card images from storage for recognition
  */
-class AiBcrStorageImageRequest extends AiBcrRequest 
+class AiBcrStorageImageRq extends AiBcrRq 
 {
     const DISCRIMINATOR = null;
 
@@ -46,7 +46,7 @@ class AiBcrStorageImageRequest extends AiBcrRequest
      *
      * @var string
      */
-    protected static $swaggerModelName = "AiBcrStorageImageRequest";
+    protected static $swaggerModelName = "AiBcrStorageImageRq";
 
     /*
      * Array of property to type mappings. Used for (de)serialization

@@ -36,16 +36,16 @@ class aiNameGenderizeParsedRequest
     /*
      * Initializes a new instance of the aiNameGenderizeParsedRequest class.
      *  
-     * @param \Aspose\Email\Model\AiNameParsedRequest $request Gender detection request data
+     * @param \Aspose\Email\Model\AiNameParsedRq $rq Gender detection request data
      */
-    public function __construct($request)             
+    public function __construct($rq)             
     {
-        $this->request = $request;
+        $this->rq = $rq;
     }
 
     /*
      * Gender detection request data
      */
-    public $request;
+    public $rq;
 }
 ?>

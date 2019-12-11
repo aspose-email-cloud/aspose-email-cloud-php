@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="AiNameParsedRequest.php">
+ * <copyright company="Aspose" file="AiBcrParseOcrDataRq.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,29 +26,27 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /*
- * AiNameParsedRequest
+ * AiBcrParseOcrDataRq
  */
 
 namespace Aspose\Email\Model;
-
-use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
 /*
- * AiNameParsedRequest
+ * AiBcrParseOcrDataRq
  *
- * @description Parsed name request model
+ * @description Parse ocr data request
  */
-class AiNameParsedRequest implements ArrayAccess
+class AiBcrParseOcrDataRq extends AiBcrRq 
 {
-    const DISCRIMINATOR = 'Type';
+    const DISCRIMINATOR = null;
 
     /*
      * The original name of the model.
      *
      * @var string
      */
-    protected static $swaggerModelName = "AiNameParsedRequest";
+    protected static $swaggerModelName = "AiBcrParseOcrDataRq";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -56,8 +54,7 @@ class AiNameParsedRequest implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'options' => '\Aspose\Email\Model\AiNameOptions',
-        'parsed_name' => '\Aspose\Email\Model\AiNameComponent[]'
+        'data' => '\Aspose\Email\Model\AiBcrOcrData[]'
     ];
 
     /*
@@ -66,8 +63,7 @@ class AiNameParsedRequest implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'options' => null,
-        'parsed_name' => null
+        'data' => null
     ];
 
     /*
@@ -77,7 +73,7 @@ class AiNameParsedRequest implements ArrayAccess
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /*
@@ -87,7 +83,7 @@ class AiNameParsedRequest implements ArrayAccess
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /*
@@ -97,8 +93,7 @@ class AiNameParsedRequest implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'options' => 'options',
-        'parsed_name' => 'parsedName'
+        'data' => 'data'
     ];
 
     /*
@@ -107,8 +102,7 @@ class AiNameParsedRequest implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'options' => 'setOptions',
-        'parsed_name' => 'setParsedName'
+        'data' => 'setData'
     ];
 
     /*
@@ -117,8 +111,7 @@ class AiNameParsedRequest implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'options' => 'getOptions',
-        'parsed_name' => 'getParsedName'
+        'data' => 'getData'
     ];
 
     /*
@@ -129,7 +122,7 @@ class AiNameParsedRequest implements ArrayAccess
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /*
@@ -139,7 +132,7 @@ class AiNameParsedRequest implements ArrayAccess
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /*
@@ -149,7 +142,7 @@ class AiNameParsedRequest implements ArrayAccess
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /*
@@ -166,12 +159,6 @@ class AiNameParsedRequest implements ArrayAccess
 
     
 
-    /*
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /*
      * Constructor
@@ -181,12 +168,9 @@ class AiNameParsedRequest implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['options'] = isset($data['options']) ? $data['options'] : null;
-        $this->container['parsed_name'] = isset($data['parsed_name']) ? $data['parsed_name'] : null;
+        parent::__construct($data);
 
-        // Initialize discriminator property with the model name.
-        $discriminator = array_search('Type', self::$attributeMap);
-        $this->container[$discriminator] = static::$swaggerModelName;
+        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
     }
 
     /*
@@ -196,10 +180,10 @@ class AiNameParsedRequest implements ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
-        if ($this->container['parsed_name'] === null) {
-            $invalidProperties[] = "'parsed_name' can't be null";
+        if ($this->container['data'] === null) {
+            $invalidProperties[] = "'data' can't be null";
         }
         return $invalidProperties;
     }
@@ -212,8 +196,11 @@ class AiNameParsedRequest implements ArrayAccess
      */
     public function valid()
     {
+        if (!parent::valid()) {
+            return false;
+        }
 
-        if ($this->container['parsed_name'] === null) {
+        if ($this->container['data'] === null) {
             return false;
         }
         return true;
@@ -221,49 +208,25 @@ class AiNameParsedRequest implements ArrayAccess
 
 
     /*
-     * Gets options
+     * Gets data
      *
-     * @return \Aspose\Email\Model\AiNameOptions
+     * @return \Aspose\Email\Model\AiBcrOcrData[]
      */
-    public function getOptions()
+    public function getData()
     {
-        return $this->container['options'];
+        return $this->container['data'];
     }
 
     /*
-     * Sets options
+     * Sets data
      *
-     * @param \Aspose\Email\Model\AiNameOptions $options AiName parser options
+     * @param \Aspose\Email\Model\AiBcrOcrData[] $data OCR data
      *
      * @return $this
      */
-    public function setOptions($options)
+    public function setData($data)
     {
-        $this->container['options'] = $options;
-
-        return $this;
-    }
-
-    /*
-     * Gets parsed_name
-     *
-     * @return \Aspose\Email\Model\AiNameComponent[]
-     */
-    public function getParsedName()
-    {
-        return $this->container['parsed_name'];
-    }
-
-    /*
-     * Sets parsed_name
-     *
-     * @param \Aspose\Email\Model\AiNameComponent[] $parsed_name Parsed name
-     *
-     * @return $this
-     */
-    public function setParsedName($parsed_name)
-    {
-        $this->container['parsed_name'] = $parsed_name;
+        $this->container['data'] = $data;
 
         return $this;
     }

@@ -36,16 +36,16 @@ class aiBcrParseOcrDataRequest
     /*
      * Initializes a new instance of the aiBcrParseOcrDataRequest class.
      *  
-     * @param \Aspose\Email\Model\AiBcrParseOcrDataRequest $request 
+     * @param \Aspose\Email\Model\AiBcrParseOcrDataRq $rq 
      */
-    public function __construct($request)             
+    public function __construct($rq)             
     {
-        $this->request = $request;
+        $this->rq = $rq;
     }
 
     /*
-     * Gets or sets request
+     * Gets or sets rq
      */
-    public $request;
+    public $rq;
 }
 ?>

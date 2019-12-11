@@ -56,7 +56,7 @@ class AiNameMismatch implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'category' => 'object',
+        'category' => 'string',
         'similarity' => 'double',
         'explanation' => 'string'
     ];
@@ -231,7 +231,7 @@ class AiNameMismatch implements ArrayAccess
     /*
      * Gets category
      *
-     * @return object
+     * @return string
      */
     public function getCategory()
     {
@@ -241,7 +241,7 @@ class AiNameMismatch implements ArrayAccess
     /*
      * Sets category
      *
-     * @param object $category Mismatch type
+     * @param string $category Mismatch type. Enum, available values: Unknown, FirstName, MiddleName, MiddleLastName, MiddleNickname, Gender, Context
      *
      * @return $this
      */

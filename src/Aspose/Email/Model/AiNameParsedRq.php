@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="AiNameParsedMatchRequest.php">
+ * <copyright company="Aspose" file="AiNameParsedRq.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,27 +26,29 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /*
- * AiNameParsedMatchRequest
+ * AiNameParsedRq
  */
 
 namespace Aspose\Email\Model;
+
+use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
 /*
- * AiNameParsedMatchRequest
+ * AiNameParsedRq
  *
- * @description Two parsed names to match request
+ * @description Parsed name request model
  */
-class AiNameParsedMatchRequest extends AiNameParsedRequest 
+class AiNameParsedRq implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    const DISCRIMINATOR = 'Type';
 
     /*
      * The original name of the model.
      *
      * @var string
      */
-    protected static $swaggerModelName = "AiNameParsedMatchRequest";
+    protected static $swaggerModelName = "AiNameParsedRq";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -54,7 +56,9 @@ class AiNameParsedMatchRequest extends AiNameParsedRequest
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'other_parsed_name' => '\Aspose\Email\Model\AiNameComponent[]'
+        'cultural_context' => '\Aspose\Email\Model\AiNameCulturalContext',
+        'format' => 'string',
+        'parsed_name' => '\Aspose\Email\Model\AiNameComponent[]'
     ];
 
     /*
@@ -63,7 +67,9 @@ class AiNameParsedMatchRequest extends AiNameParsedRequest
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'other_parsed_name' => null
+        'cultural_context' => null,
+        'format' => null,
+        'parsed_name' => null
     ];
 
     /*
@@ -73,7 +79,7 @@ class AiNameParsedMatchRequest extends AiNameParsedRequest
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes + parent::swaggerTypes();
+        return self::$swaggerTypes;
     }
 
     /*
@@ -83,7 +89,7 @@ class AiNameParsedMatchRequest extends AiNameParsedRequest
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats + parent::swaggerFormats();
+        return self::$swaggerFormats;
     }
 
     /*
@@ -93,7 +99,9 @@ class AiNameParsedMatchRequest extends AiNameParsedRequest
      * @var string[]
      */
     protected static $attributeMap = [
-        'other_parsed_name' => 'otherParsedName'
+        'cultural_context' => 'culturalContext',
+        'format' => 'format',
+        'parsed_name' => 'parsedName'
     ];
 
     /*
@@ -102,7 +110,9 @@ class AiNameParsedMatchRequest extends AiNameParsedRequest
      * @var string[]
      */
     protected static $setters = [
-        'other_parsed_name' => 'setOtherParsedName'
+        'cultural_context' => 'setCulturalContext',
+        'format' => 'setFormat',
+        'parsed_name' => 'setParsedName'
     ];
 
     /*
@@ -111,7 +121,9 @@ class AiNameParsedMatchRequest extends AiNameParsedRequest
      * @var string[]
      */
     protected static $getters = [
-        'other_parsed_name' => 'getOtherParsedName'
+        'cultural_context' => 'getCulturalContext',
+        'format' => 'getFormat',
+        'parsed_name' => 'getParsedName'
     ];
 
     /*
@@ -122,7 +134,7 @@ class AiNameParsedMatchRequest extends AiNameParsedRequest
      */
     public static function attributeMap()
     {
-        return parent::attributeMap() + self::$attributeMap;
+        return self::$attributeMap;
     }
 
     /*
@@ -132,7 +144,7 @@ class AiNameParsedMatchRequest extends AiNameParsedRequest
      */
     public static function setters()
     {
-        return parent::setters() + self::$setters;
+        return self::$setters;
     }
 
     /*
@@ -142,7 +154,7 @@ class AiNameParsedMatchRequest extends AiNameParsedRequest
      */
     public static function getters()
     {
-        return parent::getters() + self::$getters;
+        return self::$getters;
     }
 
     /*
@@ -159,6 +171,12 @@ class AiNameParsedMatchRequest extends AiNameParsedRequest
 
     
 
+    /*
+     * Associative array for storing property values
+     *
+     * @var mixed[]
+     */
+    protected $container = [];
 
     /*
      * Constructor
@@ -168,9 +186,13 @@ class AiNameParsedMatchRequest extends AiNameParsedRequest
      */
     public function __construct(array $data = null)
     {
-        parent::__construct($data);
+        $this->container['cultural_context'] = isset($data['cultural_context']) ? $data['cultural_context'] : null;
+        $this->container['format'] = isset($data['format']) ? $data['format'] : null;
+        $this->container['parsed_name'] = isset($data['parsed_name']) ? $data['parsed_name'] : null;
 
-        $this->container['other_parsed_name'] = isset($data['other_parsed_name']) ? $data['other_parsed_name'] : null;
+        // Initialize discriminator property with the model name.
+        $discriminator = array_search('Type', self::$attributeMap);
+        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /*
@@ -180,10 +202,10 @@ class AiNameParsedMatchRequest extends AiNameParsedRequest
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = parent::listInvalidProperties();
+        $invalidProperties = [];
 
-        if ($this->container['other_parsed_name'] === null) {
-            $invalidProperties[] = "'other_parsed_name' can't be null";
+        if ($this->container['parsed_name'] === null) {
+            $invalidProperties[] = "'parsed_name' can't be null";
         }
         return $invalidProperties;
     }
@@ -196,11 +218,8 @@ class AiNameParsedMatchRequest extends AiNameParsedRequest
      */
     public function valid()
     {
-        if (!parent::valid()) {
-            return false;
-        }
 
-        if ($this->container['other_parsed_name'] === null) {
+        if ($this->container['parsed_name'] === null) {
             return false;
         }
         return true;
@@ -208,25 +227,73 @@ class AiNameParsedMatchRequest extends AiNameParsedRequest
 
 
     /*
-     * Gets other_parsed_name
+     * Gets cultural_context
      *
-     * @return \Aspose\Email\Model\AiNameComponent[]
+     * @return \Aspose\Email\Model\AiNameCulturalContext
      */
-    public function getOtherParsedName()
+    public function getCulturalContext()
     {
-        return $this->container['other_parsed_name'];
+        return $this->container['cultural_context'];
     }
 
     /*
-     * Sets other_parsed_name
+     * Sets cultural_context
      *
-     * @param \Aspose\Email\Model\AiNameComponent[] $other_parsed_name Other parsed name to match
+     * @param \Aspose\Email\Model\AiNameCulturalContext $cultural_context AiName parser cultural context
      *
      * @return $this
      */
-    public function setOtherParsedName($other_parsed_name)
+    public function setCulturalContext($cultural_context)
     {
-        $this->container['other_parsed_name'] = $other_parsed_name;
+        $this->container['cultural_context'] = $cultural_context;
+
+        return $this;
+    }
+
+    /*
+     * Gets format
+     *
+     * @return string
+     */
+    public function getFormat()
+    {
+        return $this->container['format'];
+    }
+
+    /*
+     * Sets format
+     *
+     * @param string $format Format of the name. Predefined format can be used by ID, or custom format can be specified. Predefined formats:      /format/default/ (= '%t%F%m%N%L%p')     /format/FN+LN/ (= '%F%L')     /format/title+FN+LN/ (= '%t%F%L')     /format/FN+MN+LN/ (= '%F%M%N%L')     /format/title+FN+MN+LN/ (= '%t%F%M%N%L')     /format/FN+MI+LN/ (= '%F%m%N%L')     /format/title+FN+MI+LN/ (= '%t%F%m%N%L')     /format/LN/ (= '%L')     /format/title+LN/ (= '%t%L')     /format/LN+FN+MN/ (= '%L,%F%M%N')     /format/LN+title+FN+MN/ (= '%L,%t%F%M%N')     /format/LN+FN+MI/ (= '%L,%F%m%N')     /format/LN+title+FN+MI/ (= '%L,%t%F%m%N')  Custom format string - custom combination of characters and the next term placeholders:      '%t' - Title (prefix)     '%F' - First name     '%f' - First initial     '%M' - Middle name(s)     '%m' - Middle initial(s)     '%N' - Nickname     '%L' - Last name     '%l' - Last initial     '%p' - Postfix  If no value for format option was provided, its default value is '%t%F%m%N%L%p'
+     *
+     * @return $this
+     */
+    public function setFormat($format)
+    {
+        $this->container['format'] = $format;
+
+        return $this;
+    }
+
+    /*
+     * Gets parsed_name
+     *
+     * @return \Aspose\Email\Model\AiNameComponent[]
+     */
+    public function getParsedName()
+    {
+        return $this->container['parsed_name'];
+    }
+
+    /*
+     * Sets parsed_name
+     *
+     * @param \Aspose\Email\Model\AiNameComponent[] $parsed_name Parsed name
+     *
+     * @return $this
+     */
+    public function setParsedName($parsed_name)
+    {
+        $this->container['parsed_name'] = $parsed_name;
 
         return $this;
     }

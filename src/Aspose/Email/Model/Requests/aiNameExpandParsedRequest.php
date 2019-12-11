@@ -36,16 +36,16 @@ class aiNameExpandParsedRequest
     /*
      * Initializes a new instance of the aiNameExpandParsedRequest class.
      *  
-     * @param \Aspose\Email\Model\AiNameParsedRequest $request Parsed name with options
+     * @param \Aspose\Email\Model\AiNameParsedRq $rq Parsed name with options
      */
-    public function __construct($request)             
+    public function __construct($rq)             
     {
-        $this->request = $request;
+        $this->rq = $rq;
     }
 
     /*
      * Parsed name with options
      */
-    public $request;
+    public $rq;
 }
 ?>

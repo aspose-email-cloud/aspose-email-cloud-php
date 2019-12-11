@@ -36,16 +36,16 @@ class aiNameMatchParsedRequest
     /*
      * Initializes a new instance of the aiNameMatchParsedRequest class.
      *  
-     * @param \Aspose\Email\Model\AiNameParsedMatchRequest $request Parsed names to match
+     * @param \Aspose\Email\Model\AiNameParsedMatchRq $rq Parsed names to match
      */
-    public function __construct($request)             
+    public function __construct($rq)             
     {
-        $this->request = $request;
+        $this->rq = $rq;
     }
 
     /*
      * Parsed names to match
      */
-    public $request;
+    public $rq;
 }
 ?>

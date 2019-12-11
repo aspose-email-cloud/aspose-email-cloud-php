@@ -36,16 +36,16 @@ class aiBcrParseStorageRequest
     /*
      * Initializes a new instance of the aiBcrParseStorageRequest class.
      *  
-     * @param \Aspose\Email\Model\AiBcrParseStorageRequest $request Request with images located on storage
+     * @param \Aspose\Email\Model\AiBcrParseStorageRq $rq Request with images located on storage
      */
-    public function __construct($request)             
+    public function __construct($rq)             
     {
-        $this->request = $request;
+        $this->rq = $rq;
     }
 
     /*
      * Request with images located on storage
      */
-    public $request;
+    public $rq;
 }
 ?>

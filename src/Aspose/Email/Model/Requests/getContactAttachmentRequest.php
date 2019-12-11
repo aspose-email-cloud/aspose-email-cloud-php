@@ -36,7 +36,7 @@ class getContactAttachmentRequest
     /*
      * Initializes a new instance of the getContactAttachmentRequest class.
      *  
-     * @param string $format Contact document format
+     * @param string $format Contact document format. Enum, available values: VCard, WebDav, Msg
      * @param string $name Contact document file name
      * @param string $attachment Attachment name or index
      * @param string $folder Path to folder in storage
@@ -52,7 +52,7 @@ class getContactAttachmentRequest
     }
 
     /*
-     * Contact document format
+     * Contact document format. Enum, available values: VCard, WebDav, Msg
      */
     public $format;
 	

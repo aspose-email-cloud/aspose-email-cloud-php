@@ -1322,9 +1322,9 @@ class EmailApi
      */
     protected function aiBcrOcrRequest(Requests\aiBcrOcrRequest $request)
     {
-        // verify the required parameter 'request' is set
-        if ($request->request === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $request when calling aiBcrOcr');
+        // verify the required parameter 'rq' is set
+        if ($request->rq === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $rq when calling aiBcrOcr');
         }
 
         $resourcePath = '/email/AiBcr/ocr';
@@ -1341,11 +1341,11 @@ class EmailApi
         $formFiles = [];
         // body params
         $_tempBody = null;
-        if (isset($request->request)) {
-            if (is_string($request->request)) {
-                $_tempBody = "\"" . $request->request . "\"";   
+        if (isset($request->rq)) {
+            if (is_string($request->rq)) {
+                $_tempBody = "\"" . $request->rq . "\"";   
             } else {
-                $_tempBody = $request->request;
+                $_tempBody = $request->rq;
             }
         }
 
@@ -1600,9 +1600,9 @@ class EmailApi
      */
     protected function aiBcrOcrStorageRequest(Requests\aiBcrOcrStorageRequest $request)
     {
-        // verify the required parameter 'request' is set
-        if ($request->request === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $request when calling aiBcrOcrStorage');
+        // verify the required parameter 'rq' is set
+        if ($request->rq === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $rq when calling aiBcrOcrStorage');
         }
 
         $resourcePath = '/email/AiBcr/ocr-storage';
@@ -1619,11 +1619,11 @@ class EmailApi
         $formFiles = [];
         // body params
         $_tempBody = null;
-        if (isset($request->request)) {
-            if (is_string($request->request)) {
-                $_tempBody = "\"" . $request->request . "\"";   
+        if (isset($request->rq)) {
+            if (is_string($request->rq)) {
+                $_tempBody = "\"" . $request->rq . "\"";   
             } else {
-                $_tempBody = $request->request;
+                $_tempBody = $request->rq;
             }
         }
 
@@ -1878,9 +1878,9 @@ class EmailApi
      */
     protected function aiBcrParseRequest(Requests\aiBcrParseRequest $request)
     {
-        // verify the required parameter 'request' is set
-        if ($request->request === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $request when calling aiBcrParse');
+        // verify the required parameter 'rq' is set
+        if ($request->rq === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $rq when calling aiBcrParse');
         }
 
         $resourcePath = '/email/AiBcr/parse';
@@ -1897,11 +1897,11 @@ class EmailApi
         $formFiles = [];
         // body params
         $_tempBody = null;
-        if (isset($request->request)) {
-            if (is_string($request->request)) {
-                $_tempBody = "\"" . $request->request . "\"";   
+        if (isset($request->rq)) {
+            if (is_string($request->rq)) {
+                $_tempBody = "\"" . $request->rq . "\"";   
             } else {
-                $_tempBody = $request->request;
+                $_tempBody = $request->rq;
             }
         }
 
@@ -2156,9 +2156,9 @@ class EmailApi
      */
     protected function aiBcrParseOcrDataRequest(Requests\aiBcrParseOcrDataRequest $request)
     {
-        // verify the required parameter 'request' is set
-        if ($request->request === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $request when calling aiBcrParseOcrData');
+        // verify the required parameter 'rq' is set
+        if ($request->rq === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $rq when calling aiBcrParseOcrData');
         }
 
         $resourcePath = '/email/AiBcr/parse-ocr-data';
@@ -2175,11 +2175,11 @@ class EmailApi
         $formFiles = [];
         // body params
         $_tempBody = null;
-        if (isset($request->request)) {
-            if (is_string($request->request)) {
-                $_tempBody = "\"" . $request->request . "\"";   
+        if (isset($request->rq)) {
+            if (is_string($request->rq)) {
+                $_tempBody = "\"" . $request->rq . "\"";   
             } else {
-                $_tempBody = $request->request;
+                $_tempBody = $request->rq;
             }
         }
 
@@ -2434,9 +2434,9 @@ class EmailApi
      */
     protected function aiBcrParseOcrDataStorageRequest(Requests\aiBcrParseOcrDataStorageRequest $request)
     {
-        // verify the required parameter 'request' is set
-        if ($request->request === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $request when calling aiBcrParseOcrDataStorage');
+        // verify the required parameter 'rq' is set
+        if ($request->rq === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $rq when calling aiBcrParseOcrDataStorage');
         }
 
         $resourcePath = '/email/AiBcr/parse-ocr-data-storage';
@@ -2453,11 +2453,11 @@ class EmailApi
         $formFiles = [];
         // body params
         $_tempBody = null;
-        if (isset($request->request)) {
-            if (is_string($request->request)) {
-                $_tempBody = "\"" . $request->request . "\"";   
+        if (isset($request->rq)) {
+            if (is_string($request->rq)) {
+                $_tempBody = "\"" . $request->rq . "\"";   
             } else {
-                $_tempBody = $request->request;
+                $_tempBody = $request->rq;
             }
         }
 
@@ -2712,9 +2712,9 @@ class EmailApi
      */
     protected function aiBcrParseStorageRequest(Requests\aiBcrParseStorageRequest $request)
     {
-        // verify the required parameter 'request' is set
-        if ($request->request === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $request when calling aiBcrParseStorage');
+        // verify the required parameter 'rq' is set
+        if ($request->rq === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $rq when calling aiBcrParseStorage');
         }
 
         $resourcePath = '/email/AiBcr/parse-storage';
@@ -2731,11 +2731,11 @@ class EmailApi
         $formFiles = [];
         // body params
         $_tempBody = null;
-        if (isset($request->request)) {
-            if (is_string($request->request)) {
-                $_tempBody = "\"" . $request->request . "\"";   
+        if (isset($request->rq)) {
+            if (is_string($request->rq)) {
+                $_tempBody = "\"" . $request->rq . "\"";   
             } else {
-                $_tempBody = $request->request;
+                $_tempBody = $request->rq;
             }
         }
 
@@ -3652,9 +3652,9 @@ class EmailApi
      */
     protected function aiNameExpandParsedRequest(Requests\aiNameExpandParsedRequest $request)
     {
-        // verify the required parameter 'request' is set
-        if ($request->request === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $request when calling aiNameExpandParsed');
+        // verify the required parameter 'rq' is set
+        if ($request->rq === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $rq when calling aiNameExpandParsed');
         }
 
         $resourcePath = '/email/AiName/expand-parsed';
@@ -3671,11 +3671,11 @@ class EmailApi
         $formFiles = [];
         // body params
         $_tempBody = null;
-        if (isset($request->request)) {
-            if (is_string($request->request)) {
-                $_tempBody = "\"" . $request->request . "\"";   
+        if (isset($request->rq)) {
+            if (is_string($request->rq)) {
+                $_tempBody = "\"" . $request->rq . "\"";   
             } else {
-                $_tempBody = $request->request;
+                $_tempBody = $request->rq;
             }
         }
 
@@ -3994,6 +3994,16 @@ class EmailApi
             }
         }
         // query params
+        if ($request->format !== null) {
+            $localName = lcfirst('format');
+            $localValue = is_bool($request->format) ? ($request->format ? 'true' : 'false') : $request->format;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if ($request->style !== null) {
             $localName = lcfirst('style');
             $localValue = is_bool($request->style) ? ($request->style ? 'true' : 'false') : $request->style;
@@ -4261,9 +4271,9 @@ class EmailApi
      */
     protected function aiNameFormatParsedRequest(Requests\aiNameFormatParsedRequest $request)
     {
-        // verify the required parameter 'request' is set
-        if ($request->request === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $request when calling aiNameFormatParsed');
+        // verify the required parameter 'rq' is set
+        if ($request->rq === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $rq when calling aiNameFormatParsed');
         }
 
         $resourcePath = '/email/AiName/format-parsed';
@@ -4280,11 +4290,11 @@ class EmailApi
         $formFiles = [];
         // body params
         $_tempBody = null;
-        if (isset($request->request)) {
-            if (is_string($request->request)) {
-                $_tempBody = "\"" . $request->request . "\"";   
+        if (isset($request->rq)) {
+            if (is_string($request->rq)) {
+                $_tempBody = "\"" . $request->rq . "\"";   
             } else {
-                $_tempBody = $request->request;
+                $_tempBody = $request->rq;
             }
         }
 
@@ -4870,9 +4880,9 @@ class EmailApi
      */
     protected function aiNameGenderizeParsedRequest(Requests\aiNameGenderizeParsedRequest $request)
     {
-        // verify the required parameter 'request' is set
-        if ($request->request === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $request when calling aiNameGenderizeParsed');
+        // verify the required parameter 'rq' is set
+        if ($request->rq === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $rq when calling aiNameGenderizeParsed');
         }
 
         $resourcePath = '/email/AiName/genderize-parsed';
@@ -4889,11 +4899,11 @@ class EmailApi
         $formFiles = [];
         // body params
         $_tempBody = null;
-        if (isset($request->request)) {
-            if (is_string($request->request)) {
-                $_tempBody = "\"" . $request->request . "\"";   
+        if (isset($request->rq)) {
+            if (is_string($request->rq)) {
+                $_tempBody = "\"" . $request->rq . "\"";   
             } else {
-                $_tempBody = $request->request;
+                $_tempBody = $request->rq;
             }
         }
 
@@ -5493,9 +5503,9 @@ class EmailApi
      */
     protected function aiNameMatchParsedRequest(Requests\aiNameMatchParsedRequest $request)
     {
-        // verify the required parameter 'request' is set
-        if ($request->request === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $request when calling aiNameMatchParsed');
+        // verify the required parameter 'rq' is set
+        if ($request->rq === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $rq when calling aiNameMatchParsed');
         }
 
         $resourcePath = '/email/AiName/match-parsed';
@@ -5512,11 +5522,11 @@ class EmailApi
         $formFiles = [];
         // body params
         $_tempBody = null;
-        if (isset($request->request)) {
-            if (is_string($request->request)) {
-                $_tempBody = "\"" . $request->request . "\"";   
+        if (isset($request->rq)) {
+            if (is_string($request->rq)) {
+                $_tempBody = "\"" . $request->rq . "\"";   
             } else {
-                $_tempBody = $request->request;
+                $_tempBody = $request->rq;
             }
         }
 

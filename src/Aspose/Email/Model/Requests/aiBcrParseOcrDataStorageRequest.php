@@ -36,16 +36,16 @@ class aiBcrParseOcrDataStorageRequest
     /*
      * Initializes a new instance of the aiBcrParseOcrDataStorageRequest class.
      *  
-     * @param \Aspose\Email\Model\AiBcrParseOcrDataStorageRequest $request 
+     * @param \Aspose\Email\Model\AiBcrParseOcrDataStorageRq $rq 
      */
-    public function __construct($request)             
+    public function __construct($rq)             
     {
-        $this->request = $request;
+        $this->rq = $rq;
     }
 
     /*
-     * Gets or sets request
+     * Gets or sets rq
      */
-    public $request;
+    public $rq;
 }
 ?>

@@ -36,16 +36,16 @@ class aiBcrOcrStorageRequest
     /*
      * Initializes a new instance of the aiBcrOcrStorageRequest class.
      *  
-     * @param \Aspose\Email\Model\AiBcrStorageImageRequest $request Request with images located on storage
+     * @param \Aspose\Email\Model\AiBcrStorageImageRq $rq Request with images located on storage
      */
-    public function __construct($request)             
+    public function __construct($rq)             
     {
-        $this->request = $request;
+        $this->rq = $rq;
     }
 
     /*
      * Request with images located on storage
      */
-    public $request;
+    public $rq;
 }
 ?>

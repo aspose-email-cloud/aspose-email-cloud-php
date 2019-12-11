@@ -56,7 +56,7 @@ class AiNameExtractedComponent implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'category' => 'object',
+        'category' => 'string',
         'value' => 'string'
     ];
 
@@ -219,7 +219,7 @@ class AiNameExtractedComponent implements ArrayAccess
     /*
      * Gets category
      *
-     * @return object
+     * @return string
      */
     public function getCategory()
     {
@@ -229,7 +229,7 @@ class AiNameExtractedComponent implements ArrayAccess
     /*
      * Sets category
      *
-     * @param object $category Component category
+     * @param string $category Extracted from email address name component category. Enum, available values: Unknown, GivenName, Surname, SomeName, NoName, Initial
      *
      * @return $this
      */

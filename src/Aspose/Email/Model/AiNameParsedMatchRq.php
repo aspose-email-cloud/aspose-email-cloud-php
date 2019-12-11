@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="AiNameOptions.php">
+ * <copyright company="Aspose" file="AiNameParsedMatchRq.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,20 +26,18 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /*
- * AiNameOptions
+ * AiNameParsedMatchRq
  */
 
 namespace Aspose\Email\Model;
-
-use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
 /*
- * AiNameOptions
+ * AiNameParsedMatchRq
  *
- * @description AiName parser options
+ * @description Two parsed names to match request
  */
-class AiNameOptions implements ArrayAccess
+class AiNameParsedMatchRq extends AiNameParsedRq 
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +46,7 @@ class AiNameOptions implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "AiNameOptions";
+    protected static $swaggerModelName = "AiNameParsedMatchRq";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -56,11 +54,7 @@ class AiNameOptions implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'language' => 'string',
-        'location' => 'string',
-        'script' => 'string',
-        'encoding' => 'string',
-        'style' => 'string'
+        'other_parsed_name' => '\Aspose\Email\Model\AiNameComponent[]'
     ];
 
     /*
@@ -69,11 +63,7 @@ class AiNameOptions implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'language' => null,
-        'location' => null,
-        'script' => null,
-        'encoding' => null,
-        'style' => null
+        'other_parsed_name' => null
     ];
 
     /*
@@ -83,7 +73,7 @@ class AiNameOptions implements ArrayAccess
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /*
@@ -93,7 +83,7 @@ class AiNameOptions implements ArrayAccess
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /*
@@ -103,11 +93,7 @@ class AiNameOptions implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'language' => 'language',
-        'location' => 'location',
-        'script' => 'script',
-        'encoding' => 'encoding',
-        'style' => 'style'
+        'other_parsed_name' => 'otherParsedName'
     ];
 
     /*
@@ -116,11 +102,7 @@ class AiNameOptions implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'language' => 'setLanguage',
-        'location' => 'setLocation',
-        'script' => 'setScript',
-        'encoding' => 'setEncoding',
-        'style' => 'setStyle'
+        'other_parsed_name' => 'setOtherParsedName'
     ];
 
     /*
@@ -129,11 +111,7 @@ class AiNameOptions implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'language' => 'getLanguage',
-        'location' => 'getLocation',
-        'script' => 'getScript',
-        'encoding' => 'getEncoding',
-        'style' => 'getStyle'
+        'other_parsed_name' => 'getOtherParsedName'
     ];
 
     /*
@@ -144,7 +122,7 @@ class AiNameOptions implements ArrayAccess
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /*
@@ -154,7 +132,7 @@ class AiNameOptions implements ArrayAccess
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /*
@@ -164,7 +142,7 @@ class AiNameOptions implements ArrayAccess
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /*
@@ -181,12 +159,6 @@ class AiNameOptions implements ArrayAccess
 
     
 
-    /*
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /*
      * Constructor
@@ -196,11 +168,9 @@ class AiNameOptions implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['language'] = isset($data['language']) ? $data['language'] : null;
-        $this->container['location'] = isset($data['location']) ? $data['location'] : null;
-        $this->container['script'] = isset($data['script']) ? $data['script'] : null;
-        $this->container['encoding'] = isset($data['encoding']) ? $data['encoding'] : null;
-        $this->container['style'] = isset($data['style']) ? $data['style'] : null;
+        parent::__construct($data);
+
+        $this->container['other_parsed_name'] = isset($data['other_parsed_name']) ? $data['other_parsed_name'] : null;
     }
 
     /*
@@ -210,8 +180,11 @@ class AiNameOptions implements ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
+        if ($this->container['other_parsed_name'] === null) {
+            $invalidProperties[] = "'other_parsed_name' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -223,127 +196,37 @@ class AiNameOptions implements ArrayAccess
      */
     public function valid()
     {
+        if (!parent::valid()) {
+            return false;
+        }
 
+        if ($this->container['other_parsed_name'] === null) {
+            return false;
+        }
         return true;
     }
 
 
     /*
-     * Gets language
+     * Gets other_parsed_name
      *
-     * @return string
+     * @return \Aspose\Email\Model\AiNameComponent[]
      */
-    public function getLanguage()
+    public function getOtherParsedName()
     {
-        return $this->container['language'];
+        return $this->container['other_parsed_name'];
     }
 
     /*
-     * Sets language
+     * Sets other_parsed_name
      *
-     * @param string $language An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \"it\" or \"ita\" for Italian)
+     * @param \Aspose\Email\Model\AiNameComponent[] $other_parsed_name Other parsed name to match
      *
      * @return $this
      */
-    public function setLanguage($language)
+    public function setOtherParsedName($other_parsed_name)
     {
-        $this->container['language'] = $language;
-
-        return $this;
-    }
-
-    /*
-     * Gets location
-     *
-     * @return string
-     */
-    public function getLocation()
-    {
-        return $this->container['location'];
-    }
-
-    /*
-     * Sets location
-     *
-     * @param string $location A geographic code such as an ISO-3166 two letter country code, for example \"FR\" for France
-     *
-     * @return $this
-     */
-    public function setLocation($location)
-    {
-        $this->container['location'] = $location;
-
-        return $this;
-    }
-
-    /*
-     * Gets script
-     *
-     * @return string
-     */
-    public function getScript()
-    {
-        return $this->container['script'];
-    }
-
-    /*
-     * Sets script
-     *
-     * @param string $script A writing system code; starts with the ISO-15924 script name
-     *
-     * @return $this
-     */
-    public function setScript($script)
-    {
-        $this->container['script'] = $script;
-
-        return $this;
-    }
-
-    /*
-     * Gets encoding
-     *
-     * @return string
-     */
-    public function getEncoding()
-    {
-        return $this->container['encoding'];
-    }
-
-    /*
-     * Sets encoding
-     *
-     * @param string $encoding A character encoding name
-     *
-     * @return $this
-     */
-    public function setEncoding($encoding)
-    {
-        $this->container['encoding'] = $encoding;
-
-        return $this;
-    }
-
-    /*
-     * Gets style
-     *
-     * @return string
-     */
-    public function getStyle()
-    {
-        return $this->container['style'];
-    }
-
-    /*
-     * Sets style
-     *
-     * @param string $style Name writing style. Allowed values are: \"Formal\", \"Informal\", \"Legal\", \"Academic\"
-     *
-     * @return $this
-     */
-    public function setStyle($style)
-    {
-        $this->container['style'] = $style;
+        $this->container['other_parsed_name'] = $other_parsed_name;
 
         return $this;
     }

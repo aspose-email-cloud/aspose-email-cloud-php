@@ -56,7 +56,7 @@ class AiNameGenderHypothesis implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'gender' => 'object',
+        'gender' => 'string',
         'score' => 'double'
     ];
 
@@ -225,7 +225,7 @@ class AiNameGenderHypothesis implements ArrayAccess
     /*
      * Gets gender
      *
-     * @return object
+     * @return string
      */
     public function getGender()
     {
@@ -235,7 +235,7 @@ class AiNameGenderHypothesis implements ArrayAccess
     /*
      * Sets gender
      *
-     * @param object $gender Name's possible gender
+     * @param string $gender Recognized name gender. Enum, available values: Male, Female, Unknown
      *
      * @return $this
      */

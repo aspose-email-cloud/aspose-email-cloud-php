@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="AiBcrRequest.php">
+ * <copyright company="Aspose" file="AiNameCulturalContext.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,7 +26,7 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /*
- * AiBcrRequest
+ * AiNameCulturalContext
  */
 
 namespace Aspose\Email\Model;
@@ -35,20 +35,20 @@ use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
 /*
- * AiBcrRequest
+ * AiNameCulturalContext
  *
- * @description Business card recognition request
+ * @description AiName cultural context
  */
-class AiBcrRequest implements ArrayAccess
+class AiNameCulturalContext implements ArrayAccess
 {
-    const DISCRIMINATOR = 'Type';
+    const DISCRIMINATOR = null;
 
     /*
      * The original name of the model.
      *
      * @var string
      */
-    protected static $swaggerModelName = "AiBcrRequest";
+    protected static $swaggerModelName = "AiNameCulturalContext";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,11 @@ class AiBcrRequest implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'options' => '\Aspose\Email\Model\AiBcrOptions'
+        'language' => 'string',
+        'location' => 'string',
+        'script' => 'string',
+        'encoding' => 'string',
+        'style' => 'string'
     ];
 
     /*
@@ -65,7 +69,11 @@ class AiBcrRequest implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'options' => null
+        'language' => null,
+        'location' => null,
+        'script' => null,
+        'encoding' => null,
+        'style' => null
     ];
 
     /*
@@ -95,7 +103,11 @@ class AiBcrRequest implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'options' => 'options'
+        'language' => 'language',
+        'location' => 'location',
+        'script' => 'script',
+        'encoding' => 'encoding',
+        'style' => 'style'
     ];
 
     /*
@@ -104,7 +116,11 @@ class AiBcrRequest implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'options' => 'setOptions'
+        'language' => 'setLanguage',
+        'location' => 'setLocation',
+        'script' => 'setScript',
+        'encoding' => 'setEncoding',
+        'style' => 'setStyle'
     ];
 
     /*
@@ -113,7 +129,11 @@ class AiBcrRequest implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'options' => 'getOptions'
+        'language' => 'getLanguage',
+        'location' => 'getLocation',
+        'script' => 'getScript',
+        'encoding' => 'getEncoding',
+        'style' => 'getStyle'
     ];
 
     /*
@@ -176,11 +196,11 @@ class AiBcrRequest implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['options'] = isset($data['options']) ? $data['options'] : null;
-
-        // Initialize discriminator property with the model name.
-        $discriminator = array_search('Type', self::$attributeMap);
-        $this->container[$discriminator] = static::$swaggerModelName;
+        $this->container['language'] = isset($data['language']) ? $data['language'] : null;
+        $this->container['location'] = isset($data['location']) ? $data['location'] : null;
+        $this->container['script'] = isset($data['script']) ? $data['script'] : null;
+        $this->container['encoding'] = isset($data['encoding']) ? $data['encoding'] : null;
+        $this->container['style'] = isset($data['style']) ? $data['style'] : null;
     }
 
     /*
@@ -192,6 +212,9 @@ class AiBcrRequest implements ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['style'] === null) {
+            $invalidProperties[] = "'style' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -204,30 +227,129 @@ class AiBcrRequest implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['style'] === null) {
+            return false;
+        }
         return true;
     }
 
 
     /*
-     * Gets options
+     * Gets language
      *
-     * @return \Aspose\Email\Model\AiBcrOptions
+     * @return string
      */
-    public function getOptions()
+    public function getLanguage()
     {
-        return $this->container['options'];
+        return $this->container['language'];
     }
 
     /*
-     * Sets options
+     * Sets language
      *
-     * @param \Aspose\Email\Model\AiBcrOptions $options Recognition options
+     * @param string $language An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \"it\" or \"ita\" for Italian)
      *
      * @return $this
      */
-    public function setOptions($options)
+    public function setLanguage($language)
     {
-        $this->container['options'] = $options;
+        $this->container['language'] = $language;
+
+        return $this;
+    }
+
+    /*
+     * Gets location
+     *
+     * @return string
+     */
+    public function getLocation()
+    {
+        return $this->container['location'];
+    }
+
+    /*
+     * Sets location
+     *
+     * @param string $location A geographic code such as an ISO-3166 two letter country code, for example \"FR\" for France
+     *
+     * @return $this
+     */
+    public function setLocation($location)
+    {
+        $this->container['location'] = $location;
+
+        return $this;
+    }
+
+    /*
+     * Gets script
+     *
+     * @return string
+     */
+    public function getScript()
+    {
+        return $this->container['script'];
+    }
+
+    /*
+     * Sets script
+     *
+     * @param string $script A writing system code; starts with the ISO-15924 script name
+     *
+     * @return $this
+     */
+    public function setScript($script)
+    {
+        $this->container['script'] = $script;
+
+        return $this;
+    }
+
+    /*
+     * Gets encoding
+     *
+     * @return string
+     */
+    public function getEncoding()
+    {
+        return $this->container['encoding'];
+    }
+
+    /*
+     * Sets encoding
+     *
+     * @param string $encoding A character encoding name
+     *
+     * @return $this
+     */
+    public function setEncoding($encoding)
+    {
+        $this->container['encoding'] = $encoding;
+
+        return $this;
+    }
+
+    /*
+     * Gets style
+     *
+     * @return string
+     */
+    public function getStyle()
+    {
+        return $this->container['style'];
+    }
+
+    /*
+     * Sets style
+     *
+     * @param string $style Name writing style. Enum, available values: Formal, Informal, Legal, Academic
+     *
+     * @return $this
+     */
+    public function setStyle($style)
+    {
+        $this->container['style'] = $style;
 
         return $this;
     }

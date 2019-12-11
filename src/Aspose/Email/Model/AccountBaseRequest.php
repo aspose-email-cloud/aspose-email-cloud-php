@@ -37,6 +37,7 @@ use \Aspose\Email\ObjectSerializer;
 /*
  * AccountBaseRequest
  *
+ * @description EmailClient accounts request
  */
 class AccountBaseRequest implements ArrayAccess
 {
@@ -245,7 +246,7 @@ class AccountBaseRequest implements ArrayAccess
     /*
      * Sets first_account
      *
-     * @param string $first_account first_account
+     * @param string $first_account First account storage file name for receiving emails (or universal one)
      *
      * @return $this
      */
@@ -274,7 +275,7 @@ class AccountBaseRequest implements ArrayAccess
     /*
      * Sets second_account
      *
-     * @param string $second_account second_account
+     * @param string $second_account Second account storage file name for sending emails (ignored if first is universal)
      *
      * @return $this
      */
@@ -298,7 +299,7 @@ class AccountBaseRequest implements ArrayAccess
     /*
      * Sets storage_folder
      *
-     * @param \Aspose\Email\Model\StorageFolderLocation $storage_folder storage_folder
+     * @param \Aspose\Email\Model\StorageFolderLocation $storage_folder Storage folder location of account files
      *
      * @return $this
      */

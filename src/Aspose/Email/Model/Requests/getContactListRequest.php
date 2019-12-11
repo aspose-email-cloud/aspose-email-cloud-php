@@ -36,7 +36,7 @@ class getContactListRequest
     /*
      * Initializes a new instance of the getContactListRequest class.
      *  
-     * @param string $format Contact document format
+     * @param string $format Contact document format. Enum, available values: VCard, WebDav, Msg
      * @param string $folder Path to folder in storage
      * @param string $storage Storage name
      * @param int $items_per_page Count of items on page
@@ -52,7 +52,7 @@ class getContactListRequest
     }
 
     /*
-     * Contact document format
+     * Contact document format. Enum, available values: VCard, WebDav, Msg
      */
     public $format;
 	

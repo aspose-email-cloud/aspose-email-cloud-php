@@ -57,7 +57,7 @@ class AiNameComponent implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'value' => 'string',
-        'category' => 'object',
+        'category' => 'string',
         'score' => 'double',
         'position' => 'int'
     ];
@@ -267,7 +267,7 @@ class AiNameComponent implements ArrayAccess
     /*
      * Gets category
      *
-     * @return object
+     * @return string
      */
     public function getCategory()
     {
@@ -277,7 +277,7 @@ class AiNameComponent implements ArrayAccess
     /*
      * Sets category
      *
-     * @param object $category Component category
+     * @param string $category Name component category. Enum, available values: Unknown, Mononym, Score, Format, FirstInitial, FirstName, MiddleInitial, MiddleName, MiddleNickname, MiddleSobriquet, MiddleMaidenName, MiddlePatronym, MiddleMatronym, LastInitial, LastName, LastNobiliaryParticle, LastNominalConjunction, LastPaternalSurname, LastMaternalSurname, PrefixTitle, PostfixGenerationalTitle, PostfixPostnominalLetters, ArabicIsm, ArabicKunya, ArabicNasab, ArabicSlaqab, ArabicNisbah
      *
      * @return $this
      */

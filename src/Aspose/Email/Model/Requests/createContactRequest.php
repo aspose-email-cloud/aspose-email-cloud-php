@@ -36,7 +36,7 @@ class createContactRequest
     /*
      * Initializes a new instance of the createContactRequest class.
      *  
-     * @param string $format Contact document format
+     * @param string $format Contact document format Enum, available values: VCard, WebDav, Msg
      * @param string $name Contact document file name
      * @param \Aspose\Email\Model\HierarchicalObjectRequest $request Create contact request
      */
@@ -48,7 +48,7 @@ class createContactRequest
     }
 
     /*
-     * Contact document format
+     * Contact document format Enum, available values: VCard, WebDav, Msg
      */
     public $format;
 	

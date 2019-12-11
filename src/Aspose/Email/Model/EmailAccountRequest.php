@@ -59,8 +59,8 @@ class EmailAccountRequest implements ArrayAccess
         'host' => 'string',
         'port' => 'int',
         'login' => 'string',
-        'security_options' => 'object',
-        'protocol_type' => 'object',
+        'security_options' => 'string',
+        'protocol_type' => 'string',
         'description' => 'string',
         'storage_file' => '\Aspose\Email\Model\StorageFileLocation'
     ];
@@ -248,9 +248,17 @@ class EmailAccountRequest implements ArrayAccess
         if ($this->container['security_options'] === null) {
             $invalidProperties[] = "'security_options' can't be null";
         }
+        if ((strlen($this->container['security_options']) < 1)) {
+            $invalidProperties[] = "invalid value for 'security_options', the character length must be bigger than or equal to 1.";
+        }
+
         if ($this->container['protocol_type'] === null) {
             $invalidProperties[] = "'protocol_type' can't be null";
         }
+        if ((strlen($this->container['protocol_type']) < 1)) {
+            $invalidProperties[] = "invalid value for 'protocol_type', the character length must be bigger than or equal to 1.";
+        }
+
         if ($this->container['storage_file'] === null) {
             $invalidProperties[] = "'storage_file' can't be null";
         }
@@ -284,7 +292,13 @@ class EmailAccountRequest implements ArrayAccess
         if ($this->container['security_options'] === null) {
             return false;
         }
+        if (strlen($this->container['security_options']) < 1) {
+            return false;
+        }
         if ($this->container['protocol_type'] === null) {
+            return false;
+        }
+        if (strlen($this->container['protocol_type']) < 1) {
             return false;
         }
         if ($this->container['storage_file'] === null) {
@@ -379,7 +393,7 @@ class EmailAccountRequest implements ArrayAccess
     /*
      * Gets security_options
      *
-     * @return object
+     * @return string
      */
     public function getSecurityOptions()
     {
@@ -389,12 +403,17 @@ class EmailAccountRequest implements ArrayAccess
     /*
      * Sets security_options
      *
-     * @param object $security_options Email account security options
+     * @param string $security_options Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
      *
      * @return $this
      */
     public function setSecurityOptions($security_options)
     {
+
+        if ((strlen($security_options) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $security_options when calling EmailAccountRequest., must be bigger than or equal to 1.');
+        }
+
         $this->container['security_options'] = $security_options;
 
         return $this;
@@ -403,7 +422,7 @@ class EmailAccountRequest implements ArrayAccess
     /*
      * Gets protocol_type
      *
-     * @return object
+     * @return string
      */
     public function getProtocolType()
     {
@@ -413,12 +432,17 @@ class EmailAccountRequest implements ArrayAccess
     /*
      * Sets protocol_type
      *
-     * @param object $protocol_type Email account protocol type
+     * @param string $protocol_type Type of connection protocol. Enum, available values: IMAP, POP3, SMTP, EWS, WebDav
      *
      * @return $this
      */
     public function setProtocolType($protocol_type)
     {
+
+        if ((strlen($protocol_type) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $protocol_type when calling EmailAccountRequest., must be bigger than or equal to 1.');
+        }
+
         $this->container['protocol_type'] = $protocol_type;
 
         return $this;

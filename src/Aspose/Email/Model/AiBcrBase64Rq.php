@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="AiBcrBase64Request.php">
+ * <copyright company="Aspose" file="AiBcrBase64Rq.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,18 +26,18 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /*
- * AiBcrBase64Request
+ * AiBcrBase64Rq
  */
 
 namespace Aspose\Email\Model;
 use \Aspose\Email\ObjectSerializer;
 
 /*
- * AiBcrBase64Request
+ * AiBcrBase64Rq
  *
  * @description Parse business card image request
  */
-class AiBcrBase64Request extends AiBcrRequest 
+class AiBcrBase64Rq extends AiBcrRq 
 {
     const DISCRIMINATOR = null;
 
@@ -46,7 +46,7 @@ class AiBcrBase64Request extends AiBcrRequest
      *
      * @var string
      */
-    protected static $swaggerModelName = "AiBcrBase64Request";
+    protected static $swaggerModelName = "AiBcrBase64Rq";
 
     /*
      * Array of property to type mappings. Used for (de)serialization

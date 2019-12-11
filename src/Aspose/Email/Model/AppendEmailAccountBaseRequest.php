@@ -239,7 +239,7 @@ class AppendEmailAccountBaseRequest extends AccountBaseRequest
     /*
      * Sets folder
      *
-     * @param string $folder folder
+     * @param string $folder Email account folder to store a message
      *
      * @return $this
      */
@@ -268,7 +268,7 @@ class AppendEmailAccountBaseRequest extends AccountBaseRequest
     /*
      * Sets mark_as_sent
      *
-     * @param bool $mark_as_sent mark_as_sent
+     * @param bool $mark_as_sent Mark message as sent
      *
      * @return $this
      */

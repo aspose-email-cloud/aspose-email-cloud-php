@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="AiBcrParseOcrDataRequest.php">
+ * <copyright company="Aspose" file="AiBcrParseStorageRq.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,18 +26,18 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /*
- * AiBcrParseOcrDataRequest
+ * AiBcrParseStorageRq
  */
 
 namespace Aspose\Email\Model;
 use \Aspose\Email\ObjectSerializer;
 
 /*
- * AiBcrParseOcrDataRequest
+ * AiBcrParseStorageRq
  *
- * @description Parse ocr data request
+ * @description Parse business card images from Storage request
  */
-class AiBcrParseOcrDataRequest extends AiBcrRequest 
+class AiBcrParseStorageRq extends AiBcrStorageImageRq 
 {
     const DISCRIMINATOR = null;
 
@@ -46,7 +46,7 @@ class AiBcrParseOcrDataRequest extends AiBcrRequest
      *
      * @var string
      */
-    protected static $swaggerModelName = "AiBcrParseOcrDataRequest";
+    protected static $swaggerModelName = "AiBcrParseStorageRq";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -54,7 +54,7 @@ class AiBcrParseOcrDataRequest extends AiBcrRequest
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'data' => '\Aspose\Email\Model\AiBcrOcrData[]'
+        'out_folder' => '\Aspose\Email\Model\StorageFolderLocation'
     ];
 
     /*
@@ -63,7 +63,7 @@ class AiBcrParseOcrDataRequest extends AiBcrRequest
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'data' => null
+        'out_folder' => null
     ];
 
     /*
@@ -93,7 +93,7 @@ class AiBcrParseOcrDataRequest extends AiBcrRequest
      * @var string[]
      */
     protected static $attributeMap = [
-        'data' => 'data'
+        'out_folder' => 'outFolder'
     ];
 
     /*
@@ -102,7 +102,7 @@ class AiBcrParseOcrDataRequest extends AiBcrRequest
      * @var string[]
      */
     protected static $setters = [
-        'data' => 'setData'
+        'out_folder' => 'setOutFolder'
     ];
 
     /*
@@ -111,7 +111,7 @@ class AiBcrParseOcrDataRequest extends AiBcrRequest
      * @var string[]
      */
     protected static $getters = [
-        'data' => 'getData'
+        'out_folder' => 'getOutFolder'
     ];
 
     /*
@@ -170,7 +170,7 @@ class AiBcrParseOcrDataRequest extends AiBcrRequest
     {
         parent::__construct($data);
 
-        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
+        $this->container['out_folder'] = isset($data['out_folder']) ? $data['out_folder'] : null;
     }
 
     /*
@@ -182,8 +182,8 @@ class AiBcrParseOcrDataRequest extends AiBcrRequest
     {
         $invalidProperties = parent::listInvalidProperties();
 
-        if ($this->container['data'] === null) {
-            $invalidProperties[] = "'data' can't be null";
+        if ($this->container['out_folder'] === null) {
+            $invalidProperties[] = "'out_folder' can't be null";
         }
         return $invalidProperties;
     }
@@ -200,7 +200,7 @@ class AiBcrParseOcrDataRequest extends AiBcrRequest
             return false;
         }
 
-        if ($this->container['data'] === null) {
+        if ($this->container['out_folder'] === null) {
             return false;
         }
         return true;
@@ -208,25 +208,25 @@ class AiBcrParseOcrDataRequest extends AiBcrRequest
 
 
     /*
-     * Gets data
+     * Gets out_folder
      *
-     * @return \Aspose\Email\Model\AiBcrOcrData[]
+     * @return \Aspose\Email\Model\StorageFolderLocation
      */
-    public function getData()
+    public function getOutFolder()
     {
-        return $this->container['data'];
+        return $this->container['out_folder'];
     }
 
     /*
-     * Sets data
+     * Sets out_folder
      *
-     * @param \Aspose\Email\Model\AiBcrOcrData[] $data OCR data
+     * @param \Aspose\Email\Model\StorageFolderLocation $out_folder Parse output folder location on storage
      *
      * @return $this
      */
-    public function setData($data)
+    public function setOutFolder($out_folder)
     {
-        $this->container['data'] = $data;
+        $this->container['out_folder'] = $out_folder;
 
         return $this;
     }

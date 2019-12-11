@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="AiBcrParseStorageRequest.php">
+ * <copyright company="Aspose" file="AiBcrRq.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,27 +26,29 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /*
- * AiBcrParseStorageRequest
+ * AiBcrRq
  */
 
 namespace Aspose\Email\Model;
+
+use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
 /*
- * AiBcrParseStorageRequest
+ * AiBcrRq
  *
- * @description Parse business card images from Storage request
+ * @description Business card recognition request
  */
-class AiBcrParseStorageRequest extends AiBcrStorageImageRequest 
+class AiBcrRq implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    const DISCRIMINATOR = 'Type';
 
     /*
      * The original name of the model.
      *
      * @var string
      */
-    protected static $swaggerModelName = "AiBcrParseStorageRequest";
+    protected static $swaggerModelName = "AiBcrRq";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
@@ -54,7 +56,7 @@ class AiBcrParseStorageRequest extends AiBcrStorageImageRequest
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'out_folder' => '\Aspose\Email\Model\StorageFolderLocation'
+        'options' => '\Aspose\Email\Model\AiBcrOptions'
     ];
 
     /*
@@ -63,7 +65,7 @@ class AiBcrParseStorageRequest extends AiBcrStorageImageRequest
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'out_folder' => null
+        'options' => null
     ];
 
     /*
@@ -73,7 +75,7 @@ class AiBcrParseStorageRequest extends AiBcrStorageImageRequest
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes + parent::swaggerTypes();
+        return self::$swaggerTypes;
     }
 
     /*
@@ -83,7 +85,7 @@ class AiBcrParseStorageRequest extends AiBcrStorageImageRequest
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats + parent::swaggerFormats();
+        return self::$swaggerFormats;
     }
 
     /*
@@ -93,7 +95,7 @@ class AiBcrParseStorageRequest extends AiBcrStorageImageRequest
      * @var string[]
      */
     protected static $attributeMap = [
-        'out_folder' => 'outFolder'
+        'options' => 'options'
     ];
 
     /*
@@ -102,7 +104,7 @@ class AiBcrParseStorageRequest extends AiBcrStorageImageRequest
      * @var string[]
      */
     protected static $setters = [
-        'out_folder' => 'setOutFolder'
+        'options' => 'setOptions'
     ];
 
     /*
@@ -111,7 +113,7 @@ class AiBcrParseStorageRequest extends AiBcrStorageImageRequest
      * @var string[]
      */
     protected static $getters = [
-        'out_folder' => 'getOutFolder'
+        'options' => 'getOptions'
     ];
 
     /*
@@ -122,7 +124,7 @@ class AiBcrParseStorageRequest extends AiBcrStorageImageRequest
      */
     public static function attributeMap()
     {
-        return parent::attributeMap() + self::$attributeMap;
+        return self::$attributeMap;
     }
 
     /*
@@ -132,7 +134,7 @@ class AiBcrParseStorageRequest extends AiBcrStorageImageRequest
      */
     public static function setters()
     {
-        return parent::setters() + self::$setters;
+        return self::$setters;
     }
 
     /*
@@ -142,7 +144,7 @@ class AiBcrParseStorageRequest extends AiBcrStorageImageRequest
      */
     public static function getters()
     {
-        return parent::getters() + self::$getters;
+        return self::$getters;
     }
 
     /*
@@ -159,6 +161,12 @@ class AiBcrParseStorageRequest extends AiBcrStorageImageRequest
 
     
 
+    /*
+     * Associative array for storing property values
+     *
+     * @var mixed[]
+     */
+    protected $container = [];
 
     /*
      * Constructor
@@ -168,9 +176,11 @@ class AiBcrParseStorageRequest extends AiBcrStorageImageRequest
      */
     public function __construct(array $data = null)
     {
-        parent::__construct($data);
+        $this->container['options'] = isset($data['options']) ? $data['options'] : null;
 
-        $this->container['out_folder'] = isset($data['out_folder']) ? $data['out_folder'] : null;
+        // Initialize discriminator property with the model name.
+        $discriminator = array_search('Type', self::$attributeMap);
+        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /*
@@ -180,11 +190,8 @@ class AiBcrParseStorageRequest extends AiBcrStorageImageRequest
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = parent::listInvalidProperties();
+        $invalidProperties = [];
 
-        if ($this->container['out_folder'] === null) {
-            $invalidProperties[] = "'out_folder' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -196,37 +203,31 @@ class AiBcrParseStorageRequest extends AiBcrStorageImageRequest
      */
     public function valid()
     {
-        if (!parent::valid()) {
-            return false;
-        }
 
-        if ($this->container['out_folder'] === null) {
-            return false;
-        }
         return true;
     }
 
 
     /*
-     * Gets out_folder
+     * Gets options
      *
-     * @return \Aspose\Email\Model\StorageFolderLocation
+     * @return \Aspose\Email\Model\AiBcrOptions
      */
-    public function getOutFolder()
+    public function getOptions()
     {
-        return $this->container['out_folder'];
+        return $this->container['options'];
     }
 
     /*
-     * Sets out_folder
+     * Sets options
      *
-     * @param \Aspose\Email\Model\StorageFolderLocation $out_folder Parse output folder location on storage
+     * @param \Aspose\Email\Model\AiBcrOptions $options Recognition options
      *
      * @return $this
      */
-    public function setOutFolder($out_folder)
+    public function setOptions($options)
     {
-        $this->container['out_folder'] = $out_folder;
+        $this->container['options'] = $options;
 
         return $this;
     }

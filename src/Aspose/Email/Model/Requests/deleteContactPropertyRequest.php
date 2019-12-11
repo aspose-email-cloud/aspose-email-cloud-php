@@ -36,7 +36,7 @@ class deleteContactPropertyRequest
     /*
      * Initializes a new instance of the deleteContactPropertyRequest class.
      *  
-     * @param string $format Contact document format
+     * @param string $format Contact document format Enum, available values: VCard, WebDav, Msg
      * @param string $name Contact document file name
      * @param string $member_name Indexed property name
      * @param int $index Property index
@@ -52,7 +52,7 @@ class deleteContactPropertyRequest
     }
 
     /*
-     * Contact document format
+     * Contact document format Enum, available values: VCard, WebDav, Msg
      */
     public $format;
 	

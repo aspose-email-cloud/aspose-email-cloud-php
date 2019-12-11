@@ -248,7 +248,7 @@ class EmailProperty implements ArrayAccess
     /*
      * Sets link
      *
-     * @param \Aspose\Email\Model\Link $link link
+     * @param \Aspose\Email\Model\Link $link Link to property
      *
      * @return $this
      */
@@ -272,7 +272,7 @@ class EmailProperty implements ArrayAccess
     /*
      * Sets name
      *
-     * @param string $name name
+     * @param string $name Property name
      *
      * @return $this
      */
@@ -301,7 +301,7 @@ class EmailProperty implements ArrayAccess
     /*
      * Sets value
      *
-     * @param object $value value
+     * @param object $value Property value
      *
      * @return $this
      */

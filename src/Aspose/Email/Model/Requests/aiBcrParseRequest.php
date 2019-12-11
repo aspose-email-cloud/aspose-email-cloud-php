@@ -36,16 +36,16 @@ class aiBcrParseRequest
     /*
      * Initializes a new instance of the aiBcrParseRequest class.
      *  
-     * @param \Aspose\Email\Model\AiBcrBase64Request $request Request with base64 images data
+     * @param \Aspose\Email\Model\AiBcrBase64Rq $rq Request with base64 images data
      */
-    public function __construct($request)             
+    public function __construct($rq)             
     {
-        $this->request = $request;
+        $this->rq = $rq;
     }
 
     /*
      * Request with base64 images data
      */
-    public $request;
+    public $rq;
 }
 ?>

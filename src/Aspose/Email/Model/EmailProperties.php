@@ -253,7 +253,7 @@ class EmailProperties implements ArrayAccess
     /*
      * Sets list
      *
-     * @param \Aspose\Email\Model\EmailProperty[] $list list
+     * @param \Aspose\Email\Model\EmailProperty[] $list List of properties
      *
      * @return $this
      */

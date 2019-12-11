@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="AiBcrParseOcrDataStorageRequest.php">
+ * <copyright company="Aspose" file="AiBcrParseOcrDataStorageRq.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,18 +26,18 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /*
- * AiBcrParseOcrDataStorageRequest
+ * AiBcrParseOcrDataStorageRq
  */
 
 namespace Aspose\Email\Model;
 use \Aspose\Email\ObjectSerializer;
 
 /*
- * AiBcrParseOcrDataStorageRequest
+ * AiBcrParseOcrDataStorageRq
  *
  * @description Parse ocr data request with storage output location
  */
-class AiBcrParseOcrDataStorageRequest extends AiBcrParseOcrDataRequest 
+class AiBcrParseOcrDataStorageRq extends AiBcrParseOcrDataRq 
 {
     const DISCRIMINATOR = null;
 
@@ -46,7 +46,7 @@ class AiBcrParseOcrDataStorageRequest extends AiBcrParseOcrDataRequest
      *
      * @var string
      */
-    protected static $swaggerModelName = "AiBcrParseOcrDataStorageRequest";
+    protected static $swaggerModelName = "AiBcrParseOcrDataStorageRq";
 
     /*
      * Array of property to type mappings. Used for (de)serialization
