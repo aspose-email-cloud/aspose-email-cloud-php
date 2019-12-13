@@ -13,7 +13,6 @@ use Aspose\Email\Model\Requests\createFolderRequest;
 use Aspose\Email\Model\Requests\deleteFolderRequest;
 use Aspose\Email\Model\Requests\downloadFileRequest;
 use Aspose\Email\Model\Requests\getCalendarRequest;
-use Aspose\Email\Model\Requests\getContactPropertiesRequest;
 use Aspose\Email\Model\Requests\objectExistsRequest;
 use Aspose\Email\Model\Requests\uploadFileRequest;
 use Aspose\Email\Model\StorageFolderLocation;
@@ -31,11 +30,16 @@ class EmailApiTest extends TestCase
 
     public static function setUpBeforeClass(): void
     {
-        self::$folder = uniqid("", true);
+        self::$folder = uniqid();
         $configuration = new Configuration();
-        $configuration->setAppKey($_ENV["appKey"]);
-        $configuration->setAppSid($_ENV["appSid"]);
-        $configuration->setHost($_ENV["apiBaseUrl"]);
+        $configuration
+            ->setAppKey($_ENV["appKey"])
+            ->setAppSid($_ENV["appSid"])
+            ->setHost($_ENV["apiBaseUrl"]);
+        if (array_key_exists("authUrl", $_ENV))
+        {
+            $configuration->setAuthUrl($_ENV["authUrl"]);
+        }
         //$configuration->setDebug(true);
         self::$api = new EmailApi(null, $configuration);
         self::$api->createFolder(new createFolderRequest(self::$folder, self::$storage));
@@ -46,6 +50,9 @@ class EmailApiTest extends TestCase
         self::getApi()->deleteFolder(new deleteFolderRequest(self::$folder, self::$storage, true));
     }
 
+    /**
+     * @group pipeline
+     */
     public function testHierarchical(): void
     {
         $calendarFile = $this->createCalendar();
@@ -59,6 +66,9 @@ class EmailApiTest extends TestCase
         $this->assertNotNull($firstValue);
     }
 
+    /**
+     * @group pipeline
+     */
     public function testAsync(): void
     {
         $calendarFile = $this->createCalendar();
@@ -67,6 +77,9 @@ class EmailApiTest extends TestCase
         $this->assertTrue(count($result->getInternalProperties()) >= 5);
     }
 
+    /**
+     * @group pipeline
+     */
     public function testFile(): void
     {
         $path = dirname(__FILE__)."\\data\\sample.ics";
@@ -81,12 +94,15 @@ class EmailApiTest extends TestCase
         $this->assertRegExp("/Access-A-Ride/", $fileContent);
     }
 
+    /**
+     * @group pipeline
+     */
     public function testContactFormat(): void
     {
         foreach(array("vcard", "msg") as $format)
         {
             $extension = $format == "vcard" ? ".vcf" : ".msg";
-            $file = uniqid("", true).$extension;
+            $file = uniqid().$extension;
             self::getApi()->createContact(new createContactRequest($format, $file, (new HierarchicalObjectRequest())
                 ->setStorageFolder((new StorageFolderLocation())
                     ->setFolderPath(self::$folder)
@@ -99,6 +115,9 @@ class EmailApiTest extends TestCase
         }
     }
 
+    /**
+     * @group pipeline
+     */
     public function testDateTime(): void
     {
         $startDate = new DateTime();
@@ -117,7 +136,7 @@ class EmailApiTest extends TestCase
     {
         $startDate = $startDate == null ? new DateTime() : $startDate;
         $endDate = $startDate->add(new DateInterval("PT1H"));
-        $fileName = uniqid("", true) . ".ics";
+        $fileName = uniqid() . ".ics";
         self::getApi()->createCalendar(new createCalendarRequest(
             $fileName,
             (new HierarchicalObjectRequest())

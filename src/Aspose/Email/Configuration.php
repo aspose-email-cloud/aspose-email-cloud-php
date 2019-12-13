@@ -36,6 +36,11 @@ class Configuration
     private static $_defaultConfiguration;
 
     /*
+     * @var string
+     */
+    private $authUrl = null;
+
+    /*
      * Associate array to store API key(s)
      *
      * @var string[]
@@ -94,7 +99,7 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'https://api-qa.aspose.cloud/v3.0';
+    protected $host = 'https://localhost:53637/v3.0';
 
     /*
      * User agent of the HTTP request, set to "PHP-Swagger" by default
@@ -356,6 +361,30 @@ class Configuration
     public function getHost()
     {
         return $this->host;
+    }
+
+    /*
+     * Should not be used
+     * @param string $url
+     * @return $this
+     */
+    public function setAuthUrl($url)
+    {
+        $this->authUrl = $url;
+        return $this;
+    }
+
+    /*
+     * Should not be used
+     * @return string
+     */
+    public function getAuthUrl()
+    {
+        if ($this->authUrl == null)
+        {
+            return $this->host;
+        }
+        return $this->authUrl;
     }
 
     /*

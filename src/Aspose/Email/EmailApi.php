@@ -20707,7 +20707,7 @@ class EmailApi
      */
     private function _requestToken() 
     {
-        $requestUrl = $this->config->getHost() . "/connect/token";
+        $requestUrl = $this->config->getAuthUrl() . "/connect/token";
         $headers = [ 'Content-Type' => 'application/x-www-form-urlencoded' ];
         $postData = "grant_type=client_credentials" . "&client_id=" . $this->config->getAppSid() . "&client_secret=" . $this->config->getAppKey();
         $response = $this->client->send(new Request('POST', $requestUrl, $headers, $postData));

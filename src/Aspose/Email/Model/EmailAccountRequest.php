@@ -403,7 +403,7 @@ class EmailAccountRequest implements ArrayAccess
     /*
      * Sets security_options
      *
-     * @param string $security_options Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
+     * @param string $security_options Security mode for a mail client Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
      *
      * @return $this
      */
