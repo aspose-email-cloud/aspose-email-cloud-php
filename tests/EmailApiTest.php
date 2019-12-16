@@ -207,17 +207,6 @@ class EmailApiTest extends TestCase
         }))[0];
         $this->assertEquals("John", $givenName->getValue());
         $this->assertEquals("Cane", $surname->getValue());
-
-        // const string address = "john-cane@gmail.com";
-        // var result = await emailApi.AiNameParseEmailAddressAsync(
-        //     new AiNameParseEmailAddressRequest(address));
-        // var extractedValues = result.Value
-        //     .SelectMany(value => value.Name)
-        //     .ToList();
-        // var givenName = extractedValues.First(value => value.Category == "GivenName");
-        // var surName = extractedValues.First(value => value.Category == "Surname");
-        // Assert.AreEqual("John", givenName.Value);
-        // Assert.AreEqual("Cane", surName.Value);
     }
 
     public function testAiBcrParseStorage(): void
