@@ -1,14 +1,28 @@
-﻿Aspose.Email Cloud is a REST API for creating email applications that work with standard email file formats. This SDK:
+﻿# Aspose.Email Cloud SDK for PHP [![Packagist](https://img.shields.io/packagist/v/aspose/aspose-email-cloud)](https://packagist.org/packages/aspose/aspose-email-cloud) [![License](https://img.shields.io/github/license/aspose-email-cloud/aspose-email-cloud-php)](https://packagist.org/packages/aspose/aspose-email-cloud) [![PHP](https://img.shields.io/packagist/php-v/aspose/aspose-email-cloud)](https://packagist.org/packages/aspose/aspose-email-cloud)
+This repository contains Aspose.Email Cloud SDK for .NET source code. This SDK allows you to work with Aspose.Email Cloud REST APIs in your .NET applications quickly and easily, with zero initial cost.
+
+[Aspose.Email Cloud home](https://products.aspose.cloud/email/family "Aspose.Email Cloud")  
+[API Reference](https://apireference.aspose.cloud/email/)
+
+# Key features
+Aspose.Email Cloud is a REST API for creating email applications that work with standard email file formats. This SDK:
 - Lets developers manipulate different emails’ formats such as Outlook MSG, EML, VCard, and iCalendar files
 - Has a built-in email client
 - Supports AI functionalities:
     - The Business card recognition
     - The Name API for parsing and handling personal names
 
-To use this SDK, you need an App SID and an App Key; they can be looked up at [Aspose Cloud Dashboard](https://dashboard.aspose.cloud/#/apps) (it requires free registration in Aspose Cloud for this).
-
 ## How to use the SDK?
 The complete source code is available in the GIT repository.
+
+### Prerequisites
+To use this SDK, you need an App SID and an App Key; they can be looked up at [Aspose Cloud Dashboard](https://dashboard.aspose.cloud/#/apps) (it requires free registration in Aspose Cloud for this).
+
+### Installation
+You can either directly use SDK in your project via source code or get [Packagegist distribution](https://packagist.org/packages/aspose/aspose-email-cloud).
+From the command line:
+
+    composer require aspose/aspose-email-cloud
 
 ### Usage examples
 To use the API, you should create an EmailApi object:
@@ -214,12 +228,6 @@ echo $givenName; //John
 echo $surname; //Cane
 ```
 </details>
-
-### Install Aspose.Email for Cloud via Composer
-You can either directly use it in your project via source code or get [Packagegist distribution](https://packagist.org/packages/aspose/aspose-email-cloud).
-From the command line:
-
-    composer require aspose/aspose-email-cloud
 
 # Licensing
 All Aspose.Email for Cloud SDKs, helper scripts and templates are licensed under [MIT License](LICENSE).
