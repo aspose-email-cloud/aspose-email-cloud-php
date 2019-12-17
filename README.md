@@ -1,5 +1,5 @@
 ﻿# Aspose.Email Cloud SDK for PHP [![Packagist](https://img.shields.io/packagist/v/aspose/aspose-email-cloud)](https://packagist.org/packages/aspose/aspose-email-cloud) [![License](https://img.shields.io/github/license/aspose-email-cloud/aspose-email-cloud-php)](https://packagist.org/packages/aspose/aspose-email-cloud) [![PHP](https://img.shields.io/packagist/php-v/aspose/aspose-email-cloud)](https://packagist.org/packages/aspose/aspose-email-cloud)
-This repository contains Aspose.Email Cloud SDK for .NET source code. This SDK allows you to work with Aspose.Email Cloud REST APIs in your .NET applications quickly and easily, with zero initial cost.
+This repository contains Aspose.Email Cloud SDK for PHP source code. This SDK allows you to work with Aspose.Email Cloud REST APIs in your PHP applications quickly and easily, with zero initial cost.
 
 [Aspose.Email Cloud home](https://products.aspose.cloud/email/family "Aspose.Email Cloud")  
 [API Reference](https://apireference.aspose.cloud/email/)
