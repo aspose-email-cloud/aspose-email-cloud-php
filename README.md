@@ -66,20 +66,11 @@ $outFolderPath = "some/folder/on/storage"; //Business card recognition results w
 $api->createFolder(new createFolderRequest($outFolderPath, $storage));
 // Call business card recognition action
 $result = $api->aiBcrParseStorage(new aiBcrParseStorageRequest(
-    (new AiBcrParseStorageRq())
-        ->setOutFolder(
-            (new StorageFolderLocation())
-                ->setFolderPath($outFolderPath)
-                ->setStorage($storage))
-        ->setImages(array( //We can process multiple images in one request
-            (new AiBcrImageStorageFile())
-                ->setIsSingle(true) //the image contains only one business card (you can upload image with multiple cards on it)
-                ->setFile(
-                    (new StorageFileLocation())
-                        ->setFileName($imageFile)
-                        ->setFolderPath($folder)
-                        ->setStorage($storage))
-                ))));
+    new AiBcrParseStorageRq(null,
+        array( //We can process multiple images in one request
+            new AiBcrImageStorageFile(true, //"isSingle" the image contains only one business card (you can upload image with multiple cards on it)
+                new StorageFileLocation($storage, $folder, $imageFile))),
+        new StorageFolderLocation($storage, $outFolderPath))));
 // Get file name from recognition result
 $contactFile = $result->getValue()[0]; //$result->getValue() can contain multiple files, if we sent multicard images or multiple images
 // You can download the VCard file, which produced by the recognition method ...
@@ -120,11 +111,7 @@ $path = "C:\\path\\to\\business\\card\\image\\on\\file\\system";
 $content = file_get_contents($path);
 $imageBase64 = base64_encode($content);
 $result = $api->aiBcrParse(new aiBcrParseRequest(
-    (new AiBcrBase64Rq())
-        ->setImages(array(
-            (new AiBcrBase64Image())
-                ->setIsSingle(true)
-                ->setBase64Data($imageBase64)))));
+    new AiBcrBase64Rq(null, array(new AiBcrBase64Image(true, $imageBase64)))));
 //Result contains all recognized VCard objects (only the one in our case)
 $contactProperties = $result->getValue()[0];
 //VCard object is available as a list of properties, without any external calls:
