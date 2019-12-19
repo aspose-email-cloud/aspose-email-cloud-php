@@ -28,12 +28,12 @@
 
 namespace Aspose\Email\Model\Requests;
 
-/*
+/**
  * Request model for updateMapiProperties" operation.
  */
 class updateMapiPropertiesRequest
 {
-    /*
+    /**
      * Initializes a new instance of the updateMapiPropertiesRequest class.
      *  
      * @param string $name Document file name
@@ -45,12 +45,12 @@ class updateMapiPropertiesRequest
         $this->request = $request;
     }
 
-    /*
+    /**
      * Document file name
      */
     public $name;
 	
-    /*
+    /**
      * Properties that should be updated/added
      */
     public $request;

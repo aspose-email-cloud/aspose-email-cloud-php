@@ -25,14 +25,14 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
-/*
+/**
  * AiBcrBase64Rq
  */
 
 namespace Aspose\Email\Model;
 use \Aspose\Email\ObjectSerializer;
 
-/*
+/**
  * AiBcrBase64Rq
  *
  * @description Parse business card image request
@@ -41,14 +41,14 @@ class AiBcrBase64Rq extends AiBcrRq
 {
     const DISCRIMINATOR = null;
 
-    /*
+    /**
      * The original name of the model.
      *
      * @var string
      */
     protected static $swaggerModelName = "AiBcrBase64Rq";
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @var string[]
@@ -57,7 +57,7 @@ class AiBcrBase64Rq extends AiBcrRq
         'images' => '\Aspose\Email\Model\AiBcrBase64Image[]'
     ];
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @var string[]
@@ -66,7 +66,7 @@ class AiBcrBase64Rq extends AiBcrRq
         'images' => null
     ];
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @return array
@@ -76,7 +76,7 @@ class AiBcrBase64Rq extends AiBcrRq
         return self::$swaggerTypes + parent::swaggerTypes();
     }
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @return array
@@ -86,7 +86,7 @@ class AiBcrBase64Rq extends AiBcrRq
         return self::$swaggerFormats + parent::swaggerFormats();
     }
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -96,7 +96,7 @@ class AiBcrBase64Rq extends AiBcrRq
         'images' => 'images'
     ];
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
@@ -105,7 +105,7 @@ class AiBcrBase64Rq extends AiBcrRq
         'images' => 'setImages'
     ];
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @var string[]
@@ -114,7 +114,7 @@ class AiBcrBase64Rq extends AiBcrRq
         'images' => 'getImages'
     ];
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -125,7 +125,7 @@ class AiBcrBase64Rq extends AiBcrRq
         return parent::attributeMap() + self::$attributeMap;
     }
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @return array
@@ -135,7 +135,7 @@ class AiBcrBase64Rq extends AiBcrRq
         return parent::setters() + self::$setters;
     }
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @return array
@@ -145,7 +145,7 @@ class AiBcrBase64Rq extends AiBcrRq
         return parent::getters() + self::$getters;
     }
 
-    /*
+    /**
      * The original name of the model.
      *
      * @return string
@@ -160,20 +160,22 @@ class AiBcrBase64Rq extends AiBcrRq
     
 
 
-    /*
-     * Constructor
-     *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+    /**
+     * Initializes a new instance of the AiBcrBase64Rq class.
+     *  
+     * @param \Aspose\Email\Model\AiBcrOptions $options Recognition options
+     * @param \Aspose\Email\Model\AiBcrBase64Image[] $images Images to recognize
      */
-    public function __construct(array $data = null)
+    public function __construct($options = null, $images = null)
     {
-        parent::__construct($data);
+        parent::__construct();
+        $this->container['images'] = null;
 
-        $this->container['images'] = isset($data['images']) ? $data['images'] : null;
+        if ($options != null) $this->setOptions($options);
+        if ($images != null) $this->setImages($images);
     }
 
-    /*
+    /**
      * Show all the invalid properties with reasons.
      *
      * @return array invalid properties with reasons
@@ -185,7 +187,7 @@ class AiBcrBase64Rq extends AiBcrRq
         return $invalidProperties;
     }
 
-    /*
+    /**
      * Validate all the properties in the model
      * return true if all passed
      *
@@ -201,7 +203,7 @@ class AiBcrBase64Rq extends AiBcrRq
     }
 
 
-    /*
+    /**
      * Gets images
      *
      * @return \Aspose\Email\Model\AiBcrBase64Image[]
@@ -211,7 +213,7 @@ class AiBcrBase64Rq extends AiBcrRq
         return $this->container['images'];
     }
 
-    /*
+    /**
      * Sets images
      *
      * @param \Aspose\Email\Model\AiBcrBase64Image[] $images Images to recognize
@@ -224,7 +226,7 @@ class AiBcrBase64Rq extends AiBcrRq
 
         return $this;
     }
-    /*
+    /**
      * Returns true if offset exists. False otherwise.
      *
      * @param integer $offset Offset
@@ -236,7 +238,7 @@ class AiBcrBase64Rq extends AiBcrRq
         return isset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets offset.
      *
      * @param integer $offset Offset
@@ -248,7 +250,7 @@ class AiBcrBase64Rq extends AiBcrRq
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
-    /*
+    /**
      * Sets value based on offset.
      *
      * @param integer $offset Offset
@@ -265,7 +267,7 @@ class AiBcrBase64Rq extends AiBcrRq
         }
     }
 
-    /*
+    /**
      * Unsets offset.
      *
      * @param integer $offset Offset
@@ -277,7 +279,7 @@ class AiBcrBase64Rq extends AiBcrRq
         unset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets the string presentation of the object
      *
      * @return string

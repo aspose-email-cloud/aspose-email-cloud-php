@@ -28,12 +28,12 @@
 
 namespace Aspose\Email\Model\Requests;
 
-/*
+/**
  * Request model for deleteEmailMessage" operation.
  */
 class deleteEmailMessageRequest
 {
-    /*
+    /**
      * Initializes a new instance of the deleteEmailMessageRequest class.
      *  
      * @param \Aspose\Email\Model\DeleteMessageBaseRequest $request Delete message request
@@ -43,7 +43,7 @@ class deleteEmailMessageRequest
         $this->request = $request;
     }
 
-    /*
+    /**
      * Delete message request
      */
     public $request;

@@ -28,12 +28,12 @@
 
 namespace Aspose\Email\Model\Requests;
 
-/*
+/**
  * Request model for createEmailFolder" operation.
  */
 class createEmailFolderRequest
 {
-    /*
+    /**
      * Initializes a new instance of the createEmailFolderRequest class.
      *  
      * @param \Aspose\Email\Model\CreateFolderBaseRequest $request Create folder request
@@ -43,7 +43,7 @@ class createEmailFolderRequest
         $this->request = $request;
     }
 
-    /*
+    /**
      * Create folder request
      */
     public $request;

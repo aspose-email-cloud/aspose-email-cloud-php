@@ -25,7 +25,7 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
-/*
+/**
  * AiNameGenderHypothesis
  */
 
@@ -34,7 +34,7 @@ namespace Aspose\Email\Model;
 use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
-/*
+/**
  * AiNameGenderHypothesis
  *
  * @description Name gender hypothesis
@@ -43,14 +43,14 @@ class AiNameGenderHypothesis implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
-    /*
+    /**
      * The original name of the model.
      *
      * @var string
      */
     protected static $swaggerModelName = "AiNameGenderHypothesis";
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @var string[]
@@ -60,7 +60,7 @@ class AiNameGenderHypothesis implements ArrayAccess
         'score' => 'double'
     ];
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @var string[]
@@ -70,7 +70,7 @@ class AiNameGenderHypothesis implements ArrayAccess
         'score' => 'double'
     ];
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @return array
@@ -80,7 +80,7 @@ class AiNameGenderHypothesis implements ArrayAccess
         return self::$swaggerTypes;
     }
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @return array
@@ -90,7 +90,7 @@ class AiNameGenderHypothesis implements ArrayAccess
         return self::$swaggerFormats;
     }
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -101,7 +101,7 @@ class AiNameGenderHypothesis implements ArrayAccess
         'score' => 'score'
     ];
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
@@ -111,7 +111,7 @@ class AiNameGenderHypothesis implements ArrayAccess
         'score' => 'setScore'
     ];
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @var string[]
@@ -121,7 +121,7 @@ class AiNameGenderHypothesis implements ArrayAccess
         'score' => 'getScore'
     ];
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -132,7 +132,7 @@ class AiNameGenderHypothesis implements ArrayAccess
         return self::$attributeMap;
     }
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @return array
@@ -142,7 +142,7 @@ class AiNameGenderHypothesis implements ArrayAccess
         return self::$setters;
     }
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @return array
@@ -152,7 +152,7 @@ class AiNameGenderHypothesis implements ArrayAccess
         return self::$getters;
     }
 
-    /*
+    /**
      * The original name of the model.
      *
      * @return string
@@ -166,26 +166,29 @@ class AiNameGenderHypothesis implements ArrayAccess
 
     
 
-    /*
+    /**
      * Associative array for storing property values
      *
      * @var mixed[]
      */
     protected $container = [];
 
-    /*
-     * Constructor
-     *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+    /**
+     * Initializes a new instance of the AiNameGenderHypothesis class.
+     *  
+     * @param string $gender Recognized name gender. Enum, available values: Male, Female, Unknown
+     * @param double $score Hypothesis score
      */
-    public function __construct(array $data = null)
+    public function __construct($gender = null, $score = null)
     {
-        $this->container['gender'] = isset($data['gender']) ? $data['gender'] : null;
-        $this->container['score'] = isset($data['score']) ? $data['score'] : null;
+        $this->container['gender'] = null;
+        $this->container['score'] = null;
+
+        if ($gender != null) $this->setGender($gender);
+        if ($score != null) $this->setScore($score);
     }
 
-    /*
+    /**
      * Show all the invalid properties with reasons.
      *
      * @return array invalid properties with reasons
@@ -203,7 +206,7 @@ class AiNameGenderHypothesis implements ArrayAccess
         return $invalidProperties;
     }
 
-    /*
+    /**
      * Validate all the properties in the model
      * return true if all passed
      *
@@ -222,7 +225,7 @@ class AiNameGenderHypothesis implements ArrayAccess
     }
 
 
-    /*
+    /**
      * Gets gender
      *
      * @return string
@@ -232,7 +235,7 @@ class AiNameGenderHypothesis implements ArrayAccess
         return $this->container['gender'];
     }
 
-    /*
+    /**
      * Sets gender
      *
      * @param string $gender Recognized name gender. Enum, available values: Male, Female, Unknown
@@ -246,7 +249,7 @@ class AiNameGenderHypothesis implements ArrayAccess
         return $this;
     }
 
-    /*
+    /**
      * Gets score
      *
      * @return double
@@ -256,7 +259,7 @@ class AiNameGenderHypothesis implements ArrayAccess
         return $this->container['score'];
     }
 
-    /*
+    /**
      * Sets score
      *
      * @param double $score Hypothesis score
@@ -269,7 +272,7 @@ class AiNameGenderHypothesis implements ArrayAccess
 
         return $this;
     }
-    /*
+    /**
      * Returns true if offset exists. False otherwise.
      *
      * @param integer $offset Offset
@@ -281,7 +284,7 @@ class AiNameGenderHypothesis implements ArrayAccess
         return isset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets offset.
      *
      * @param integer $offset Offset
@@ -293,7 +296,7 @@ class AiNameGenderHypothesis implements ArrayAccess
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
-    /*
+    /**
      * Sets value based on offset.
      *
      * @param integer $offset Offset
@@ -310,7 +313,7 @@ class AiNameGenderHypothesis implements ArrayAccess
         }
     }
 
-    /*
+    /**
      * Unsets offset.
      *
      * @param integer $offset Offset
@@ -322,7 +325,7 @@ class AiNameGenderHypothesis implements ArrayAccess
         unset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets the string presentation of the object
      *
      * @return string

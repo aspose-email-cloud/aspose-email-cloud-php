@@ -28,114 +28,114 @@
 
 namespace Aspose\Email;
 
-/*
+/**
  * Represents a set of configuration settings
  */
 class Configuration
 {
     private static $_defaultConfiguration;
 
-    /*
+    /**
      * @var string
      */
     private $authUrl = null;
 
-    /*
+    /**
      * Associate array to store API key(s)
      *
      * @var string[]
      */
     protected $apiKeys = [];
     
-    /*
+    /**
      * AppKey for API
      *
      */
     protected $appKey = '';
     
-    /*
+    /**
      * AppSid for API
      * @var string
      */
     protected $appSid = '';
 
-    /*
+    /**
      * Associate array to store API prefix (e.g. Bearer)
      *
      * @var string[]
      */
     protected $apiKeyPrefixes = [];
 
-    /*
+    /**
      * Access token for OAuth
      *
      * @var string
      */
     protected $accessToken = '';
     
-    /*
+    /**
      * Refresh token for OAuth
      *
      * @var string
      */
     protected $refreshToken = '';
 
-    /*
+    /**
      * Username for HTTP basic authentication
      *
      * @var string
      */
     protected $username = '';
 
-    /*
+    /**
      * Password for HTTP basic authentication
      *
      * @var string
      */
     protected $password = '';
 
-    /*
+    /**
      * The host
      *
      * @var string
      */
     protected $host = 'https://localhost:53637/v3.0';
 
-    /*
+    /**
      * User agent of the HTTP request, set to "PHP-Swagger" by default
      *
      * @var string
      */
     protected $userAgent = "php sdk";
 
-    /*
+    /**
      * Debug switch (default set to false)
      *
      * @var bool
      */
     protected $debug = false;
 
-    /*
+    /**
      * Debug file location (log to STDOUT by default)
      *
      * @var string
      */
     protected $debugFile = 'php://output';
 
-    /*
+    /**
      * Debug file location (log to STDOUT by default)
      *
      * @var string
      */
     protected $tempFolderPath;
     
-    /*
+    /**
      * Version of Aspose.Email Cloud API
      *
      */
     protected $clientVersion = '1.0';
 
-    /*
+    /**
      * Constructor
      */
     public function __construct()
@@ -143,7 +143,7 @@ class Configuration
         $this->tempFolderPath = sys_get_temp_dir();
     }
     
-    /*
+    /**
      * Gets client version
      *
      */
@@ -152,7 +152,7 @@ class Configuration
         return $this->clientVersion;
     }
 
-    /*
+    /**
      * Sets API key
      *
      * @param string $apiKeyIdentifier API key identifier (authentication scheme)
@@ -166,7 +166,7 @@ class Configuration
         return $this;
     }
     
-    /*
+    /**
      * Sets AppSid
      *
      * @param string $appSid
@@ -179,7 +179,7 @@ class Configuration
         return $this;
     }
     
-    /*
+    /**
      * Gets AppSid
      * @return $appSid
      */
@@ -188,7 +188,7 @@ class Configuration
         return $this->appSid;
     }
     
-    /*
+    /**
      * Sets AppKey
      *
      * @param string $appKey
@@ -201,7 +201,7 @@ class Configuration
         return $this;
     }
     
-    /*
+    /**
      * Gets AppKey
      * @return $appKey
      */
@@ -210,7 +210,7 @@ class Configuration
         return $this->appKey;
     }
 
-    /*
+    /**
      * Gets API key
      *
      * @param string $apiKeyIdentifier API key identifier (authentication scheme)
@@ -222,7 +222,7 @@ class Configuration
         return isset($this->apiKeys[$apiKeyIdentifier]) ? $this->apiKeys[$apiKeyIdentifier] : null;
     }
 
-    /*
+    /**
      * Sets the prefix for API key (e.g. Bearer)
      *
      * @param string $apiKeyIdentifier API key identifier (authentication scheme)
@@ -236,7 +236,7 @@ class Configuration
         return $this;
     }
 
-    /*
+    /**
      * Gets API key prefix
      *
      * @param string $apiKeyIdentifier API key identifier (authentication scheme)
@@ -248,7 +248,7 @@ class Configuration
         return isset($this->apiKeyPrefixes[$apiKeyIdentifier]) ? $this->apiKeyPrefixes[$apiKeyIdentifier] : null;
     }
 
-    /*
+    /**
      * Sets the access token for OAuth
      *
      * @param string $accessToken Token for OAuth
@@ -261,7 +261,7 @@ class Configuration
         return $this;
     }
 
-    /*
+    /**
      * Gets the access token for OAuth
      *
      * @return string Access token for OAuth
@@ -271,7 +271,7 @@ class Configuration
         return $this->accessToken;
     }
     
-    /*
+    /**
      * Sets the refresh token for OAuth
      *
      * @param string $refreshToken Token for OAuth
@@ -284,7 +284,7 @@ class Configuration
         return $this;
     }
 
-    /*
+    /**
      * Gets the refresh token for OAuth
      *
      * @return string refresh token for OAuth
@@ -294,7 +294,7 @@ class Configuration
         return $this->refreshToken;
     }
 
-    /*
+    /**
      * Sets the username for HTTP basic authentication
      *
      * @param string $username Username for HTTP basic authentication
@@ -307,7 +307,7 @@ class Configuration
         return $this;
     }
 
-    /*
+    /**
      * Gets the username for HTTP basic authentication
      *
      * @return string Username for HTTP basic authentication
@@ -317,7 +317,7 @@ class Configuration
         return $this->username;
     }
 
-    /*
+    /**
      * Sets the password for HTTP basic authentication
      *
      * @param string $password Password for HTTP basic authentication
@@ -330,7 +330,7 @@ class Configuration
         return $this;
     }
 
-    /*
+    /**
      * Gets the password for HTTP basic authentication
      *
      * @return string Password for HTTP basic authentication
@@ -340,7 +340,7 @@ class Configuration
         return $this->password;
     }
 
-    /*
+    /**
      * Sets the host
      *
      * @param string $host Host
@@ -353,7 +353,7 @@ class Configuration
         return $this;
     }
 
-    /*
+    /**
      * Gets the host
      *
      * @return string Host
@@ -363,7 +363,7 @@ class Configuration
         return $this->host;
     }
 
-    /*
+    /**
      * Should not be used
      * @param string $url
      * @return $this
@@ -374,7 +374,7 @@ class Configuration
         return $this;
     }
 
-    /*
+    /**
      * Should not be used
      * @return string
      */
@@ -387,7 +387,7 @@ class Configuration
         return $this->authUrl;
     }
 
-    /*
+    /**
      * Sets the user agent of the api client
      *
      * @param string $userAgent the user agent of the api client
@@ -405,7 +405,7 @@ class Configuration
         return $this;
     }
 
-    /*
+    /**
      * Gets the user agent of the api client
      *
      * @return string user agent
@@ -415,7 +415,7 @@ class Configuration
         return $this->userAgent;
     }
 
-    /*
+    /**
      * Sets debug flag
      *
      * @param bool $debug Debug flag
@@ -428,7 +428,7 @@ class Configuration
         return $this;
     }
 
-    /*
+    /**
      * Gets the debug flag
      *
      * @return bool
@@ -438,7 +438,7 @@ class Configuration
         return $this->debug;
     }
 
-    /*
+    /**
      * Sets the debug file
      *
      * @param string $debugFile Debug file
@@ -451,7 +451,7 @@ class Configuration
         return $this;
     }
 
-    /*
+    /**
      * Gets the debug file
      *
      * @return string
@@ -461,7 +461,7 @@ class Configuration
         return $this->debugFile;
     }
 
-    /*
+    /**
      * Sets the temp folder path
      *
      * @param string $tempFolderPath Temp folder path
@@ -474,7 +474,7 @@ class Configuration
         return $this;
     }
 
-    /*
+    /**
      * Gets the temp folder path
      *
      * @return string Temp folder path
@@ -484,7 +484,7 @@ class Configuration
         return $this->tempFolderPath;
     }
 
-    /*
+    /**
      * Gets the default configuration instance
      *
      * @return Configuration
@@ -498,7 +498,7 @@ class Configuration
         return self::$_defaultConfiguration;
     }
 
-    /*
+    /**
      * Sets the detault configuration instance
      *
      * @param Configuration $config An instance of the Configuration Object
@@ -510,7 +510,7 @@ class Configuration
         self::$_defaultConfiguration = $config;
     }
 
-    /*
+    /**
      * Gets the essential information for debugging
      *
      * @return string The report for debugging
@@ -526,7 +526,7 @@ class Configuration
         return $report;
     }
 
-    /*
+    /**
      * Get API key (with prefix if set)
      *
      * @param  string $apiKeyIdentifier name of apikey

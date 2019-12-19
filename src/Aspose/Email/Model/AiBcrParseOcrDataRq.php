@@ -25,14 +25,14 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
-/*
+/**
  * AiBcrParseOcrDataRq
  */
 
 namespace Aspose\Email\Model;
 use \Aspose\Email\ObjectSerializer;
 
-/*
+/**
  * AiBcrParseOcrDataRq
  *
  * @description Parse ocr data request
@@ -41,14 +41,14 @@ class AiBcrParseOcrDataRq extends AiBcrRq
 {
     const DISCRIMINATOR = null;
 
-    /*
+    /**
      * The original name of the model.
      *
      * @var string
      */
     protected static $swaggerModelName = "AiBcrParseOcrDataRq";
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @var string[]
@@ -57,7 +57,7 @@ class AiBcrParseOcrDataRq extends AiBcrRq
         'data' => '\Aspose\Email\Model\AiBcrOcrData[]'
     ];
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @var string[]
@@ -66,7 +66,7 @@ class AiBcrParseOcrDataRq extends AiBcrRq
         'data' => null
     ];
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @return array
@@ -76,7 +76,7 @@ class AiBcrParseOcrDataRq extends AiBcrRq
         return self::$swaggerTypes + parent::swaggerTypes();
     }
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @return array
@@ -86,7 +86,7 @@ class AiBcrParseOcrDataRq extends AiBcrRq
         return self::$swaggerFormats + parent::swaggerFormats();
     }
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -96,7 +96,7 @@ class AiBcrParseOcrDataRq extends AiBcrRq
         'data' => 'data'
     ];
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
@@ -105,7 +105,7 @@ class AiBcrParseOcrDataRq extends AiBcrRq
         'data' => 'setData'
     ];
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @var string[]
@@ -114,7 +114,7 @@ class AiBcrParseOcrDataRq extends AiBcrRq
         'data' => 'getData'
     ];
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -125,7 +125,7 @@ class AiBcrParseOcrDataRq extends AiBcrRq
         return parent::attributeMap() + self::$attributeMap;
     }
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @return array
@@ -135,7 +135,7 @@ class AiBcrParseOcrDataRq extends AiBcrRq
         return parent::setters() + self::$setters;
     }
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @return array
@@ -145,7 +145,7 @@ class AiBcrParseOcrDataRq extends AiBcrRq
         return parent::getters() + self::$getters;
     }
 
-    /*
+    /**
      * The original name of the model.
      *
      * @return string
@@ -160,20 +160,22 @@ class AiBcrParseOcrDataRq extends AiBcrRq
     
 
 
-    /*
-     * Constructor
-     *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+    /**
+     * Initializes a new instance of the AiBcrParseOcrDataRq class.
+     *  
+     * @param \Aspose\Email\Model\AiBcrOptions $options Recognition options
+     * @param \Aspose\Email\Model\AiBcrOcrData[] $data OCR data
      */
-    public function __construct(array $data = null)
+    public function __construct($options = null, $data = null)
     {
-        parent::__construct($data);
+        parent::__construct();
+        $this->container['data'] = null;
 
-        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
+        if ($options != null) $this->setOptions($options);
+        if ($data != null) $this->setData($data);
     }
 
-    /*
+    /**
      * Show all the invalid properties with reasons.
      *
      * @return array invalid properties with reasons
@@ -188,7 +190,7 @@ class AiBcrParseOcrDataRq extends AiBcrRq
         return $invalidProperties;
     }
 
-    /*
+    /**
      * Validate all the properties in the model
      * return true if all passed
      *
@@ -207,7 +209,7 @@ class AiBcrParseOcrDataRq extends AiBcrRq
     }
 
 
-    /*
+    /**
      * Gets data
      *
      * @return \Aspose\Email\Model\AiBcrOcrData[]
@@ -217,7 +219,7 @@ class AiBcrParseOcrDataRq extends AiBcrRq
         return $this->container['data'];
     }
 
-    /*
+    /**
      * Sets data
      *
      * @param \Aspose\Email\Model\AiBcrOcrData[] $data OCR data
@@ -230,7 +232,7 @@ class AiBcrParseOcrDataRq extends AiBcrRq
 
         return $this;
     }
-    /*
+    /**
      * Returns true if offset exists. False otherwise.
      *
      * @param integer $offset Offset
@@ -242,7 +244,7 @@ class AiBcrParseOcrDataRq extends AiBcrRq
         return isset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets offset.
      *
      * @param integer $offset Offset
@@ -254,7 +256,7 @@ class AiBcrParseOcrDataRq extends AiBcrRq
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
-    /*
+    /**
      * Sets value based on offset.
      *
      * @param integer $offset Offset
@@ -271,7 +273,7 @@ class AiBcrParseOcrDataRq extends AiBcrRq
         }
     }
 
-    /*
+    /**
      * Unsets offset.
      *
      * @param integer $offset Offset
@@ -283,7 +285,7 @@ class AiBcrParseOcrDataRq extends AiBcrRq
         unset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets the string presentation of the object
      *
      * @return string

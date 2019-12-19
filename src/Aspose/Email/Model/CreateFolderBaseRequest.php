@@ -25,14 +25,14 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
-/*
+/**
  * CreateFolderBaseRequest
  */
 
 namespace Aspose\Email\Model;
 use \Aspose\Email\ObjectSerializer;
 
-/*
+/**
  * CreateFolderBaseRequest
  *
  * @description Create folder request
@@ -41,14 +41,14 @@ class CreateFolderBaseRequest extends AccountBaseRequest
 {
     const DISCRIMINATOR = null;
 
-    /*
+    /**
      * The original name of the model.
      *
      * @var string
      */
     protected static $swaggerModelName = "CreateFolderBaseRequest";
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @var string[]
@@ -58,7 +58,7 @@ class CreateFolderBaseRequest extends AccountBaseRequest
         'parent_folder' => 'string'
     ];
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @var string[]
@@ -68,7 +68,7 @@ class CreateFolderBaseRequest extends AccountBaseRequest
         'parent_folder' => null
     ];
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @return array
@@ -78,7 +78,7 @@ class CreateFolderBaseRequest extends AccountBaseRequest
         return self::$swaggerTypes + parent::swaggerTypes();
     }
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @return array
@@ -88,7 +88,7 @@ class CreateFolderBaseRequest extends AccountBaseRequest
         return self::$swaggerFormats + parent::swaggerFormats();
     }
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -99,7 +99,7 @@ class CreateFolderBaseRequest extends AccountBaseRequest
         'parent_folder' => 'parentFolder'
     ];
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
@@ -109,7 +109,7 @@ class CreateFolderBaseRequest extends AccountBaseRequest
         'parent_folder' => 'setParentFolder'
     ];
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @var string[]
@@ -119,7 +119,7 @@ class CreateFolderBaseRequest extends AccountBaseRequest
         'parent_folder' => 'getParentFolder'
     ];
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -130,7 +130,7 @@ class CreateFolderBaseRequest extends AccountBaseRequest
         return parent::attributeMap() + self::$attributeMap;
     }
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @return array
@@ -140,7 +140,7 @@ class CreateFolderBaseRequest extends AccountBaseRequest
         return parent::setters() + self::$setters;
     }
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @return array
@@ -150,7 +150,7 @@ class CreateFolderBaseRequest extends AccountBaseRequest
         return parent::getters() + self::$getters;
     }
 
-    /*
+    /**
      * The original name of the model.
      *
      * @return string
@@ -165,21 +165,29 @@ class CreateFolderBaseRequest extends AccountBaseRequest
     
 
 
-    /*
-     * Constructor
-     *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+    /**
+     * Initializes a new instance of the CreateFolderBaseRequest class.
+     *  
+     * @param string $first_account First account storage file name for receiving emails (or universal one)
+     * @param string $second_account Second account storage file name for sending emails (ignored if first is universal)
+     * @param \Aspose\Email\Model\StorageFolderLocation $storage_folder Storage folder location of account files
+     * @param string $folder Folder name
+     * @param string $parent_folder Parent folder path
      */
-    public function __construct(array $data = null)
+    public function __construct($first_account = null, $second_account = null, $storage_folder = null, $folder = null, $parent_folder = null)
     {
-        parent::__construct($data);
+        parent::__construct();
+        $this->container['folder'] = null;
+        $this->container['parent_folder'] = null;
 
-        $this->container['folder'] = isset($data['folder']) ? $data['folder'] : null;
-        $this->container['parent_folder'] = isset($data['parent_folder']) ? $data['parent_folder'] : null;
+        if ($first_account != null) $this->setFirstAccount($first_account);
+        if ($second_account != null) $this->setSecondAccount($second_account);
+        if ($storage_folder != null) $this->setStorageFolder($storage_folder);
+        if ($folder != null) $this->setFolder($folder);
+        if ($parent_folder != null) $this->setParentFolder($parent_folder);
     }
 
-    /*
+    /**
      * Show all the invalid properties with reasons.
      *
      * @return array invalid properties with reasons
@@ -198,7 +206,7 @@ class CreateFolderBaseRequest extends AccountBaseRequest
         return $invalidProperties;
     }
 
-    /*
+    /**
      * Validate all the properties in the model
      * return true if all passed
      *
@@ -220,7 +228,7 @@ class CreateFolderBaseRequest extends AccountBaseRequest
     }
 
 
-    /*
+    /**
      * Gets folder
      *
      * @return string
@@ -230,7 +238,7 @@ class CreateFolderBaseRequest extends AccountBaseRequest
         return $this->container['folder'];
     }
 
-    /*
+    /**
      * Sets folder
      *
      * @param string $folder Folder name
@@ -249,7 +257,7 @@ class CreateFolderBaseRequest extends AccountBaseRequest
         return $this;
     }
 
-    /*
+    /**
      * Gets parent_folder
      *
      * @return string
@@ -259,7 +267,7 @@ class CreateFolderBaseRequest extends AccountBaseRequest
         return $this->container['parent_folder'];
     }
 
-    /*
+    /**
      * Sets parent_folder
      *
      * @param string $parent_folder Parent folder path
@@ -272,7 +280,7 @@ class CreateFolderBaseRequest extends AccountBaseRequest
 
         return $this;
     }
-    /*
+    /**
      * Returns true if offset exists. False otherwise.
      *
      * @param integer $offset Offset
@@ -284,7 +292,7 @@ class CreateFolderBaseRequest extends AccountBaseRequest
         return isset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets offset.
      *
      * @param integer $offset Offset
@@ -296,7 +304,7 @@ class CreateFolderBaseRequest extends AccountBaseRequest
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
-    /*
+    /**
      * Sets value based on offset.
      *
      * @param integer $offset Offset
@@ -313,7 +321,7 @@ class CreateFolderBaseRequest extends AccountBaseRequest
         }
     }
 
-    /*
+    /**
      * Unsets offset.
      *
      * @param integer $offset Offset
@@ -325,7 +333,7 @@ class CreateFolderBaseRequest extends AccountBaseRequest
         unset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets the string presentation of the object
      *
      * @return string

@@ -28,12 +28,12 @@
 
 namespace Aspose\Email\Model\Requests;
 
-/*
+/**
  * Request model for deleteEmailFolder" operation.
  */
 class deleteEmailFolderRequest
 {
-    /*
+    /**
      * Initializes a new instance of the deleteEmailFolderRequest class.
      *  
      * @param \Aspose\Email\Model\DeleteFolderBaseRequest $request Delete folder request
@@ -43,7 +43,7 @@ class deleteEmailFolderRequest
         $this->request = $request;
     }
 
-    /*
+    /**
      * Delete folder request
      */
     public $request;

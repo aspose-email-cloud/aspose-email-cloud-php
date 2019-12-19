@@ -25,7 +25,7 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
-/*
+/**
  * BaseObject
  */
 
@@ -34,7 +34,7 @@ namespace Aspose\Email\Model;
 use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
-/*
+/**
  * BaseObject
  *
  * @description Base property object
@@ -43,14 +43,14 @@ class BaseObject implements ArrayAccess
 {
     const DISCRIMINATOR = 'Type';
 
-    /*
+    /**
      * The original name of the model.
      *
      * @var string
      */
     protected static $swaggerModelName = "BaseObject";
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @var string[]
@@ -60,7 +60,7 @@ class BaseObject implements ArrayAccess
         'type' => 'string'
     ];
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @var string[]
@@ -70,7 +70,7 @@ class BaseObject implements ArrayAccess
         'type' => null
     ];
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @return array
@@ -80,7 +80,7 @@ class BaseObject implements ArrayAccess
         return self::$swaggerTypes;
     }
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @return array
@@ -90,7 +90,7 @@ class BaseObject implements ArrayAccess
         return self::$swaggerFormats;
     }
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -101,7 +101,7 @@ class BaseObject implements ArrayAccess
         'type' => 'type'
     ];
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
@@ -111,7 +111,7 @@ class BaseObject implements ArrayAccess
         'type' => 'setType'
     ];
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @var string[]
@@ -121,7 +121,7 @@ class BaseObject implements ArrayAccess
         'type' => 'getType'
     ];
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -132,7 +132,7 @@ class BaseObject implements ArrayAccess
         return self::$attributeMap;
     }
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @return array
@@ -142,7 +142,7 @@ class BaseObject implements ArrayAccess
         return self::$setters;
     }
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @return array
@@ -152,7 +152,7 @@ class BaseObject implements ArrayAccess
         return self::$getters;
     }
 
-    /*
+    /**
      * The original name of the model.
      *
      * @return string
@@ -166,22 +166,25 @@ class BaseObject implements ArrayAccess
 
     
 
-    /*
+    /**
      * Associative array for storing property values
      *
      * @var mixed[]
      */
     protected $container = [];
 
-    /*
-     * Constructor
-     *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+    /**
+     * Initializes a new instance of the BaseObject class.
+     *  
+     * @param string $name Gets or sets the name of an object.
+     * @param string $type Property type. Used for deserialization purposes
      */
-    public function __construct(array $data = null)
+    public function __construct($name = null, $type = null)
     {
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['name'] = null;
+        $this->container['type'] = null;
+
+        if ($name != null) $this->setName($name);
         $this->container['type'] = (new \ReflectionClass($this))->getShortName();
 
         // Initialize discriminator property with the model name.
@@ -189,7 +192,7 @@ class BaseObject implements ArrayAccess
         $this->container[$discriminator] = static::$swaggerModelName;
     }
 
-    /*
+    /**
      * Show all the invalid properties with reasons.
      *
      * @return array invalid properties with reasons
@@ -201,7 +204,7 @@ class BaseObject implements ArrayAccess
         return $invalidProperties;
     }
 
-    /*
+    /**
      * Validate all the properties in the model
      * return true if all passed
      *
@@ -214,7 +217,7 @@ class BaseObject implements ArrayAccess
     }
 
 
-    /*
+    /**
      * Gets name
      *
      * @return string
@@ -224,7 +227,7 @@ class BaseObject implements ArrayAccess
         return $this->container['name'];
     }
 
-    /*
+    /**
      * Sets name
      *
      * @param string $name Gets or sets the name of an object.
@@ -238,7 +241,7 @@ class BaseObject implements ArrayAccess
         return $this;
     }
 
-    /*
+    /**
      * Gets type
      *
      * @return string
@@ -248,7 +251,7 @@ class BaseObject implements ArrayAccess
         return $this->container['type'];
     }
 
-    /*
+    /**
      * Sets type
      *
      * @param string $type Property type. Used for deserialization purposes
@@ -256,7 +259,7 @@ class BaseObject implements ArrayAccess
      * @return $this
      */
     public function setType($type) { /* Does nothing */ }
-    /*
+    /**
      * Returns true if offset exists. False otherwise.
      *
      * @param integer $offset Offset
@@ -268,7 +271,7 @@ class BaseObject implements ArrayAccess
         return isset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets offset.
      *
      * @param integer $offset Offset
@@ -280,7 +283,7 @@ class BaseObject implements ArrayAccess
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
-    /*
+    /**
      * Sets value based on offset.
      *
      * @param integer $offset Offset
@@ -297,7 +300,7 @@ class BaseObject implements ArrayAccess
         }
     }
 
-    /*
+    /**
      * Unsets offset.
      *
      * @param integer $offset Offset
@@ -309,7 +312,7 @@ class BaseObject implements ArrayAccess
         unset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets the string presentation of the object
      *
      * @return string

@@ -28,12 +28,12 @@
 
 namespace Aspose\Email\Model\Requests;
 
-/*
+/**
  * Request model for storageExists" operation.
  */
 class storageExistsRequest
 {
-    /*
+    /**
      * Initializes a new instance of the storageExistsRequest class.
      *  
      * @param string $storage_name Storage name
@@ -43,7 +43,7 @@ class storageExistsRequest
         $this->storage_name = $storage_name;
     }
 
-    /*
+    /**
      * Storage name
      */
     public $storage_name;

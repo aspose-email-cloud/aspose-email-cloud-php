@@ -25,14 +25,14 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
-/*
+/**
  * AiBcrBase64Image
  */
 
 namespace Aspose\Email\Model;
 use \Aspose\Email\ObjectSerializer;
 
-/*
+/**
  * AiBcrBase64Image
  *
  * @description Image to recognize
@@ -41,14 +41,14 @@ class AiBcrBase64Image extends AiBcrImage
 {
     const DISCRIMINATOR = null;
 
-    /*
+    /**
      * The original name of the model.
      *
      * @var string
      */
     protected static $swaggerModelName = "AiBcrBase64Image";
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @var string[]
@@ -57,7 +57,7 @@ class AiBcrBase64Image extends AiBcrImage
         'base64_data' => 'string'
     ];
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @var string[]
@@ -66,7 +66,7 @@ class AiBcrBase64Image extends AiBcrImage
         'base64_data' => null
     ];
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @return array
@@ -76,7 +76,7 @@ class AiBcrBase64Image extends AiBcrImage
         return self::$swaggerTypes + parent::swaggerTypes();
     }
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @return array
@@ -86,7 +86,7 @@ class AiBcrBase64Image extends AiBcrImage
         return self::$swaggerFormats + parent::swaggerFormats();
     }
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -96,7 +96,7 @@ class AiBcrBase64Image extends AiBcrImage
         'base64_data' => 'base64Data'
     ];
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
@@ -105,7 +105,7 @@ class AiBcrBase64Image extends AiBcrImage
         'base64_data' => 'setBase64Data'
     ];
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @var string[]
@@ -114,7 +114,7 @@ class AiBcrBase64Image extends AiBcrImage
         'base64_data' => 'getBase64Data'
     ];
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -125,7 +125,7 @@ class AiBcrBase64Image extends AiBcrImage
         return parent::attributeMap() + self::$attributeMap;
     }
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @return array
@@ -135,7 +135,7 @@ class AiBcrBase64Image extends AiBcrImage
         return parent::setters() + self::$setters;
     }
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @return array
@@ -145,7 +145,7 @@ class AiBcrBase64Image extends AiBcrImage
         return parent::getters() + self::$getters;
     }
 
-    /*
+    /**
      * The original name of the model.
      *
      * @return string
@@ -160,20 +160,22 @@ class AiBcrBase64Image extends AiBcrImage
     
 
 
-    /*
-     * Constructor
-     *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+    /**
+     * Initializes a new instance of the AiBcrBase64Image class.
+     *  
+     * @param bool $is_single Determines that image contains single VCard or more
+     * @param string $base64_data Image data in base64
      */
-    public function __construct(array $data = null)
+    public function __construct($is_single = null, $base64_data = null)
     {
-        parent::__construct($data);
+        parent::__construct();
+        $this->container['base64_data'] = null;
 
-        $this->container['base64_data'] = isset($data['base64_data']) ? $data['base64_data'] : null;
+        if ($is_single != null) $this->setIsSingle($is_single);
+        if ($base64_data != null) $this->setBase64Data($base64_data);
     }
 
-    /*
+    /**
      * Show all the invalid properties with reasons.
      *
      * @return array invalid properties with reasons
@@ -185,7 +187,7 @@ class AiBcrBase64Image extends AiBcrImage
         return $invalidProperties;
     }
 
-    /*
+    /**
      * Validate all the properties in the model
      * return true if all passed
      *
@@ -201,7 +203,7 @@ class AiBcrBase64Image extends AiBcrImage
     }
 
 
-    /*
+    /**
      * Gets base64_data
      *
      * @return string
@@ -211,7 +213,7 @@ class AiBcrBase64Image extends AiBcrImage
         return $this->container['base64_data'];
     }
 
-    /*
+    /**
      * Sets base64_data
      *
      * @param string $base64_data Image data in base64
@@ -224,7 +226,7 @@ class AiBcrBase64Image extends AiBcrImage
 
         return $this;
     }
-    /*
+    /**
      * Returns true if offset exists. False otherwise.
      *
      * @param integer $offset Offset
@@ -236,7 +238,7 @@ class AiBcrBase64Image extends AiBcrImage
         return isset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets offset.
      *
      * @param integer $offset Offset
@@ -248,7 +250,7 @@ class AiBcrBase64Image extends AiBcrImage
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
-    /*
+    /**
      * Sets value based on offset.
      *
      * @param integer $offset Offset
@@ -265,7 +267,7 @@ class AiBcrBase64Image extends AiBcrImage
         }
     }
 
-    /*
+    /**
      * Unsets offset.
      *
      * @param integer $offset Offset
@@ -277,7 +279,7 @@ class AiBcrBase64Image extends AiBcrImage
         unset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets the string presentation of the object
      *
      * @return string

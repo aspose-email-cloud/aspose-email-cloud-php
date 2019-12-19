@@ -25,7 +25,7 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
-/*
+/**
  * AiNameParsedRq
  */
 
@@ -34,7 +34,7 @@ namespace Aspose\Email\Model;
 use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
-/*
+/**
  * AiNameParsedRq
  *
  * @description Parsed name request model
@@ -43,14 +43,14 @@ class AiNameParsedRq implements ArrayAccess
 {
     const DISCRIMINATOR = 'Type';
 
-    /*
+    /**
      * The original name of the model.
      *
      * @var string
      */
     protected static $swaggerModelName = "AiNameParsedRq";
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @var string[]
@@ -61,7 +61,7 @@ class AiNameParsedRq implements ArrayAccess
         'parsed_name' => '\Aspose\Email\Model\AiNameComponent[]'
     ];
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @var string[]
@@ -72,7 +72,7 @@ class AiNameParsedRq implements ArrayAccess
         'parsed_name' => null
     ];
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @return array
@@ -82,7 +82,7 @@ class AiNameParsedRq implements ArrayAccess
         return self::$swaggerTypes;
     }
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @return array
@@ -92,7 +92,7 @@ class AiNameParsedRq implements ArrayAccess
         return self::$swaggerFormats;
     }
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -104,7 +104,7 @@ class AiNameParsedRq implements ArrayAccess
         'parsed_name' => 'parsedName'
     ];
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
@@ -115,7 +115,7 @@ class AiNameParsedRq implements ArrayAccess
         'parsed_name' => 'setParsedName'
     ];
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @var string[]
@@ -126,7 +126,7 @@ class AiNameParsedRq implements ArrayAccess
         'parsed_name' => 'getParsedName'
     ];
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -137,7 +137,7 @@ class AiNameParsedRq implements ArrayAccess
         return self::$attributeMap;
     }
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @return array
@@ -147,7 +147,7 @@ class AiNameParsedRq implements ArrayAccess
         return self::$setters;
     }
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @return array
@@ -157,7 +157,7 @@ class AiNameParsedRq implements ArrayAccess
         return self::$getters;
     }
 
-    /*
+    /**
      * The original name of the model.
      *
      * @return string
@@ -171,31 +171,36 @@ class AiNameParsedRq implements ArrayAccess
 
     
 
-    /*
+    /**
      * Associative array for storing property values
      *
      * @var mixed[]
      */
     protected $container = [];
 
-    /*
-     * Constructor
-     *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+    /**
+     * Initializes a new instance of the AiNameParsedRq class.
+     *  
+     * @param \Aspose\Email\Model\AiNameCulturalContext $cultural_context AiName parser cultural context
+     * @param string $format Format of the name. Predefined format can be used by ID, or custom format can be specified. Predefined formats:      /format/default/ (= '%t%F%m%N%L%p')     /format/FN+LN/ (= '%F%L')     /format/title+FN+LN/ (= '%t%F%L')     /format/FN+MN+LN/ (= '%F%M%N%L')     /format/title+FN+MN+LN/ (= '%t%F%M%N%L')     /format/FN+MI+LN/ (= '%F%m%N%L')     /format/title+FN+MI+LN/ (= '%t%F%m%N%L')     /format/LN/ (= '%L')     /format/title+LN/ (= '%t%L')     /format/LN+FN+MN/ (= '%L,%F%M%N')     /format/LN+title+FN+MN/ (= '%L,%t%F%M%N')     /format/LN+FN+MI/ (= '%L,%F%m%N')     /format/LN+title+FN+MI/ (= '%L,%t%F%m%N')  Custom format string - custom combination of characters and the next term placeholders:      '%t' - Title (prefix)     '%F' - First name     '%f' - First initial     '%M' - Middle name(s)     '%m' - Middle initial(s)     '%N' - Nickname     '%L' - Last name     '%l' - Last initial     '%p' - Postfix  If no value for format option was provided, its default value is '%t%F%m%N%L%p'
+     * @param \Aspose\Email\Model\AiNameComponent[] $parsed_name Parsed name
      */
-    public function __construct(array $data = null)
+    public function __construct($cultural_context = null, $format = null, $parsed_name = null)
     {
-        $this->container['cultural_context'] = isset($data['cultural_context']) ? $data['cultural_context'] : null;
-        $this->container['format'] = isset($data['format']) ? $data['format'] : null;
-        $this->container['parsed_name'] = isset($data['parsed_name']) ? $data['parsed_name'] : null;
+        $this->container['cultural_context'] = null;
+        $this->container['format'] = null;
+        $this->container['parsed_name'] = null;
+
+        if ($cultural_context != null) $this->setCulturalContext($cultural_context);
+        if ($format != null) $this->setFormat($format);
+        if ($parsed_name != null) $this->setParsedName($parsed_name);
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('Type', self::$attributeMap);
         $this->container[$discriminator] = static::$swaggerModelName;
     }
 
-    /*
+    /**
      * Show all the invalid properties with reasons.
      *
      * @return array invalid properties with reasons
@@ -210,7 +215,7 @@ class AiNameParsedRq implements ArrayAccess
         return $invalidProperties;
     }
 
-    /*
+    /**
      * Validate all the properties in the model
      * return true if all passed
      *
@@ -226,7 +231,7 @@ class AiNameParsedRq implements ArrayAccess
     }
 
 
-    /*
+    /**
      * Gets cultural_context
      *
      * @return \Aspose\Email\Model\AiNameCulturalContext
@@ -236,7 +241,7 @@ class AiNameParsedRq implements ArrayAccess
         return $this->container['cultural_context'];
     }
 
-    /*
+    /**
      * Sets cultural_context
      *
      * @param \Aspose\Email\Model\AiNameCulturalContext $cultural_context AiName parser cultural context
@@ -250,7 +255,7 @@ class AiNameParsedRq implements ArrayAccess
         return $this;
     }
 
-    /*
+    /**
      * Gets format
      *
      * @return string
@@ -260,7 +265,7 @@ class AiNameParsedRq implements ArrayAccess
         return $this->container['format'];
     }
 
-    /*
+    /**
      * Sets format
      *
      * @param string $format Format of the name. Predefined format can be used by ID, or custom format can be specified. Predefined formats:      /format/default/ (= '%t%F%m%N%L%p')     /format/FN+LN/ (= '%F%L')     /format/title+FN+LN/ (= '%t%F%L')     /format/FN+MN+LN/ (= '%F%M%N%L')     /format/title+FN+MN+LN/ (= '%t%F%M%N%L')     /format/FN+MI+LN/ (= '%F%m%N%L')     /format/title+FN+MI+LN/ (= '%t%F%m%N%L')     /format/LN/ (= '%L')     /format/title+LN/ (= '%t%L')     /format/LN+FN+MN/ (= '%L,%F%M%N')     /format/LN+title+FN+MN/ (= '%L,%t%F%M%N')     /format/LN+FN+MI/ (= '%L,%F%m%N')     /format/LN+title+FN+MI/ (= '%L,%t%F%m%N')  Custom format string - custom combination of characters and the next term placeholders:      '%t' - Title (prefix)     '%F' - First name     '%f' - First initial     '%M' - Middle name(s)     '%m' - Middle initial(s)     '%N' - Nickname     '%L' - Last name     '%l' - Last initial     '%p' - Postfix  If no value for format option was provided, its default value is '%t%F%m%N%L%p'
@@ -274,7 +279,7 @@ class AiNameParsedRq implements ArrayAccess
         return $this;
     }
 
-    /*
+    /**
      * Gets parsed_name
      *
      * @return \Aspose\Email\Model\AiNameComponent[]
@@ -284,7 +289,7 @@ class AiNameParsedRq implements ArrayAccess
         return $this->container['parsed_name'];
     }
 
-    /*
+    /**
      * Sets parsed_name
      *
      * @param \Aspose\Email\Model\AiNameComponent[] $parsed_name Parsed name
@@ -297,7 +302,7 @@ class AiNameParsedRq implements ArrayAccess
 
         return $this;
     }
-    /*
+    /**
      * Returns true if offset exists. False otherwise.
      *
      * @param integer $offset Offset
@@ -309,7 +314,7 @@ class AiNameParsedRq implements ArrayAccess
         return isset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets offset.
      *
      * @param integer $offset Offset
@@ -321,7 +326,7 @@ class AiNameParsedRq implements ArrayAccess
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
-    /*
+    /**
      * Sets value based on offset.
      *
      * @param integer $offset Offset
@@ -338,7 +343,7 @@ class AiNameParsedRq implements ArrayAccess
         }
     }
 
-    /*
+    /**
      * Unsets offset.
      *
      * @param integer $offset Offset
@@ -350,7 +355,7 @@ class AiNameParsedRq implements ArrayAccess
         unset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets the string presentation of the object
      *
      * @return string

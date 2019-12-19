@@ -28,12 +28,12 @@
 
 namespace Aspose\Email\Model\Requests;
 
-/*
+/**
  * Request model for deleteCalendarProperty" operation.
  */
 class deleteCalendarPropertyRequest
 {
-    /*
+    /**
      * Initializes a new instance of the deleteCalendarPropertyRequest class.
      *  
      * @param string $name iCalendar file name in storage
@@ -49,22 +49,22 @@ class deleteCalendarPropertyRequest
         $this->request = $request;
     }
 
-    /*
+    /**
      * iCalendar file name in storage
      */
     public $name;
 	
-    /*
+    /**
      * Indexed property name
      */
     public $member_name;
 	
-    /*
+    /**
      * Property index path
      */
     public $index;
 	
-    /*
+    /**
      * Storage detail to specify iCalendar file location
      */
     public $request;

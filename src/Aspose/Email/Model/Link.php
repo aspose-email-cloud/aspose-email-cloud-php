@@ -25,7 +25,7 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
-/*
+/**
  * Link
  */
 
@@ -34,7 +34,7 @@ namespace Aspose\Email\Model;
 use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
-/*
+/**
  * Link
  *
  * @description Provides information for the object link. This is supposed to be an atom:link, therefore it should have all attributes specified here http://tools.ietf.org/html/rfc4287#section-4.2.7
@@ -43,14 +43,14 @@ class Link implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
-    /*
+    /**
      * The original name of the model.
      *
      * @var string
      */
     protected static $swaggerModelName = "Link";
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @var string[]
@@ -62,7 +62,7 @@ class Link implements ArrayAccess
         'title' => 'string'
     ];
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @var string[]
@@ -74,7 +74,7 @@ class Link implements ArrayAccess
         'title' => null
     ];
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @return array
@@ -84,7 +84,7 @@ class Link implements ArrayAccess
         return self::$swaggerTypes;
     }
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @return array
@@ -94,7 +94,7 @@ class Link implements ArrayAccess
         return self::$swaggerFormats;
     }
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -107,7 +107,7 @@ class Link implements ArrayAccess
         'title' => 'title'
     ];
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
@@ -119,7 +119,7 @@ class Link implements ArrayAccess
         'title' => 'setTitle'
     ];
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @var string[]
@@ -131,7 +131,7 @@ class Link implements ArrayAccess
         'title' => 'getTitle'
     ];
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -142,7 +142,7 @@ class Link implements ArrayAccess
         return self::$attributeMap;
     }
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @return array
@@ -152,7 +152,7 @@ class Link implements ArrayAccess
         return self::$setters;
     }
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @return array
@@ -162,7 +162,7 @@ class Link implements ArrayAccess
         return self::$getters;
     }
 
-    /*
+    /**
      * The original name of the model.
      *
      * @return string
@@ -176,28 +176,35 @@ class Link implements ArrayAccess
 
     
 
-    /*
+    /**
      * Associative array for storing property values
      *
      * @var mixed[]
      */
     protected $container = [];
 
-    /*
-     * Constructor
-     *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+    /**
+     * Initializes a new instance of the Link class.
+     *  
+     * @param string $href The \"href\" attribute contains the link's IRI. atom:link elements MUST have an href attribute, whose value MUST be a IRI reference
+     * @param string $rel atom:link elements MAY have a \"rel\" attribute that indicates the link relation type.  If the \"rel\" attribute is not present, the link element MUST be interpreted as if the link relation type is \"alternate\".
+     * @param string $type On the link element, the \"type\" attribute's value is an advisory media type: it is a hint about the type of the representation that is expected to be returned when the value of the href attribute is dereferenced.  Note that the type attribute does not override the actual media type returned with the representation.
+     * @param string $title The \"title\" attribute conveys human-readable information about the link.  The content of the \"title\" attribute is Language-Sensitive.
      */
-    public function __construct(array $data = null)
+    public function __construct($href = null, $rel = null, $type = null, $title = null)
     {
-        $this->container['href'] = isset($data['href']) ? $data['href'] : null;
-        $this->container['rel'] = isset($data['rel']) ? $data['rel'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['title'] = isset($data['title']) ? $data['title'] : null;
+        $this->container['href'] = null;
+        $this->container['rel'] = null;
+        $this->container['type'] = null;
+        $this->container['title'] = null;
+
+        if ($href != null) $this->setHref($href);
+        if ($rel != null) $this->setRel($rel);
+        if ($type != null) $this->setType($type);
+        if ($title != null) $this->setTitle($title);
     }
 
-    /*
+    /**
      * Show all the invalid properties with reasons.
      *
      * @return array invalid properties with reasons
@@ -209,7 +216,7 @@ class Link implements ArrayAccess
         return $invalidProperties;
     }
 
-    /*
+    /**
      * Validate all the properties in the model
      * return true if all passed
      *
@@ -222,7 +229,7 @@ class Link implements ArrayAccess
     }
 
 
-    /*
+    /**
      * Gets href
      *
      * @return string
@@ -232,7 +239,7 @@ class Link implements ArrayAccess
         return $this->container['href'];
     }
 
-    /*
+    /**
      * Sets href
      *
      * @param string $href The \"href\" attribute contains the link's IRI. atom:link elements MUST have an href attribute, whose value MUST be a IRI reference
@@ -246,7 +253,7 @@ class Link implements ArrayAccess
         return $this;
     }
 
-    /*
+    /**
      * Gets rel
      *
      * @return string
@@ -256,7 +263,7 @@ class Link implements ArrayAccess
         return $this->container['rel'];
     }
 
-    /*
+    /**
      * Sets rel
      *
      * @param string $rel atom:link elements MAY have a \"rel\" attribute that indicates the link relation type.  If the \"rel\" attribute is not present, the link element MUST be interpreted as if the link relation type is \"alternate\".
@@ -270,7 +277,7 @@ class Link implements ArrayAccess
         return $this;
     }
 
-    /*
+    /**
      * Gets type
      *
      * @return string
@@ -280,7 +287,7 @@ class Link implements ArrayAccess
         return $this->container['type'];
     }
 
-    /*
+    /**
      * Sets type
      *
      * @param string $type On the link element, the \"type\" attribute's value is an advisory media type: it is a hint about the type of the representation that is expected to be returned when the value of the href attribute is dereferenced.  Note that the type attribute does not override the actual media type returned with the representation.
@@ -294,7 +301,7 @@ class Link implements ArrayAccess
         return $this;
     }
 
-    /*
+    /**
      * Gets title
      *
      * @return string
@@ -304,7 +311,7 @@ class Link implements ArrayAccess
         return $this->container['title'];
     }
 
-    /*
+    /**
      * Sets title
      *
      * @param string $title The \"title\" attribute conveys human-readable information about the link.  The content of the \"title\" attribute is Language-Sensitive.
@@ -317,7 +324,7 @@ class Link implements ArrayAccess
 
         return $this;
     }
-    /*
+    /**
      * Returns true if offset exists. False otherwise.
      *
      * @param integer $offset Offset
@@ -329,7 +336,7 @@ class Link implements ArrayAccess
         return isset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets offset.
      *
      * @param integer $offset Offset
@@ -341,7 +348,7 @@ class Link implements ArrayAccess
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
-    /*
+    /**
      * Sets value based on offset.
      *
      * @param integer $offset Offset
@@ -358,7 +365,7 @@ class Link implements ArrayAccess
         }
     }
 
-    /*
+    /**
      * Unsets offset.
      *
      * @param integer $offset Offset
@@ -370,7 +377,7 @@ class Link implements ArrayAccess
         unset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets the string presentation of the object
      *
      * @return string

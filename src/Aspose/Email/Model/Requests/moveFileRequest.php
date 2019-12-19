@@ -28,12 +28,12 @@
 
 namespace Aspose\Email\Model\Requests;
 
-/*
+/**
  * Request model for moveFile" operation.
  */
 class moveFileRequest
 {
-    /*
+    /**
      * Initializes a new instance of the moveFileRequest class.
      *  
      * @param string $src_path Source file path e.g. '/src.ext'
@@ -51,27 +51,27 @@ class moveFileRequest
         $this->version_id = $version_id;
     }
 
-    /*
+    /**
      * Source file path e.g. '/src.ext'
      */
     public $src_path;
 	
-    /*
+    /**
      * Destination file path e.g. '/dest.ext'
      */
     public $dest_path;
 	
-    /*
+    /**
      * Source storage name
      */
     public $src_storage_name;
 	
-    /*
+    /**
      * Destination storage name
      */
     public $dest_storage_name;
 	
-    /*
+    /**
      * File version ID to move
      */
     public $version_id;

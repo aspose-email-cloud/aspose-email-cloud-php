@@ -28,12 +28,12 @@
 
 namespace Aspose\Email\Model\Requests;
 
-/*
+/**
  * Request model for deleteMapiAttachment" operation.
  */
 class deleteMapiAttachmentRequest
 {
-    /*
+    /**
      * Initializes a new instance of the deleteMapiAttachmentRequest class.
      *  
      * @param string $name Document file name
@@ -47,17 +47,17 @@ class deleteMapiAttachmentRequest
         $this->storage = $storage;
     }
 
-    /*
+    /**
      * Document file name
      */
     public $name;
 	
-    /*
+    /**
      * Attachment name or index
      */
     public $attachment;
 	
-    /*
+    /**
      * Document file storage location info
      */
     public $storage;

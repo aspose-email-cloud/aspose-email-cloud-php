@@ -25,14 +25,14 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
-/*
+/**
  * PrimitiveObject
  */
 
 namespace Aspose\Email\Model;
 use \Aspose\Email\ObjectSerializer;
 
-/*
+/**
  * PrimitiveObject
  *
  * @description Simple property object
@@ -41,14 +41,14 @@ class PrimitiveObject extends BaseObject
 {
     const DISCRIMINATOR = null;
 
-    /*
+    /**
      * The original name of the model.
      *
      * @var string
      */
     protected static $swaggerModelName = "PrimitiveObject";
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @var string[]
@@ -57,7 +57,7 @@ class PrimitiveObject extends BaseObject
         'value' => 'string'
     ];
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @var string[]
@@ -66,7 +66,7 @@ class PrimitiveObject extends BaseObject
         'value' => null
     ];
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @return array
@@ -76,7 +76,7 @@ class PrimitiveObject extends BaseObject
         return self::$swaggerTypes + parent::swaggerTypes();
     }
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @return array
@@ -86,7 +86,7 @@ class PrimitiveObject extends BaseObject
         return self::$swaggerFormats + parent::swaggerFormats();
     }
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -96,7 +96,7 @@ class PrimitiveObject extends BaseObject
         'value' => 'value'
     ];
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
@@ -105,7 +105,7 @@ class PrimitiveObject extends BaseObject
         'value' => 'setValue'
     ];
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @var string[]
@@ -114,7 +114,7 @@ class PrimitiveObject extends BaseObject
         'value' => 'getValue'
     ];
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -125,7 +125,7 @@ class PrimitiveObject extends BaseObject
         return parent::attributeMap() + self::$attributeMap;
     }
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @return array
@@ -135,7 +135,7 @@ class PrimitiveObject extends BaseObject
         return parent::setters() + self::$setters;
     }
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @return array
@@ -145,7 +145,7 @@ class PrimitiveObject extends BaseObject
         return parent::getters() + self::$getters;
     }
 
-    /*
+    /**
      * The original name of the model.
      *
      * @return string
@@ -160,20 +160,24 @@ class PrimitiveObject extends BaseObject
     
 
 
-    /*
-     * Constructor
-     *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+    /**
+     * Initializes a new instance of the PrimitiveObject class.
+     *  
+     * @param string $name Gets or sets the name of an object.
+     * @param string $type Property type. Used for deserialization purposes
+     * @param string $value Property value
      */
-    public function __construct(array $data = null)
+    public function __construct($name = null, $type = null, $value = null)
     {
-        parent::__construct($data);
+        parent::__construct();
+        $this->container['value'] = null;
 
-        $this->container['value'] = isset($data['value']) ? $data['value'] : null;
+        if ($name != null) $this->setName($name);
+        if ($type != null) $this->setType($type);
+        if ($value != null) $this->setValue($value);
     }
 
-    /*
+    /**
      * Show all the invalid properties with reasons.
      *
      * @return array invalid properties with reasons
@@ -185,7 +189,7 @@ class PrimitiveObject extends BaseObject
         return $invalidProperties;
     }
 
-    /*
+    /**
      * Validate all the properties in the model
      * return true if all passed
      *
@@ -201,7 +205,7 @@ class PrimitiveObject extends BaseObject
     }
 
 
-    /*
+    /**
      * Gets value
      *
      * @return string
@@ -211,7 +215,7 @@ class PrimitiveObject extends BaseObject
         return $this->container['value'];
     }
 
-    /*
+    /**
      * Sets value
      *
      * @param string $value Property value
@@ -224,7 +228,7 @@ class PrimitiveObject extends BaseObject
 
         return $this;
     }
-    /*
+    /**
      * Returns true if offset exists. False otherwise.
      *
      * @param integer $offset Offset
@@ -236,7 +240,7 @@ class PrimitiveObject extends BaseObject
         return isset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets offset.
      *
      * @param integer $offset Offset
@@ -248,7 +252,7 @@ class PrimitiveObject extends BaseObject
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
-    /*
+    /**
      * Sets value based on offset.
      *
      * @param integer $offset Offset
@@ -265,7 +269,7 @@ class PrimitiveObject extends BaseObject
         }
     }
 
-    /*
+    /**
      * Unsets offset.
      *
      * @param integer $offset Offset
@@ -277,7 +281,7 @@ class PrimitiveObject extends BaseObject
         unset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets the string presentation of the object
      *
      * @return string

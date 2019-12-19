@@ -25,14 +25,14 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
-/*
+/**
  * DeleteFolderBaseRequest
  */
 
 namespace Aspose\Email\Model;
 use \Aspose\Email\ObjectSerializer;
 
-/*
+/**
  * DeleteFolderBaseRequest
  *
  * @description Delete folder request
@@ -41,14 +41,14 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
 {
     const DISCRIMINATOR = null;
 
-    /*
+    /**
      * The original name of the model.
      *
      * @var string
      */
     protected static $swaggerModelName = "DeleteFolderBaseRequest";
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @var string[]
@@ -58,7 +58,7 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
         'delete_permanently' => 'bool'
     ];
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @var string[]
@@ -68,7 +68,7 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
         'delete_permanently' => null
     ];
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @return array
@@ -78,7 +78,7 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
         return self::$swaggerTypes + parent::swaggerTypes();
     }
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @return array
@@ -88,7 +88,7 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
         return self::$swaggerFormats + parent::swaggerFormats();
     }
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -99,7 +99,7 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
         'delete_permanently' => 'deletePermanently'
     ];
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
@@ -109,7 +109,7 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
         'delete_permanently' => 'setDeletePermanently'
     ];
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @var string[]
@@ -119,7 +119,7 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
         'delete_permanently' => 'getDeletePermanently'
     ];
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -130,7 +130,7 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
         return parent::attributeMap() + self::$attributeMap;
     }
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @return array
@@ -140,7 +140,7 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
         return parent::setters() + self::$setters;
     }
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @return array
@@ -150,7 +150,7 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
         return parent::getters() + self::$getters;
     }
 
-    /*
+    /**
      * The original name of the model.
      *
      * @return string
@@ -165,21 +165,29 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
     
 
 
-    /*
-     * Constructor
-     *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+    /**
+     * Initializes a new instance of the DeleteFolderBaseRequest class.
+     *  
+     * @param string $first_account First account storage file name for receiving emails (or universal one)
+     * @param string $second_account Second account storage file name for sending emails (ignored if first is universal)
+     * @param \Aspose\Email\Model\StorageFolderLocation $storage_folder Storage folder location of account files
+     * @param string $folder Folder name
+     * @param bool $delete_permanently Specifies that folder should be deleted permanently
      */
-    public function __construct(array $data = null)
+    public function __construct($first_account = null, $second_account = null, $storage_folder = null, $folder = null, $delete_permanently = null)
     {
-        parent::__construct($data);
+        parent::__construct();
+        $this->container['folder'] = null;
+        $this->container['delete_permanently'] = null;
 
-        $this->container['folder'] = isset($data['folder']) ? $data['folder'] : null;
-        $this->container['delete_permanently'] = isset($data['delete_permanently']) ? $data['delete_permanently'] : null;
+        if ($first_account != null) $this->setFirstAccount($first_account);
+        if ($second_account != null) $this->setSecondAccount($second_account);
+        if ($storage_folder != null) $this->setStorageFolder($storage_folder);
+        if ($folder != null) $this->setFolder($folder);
+        if ($delete_permanently != null) $this->setDeletePermanently($delete_permanently);
     }
 
-    /*
+    /**
      * Show all the invalid properties with reasons.
      *
      * @return array invalid properties with reasons
@@ -201,7 +209,7 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
         return $invalidProperties;
     }
 
-    /*
+    /**
      * Validate all the properties in the model
      * return true if all passed
      *
@@ -226,7 +234,7 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
     }
 
 
-    /*
+    /**
      * Gets folder
      *
      * @return string
@@ -236,7 +244,7 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
         return $this->container['folder'];
     }
 
-    /*
+    /**
      * Sets folder
      *
      * @param string $folder Folder name
@@ -255,7 +263,7 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
         return $this;
     }
 
-    /*
+    /**
      * Gets delete_permanently
      *
      * @return bool
@@ -265,7 +273,7 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
         return $this->container['delete_permanently'];
     }
 
-    /*
+    /**
      * Sets delete_permanently
      *
      * @param bool $delete_permanently Specifies that folder should be deleted permanently
@@ -278,7 +286,7 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
 
         return $this;
     }
-    /*
+    /**
      * Returns true if offset exists. False otherwise.
      *
      * @param integer $offset Offset
@@ -290,7 +298,7 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
         return isset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets offset.
      *
      * @param integer $offset Offset
@@ -302,7 +310,7 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
-    /*
+    /**
      * Sets value based on offset.
      *
      * @param integer $offset Offset
@@ -319,7 +327,7 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
         }
     }
 
-    /*
+    /**
      * Unsets offset.
      *
      * @param integer $offset Offset
@@ -331,7 +339,7 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
         unset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets the string presentation of the object
      *
      * @return string

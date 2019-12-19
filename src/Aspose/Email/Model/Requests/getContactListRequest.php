@@ -28,12 +28,12 @@
 
 namespace Aspose\Email\Model\Requests;
 
-/*
+/**
  * Request model for getContactList" operation.
  */
 class getContactListRequest
 {
-    /*
+    /**
      * Initializes a new instance of the getContactListRequest class.
      *  
      * @param string $format Contact document format. Enum, available values: VCard, WebDav, Msg
@@ -51,27 +51,27 @@ class getContactListRequest
         $this->page_number = $page_number;
     }
 
-    /*
+    /**
      * Contact document format. Enum, available values: VCard, WebDav, Msg
      */
     public $format;
 	
-    /*
+    /**
      * Path to folder in storage
      */
     public $folder;
 	
-    /*
+    /**
      * Storage name
      */
     public $storage;
 	
-    /*
+    /**
      * Count of items on page
      */
     public $items_per_page;
 	
-    /*
+    /**
      * Page number
      */
     public $page_number;

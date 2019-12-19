@@ -28,12 +28,12 @@
 
 namespace Aspose\Email\Model\Requests;
 
-/*
+/**
  * Request model for getMapiAttachment" operation.
  */
 class getMapiAttachmentRequest
 {
-    /*
+    /**
      * Initializes a new instance of the getMapiAttachmentRequest class.
      *  
      * @param string $name Document file name
@@ -49,22 +49,22 @@ class getMapiAttachmentRequest
         $this->storage = $storage;
     }
 
-    /*
+    /**
      * Document file name
      */
     public $name;
 	
-    /*
+    /**
      * Attachment name or index
      */
     public $attachment;
 	
-    /*
+    /**
      * Path to folder in storage
      */
     public $folder;
 	
-    /*
+    /**
      * Storage name
      */
     public $storage;

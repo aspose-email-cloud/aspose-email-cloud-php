@@ -25,7 +25,7 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
-/*
+/**
  * AiNameCulturalContext
  */
 
@@ -34,7 +34,7 @@ namespace Aspose\Email\Model;
 use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
-/*
+/**
  * AiNameCulturalContext
  *
  * @description AiName cultural context
@@ -43,14 +43,14 @@ class AiNameCulturalContext implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
-    /*
+    /**
      * The original name of the model.
      *
      * @var string
      */
     protected static $swaggerModelName = "AiNameCulturalContext";
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @var string[]
@@ -63,7 +63,7 @@ class AiNameCulturalContext implements ArrayAccess
         'style' => 'string'
     ];
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @var string[]
@@ -76,7 +76,7 @@ class AiNameCulturalContext implements ArrayAccess
         'style' => null
     ];
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @return array
@@ -86,7 +86,7 @@ class AiNameCulturalContext implements ArrayAccess
         return self::$swaggerTypes;
     }
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @return array
@@ -96,7 +96,7 @@ class AiNameCulturalContext implements ArrayAccess
         return self::$swaggerFormats;
     }
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -110,7 +110,7 @@ class AiNameCulturalContext implements ArrayAccess
         'style' => 'style'
     ];
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
@@ -123,7 +123,7 @@ class AiNameCulturalContext implements ArrayAccess
         'style' => 'setStyle'
     ];
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @var string[]
@@ -136,7 +136,7 @@ class AiNameCulturalContext implements ArrayAccess
         'style' => 'getStyle'
     ];
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -147,7 +147,7 @@ class AiNameCulturalContext implements ArrayAccess
         return self::$attributeMap;
     }
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @return array
@@ -157,7 +157,7 @@ class AiNameCulturalContext implements ArrayAccess
         return self::$setters;
     }
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @return array
@@ -167,7 +167,7 @@ class AiNameCulturalContext implements ArrayAccess
         return self::$getters;
     }
 
-    /*
+    /**
      * The original name of the model.
      *
      * @return string
@@ -181,29 +181,38 @@ class AiNameCulturalContext implements ArrayAccess
 
     
 
-    /*
+    /**
      * Associative array for storing property values
      *
      * @var mixed[]
      */
     protected $container = [];
 
-    /*
-     * Constructor
-     *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+    /**
+     * Initializes a new instance of the AiNameCulturalContext class.
+     *  
+     * @param string $language An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \"it\" or \"ita\" for Italian)
+     * @param string $location A geographic code such as an ISO-3166 two letter country code, for example \"FR\" for France
+     * @param string $script A writing system code; starts with the ISO-15924 script name
+     * @param string $encoding A character encoding name
+     * @param string $style Name writing style. Enum, available values: Formal, Informal, Legal, Academic
      */
-    public function __construct(array $data = null)
+    public function __construct($language = null, $location = null, $script = null, $encoding = null, $style = null)
     {
-        $this->container['language'] = isset($data['language']) ? $data['language'] : null;
-        $this->container['location'] = isset($data['location']) ? $data['location'] : null;
-        $this->container['script'] = isset($data['script']) ? $data['script'] : null;
-        $this->container['encoding'] = isset($data['encoding']) ? $data['encoding'] : null;
-        $this->container['style'] = isset($data['style']) ? $data['style'] : null;
+        $this->container['language'] = null;
+        $this->container['location'] = null;
+        $this->container['script'] = null;
+        $this->container['encoding'] = null;
+        $this->container['style'] = null;
+
+        if ($language != null) $this->setLanguage($language);
+        if ($location != null) $this->setLocation($location);
+        if ($script != null) $this->setScript($script);
+        if ($encoding != null) $this->setEncoding($encoding);
+        if ($style != null) $this->setStyle($style);
     }
 
-    /*
+    /**
      * Show all the invalid properties with reasons.
      *
      * @return array invalid properties with reasons
@@ -218,7 +227,7 @@ class AiNameCulturalContext implements ArrayAccess
         return $invalidProperties;
     }
 
-    /*
+    /**
      * Validate all the properties in the model
      * return true if all passed
      *
@@ -234,7 +243,7 @@ class AiNameCulturalContext implements ArrayAccess
     }
 
 
-    /*
+    /**
      * Gets language
      *
      * @return string
@@ -244,7 +253,7 @@ class AiNameCulturalContext implements ArrayAccess
         return $this->container['language'];
     }
 
-    /*
+    /**
      * Sets language
      *
      * @param string $language An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \"it\" or \"ita\" for Italian)
@@ -258,7 +267,7 @@ class AiNameCulturalContext implements ArrayAccess
         return $this;
     }
 
-    /*
+    /**
      * Gets location
      *
      * @return string
@@ -268,7 +277,7 @@ class AiNameCulturalContext implements ArrayAccess
         return $this->container['location'];
     }
 
-    /*
+    /**
      * Sets location
      *
      * @param string $location A geographic code such as an ISO-3166 two letter country code, for example \"FR\" for France
@@ -282,7 +291,7 @@ class AiNameCulturalContext implements ArrayAccess
         return $this;
     }
 
-    /*
+    /**
      * Gets script
      *
      * @return string
@@ -292,7 +301,7 @@ class AiNameCulturalContext implements ArrayAccess
         return $this->container['script'];
     }
 
-    /*
+    /**
      * Sets script
      *
      * @param string $script A writing system code; starts with the ISO-15924 script name
@@ -306,7 +315,7 @@ class AiNameCulturalContext implements ArrayAccess
         return $this;
     }
 
-    /*
+    /**
      * Gets encoding
      *
      * @return string
@@ -316,7 +325,7 @@ class AiNameCulturalContext implements ArrayAccess
         return $this->container['encoding'];
     }
 
-    /*
+    /**
      * Sets encoding
      *
      * @param string $encoding A character encoding name
@@ -330,7 +339,7 @@ class AiNameCulturalContext implements ArrayAccess
         return $this;
     }
 
-    /*
+    /**
      * Gets style
      *
      * @return string
@@ -340,7 +349,7 @@ class AiNameCulturalContext implements ArrayAccess
         return $this->container['style'];
     }
 
-    /*
+    /**
      * Sets style
      *
      * @param string $style Name writing style. Enum, available values: Formal, Informal, Legal, Academic
@@ -353,7 +362,7 @@ class AiNameCulturalContext implements ArrayAccess
 
         return $this;
     }
-    /*
+    /**
      * Returns true if offset exists. False otherwise.
      *
      * @param integer $offset Offset
@@ -365,7 +374,7 @@ class AiNameCulturalContext implements ArrayAccess
         return isset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets offset.
      *
      * @param integer $offset Offset
@@ -377,7 +386,7 @@ class AiNameCulturalContext implements ArrayAccess
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
-    /*
+    /**
      * Sets value based on offset.
      *
      * @param integer $offset Offset
@@ -394,7 +403,7 @@ class AiNameCulturalContext implements ArrayAccess
         }
     }
 
-    /*
+    /**
      * Unsets offset.
      *
      * @param integer $offset Offset
@@ -406,7 +415,7 @@ class AiNameCulturalContext implements ArrayAccess
         unset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets the string presentation of the object
      *
      * @return string

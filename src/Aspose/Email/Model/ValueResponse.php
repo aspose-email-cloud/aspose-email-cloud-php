@@ -25,7 +25,7 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
-/*
+/**
  * ValueResponse
  */
 
@@ -34,7 +34,7 @@ namespace Aspose\Email\Model;
 use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
-/*
+/**
  * ValueResponse
  *
  * @description Email document property DTO.
@@ -43,14 +43,14 @@ class ValueResponse implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
-    /*
+    /**
      * The original name of the model.
      *
      * @var string
      */
     protected static $swaggerModelName = "ValueResponse";
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @var string[]
@@ -59,7 +59,7 @@ class ValueResponse implements ArrayAccess
         'value' => 'string'
     ];
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @var string[]
@@ -68,7 +68,7 @@ class ValueResponse implements ArrayAccess
         'value' => null
     ];
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @return array
@@ -78,7 +78,7 @@ class ValueResponse implements ArrayAccess
         return self::$swaggerTypes;
     }
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @return array
@@ -88,7 +88,7 @@ class ValueResponse implements ArrayAccess
         return self::$swaggerFormats;
     }
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -98,7 +98,7 @@ class ValueResponse implements ArrayAccess
         'value' => 'value'
     ];
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
@@ -107,7 +107,7 @@ class ValueResponse implements ArrayAccess
         'value' => 'setValue'
     ];
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @var string[]
@@ -116,7 +116,7 @@ class ValueResponse implements ArrayAccess
         'value' => 'getValue'
     ];
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -127,7 +127,7 @@ class ValueResponse implements ArrayAccess
         return self::$attributeMap;
     }
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @return array
@@ -137,7 +137,7 @@ class ValueResponse implements ArrayAccess
         return self::$setters;
     }
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @return array
@@ -147,7 +147,7 @@ class ValueResponse implements ArrayAccess
         return self::$getters;
     }
 
-    /*
+    /**
      * The original name of the model.
      *
      * @return string
@@ -161,25 +161,26 @@ class ValueResponse implements ArrayAccess
 
     
 
-    /*
+    /**
      * Associative array for storing property values
      *
      * @var mixed[]
      */
     protected $container = [];
 
-    /*
-     * Constructor
-     *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+    /**
+     * Initializes a new instance of the ValueResponse class.
+     *  
+     * @param string $value Gets or sets string content.
      */
-    public function __construct(array $data = null)
+    public function __construct($value = null)
     {
-        $this->container['value'] = isset($data['value']) ? $data['value'] : null;
+        $this->container['value'] = null;
+
+        if ($value != null) $this->setValue($value);
     }
 
-    /*
+    /**
      * Show all the invalid properties with reasons.
      *
      * @return array invalid properties with reasons
@@ -191,7 +192,7 @@ class ValueResponse implements ArrayAccess
         return $invalidProperties;
     }
 
-    /*
+    /**
      * Validate all the properties in the model
      * return true if all passed
      *
@@ -204,7 +205,7 @@ class ValueResponse implements ArrayAccess
     }
 
 
-    /*
+    /**
      * Gets value
      *
      * @return string
@@ -214,7 +215,7 @@ class ValueResponse implements ArrayAccess
         return $this->container['value'];
     }
 
-    /*
+    /**
      * Sets value
      *
      * @param string $value Gets or sets string content.
@@ -227,7 +228,7 @@ class ValueResponse implements ArrayAccess
 
         return $this;
     }
-    /*
+    /**
      * Returns true if offset exists. False otherwise.
      *
      * @param integer $offset Offset
@@ -239,7 +240,7 @@ class ValueResponse implements ArrayAccess
         return isset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets offset.
      *
      * @param integer $offset Offset
@@ -251,7 +252,7 @@ class ValueResponse implements ArrayAccess
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
-    /*
+    /**
      * Sets value based on offset.
      *
      * @param integer $offset Offset
@@ -268,7 +269,7 @@ class ValueResponse implements ArrayAccess
         }
     }
 
-    /*
+    /**
      * Unsets offset.
      *
      * @param integer $offset Offset
@@ -280,7 +281,7 @@ class ValueResponse implements ArrayAccess
         unset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets the string presentation of the object
      *
      * @return string

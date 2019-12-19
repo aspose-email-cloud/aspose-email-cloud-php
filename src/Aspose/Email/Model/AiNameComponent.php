@@ -25,7 +25,7 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
-/*
+/**
  * AiNameComponent
  */
 
@@ -34,7 +34,7 @@ namespace Aspose\Email\Model;
 use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
-/*
+/**
  * AiNameComponent
  *
  * @description Parsed name component
@@ -43,14 +43,14 @@ class AiNameComponent implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
-    /*
+    /**
      * The original name of the model.
      *
      * @var string
      */
     protected static $swaggerModelName = "AiNameComponent";
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @var string[]
@@ -62,7 +62,7 @@ class AiNameComponent implements ArrayAccess
         'position' => 'int'
     ];
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @var string[]
@@ -74,7 +74,7 @@ class AiNameComponent implements ArrayAccess
         'position' => 'int32'
     ];
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @return array
@@ -84,7 +84,7 @@ class AiNameComponent implements ArrayAccess
         return self::$swaggerTypes;
     }
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @return array
@@ -94,7 +94,7 @@ class AiNameComponent implements ArrayAccess
         return self::$swaggerFormats;
     }
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -107,7 +107,7 @@ class AiNameComponent implements ArrayAccess
         'position' => 'position'
     ];
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
@@ -119,7 +119,7 @@ class AiNameComponent implements ArrayAccess
         'position' => 'setPosition'
     ];
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @var string[]
@@ -131,7 +131,7 @@ class AiNameComponent implements ArrayAccess
         'position' => 'getPosition'
     ];
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -142,7 +142,7 @@ class AiNameComponent implements ArrayAccess
         return self::$attributeMap;
     }
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @return array
@@ -152,7 +152,7 @@ class AiNameComponent implements ArrayAccess
         return self::$setters;
     }
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @return array
@@ -162,7 +162,7 @@ class AiNameComponent implements ArrayAccess
         return self::$getters;
     }
 
-    /*
+    /**
      * The original name of the model.
      *
      * @return string
@@ -176,28 +176,35 @@ class AiNameComponent implements ArrayAccess
 
     
 
-    /*
+    /**
      * Associative array for storing property values
      *
      * @var mixed[]
      */
     protected $container = [];
 
-    /*
-     * Constructor
-     *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+    /**
+     * Initializes a new instance of the AiNameComponent class.
+     *  
+     * @param string $value Component value
+     * @param string $category Name component category. Enum, available values: Unknown, Mononym, Score, Format, FirstInitial, FirstName, MiddleInitial, MiddleName, MiddleNickname, MiddleSobriquet, MiddleMaidenName, MiddlePatronym, MiddleMatronym, LastInitial, LastName, LastNobiliaryParticle, LastNominalConjunction, LastPaternalSurname, LastMaternalSurname, PrefixTitle, PostfixGenerationalTitle, PostfixPostnominalLetters, ArabicIsm, ArabicKunya, ArabicNasab, ArabicSlaqab, ArabicNisbah
+     * @param double $score Score from 0.0 to 1.0
+     * @param int $position Component position from 0
      */
-    public function __construct(array $data = null)
+    public function __construct($value = null, $category = null, $score = null, $position = null)
     {
-        $this->container['value'] = isset($data['value']) ? $data['value'] : null;
-        $this->container['category'] = isset($data['category']) ? $data['category'] : null;
-        $this->container['score'] = isset($data['score']) ? $data['score'] : null;
-        $this->container['position'] = isset($data['position']) ? $data['position'] : null;
+        $this->container['value'] = null;
+        $this->container['category'] = null;
+        $this->container['score'] = null;
+        $this->container['position'] = null;
+
+        if ($value != null) $this->setValue($value);
+        if ($category != null) $this->setCategory($category);
+        if ($score != null) $this->setScore($score);
+        if ($position != null) $this->setPosition($position);
     }
 
-    /*
+    /**
      * Show all the invalid properties with reasons.
      *
      * @return array invalid properties with reasons
@@ -218,7 +225,7 @@ class AiNameComponent implements ArrayAccess
         return $invalidProperties;
     }
 
-    /*
+    /**
      * Validate all the properties in the model
      * return true if all passed
      *
@@ -240,7 +247,7 @@ class AiNameComponent implements ArrayAccess
     }
 
 
-    /*
+    /**
      * Gets value
      *
      * @return string
@@ -250,7 +257,7 @@ class AiNameComponent implements ArrayAccess
         return $this->container['value'];
     }
 
-    /*
+    /**
      * Sets value
      *
      * @param string $value Component value
@@ -264,7 +271,7 @@ class AiNameComponent implements ArrayAccess
         return $this;
     }
 
-    /*
+    /**
      * Gets category
      *
      * @return string
@@ -274,7 +281,7 @@ class AiNameComponent implements ArrayAccess
         return $this->container['category'];
     }
 
-    /*
+    /**
      * Sets category
      *
      * @param string $category Name component category. Enum, available values: Unknown, Mononym, Score, Format, FirstInitial, FirstName, MiddleInitial, MiddleName, MiddleNickname, MiddleSobriquet, MiddleMaidenName, MiddlePatronym, MiddleMatronym, LastInitial, LastName, LastNobiliaryParticle, LastNominalConjunction, LastPaternalSurname, LastMaternalSurname, PrefixTitle, PostfixGenerationalTitle, PostfixPostnominalLetters, ArabicIsm, ArabicKunya, ArabicNasab, ArabicSlaqab, ArabicNisbah
@@ -288,7 +295,7 @@ class AiNameComponent implements ArrayAccess
         return $this;
     }
 
-    /*
+    /**
      * Gets score
      *
      * @return double
@@ -298,7 +305,7 @@ class AiNameComponent implements ArrayAccess
         return $this->container['score'];
     }
 
-    /*
+    /**
      * Sets score
      *
      * @param double $score Score from 0.0 to 1.0
@@ -312,7 +319,7 @@ class AiNameComponent implements ArrayAccess
         return $this;
     }
 
-    /*
+    /**
      * Gets position
      *
      * @return int
@@ -322,7 +329,7 @@ class AiNameComponent implements ArrayAccess
         return $this->container['position'];
     }
 
-    /*
+    /**
      * Sets position
      *
      * @param int $position Component position from 0
@@ -335,7 +342,7 @@ class AiNameComponent implements ArrayAccess
 
         return $this;
     }
-    /*
+    /**
      * Returns true if offset exists. False otherwise.
      *
      * @param integer $offset Offset
@@ -347,7 +354,7 @@ class AiNameComponent implements ArrayAccess
         return isset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets offset.
      *
      * @param integer $offset Offset
@@ -359,7 +366,7 @@ class AiNameComponent implements ArrayAccess
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
-    /*
+    /**
      * Sets value based on offset.
      *
      * @param integer $offset Offset
@@ -376,7 +383,7 @@ class AiNameComponent implements ArrayAccess
         }
     }
 
-    /*
+    /**
      * Unsets offset.
      *
      * @param integer $offset Offset
@@ -388,7 +395,7 @@ class AiNameComponent implements ArrayAccess
         unset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets the string presentation of the object
      *
      * @return string

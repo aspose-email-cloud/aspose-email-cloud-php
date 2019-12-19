@@ -28,12 +28,12 @@
 
 namespace Aspose\Email\Model\Requests;
 
-/*
+/**
  * Request model for deleteContactProperty" operation.
  */
 class deleteContactPropertyRequest
 {
-    /*
+    /**
      * Initializes a new instance of the deleteContactPropertyRequest class.
      *  
      * @param string $format Contact document format Enum, available values: VCard, WebDav, Msg
@@ -51,27 +51,27 @@ class deleteContactPropertyRequest
         $this->folder = $folder;
     }
 
-    /*
+    /**
      * Contact document format Enum, available values: VCard, WebDav, Msg
      */
     public $format;
 	
-    /*
+    /**
      * Contact document file name
      */
     public $name;
 	
-    /*
+    /**
      * Indexed property name
      */
     public $member_name;
 	
-    /*
+    /**
      * Property index
      */
     public $index;
 	
-    /*
+    /**
      * Calendar document location in storage information
      */
     public $folder;

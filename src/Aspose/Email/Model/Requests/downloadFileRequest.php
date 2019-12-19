@@ -28,12 +28,12 @@
 
 namespace Aspose\Email\Model\Requests;
 
-/*
+/**
  * Request model for downloadFile" operation.
  */
 class downloadFileRequest
 {
-    /*
+    /**
      * Initializes a new instance of the downloadFileRequest class.
      *  
      * @param string $path File path e.g. '/folder/file.ext'
@@ -47,17 +47,17 @@ class downloadFileRequest
         $this->version_id = $version_id;
     }
 
-    /*
+    /**
      * File path e.g. '/folder/file.ext'
      */
     public $path;
 	
-    /*
+    /**
      * Storage name
      */
     public $storage_name;
 	
-    /*
+    /**
      * File version ID to download
      */
     public $version_id;

@@ -28,12 +28,12 @@
 
 namespace Aspose\Email\Model\Requests;
 
-/*
+/**
  * Request model for aiBcrParseOcrData" operation.
  */
 class aiBcrParseOcrDataRequest
 {
-    /*
+    /**
      * Initializes a new instance of the aiBcrParseOcrDataRequest class.
      *  
      * @param \Aspose\Email\Model\AiBcrParseOcrDataRq $rq 
@@ -43,7 +43,7 @@ class aiBcrParseOcrDataRequest
         $this->rq = $rq;
     }
 
-    /*
+    /**
      * Gets or sets rq
      */
     public $rq;

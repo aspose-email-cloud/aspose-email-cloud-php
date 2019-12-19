@@ -25,7 +25,7 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
-/*
+/**
  * AddAttachmentRequest
  */
 
@@ -34,7 +34,7 @@ namespace Aspose\Email\Model;
 use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
-/*
+/**
  * AddAttachmentRequest
  *
  * @description Add attachment request
@@ -43,14 +43,14 @@ class AddAttachmentRequest implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
-    /*
+    /**
      * The original name of the model.
      *
      * @var string
      */
     protected static $swaggerModelName = "AddAttachmentRequest";
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @var string[]
@@ -60,7 +60,7 @@ class AddAttachmentRequest implements ArrayAccess
         'attachment_folder' => '\Aspose\Email\Model\StorageFolderLocation'
     ];
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @var string[]
@@ -70,7 +70,7 @@ class AddAttachmentRequest implements ArrayAccess
         'attachment_folder' => null
     ];
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @return array
@@ -80,7 +80,7 @@ class AddAttachmentRequest implements ArrayAccess
         return self::$swaggerTypes;
     }
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @return array
@@ -90,7 +90,7 @@ class AddAttachmentRequest implements ArrayAccess
         return self::$swaggerFormats;
     }
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -101,7 +101,7 @@ class AddAttachmentRequest implements ArrayAccess
         'attachment_folder' => 'attachmentFolder'
     ];
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
@@ -111,7 +111,7 @@ class AddAttachmentRequest implements ArrayAccess
         'attachment_folder' => 'setAttachmentFolder'
     ];
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @var string[]
@@ -121,7 +121,7 @@ class AddAttachmentRequest implements ArrayAccess
         'attachment_folder' => 'getAttachmentFolder'
     ];
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -132,7 +132,7 @@ class AddAttachmentRequest implements ArrayAccess
         return self::$attributeMap;
     }
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @return array
@@ -142,7 +142,7 @@ class AddAttachmentRequest implements ArrayAccess
         return self::$setters;
     }
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @return array
@@ -152,7 +152,7 @@ class AddAttachmentRequest implements ArrayAccess
         return self::$getters;
     }
 
-    /*
+    /**
      * The original name of the model.
      *
      * @return string
@@ -166,26 +166,29 @@ class AddAttachmentRequest implements ArrayAccess
 
     
 
-    /*
+    /**
      * Associative array for storing property values
      *
      * @var mixed[]
      */
     protected $container = [];
 
-    /*
-     * Constructor
-     *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+    /**
+     * Initializes a new instance of the AddAttachmentRequest class.
+     *  
+     * @param \Aspose\Email\Model\StorageFolderLocation $document_folder Storage folder location of document
+     * @param \Aspose\Email\Model\StorageFolderLocation $attachment_folder Storage folder location of an attachment
      */
-    public function __construct(array $data = null)
+    public function __construct($document_folder = null, $attachment_folder = null)
     {
-        $this->container['document_folder'] = isset($data['document_folder']) ? $data['document_folder'] : null;
-        $this->container['attachment_folder'] = isset($data['attachment_folder']) ? $data['attachment_folder'] : null;
+        $this->container['document_folder'] = null;
+        $this->container['attachment_folder'] = null;
+
+        if ($document_folder != null) $this->setDocumentFolder($document_folder);
+        if ($attachment_folder != null) $this->setAttachmentFolder($attachment_folder);
     }
 
-    /*
+    /**
      * Show all the invalid properties with reasons.
      *
      * @return array invalid properties with reasons
@@ -197,7 +200,7 @@ class AddAttachmentRequest implements ArrayAccess
         return $invalidProperties;
     }
 
-    /*
+    /**
      * Validate all the properties in the model
      * return true if all passed
      *
@@ -210,7 +213,7 @@ class AddAttachmentRequest implements ArrayAccess
     }
 
 
-    /*
+    /**
      * Gets document_folder
      *
      * @return \Aspose\Email\Model\StorageFolderLocation
@@ -220,7 +223,7 @@ class AddAttachmentRequest implements ArrayAccess
         return $this->container['document_folder'];
     }
 
-    /*
+    /**
      * Sets document_folder
      *
      * @param \Aspose\Email\Model\StorageFolderLocation $document_folder Storage folder location of document
@@ -234,7 +237,7 @@ class AddAttachmentRequest implements ArrayAccess
         return $this;
     }
 
-    /*
+    /**
      * Gets attachment_folder
      *
      * @return \Aspose\Email\Model\StorageFolderLocation
@@ -244,7 +247,7 @@ class AddAttachmentRequest implements ArrayAccess
         return $this->container['attachment_folder'];
     }
 
-    /*
+    /**
      * Sets attachment_folder
      *
      * @param \Aspose\Email\Model\StorageFolderLocation $attachment_folder Storage folder location of an attachment
@@ -257,7 +260,7 @@ class AddAttachmentRequest implements ArrayAccess
 
         return $this;
     }
-    /*
+    /**
      * Returns true if offset exists. False otherwise.
      *
      * @param integer $offset Offset
@@ -269,7 +272,7 @@ class AddAttachmentRequest implements ArrayAccess
         return isset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets offset.
      *
      * @param integer $offset Offset
@@ -281,7 +284,7 @@ class AddAttachmentRequest implements ArrayAccess
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
-    /*
+    /**
      * Sets value based on offset.
      *
      * @param integer $offset Offset
@@ -298,7 +301,7 @@ class AddAttachmentRequest implements ArrayAccess
         }
     }
 
-    /*
+    /**
      * Unsets offset.
      *
      * @param integer $offset Offset
@@ -310,7 +313,7 @@ class AddAttachmentRequest implements ArrayAccess
         unset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets the string presentation of the object
      *
      * @return string

@@ -28,12 +28,12 @@
 
 namespace Aspose\Email\Model\Requests;
 
-/*
+/**
  * Request model for uploadFile" operation.
  */
 class uploadFileRequest
 {
-    /*
+    /**
      * Initializes a new instance of the uploadFileRequest class.
      *  
      * @param string $path Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header.
@@ -47,17 +47,17 @@ class uploadFileRequest
         $this->storage_name = $storage_name;
     }
 
-    /*
+    /**
      * Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header.
      */
     public $path;
 	
-    /*
+    /**
      * File to upload
      */
     public $file;
 	
-    /*
+    /**
      * Storage name
      */
     public $storage_name;

@@ -28,12 +28,12 @@
 
 namespace Aspose\Email\Model\Requests;
 
-/*
+/**
  * Request model for getFilesList" operation.
  */
 class getFilesListRequest
 {
-    /*
+    /**
      * Initializes a new instance of the getFilesListRequest class.
      *  
      * @param string $path Folder path e.g. '/folder'
@@ -45,12 +45,12 @@ class getFilesListRequest
         $this->storage_name = $storage_name;
     }
 
-    /*
+    /**
      * Folder path e.g. '/folder'
      */
     public $path;
 	
-    /*
+    /**
      * Storage name
      */
     public $storage_name;

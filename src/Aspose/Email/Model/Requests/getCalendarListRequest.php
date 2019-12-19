@@ -28,12 +28,12 @@
 
 namespace Aspose\Email\Model\Requests;
 
-/*
+/**
  * Request model for getCalendarList" operation.
  */
 class getCalendarListRequest
 {
-    /*
+    /**
      * Initializes a new instance of the getCalendarListRequest class.
      *  
      * @param string $folder Path to folder in storage
@@ -49,22 +49,22 @@ class getCalendarListRequest
         $this->storage = $storage;
     }
 
-    /*
+    /**
      * Path to folder in storage
      */
     public $folder;
 	
-    /*
+    /**
      * Count of items on page
      */
     public $items_per_page;
 	
-    /*
+    /**
      * Page number
      */
     public $page_number;
 	
-    /*
+    /**
      * Storage name
      */
     public $storage;

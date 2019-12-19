@@ -25,7 +25,7 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
-/*
+/**
  * StorageFile
  */
 
@@ -34,7 +34,7 @@ namespace Aspose\Email\Model;
 use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
-/*
+/**
  * StorageFile
  *
  * @description File or folder information
@@ -43,14 +43,14 @@ class StorageFile implements ArrayAccess
 {
     const DISCRIMINATOR = 'Type';
 
-    /*
+    /**
      * The original name of the model.
      *
      * @var string
      */
     protected static $swaggerModelName = "StorageFile";
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @var string[]
@@ -63,7 +63,7 @@ class StorageFile implements ArrayAccess
         'path' => 'string'
     ];
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @var string[]
@@ -76,7 +76,7 @@ class StorageFile implements ArrayAccess
         'path' => null
     ];
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @return array
@@ -86,7 +86,7 @@ class StorageFile implements ArrayAccess
         return self::$swaggerTypes;
     }
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @return array
@@ -96,7 +96,7 @@ class StorageFile implements ArrayAccess
         return self::$swaggerFormats;
     }
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -110,7 +110,7 @@ class StorageFile implements ArrayAccess
         'path' => 'path'
     ];
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
@@ -123,7 +123,7 @@ class StorageFile implements ArrayAccess
         'path' => 'setPath'
     ];
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @var string[]
@@ -136,7 +136,7 @@ class StorageFile implements ArrayAccess
         'path' => 'getPath'
     ];
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -147,7 +147,7 @@ class StorageFile implements ArrayAccess
         return self::$attributeMap;
     }
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @return array
@@ -157,7 +157,7 @@ class StorageFile implements ArrayAccess
         return self::$setters;
     }
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @return array
@@ -167,7 +167,7 @@ class StorageFile implements ArrayAccess
         return self::$getters;
     }
 
-    /*
+    /**
      * The original name of the model.
      *
      * @return string
@@ -181,33 +181,42 @@ class StorageFile implements ArrayAccess
 
     
 
-    /*
+    /**
      * Associative array for storing property values
      *
      * @var mixed[]
      */
     protected $container = [];
 
-    /*
-     * Constructor
-     *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+    /**
+     * Initializes a new instance of the StorageFile class.
+     *  
+     * @param string $name File or folder name.
+     * @param bool $is_folder True if it is a folder.
+     * @param \DateTime $modified_date File or folder last modified DateTime.
+     * @param int $size File or folder size.
+     * @param string $path File or folder path.
      */
-    public function __construct(array $data = null)
+    public function __construct($name = null, $is_folder = null, $modified_date = null, $size = null, $path = null)
     {
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['is_folder'] = isset($data['is_folder']) ? $data['is_folder'] : null;
-        $this->container['modified_date'] = isset($data['modified_date']) ? $data['modified_date'] : null;
-        $this->container['size'] = isset($data['size']) ? $data['size'] : null;
-        $this->container['path'] = isset($data['path']) ? $data['path'] : null;
+        $this->container['name'] = null;
+        $this->container['is_folder'] = null;
+        $this->container['modified_date'] = null;
+        $this->container['size'] = null;
+        $this->container['path'] = null;
+
+        if ($name != null) $this->setName($name);
+        if ($is_folder != null) $this->setIsFolder($is_folder);
+        if ($modified_date != null) $this->setModifiedDate($modified_date);
+        if ($size != null) $this->setSize($size);
+        if ($path != null) $this->setPath($path);
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('Type', self::$attributeMap);
         $this->container[$discriminator] = static::$swaggerModelName;
     }
 
-    /*
+    /**
      * Show all the invalid properties with reasons.
      *
      * @return array invalid properties with reasons
@@ -225,7 +234,7 @@ class StorageFile implements ArrayAccess
         return $invalidProperties;
     }
 
-    /*
+    /**
      * Validate all the properties in the model
      * return true if all passed
      *
@@ -244,7 +253,7 @@ class StorageFile implements ArrayAccess
     }
 
 
-    /*
+    /**
      * Gets name
      *
      * @return string
@@ -254,7 +263,7 @@ class StorageFile implements ArrayAccess
         return $this->container['name'];
     }
 
-    /*
+    /**
      * Sets name
      *
      * @param string $name File or folder name.
@@ -268,7 +277,7 @@ class StorageFile implements ArrayAccess
         return $this;
     }
 
-    /*
+    /**
      * Gets is_folder
      *
      * @return bool
@@ -278,7 +287,7 @@ class StorageFile implements ArrayAccess
         return $this->container['is_folder'];
     }
 
-    /*
+    /**
      * Sets is_folder
      *
      * @param bool $is_folder True if it is a folder.
@@ -292,7 +301,7 @@ class StorageFile implements ArrayAccess
         return $this;
     }
 
-    /*
+    /**
      * Gets modified_date
      *
      * @return \DateTime
@@ -302,7 +311,7 @@ class StorageFile implements ArrayAccess
         return $this->container['modified_date'];
     }
 
-    /*
+    /**
      * Sets modified_date
      *
      * @param \DateTime $modified_date File or folder last modified DateTime.
@@ -316,7 +325,7 @@ class StorageFile implements ArrayAccess
         return $this;
     }
 
-    /*
+    /**
      * Gets size
      *
      * @return int
@@ -326,7 +335,7 @@ class StorageFile implements ArrayAccess
         return $this->container['size'];
     }
 
-    /*
+    /**
      * Sets size
      *
      * @param int $size File or folder size.
@@ -340,7 +349,7 @@ class StorageFile implements ArrayAccess
         return $this;
     }
 
-    /*
+    /**
      * Gets path
      *
      * @return string
@@ -350,7 +359,7 @@ class StorageFile implements ArrayAccess
         return $this->container['path'];
     }
 
-    /*
+    /**
      * Sets path
      *
      * @param string $path File or folder path.
@@ -363,7 +372,7 @@ class StorageFile implements ArrayAccess
 
         return $this;
     }
-    /*
+    /**
      * Returns true if offset exists. False otherwise.
      *
      * @param integer $offset Offset
@@ -375,7 +384,7 @@ class StorageFile implements ArrayAccess
         return isset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets offset.
      *
      * @param integer $offset Offset
@@ -387,7 +396,7 @@ class StorageFile implements ArrayAccess
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
-    /*
+    /**
      * Sets value based on offset.
      *
      * @param integer $offset Offset
@@ -404,7 +413,7 @@ class StorageFile implements ArrayAccess
         }
     }
 
-    /*
+    /**
      * Unsets offset.
      *
      * @param integer $offset Offset
@@ -416,7 +425,7 @@ class StorageFile implements ArrayAccess
         unset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets the string presentation of the object
      *
      * @return string

@@ -25,7 +25,7 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
-/*
+/**
  * AiNameWeightedVariants
  */
 
@@ -34,7 +34,7 @@ namespace Aspose\Email\Model;
 use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
-/*
+/**
  * AiNameWeightedVariants
  *
  * @description Name variants
@@ -43,14 +43,14 @@ class AiNameWeightedVariants implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
-    /*
+    /**
      * The original name of the model.
      *
      * @var string
      */
     protected static $swaggerModelName = "AiNameWeightedVariants";
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @var string[]
@@ -60,7 +60,7 @@ class AiNameWeightedVariants implements ArrayAccess
         'comments' => 'string'
     ];
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @var string[]
@@ -70,7 +70,7 @@ class AiNameWeightedVariants implements ArrayAccess
         'comments' => null
     ];
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @return array
@@ -80,7 +80,7 @@ class AiNameWeightedVariants implements ArrayAccess
         return self::$swaggerTypes;
     }
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @return array
@@ -90,7 +90,7 @@ class AiNameWeightedVariants implements ArrayAccess
         return self::$swaggerFormats;
     }
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -101,7 +101,7 @@ class AiNameWeightedVariants implements ArrayAccess
         'comments' => 'comments'
     ];
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
@@ -111,7 +111,7 @@ class AiNameWeightedVariants implements ArrayAccess
         'comments' => 'setComments'
     ];
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @var string[]
@@ -121,7 +121,7 @@ class AiNameWeightedVariants implements ArrayAccess
         'comments' => 'getComments'
     ];
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -132,7 +132,7 @@ class AiNameWeightedVariants implements ArrayAccess
         return self::$attributeMap;
     }
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @return array
@@ -142,7 +142,7 @@ class AiNameWeightedVariants implements ArrayAccess
         return self::$setters;
     }
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @return array
@@ -152,7 +152,7 @@ class AiNameWeightedVariants implements ArrayAccess
         return self::$getters;
     }
 
-    /*
+    /**
      * The original name of the model.
      *
      * @return string
@@ -166,26 +166,29 @@ class AiNameWeightedVariants implements ArrayAccess
 
     
 
-    /*
+    /**
      * Associative array for storing property values
      *
      * @var mixed[]
      */
     protected $container = [];
 
-    /*
-     * Constructor
-     *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+    /**
+     * Initializes a new instance of the AiNameWeightedVariants class.
+     *  
+     * @param \Aspose\Email\Model\AiNameWeighted[] $names List of name variations
+     * @param string $comments Usually empty; can contain extra message describing some issue occurred during processing
      */
-    public function __construct(array $data = null)
+    public function __construct($names = null, $comments = null)
     {
-        $this->container['names'] = isset($data['names']) ? $data['names'] : null;
-        $this->container['comments'] = isset($data['comments']) ? $data['comments'] : null;
+        $this->container['names'] = null;
+        $this->container['comments'] = null;
+
+        if ($names != null) $this->setNames($names);
+        if ($comments != null) $this->setComments($comments);
     }
 
-    /*
+    /**
      * Show all the invalid properties with reasons.
      *
      * @return array invalid properties with reasons
@@ -197,7 +200,7 @@ class AiNameWeightedVariants implements ArrayAccess
         return $invalidProperties;
     }
 
-    /*
+    /**
      * Validate all the properties in the model
      * return true if all passed
      *
@@ -210,7 +213,7 @@ class AiNameWeightedVariants implements ArrayAccess
     }
 
 
-    /*
+    /**
      * Gets names
      *
      * @return \Aspose\Email\Model\AiNameWeighted[]
@@ -220,7 +223,7 @@ class AiNameWeightedVariants implements ArrayAccess
         return $this->container['names'];
     }
 
-    /*
+    /**
      * Sets names
      *
      * @param \Aspose\Email\Model\AiNameWeighted[] $names List of name variations
@@ -234,7 +237,7 @@ class AiNameWeightedVariants implements ArrayAccess
         return $this;
     }
 
-    /*
+    /**
      * Gets comments
      *
      * @return string
@@ -244,7 +247,7 @@ class AiNameWeightedVariants implements ArrayAccess
         return $this->container['comments'];
     }
 
-    /*
+    /**
      * Sets comments
      *
      * @param string $comments Usually empty; can contain extra message describing some issue occurred during processing
@@ -257,7 +260,7 @@ class AiNameWeightedVariants implements ArrayAccess
 
         return $this;
     }
-    /*
+    /**
      * Returns true if offset exists. False otherwise.
      *
      * @param integer $offset Offset
@@ -269,7 +272,7 @@ class AiNameWeightedVariants implements ArrayAccess
         return isset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets offset.
      *
      * @param integer $offset Offset
@@ -281,7 +284,7 @@ class AiNameWeightedVariants implements ArrayAccess
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
-    /*
+    /**
      * Sets value based on offset.
      *
      * @param integer $offset Offset
@@ -298,7 +301,7 @@ class AiNameWeightedVariants implements ArrayAccess
         }
     }
 
-    /*
+    /**
      * Unsets offset.
      *
      * @param integer $offset Offset
@@ -310,7 +313,7 @@ class AiNameWeightedVariants implements ArrayAccess
         unset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets the string presentation of the object
      *
      * @return string

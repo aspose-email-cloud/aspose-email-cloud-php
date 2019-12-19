@@ -25,7 +25,7 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
-/*
+/**
  * AiNameMatchResult
  */
 
@@ -34,7 +34,7 @@ namespace Aspose\Email\Model;
 use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
-/*
+/**
  * AiNameMatchResult
  *
  * @description Two names match result
@@ -43,14 +43,14 @@ class AiNameMatchResult implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
-    /*
+    /**
      * The original name of the model.
      *
      * @var string
      */
     protected static $swaggerModelName = "AiNameMatchResult";
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @var string[]
@@ -60,7 +60,7 @@ class AiNameMatchResult implements ArrayAccess
         'mismatches' => '\Aspose\Email\Model\AiNameMismatch[]'
     ];
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @var string[]
@@ -70,7 +70,7 @@ class AiNameMatchResult implements ArrayAccess
         'mismatches' => null
     ];
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @return array
@@ -80,7 +80,7 @@ class AiNameMatchResult implements ArrayAccess
         return self::$swaggerTypes;
     }
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @return array
@@ -90,7 +90,7 @@ class AiNameMatchResult implements ArrayAccess
         return self::$swaggerFormats;
     }
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -101,7 +101,7 @@ class AiNameMatchResult implements ArrayAccess
         'mismatches' => 'mismatches'
     ];
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
@@ -111,7 +111,7 @@ class AiNameMatchResult implements ArrayAccess
         'mismatches' => 'setMismatches'
     ];
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @var string[]
@@ -121,7 +121,7 @@ class AiNameMatchResult implements ArrayAccess
         'mismatches' => 'getMismatches'
     ];
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -132,7 +132,7 @@ class AiNameMatchResult implements ArrayAccess
         return self::$attributeMap;
     }
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @return array
@@ -142,7 +142,7 @@ class AiNameMatchResult implements ArrayAccess
         return self::$setters;
     }
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @return array
@@ -152,7 +152,7 @@ class AiNameMatchResult implements ArrayAccess
         return self::$getters;
     }
 
-    /*
+    /**
      * The original name of the model.
      *
      * @return string
@@ -166,26 +166,29 @@ class AiNameMatchResult implements ArrayAccess
 
     
 
-    /*
+    /**
      * Associative array for storing property values
      *
      * @var mixed[]
      */
     protected $container = [];
 
-    /*
-     * Constructor
-     *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+    /**
+     * Initializes a new instance of the AiNameMatchResult class.
+     *  
+     * @param double $similarity Similarity score
+     * @param \Aspose\Email\Model\AiNameMismatch[] $mismatches Detailed description of mismatches
      */
-    public function __construct(array $data = null)
+    public function __construct($similarity = null, $mismatches = null)
     {
-        $this->container['similarity'] = isset($data['similarity']) ? $data['similarity'] : null;
-        $this->container['mismatches'] = isset($data['mismatches']) ? $data['mismatches'] : null;
+        $this->container['similarity'] = null;
+        $this->container['mismatches'] = null;
+
+        if ($similarity != null) $this->setSimilarity($similarity);
+        if ($mismatches != null) $this->setMismatches($mismatches);
     }
 
-    /*
+    /**
      * Show all the invalid properties with reasons.
      *
      * @return array invalid properties with reasons
@@ -200,7 +203,7 @@ class AiNameMatchResult implements ArrayAccess
         return $invalidProperties;
     }
 
-    /*
+    /**
      * Validate all the properties in the model
      * return true if all passed
      *
@@ -216,7 +219,7 @@ class AiNameMatchResult implements ArrayAccess
     }
 
 
-    /*
+    /**
      * Gets similarity
      *
      * @return double
@@ -226,7 +229,7 @@ class AiNameMatchResult implements ArrayAccess
         return $this->container['similarity'];
     }
 
-    /*
+    /**
      * Sets similarity
      *
      * @param double $similarity Similarity score
@@ -240,7 +243,7 @@ class AiNameMatchResult implements ArrayAccess
         return $this;
     }
 
-    /*
+    /**
      * Gets mismatches
      *
      * @return \Aspose\Email\Model\AiNameMismatch[]
@@ -250,7 +253,7 @@ class AiNameMatchResult implements ArrayAccess
         return $this->container['mismatches'];
     }
 
-    /*
+    /**
      * Sets mismatches
      *
      * @param \Aspose\Email\Model\AiNameMismatch[] $mismatches Detailed description of mismatches
@@ -263,7 +266,7 @@ class AiNameMatchResult implements ArrayAccess
 
         return $this;
     }
-    /*
+    /**
      * Returns true if offset exists. False otherwise.
      *
      * @param integer $offset Offset
@@ -275,7 +278,7 @@ class AiNameMatchResult implements ArrayAccess
         return isset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets offset.
      *
      * @param integer $offset Offset
@@ -287,7 +290,7 @@ class AiNameMatchResult implements ArrayAccess
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
-    /*
+    /**
      * Sets value based on offset.
      *
      * @param integer $offset Offset
@@ -304,7 +307,7 @@ class AiNameMatchResult implements ArrayAccess
         }
     }
 
-    /*
+    /**
      * Unsets offset.
      *
      * @param integer $offset Offset
@@ -316,7 +319,7 @@ class AiNameMatchResult implements ArrayAccess
         unset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets the string presentation of the object
      *
      * @return string

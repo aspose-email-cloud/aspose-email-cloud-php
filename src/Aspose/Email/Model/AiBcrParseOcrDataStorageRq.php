@@ -25,14 +25,14 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
-/*
+/**
  * AiBcrParseOcrDataStorageRq
  */
 
 namespace Aspose\Email\Model;
 use \Aspose\Email\ObjectSerializer;
 
-/*
+/**
  * AiBcrParseOcrDataStorageRq
  *
  * @description Parse ocr data request with storage output location
@@ -41,14 +41,14 @@ class AiBcrParseOcrDataStorageRq extends AiBcrParseOcrDataRq
 {
     const DISCRIMINATOR = null;
 
-    /*
+    /**
      * The original name of the model.
      *
      * @var string
      */
     protected static $swaggerModelName = "AiBcrParseOcrDataStorageRq";
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @var string[]
@@ -57,7 +57,7 @@ class AiBcrParseOcrDataStorageRq extends AiBcrParseOcrDataRq
         'out_folder' => '\Aspose\Email\Model\StorageFolderLocation'
     ];
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @var string[]
@@ -66,7 +66,7 @@ class AiBcrParseOcrDataStorageRq extends AiBcrParseOcrDataRq
         'out_folder' => null
     ];
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @return array
@@ -76,7 +76,7 @@ class AiBcrParseOcrDataStorageRq extends AiBcrParseOcrDataRq
         return self::$swaggerTypes + parent::swaggerTypes();
     }
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @return array
@@ -86,7 +86,7 @@ class AiBcrParseOcrDataStorageRq extends AiBcrParseOcrDataRq
         return self::$swaggerFormats + parent::swaggerFormats();
     }
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -96,7 +96,7 @@ class AiBcrParseOcrDataStorageRq extends AiBcrParseOcrDataRq
         'out_folder' => 'outFolder'
     ];
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
@@ -105,7 +105,7 @@ class AiBcrParseOcrDataStorageRq extends AiBcrParseOcrDataRq
         'out_folder' => 'setOutFolder'
     ];
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @var string[]
@@ -114,7 +114,7 @@ class AiBcrParseOcrDataStorageRq extends AiBcrParseOcrDataRq
         'out_folder' => 'getOutFolder'
     ];
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -125,7 +125,7 @@ class AiBcrParseOcrDataStorageRq extends AiBcrParseOcrDataRq
         return parent::attributeMap() + self::$attributeMap;
     }
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @return array
@@ -135,7 +135,7 @@ class AiBcrParseOcrDataStorageRq extends AiBcrParseOcrDataRq
         return parent::setters() + self::$setters;
     }
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @return array
@@ -145,7 +145,7 @@ class AiBcrParseOcrDataStorageRq extends AiBcrParseOcrDataRq
         return parent::getters() + self::$getters;
     }
 
-    /*
+    /**
      * The original name of the model.
      *
      * @return string
@@ -160,20 +160,24 @@ class AiBcrParseOcrDataStorageRq extends AiBcrParseOcrDataRq
     
 
 
-    /*
-     * Constructor
-     *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+    /**
+     * Initializes a new instance of the AiBcrParseOcrDataStorageRq class.
+     *  
+     * @param \Aspose\Email\Model\AiBcrOptions $options Recognition options
+     * @param \Aspose\Email\Model\AiBcrOcrData[] $data OCR data
+     * @param \Aspose\Email\Model\StorageFolderLocation $out_folder Output folder location on storage
      */
-    public function __construct(array $data = null)
+    public function __construct($options = null, $data = null, $out_folder = null)
     {
-        parent::__construct($data);
+        parent::__construct();
+        $this->container['out_folder'] = null;
 
-        $this->container['out_folder'] = isset($data['out_folder']) ? $data['out_folder'] : null;
+        if ($options != null) $this->setOptions($options);
+        if ($data != null) $this->setData($data);
+        if ($out_folder != null) $this->setOutFolder($out_folder);
     }
 
-    /*
+    /**
      * Show all the invalid properties with reasons.
      *
      * @return array invalid properties with reasons
@@ -188,7 +192,7 @@ class AiBcrParseOcrDataStorageRq extends AiBcrParseOcrDataRq
         return $invalidProperties;
     }
 
-    /*
+    /**
      * Validate all the properties in the model
      * return true if all passed
      *
@@ -207,7 +211,7 @@ class AiBcrParseOcrDataStorageRq extends AiBcrParseOcrDataRq
     }
 
 
-    /*
+    /**
      * Gets out_folder
      *
      * @return \Aspose\Email\Model\StorageFolderLocation
@@ -217,7 +221,7 @@ class AiBcrParseOcrDataStorageRq extends AiBcrParseOcrDataRq
         return $this->container['out_folder'];
     }
 
-    /*
+    /**
      * Sets out_folder
      *
      * @param \Aspose\Email\Model\StorageFolderLocation $out_folder Output folder location on storage
@@ -230,7 +234,7 @@ class AiBcrParseOcrDataStorageRq extends AiBcrParseOcrDataRq
 
         return $this;
     }
-    /*
+    /**
      * Returns true if offset exists. False otherwise.
      *
      * @param integer $offset Offset
@@ -242,7 +246,7 @@ class AiBcrParseOcrDataStorageRq extends AiBcrParseOcrDataRq
         return isset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets offset.
      *
      * @param integer $offset Offset
@@ -254,7 +258,7 @@ class AiBcrParseOcrDataStorageRq extends AiBcrParseOcrDataRq
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
-    /*
+    /**
      * Sets value based on offset.
      *
      * @param integer $offset Offset
@@ -271,7 +275,7 @@ class AiBcrParseOcrDataStorageRq extends AiBcrParseOcrDataRq
         }
     }
 
-    /*
+    /**
      * Unsets offset.
      *
      * @param integer $offset Offset
@@ -283,7 +287,7 @@ class AiBcrParseOcrDataStorageRq extends AiBcrParseOcrDataRq
         unset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets the string presentation of the object
      *
      * @return string

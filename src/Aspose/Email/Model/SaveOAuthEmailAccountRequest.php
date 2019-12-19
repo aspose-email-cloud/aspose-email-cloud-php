@@ -25,14 +25,14 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
-/*
+/**
  * SaveOAuthEmailAccountRequest
  */
 
 namespace Aspose\Email\Model;
 use \Aspose\Email\ObjectSerializer;
 
-/*
+/**
  * SaveOAuthEmailAccountRequest
  *
  * @description Save email account settings with OAuth request
@@ -41,14 +41,14 @@ class SaveOAuthEmailAccountRequest extends EmailAccountRequest
 {
     const DISCRIMINATOR = null;
 
-    /*
+    /**
      * The original name of the model.
      *
      * @var string
      */
     protected static $swaggerModelName = "SaveOAuthEmailAccountRequest";
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @var string[]
@@ -59,7 +59,7 @@ class SaveOAuthEmailAccountRequest extends EmailAccountRequest
         'refresh_token' => 'string'
     ];
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @var string[]
@@ -70,7 +70,7 @@ class SaveOAuthEmailAccountRequest extends EmailAccountRequest
         'refresh_token' => null
     ];
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @return array
@@ -80,7 +80,7 @@ class SaveOAuthEmailAccountRequest extends EmailAccountRequest
         return self::$swaggerTypes + parent::swaggerTypes();
     }
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @return array
@@ -90,7 +90,7 @@ class SaveOAuthEmailAccountRequest extends EmailAccountRequest
         return self::$swaggerFormats + parent::swaggerFormats();
     }
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -102,7 +102,7 @@ class SaveOAuthEmailAccountRequest extends EmailAccountRequest
         'refresh_token' => 'refreshToken'
     ];
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
@@ -113,7 +113,7 @@ class SaveOAuthEmailAccountRequest extends EmailAccountRequest
         'refresh_token' => 'setRefreshToken'
     ];
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @var string[]
@@ -124,7 +124,7 @@ class SaveOAuthEmailAccountRequest extends EmailAccountRequest
         'refresh_token' => 'getRefreshToken'
     ];
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -135,7 +135,7 @@ class SaveOAuthEmailAccountRequest extends EmailAccountRequest
         return parent::attributeMap() + self::$attributeMap;
     }
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @return array
@@ -145,7 +145,7 @@ class SaveOAuthEmailAccountRequest extends EmailAccountRequest
         return parent::setters() + self::$setters;
     }
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @return array
@@ -155,7 +155,7 @@ class SaveOAuthEmailAccountRequest extends EmailAccountRequest
         return parent::getters() + self::$getters;
     }
 
-    /*
+    /**
      * The original name of the model.
      *
      * @return string
@@ -170,22 +170,40 @@ class SaveOAuthEmailAccountRequest extends EmailAccountRequest
     
 
 
-    /*
-     * Constructor
-     *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+    /**
+     * Initializes a new instance of the SaveOAuthEmailAccountRequest class.
+     *  
+     * @param string $host Email account host
+     * @param int $port Email account port
+     * @param string $login Email account login
+     * @param string $security_options Security mode for a mail client Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
+     * @param string $protocol_type Type of connection protocol. Enum, available values: IMAP, POP3, SMTP, EWS, WebDav
+     * @param string $description Email account description
+     * @param \Aspose\Email\Model\StorageFileLocation $storage_file A storage file location info to store email account
+     * @param string $client_id OAuth client identifier
+     * @param string $client_secret OAuth client secret
+     * @param string $refresh_token OAuth refresh token
      */
-    public function __construct(array $data = null)
+    public function __construct($host = null, $port = null, $login = null, $security_options = null, $protocol_type = null, $description = null, $storage_file = null, $client_id = null, $client_secret = null, $refresh_token = null)
     {
-        parent::__construct($data);
+        parent::__construct();
+        $this->container['client_id'] = null;
+        $this->container['client_secret'] = null;
+        $this->container['refresh_token'] = null;
 
-        $this->container['client_id'] = isset($data['client_id']) ? $data['client_id'] : null;
-        $this->container['client_secret'] = isset($data['client_secret']) ? $data['client_secret'] : null;
-        $this->container['refresh_token'] = isset($data['refresh_token']) ? $data['refresh_token'] : null;
+        if ($host != null) $this->setHost($host);
+        if ($port != null) $this->setPort($port);
+        if ($login != null) $this->setLogin($login);
+        if ($security_options != null) $this->setSecurityOptions($security_options);
+        if ($protocol_type != null) $this->setProtocolType($protocol_type);
+        if ($description != null) $this->setDescription($description);
+        if ($storage_file != null) $this->setStorageFile($storage_file);
+        if ($client_id != null) $this->setClientId($client_id);
+        if ($client_secret != null) $this->setClientSecret($client_secret);
+        if ($refresh_token != null) $this->setRefreshToken($refresh_token);
     }
 
-    /*
+    /**
      * Show all the invalid properties with reasons.
      *
      * @return array invalid properties with reasons
@@ -218,7 +236,7 @@ class SaveOAuthEmailAccountRequest extends EmailAccountRequest
         return $invalidProperties;
     }
 
-    /*
+    /**
      * Validate all the properties in the model
      * return true if all passed
      *
@@ -252,7 +270,7 @@ class SaveOAuthEmailAccountRequest extends EmailAccountRequest
     }
 
 
-    /*
+    /**
      * Gets client_id
      *
      * @return string
@@ -262,7 +280,7 @@ class SaveOAuthEmailAccountRequest extends EmailAccountRequest
         return $this->container['client_id'];
     }
 
-    /*
+    /**
      * Sets client_id
      *
      * @param string $client_id OAuth client identifier
@@ -281,7 +299,7 @@ class SaveOAuthEmailAccountRequest extends EmailAccountRequest
         return $this;
     }
 
-    /*
+    /**
      * Gets client_secret
      *
      * @return string
@@ -291,7 +309,7 @@ class SaveOAuthEmailAccountRequest extends EmailAccountRequest
         return $this->container['client_secret'];
     }
 
-    /*
+    /**
      * Sets client_secret
      *
      * @param string $client_secret OAuth client secret
@@ -310,7 +328,7 @@ class SaveOAuthEmailAccountRequest extends EmailAccountRequest
         return $this;
     }
 
-    /*
+    /**
      * Gets refresh_token
      *
      * @return string
@@ -320,7 +338,7 @@ class SaveOAuthEmailAccountRequest extends EmailAccountRequest
         return $this->container['refresh_token'];
     }
 
-    /*
+    /**
      * Sets refresh_token
      *
      * @param string $refresh_token OAuth refresh token
@@ -338,7 +356,7 @@ class SaveOAuthEmailAccountRequest extends EmailAccountRequest
 
         return $this;
     }
-    /*
+    /**
      * Returns true if offset exists. False otherwise.
      *
      * @param integer $offset Offset
@@ -350,7 +368,7 @@ class SaveOAuthEmailAccountRequest extends EmailAccountRequest
         return isset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets offset.
      *
      * @param integer $offset Offset
@@ -362,7 +380,7 @@ class SaveOAuthEmailAccountRequest extends EmailAccountRequest
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
-    /*
+    /**
      * Sets value based on offset.
      *
      * @param integer $offset Offset
@@ -379,7 +397,7 @@ class SaveOAuthEmailAccountRequest extends EmailAccountRequest
         }
     }
 
-    /*
+    /**
      * Unsets offset.
      *
      * @param integer $offset Offset
@@ -391,7 +409,7 @@ class SaveOAuthEmailAccountRequest extends EmailAccountRequest
         unset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets the string presentation of the object
      *
      * @return string

@@ -28,12 +28,12 @@
 
 namespace Aspose\Email\Model\Requests;
 
-/*
+/**
  * Request model for saveMailOAuthAccount" operation.
  */
 class saveMailOAuthAccountRequest
 {
-    /*
+    /**
      * Initializes a new instance of the saveMailOAuthAccountRequest class.
      *  
      * @param \Aspose\Email\Model\SaveOAuthEmailAccountRequest $request Email account information
@@ -43,7 +43,7 @@ class saveMailOAuthAccountRequest
         $this->request = $request;
     }
 
-    /*
+    /**
      * Email account information
      */
     public $request;

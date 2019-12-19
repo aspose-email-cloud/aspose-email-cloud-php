@@ -25,7 +25,7 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
-/*
+/**
  * AiNameExtractedComponent
  */
 
@@ -34,7 +34,7 @@ namespace Aspose\Email\Model;
 use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
-/*
+/**
  * AiNameExtractedComponent
  *
  * @description Extracted name component
@@ -43,14 +43,14 @@ class AiNameExtractedComponent implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
-    /*
+    /**
      * The original name of the model.
      *
      * @var string
      */
     protected static $swaggerModelName = "AiNameExtractedComponent";
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @var string[]
@@ -60,7 +60,7 @@ class AiNameExtractedComponent implements ArrayAccess
         'value' => 'string'
     ];
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @var string[]
@@ -70,7 +70,7 @@ class AiNameExtractedComponent implements ArrayAccess
         'value' => null
     ];
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @return array
@@ -80,7 +80,7 @@ class AiNameExtractedComponent implements ArrayAccess
         return self::$swaggerTypes;
     }
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @return array
@@ -90,7 +90,7 @@ class AiNameExtractedComponent implements ArrayAccess
         return self::$swaggerFormats;
     }
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -101,7 +101,7 @@ class AiNameExtractedComponent implements ArrayAccess
         'value' => 'value'
     ];
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
@@ -111,7 +111,7 @@ class AiNameExtractedComponent implements ArrayAccess
         'value' => 'setValue'
     ];
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @var string[]
@@ -121,7 +121,7 @@ class AiNameExtractedComponent implements ArrayAccess
         'value' => 'getValue'
     ];
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -132,7 +132,7 @@ class AiNameExtractedComponent implements ArrayAccess
         return self::$attributeMap;
     }
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @return array
@@ -142,7 +142,7 @@ class AiNameExtractedComponent implements ArrayAccess
         return self::$setters;
     }
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @return array
@@ -152,7 +152,7 @@ class AiNameExtractedComponent implements ArrayAccess
         return self::$getters;
     }
 
-    /*
+    /**
      * The original name of the model.
      *
      * @return string
@@ -166,26 +166,29 @@ class AiNameExtractedComponent implements ArrayAccess
 
     
 
-    /*
+    /**
      * Associative array for storing property values
      *
      * @var mixed[]
      */
     protected $container = [];
 
-    /*
-     * Constructor
-     *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+    /**
+     * Initializes a new instance of the AiNameExtractedComponent class.
+     *  
+     * @param string $category Extracted from email address name component category. Enum, available values: Unknown, GivenName, Surname, SomeName, NoName, Initial
+     * @param string $value Extracted value
      */
-    public function __construct(array $data = null)
+    public function __construct($category = null, $value = null)
     {
-        $this->container['category'] = isset($data['category']) ? $data['category'] : null;
-        $this->container['value'] = isset($data['value']) ? $data['value'] : null;
+        $this->container['category'] = null;
+        $this->container['value'] = null;
+
+        if ($category != null) $this->setCategory($category);
+        if ($value != null) $this->setValue($value);
     }
 
-    /*
+    /**
      * Show all the invalid properties with reasons.
      *
      * @return array invalid properties with reasons
@@ -200,7 +203,7 @@ class AiNameExtractedComponent implements ArrayAccess
         return $invalidProperties;
     }
 
-    /*
+    /**
      * Validate all the properties in the model
      * return true if all passed
      *
@@ -216,7 +219,7 @@ class AiNameExtractedComponent implements ArrayAccess
     }
 
 
-    /*
+    /**
      * Gets category
      *
      * @return string
@@ -226,7 +229,7 @@ class AiNameExtractedComponent implements ArrayAccess
         return $this->container['category'];
     }
 
-    /*
+    /**
      * Sets category
      *
      * @param string $category Extracted from email address name component category. Enum, available values: Unknown, GivenName, Surname, SomeName, NoName, Initial
@@ -240,7 +243,7 @@ class AiNameExtractedComponent implements ArrayAccess
         return $this;
     }
 
-    /*
+    /**
      * Gets value
      *
      * @return string
@@ -250,7 +253,7 @@ class AiNameExtractedComponent implements ArrayAccess
         return $this->container['value'];
     }
 
-    /*
+    /**
      * Sets value
      *
      * @param string $value Extracted value
@@ -263,7 +266,7 @@ class AiNameExtractedComponent implements ArrayAccess
 
         return $this;
     }
-    /*
+    /**
      * Returns true if offset exists. False otherwise.
      *
      * @param integer $offset Offset
@@ -275,7 +278,7 @@ class AiNameExtractedComponent implements ArrayAccess
         return isset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets offset.
      *
      * @param integer $offset Offset
@@ -287,7 +290,7 @@ class AiNameExtractedComponent implements ArrayAccess
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
-    /*
+    /**
      * Sets value based on offset.
      *
      * @param integer $offset Offset
@@ -304,7 +307,7 @@ class AiNameExtractedComponent implements ArrayAccess
         }
     }
 
-    /*
+    /**
      * Unsets offset.
      *
      * @param integer $offset Offset
@@ -316,7 +319,7 @@ class AiNameExtractedComponent implements ArrayAccess
         unset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets the string presentation of the object
      *
      * @return string

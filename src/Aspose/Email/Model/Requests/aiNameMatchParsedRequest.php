@@ -28,12 +28,12 @@
 
 namespace Aspose\Email\Model\Requests;
 
-/*
+/**
  * Request model for aiNameMatchParsed" operation.
  */
 class aiNameMatchParsedRequest
 {
-    /*
+    /**
      * Initializes a new instance of the aiNameMatchParsedRequest class.
      *  
      * @param \Aspose\Email\Model\AiNameParsedMatchRq $rq Parsed names to match
@@ -43,7 +43,7 @@ class aiNameMatchParsedRequest
         $this->rq = $rq;
     }
 
-    /*
+    /**
      * Parsed names to match
      */
     public $rq;

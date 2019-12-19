@@ -28,12 +28,12 @@
 
 namespace Aspose\Email\Model\Requests;
 
-/*
+/**
  * Request model for deleteFolder" operation.
  */
 class deleteFolderRequest
 {
-    /*
+    /**
      * Initializes a new instance of the deleteFolderRequest class.
      *  
      * @param string $path Folder path e.g. '/folder'
@@ -47,17 +47,17 @@ class deleteFolderRequest
         $this->recursive = $recursive;
     }
 
-    /*
+    /**
      * Folder path e.g. '/folder'
      */
     public $path;
 	
-    /*
+    /**
      * Storage name
      */
     public $storage_name;
 	
-    /*
+    /**
      * Enable to delete folders, subfolders and files
      */
     public $recursive;

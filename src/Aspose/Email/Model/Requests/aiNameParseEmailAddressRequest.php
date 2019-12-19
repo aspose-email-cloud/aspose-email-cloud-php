@@ -28,12 +28,12 @@
 
 namespace Aspose\Email\Model\Requests;
 
-/*
+/**
  * Request model for aiNameParseEmailAddress" operation.
  */
 class aiNameParseEmailAddressRequest
 {
-    /*
+    /**
      * Initializes a new instance of the aiNameParseEmailAddressRequest class.
      *  
      * @param string $email_address Email address to parse (required)
@@ -53,32 +53,32 @@ class aiNameParseEmailAddressRequest
         $this->style = $style;
     }
 
-    /*
+    /**
      * Email address to parse (required)
      */
     public $email_address;
 	
-    /*
+    /**
      * An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \"it\" or \"ita\" for Italian)
      */
     public $language;
 	
-    /*
+    /**
      * A geographic code such as an ISO-3166 two letter country code, for example \"FR\" for France
      */
     public $location;
 	
-    /*
+    /**
      * A character encoding name
      */
     public $encoding;
 	
-    /*
+    /**
      * A writing system code; starts with the ISO-15924 script name
      */
     public $script;
 	
-    /*
+    /**
      * Name writing style. Enum, available values: Formal, Informal, Legal, Academic
      */
     public $style;

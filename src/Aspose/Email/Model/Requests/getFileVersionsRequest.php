@@ -28,12 +28,12 @@
 
 namespace Aspose\Email\Model\Requests;
 
-/*
+/**
  * Request model for getFileVersions" operation.
  */
 class getFileVersionsRequest
 {
-    /*
+    /**
      * Initializes a new instance of the getFileVersionsRequest class.
      *  
      * @param string $path File path e.g. '/file.ext'
@@ -45,12 +45,12 @@ class getFileVersionsRequest
         $this->storage_name = $storage_name;
     }
 
-    /*
+    /**
      * File path e.g. '/file.ext'
      */
     public $path;
 	
-    /*
+    /**
      * Storage name
      */
     public $storage_name;

@@ -25,7 +25,7 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
-/*
+/**
  * AiNameMismatch
  */
 
@@ -34,7 +34,7 @@ namespace Aspose\Email\Model;
 use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
-/*
+/**
  * AiNameMismatch
  *
  * @description Names mismatch detailed description
@@ -43,14 +43,14 @@ class AiNameMismatch implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
-    /*
+    /**
      * The original name of the model.
      *
      * @var string
      */
     protected static $swaggerModelName = "AiNameMismatch";
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @var string[]
@@ -61,7 +61,7 @@ class AiNameMismatch implements ArrayAccess
         'explanation' => 'string'
     ];
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @var string[]
@@ -72,7 +72,7 @@ class AiNameMismatch implements ArrayAccess
         'explanation' => null
     ];
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @return array
@@ -82,7 +82,7 @@ class AiNameMismatch implements ArrayAccess
         return self::$swaggerTypes;
     }
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @return array
@@ -92,7 +92,7 @@ class AiNameMismatch implements ArrayAccess
         return self::$swaggerFormats;
     }
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -104,7 +104,7 @@ class AiNameMismatch implements ArrayAccess
         'explanation' => 'explanation'
     ];
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
@@ -115,7 +115,7 @@ class AiNameMismatch implements ArrayAccess
         'explanation' => 'setExplanation'
     ];
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @var string[]
@@ -126,7 +126,7 @@ class AiNameMismatch implements ArrayAccess
         'explanation' => 'getExplanation'
     ];
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -137,7 +137,7 @@ class AiNameMismatch implements ArrayAccess
         return self::$attributeMap;
     }
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @return array
@@ -147,7 +147,7 @@ class AiNameMismatch implements ArrayAccess
         return self::$setters;
     }
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @return array
@@ -157,7 +157,7 @@ class AiNameMismatch implements ArrayAccess
         return self::$getters;
     }
 
-    /*
+    /**
      * The original name of the model.
      *
      * @return string
@@ -171,27 +171,32 @@ class AiNameMismatch implements ArrayAccess
 
     
 
-    /*
+    /**
      * Associative array for storing property values
      *
      * @var mixed[]
      */
     protected $container = [];
 
-    /*
-     * Constructor
-     *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+    /**
+     * Initializes a new instance of the AiNameMismatch class.
+     *  
+     * @param string $category Mismatch type. Enum, available values: Unknown, FirstName, MiddleName, MiddleLastName, MiddleNickname, Gender, Context
+     * @param double $similarity Similarity score
+     * @param string $explanation Explanation or mismatch subtype
      */
-    public function __construct(array $data = null)
+    public function __construct($category = null, $similarity = null, $explanation = null)
     {
-        $this->container['category'] = isset($data['category']) ? $data['category'] : null;
-        $this->container['similarity'] = isset($data['similarity']) ? $data['similarity'] : null;
-        $this->container['explanation'] = isset($data['explanation']) ? $data['explanation'] : null;
+        $this->container['category'] = null;
+        $this->container['similarity'] = null;
+        $this->container['explanation'] = null;
+
+        if ($category != null) $this->setCategory($category);
+        if ($similarity != null) $this->setSimilarity($similarity);
+        if ($explanation != null) $this->setExplanation($explanation);
     }
 
-    /*
+    /**
      * Show all the invalid properties with reasons.
      *
      * @return array invalid properties with reasons
@@ -209,7 +214,7 @@ class AiNameMismatch implements ArrayAccess
         return $invalidProperties;
     }
 
-    /*
+    /**
      * Validate all the properties in the model
      * return true if all passed
      *
@@ -228,7 +233,7 @@ class AiNameMismatch implements ArrayAccess
     }
 
 
-    /*
+    /**
      * Gets category
      *
      * @return string
@@ -238,7 +243,7 @@ class AiNameMismatch implements ArrayAccess
         return $this->container['category'];
     }
 
-    /*
+    /**
      * Sets category
      *
      * @param string $category Mismatch type. Enum, available values: Unknown, FirstName, MiddleName, MiddleLastName, MiddleNickname, Gender, Context
@@ -252,7 +257,7 @@ class AiNameMismatch implements ArrayAccess
         return $this;
     }
 
-    /*
+    /**
      * Gets similarity
      *
      * @return double
@@ -262,7 +267,7 @@ class AiNameMismatch implements ArrayAccess
         return $this->container['similarity'];
     }
 
-    /*
+    /**
      * Sets similarity
      *
      * @param double $similarity Similarity score
@@ -276,7 +281,7 @@ class AiNameMismatch implements ArrayAccess
         return $this;
     }
 
-    /*
+    /**
      * Gets explanation
      *
      * @return string
@@ -286,7 +291,7 @@ class AiNameMismatch implements ArrayAccess
         return $this->container['explanation'];
     }
 
-    /*
+    /**
      * Sets explanation
      *
      * @param string $explanation Explanation or mismatch subtype
@@ -299,7 +304,7 @@ class AiNameMismatch implements ArrayAccess
 
         return $this;
     }
-    /*
+    /**
      * Returns true if offset exists. False otherwise.
      *
      * @param integer $offset Offset
@@ -311,7 +316,7 @@ class AiNameMismatch implements ArrayAccess
         return isset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets offset.
      *
      * @param integer $offset Offset
@@ -323,7 +328,7 @@ class AiNameMismatch implements ArrayAccess
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
-    /*
+    /**
      * Sets value based on offset.
      *
      * @param integer $offset Offset
@@ -340,7 +345,7 @@ class AiNameMismatch implements ArrayAccess
         }
     }
 
-    /*
+    /**
      * Unsets offset.
      *
      * @param integer $offset Offset
@@ -352,7 +357,7 @@ class AiNameMismatch implements ArrayAccess
         unset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets the string presentation of the object
      *
      * @return string

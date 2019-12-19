@@ -28,12 +28,12 @@
 
 namespace Aspose\Email\Model\Requests;
 
-/*
+/**
  * Request model for addContactAttachment" operation.
  */
 class addContactAttachmentRequest
 {
-    /*
+    /**
      * Initializes a new instance of the addContactAttachmentRequest class.
      *  
      * @param string $format Contact document format Enum, available values: VCard, WebDav, Msg
@@ -49,22 +49,22 @@ class addContactAttachmentRequest
         $this->request = $request;
     }
 
-    /*
+    /**
      * Contact document format Enum, available values: VCard, WebDav, Msg
      */
     public $format;
 	
-    /*
+    /**
      * Contact document file name
      */
     public $name;
 	
-    /*
+    /**
      * Attachment name
      */
     public $attachment;
 	
-    /*
+    /**
      * Add attachment request
      */
     public $request;

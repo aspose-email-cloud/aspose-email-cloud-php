@@ -28,12 +28,12 @@
 
 namespace Aspose\Email\Model\Requests;
 
-/*
+/**
  * Request model for addEmailAttachment" operation.
  */
 class addEmailAttachmentRequest
 {
-    /*
+    /**
      * Initializes a new instance of the addEmailAttachmentRequest class.
      *  
      * @param string $attachment_name Attachment file name
@@ -47,17 +47,17 @@ class addEmailAttachmentRequest
         $this->request = $request;
     }
 
-    /*
+    /**
      * Attachment file name
      */
     public $attachment_name;
 	
-    /*
+    /**
      * Email document file name
      */
     public $file_name;
 	
-    /*
+    /**
      * Storage info to specify location of email document and attachment files
      */
     public $request;

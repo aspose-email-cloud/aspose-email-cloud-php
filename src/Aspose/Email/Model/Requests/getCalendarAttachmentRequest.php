@@ -28,12 +28,12 @@
 
 namespace Aspose\Email\Model\Requests;
 
-/*
+/**
  * Request model for getCalendarAttachment" operation.
  */
 class getCalendarAttachmentRequest
 {
-    /*
+    /**
      * Initializes a new instance of the getCalendarAttachmentRequest class.
      *  
      * @param string $name iCalendar document file name
@@ -49,22 +49,22 @@ class getCalendarAttachmentRequest
         $this->storage = $storage;
     }
 
-    /*
+    /**
      * iCalendar document file name
      */
     public $name;
 	
-    /*
+    /**
      * Attachment name or index
      */
     public $attachment;
 	
-    /*
+    /**
      * Path to folder in storage
      */
     public $folder;
 	
-    /*
+    /**
      * Storage name
      */
     public $storage;

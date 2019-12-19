@@ -28,12 +28,12 @@
 
 namespace Aspose\Email\Model\Requests;
 
-/*
+/**
  * Request model for appendEmailMessage" operation.
  */
 class appendEmailMessageRequest
 {
-    /*
+    /**
      * Initializes a new instance of the appendEmailMessageRequest class.
      *  
      * @param \Aspose\Email\Model\AppendEmailBaseRequest $request Append email request
@@ -43,7 +43,7 @@ class appendEmailMessageRequest
         $this->request = $request;
     }
 
-    /*
+    /**
      * Append email request
      */
     public $request;

@@ -28,12 +28,12 @@
 
 namespace Aspose\Email\Model\Requests;
 
-/*
+/**
  * Request model for aiBcrParse" operation.
  */
 class aiBcrParseRequest
 {
-    /*
+    /**
      * Initializes a new instance of the aiBcrParseRequest class.
      *  
      * @param \Aspose\Email\Model\AiBcrBase64Rq $rq Request with base64 images data
@@ -43,7 +43,7 @@ class aiBcrParseRequest
         $this->rq = $rq;
     }
 
-    /*
+    /**
      * Request with base64 images data
      */
     public $rq;

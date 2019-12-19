@@ -28,12 +28,12 @@
 
 namespace Aspose\Email\Model\Requests;
 
-/*
+/**
  * Request model for getMapiList" operation.
  */
 class getMapiListRequest
 {
-    /*
+    /**
      * Initializes a new instance of the getMapiListRequest class.
      *  
      * @param string $folder Path to folder in storage
@@ -49,22 +49,22 @@ class getMapiListRequest
         $this->page_number = $page_number;
     }
 
-    /*
+    /**
      * Path to folder in storage
      */
     public $folder;
 	
-    /*
+    /**
      * Storage name
      */
     public $storage;
 	
-    /*
+    /**
      * Count of items on page
      */
     public $items_per_page;
 	
-    /*
+    /**
      * Page number
      */
     public $page_number;

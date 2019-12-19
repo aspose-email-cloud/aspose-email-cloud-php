@@ -28,12 +28,12 @@
 
 namespace Aspose\Email\Model\Requests;
 
-/*
+/**
  * Request model for getEmailProperty" operation.
  */
 class getEmailPropertyRequest
 {
-    /*
+    /**
      * Initializes a new instance of the getEmailPropertyRequest class.
      *  
      * @param string $property_name A property name
@@ -49,22 +49,22 @@ class getEmailPropertyRequest
         $this->folder = $folder;
     }
 
-    /*
+    /**
      * A property name
      */
     public $property_name;
 	
-    /*
+    /**
      * Email document file name
      */
     public $file_name;
 	
-    /*
+    /**
      * Storage name
      */
     public $storage;
 	
-    /*
+    /**
      * Path to folder in storage
      */
     public $folder;

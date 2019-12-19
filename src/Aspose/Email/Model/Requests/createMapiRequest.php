@@ -28,12 +28,12 @@
 
 namespace Aspose\Email\Model\Requests;
 
-/*
+/**
  * Request model for createMapi" operation.
  */
 class createMapiRequest
 {
-    /*
+    /**
      * Initializes a new instance of the createMapiRequest class.
      *  
      * @param string $name Document file name
@@ -45,12 +45,12 @@ class createMapiRequest
         $this->request = $request;
     }
 
-    /*
+    /**
      * Document file name
      */
     public $name;
 	
-    /*
+    /**
      * Create document request
      */
     public $request;

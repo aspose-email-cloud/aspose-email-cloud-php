@@ -25,7 +25,7 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
-/*
+/**
  * AiBcrOcrDataPart
  */
 
@@ -34,7 +34,7 @@ namespace Aspose\Email\Model;
 use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
-/*
+/**
  * AiBcrOcrDataPart
  *
  * @description Recognized text block
@@ -43,14 +43,14 @@ class AiBcrOcrDataPart implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
-    /*
+    /**
      * The original name of the model.
      *
      * @var string
      */
     protected static $swaggerModelName = "AiBcrOcrDataPart";
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @var string[]
@@ -64,7 +64,7 @@ class AiBcrOcrDataPart implements ArrayAccess
         'details' => 'map[string,string]'
     ];
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @var string[]
@@ -78,7 +78,7 @@ class AiBcrOcrDataPart implements ArrayAccess
         'details' => null
     ];
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @return array
@@ -88,7 +88,7 @@ class AiBcrOcrDataPart implements ArrayAccess
         return self::$swaggerTypes;
     }
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @return array
@@ -98,7 +98,7 @@ class AiBcrOcrDataPart implements ArrayAccess
         return self::$swaggerFormats;
     }
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -113,7 +113,7 @@ class AiBcrOcrDataPart implements ArrayAccess
         'details' => 'details'
     ];
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
@@ -127,7 +127,7 @@ class AiBcrOcrDataPart implements ArrayAccess
         'details' => 'setDetails'
     ];
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @var string[]
@@ -141,7 +141,7 @@ class AiBcrOcrDataPart implements ArrayAccess
         'details' => 'getDetails'
     ];
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -152,7 +152,7 @@ class AiBcrOcrDataPart implements ArrayAccess
         return self::$attributeMap;
     }
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @return array
@@ -162,7 +162,7 @@ class AiBcrOcrDataPart implements ArrayAccess
         return self::$setters;
     }
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @return array
@@ -172,7 +172,7 @@ class AiBcrOcrDataPart implements ArrayAccess
         return self::$getters;
     }
 
-    /*
+    /**
      * The original name of the model.
      *
      * @return string
@@ -186,30 +186,41 @@ class AiBcrOcrDataPart implements ArrayAccess
 
     
 
-    /*
+    /**
      * Associative array for storing property values
      *
      * @var mixed[]
      */
     protected $container = [];
 
-    /*
-     * Constructor
-     *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+    /**
+     * Initializes a new instance of the AiBcrOcrDataPart class.
+     *  
+     * @param double $x X position of text block
+     * @param double $y Y position of text block
+     * @param double $width Width of text block
+     * @param double $height Height of text block
+     * @param string $text Recognized text
+     * @param map[string,string] $details Additional recognition result details
      */
-    public function __construct(array $data = null)
+    public function __construct($x = null, $y = null, $width = null, $height = null, $text = null, $details = null)
     {
-        $this->container['x'] = isset($data['x']) ? $data['x'] : null;
-        $this->container['y'] = isset($data['y']) ? $data['y'] : null;
-        $this->container['width'] = isset($data['width']) ? $data['width'] : null;
-        $this->container['height'] = isset($data['height']) ? $data['height'] : null;
-        $this->container['text'] = isset($data['text']) ? $data['text'] : null;
-        $this->container['details'] = isset($data['details']) ? $data['details'] : null;
+        $this->container['x'] = null;
+        $this->container['y'] = null;
+        $this->container['width'] = null;
+        $this->container['height'] = null;
+        $this->container['text'] = null;
+        $this->container['details'] = null;
+
+        if ($x != null) $this->setX($x);
+        if ($y != null) $this->setY($y);
+        if ($width != null) $this->setWidth($width);
+        if ($height != null) $this->setHeight($height);
+        if ($text != null) $this->setText($text);
+        if ($details != null) $this->setDetails($details);
     }
 
-    /*
+    /**
      * Show all the invalid properties with reasons.
      *
      * @return array invalid properties with reasons
@@ -233,7 +244,7 @@ class AiBcrOcrDataPart implements ArrayAccess
         return $invalidProperties;
     }
 
-    /*
+    /**
      * Validate all the properties in the model
      * return true if all passed
      *
@@ -258,7 +269,7 @@ class AiBcrOcrDataPart implements ArrayAccess
     }
 
 
-    /*
+    /**
      * Gets x
      *
      * @return double
@@ -268,7 +279,7 @@ class AiBcrOcrDataPart implements ArrayAccess
         return $this->container['x'];
     }
 
-    /*
+    /**
      * Sets x
      *
      * @param double $x X position of text block
@@ -282,7 +293,7 @@ class AiBcrOcrDataPart implements ArrayAccess
         return $this;
     }
 
-    /*
+    /**
      * Gets y
      *
      * @return double
@@ -292,7 +303,7 @@ class AiBcrOcrDataPart implements ArrayAccess
         return $this->container['y'];
     }
 
-    /*
+    /**
      * Sets y
      *
      * @param double $y Y position of text block
@@ -306,7 +317,7 @@ class AiBcrOcrDataPart implements ArrayAccess
         return $this;
     }
 
-    /*
+    /**
      * Gets width
      *
      * @return double
@@ -316,7 +327,7 @@ class AiBcrOcrDataPart implements ArrayAccess
         return $this->container['width'];
     }
 
-    /*
+    /**
      * Sets width
      *
      * @param double $width Width of text block
@@ -330,7 +341,7 @@ class AiBcrOcrDataPart implements ArrayAccess
         return $this;
     }
 
-    /*
+    /**
      * Gets height
      *
      * @return double
@@ -340,7 +351,7 @@ class AiBcrOcrDataPart implements ArrayAccess
         return $this->container['height'];
     }
 
-    /*
+    /**
      * Sets height
      *
      * @param double $height Height of text block
@@ -354,7 +365,7 @@ class AiBcrOcrDataPart implements ArrayAccess
         return $this;
     }
 
-    /*
+    /**
      * Gets text
      *
      * @return string
@@ -364,7 +375,7 @@ class AiBcrOcrDataPart implements ArrayAccess
         return $this->container['text'];
     }
 
-    /*
+    /**
      * Sets text
      *
      * @param string $text Recognized text
@@ -378,7 +389,7 @@ class AiBcrOcrDataPart implements ArrayAccess
         return $this;
     }
 
-    /*
+    /**
      * Gets details
      *
      * @return map[string,string]
@@ -388,7 +399,7 @@ class AiBcrOcrDataPart implements ArrayAccess
         return $this->container['details'];
     }
 
-    /*
+    /**
      * Sets details
      *
      * @param map[string,string] $details Additional recognition result details
@@ -401,7 +412,7 @@ class AiBcrOcrDataPart implements ArrayAccess
 
         return $this;
     }
-    /*
+    /**
      * Returns true if offset exists. False otherwise.
      *
      * @param integer $offset Offset
@@ -413,7 +424,7 @@ class AiBcrOcrDataPart implements ArrayAccess
         return isset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets offset.
      *
      * @param integer $offset Offset
@@ -425,7 +436,7 @@ class AiBcrOcrDataPart implements ArrayAccess
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
-    /*
+    /**
      * Sets value based on offset.
      *
      * @param integer $offset Offset
@@ -442,7 +453,7 @@ class AiBcrOcrDataPart implements ArrayAccess
         }
     }
 
-    /*
+    /**
      * Unsets offset.
      *
      * @param integer $offset Offset
@@ -454,7 +465,7 @@ class AiBcrOcrDataPart implements ArrayAccess
         unset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets the string presentation of the object
      *
      * @return string

@@ -117,13 +117,9 @@ class EmailApiTest extends TestCase
         {
             $extension = $format == "vcard" ? ".vcf" : ".msg";
             $file = uniqid().$extension;
-            self::getApi()->createContact(new createContactRequest($format, $file, (new HierarchicalObjectRequest())
-                ->setStorageFolder((new StorageFolderLocation())
-                    ->setFolderPath(self::$folder)
-                    ->setStorage(self::$storage))
-                ->setHierarchicalObject((new HierarchicalObject())
-                    ->setName("CONTACT")
-                    ->setInternalProperties([]))));
+            self::getApi()->createContact(new createContactRequest($format, $file, new HierarchicalObjectRequest(
+                new HierarchicalObject("CONTACT", null, []),
+                new StorageFolderLocation(self::$storage, self::$folder))));
             $exist = self::getApi()->objectExists(new objectExistsRequest(self::$folder."/".$file, self::$storage));
             $this->assertTrue($exist->getExists());
         }
@@ -193,8 +189,7 @@ class EmailApiTest extends TestCase
     public function testAiNameParseEmailAddress(): void
     {
         $address = "john-cane@gmail.com";
-        $result = self::getApi()->aiNameParseEmailAddress(new aiNameParseEmailAddressRequest(
-            $address));
+        $result = self::getApi()->aiNameParseEmailAddress(new aiNameParseEmailAddressRequest($address));
         $extractedNames = array_map(function ($value) {
             return $value->getName();
         }, $result->getValue());
@@ -221,20 +216,10 @@ class EmailApiTest extends TestCase
         self::getApi()->createFolder(new createFolderRequest($outFolderPath, self::$storage));
         // 2) Call business card recognition action
         $result = self::getApi()->aiBcrParseStorage(new aiBcrParseStorageRequest(
-            (new AiBcrParseStorageRq())
-                ->setOutFolder(
-                    (new StorageFolderLocation())
-                        ->setFolderPath($outFolderPath)
-                        ->setStorage(self::$storage))
-                ->setImages(array(
-                    (new AiBcrImageStorageFile())
-                        ->setIsSingle(true)
-                        ->setFile(
-                            (new StorageFileLocation())
-                                ->setFileName($imageFile)
-                                ->setFolderPath(self::$folder)
-                                ->setStorage(self::$storage))
-                        ))));
+            new AiBcrParseStorageRq(
+                null,
+                array(new AiBcrImageStorageFile(true, new StorageFileLocation(self::$storage, self::$folder, $imageFile))),
+                new StorageFolderLocation(self::$storage, $outFolderPath))));
         //Check that only one file produced
         $this->assertEquals(1, count($result->getValue()));
         // 3) Get file name from recognition result
@@ -257,11 +242,7 @@ class EmailApiTest extends TestCase
         $content = file_get_contents($path);
         $imageBase64 = base64_encode($content);
         $result = self::getApi()->aiBcrParse(new aiBcrParseRequest(
-            (new AiBcrBase64Rq())
-                ->setImages(array(
-                    (new AiBcrBase64Image())
-                        ->setIsSingle(true)
-                        ->setBase64Data($imageBase64)))));
+            new AiBcrBase64Rq(null, array(new AiBcrBase64Image(true, $imageBase64)))));
         $this->assertEquals(1, count($result->getValue()));
         $displayName = array_values(array_filter($result->getValue()[0]->getInternalProperties(), function($var) {
             return $var->getName() == "DISPLAYNAME";
@@ -276,27 +257,19 @@ class EmailApiTest extends TestCase
         $fileName = uniqid() . ".ics";
         self::getApi()->createCalendar(new createCalendarRequest(
             $fileName,
-            (new HierarchicalObjectRequest())
-                ->setStorageFolder((new StorageFolderLocation())
-                    ->setFolderPath(self::$folder)
-                    ->setStorage(self::$storage))
-                ->setHierarchicalObject((new HierarchicalObject())
-                    ->setName("CALENDAR")
-                    ->setInternalProperties(array(
-                        (new PrimitiveObject())->setName("LOCATION")->setValue("location"),
-                        (new PrimitiveObject())->setName("STARTDATE")->setValue($startDate->format(DateTime::ATOM)),
-                        (new PrimitiveObject())->setName("ENDDATE")->setValue($endDate->format(DateTime::ATOM)),
-                        (new HierarchicalObject())->setName("ORGANIZER")->setInternalProperties(array(
-                            (new PrimitiveObject())->setName("ADDRESS")->setValue("organizer@am.ru"),
-                            (new PrimitiveObject())->setName("DISPLAYNAME")->setValue("Organizer Man")
-                        )),
-                        (new HierarchicalObject())->setName("ATTENDEES")->setInternalProperties(array(
-                            (new IndexedHierarchicalObject())->setName("ATTENDEE")->setIndex(0)->setInternalProperties(array(
-                                (new PrimitiveObject())->setName("ADDRESS")->setValue("attendee@am.ru"),
-                                (new PrimitiveObject())->setName("DISPLAYNAME")->setValue("Attendee Man")
-                            ))
-                        ))
-                    )))));
+            new HierarchicalObjectRequest(
+                new HierarchicalObject("CALENDAR", null, array(
+                    new PrimitiveObject("LOCATION", null, "location"),
+                    new PrimitiveObject("STARTDATE", null, $startDate->format(DateTime::ATOM)),
+                    new PrimitiveObject("ENDDATE", null, $endDate->format(DateTime::ATOM)),
+                    new HierarchicalObject("ORGANIZER", null, array(
+                        new PrimitiveObject("ADDRESS", null, "organizer@am.ru"),
+                        new PrimitiveObject("DISPLAYNAME", null, "Organizer Man"))),
+                    new HierarchicalObject("ATTENDEES", null, array(
+                        new IndexedHierarchicalObject("ATTENDEE", null, 0, array(
+                            new PrimitiveObject("ADDRESS", null, "attendee@am.ru"),
+                            new PrimitiveObject("DISPLAYNAME", null, "Attendee Man"))))))),
+                new StorageFolderLocation(self::$storage, self::$folder))));
         return $fileName;
     }
 }

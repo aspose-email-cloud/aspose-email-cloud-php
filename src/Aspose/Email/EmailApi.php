@@ -36,30 +36,30 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Aspose\Email\Model\Requests;
 
-/*
+/**
  * EmailApi Aspose.Email for Cloud API.
  */
 class EmailApi
 {
-    /*
+    /**
      * Stores client instance
      * @var ClientInterface client for calling api
      */
     protected $client;
 
-    /*
+    /**
      * Stores configuration
      * @var Configuration configuration info
      */
     protected $config;
   
-    /*
+    /**
      * Stores header selector
      * HeaderSelector class for header selection
      */
     protected $headerSelector;
 
-    /*
+    /**
      * Initialize a new instance of EmailApi
      * @param ClientInterface   $client client for calling api
      * @param Configuration   $config configuration info
@@ -72,7 +72,7 @@ class EmailApi
         $this->headerSelector = $selector ?: new HeaderSelector();
     }
 
-    /*
+    /**
      * Gets the config
      * @return Configuration
      */
@@ -81,7 +81,7 @@ class EmailApi
         return $this->config;
     }
 
-    /*
+    /**
      * Operation addCalendarAttachment
      *
      * Adds an attachment to iCalendar file
@@ -102,7 +102,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation addCalendarAttachmentWithHttpInfo
      *
      * Adds an attachment to iCalendar file
@@ -146,7 +146,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation addCalendarAttachmentAsync
      *
      * Adds an attachment to iCalendar file
@@ -166,7 +166,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation addCalendarAttachmentAsyncWithHttpInfo
      *
      * Adds an attachment to iCalendar file
@@ -203,7 +203,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'addCalendarAttachment'
      *
      * @param Requests\addCalendarAttachmentRequest $request is a request object for operation
@@ -335,7 +335,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation addContactAttachment
      *
      * Add attachment to contact document
@@ -356,7 +356,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation addContactAttachmentWithHttpInfo
      *
      * Add attachment to contact document
@@ -400,7 +400,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation addContactAttachmentAsync
      *
      * Add attachment to contact document
@@ -420,7 +420,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation addContactAttachmentAsyncWithHttpInfo
      *
      * Add attachment to contact document
@@ -457,7 +457,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'addContactAttachment'
      *
      * @param Requests\addContactAttachmentRequest $request is a request object for operation
@@ -598,7 +598,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation addEmailAttachment
      *
      * Adds an attachment to Email document
@@ -621,7 +621,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation addEmailAttachmentWithHttpInfo
      *
      * Adds an attachment to Email document
@@ -687,7 +687,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation addEmailAttachmentAsync
      *
      * Adds an attachment to Email document
@@ -707,7 +707,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation addEmailAttachmentAsyncWithHttpInfo
      *
      * Adds an attachment to Email document
@@ -762,7 +762,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'addEmailAttachment'
      *
      * @param Requests\addEmailAttachmentRequest $request is a request object for operation
@@ -894,7 +894,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation addMapiAttachment
      *
      * Add attachment to document
@@ -915,7 +915,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation addMapiAttachmentWithHttpInfo
      *
      * Add attachment to document
@@ -959,7 +959,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation addMapiAttachmentAsync
      *
      * Add attachment to document
@@ -979,7 +979,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation addMapiAttachmentAsyncWithHttpInfo
      *
      * Add attachment to document
@@ -1016,7 +1016,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'addMapiAttachment'
      *
      * @param Requests\addMapiAttachmentRequest $request is a request object for operation
@@ -1148,7 +1148,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation aiBcrOcr
      *
      * Ocr images
@@ -1171,7 +1171,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation aiBcrOcrWithHttpInfo
      *
      * Ocr images
@@ -1237,7 +1237,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation aiBcrOcrAsync
      *
      * Ocr images
@@ -1257,7 +1257,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation aiBcrOcrAsyncWithHttpInfo
      *
      * Ocr images
@@ -1312,7 +1312,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'aiBcrOcr'
      *
      * @param Requests\aiBcrOcrRequest $request is a request object for operation
@@ -1426,7 +1426,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation aiBcrOcrStorage
      *
      * Ocr images from storage
@@ -1449,7 +1449,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation aiBcrOcrStorageWithHttpInfo
      *
      * Ocr images from storage
@@ -1515,7 +1515,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation aiBcrOcrStorageAsync
      *
      * Ocr images from storage
@@ -1535,7 +1535,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation aiBcrOcrStorageAsyncWithHttpInfo
      *
      * Ocr images from storage
@@ -1590,7 +1590,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'aiBcrOcrStorage'
      *
      * @param Requests\aiBcrOcrStorageRequest $request is a request object for operation
@@ -1704,7 +1704,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation aiBcrParse
      *
      * Parse images to vCard properties
@@ -1727,7 +1727,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation aiBcrParseWithHttpInfo
      *
      * Parse images to vCard properties
@@ -1793,7 +1793,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation aiBcrParseAsync
      *
      * Parse images to vCard properties
@@ -1813,7 +1813,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation aiBcrParseAsyncWithHttpInfo
      *
      * Parse images to vCard properties
@@ -1868,7 +1868,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'aiBcrParse'
      *
      * @param Requests\aiBcrParseRequest $request is a request object for operation
@@ -1982,7 +1982,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation aiBcrParseOcrData
      *
      * Parse OCR data to vCard properties
@@ -2005,7 +2005,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation aiBcrParseOcrDataWithHttpInfo
      *
      * Parse OCR data to vCard properties
@@ -2071,7 +2071,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation aiBcrParseOcrDataAsync
      *
      * Parse OCR data to vCard properties
@@ -2091,7 +2091,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation aiBcrParseOcrDataAsyncWithHttpInfo
      *
      * Parse OCR data to vCard properties
@@ -2146,7 +2146,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'aiBcrParseOcrData'
      *
      * @param Requests\aiBcrParseOcrDataRequest $request is a request object for operation
@@ -2260,7 +2260,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation aiBcrParseOcrDataStorage
      *
      * Parse vCards from OCR data and save them to Storage
@@ -2283,7 +2283,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation aiBcrParseOcrDataStorageWithHttpInfo
      *
      * Parse vCards from OCR data and save them to Storage
@@ -2349,7 +2349,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation aiBcrParseOcrDataStorageAsync
      *
      * Parse vCards from OCR data and save them to Storage
@@ -2369,7 +2369,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation aiBcrParseOcrDataStorageAsyncWithHttpInfo
      *
      * Parse vCards from OCR data and save them to Storage
@@ -2424,7 +2424,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'aiBcrParseOcrDataStorage'
      *
      * @param Requests\aiBcrParseOcrDataStorageRequest $request is a request object for operation
@@ -2538,7 +2538,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation aiBcrParseStorage
      *
      * Parse images from storage to vCard files
@@ -2561,7 +2561,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation aiBcrParseStorageWithHttpInfo
      *
      * Parse images from storage to vCard files
@@ -2627,7 +2627,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation aiBcrParseStorageAsync
      *
      * Parse images from storage to vCard files
@@ -2647,7 +2647,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation aiBcrParseStorageAsyncWithHttpInfo
      *
      * Parse images from storage to vCard files
@@ -2702,7 +2702,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'aiBcrParseStorage'
      *
      * @param Requests\aiBcrParseStorageRequest $request is a request object for operation
@@ -2816,7 +2816,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation aiNameComplete
      *
      * The call proposes k most probable names for given starting characters
@@ -2839,7 +2839,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation aiNameCompleteWithHttpInfo
      *
      * The call proposes k most probable names for given starting characters
@@ -2905,7 +2905,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation aiNameCompleteAsync
      *
      * The call proposes k most probable names for given starting characters
@@ -2925,7 +2925,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation aiNameCompleteAsyncWithHttpInfo
      *
      * The call proposes k most probable names for given starting characters
@@ -2980,7 +2980,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'aiNameComplete'
      *
      * @param Requests\aiNameCompleteRequest $request is a request object for operation
@@ -3147,7 +3147,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation aiNameExpand
      *
      * Expands a person's name into a list of possible alternatives using options for expanding instructions
@@ -3170,7 +3170,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation aiNameExpandWithHttpInfo
      *
      * Expands a person's name into a list of possible alternatives using options for expanding instructions
@@ -3236,7 +3236,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation aiNameExpandAsync
      *
      * Expands a person's name into a list of possible alternatives using options for expanding instructions
@@ -3256,7 +3256,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation aiNameExpandAsyncWithHttpInfo
      *
      * Expands a person's name into a list of possible alternatives using options for expanding instructions
@@ -3311,7 +3311,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'aiNameExpand'
      *
      * @param Requests\aiNameExpandRequest $request is a request object for operation
@@ -3478,7 +3478,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation aiNameExpandParsed
      *
      * Expands a person's parsed name into a list of possible alternatives using options for expanding instructions
@@ -3501,7 +3501,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation aiNameExpandParsedWithHttpInfo
      *
      * Expands a person's parsed name into a list of possible alternatives using options for expanding instructions
@@ -3567,7 +3567,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation aiNameExpandParsedAsync
      *
      * Expands a person's parsed name into a list of possible alternatives using options for expanding instructions
@@ -3587,7 +3587,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation aiNameExpandParsedAsyncWithHttpInfo
      *
      * Expands a person's parsed name into a list of possible alternatives using options for expanding instructions
@@ -3642,7 +3642,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'aiNameExpandParsed'
      *
      * @param Requests\aiNameExpandParsedRequest $request is a request object for operation
@@ -3756,7 +3756,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation aiNameFormat
      *
      * Formats a person's name in correct case and name order using options for formatting instructions
@@ -3779,7 +3779,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation aiNameFormatWithHttpInfo
      *
      * Formats a person's name in correct case and name order using options for formatting instructions
@@ -3845,7 +3845,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation aiNameFormatAsync
      *
      * Formats a person's name in correct case and name order using options for formatting instructions
@@ -3865,7 +3865,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation aiNameFormatAsyncWithHttpInfo
      *
      * Formats a person's name in correct case and name order using options for formatting instructions
@@ -3920,7 +3920,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'aiNameFormat'
      *
      * @param Requests\aiNameFormatRequest $request is a request object for operation
@@ -4097,7 +4097,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation aiNameFormatParsed
      *
      * Formats a person's parsed name in correct case and name order using options for formatting instructions
@@ -4120,7 +4120,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation aiNameFormatParsedWithHttpInfo
      *
      * Formats a person's parsed name in correct case and name order using options for formatting instructions
@@ -4186,7 +4186,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation aiNameFormatParsedAsync
      *
      * Formats a person's parsed name in correct case and name order using options for formatting instructions
@@ -4206,7 +4206,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation aiNameFormatParsedAsyncWithHttpInfo
      *
      * Formats a person's parsed name in correct case and name order using options for formatting instructions
@@ -4261,7 +4261,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'aiNameFormatParsed'
      *
      * @param Requests\aiNameFormatParsedRequest $request is a request object for operation
@@ -4375,7 +4375,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation aiNameGenderize
      *
      * Detect person's gender from name string
@@ -4398,7 +4398,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation aiNameGenderizeWithHttpInfo
      *
      * Detect person's gender from name string
@@ -4464,7 +4464,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation aiNameGenderizeAsync
      *
      * Detect person's gender from name string
@@ -4484,7 +4484,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation aiNameGenderizeAsyncWithHttpInfo
      *
      * Detect person's gender from name string
@@ -4539,7 +4539,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'aiNameGenderize'
      *
      * @param Requests\aiNameGenderizeRequest $request is a request object for operation
@@ -4706,7 +4706,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation aiNameGenderizeParsed
      *
      * Detect person's gender from parsed name
@@ -4729,7 +4729,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation aiNameGenderizeParsedWithHttpInfo
      *
      * Detect person's gender from parsed name
@@ -4795,7 +4795,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation aiNameGenderizeParsedAsync
      *
      * Detect person's gender from parsed name
@@ -4815,7 +4815,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation aiNameGenderizeParsedAsyncWithHttpInfo
      *
      * Detect person's gender from parsed name
@@ -4870,7 +4870,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'aiNameGenderizeParsed'
      *
      * @param Requests\aiNameGenderizeParsedRequest $request is a request object for operation
@@ -4984,7 +4984,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation aiNameMatch
      *
      * Compare people's names. Uses options for comparing instructions
@@ -5007,7 +5007,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation aiNameMatchWithHttpInfo
      *
      * Compare people's names. Uses options for comparing instructions
@@ -5073,7 +5073,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation aiNameMatchAsync
      *
      * Compare people's names. Uses options for comparing instructions
@@ -5093,7 +5093,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation aiNameMatchAsyncWithHttpInfo
      *
      * Compare people's names. Uses options for comparing instructions
@@ -5148,7 +5148,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'aiNameMatch'
      *
      * @param Requests\aiNameMatchRequest $request is a request object for operation
@@ -5329,7 +5329,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation aiNameMatchParsed
      *
      * Compare people's parsed names and attributes. Uses options for comparing instructions
@@ -5352,7 +5352,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation aiNameMatchParsedWithHttpInfo
      *
      * Compare people's parsed names and attributes. Uses options for comparing instructions
@@ -5418,7 +5418,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation aiNameMatchParsedAsync
      *
      * Compare people's parsed names and attributes. Uses options for comparing instructions
@@ -5438,7 +5438,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation aiNameMatchParsedAsyncWithHttpInfo
      *
      * Compare people's parsed names and attributes. Uses options for comparing instructions
@@ -5493,7 +5493,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'aiNameMatchParsed'
      *
      * @param Requests\aiNameMatchParsedRequest $request is a request object for operation
@@ -5607,7 +5607,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation aiNameParse
      *
      * Parse name to components
@@ -5630,7 +5630,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation aiNameParseWithHttpInfo
      *
      * Parse name to components
@@ -5696,7 +5696,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation aiNameParseAsync
      *
      * Parse name to components
@@ -5716,7 +5716,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation aiNameParseAsyncWithHttpInfo
      *
      * Parse name to components
@@ -5771,7 +5771,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'aiNameParse'
      *
      * @param Requests\aiNameParseRequest $request is a request object for operation
@@ -5938,7 +5938,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation aiNameParseEmailAddress
      *
      * Parse person's name out of an email address
@@ -5961,7 +5961,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation aiNameParseEmailAddressWithHttpInfo
      *
      * Parse person's name out of an email address
@@ -6027,7 +6027,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation aiNameParseEmailAddressAsync
      *
      * Parse person's name out of an email address
@@ -6047,7 +6047,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation aiNameParseEmailAddressAsyncWithHttpInfo
      *
      * Parse person's name out of an email address
@@ -6102,7 +6102,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'aiNameParseEmailAddress'
      *
      * @param Requests\aiNameParseEmailAddressRequest $request is a request object for operation
@@ -6269,7 +6269,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation appendEmailMessage
      *
      * Adds an email from *.eml file to specified folder in email account
@@ -6292,7 +6292,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation appendEmailMessageWithHttpInfo
      *
      * Adds an email from *.eml file to specified folder in email account
@@ -6358,7 +6358,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation appendEmailMessageAsync
      *
      * Adds an email from *.eml file to specified folder in email account
@@ -6378,7 +6378,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation appendEmailMessageAsyncWithHttpInfo
      *
      * Adds an email from *.eml file to specified folder in email account
@@ -6433,7 +6433,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'appendEmailMessage'
      *
      * @param Requests\appendEmailMessageRequest $request is a request object for operation
@@ -6547,7 +6547,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation appendMimeMessage
      *
      * Adds an email from MIME to specified folder in email account
@@ -6570,7 +6570,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation appendMimeMessageWithHttpInfo
      *
      * Adds an email from MIME to specified folder in email account
@@ -6636,7 +6636,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation appendMimeMessageAsync
      *
      * Adds an email from MIME to specified folder in email account
@@ -6656,7 +6656,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation appendMimeMessageAsyncWithHttpInfo
      *
      * Adds an email from MIME to specified folder in email account
@@ -6711,7 +6711,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'appendMimeMessage'
      *
      * @param Requests\appendMimeMessageRequest $request is a request object for operation
@@ -6825,7 +6825,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation copyFile
      *
      * Copy file
@@ -6846,7 +6846,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation copyFileWithHttpInfo
      *
      * Copy file
@@ -6890,7 +6890,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation copyFileAsync
      *
      * Copy file
@@ -6910,7 +6910,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation copyFileAsyncWithHttpInfo
      *
      * Copy file
@@ -6947,7 +6947,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'copyFile'
      *
      * @param Requests\copyFileRequest $request is a request object for operation
@@ -7103,7 +7103,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation copyFolder
      *
      * Copy folder
@@ -7124,7 +7124,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation copyFolderWithHttpInfo
      *
      * Copy folder
@@ -7168,7 +7168,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation copyFolderAsync
      *
      * Copy folder
@@ -7188,7 +7188,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation copyFolderAsyncWithHttpInfo
      *
      * Copy folder
@@ -7225,7 +7225,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'copyFolder'
      *
      * @param Requests\copyFolderRequest $request is a request object for operation
@@ -7371,7 +7371,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation createCalendar
      *
      * Create calendar file
@@ -7392,7 +7392,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation createCalendarWithHttpInfo
      *
      * Create calendar file
@@ -7436,7 +7436,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation createCalendarAsync
      *
      * Create calendar file
@@ -7456,7 +7456,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation createCalendarAsyncWithHttpInfo
      *
      * Create calendar file
@@ -7493,7 +7493,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'createCalendar'
      *
      * @param Requests\createCalendarRequest $request is a request object for operation
@@ -7616,7 +7616,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation createContact
      *
      * Create contact document
@@ -7637,7 +7637,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation createContactWithHttpInfo
      *
      * Create contact document
@@ -7681,7 +7681,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation createContactAsync
      *
      * Create contact document
@@ -7701,7 +7701,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation createContactAsyncWithHttpInfo
      *
      * Create contact document
@@ -7738,7 +7738,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'createContact'
      *
      * @param Requests\createContactRequest $request is a request object for operation
@@ -7870,7 +7870,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation createEmail
      *
      * Create an email document
@@ -7893,7 +7893,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation createEmailWithHttpInfo
      *
      * Create an email document
@@ -7959,7 +7959,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation createEmailAsync
      *
      * Create an email document
@@ -7979,7 +7979,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation createEmailAsyncWithHttpInfo
      *
      * Create an email document
@@ -8034,7 +8034,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'createEmail'
      *
      * @param Requests\createEmailRequest $request is a request object for operation
@@ -8157,7 +8157,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation createEmailFolder
      *
      * Create new folder in email account
@@ -8178,7 +8178,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation createEmailFolderWithHttpInfo
      *
      * Create new folder in email account
@@ -8222,7 +8222,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation createEmailFolderAsync
      *
      * Create new folder in email account
@@ -8242,7 +8242,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation createEmailFolderAsyncWithHttpInfo
      *
      * Create new folder in email account
@@ -8279,7 +8279,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'createEmailFolder'
      *
      * @param Requests\createEmailFolderRequest $request is a request object for operation
@@ -8393,7 +8393,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation createFolder
      *
      * Create the folder
@@ -8414,7 +8414,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation createFolderWithHttpInfo
      *
      * Create the folder
@@ -8458,7 +8458,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation createFolderAsync
      *
      * Create the folder
@@ -8478,7 +8478,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation createFolderAsyncWithHttpInfo
      *
      * Create the folder
@@ -8515,7 +8515,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'createFolder'
      *
      * @param Requests\createFolderRequest $request is a request object for operation
@@ -8637,7 +8637,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation createMapi
      *
      * Create new document
@@ -8658,7 +8658,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation createMapiWithHttpInfo
      *
      * Create new document
@@ -8702,7 +8702,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation createMapiAsync
      *
      * Create new document
@@ -8722,7 +8722,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation createMapiAsyncWithHttpInfo
      *
      * Create new document
@@ -8759,7 +8759,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'createMapi'
      *
      * @param Requests\createMapiRequest $request is a request object for operation
@@ -8882,7 +8882,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation deleteCalendarProperty
      *
      * Deletes indexed property by index and name. To delete Reminder attachment, use path ReminderAttachment/{ReminderIndex}/{AttachmentIndex}
@@ -8903,7 +8903,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation deleteCalendarPropertyWithHttpInfo
      *
      * Deletes indexed property by index and name. To delete Reminder attachment, use path ReminderAttachment/{ReminderIndex}/{AttachmentIndex}
@@ -8947,7 +8947,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation deleteCalendarPropertyAsync
      *
      * Deletes indexed property by index and name. To delete Reminder attachment, use path ReminderAttachment/{ReminderIndex}/{AttachmentIndex}
@@ -8967,7 +8967,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation deleteCalendarPropertyAsyncWithHttpInfo
      *
      * Deletes indexed property by index and name. To delete Reminder attachment, use path ReminderAttachment/{ReminderIndex}/{AttachmentIndex}
@@ -9004,7 +9004,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'deleteCalendarProperty'
      *
      * @param Requests\deleteCalendarPropertyRequest $request is a request object for operation
@@ -9145,7 +9145,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation deleteContactProperty
      *
      * Delete property from indexed property list
@@ -9166,7 +9166,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation deleteContactPropertyWithHttpInfo
      *
      * Delete property from indexed property list
@@ -9210,7 +9210,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation deleteContactPropertyAsync
      *
      * Delete property from indexed property list
@@ -9230,7 +9230,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation deleteContactPropertyAsyncWithHttpInfo
      *
      * Delete property from indexed property list
@@ -9267,7 +9267,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'deleteContactProperty'
      *
      * @param Requests\deleteContactPropertyRequest $request is a request object for operation
@@ -9417,7 +9417,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation deleteEmailFolder
      *
      * Delete a folder in email account
@@ -9438,7 +9438,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation deleteEmailFolderWithHttpInfo
      *
      * Delete a folder in email account
@@ -9482,7 +9482,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation deleteEmailFolderAsync
      *
      * Delete a folder in email account
@@ -9502,7 +9502,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation deleteEmailFolderAsyncWithHttpInfo
      *
      * Delete a folder in email account
@@ -9539,7 +9539,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'deleteEmailFolder'
      *
      * @param Requests\deleteEmailFolderRequest $request is a request object for operation
@@ -9653,7 +9653,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation deleteEmailMessage
      *
      * Delete message from email account by id
@@ -9674,7 +9674,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation deleteEmailMessageWithHttpInfo
      *
      * Delete message from email account by id
@@ -9718,7 +9718,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation deleteEmailMessageAsync
      *
      * Delete message from email account by id
@@ -9738,7 +9738,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation deleteEmailMessageAsyncWithHttpInfo
      *
      * Delete message from email account by id
@@ -9775,7 +9775,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'deleteEmailMessage'
      *
      * @param Requests\deleteEmailMessageRequest $request is a request object for operation
@@ -9889,7 +9889,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation deleteFile
      *
      * Delete file
@@ -9910,7 +9910,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation deleteFileWithHttpInfo
      *
      * Delete file
@@ -9954,7 +9954,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation deleteFileAsync
      *
      * Delete file
@@ -9974,7 +9974,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation deleteFileAsyncWithHttpInfo
      *
      * Delete file
@@ -10011,7 +10011,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'deleteFile'
      *
      * @param Requests\deleteFileRequest $request is a request object for operation
@@ -10143,7 +10143,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation deleteFolder
      *
      * Delete folder
@@ -10164,7 +10164,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation deleteFolderWithHttpInfo
      *
      * Delete folder
@@ -10208,7 +10208,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation deleteFolderAsync
      *
      * Delete folder
@@ -10228,7 +10228,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation deleteFolderAsyncWithHttpInfo
      *
      * Delete folder
@@ -10265,7 +10265,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'deleteFolder'
      *
      * @param Requests\deleteFolderRequest $request is a request object for operation
@@ -10397,7 +10397,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation deleteMapiAttachment
      *
      * Remove attachment from document
@@ -10418,7 +10418,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation deleteMapiAttachmentWithHttpInfo
      *
      * Remove attachment from document
@@ -10462,7 +10462,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation deleteMapiAttachmentAsync
      *
      * Remove attachment from document
@@ -10482,7 +10482,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation deleteMapiAttachmentAsyncWithHttpInfo
      *
      * Remove attachment from document
@@ -10519,7 +10519,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'deleteMapiAttachment'
      *
      * @param Requests\deleteMapiAttachmentRequest $request is a request object for operation
@@ -10651,7 +10651,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation deleteMapiProperties
      *
      * Delete document properties
@@ -10672,7 +10672,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation deleteMapiPropertiesWithHttpInfo
      *
      * Delete document properties
@@ -10716,7 +10716,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation deleteMapiPropertiesAsync
      *
      * Delete document properties
@@ -10736,7 +10736,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation deleteMapiPropertiesAsyncWithHttpInfo
      *
      * Delete document properties
@@ -10773,7 +10773,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'deleteMapiProperties'
      *
      * @param Requests\deleteMapiPropertiesRequest $request is a request object for operation
@@ -10896,7 +10896,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation downloadFile
      *
      * Download file
@@ -10919,7 +10919,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation downloadFileWithHttpInfo
      *
      * Download file
@@ -10985,7 +10985,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation downloadFileAsync
      *
      * Download file
@@ -11005,7 +11005,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation downloadFileAsyncWithHttpInfo
      *
      * Download file
@@ -11060,7 +11060,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'downloadFile'
      *
      * @param Requests\downloadFileRequest $request is a request object for operation
@@ -11192,7 +11192,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation fetchEmailMessage
      *
      * Fetch message mime from email account
@@ -11215,7 +11215,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation fetchEmailMessageWithHttpInfo
      *
      * Fetch message mime from email account
@@ -11281,7 +11281,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation fetchEmailMessageAsync
      *
      * Fetch message mime from email account
@@ -11301,7 +11301,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation fetchEmailMessageAsyncWithHttpInfo
      *
      * Fetch message mime from email account
@@ -11356,7 +11356,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'fetchEmailMessage'
      *
      * @param Requests\fetchEmailMessageRequest $request is a request object for operation
@@ -11517,7 +11517,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation getCalendar
      *
      * Get calendar file properties
@@ -11540,7 +11540,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation getCalendarWithHttpInfo
      *
      * Get calendar file properties
@@ -11606,7 +11606,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation getCalendarAsync
      *
      * Get calendar file properties
@@ -11626,7 +11626,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation getCalendarAsyncWithHttpInfo
      *
      * Get calendar file properties
@@ -11681,7 +11681,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'getCalendar'
      *
      * @param Requests\getCalendarRequest $request is a request object for operation
@@ -11813,7 +11813,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation getCalendarAttachment
      *
      * Get iCalendar document attachment by name
@@ -11836,7 +11836,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation getCalendarAttachmentWithHttpInfo
      *
      * Get iCalendar document attachment by name
@@ -11902,7 +11902,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation getCalendarAttachmentAsync
      *
      * Get iCalendar document attachment by name
@@ -11922,7 +11922,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation getCalendarAttachmentAsyncWithHttpInfo
      *
      * Get iCalendar document attachment by name
@@ -11977,7 +11977,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'getCalendarAttachment'
      *
      * @param Requests\getCalendarAttachmentRequest $request is a request object for operation
@@ -12118,7 +12118,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation getCalendarList
      *
      * Get iCalendar files list in folder on storage
@@ -12141,7 +12141,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation getCalendarListWithHttpInfo
      *
      * Get iCalendar files list in folder on storage
@@ -12207,7 +12207,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation getCalendarListAsync
      *
      * Get iCalendar files list in folder on storage
@@ -12227,7 +12227,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation getCalendarListAsyncWithHttpInfo
      *
      * Get iCalendar files list in folder on storage
@@ -12282,7 +12282,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'getCalendarList'
      *
      * @param Requests\getCalendarListRequest $request is a request object for operation
@@ -12437,7 +12437,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation getContactAttachment
      *
      * Get attachment file by name
@@ -12460,7 +12460,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation getContactAttachmentWithHttpInfo
      *
      * Get attachment file by name
@@ -12526,7 +12526,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation getContactAttachmentAsync
      *
      * Get attachment file by name
@@ -12546,7 +12546,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation getContactAttachmentAsyncWithHttpInfo
      *
      * Get attachment file by name
@@ -12601,7 +12601,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'getContactAttachment'
      *
      * @param Requests\getContactAttachmentRequest $request is a request object for operation
@@ -12751,7 +12751,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation getContactList
      *
      * Get contact list from storage folder
@@ -12774,7 +12774,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation getContactListWithHttpInfo
      *
      * Get contact list from storage folder
@@ -12840,7 +12840,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation getContactListAsync
      *
      * Get contact list from storage folder
@@ -12860,7 +12860,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation getContactListAsyncWithHttpInfo
      *
      * Get contact list from storage folder
@@ -12915,7 +12915,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'getContactList'
      *
      * @param Requests\getContactListRequest $request is a request object for operation
@@ -13067,7 +13067,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation getContactProperties
      *
      * Get contact document properties
@@ -13090,7 +13090,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation getContactPropertiesWithHttpInfo
      *
      * Get contact document properties
@@ -13156,7 +13156,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation getContactPropertiesAsync
      *
      * Get contact document properties
@@ -13176,7 +13176,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation getContactPropertiesAsyncWithHttpInfo
      *
      * Get contact document properties
@@ -13231,7 +13231,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'getContactProperties'
      *
      * @param Requests\getContactPropertiesRequest $request is a request object for operation
@@ -13372,7 +13372,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation getDiscUsage
      *
      * Get disc usage
@@ -13395,7 +13395,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation getDiscUsageWithHttpInfo
      *
      * Get disc usage
@@ -13461,7 +13461,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation getDiscUsageAsync
      *
      * Get disc usage
@@ -13481,7 +13481,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation getDiscUsageAsyncWithHttpInfo
      *
      * Get disc usage
@@ -13536,7 +13536,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'getDiscUsage'
      *
      * @param Requests\getDiscUsageRequest $request is a request object for operation
@@ -13649,7 +13649,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation getEmail
      *
      * Get email document
@@ -13672,7 +13672,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation getEmailWithHttpInfo
      *
      * Get email document
@@ -13738,7 +13738,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation getEmailAsync
      *
      * Get email document
@@ -13758,7 +13758,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation getEmailAsyncWithHttpInfo
      *
      * Get email document
@@ -13813,7 +13813,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'getEmail'
      *
      * @param Requests\getEmailRequest $request is a request object for operation
@@ -13945,7 +13945,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation getEmailAttachment
      *
      * Get email attachment by name
@@ -13968,7 +13968,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation getEmailAttachmentWithHttpInfo
      *
      * Get email attachment by name
@@ -14034,7 +14034,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation getEmailAttachmentAsync
      *
      * Get email attachment by name
@@ -14054,7 +14054,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation getEmailAttachmentAsyncWithHttpInfo
      *
      * Get email attachment by name
@@ -14109,7 +14109,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'getEmailAttachment'
      *
      * @param Requests\getEmailAttachmentRequest $request is a request object for operation
@@ -14250,7 +14250,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation getEmailProperty
      *
      * Get an email document property by its name
@@ -14273,7 +14273,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation getEmailPropertyWithHttpInfo
      *
      * Get an email document property by its name
@@ -14339,7 +14339,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation getEmailPropertyAsync
      *
      * Get an email document property by its name
@@ -14359,7 +14359,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation getEmailPropertyAsyncWithHttpInfo
      *
      * Get an email document property by its name
@@ -14414,7 +14414,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'getEmailProperty'
      *
      * @param Requests\getEmailPropertyRequest $request is a request object for operation
@@ -14555,7 +14555,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation getFileVersions
      *
      * Get file versions
@@ -14578,7 +14578,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation getFileVersionsWithHttpInfo
      *
      * Get file versions
@@ -14644,7 +14644,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation getFileVersionsAsync
      *
      * Get file versions
@@ -14664,7 +14664,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation getFileVersionsAsyncWithHttpInfo
      *
      * Get file versions
@@ -14719,7 +14719,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'getFileVersions'
      *
      * @param Requests\getFileVersionsRequest $request is a request object for operation
@@ -14841,7 +14841,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation getFilesList
      *
      * Get all files and folders within a folder
@@ -14864,7 +14864,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation getFilesListWithHttpInfo
      *
      * Get all files and folders within a folder
@@ -14930,7 +14930,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation getFilesListAsync
      *
      * Get all files and folders within a folder
@@ -14950,7 +14950,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation getFilesListAsyncWithHttpInfo
      *
      * Get all files and folders within a folder
@@ -15005,7 +15005,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'getFilesList'
      *
      * @param Requests\getFilesListRequest $request is a request object for operation
@@ -15127,7 +15127,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation getMapiAttachment
      *
      * Get document attachment as file stream
@@ -15150,7 +15150,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation getMapiAttachmentWithHttpInfo
      *
      * Get document attachment as file stream
@@ -15216,7 +15216,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation getMapiAttachmentAsync
      *
      * Get document attachment as file stream
@@ -15236,7 +15236,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation getMapiAttachmentAsyncWithHttpInfo
      *
      * Get document attachment as file stream
@@ -15291,7 +15291,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'getMapiAttachment'
      *
      * @param Requests\getMapiAttachmentRequest $request is a request object for operation
@@ -15432,7 +15432,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation getMapiAttachments
      *
      * Get document attachment list
@@ -15455,7 +15455,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation getMapiAttachmentsWithHttpInfo
      *
      * Get document attachment list
@@ -15521,7 +15521,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation getMapiAttachmentsAsync
      *
      * Get document attachment list
@@ -15541,7 +15541,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation getMapiAttachmentsAsyncWithHttpInfo
      *
      * Get document attachment list
@@ -15596,7 +15596,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'getMapiAttachments'
      *
      * @param Requests\getMapiAttachmentsRequest $request is a request object for operation
@@ -15728,7 +15728,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation getMapiList
      *
      * Get document list from storage folder
@@ -15751,7 +15751,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation getMapiListWithHttpInfo
      *
      * Get document list from storage folder
@@ -15817,7 +15817,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation getMapiListAsync
      *
      * Get document list from storage folder
@@ -15837,7 +15837,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation getMapiListAsyncWithHttpInfo
      *
      * Get document list from storage folder
@@ -15892,7 +15892,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'getMapiList'
      *
      * @param Requests\getMapiListRequest $request is a request object for operation
@@ -16035,7 +16035,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation getMapiProperties
      *
      * Get document properties
@@ -16058,7 +16058,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation getMapiPropertiesWithHttpInfo
      *
      * Get document properties
@@ -16124,7 +16124,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation getMapiPropertiesAsync
      *
      * Get document properties
@@ -16144,7 +16144,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation getMapiPropertiesAsyncWithHttpInfo
      *
      * Get document properties
@@ -16199,7 +16199,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'getMapiProperties'
      *
      * @param Requests\getMapiPropertiesRequest $request is a request object for operation
@@ -16331,7 +16331,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation listEmailFolders
      *
      * Get folders list in email account
@@ -16354,7 +16354,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation listEmailFoldersWithHttpInfo
      *
      * Get folders list in email account
@@ -16420,7 +16420,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation listEmailFoldersAsync
      *
      * Get folders list in email account
@@ -16440,7 +16440,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation listEmailFoldersAsyncWithHttpInfo
      *
      * Get folders list in email account
@@ -16495,7 +16495,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'listEmailFolders'
      *
      * @param Requests\listEmailFoldersRequest $request is a request object for operation
@@ -16652,7 +16652,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation listEmailMessages
      *
      * Get messages from folder, filtered by query
@@ -16675,7 +16675,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation listEmailMessagesWithHttpInfo
      *
      * Get messages from folder, filtered by query
@@ -16741,7 +16741,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation listEmailMessagesAsync
      *
      * Get messages from folder, filtered by query
@@ -16761,7 +16761,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation listEmailMessagesAsyncWithHttpInfo
      *
      * Get messages from folder, filtered by query
@@ -16816,7 +16816,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'listEmailMessages'
      *
      * @param Requests\listEmailMessagesRequest $request is a request object for operation
@@ -17001,7 +17001,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation moveFile
      *
      * Move file
@@ -17022,7 +17022,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation moveFileWithHttpInfo
      *
      * Move file
@@ -17066,7 +17066,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation moveFileAsync
      *
      * Move file
@@ -17086,7 +17086,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation moveFileAsyncWithHttpInfo
      *
      * Move file
@@ -17123,7 +17123,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'moveFile'
      *
      * @param Requests\moveFileRequest $request is a request object for operation
@@ -17279,7 +17279,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation moveFolder
      *
      * Move folder
@@ -17300,7 +17300,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation moveFolderWithHttpInfo
      *
      * Move folder
@@ -17344,7 +17344,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation moveFolderAsync
      *
      * Move folder
@@ -17364,7 +17364,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation moveFolderAsyncWithHttpInfo
      *
      * Move folder
@@ -17401,7 +17401,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'moveFolder'
      *
      * @param Requests\moveFolderRequest $request is a request object for operation
@@ -17547,7 +17547,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation objectExists
      *
      * Check if file or folder exists
@@ -17570,7 +17570,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation objectExistsWithHttpInfo
      *
      * Check if file or folder exists
@@ -17636,7 +17636,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation objectExistsAsync
      *
      * Check if file or folder exists
@@ -17656,7 +17656,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation objectExistsAsyncWithHttpInfo
      *
      * Check if file or folder exists
@@ -17711,7 +17711,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'objectExists'
      *
      * @param Requests\objectExistsRequest $request is a request object for operation
@@ -17843,7 +17843,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation saveMailAccount
      *
      * Create email account file (*.account) with login/password authentication
@@ -17864,7 +17864,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation saveMailAccountWithHttpInfo
      *
      * Create email account file (*.account) with login/password authentication
@@ -17908,7 +17908,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation saveMailAccountAsync
      *
      * Create email account file (*.account) with login/password authentication
@@ -17928,7 +17928,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation saveMailAccountAsyncWithHttpInfo
      *
      * Create email account file (*.account) with login/password authentication
@@ -17965,7 +17965,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'saveMailAccount'
      *
      * @param Requests\saveMailAccountRequest $request is a request object for operation
@@ -18079,7 +18079,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation saveMailOAuthAccount
      *
      * Create email account file (*.account) with OAuth
@@ -18100,7 +18100,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation saveMailOAuthAccountWithHttpInfo
      *
      * Create email account file (*.account) with OAuth
@@ -18144,7 +18144,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation saveMailOAuthAccountAsync
      *
      * Create email account file (*.account) with OAuth
@@ -18164,7 +18164,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation saveMailOAuthAccountAsyncWithHttpInfo
      *
      * Create email account file (*.account) with OAuth
@@ -18201,7 +18201,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'saveMailOAuthAccount'
      *
      * @param Requests\saveMailOAuthAccountRequest $request is a request object for operation
@@ -18315,7 +18315,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation sendEmail
      *
      * Send an email from *.eml file located on storage
@@ -18336,7 +18336,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation sendEmailWithHttpInfo
      *
      * Send an email from *.eml file located on storage
@@ -18380,7 +18380,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation sendEmailAsync
      *
      * Send an email from *.eml file located on storage
@@ -18400,7 +18400,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation sendEmailAsyncWithHttpInfo
      *
      * Send an email from *.eml file located on storage
@@ -18437,7 +18437,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'sendEmail'
      *
      * @param Requests\sendEmailRequest $request is a request object for operation
@@ -18551,7 +18551,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation sendEmailMime
      *
      * Send an email specified by MIME in request
@@ -18572,7 +18572,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation sendEmailMimeWithHttpInfo
      *
      * Send an email specified by MIME in request
@@ -18616,7 +18616,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation sendEmailMimeAsync
      *
      * Send an email specified by MIME in request
@@ -18636,7 +18636,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation sendEmailMimeAsyncWithHttpInfo
      *
      * Send an email specified by MIME in request
@@ -18673,7 +18673,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'sendEmailMime'
      *
      * @param Requests\sendEmailMimeRequest $request is a request object for operation
@@ -18787,7 +18787,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation setEmailProperty
      *
      * Set email document property value
@@ -18810,7 +18810,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation setEmailPropertyWithHttpInfo
      *
      * Set email document property value
@@ -18876,7 +18876,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation setEmailPropertyAsync
      *
      * Set email document property value
@@ -18896,7 +18896,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation setEmailPropertyAsyncWithHttpInfo
      *
      * Set email document property value
@@ -18951,7 +18951,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'setEmailProperty'
      *
      * @param Requests\setEmailPropertyRequest $request is a request object for operation
@@ -19083,7 +19083,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation setEmailReadFlag
      *
      * Sets \"Message is read\" flag
@@ -19104,7 +19104,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation setEmailReadFlagWithHttpInfo
      *
      * Sets \"Message is read\" flag
@@ -19148,7 +19148,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation setEmailReadFlagAsync
      *
      * Sets \"Message is read\" flag
@@ -19168,7 +19168,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation setEmailReadFlagAsyncWithHttpInfo
      *
      * Sets \"Message is read\" flag
@@ -19205,7 +19205,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'setEmailReadFlag'
      *
      * @param Requests\setEmailReadFlagRequest $request is a request object for operation
@@ -19319,7 +19319,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation storageExists
      *
      * Check if storage exists
@@ -19342,7 +19342,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation storageExistsWithHttpInfo
      *
      * Check if storage exists
@@ -19408,7 +19408,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation storageExistsAsync
      *
      * Check if storage exists
@@ -19428,7 +19428,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation storageExistsAsyncWithHttpInfo
      *
      * Check if storage exists
@@ -19483,7 +19483,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'storageExists'
      *
      * @param Requests\storageExistsRequest $request is a request object for operation
@@ -19595,7 +19595,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation updateCalendarProperties
      *
      * Update calendar file properties
@@ -19616,7 +19616,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation updateCalendarPropertiesWithHttpInfo
      *
      * Update calendar file properties
@@ -19660,7 +19660,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation updateCalendarPropertiesAsync
      *
      * Update calendar file properties
@@ -19680,7 +19680,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation updateCalendarPropertiesAsyncWithHttpInfo
      *
      * Update calendar file properties
@@ -19717,7 +19717,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'updateCalendarProperties'
      *
      * @param Requests\updateCalendarPropertiesRequest $request is a request object for operation
@@ -19840,7 +19840,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation updateContactProperties
      *
      * Update contact document properties
@@ -19861,7 +19861,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation updateContactPropertiesWithHttpInfo
      *
      * Update contact document properties
@@ -19905,7 +19905,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation updateContactPropertiesAsync
      *
      * Update contact document properties
@@ -19925,7 +19925,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation updateContactPropertiesAsyncWithHttpInfo
      *
      * Update contact document properties
@@ -19962,7 +19962,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'updateContactProperties'
      *
      * @param Requests\updateContactPropertiesRequest $request is a request object for operation
@@ -20094,7 +20094,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation updateMapiProperties
      *
      * Update document properties
@@ -20115,7 +20115,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation updateMapiPropertiesWithHttpInfo
      *
      * Update document properties
@@ -20159,7 +20159,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation updateMapiPropertiesAsync
      *
      * Update document properties
@@ -20179,7 +20179,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation updateMapiPropertiesAsyncWithHttpInfo
      *
      * Update document properties
@@ -20216,7 +20216,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'updateMapiProperties'
      *
      * @param Requests\updateMapiPropertiesRequest $request is a request object for operation
@@ -20339,7 +20339,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Operation uploadFile
      *
      * Upload file
@@ -20362,7 +20362,7 @@ class EmailApi
         } 
     }
 
-    /*
+    /**
      * Operation uploadFileWithHttpInfo
      *
      * Upload file
@@ -20428,7 +20428,7 @@ class EmailApi
         }
     }
 
-    /*
+    /**
      * Operation uploadFileAsync
      *
      * Upload file
@@ -20448,7 +20448,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Operation uploadFileAsyncWithHttpInfo
      *
      * Upload file
@@ -20503,7 +20503,7 @@ class EmailApi
             );
     }
 
-    /*
+    /**
      * Create request for operation 'uploadFile'
      *
      * @param Requests\uploadFileRequest $request is a request object for operation
@@ -20639,7 +20639,7 @@ class EmailApi
         return $req;
     }
 
-    /*
+    /**
      * Create http client option
      *
      * @throws \RuntimeException on file opening failure
@@ -20658,7 +20658,7 @@ class EmailApi
         return $options;
     }
     
-    /*
+    /**
      * Executes response logging
      */
     private function _writeResponseLog($statusCode, $headers, $body)
@@ -20667,7 +20667,7 @@ class EmailApi
         echo $logInfo . $this->_writeHeadersAndBody($logInfo, $headers, $body);
     }
 	
-    /*
+    /**
      * Executes request logging
      */
     private function _writeRequestLog($method, $url, $headers, $body)
@@ -20676,7 +20676,7 @@ class EmailApi
         echo $logInfo . $this->_writeHeadersAndBody($logInfo, $headers, $body);
     }
 	
-    /*
+    /**
      * Executes header and boy formatting
      */
     private function _writeHeadersAndBody($logInfo, $headers, $body)
@@ -20688,7 +20688,7 @@ class EmailApi
         return $logInfo .= "Body: " . $body . "\n";
     }
 
-    /*
+    /**
      * Executes url parsing
      */
     private function _parseURL($url, $queryParams) 
@@ -20702,7 +20702,7 @@ class EmailApi
         return $urlPartToSign;
     }
   
-    /*
+    /**
      * Gets a request token from server
      */
     private function _requestToken() 

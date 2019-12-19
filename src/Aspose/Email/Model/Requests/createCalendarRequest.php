@@ -28,12 +28,12 @@
 
 namespace Aspose\Email\Model\Requests;
 
-/*
+/**
  * Request model for createCalendar" operation.
  */
 class createCalendarRequest
 {
-    /*
+    /**
      * Initializes a new instance of the createCalendarRequest class.
      *  
      * @param string $name Calendar file name in storage
@@ -45,12 +45,12 @@ class createCalendarRequest
         $this->request = $request;
     }
 
-    /*
+    /**
      * Calendar file name in storage
      */
     public $name;
 	
-    /*
+    /**
      * Gets or sets request
      */
     public $request;

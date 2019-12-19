@@ -25,14 +25,14 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
-/*
+/**
  * AppendEmailBaseRequest
  */
 
 namespace Aspose\Email\Model;
 use \Aspose\Email\ObjectSerializer;
 
-/*
+/**
  * AppendEmailBaseRequest
  *
  * @description Append email from storage file to account request
@@ -41,14 +41,14 @@ class AppendEmailBaseRequest extends AppendEmailAccountBaseRequest
 {
     const DISCRIMINATOR = null;
 
-    /*
+    /**
      * The original name of the model.
      *
      * @var string
      */
     protected static $swaggerModelName = "AppendEmailBaseRequest";
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @var string[]
@@ -57,7 +57,7 @@ class AppendEmailBaseRequest extends AppendEmailAccountBaseRequest
         'email_file' => '\Aspose\Email\Model\StorageFileLocation'
     ];
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @var string[]
@@ -66,7 +66,7 @@ class AppendEmailBaseRequest extends AppendEmailAccountBaseRequest
         'email_file' => null
     ];
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @return array
@@ -76,7 +76,7 @@ class AppendEmailBaseRequest extends AppendEmailAccountBaseRequest
         return self::$swaggerTypes + parent::swaggerTypes();
     }
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @return array
@@ -86,7 +86,7 @@ class AppendEmailBaseRequest extends AppendEmailAccountBaseRequest
         return self::$swaggerFormats + parent::swaggerFormats();
     }
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -96,7 +96,7 @@ class AppendEmailBaseRequest extends AppendEmailAccountBaseRequest
         'email_file' => 'emailFile'
     ];
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
@@ -105,7 +105,7 @@ class AppendEmailBaseRequest extends AppendEmailAccountBaseRequest
         'email_file' => 'setEmailFile'
     ];
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @var string[]
@@ -114,7 +114,7 @@ class AppendEmailBaseRequest extends AppendEmailAccountBaseRequest
         'email_file' => 'getEmailFile'
     ];
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -125,7 +125,7 @@ class AppendEmailBaseRequest extends AppendEmailAccountBaseRequest
         return parent::attributeMap() + self::$attributeMap;
     }
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @return array
@@ -135,7 +135,7 @@ class AppendEmailBaseRequest extends AppendEmailAccountBaseRequest
         return parent::setters() + self::$setters;
     }
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @return array
@@ -145,7 +145,7 @@ class AppendEmailBaseRequest extends AppendEmailAccountBaseRequest
         return parent::getters() + self::$getters;
     }
 
-    /*
+    /**
      * The original name of the model.
      *
      * @return string
@@ -160,20 +160,30 @@ class AppendEmailBaseRequest extends AppendEmailAccountBaseRequest
     
 
 
-    /*
-     * Constructor
-     *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+    /**
+     * Initializes a new instance of the AppendEmailBaseRequest class.
+     *  
+     * @param string $first_account First account storage file name for receiving emails (or universal one)
+     * @param string $second_account Second account storage file name for sending emails (ignored if first is universal)
+     * @param \Aspose\Email\Model\StorageFolderLocation $storage_folder Storage folder location of account files
+     * @param string $folder Email account folder to store a message
+     * @param bool $mark_as_sent Mark message as sent
+     * @param \Aspose\Email\Model\StorageFileLocation $email_file Email document file location in storage
      */
-    public function __construct(array $data = null)
+    public function __construct($first_account = null, $second_account = null, $storage_folder = null, $folder = null, $mark_as_sent = null, $email_file = null)
     {
-        parent::__construct($data);
+        parent::__construct();
+        $this->container['email_file'] = null;
 
-        $this->container['email_file'] = isset($data['email_file']) ? $data['email_file'] : null;
+        if ($first_account != null) $this->setFirstAccount($first_account);
+        if ($second_account != null) $this->setSecondAccount($second_account);
+        if ($storage_folder != null) $this->setStorageFolder($storage_folder);
+        if ($folder != null) $this->setFolder($folder);
+        if ($mark_as_sent != null) $this->setMarkAsSent($mark_as_sent);
+        if ($email_file != null) $this->setEmailFile($email_file);
     }
 
-    /*
+    /**
      * Show all the invalid properties with reasons.
      *
      * @return array invalid properties with reasons
@@ -188,7 +198,7 @@ class AppendEmailBaseRequest extends AppendEmailAccountBaseRequest
         return $invalidProperties;
     }
 
-    /*
+    /**
      * Validate all the properties in the model
      * return true if all passed
      *
@@ -207,7 +217,7 @@ class AppendEmailBaseRequest extends AppendEmailAccountBaseRequest
     }
 
 
-    /*
+    /**
      * Gets email_file
      *
      * @return \Aspose\Email\Model\StorageFileLocation
@@ -217,7 +227,7 @@ class AppendEmailBaseRequest extends AppendEmailAccountBaseRequest
         return $this->container['email_file'];
     }
 
-    /*
+    /**
      * Sets email_file
      *
      * @param \Aspose\Email\Model\StorageFileLocation $email_file Email document file location in storage
@@ -230,7 +240,7 @@ class AppendEmailBaseRequest extends AppendEmailAccountBaseRequest
 
         return $this;
     }
-    /*
+    /**
      * Returns true if offset exists. False otherwise.
      *
      * @param integer $offset Offset
@@ -242,7 +252,7 @@ class AppendEmailBaseRequest extends AppendEmailAccountBaseRequest
         return isset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets offset.
      *
      * @param integer $offset Offset
@@ -254,7 +264,7 @@ class AppendEmailBaseRequest extends AppendEmailAccountBaseRequest
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
-    /*
+    /**
      * Sets value based on offset.
      *
      * @param integer $offset Offset
@@ -271,7 +281,7 @@ class AppendEmailBaseRequest extends AppendEmailAccountBaseRequest
         }
     }
 
-    /*
+    /**
      * Unsets offset.
      *
      * @param integer $offset Offset
@@ -283,7 +293,7 @@ class AppendEmailBaseRequest extends AppendEmailAccountBaseRequest
         unset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets the string presentation of the object
      *
      * @return string
