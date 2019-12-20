@@ -31,10 +31,10 @@ namespace Aspose\Email\Model\Requests;
 /**
  * Request model for getContactList" operation.
  */
-class getContactListRequest
+class GetContactListRequest
 {
     /**
-     * Initializes a new instance of the getContactListRequest class.
+     * Initializes a new instance of the GetContactListRequest class.
      *  
      * @param string $format Contact document format. Enum, available values: VCard, WebDav, Msg
      * @param string $folder Path to folder in storage

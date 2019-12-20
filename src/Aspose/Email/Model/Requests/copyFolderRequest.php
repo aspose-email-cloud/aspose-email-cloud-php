@@ -31,10 +31,10 @@ namespace Aspose\Email\Model\Requests;
 /**
  * Request model for copyFolder" operation.
  */
-class copyFolderRequest
+class CopyFolderRequest
 {
     /**
-     * Initializes a new instance of the copyFolderRequest class.
+     * Initializes a new instance of the CopyFolderRequest class.
      *  
      * @param string $src_path Source folder path e.g. '/src'
      * @param string $dest_path Destination folder path e.g. '/dst'

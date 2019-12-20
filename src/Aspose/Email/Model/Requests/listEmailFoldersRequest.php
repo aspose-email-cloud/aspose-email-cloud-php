@@ -31,10 +31,10 @@ namespace Aspose\Email\Model\Requests;
 /**
  * Request model for listEmailFolders" operation.
  */
-class listEmailFoldersRequest
+class ListEmailFoldersRequest
 {
     /**
-     * Initializes a new instance of the listEmailFoldersRequest class.
+     * Initializes a new instance of the ListEmailFoldersRequest class.
      *  
      * @param string $first_account Email account
      * @param string $second_account Additional email account (should be specified for POP/IMAP accounts and should be SMTP account)

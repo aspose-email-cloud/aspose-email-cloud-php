@@ -31,10 +31,10 @@ namespace Aspose\Email\Model\Requests;
 /**
  * Request model for aiNameGenderizeParsed" operation.
  */
-class aiNameGenderizeParsedRequest
+class AiNameGenderizeParsedRequest
 {
     /**
-     * Initializes a new instance of the aiNameGenderizeParsedRequest class.
+     * Initializes a new instance of the AiNameGenderizeParsedRequest class.
      *  
      * @param \Aspose\Email\Model\AiNameParsedRq $rq Gender detection request data
      */

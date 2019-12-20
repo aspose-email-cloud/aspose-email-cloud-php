@@ -31,10 +31,10 @@ namespace Aspose\Email\Model\Requests;
 /**
  * Request model for getDiscUsage" operation.
  */
-class getDiscUsageRequest
+class GetDiscUsageRequest
 {
     /**
-     * Initializes a new instance of the getDiscUsageRequest class.
+     * Initializes a new instance of the GetDiscUsageRequest class.
      *  
      * @param string $storage_name Storage name
      */

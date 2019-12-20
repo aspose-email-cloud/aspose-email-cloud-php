@@ -31,10 +31,10 @@ namespace Aspose\Email\Model\Requests;
 /**
  * Request model for getEmailAttachment" operation.
  */
-class getEmailAttachmentRequest
+class GetEmailAttachmentRequest
 {
     /**
-     * Initializes a new instance of the getEmailAttachmentRequest class.
+     * Initializes a new instance of the GetEmailAttachmentRequest class.
      *  
      * @param string $attachment Attachment name
      * @param string $file_name Email document file name

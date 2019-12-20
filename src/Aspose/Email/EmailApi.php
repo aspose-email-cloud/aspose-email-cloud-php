@@ -86,13 +86,13 @@ class EmailApi
      *
      * Adds an attachment to iCalendar file
      *
-     * @param Requests\addCalendarAttachmentRequest $request is a request object for operation
+     * @param Requests\AddCalendarAttachmentRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function addCalendarAttachment(Requests\addCalendarAttachmentRequest $request)
+    public function addCalendarAttachment(Requests\AddCalendarAttachmentRequest $request)
     {
         try {
              $this->addCalendarAttachmentWithHttpInfo($request);
@@ -107,13 +107,13 @@ class EmailApi
      *
      * Adds an attachment to iCalendar file
      *
-     * @param Requests\addCalendarAttachmentRequest $request is a request object for operation
+     * @param Requests\AddCalendarAttachmentRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addCalendarAttachmentWithHttpInfo(Requests\addCalendarAttachmentRequest $request)
+    public function addCalendarAttachmentWithHttpInfo(Requests\AddCalendarAttachmentRequest $request)
     {
         $returnType = '';
         $request = $this->addCalendarAttachmentRequest($request);
@@ -151,12 +151,12 @@ class EmailApi
      *
      * Adds an attachment to iCalendar file
      *
-     * @param Requests\addCalendarAttachmentRequest $request is a request object for operation
+     * @param Requests\AddCalendarAttachmentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addCalendarAttachmentAsync(Requests\addCalendarAttachmentRequest $request) 
+    public function addCalendarAttachmentAsync(Requests\AddCalendarAttachmentRequest $request) 
     {
         return $this->addCalendarAttachmentAsyncWithHttpInfo($request)
             ->then(
@@ -171,12 +171,12 @@ class EmailApi
      *
      * Adds an attachment to iCalendar file
      *
-     * @param Requests\addCalendarAttachmentRequest $request is a request object for operation
+     * @param Requests\AddCalendarAttachmentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addCalendarAttachmentAsyncWithHttpInfo(Requests\addCalendarAttachmentRequest $request) 
+    public function addCalendarAttachmentAsyncWithHttpInfo(Requests\AddCalendarAttachmentRequest $request) 
     {
         $returnType = '';
         $request = $this->addCalendarAttachmentRequest($request);
@@ -206,12 +206,12 @@ class EmailApi
     /**
      * Create request for operation 'addCalendarAttachment'
      *
-     * @param Requests\addCalendarAttachmentRequest $request is a request object for operation
+     * @param Requests\AddCalendarAttachmentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function addCalendarAttachmentRequest(Requests\addCalendarAttachmentRequest $request)
+    protected function addCalendarAttachmentRequest(Requests\AddCalendarAttachmentRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -340,13 +340,13 @@ class EmailApi
      *
      * Add attachment to contact document
      *
-     * @param Requests\addContactAttachmentRequest $request is a request object for operation
+     * @param Requests\AddContactAttachmentRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function addContactAttachment(Requests\addContactAttachmentRequest $request)
+    public function addContactAttachment(Requests\AddContactAttachmentRequest $request)
     {
         try {
              $this->addContactAttachmentWithHttpInfo($request);
@@ -361,13 +361,13 @@ class EmailApi
      *
      * Add attachment to contact document
      *
-     * @param Requests\addContactAttachmentRequest $request is a request object for operation
+     * @param Requests\AddContactAttachmentRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addContactAttachmentWithHttpInfo(Requests\addContactAttachmentRequest $request)
+    public function addContactAttachmentWithHttpInfo(Requests\AddContactAttachmentRequest $request)
     {
         $returnType = '';
         $request = $this->addContactAttachmentRequest($request);
@@ -405,12 +405,12 @@ class EmailApi
      *
      * Add attachment to contact document
      *
-     * @param Requests\addContactAttachmentRequest $request is a request object for operation
+     * @param Requests\AddContactAttachmentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addContactAttachmentAsync(Requests\addContactAttachmentRequest $request) 
+    public function addContactAttachmentAsync(Requests\AddContactAttachmentRequest $request) 
     {
         return $this->addContactAttachmentAsyncWithHttpInfo($request)
             ->then(
@@ -425,12 +425,12 @@ class EmailApi
      *
      * Add attachment to contact document
      *
-     * @param Requests\addContactAttachmentRequest $request is a request object for operation
+     * @param Requests\AddContactAttachmentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addContactAttachmentAsyncWithHttpInfo(Requests\addContactAttachmentRequest $request) 
+    public function addContactAttachmentAsyncWithHttpInfo(Requests\AddContactAttachmentRequest $request) 
     {
         $returnType = '';
         $request = $this->addContactAttachmentRequest($request);
@@ -460,12 +460,12 @@ class EmailApi
     /**
      * Create request for operation 'addContactAttachment'
      *
-     * @param Requests\addContactAttachmentRequest $request is a request object for operation
+     * @param Requests\AddContactAttachmentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function addContactAttachmentRequest(Requests\addContactAttachmentRequest $request)
+    protected function addContactAttachmentRequest(Requests\AddContactAttachmentRequest $request)
     {
         // verify the required parameter 'format' is set
         if ($request->format === null) {
@@ -603,13 +603,13 @@ class EmailApi
      *
      * Adds an attachment to Email document
      *
-     * @param Requests\addEmailAttachmentRequest $request is a request object for operation
+     * @param Requests\AddEmailAttachmentRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Email\Model\EmailDocumentResponse
      */
-    public function addEmailAttachment(Requests\addEmailAttachmentRequest $request)
+    public function addEmailAttachment(Requests\AddEmailAttachmentRequest $request)
     {
         try {
              list($response) = $this->addEmailAttachmentWithHttpInfo($request);
@@ -626,13 +626,13 @@ class EmailApi
      *
      * Adds an attachment to Email document
      *
-     * @param Requests\addEmailAttachmentRequest $request is a request object for operation
+     * @param Requests\AddEmailAttachmentRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Email\Model\EmailDocumentResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addEmailAttachmentWithHttpInfo(Requests\addEmailAttachmentRequest $request)
+    public function addEmailAttachmentWithHttpInfo(Requests\AddEmailAttachmentRequest $request)
     {
         $returnType = '\Aspose\Email\Model\EmailDocumentResponse';
         $request = $this->addEmailAttachmentRequest($request);
@@ -692,12 +692,12 @@ class EmailApi
      *
      * Adds an attachment to Email document
      *
-     * @param Requests\addEmailAttachmentRequest $request is a request object for operation
+     * @param Requests\AddEmailAttachmentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addEmailAttachmentAsync(Requests\addEmailAttachmentRequest $request) 
+    public function addEmailAttachmentAsync(Requests\AddEmailAttachmentRequest $request) 
     {
         return $this->addEmailAttachmentAsyncWithHttpInfo($request)
             ->then(
@@ -712,12 +712,12 @@ class EmailApi
      *
      * Adds an attachment to Email document
      *
-     * @param Requests\addEmailAttachmentRequest $request is a request object for operation
+     * @param Requests\AddEmailAttachmentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addEmailAttachmentAsyncWithHttpInfo(Requests\addEmailAttachmentRequest $request) 
+    public function addEmailAttachmentAsyncWithHttpInfo(Requests\AddEmailAttachmentRequest $request) 
     {
         $returnType = '\Aspose\Email\Model\EmailDocumentResponse';
         $request = $this->addEmailAttachmentRequest($request);
@@ -765,12 +765,12 @@ class EmailApi
     /**
      * Create request for operation 'addEmailAttachment'
      *
-     * @param Requests\addEmailAttachmentRequest $request is a request object for operation
+     * @param Requests\AddEmailAttachmentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function addEmailAttachmentRequest(Requests\addEmailAttachmentRequest $request)
+    protected function addEmailAttachmentRequest(Requests\AddEmailAttachmentRequest $request)
     {
         // verify the required parameter 'attachment_name' is set
         if ($request->attachment_name === null) {
@@ -899,13 +899,13 @@ class EmailApi
      *
      * Add attachment to document
      *
-     * @param Requests\addMapiAttachmentRequest $request is a request object for operation
+     * @param Requests\AddMapiAttachmentRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function addMapiAttachment(Requests\addMapiAttachmentRequest $request)
+    public function addMapiAttachment(Requests\AddMapiAttachmentRequest $request)
     {
         try {
              $this->addMapiAttachmentWithHttpInfo($request);
@@ -920,13 +920,13 @@ class EmailApi
      *
      * Add attachment to document
      *
-     * @param Requests\addMapiAttachmentRequest $request is a request object for operation
+     * @param Requests\AddMapiAttachmentRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function addMapiAttachmentWithHttpInfo(Requests\addMapiAttachmentRequest $request)
+    public function addMapiAttachmentWithHttpInfo(Requests\AddMapiAttachmentRequest $request)
     {
         $returnType = '';
         $request = $this->addMapiAttachmentRequest($request);
@@ -964,12 +964,12 @@ class EmailApi
      *
      * Add attachment to document
      *
-     * @param Requests\addMapiAttachmentRequest $request is a request object for operation
+     * @param Requests\AddMapiAttachmentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addMapiAttachmentAsync(Requests\addMapiAttachmentRequest $request) 
+    public function addMapiAttachmentAsync(Requests\AddMapiAttachmentRequest $request) 
     {
         return $this->addMapiAttachmentAsyncWithHttpInfo($request)
             ->then(
@@ -984,12 +984,12 @@ class EmailApi
      *
      * Add attachment to document
      *
-     * @param Requests\addMapiAttachmentRequest $request is a request object for operation
+     * @param Requests\AddMapiAttachmentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function addMapiAttachmentAsyncWithHttpInfo(Requests\addMapiAttachmentRequest $request) 
+    public function addMapiAttachmentAsyncWithHttpInfo(Requests\AddMapiAttachmentRequest $request) 
     {
         $returnType = '';
         $request = $this->addMapiAttachmentRequest($request);
@@ -1019,12 +1019,12 @@ class EmailApi
     /**
      * Create request for operation 'addMapiAttachment'
      *
-     * @param Requests\addMapiAttachmentRequest $request is a request object for operation
+     * @param Requests\AddMapiAttachmentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function addMapiAttachmentRequest(Requests\addMapiAttachmentRequest $request)
+    protected function addMapiAttachmentRequest(Requests\AddMapiAttachmentRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -1153,13 +1153,13 @@ class EmailApi
      *
      * Ocr images
      *
-     * @param Requests\aiBcrOcrRequest $request is a request object for operation
+     * @param Requests\AiBcrOcrRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Email\Model\ListResponseOfAiBcrOcrData
      */
-    public function aiBcrOcr(Requests\aiBcrOcrRequest $request)
+    public function aiBcrOcr(Requests\AiBcrOcrRequest $request)
     {
         try {
              list($response) = $this->aiBcrOcrWithHttpInfo($request);
@@ -1176,13 +1176,13 @@ class EmailApi
      *
      * Ocr images
      *
-     * @param Requests\aiBcrOcrRequest $request is a request object for operation
+     * @param Requests\AiBcrOcrRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Email\Model\ListResponseOfAiBcrOcrData, HTTP status code, HTTP response headers (array of strings)
      */
-    public function aiBcrOcrWithHttpInfo(Requests\aiBcrOcrRequest $request)
+    public function aiBcrOcrWithHttpInfo(Requests\AiBcrOcrRequest $request)
     {
         $returnType = '\Aspose\Email\Model\ListResponseOfAiBcrOcrData';
         $request = $this->aiBcrOcrRequest($request);
@@ -1242,12 +1242,12 @@ class EmailApi
      *
      * Ocr images
      *
-     * @param Requests\aiBcrOcrRequest $request is a request object for operation
+     * @param Requests\AiBcrOcrRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function aiBcrOcrAsync(Requests\aiBcrOcrRequest $request) 
+    public function aiBcrOcrAsync(Requests\AiBcrOcrRequest $request) 
     {
         return $this->aiBcrOcrAsyncWithHttpInfo($request)
             ->then(
@@ -1262,12 +1262,12 @@ class EmailApi
      *
      * Ocr images
      *
-     * @param Requests\aiBcrOcrRequest $request is a request object for operation
+     * @param Requests\AiBcrOcrRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function aiBcrOcrAsyncWithHttpInfo(Requests\aiBcrOcrRequest $request) 
+    public function aiBcrOcrAsyncWithHttpInfo(Requests\AiBcrOcrRequest $request) 
     {
         $returnType = '\Aspose\Email\Model\ListResponseOfAiBcrOcrData';
         $request = $this->aiBcrOcrRequest($request);
@@ -1315,12 +1315,12 @@ class EmailApi
     /**
      * Create request for operation 'aiBcrOcr'
      *
-     * @param Requests\aiBcrOcrRequest $request is a request object for operation
+     * @param Requests\AiBcrOcrRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function aiBcrOcrRequest(Requests\aiBcrOcrRequest $request)
+    protected function aiBcrOcrRequest(Requests\AiBcrOcrRequest $request)
     {
         // verify the required parameter 'rq' is set
         if ($request->rq === null) {
@@ -1431,13 +1431,13 @@ class EmailApi
      *
      * Ocr images from storage
      *
-     * @param Requests\aiBcrOcrStorageRequest $request is a request object for operation
+     * @param Requests\AiBcrOcrStorageRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Email\Model\ListResponseOfAiBcrOcrData
      */
-    public function aiBcrOcrStorage(Requests\aiBcrOcrStorageRequest $request)
+    public function aiBcrOcrStorage(Requests\AiBcrOcrStorageRequest $request)
     {
         try {
              list($response) = $this->aiBcrOcrStorageWithHttpInfo($request);
@@ -1454,13 +1454,13 @@ class EmailApi
      *
      * Ocr images from storage
      *
-     * @param Requests\aiBcrOcrStorageRequest $request is a request object for operation
+     * @param Requests\AiBcrOcrStorageRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Email\Model\ListResponseOfAiBcrOcrData, HTTP status code, HTTP response headers (array of strings)
      */
-    public function aiBcrOcrStorageWithHttpInfo(Requests\aiBcrOcrStorageRequest $request)
+    public function aiBcrOcrStorageWithHttpInfo(Requests\AiBcrOcrStorageRequest $request)
     {
         $returnType = '\Aspose\Email\Model\ListResponseOfAiBcrOcrData';
         $request = $this->aiBcrOcrStorageRequest($request);
@@ -1520,12 +1520,12 @@ class EmailApi
      *
      * Ocr images from storage
      *
-     * @param Requests\aiBcrOcrStorageRequest $request is a request object for operation
+     * @param Requests\AiBcrOcrStorageRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function aiBcrOcrStorageAsync(Requests\aiBcrOcrStorageRequest $request) 
+    public function aiBcrOcrStorageAsync(Requests\AiBcrOcrStorageRequest $request) 
     {
         return $this->aiBcrOcrStorageAsyncWithHttpInfo($request)
             ->then(
@@ -1540,12 +1540,12 @@ class EmailApi
      *
      * Ocr images from storage
      *
-     * @param Requests\aiBcrOcrStorageRequest $request is a request object for operation
+     * @param Requests\AiBcrOcrStorageRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function aiBcrOcrStorageAsyncWithHttpInfo(Requests\aiBcrOcrStorageRequest $request) 
+    public function aiBcrOcrStorageAsyncWithHttpInfo(Requests\AiBcrOcrStorageRequest $request) 
     {
         $returnType = '\Aspose\Email\Model\ListResponseOfAiBcrOcrData';
         $request = $this->aiBcrOcrStorageRequest($request);
@@ -1593,12 +1593,12 @@ class EmailApi
     /**
      * Create request for operation 'aiBcrOcrStorage'
      *
-     * @param Requests\aiBcrOcrStorageRequest $request is a request object for operation
+     * @param Requests\AiBcrOcrStorageRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function aiBcrOcrStorageRequest(Requests\aiBcrOcrStorageRequest $request)
+    protected function aiBcrOcrStorageRequest(Requests\AiBcrOcrStorageRequest $request)
     {
         // verify the required parameter 'rq' is set
         if ($request->rq === null) {
@@ -1709,13 +1709,13 @@ class EmailApi
      *
      * Parse images to vCard properties
      *
-     * @param Requests\aiBcrParseRequest $request is a request object for operation
+     * @param Requests\AiBcrParseRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Email\Model\ListResponseOfHierarchicalObject
      */
-    public function aiBcrParse(Requests\aiBcrParseRequest $request)
+    public function aiBcrParse(Requests\AiBcrParseRequest $request)
     {
         try {
              list($response) = $this->aiBcrParseWithHttpInfo($request);
@@ -1732,13 +1732,13 @@ class EmailApi
      *
      * Parse images to vCard properties
      *
-     * @param Requests\aiBcrParseRequest $request is a request object for operation
+     * @param Requests\AiBcrParseRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Email\Model\ListResponseOfHierarchicalObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function aiBcrParseWithHttpInfo(Requests\aiBcrParseRequest $request)
+    public function aiBcrParseWithHttpInfo(Requests\AiBcrParseRequest $request)
     {
         $returnType = '\Aspose\Email\Model\ListResponseOfHierarchicalObject';
         $request = $this->aiBcrParseRequest($request);
@@ -1798,12 +1798,12 @@ class EmailApi
      *
      * Parse images to vCard properties
      *
-     * @param Requests\aiBcrParseRequest $request is a request object for operation
+     * @param Requests\AiBcrParseRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function aiBcrParseAsync(Requests\aiBcrParseRequest $request) 
+    public function aiBcrParseAsync(Requests\AiBcrParseRequest $request) 
     {
         return $this->aiBcrParseAsyncWithHttpInfo($request)
             ->then(
@@ -1818,12 +1818,12 @@ class EmailApi
      *
      * Parse images to vCard properties
      *
-     * @param Requests\aiBcrParseRequest $request is a request object for operation
+     * @param Requests\AiBcrParseRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function aiBcrParseAsyncWithHttpInfo(Requests\aiBcrParseRequest $request) 
+    public function aiBcrParseAsyncWithHttpInfo(Requests\AiBcrParseRequest $request) 
     {
         $returnType = '\Aspose\Email\Model\ListResponseOfHierarchicalObject';
         $request = $this->aiBcrParseRequest($request);
@@ -1871,12 +1871,12 @@ class EmailApi
     /**
      * Create request for operation 'aiBcrParse'
      *
-     * @param Requests\aiBcrParseRequest $request is a request object for operation
+     * @param Requests\AiBcrParseRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function aiBcrParseRequest(Requests\aiBcrParseRequest $request)
+    protected function aiBcrParseRequest(Requests\AiBcrParseRequest $request)
     {
         // verify the required parameter 'rq' is set
         if ($request->rq === null) {
@@ -1987,13 +1987,13 @@ class EmailApi
      *
      * Parse OCR data to vCard properties
      *
-     * @param Requests\aiBcrParseOcrDataRequest $request is a request object for operation
+     * @param Requests\AiBcrParseOcrDataRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Email\Model\ListResponseOfHierarchicalObject
      */
-    public function aiBcrParseOcrData(Requests\aiBcrParseOcrDataRequest $request)
+    public function aiBcrParseOcrData(Requests\AiBcrParseOcrDataRequest $request)
     {
         try {
              list($response) = $this->aiBcrParseOcrDataWithHttpInfo($request);
@@ -2010,13 +2010,13 @@ class EmailApi
      *
      * Parse OCR data to vCard properties
      *
-     * @param Requests\aiBcrParseOcrDataRequest $request is a request object for operation
+     * @param Requests\AiBcrParseOcrDataRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Email\Model\ListResponseOfHierarchicalObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function aiBcrParseOcrDataWithHttpInfo(Requests\aiBcrParseOcrDataRequest $request)
+    public function aiBcrParseOcrDataWithHttpInfo(Requests\AiBcrParseOcrDataRequest $request)
     {
         $returnType = '\Aspose\Email\Model\ListResponseOfHierarchicalObject';
         $request = $this->aiBcrParseOcrDataRequest($request);
@@ -2076,12 +2076,12 @@ class EmailApi
      *
      * Parse OCR data to vCard properties
      *
-     * @param Requests\aiBcrParseOcrDataRequest $request is a request object for operation
+     * @param Requests\AiBcrParseOcrDataRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function aiBcrParseOcrDataAsync(Requests\aiBcrParseOcrDataRequest $request) 
+    public function aiBcrParseOcrDataAsync(Requests\AiBcrParseOcrDataRequest $request) 
     {
         return $this->aiBcrParseOcrDataAsyncWithHttpInfo($request)
             ->then(
@@ -2096,12 +2096,12 @@ class EmailApi
      *
      * Parse OCR data to vCard properties
      *
-     * @param Requests\aiBcrParseOcrDataRequest $request is a request object for operation
+     * @param Requests\AiBcrParseOcrDataRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function aiBcrParseOcrDataAsyncWithHttpInfo(Requests\aiBcrParseOcrDataRequest $request) 
+    public function aiBcrParseOcrDataAsyncWithHttpInfo(Requests\AiBcrParseOcrDataRequest $request) 
     {
         $returnType = '\Aspose\Email\Model\ListResponseOfHierarchicalObject';
         $request = $this->aiBcrParseOcrDataRequest($request);
@@ -2149,12 +2149,12 @@ class EmailApi
     /**
      * Create request for operation 'aiBcrParseOcrData'
      *
-     * @param Requests\aiBcrParseOcrDataRequest $request is a request object for operation
+     * @param Requests\AiBcrParseOcrDataRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function aiBcrParseOcrDataRequest(Requests\aiBcrParseOcrDataRequest $request)
+    protected function aiBcrParseOcrDataRequest(Requests\AiBcrParseOcrDataRequest $request)
     {
         // verify the required parameter 'rq' is set
         if ($request->rq === null) {
@@ -2265,13 +2265,13 @@ class EmailApi
      *
      * Parse vCards from OCR data and save them to Storage
      *
-     * @param Requests\aiBcrParseOcrDataStorageRequest $request is a request object for operation
+     * @param Requests\AiBcrParseOcrDataStorageRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Email\Model\ListResponseOfStorageFileLocation
      */
-    public function aiBcrParseOcrDataStorage(Requests\aiBcrParseOcrDataStorageRequest $request)
+    public function aiBcrParseOcrDataStorage(Requests\AiBcrParseOcrDataStorageRequest $request)
     {
         try {
              list($response) = $this->aiBcrParseOcrDataStorageWithHttpInfo($request);
@@ -2288,13 +2288,13 @@ class EmailApi
      *
      * Parse vCards from OCR data and save them to Storage
      *
-     * @param Requests\aiBcrParseOcrDataStorageRequest $request is a request object for operation
+     * @param Requests\AiBcrParseOcrDataStorageRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Email\Model\ListResponseOfStorageFileLocation, HTTP status code, HTTP response headers (array of strings)
      */
-    public function aiBcrParseOcrDataStorageWithHttpInfo(Requests\aiBcrParseOcrDataStorageRequest $request)
+    public function aiBcrParseOcrDataStorageWithHttpInfo(Requests\AiBcrParseOcrDataStorageRequest $request)
     {
         $returnType = '\Aspose\Email\Model\ListResponseOfStorageFileLocation';
         $request = $this->aiBcrParseOcrDataStorageRequest($request);
@@ -2354,12 +2354,12 @@ class EmailApi
      *
      * Parse vCards from OCR data and save them to Storage
      *
-     * @param Requests\aiBcrParseOcrDataStorageRequest $request is a request object for operation
+     * @param Requests\AiBcrParseOcrDataStorageRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function aiBcrParseOcrDataStorageAsync(Requests\aiBcrParseOcrDataStorageRequest $request) 
+    public function aiBcrParseOcrDataStorageAsync(Requests\AiBcrParseOcrDataStorageRequest $request) 
     {
         return $this->aiBcrParseOcrDataStorageAsyncWithHttpInfo($request)
             ->then(
@@ -2374,12 +2374,12 @@ class EmailApi
      *
      * Parse vCards from OCR data and save them to Storage
      *
-     * @param Requests\aiBcrParseOcrDataStorageRequest $request is a request object for operation
+     * @param Requests\AiBcrParseOcrDataStorageRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function aiBcrParseOcrDataStorageAsyncWithHttpInfo(Requests\aiBcrParseOcrDataStorageRequest $request) 
+    public function aiBcrParseOcrDataStorageAsyncWithHttpInfo(Requests\AiBcrParseOcrDataStorageRequest $request) 
     {
         $returnType = '\Aspose\Email\Model\ListResponseOfStorageFileLocation';
         $request = $this->aiBcrParseOcrDataStorageRequest($request);
@@ -2427,12 +2427,12 @@ class EmailApi
     /**
      * Create request for operation 'aiBcrParseOcrDataStorage'
      *
-     * @param Requests\aiBcrParseOcrDataStorageRequest $request is a request object for operation
+     * @param Requests\AiBcrParseOcrDataStorageRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function aiBcrParseOcrDataStorageRequest(Requests\aiBcrParseOcrDataStorageRequest $request)
+    protected function aiBcrParseOcrDataStorageRequest(Requests\AiBcrParseOcrDataStorageRequest $request)
     {
         // verify the required parameter 'rq' is set
         if ($request->rq === null) {
@@ -2543,13 +2543,13 @@ class EmailApi
      *
      * Parse images from storage to vCard files
      *
-     * @param Requests\aiBcrParseStorageRequest $request is a request object for operation
+     * @param Requests\AiBcrParseStorageRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Email\Model\ListResponseOfStorageFileLocation
      */
-    public function aiBcrParseStorage(Requests\aiBcrParseStorageRequest $request)
+    public function aiBcrParseStorage(Requests\AiBcrParseStorageRequest $request)
     {
         try {
              list($response) = $this->aiBcrParseStorageWithHttpInfo($request);
@@ -2566,13 +2566,13 @@ class EmailApi
      *
      * Parse images from storage to vCard files
      *
-     * @param Requests\aiBcrParseStorageRequest $request is a request object for operation
+     * @param Requests\AiBcrParseStorageRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Email\Model\ListResponseOfStorageFileLocation, HTTP status code, HTTP response headers (array of strings)
      */
-    public function aiBcrParseStorageWithHttpInfo(Requests\aiBcrParseStorageRequest $request)
+    public function aiBcrParseStorageWithHttpInfo(Requests\AiBcrParseStorageRequest $request)
     {
         $returnType = '\Aspose\Email\Model\ListResponseOfStorageFileLocation';
         $request = $this->aiBcrParseStorageRequest($request);
@@ -2632,12 +2632,12 @@ class EmailApi
      *
      * Parse images from storage to vCard files
      *
-     * @param Requests\aiBcrParseStorageRequest $request is a request object for operation
+     * @param Requests\AiBcrParseStorageRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function aiBcrParseStorageAsync(Requests\aiBcrParseStorageRequest $request) 
+    public function aiBcrParseStorageAsync(Requests\AiBcrParseStorageRequest $request) 
     {
         return $this->aiBcrParseStorageAsyncWithHttpInfo($request)
             ->then(
@@ -2652,12 +2652,12 @@ class EmailApi
      *
      * Parse images from storage to vCard files
      *
-     * @param Requests\aiBcrParseStorageRequest $request is a request object for operation
+     * @param Requests\AiBcrParseStorageRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function aiBcrParseStorageAsyncWithHttpInfo(Requests\aiBcrParseStorageRequest $request) 
+    public function aiBcrParseStorageAsyncWithHttpInfo(Requests\AiBcrParseStorageRequest $request) 
     {
         $returnType = '\Aspose\Email\Model\ListResponseOfStorageFileLocation';
         $request = $this->aiBcrParseStorageRequest($request);
@@ -2705,12 +2705,12 @@ class EmailApi
     /**
      * Create request for operation 'aiBcrParseStorage'
      *
-     * @param Requests\aiBcrParseStorageRequest $request is a request object for operation
+     * @param Requests\AiBcrParseStorageRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function aiBcrParseStorageRequest(Requests\aiBcrParseStorageRequest $request)
+    protected function aiBcrParseStorageRequest(Requests\AiBcrParseStorageRequest $request)
     {
         // verify the required parameter 'rq' is set
         if ($request->rq === null) {
@@ -2821,13 +2821,13 @@ class EmailApi
      *
      * The call proposes k most probable names for given starting characters
      *
-     * @param Requests\aiNameCompleteRequest $request is a request object for operation
+     * @param Requests\AiNameCompleteRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Email\Model\AiNameWeightedVariants
      */
-    public function aiNameComplete(Requests\aiNameCompleteRequest $request)
+    public function aiNameComplete(Requests\AiNameCompleteRequest $request)
     {
         try {
              list($response) = $this->aiNameCompleteWithHttpInfo($request);
@@ -2844,13 +2844,13 @@ class EmailApi
      *
      * The call proposes k most probable names for given starting characters
      *
-     * @param Requests\aiNameCompleteRequest $request is a request object for operation
+     * @param Requests\AiNameCompleteRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Email\Model\AiNameWeightedVariants, HTTP status code, HTTP response headers (array of strings)
      */
-    public function aiNameCompleteWithHttpInfo(Requests\aiNameCompleteRequest $request)
+    public function aiNameCompleteWithHttpInfo(Requests\AiNameCompleteRequest $request)
     {
         $returnType = '\Aspose\Email\Model\AiNameWeightedVariants';
         $request = $this->aiNameCompleteRequest($request);
@@ -2910,12 +2910,12 @@ class EmailApi
      *
      * The call proposes k most probable names for given starting characters
      *
-     * @param Requests\aiNameCompleteRequest $request is a request object for operation
+     * @param Requests\AiNameCompleteRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function aiNameCompleteAsync(Requests\aiNameCompleteRequest $request) 
+    public function aiNameCompleteAsync(Requests\AiNameCompleteRequest $request) 
     {
         return $this->aiNameCompleteAsyncWithHttpInfo($request)
             ->then(
@@ -2930,12 +2930,12 @@ class EmailApi
      *
      * The call proposes k most probable names for given starting characters
      *
-     * @param Requests\aiNameCompleteRequest $request is a request object for operation
+     * @param Requests\AiNameCompleteRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function aiNameCompleteAsyncWithHttpInfo(Requests\aiNameCompleteRequest $request) 
+    public function aiNameCompleteAsyncWithHttpInfo(Requests\AiNameCompleteRequest $request) 
     {
         $returnType = '\Aspose\Email\Model\AiNameWeightedVariants';
         $request = $this->aiNameCompleteRequest($request);
@@ -2983,12 +2983,12 @@ class EmailApi
     /**
      * Create request for operation 'aiNameComplete'
      *
-     * @param Requests\aiNameCompleteRequest $request is a request object for operation
+     * @param Requests\AiNameCompleteRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function aiNameCompleteRequest(Requests\aiNameCompleteRequest $request)
+    protected function aiNameCompleteRequest(Requests\AiNameCompleteRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -3152,13 +3152,13 @@ class EmailApi
      *
      * Expands a person's name into a list of possible alternatives using options for expanding instructions
      *
-     * @param Requests\aiNameExpandRequest $request is a request object for operation
+     * @param Requests\AiNameExpandRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Email\Model\AiNameWeightedVariants
      */
-    public function aiNameExpand(Requests\aiNameExpandRequest $request)
+    public function aiNameExpand(Requests\AiNameExpandRequest $request)
     {
         try {
              list($response) = $this->aiNameExpandWithHttpInfo($request);
@@ -3175,13 +3175,13 @@ class EmailApi
      *
      * Expands a person's name into a list of possible alternatives using options for expanding instructions
      *
-     * @param Requests\aiNameExpandRequest $request is a request object for operation
+     * @param Requests\AiNameExpandRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Email\Model\AiNameWeightedVariants, HTTP status code, HTTP response headers (array of strings)
      */
-    public function aiNameExpandWithHttpInfo(Requests\aiNameExpandRequest $request)
+    public function aiNameExpandWithHttpInfo(Requests\AiNameExpandRequest $request)
     {
         $returnType = '\Aspose\Email\Model\AiNameWeightedVariants';
         $request = $this->aiNameExpandRequest($request);
@@ -3241,12 +3241,12 @@ class EmailApi
      *
      * Expands a person's name into a list of possible alternatives using options for expanding instructions
      *
-     * @param Requests\aiNameExpandRequest $request is a request object for operation
+     * @param Requests\AiNameExpandRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function aiNameExpandAsync(Requests\aiNameExpandRequest $request) 
+    public function aiNameExpandAsync(Requests\AiNameExpandRequest $request) 
     {
         return $this->aiNameExpandAsyncWithHttpInfo($request)
             ->then(
@@ -3261,12 +3261,12 @@ class EmailApi
      *
      * Expands a person's name into a list of possible alternatives using options for expanding instructions
      *
-     * @param Requests\aiNameExpandRequest $request is a request object for operation
+     * @param Requests\AiNameExpandRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function aiNameExpandAsyncWithHttpInfo(Requests\aiNameExpandRequest $request) 
+    public function aiNameExpandAsyncWithHttpInfo(Requests\AiNameExpandRequest $request) 
     {
         $returnType = '\Aspose\Email\Model\AiNameWeightedVariants';
         $request = $this->aiNameExpandRequest($request);
@@ -3314,12 +3314,12 @@ class EmailApi
     /**
      * Create request for operation 'aiNameExpand'
      *
-     * @param Requests\aiNameExpandRequest $request is a request object for operation
+     * @param Requests\AiNameExpandRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function aiNameExpandRequest(Requests\aiNameExpandRequest $request)
+    protected function aiNameExpandRequest(Requests\AiNameExpandRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -3483,13 +3483,13 @@ class EmailApi
      *
      * Expands a person's parsed name into a list of possible alternatives using options for expanding instructions
      *
-     * @param Requests\aiNameExpandParsedRequest $request is a request object for operation
+     * @param Requests\AiNameExpandParsedRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Email\Model\AiNameWeightedVariants
      */
-    public function aiNameExpandParsed(Requests\aiNameExpandParsedRequest $request)
+    public function aiNameExpandParsed(Requests\AiNameExpandParsedRequest $request)
     {
         try {
              list($response) = $this->aiNameExpandParsedWithHttpInfo($request);
@@ -3506,13 +3506,13 @@ class EmailApi
      *
      * Expands a person's parsed name into a list of possible alternatives using options for expanding instructions
      *
-     * @param Requests\aiNameExpandParsedRequest $request is a request object for operation
+     * @param Requests\AiNameExpandParsedRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Email\Model\AiNameWeightedVariants, HTTP status code, HTTP response headers (array of strings)
      */
-    public function aiNameExpandParsedWithHttpInfo(Requests\aiNameExpandParsedRequest $request)
+    public function aiNameExpandParsedWithHttpInfo(Requests\AiNameExpandParsedRequest $request)
     {
         $returnType = '\Aspose\Email\Model\AiNameWeightedVariants';
         $request = $this->aiNameExpandParsedRequest($request);
@@ -3572,12 +3572,12 @@ class EmailApi
      *
      * Expands a person's parsed name into a list of possible alternatives using options for expanding instructions
      *
-     * @param Requests\aiNameExpandParsedRequest $request is a request object for operation
+     * @param Requests\AiNameExpandParsedRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function aiNameExpandParsedAsync(Requests\aiNameExpandParsedRequest $request) 
+    public function aiNameExpandParsedAsync(Requests\AiNameExpandParsedRequest $request) 
     {
         return $this->aiNameExpandParsedAsyncWithHttpInfo($request)
             ->then(
@@ -3592,12 +3592,12 @@ class EmailApi
      *
      * Expands a person's parsed name into a list of possible alternatives using options for expanding instructions
      *
-     * @param Requests\aiNameExpandParsedRequest $request is a request object for operation
+     * @param Requests\AiNameExpandParsedRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function aiNameExpandParsedAsyncWithHttpInfo(Requests\aiNameExpandParsedRequest $request) 
+    public function aiNameExpandParsedAsyncWithHttpInfo(Requests\AiNameExpandParsedRequest $request) 
     {
         $returnType = '\Aspose\Email\Model\AiNameWeightedVariants';
         $request = $this->aiNameExpandParsedRequest($request);
@@ -3645,12 +3645,12 @@ class EmailApi
     /**
      * Create request for operation 'aiNameExpandParsed'
      *
-     * @param Requests\aiNameExpandParsedRequest $request is a request object for operation
+     * @param Requests\AiNameExpandParsedRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function aiNameExpandParsedRequest(Requests\aiNameExpandParsedRequest $request)
+    protected function aiNameExpandParsedRequest(Requests\AiNameExpandParsedRequest $request)
     {
         // verify the required parameter 'rq' is set
         if ($request->rq === null) {
@@ -3761,13 +3761,13 @@ class EmailApi
      *
      * Formats a person's name in correct case and name order using options for formatting instructions
      *
-     * @param Requests\aiNameFormatRequest $request is a request object for operation
+     * @param Requests\AiNameFormatRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Email\Model\AiNameFormatted
      */
-    public function aiNameFormat(Requests\aiNameFormatRequest $request)
+    public function aiNameFormat(Requests\AiNameFormatRequest $request)
     {
         try {
              list($response) = $this->aiNameFormatWithHttpInfo($request);
@@ -3784,13 +3784,13 @@ class EmailApi
      *
      * Formats a person's name in correct case and name order using options for formatting instructions
      *
-     * @param Requests\aiNameFormatRequest $request is a request object for operation
+     * @param Requests\AiNameFormatRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Email\Model\AiNameFormatted, HTTP status code, HTTP response headers (array of strings)
      */
-    public function aiNameFormatWithHttpInfo(Requests\aiNameFormatRequest $request)
+    public function aiNameFormatWithHttpInfo(Requests\AiNameFormatRequest $request)
     {
         $returnType = '\Aspose\Email\Model\AiNameFormatted';
         $request = $this->aiNameFormatRequest($request);
@@ -3850,12 +3850,12 @@ class EmailApi
      *
      * Formats a person's name in correct case and name order using options for formatting instructions
      *
-     * @param Requests\aiNameFormatRequest $request is a request object for operation
+     * @param Requests\AiNameFormatRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function aiNameFormatAsync(Requests\aiNameFormatRequest $request) 
+    public function aiNameFormatAsync(Requests\AiNameFormatRequest $request) 
     {
         return $this->aiNameFormatAsyncWithHttpInfo($request)
             ->then(
@@ -3870,12 +3870,12 @@ class EmailApi
      *
      * Formats a person's name in correct case and name order using options for formatting instructions
      *
-     * @param Requests\aiNameFormatRequest $request is a request object for operation
+     * @param Requests\AiNameFormatRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function aiNameFormatAsyncWithHttpInfo(Requests\aiNameFormatRequest $request) 
+    public function aiNameFormatAsyncWithHttpInfo(Requests\AiNameFormatRequest $request) 
     {
         $returnType = '\Aspose\Email\Model\AiNameFormatted';
         $request = $this->aiNameFormatRequest($request);
@@ -3923,12 +3923,12 @@ class EmailApi
     /**
      * Create request for operation 'aiNameFormat'
      *
-     * @param Requests\aiNameFormatRequest $request is a request object for operation
+     * @param Requests\AiNameFormatRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function aiNameFormatRequest(Requests\aiNameFormatRequest $request)
+    protected function aiNameFormatRequest(Requests\AiNameFormatRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -4102,13 +4102,13 @@ class EmailApi
      *
      * Formats a person's parsed name in correct case and name order using options for formatting instructions
      *
-     * @param Requests\aiNameFormatParsedRequest $request is a request object for operation
+     * @param Requests\AiNameFormatParsedRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Email\Model\AiNameFormatted
      */
-    public function aiNameFormatParsed(Requests\aiNameFormatParsedRequest $request)
+    public function aiNameFormatParsed(Requests\AiNameFormatParsedRequest $request)
     {
         try {
              list($response) = $this->aiNameFormatParsedWithHttpInfo($request);
@@ -4125,13 +4125,13 @@ class EmailApi
      *
      * Formats a person's parsed name in correct case and name order using options for formatting instructions
      *
-     * @param Requests\aiNameFormatParsedRequest $request is a request object for operation
+     * @param Requests\AiNameFormatParsedRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Email\Model\AiNameFormatted, HTTP status code, HTTP response headers (array of strings)
      */
-    public function aiNameFormatParsedWithHttpInfo(Requests\aiNameFormatParsedRequest $request)
+    public function aiNameFormatParsedWithHttpInfo(Requests\AiNameFormatParsedRequest $request)
     {
         $returnType = '\Aspose\Email\Model\AiNameFormatted';
         $request = $this->aiNameFormatParsedRequest($request);
@@ -4191,12 +4191,12 @@ class EmailApi
      *
      * Formats a person's parsed name in correct case and name order using options for formatting instructions
      *
-     * @param Requests\aiNameFormatParsedRequest $request is a request object for operation
+     * @param Requests\AiNameFormatParsedRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function aiNameFormatParsedAsync(Requests\aiNameFormatParsedRequest $request) 
+    public function aiNameFormatParsedAsync(Requests\AiNameFormatParsedRequest $request) 
     {
         return $this->aiNameFormatParsedAsyncWithHttpInfo($request)
             ->then(
@@ -4211,12 +4211,12 @@ class EmailApi
      *
      * Formats a person's parsed name in correct case and name order using options for formatting instructions
      *
-     * @param Requests\aiNameFormatParsedRequest $request is a request object for operation
+     * @param Requests\AiNameFormatParsedRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function aiNameFormatParsedAsyncWithHttpInfo(Requests\aiNameFormatParsedRequest $request) 
+    public function aiNameFormatParsedAsyncWithHttpInfo(Requests\AiNameFormatParsedRequest $request) 
     {
         $returnType = '\Aspose\Email\Model\AiNameFormatted';
         $request = $this->aiNameFormatParsedRequest($request);
@@ -4264,12 +4264,12 @@ class EmailApi
     /**
      * Create request for operation 'aiNameFormatParsed'
      *
-     * @param Requests\aiNameFormatParsedRequest $request is a request object for operation
+     * @param Requests\AiNameFormatParsedRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function aiNameFormatParsedRequest(Requests\aiNameFormatParsedRequest $request)
+    protected function aiNameFormatParsedRequest(Requests\AiNameFormatParsedRequest $request)
     {
         // verify the required parameter 'rq' is set
         if ($request->rq === null) {
@@ -4380,13 +4380,13 @@ class EmailApi
      *
      * Detect person's gender from name string
      *
-     * @param Requests\aiNameGenderizeRequest $request is a request object for operation
+     * @param Requests\AiNameGenderizeRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Email\Model\ListResponseOfAiNameGenderHypothesis
      */
-    public function aiNameGenderize(Requests\aiNameGenderizeRequest $request)
+    public function aiNameGenderize(Requests\AiNameGenderizeRequest $request)
     {
         try {
              list($response) = $this->aiNameGenderizeWithHttpInfo($request);
@@ -4403,13 +4403,13 @@ class EmailApi
      *
      * Detect person's gender from name string
      *
-     * @param Requests\aiNameGenderizeRequest $request is a request object for operation
+     * @param Requests\AiNameGenderizeRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Email\Model\ListResponseOfAiNameGenderHypothesis, HTTP status code, HTTP response headers (array of strings)
      */
-    public function aiNameGenderizeWithHttpInfo(Requests\aiNameGenderizeRequest $request)
+    public function aiNameGenderizeWithHttpInfo(Requests\AiNameGenderizeRequest $request)
     {
         $returnType = '\Aspose\Email\Model\ListResponseOfAiNameGenderHypothesis';
         $request = $this->aiNameGenderizeRequest($request);
@@ -4469,12 +4469,12 @@ class EmailApi
      *
      * Detect person's gender from name string
      *
-     * @param Requests\aiNameGenderizeRequest $request is a request object for operation
+     * @param Requests\AiNameGenderizeRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function aiNameGenderizeAsync(Requests\aiNameGenderizeRequest $request) 
+    public function aiNameGenderizeAsync(Requests\AiNameGenderizeRequest $request) 
     {
         return $this->aiNameGenderizeAsyncWithHttpInfo($request)
             ->then(
@@ -4489,12 +4489,12 @@ class EmailApi
      *
      * Detect person's gender from name string
      *
-     * @param Requests\aiNameGenderizeRequest $request is a request object for operation
+     * @param Requests\AiNameGenderizeRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function aiNameGenderizeAsyncWithHttpInfo(Requests\aiNameGenderizeRequest $request) 
+    public function aiNameGenderizeAsyncWithHttpInfo(Requests\AiNameGenderizeRequest $request) 
     {
         $returnType = '\Aspose\Email\Model\ListResponseOfAiNameGenderHypothesis';
         $request = $this->aiNameGenderizeRequest($request);
@@ -4542,12 +4542,12 @@ class EmailApi
     /**
      * Create request for operation 'aiNameGenderize'
      *
-     * @param Requests\aiNameGenderizeRequest $request is a request object for operation
+     * @param Requests\AiNameGenderizeRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function aiNameGenderizeRequest(Requests\aiNameGenderizeRequest $request)
+    protected function aiNameGenderizeRequest(Requests\AiNameGenderizeRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -4711,13 +4711,13 @@ class EmailApi
      *
      * Detect person's gender from parsed name
      *
-     * @param Requests\aiNameGenderizeParsedRequest $request is a request object for operation
+     * @param Requests\AiNameGenderizeParsedRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Email\Model\ListResponseOfAiNameGenderHypothesis
      */
-    public function aiNameGenderizeParsed(Requests\aiNameGenderizeParsedRequest $request)
+    public function aiNameGenderizeParsed(Requests\AiNameGenderizeParsedRequest $request)
     {
         try {
              list($response) = $this->aiNameGenderizeParsedWithHttpInfo($request);
@@ -4734,13 +4734,13 @@ class EmailApi
      *
      * Detect person's gender from parsed name
      *
-     * @param Requests\aiNameGenderizeParsedRequest $request is a request object for operation
+     * @param Requests\AiNameGenderizeParsedRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Email\Model\ListResponseOfAiNameGenderHypothesis, HTTP status code, HTTP response headers (array of strings)
      */
-    public function aiNameGenderizeParsedWithHttpInfo(Requests\aiNameGenderizeParsedRequest $request)
+    public function aiNameGenderizeParsedWithHttpInfo(Requests\AiNameGenderizeParsedRequest $request)
     {
         $returnType = '\Aspose\Email\Model\ListResponseOfAiNameGenderHypothesis';
         $request = $this->aiNameGenderizeParsedRequest($request);
@@ -4800,12 +4800,12 @@ class EmailApi
      *
      * Detect person's gender from parsed name
      *
-     * @param Requests\aiNameGenderizeParsedRequest $request is a request object for operation
+     * @param Requests\AiNameGenderizeParsedRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function aiNameGenderizeParsedAsync(Requests\aiNameGenderizeParsedRequest $request) 
+    public function aiNameGenderizeParsedAsync(Requests\AiNameGenderizeParsedRequest $request) 
     {
         return $this->aiNameGenderizeParsedAsyncWithHttpInfo($request)
             ->then(
@@ -4820,12 +4820,12 @@ class EmailApi
      *
      * Detect person's gender from parsed name
      *
-     * @param Requests\aiNameGenderizeParsedRequest $request is a request object for operation
+     * @param Requests\AiNameGenderizeParsedRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function aiNameGenderizeParsedAsyncWithHttpInfo(Requests\aiNameGenderizeParsedRequest $request) 
+    public function aiNameGenderizeParsedAsyncWithHttpInfo(Requests\AiNameGenderizeParsedRequest $request) 
     {
         $returnType = '\Aspose\Email\Model\ListResponseOfAiNameGenderHypothesis';
         $request = $this->aiNameGenderizeParsedRequest($request);
@@ -4873,12 +4873,12 @@ class EmailApi
     /**
      * Create request for operation 'aiNameGenderizeParsed'
      *
-     * @param Requests\aiNameGenderizeParsedRequest $request is a request object for operation
+     * @param Requests\AiNameGenderizeParsedRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function aiNameGenderizeParsedRequest(Requests\aiNameGenderizeParsedRequest $request)
+    protected function aiNameGenderizeParsedRequest(Requests\AiNameGenderizeParsedRequest $request)
     {
         // verify the required parameter 'rq' is set
         if ($request->rq === null) {
@@ -4989,13 +4989,13 @@ class EmailApi
      *
      * Compare people's names. Uses options for comparing instructions
      *
-     * @param Requests\aiNameMatchRequest $request is a request object for operation
+     * @param Requests\AiNameMatchRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Email\Model\AiNameMatchResult
      */
-    public function aiNameMatch(Requests\aiNameMatchRequest $request)
+    public function aiNameMatch(Requests\AiNameMatchRequest $request)
     {
         try {
              list($response) = $this->aiNameMatchWithHttpInfo($request);
@@ -5012,13 +5012,13 @@ class EmailApi
      *
      * Compare people's names. Uses options for comparing instructions
      *
-     * @param Requests\aiNameMatchRequest $request is a request object for operation
+     * @param Requests\AiNameMatchRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Email\Model\AiNameMatchResult, HTTP status code, HTTP response headers (array of strings)
      */
-    public function aiNameMatchWithHttpInfo(Requests\aiNameMatchRequest $request)
+    public function aiNameMatchWithHttpInfo(Requests\AiNameMatchRequest $request)
     {
         $returnType = '\Aspose\Email\Model\AiNameMatchResult';
         $request = $this->aiNameMatchRequest($request);
@@ -5078,12 +5078,12 @@ class EmailApi
      *
      * Compare people's names. Uses options for comparing instructions
      *
-     * @param Requests\aiNameMatchRequest $request is a request object for operation
+     * @param Requests\AiNameMatchRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function aiNameMatchAsync(Requests\aiNameMatchRequest $request) 
+    public function aiNameMatchAsync(Requests\AiNameMatchRequest $request) 
     {
         return $this->aiNameMatchAsyncWithHttpInfo($request)
             ->then(
@@ -5098,12 +5098,12 @@ class EmailApi
      *
      * Compare people's names. Uses options for comparing instructions
      *
-     * @param Requests\aiNameMatchRequest $request is a request object for operation
+     * @param Requests\AiNameMatchRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function aiNameMatchAsyncWithHttpInfo(Requests\aiNameMatchRequest $request) 
+    public function aiNameMatchAsyncWithHttpInfo(Requests\AiNameMatchRequest $request) 
     {
         $returnType = '\Aspose\Email\Model\AiNameMatchResult';
         $request = $this->aiNameMatchRequest($request);
@@ -5151,12 +5151,12 @@ class EmailApi
     /**
      * Create request for operation 'aiNameMatch'
      *
-     * @param Requests\aiNameMatchRequest $request is a request object for operation
+     * @param Requests\AiNameMatchRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function aiNameMatchRequest(Requests\aiNameMatchRequest $request)
+    protected function aiNameMatchRequest(Requests\AiNameMatchRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -5334,13 +5334,13 @@ class EmailApi
      *
      * Compare people's parsed names and attributes. Uses options for comparing instructions
      *
-     * @param Requests\aiNameMatchParsedRequest $request is a request object for operation
+     * @param Requests\AiNameMatchParsedRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Email\Model\AiNameMatchResult
      */
-    public function aiNameMatchParsed(Requests\aiNameMatchParsedRequest $request)
+    public function aiNameMatchParsed(Requests\AiNameMatchParsedRequest $request)
     {
         try {
              list($response) = $this->aiNameMatchParsedWithHttpInfo($request);
@@ -5357,13 +5357,13 @@ class EmailApi
      *
      * Compare people's parsed names and attributes. Uses options for comparing instructions
      *
-     * @param Requests\aiNameMatchParsedRequest $request is a request object for operation
+     * @param Requests\AiNameMatchParsedRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Email\Model\AiNameMatchResult, HTTP status code, HTTP response headers (array of strings)
      */
-    public function aiNameMatchParsedWithHttpInfo(Requests\aiNameMatchParsedRequest $request)
+    public function aiNameMatchParsedWithHttpInfo(Requests\AiNameMatchParsedRequest $request)
     {
         $returnType = '\Aspose\Email\Model\AiNameMatchResult';
         $request = $this->aiNameMatchParsedRequest($request);
@@ -5423,12 +5423,12 @@ class EmailApi
      *
      * Compare people's parsed names and attributes. Uses options for comparing instructions
      *
-     * @param Requests\aiNameMatchParsedRequest $request is a request object for operation
+     * @param Requests\AiNameMatchParsedRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function aiNameMatchParsedAsync(Requests\aiNameMatchParsedRequest $request) 
+    public function aiNameMatchParsedAsync(Requests\AiNameMatchParsedRequest $request) 
     {
         return $this->aiNameMatchParsedAsyncWithHttpInfo($request)
             ->then(
@@ -5443,12 +5443,12 @@ class EmailApi
      *
      * Compare people's parsed names and attributes. Uses options for comparing instructions
      *
-     * @param Requests\aiNameMatchParsedRequest $request is a request object for operation
+     * @param Requests\AiNameMatchParsedRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function aiNameMatchParsedAsyncWithHttpInfo(Requests\aiNameMatchParsedRequest $request) 
+    public function aiNameMatchParsedAsyncWithHttpInfo(Requests\AiNameMatchParsedRequest $request) 
     {
         $returnType = '\Aspose\Email\Model\AiNameMatchResult';
         $request = $this->aiNameMatchParsedRequest($request);
@@ -5496,12 +5496,12 @@ class EmailApi
     /**
      * Create request for operation 'aiNameMatchParsed'
      *
-     * @param Requests\aiNameMatchParsedRequest $request is a request object for operation
+     * @param Requests\AiNameMatchParsedRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function aiNameMatchParsedRequest(Requests\aiNameMatchParsedRequest $request)
+    protected function aiNameMatchParsedRequest(Requests\AiNameMatchParsedRequest $request)
     {
         // verify the required parameter 'rq' is set
         if ($request->rq === null) {
@@ -5612,13 +5612,13 @@ class EmailApi
      *
      * Parse name to components
      *
-     * @param Requests\aiNameParseRequest $request is a request object for operation
+     * @param Requests\AiNameParseRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Email\Model\ListResponseOfAiNameComponent
      */
-    public function aiNameParse(Requests\aiNameParseRequest $request)
+    public function aiNameParse(Requests\AiNameParseRequest $request)
     {
         try {
              list($response) = $this->aiNameParseWithHttpInfo($request);
@@ -5635,13 +5635,13 @@ class EmailApi
      *
      * Parse name to components
      *
-     * @param Requests\aiNameParseRequest $request is a request object for operation
+     * @param Requests\AiNameParseRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Email\Model\ListResponseOfAiNameComponent, HTTP status code, HTTP response headers (array of strings)
      */
-    public function aiNameParseWithHttpInfo(Requests\aiNameParseRequest $request)
+    public function aiNameParseWithHttpInfo(Requests\AiNameParseRequest $request)
     {
         $returnType = '\Aspose\Email\Model\ListResponseOfAiNameComponent';
         $request = $this->aiNameParseRequest($request);
@@ -5701,12 +5701,12 @@ class EmailApi
      *
      * Parse name to components
      *
-     * @param Requests\aiNameParseRequest $request is a request object for operation
+     * @param Requests\AiNameParseRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function aiNameParseAsync(Requests\aiNameParseRequest $request) 
+    public function aiNameParseAsync(Requests\AiNameParseRequest $request) 
     {
         return $this->aiNameParseAsyncWithHttpInfo($request)
             ->then(
@@ -5721,12 +5721,12 @@ class EmailApi
      *
      * Parse name to components
      *
-     * @param Requests\aiNameParseRequest $request is a request object for operation
+     * @param Requests\AiNameParseRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function aiNameParseAsyncWithHttpInfo(Requests\aiNameParseRequest $request) 
+    public function aiNameParseAsyncWithHttpInfo(Requests\AiNameParseRequest $request) 
     {
         $returnType = '\Aspose\Email\Model\ListResponseOfAiNameComponent';
         $request = $this->aiNameParseRequest($request);
@@ -5774,12 +5774,12 @@ class EmailApi
     /**
      * Create request for operation 'aiNameParse'
      *
-     * @param Requests\aiNameParseRequest $request is a request object for operation
+     * @param Requests\AiNameParseRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function aiNameParseRequest(Requests\aiNameParseRequest $request)
+    protected function aiNameParseRequest(Requests\AiNameParseRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -5943,13 +5943,13 @@ class EmailApi
      *
      * Parse person's name out of an email address
      *
-     * @param Requests\aiNameParseEmailAddressRequest $request is a request object for operation
+     * @param Requests\AiNameParseEmailAddressRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Email\Model\ListResponseOfAiNameExtracted
      */
-    public function aiNameParseEmailAddress(Requests\aiNameParseEmailAddressRequest $request)
+    public function aiNameParseEmailAddress(Requests\AiNameParseEmailAddressRequest $request)
     {
         try {
              list($response) = $this->aiNameParseEmailAddressWithHttpInfo($request);
@@ -5966,13 +5966,13 @@ class EmailApi
      *
      * Parse person's name out of an email address
      *
-     * @param Requests\aiNameParseEmailAddressRequest $request is a request object for operation
+     * @param Requests\AiNameParseEmailAddressRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Email\Model\ListResponseOfAiNameExtracted, HTTP status code, HTTP response headers (array of strings)
      */
-    public function aiNameParseEmailAddressWithHttpInfo(Requests\aiNameParseEmailAddressRequest $request)
+    public function aiNameParseEmailAddressWithHttpInfo(Requests\AiNameParseEmailAddressRequest $request)
     {
         $returnType = '\Aspose\Email\Model\ListResponseOfAiNameExtracted';
         $request = $this->aiNameParseEmailAddressRequest($request);
@@ -6032,12 +6032,12 @@ class EmailApi
      *
      * Parse person's name out of an email address
      *
-     * @param Requests\aiNameParseEmailAddressRequest $request is a request object for operation
+     * @param Requests\AiNameParseEmailAddressRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function aiNameParseEmailAddressAsync(Requests\aiNameParseEmailAddressRequest $request) 
+    public function aiNameParseEmailAddressAsync(Requests\AiNameParseEmailAddressRequest $request) 
     {
         return $this->aiNameParseEmailAddressAsyncWithHttpInfo($request)
             ->then(
@@ -6052,12 +6052,12 @@ class EmailApi
      *
      * Parse person's name out of an email address
      *
-     * @param Requests\aiNameParseEmailAddressRequest $request is a request object for operation
+     * @param Requests\AiNameParseEmailAddressRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function aiNameParseEmailAddressAsyncWithHttpInfo(Requests\aiNameParseEmailAddressRequest $request) 
+    public function aiNameParseEmailAddressAsyncWithHttpInfo(Requests\AiNameParseEmailAddressRequest $request) 
     {
         $returnType = '\Aspose\Email\Model\ListResponseOfAiNameExtracted';
         $request = $this->aiNameParseEmailAddressRequest($request);
@@ -6105,12 +6105,12 @@ class EmailApi
     /**
      * Create request for operation 'aiNameParseEmailAddress'
      *
-     * @param Requests\aiNameParseEmailAddressRequest $request is a request object for operation
+     * @param Requests\AiNameParseEmailAddressRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function aiNameParseEmailAddressRequest(Requests\aiNameParseEmailAddressRequest $request)
+    protected function aiNameParseEmailAddressRequest(Requests\AiNameParseEmailAddressRequest $request)
     {
         // verify the required parameter 'email_address' is set
         if ($request->email_address === null) {
@@ -6274,13 +6274,13 @@ class EmailApi
      *
      * Adds an email from *.eml file to specified folder in email account
      *
-     * @param Requests\appendEmailMessageRequest $request is a request object for operation
+     * @param Requests\AppendEmailMessageRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Email\Model\EmailPropertyResponse
      */
-    public function appendEmailMessage(Requests\appendEmailMessageRequest $request)
+    public function appendEmailMessage(Requests\AppendEmailMessageRequest $request)
     {
         try {
              list($response) = $this->appendEmailMessageWithHttpInfo($request);
@@ -6297,13 +6297,13 @@ class EmailApi
      *
      * Adds an email from *.eml file to specified folder in email account
      *
-     * @param Requests\appendEmailMessageRequest $request is a request object for operation
+     * @param Requests\AppendEmailMessageRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Email\Model\EmailPropertyResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function appendEmailMessageWithHttpInfo(Requests\appendEmailMessageRequest $request)
+    public function appendEmailMessageWithHttpInfo(Requests\AppendEmailMessageRequest $request)
     {
         $returnType = '\Aspose\Email\Model\EmailPropertyResponse';
         $request = $this->appendEmailMessageRequest($request);
@@ -6363,12 +6363,12 @@ class EmailApi
      *
      * Adds an email from *.eml file to specified folder in email account
      *
-     * @param Requests\appendEmailMessageRequest $request is a request object for operation
+     * @param Requests\AppendEmailMessageRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function appendEmailMessageAsync(Requests\appendEmailMessageRequest $request) 
+    public function appendEmailMessageAsync(Requests\AppendEmailMessageRequest $request) 
     {
         return $this->appendEmailMessageAsyncWithHttpInfo($request)
             ->then(
@@ -6383,12 +6383,12 @@ class EmailApi
      *
      * Adds an email from *.eml file to specified folder in email account
      *
-     * @param Requests\appendEmailMessageRequest $request is a request object for operation
+     * @param Requests\AppendEmailMessageRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function appendEmailMessageAsyncWithHttpInfo(Requests\appendEmailMessageRequest $request) 
+    public function appendEmailMessageAsyncWithHttpInfo(Requests\AppendEmailMessageRequest $request) 
     {
         $returnType = '\Aspose\Email\Model\EmailPropertyResponse';
         $request = $this->appendEmailMessageRequest($request);
@@ -6436,12 +6436,12 @@ class EmailApi
     /**
      * Create request for operation 'appendEmailMessage'
      *
-     * @param Requests\appendEmailMessageRequest $request is a request object for operation
+     * @param Requests\AppendEmailMessageRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function appendEmailMessageRequest(Requests\appendEmailMessageRequest $request)
+    protected function appendEmailMessageRequest(Requests\AppendEmailMessageRequest $request)
     {
         // verify the required parameter 'request' is set
         if ($request->request === null) {
@@ -6552,13 +6552,13 @@ class EmailApi
      *
      * Adds an email from MIME to specified folder in email account
      *
-     * @param Requests\appendMimeMessageRequest $request is a request object for operation
+     * @param Requests\AppendMimeMessageRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Email\Model\ValueResponse
      */
-    public function appendMimeMessage(Requests\appendMimeMessageRequest $request)
+    public function appendMimeMessage(Requests\AppendMimeMessageRequest $request)
     {
         try {
              list($response) = $this->appendMimeMessageWithHttpInfo($request);
@@ -6575,13 +6575,13 @@ class EmailApi
      *
      * Adds an email from MIME to specified folder in email account
      *
-     * @param Requests\appendMimeMessageRequest $request is a request object for operation
+     * @param Requests\AppendMimeMessageRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Email\Model\ValueResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function appendMimeMessageWithHttpInfo(Requests\appendMimeMessageRequest $request)
+    public function appendMimeMessageWithHttpInfo(Requests\AppendMimeMessageRequest $request)
     {
         $returnType = '\Aspose\Email\Model\ValueResponse';
         $request = $this->appendMimeMessageRequest($request);
@@ -6641,12 +6641,12 @@ class EmailApi
      *
      * Adds an email from MIME to specified folder in email account
      *
-     * @param Requests\appendMimeMessageRequest $request is a request object for operation
+     * @param Requests\AppendMimeMessageRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function appendMimeMessageAsync(Requests\appendMimeMessageRequest $request) 
+    public function appendMimeMessageAsync(Requests\AppendMimeMessageRequest $request) 
     {
         return $this->appendMimeMessageAsyncWithHttpInfo($request)
             ->then(
@@ -6661,12 +6661,12 @@ class EmailApi
      *
      * Adds an email from MIME to specified folder in email account
      *
-     * @param Requests\appendMimeMessageRequest $request is a request object for operation
+     * @param Requests\AppendMimeMessageRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function appendMimeMessageAsyncWithHttpInfo(Requests\appendMimeMessageRequest $request) 
+    public function appendMimeMessageAsyncWithHttpInfo(Requests\AppendMimeMessageRequest $request) 
     {
         $returnType = '\Aspose\Email\Model\ValueResponse';
         $request = $this->appendMimeMessageRequest($request);
@@ -6714,12 +6714,12 @@ class EmailApi
     /**
      * Create request for operation 'appendMimeMessage'
      *
-     * @param Requests\appendMimeMessageRequest $request is a request object for operation
+     * @param Requests\AppendMimeMessageRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function appendMimeMessageRequest(Requests\appendMimeMessageRequest $request)
+    protected function appendMimeMessageRequest(Requests\AppendMimeMessageRequest $request)
     {
         // verify the required parameter 'request' is set
         if ($request->request === null) {
@@ -6830,13 +6830,13 @@ class EmailApi
      *
      * Copy file
      *
-     * @param Requests\copyFileRequest $request is a request object for operation
+     * @param Requests\CopyFileRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function copyFile(Requests\copyFileRequest $request)
+    public function copyFile(Requests\CopyFileRequest $request)
     {
         try {
              $this->copyFileWithHttpInfo($request);
@@ -6851,13 +6851,13 @@ class EmailApi
      *
      * Copy file
      *
-     * @param Requests\copyFileRequest $request is a request object for operation
+     * @param Requests\CopyFileRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function copyFileWithHttpInfo(Requests\copyFileRequest $request)
+    public function copyFileWithHttpInfo(Requests\CopyFileRequest $request)
     {
         $returnType = '';
         $request = $this->copyFileRequest($request);
@@ -6895,12 +6895,12 @@ class EmailApi
      *
      * Copy file
      *
-     * @param Requests\copyFileRequest $request is a request object for operation
+     * @param Requests\CopyFileRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function copyFileAsync(Requests\copyFileRequest $request) 
+    public function copyFileAsync(Requests\CopyFileRequest $request) 
     {
         return $this->copyFileAsyncWithHttpInfo($request)
             ->then(
@@ -6915,12 +6915,12 @@ class EmailApi
      *
      * Copy file
      *
-     * @param Requests\copyFileRequest $request is a request object for operation
+     * @param Requests\CopyFileRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function copyFileAsyncWithHttpInfo(Requests\copyFileRequest $request) 
+    public function copyFileAsyncWithHttpInfo(Requests\CopyFileRequest $request) 
     {
         $returnType = '';
         $request = $this->copyFileRequest($request);
@@ -6950,12 +6950,12 @@ class EmailApi
     /**
      * Create request for operation 'copyFile'
      *
-     * @param Requests\copyFileRequest $request is a request object for operation
+     * @param Requests\CopyFileRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function copyFileRequest(Requests\copyFileRequest $request)
+    protected function copyFileRequest(Requests\CopyFileRequest $request)
     {
         // verify the required parameter 'src_path' is set
         if ($request->src_path === null) {
@@ -7108,13 +7108,13 @@ class EmailApi
      *
      * Copy folder
      *
-     * @param Requests\copyFolderRequest $request is a request object for operation
+     * @param Requests\CopyFolderRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function copyFolder(Requests\copyFolderRequest $request)
+    public function copyFolder(Requests\CopyFolderRequest $request)
     {
         try {
              $this->copyFolderWithHttpInfo($request);
@@ -7129,13 +7129,13 @@ class EmailApi
      *
      * Copy folder
      *
-     * @param Requests\copyFolderRequest $request is a request object for operation
+     * @param Requests\CopyFolderRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function copyFolderWithHttpInfo(Requests\copyFolderRequest $request)
+    public function copyFolderWithHttpInfo(Requests\CopyFolderRequest $request)
     {
         $returnType = '';
         $request = $this->copyFolderRequest($request);
@@ -7173,12 +7173,12 @@ class EmailApi
      *
      * Copy folder
      *
-     * @param Requests\copyFolderRequest $request is a request object for operation
+     * @param Requests\CopyFolderRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function copyFolderAsync(Requests\copyFolderRequest $request) 
+    public function copyFolderAsync(Requests\CopyFolderRequest $request) 
     {
         return $this->copyFolderAsyncWithHttpInfo($request)
             ->then(
@@ -7193,12 +7193,12 @@ class EmailApi
      *
      * Copy folder
      *
-     * @param Requests\copyFolderRequest $request is a request object for operation
+     * @param Requests\CopyFolderRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function copyFolderAsyncWithHttpInfo(Requests\copyFolderRequest $request) 
+    public function copyFolderAsyncWithHttpInfo(Requests\CopyFolderRequest $request) 
     {
         $returnType = '';
         $request = $this->copyFolderRequest($request);
@@ -7228,12 +7228,12 @@ class EmailApi
     /**
      * Create request for operation 'copyFolder'
      *
-     * @param Requests\copyFolderRequest $request is a request object for operation
+     * @param Requests\CopyFolderRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function copyFolderRequest(Requests\copyFolderRequest $request)
+    protected function copyFolderRequest(Requests\CopyFolderRequest $request)
     {
         // verify the required parameter 'src_path' is set
         if ($request->src_path === null) {
@@ -7376,13 +7376,13 @@ class EmailApi
      *
      * Create calendar file
      *
-     * @param Requests\createCalendarRequest $request is a request object for operation
+     * @param Requests\CreateCalendarRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function createCalendar(Requests\createCalendarRequest $request)
+    public function createCalendar(Requests\CreateCalendarRequest $request)
     {
         try {
              $this->createCalendarWithHttpInfo($request);
@@ -7397,13 +7397,13 @@ class EmailApi
      *
      * Create calendar file
      *
-     * @param Requests\createCalendarRequest $request is a request object for operation
+     * @param Requests\CreateCalendarRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createCalendarWithHttpInfo(Requests\createCalendarRequest $request)
+    public function createCalendarWithHttpInfo(Requests\CreateCalendarRequest $request)
     {
         $returnType = '';
         $request = $this->createCalendarRequest($request);
@@ -7441,12 +7441,12 @@ class EmailApi
      *
      * Create calendar file
      *
-     * @param Requests\createCalendarRequest $request is a request object for operation
+     * @param Requests\CreateCalendarRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createCalendarAsync(Requests\createCalendarRequest $request) 
+    public function createCalendarAsync(Requests\CreateCalendarRequest $request) 
     {
         return $this->createCalendarAsyncWithHttpInfo($request)
             ->then(
@@ -7461,12 +7461,12 @@ class EmailApi
      *
      * Create calendar file
      *
-     * @param Requests\createCalendarRequest $request is a request object for operation
+     * @param Requests\CreateCalendarRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createCalendarAsyncWithHttpInfo(Requests\createCalendarRequest $request) 
+    public function createCalendarAsyncWithHttpInfo(Requests\CreateCalendarRequest $request) 
     {
         $returnType = '';
         $request = $this->createCalendarRequest($request);
@@ -7496,12 +7496,12 @@ class EmailApi
     /**
      * Create request for operation 'createCalendar'
      *
-     * @param Requests\createCalendarRequest $request is a request object for operation
+     * @param Requests\CreateCalendarRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function createCalendarRequest(Requests\createCalendarRequest $request)
+    protected function createCalendarRequest(Requests\CreateCalendarRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -7621,13 +7621,13 @@ class EmailApi
      *
      * Create contact document
      *
-     * @param Requests\createContactRequest $request is a request object for operation
+     * @param Requests\CreateContactRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function createContact(Requests\createContactRequest $request)
+    public function createContact(Requests\CreateContactRequest $request)
     {
         try {
              $this->createContactWithHttpInfo($request);
@@ -7642,13 +7642,13 @@ class EmailApi
      *
      * Create contact document
      *
-     * @param Requests\createContactRequest $request is a request object for operation
+     * @param Requests\CreateContactRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createContactWithHttpInfo(Requests\createContactRequest $request)
+    public function createContactWithHttpInfo(Requests\CreateContactRequest $request)
     {
         $returnType = '';
         $request = $this->createContactRequest($request);
@@ -7686,12 +7686,12 @@ class EmailApi
      *
      * Create contact document
      *
-     * @param Requests\createContactRequest $request is a request object for operation
+     * @param Requests\CreateContactRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createContactAsync(Requests\createContactRequest $request) 
+    public function createContactAsync(Requests\CreateContactRequest $request) 
     {
         return $this->createContactAsyncWithHttpInfo($request)
             ->then(
@@ -7706,12 +7706,12 @@ class EmailApi
      *
      * Create contact document
      *
-     * @param Requests\createContactRequest $request is a request object for operation
+     * @param Requests\CreateContactRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createContactAsyncWithHttpInfo(Requests\createContactRequest $request) 
+    public function createContactAsyncWithHttpInfo(Requests\CreateContactRequest $request) 
     {
         $returnType = '';
         $request = $this->createContactRequest($request);
@@ -7741,12 +7741,12 @@ class EmailApi
     /**
      * Create request for operation 'createContact'
      *
-     * @param Requests\createContactRequest $request is a request object for operation
+     * @param Requests\CreateContactRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function createContactRequest(Requests\createContactRequest $request)
+    protected function createContactRequest(Requests\CreateContactRequest $request)
     {
         // verify the required parameter 'format' is set
         if ($request->format === null) {
@@ -7875,13 +7875,13 @@ class EmailApi
      *
      * Create an email document
      *
-     * @param Requests\createEmailRequest $request is a request object for operation
+     * @param Requests\CreateEmailRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Email\Model\EmailDocumentResponse
      */
-    public function createEmail(Requests\createEmailRequest $request)
+    public function createEmail(Requests\CreateEmailRequest $request)
     {
         try {
              list($response) = $this->createEmailWithHttpInfo($request);
@@ -7898,13 +7898,13 @@ class EmailApi
      *
      * Create an email document
      *
-     * @param Requests\createEmailRequest $request is a request object for operation
+     * @param Requests\CreateEmailRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Email\Model\EmailDocumentResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createEmailWithHttpInfo(Requests\createEmailRequest $request)
+    public function createEmailWithHttpInfo(Requests\CreateEmailRequest $request)
     {
         $returnType = '\Aspose\Email\Model\EmailDocumentResponse';
         $request = $this->createEmailRequest($request);
@@ -7964,12 +7964,12 @@ class EmailApi
      *
      * Create an email document
      *
-     * @param Requests\createEmailRequest $request is a request object for operation
+     * @param Requests\CreateEmailRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createEmailAsync(Requests\createEmailRequest $request) 
+    public function createEmailAsync(Requests\CreateEmailRequest $request) 
     {
         return $this->createEmailAsyncWithHttpInfo($request)
             ->then(
@@ -7984,12 +7984,12 @@ class EmailApi
      *
      * Create an email document
      *
-     * @param Requests\createEmailRequest $request is a request object for operation
+     * @param Requests\CreateEmailRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createEmailAsyncWithHttpInfo(Requests\createEmailRequest $request) 
+    public function createEmailAsyncWithHttpInfo(Requests\CreateEmailRequest $request) 
     {
         $returnType = '\Aspose\Email\Model\EmailDocumentResponse';
         $request = $this->createEmailRequest($request);
@@ -8037,12 +8037,12 @@ class EmailApi
     /**
      * Create request for operation 'createEmail'
      *
-     * @param Requests\createEmailRequest $request is a request object for operation
+     * @param Requests\CreateEmailRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function createEmailRequest(Requests\createEmailRequest $request)
+    protected function createEmailRequest(Requests\CreateEmailRequest $request)
     {
         // verify the required parameter 'file_name' is set
         if ($request->file_name === null) {
@@ -8162,13 +8162,13 @@ class EmailApi
      *
      * Create new folder in email account
      *
-     * @param Requests\createEmailFolderRequest $request is a request object for operation
+     * @param Requests\CreateEmailFolderRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function createEmailFolder(Requests\createEmailFolderRequest $request)
+    public function createEmailFolder(Requests\CreateEmailFolderRequest $request)
     {
         try {
              $this->createEmailFolderWithHttpInfo($request);
@@ -8183,13 +8183,13 @@ class EmailApi
      *
      * Create new folder in email account
      *
-     * @param Requests\createEmailFolderRequest $request is a request object for operation
+     * @param Requests\CreateEmailFolderRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createEmailFolderWithHttpInfo(Requests\createEmailFolderRequest $request)
+    public function createEmailFolderWithHttpInfo(Requests\CreateEmailFolderRequest $request)
     {
         $returnType = '';
         $request = $this->createEmailFolderRequest($request);
@@ -8227,12 +8227,12 @@ class EmailApi
      *
      * Create new folder in email account
      *
-     * @param Requests\createEmailFolderRequest $request is a request object for operation
+     * @param Requests\CreateEmailFolderRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createEmailFolderAsync(Requests\createEmailFolderRequest $request) 
+    public function createEmailFolderAsync(Requests\CreateEmailFolderRequest $request) 
     {
         return $this->createEmailFolderAsyncWithHttpInfo($request)
             ->then(
@@ -8247,12 +8247,12 @@ class EmailApi
      *
      * Create new folder in email account
      *
-     * @param Requests\createEmailFolderRequest $request is a request object for operation
+     * @param Requests\CreateEmailFolderRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createEmailFolderAsyncWithHttpInfo(Requests\createEmailFolderRequest $request) 
+    public function createEmailFolderAsyncWithHttpInfo(Requests\CreateEmailFolderRequest $request) 
     {
         $returnType = '';
         $request = $this->createEmailFolderRequest($request);
@@ -8282,12 +8282,12 @@ class EmailApi
     /**
      * Create request for operation 'createEmailFolder'
      *
-     * @param Requests\createEmailFolderRequest $request is a request object for operation
+     * @param Requests\CreateEmailFolderRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function createEmailFolderRequest(Requests\createEmailFolderRequest $request)
+    protected function createEmailFolderRequest(Requests\CreateEmailFolderRequest $request)
     {
         // verify the required parameter 'request' is set
         if ($request->request === null) {
@@ -8398,13 +8398,13 @@ class EmailApi
      *
      * Create the folder
      *
-     * @param Requests\createFolderRequest $request is a request object for operation
+     * @param Requests\CreateFolderRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function createFolder(Requests\createFolderRequest $request)
+    public function createFolder(Requests\CreateFolderRequest $request)
     {
         try {
              $this->createFolderWithHttpInfo($request);
@@ -8419,13 +8419,13 @@ class EmailApi
      *
      * Create the folder
      *
-     * @param Requests\createFolderRequest $request is a request object for operation
+     * @param Requests\CreateFolderRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createFolderWithHttpInfo(Requests\createFolderRequest $request)
+    public function createFolderWithHttpInfo(Requests\CreateFolderRequest $request)
     {
         $returnType = '';
         $request = $this->createFolderRequest($request);
@@ -8463,12 +8463,12 @@ class EmailApi
      *
      * Create the folder
      *
-     * @param Requests\createFolderRequest $request is a request object for operation
+     * @param Requests\CreateFolderRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createFolderAsync(Requests\createFolderRequest $request) 
+    public function createFolderAsync(Requests\CreateFolderRequest $request) 
     {
         return $this->createFolderAsyncWithHttpInfo($request)
             ->then(
@@ -8483,12 +8483,12 @@ class EmailApi
      *
      * Create the folder
      *
-     * @param Requests\createFolderRequest $request is a request object for operation
+     * @param Requests\CreateFolderRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createFolderAsyncWithHttpInfo(Requests\createFolderRequest $request) 
+    public function createFolderAsyncWithHttpInfo(Requests\CreateFolderRequest $request) 
     {
         $returnType = '';
         $request = $this->createFolderRequest($request);
@@ -8518,12 +8518,12 @@ class EmailApi
     /**
      * Create request for operation 'createFolder'
      *
-     * @param Requests\createFolderRequest $request is a request object for operation
+     * @param Requests\CreateFolderRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function createFolderRequest(Requests\createFolderRequest $request)
+    protected function createFolderRequest(Requests\CreateFolderRequest $request)
     {
         // verify the required parameter 'path' is set
         if ($request->path === null) {
@@ -8642,13 +8642,13 @@ class EmailApi
      *
      * Create new document
      *
-     * @param Requests\createMapiRequest $request is a request object for operation
+     * @param Requests\CreateMapiRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function createMapi(Requests\createMapiRequest $request)
+    public function createMapi(Requests\CreateMapiRequest $request)
     {
         try {
              $this->createMapiWithHttpInfo($request);
@@ -8663,13 +8663,13 @@ class EmailApi
      *
      * Create new document
      *
-     * @param Requests\createMapiRequest $request is a request object for operation
+     * @param Requests\CreateMapiRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createMapiWithHttpInfo(Requests\createMapiRequest $request)
+    public function createMapiWithHttpInfo(Requests\CreateMapiRequest $request)
     {
         $returnType = '';
         $request = $this->createMapiRequest($request);
@@ -8707,12 +8707,12 @@ class EmailApi
      *
      * Create new document
      *
-     * @param Requests\createMapiRequest $request is a request object for operation
+     * @param Requests\CreateMapiRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createMapiAsync(Requests\createMapiRequest $request) 
+    public function createMapiAsync(Requests\CreateMapiRequest $request) 
     {
         return $this->createMapiAsyncWithHttpInfo($request)
             ->then(
@@ -8727,12 +8727,12 @@ class EmailApi
      *
      * Create new document
      *
-     * @param Requests\createMapiRequest $request is a request object for operation
+     * @param Requests\CreateMapiRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createMapiAsyncWithHttpInfo(Requests\createMapiRequest $request) 
+    public function createMapiAsyncWithHttpInfo(Requests\CreateMapiRequest $request) 
     {
         $returnType = '';
         $request = $this->createMapiRequest($request);
@@ -8762,12 +8762,12 @@ class EmailApi
     /**
      * Create request for operation 'createMapi'
      *
-     * @param Requests\createMapiRequest $request is a request object for operation
+     * @param Requests\CreateMapiRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function createMapiRequest(Requests\createMapiRequest $request)
+    protected function createMapiRequest(Requests\CreateMapiRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -8887,13 +8887,13 @@ class EmailApi
      *
      * Deletes indexed property by index and name. To delete Reminder attachment, use path ReminderAttachment/{ReminderIndex}/{AttachmentIndex}
      *
-     * @param Requests\deleteCalendarPropertyRequest $request is a request object for operation
+     * @param Requests\DeleteCalendarPropertyRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deleteCalendarProperty(Requests\deleteCalendarPropertyRequest $request)
+    public function deleteCalendarProperty(Requests\DeleteCalendarPropertyRequest $request)
     {
         try {
              $this->deleteCalendarPropertyWithHttpInfo($request);
@@ -8908,13 +8908,13 @@ class EmailApi
      *
      * Deletes indexed property by index and name. To delete Reminder attachment, use path ReminderAttachment/{ReminderIndex}/{AttachmentIndex}
      *
-     * @param Requests\deleteCalendarPropertyRequest $request is a request object for operation
+     * @param Requests\DeleteCalendarPropertyRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteCalendarPropertyWithHttpInfo(Requests\deleteCalendarPropertyRequest $request)
+    public function deleteCalendarPropertyWithHttpInfo(Requests\DeleteCalendarPropertyRequest $request)
     {
         $returnType = '';
         $request = $this->deleteCalendarPropertyRequest($request);
@@ -8952,12 +8952,12 @@ class EmailApi
      *
      * Deletes indexed property by index and name. To delete Reminder attachment, use path ReminderAttachment/{ReminderIndex}/{AttachmentIndex}
      *
-     * @param Requests\deleteCalendarPropertyRequest $request is a request object for operation
+     * @param Requests\DeleteCalendarPropertyRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteCalendarPropertyAsync(Requests\deleteCalendarPropertyRequest $request) 
+    public function deleteCalendarPropertyAsync(Requests\DeleteCalendarPropertyRequest $request) 
     {
         return $this->deleteCalendarPropertyAsyncWithHttpInfo($request)
             ->then(
@@ -8972,12 +8972,12 @@ class EmailApi
      *
      * Deletes indexed property by index and name. To delete Reminder attachment, use path ReminderAttachment/{ReminderIndex}/{AttachmentIndex}
      *
-     * @param Requests\deleteCalendarPropertyRequest $request is a request object for operation
+     * @param Requests\DeleteCalendarPropertyRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteCalendarPropertyAsyncWithHttpInfo(Requests\deleteCalendarPropertyRequest $request) 
+    public function deleteCalendarPropertyAsyncWithHttpInfo(Requests\DeleteCalendarPropertyRequest $request) 
     {
         $returnType = '';
         $request = $this->deleteCalendarPropertyRequest($request);
@@ -9007,12 +9007,12 @@ class EmailApi
     /**
      * Create request for operation 'deleteCalendarProperty'
      *
-     * @param Requests\deleteCalendarPropertyRequest $request is a request object for operation
+     * @param Requests\DeleteCalendarPropertyRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function deleteCalendarPropertyRequest(Requests\deleteCalendarPropertyRequest $request)
+    protected function deleteCalendarPropertyRequest(Requests\DeleteCalendarPropertyRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -9150,13 +9150,13 @@ class EmailApi
      *
      * Delete property from indexed property list
      *
-     * @param Requests\deleteContactPropertyRequest $request is a request object for operation
+     * @param Requests\DeleteContactPropertyRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deleteContactProperty(Requests\deleteContactPropertyRequest $request)
+    public function deleteContactProperty(Requests\DeleteContactPropertyRequest $request)
     {
         try {
              $this->deleteContactPropertyWithHttpInfo($request);
@@ -9171,13 +9171,13 @@ class EmailApi
      *
      * Delete property from indexed property list
      *
-     * @param Requests\deleteContactPropertyRequest $request is a request object for operation
+     * @param Requests\DeleteContactPropertyRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteContactPropertyWithHttpInfo(Requests\deleteContactPropertyRequest $request)
+    public function deleteContactPropertyWithHttpInfo(Requests\DeleteContactPropertyRequest $request)
     {
         $returnType = '';
         $request = $this->deleteContactPropertyRequest($request);
@@ -9215,12 +9215,12 @@ class EmailApi
      *
      * Delete property from indexed property list
      *
-     * @param Requests\deleteContactPropertyRequest $request is a request object for operation
+     * @param Requests\DeleteContactPropertyRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteContactPropertyAsync(Requests\deleteContactPropertyRequest $request) 
+    public function deleteContactPropertyAsync(Requests\DeleteContactPropertyRequest $request) 
     {
         return $this->deleteContactPropertyAsyncWithHttpInfo($request)
             ->then(
@@ -9235,12 +9235,12 @@ class EmailApi
      *
      * Delete property from indexed property list
      *
-     * @param Requests\deleteContactPropertyRequest $request is a request object for operation
+     * @param Requests\DeleteContactPropertyRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteContactPropertyAsyncWithHttpInfo(Requests\deleteContactPropertyRequest $request) 
+    public function deleteContactPropertyAsyncWithHttpInfo(Requests\DeleteContactPropertyRequest $request) 
     {
         $returnType = '';
         $request = $this->deleteContactPropertyRequest($request);
@@ -9270,12 +9270,12 @@ class EmailApi
     /**
      * Create request for operation 'deleteContactProperty'
      *
-     * @param Requests\deleteContactPropertyRequest $request is a request object for operation
+     * @param Requests\DeleteContactPropertyRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function deleteContactPropertyRequest(Requests\deleteContactPropertyRequest $request)
+    protected function deleteContactPropertyRequest(Requests\DeleteContactPropertyRequest $request)
     {
         // verify the required parameter 'format' is set
         if ($request->format === null) {
@@ -9422,13 +9422,13 @@ class EmailApi
      *
      * Delete a folder in email account
      *
-     * @param Requests\deleteEmailFolderRequest $request is a request object for operation
+     * @param Requests\DeleteEmailFolderRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deleteEmailFolder(Requests\deleteEmailFolderRequest $request)
+    public function deleteEmailFolder(Requests\DeleteEmailFolderRequest $request)
     {
         try {
              $this->deleteEmailFolderWithHttpInfo($request);
@@ -9443,13 +9443,13 @@ class EmailApi
      *
      * Delete a folder in email account
      *
-     * @param Requests\deleteEmailFolderRequest $request is a request object for operation
+     * @param Requests\DeleteEmailFolderRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteEmailFolderWithHttpInfo(Requests\deleteEmailFolderRequest $request)
+    public function deleteEmailFolderWithHttpInfo(Requests\DeleteEmailFolderRequest $request)
     {
         $returnType = '';
         $request = $this->deleteEmailFolderRequest($request);
@@ -9487,12 +9487,12 @@ class EmailApi
      *
      * Delete a folder in email account
      *
-     * @param Requests\deleteEmailFolderRequest $request is a request object for operation
+     * @param Requests\DeleteEmailFolderRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteEmailFolderAsync(Requests\deleteEmailFolderRequest $request) 
+    public function deleteEmailFolderAsync(Requests\DeleteEmailFolderRequest $request) 
     {
         return $this->deleteEmailFolderAsyncWithHttpInfo($request)
             ->then(
@@ -9507,12 +9507,12 @@ class EmailApi
      *
      * Delete a folder in email account
      *
-     * @param Requests\deleteEmailFolderRequest $request is a request object for operation
+     * @param Requests\DeleteEmailFolderRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteEmailFolderAsyncWithHttpInfo(Requests\deleteEmailFolderRequest $request) 
+    public function deleteEmailFolderAsyncWithHttpInfo(Requests\DeleteEmailFolderRequest $request) 
     {
         $returnType = '';
         $request = $this->deleteEmailFolderRequest($request);
@@ -9542,12 +9542,12 @@ class EmailApi
     /**
      * Create request for operation 'deleteEmailFolder'
      *
-     * @param Requests\deleteEmailFolderRequest $request is a request object for operation
+     * @param Requests\DeleteEmailFolderRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function deleteEmailFolderRequest(Requests\deleteEmailFolderRequest $request)
+    protected function deleteEmailFolderRequest(Requests\DeleteEmailFolderRequest $request)
     {
         // verify the required parameter 'request' is set
         if ($request->request === null) {
@@ -9658,13 +9658,13 @@ class EmailApi
      *
      * Delete message from email account by id
      *
-     * @param Requests\deleteEmailMessageRequest $request is a request object for operation
+     * @param Requests\DeleteEmailMessageRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deleteEmailMessage(Requests\deleteEmailMessageRequest $request)
+    public function deleteEmailMessage(Requests\DeleteEmailMessageRequest $request)
     {
         try {
              $this->deleteEmailMessageWithHttpInfo($request);
@@ -9679,13 +9679,13 @@ class EmailApi
      *
      * Delete message from email account by id
      *
-     * @param Requests\deleteEmailMessageRequest $request is a request object for operation
+     * @param Requests\DeleteEmailMessageRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteEmailMessageWithHttpInfo(Requests\deleteEmailMessageRequest $request)
+    public function deleteEmailMessageWithHttpInfo(Requests\DeleteEmailMessageRequest $request)
     {
         $returnType = '';
         $request = $this->deleteEmailMessageRequest($request);
@@ -9723,12 +9723,12 @@ class EmailApi
      *
      * Delete message from email account by id
      *
-     * @param Requests\deleteEmailMessageRequest $request is a request object for operation
+     * @param Requests\DeleteEmailMessageRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteEmailMessageAsync(Requests\deleteEmailMessageRequest $request) 
+    public function deleteEmailMessageAsync(Requests\DeleteEmailMessageRequest $request) 
     {
         return $this->deleteEmailMessageAsyncWithHttpInfo($request)
             ->then(
@@ -9743,12 +9743,12 @@ class EmailApi
      *
      * Delete message from email account by id
      *
-     * @param Requests\deleteEmailMessageRequest $request is a request object for operation
+     * @param Requests\DeleteEmailMessageRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteEmailMessageAsyncWithHttpInfo(Requests\deleteEmailMessageRequest $request) 
+    public function deleteEmailMessageAsyncWithHttpInfo(Requests\DeleteEmailMessageRequest $request) 
     {
         $returnType = '';
         $request = $this->deleteEmailMessageRequest($request);
@@ -9778,12 +9778,12 @@ class EmailApi
     /**
      * Create request for operation 'deleteEmailMessage'
      *
-     * @param Requests\deleteEmailMessageRequest $request is a request object for operation
+     * @param Requests\DeleteEmailMessageRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function deleteEmailMessageRequest(Requests\deleteEmailMessageRequest $request)
+    protected function deleteEmailMessageRequest(Requests\DeleteEmailMessageRequest $request)
     {
         // verify the required parameter 'request' is set
         if ($request->request === null) {
@@ -9894,13 +9894,13 @@ class EmailApi
      *
      * Delete file
      *
-     * @param Requests\deleteFileRequest $request is a request object for operation
+     * @param Requests\DeleteFileRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deleteFile(Requests\deleteFileRequest $request)
+    public function deleteFile(Requests\DeleteFileRequest $request)
     {
         try {
              $this->deleteFileWithHttpInfo($request);
@@ -9915,13 +9915,13 @@ class EmailApi
      *
      * Delete file
      *
-     * @param Requests\deleteFileRequest $request is a request object for operation
+     * @param Requests\DeleteFileRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteFileWithHttpInfo(Requests\deleteFileRequest $request)
+    public function deleteFileWithHttpInfo(Requests\DeleteFileRequest $request)
     {
         $returnType = '';
         $request = $this->deleteFileRequest($request);
@@ -9959,12 +9959,12 @@ class EmailApi
      *
      * Delete file
      *
-     * @param Requests\deleteFileRequest $request is a request object for operation
+     * @param Requests\DeleteFileRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteFileAsync(Requests\deleteFileRequest $request) 
+    public function deleteFileAsync(Requests\DeleteFileRequest $request) 
     {
         return $this->deleteFileAsyncWithHttpInfo($request)
             ->then(
@@ -9979,12 +9979,12 @@ class EmailApi
      *
      * Delete file
      *
-     * @param Requests\deleteFileRequest $request is a request object for operation
+     * @param Requests\DeleteFileRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteFileAsyncWithHttpInfo(Requests\deleteFileRequest $request) 
+    public function deleteFileAsyncWithHttpInfo(Requests\DeleteFileRequest $request) 
     {
         $returnType = '';
         $request = $this->deleteFileRequest($request);
@@ -10014,12 +10014,12 @@ class EmailApi
     /**
      * Create request for operation 'deleteFile'
      *
-     * @param Requests\deleteFileRequest $request is a request object for operation
+     * @param Requests\DeleteFileRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function deleteFileRequest(Requests\deleteFileRequest $request)
+    protected function deleteFileRequest(Requests\DeleteFileRequest $request)
     {
         // verify the required parameter 'path' is set
         if ($request->path === null) {
@@ -10148,13 +10148,13 @@ class EmailApi
      *
      * Delete folder
      *
-     * @param Requests\deleteFolderRequest $request is a request object for operation
+     * @param Requests\DeleteFolderRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deleteFolder(Requests\deleteFolderRequest $request)
+    public function deleteFolder(Requests\DeleteFolderRequest $request)
     {
         try {
              $this->deleteFolderWithHttpInfo($request);
@@ -10169,13 +10169,13 @@ class EmailApi
      *
      * Delete folder
      *
-     * @param Requests\deleteFolderRequest $request is a request object for operation
+     * @param Requests\DeleteFolderRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteFolderWithHttpInfo(Requests\deleteFolderRequest $request)
+    public function deleteFolderWithHttpInfo(Requests\DeleteFolderRequest $request)
     {
         $returnType = '';
         $request = $this->deleteFolderRequest($request);
@@ -10213,12 +10213,12 @@ class EmailApi
      *
      * Delete folder
      *
-     * @param Requests\deleteFolderRequest $request is a request object for operation
+     * @param Requests\DeleteFolderRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteFolderAsync(Requests\deleteFolderRequest $request) 
+    public function deleteFolderAsync(Requests\DeleteFolderRequest $request) 
     {
         return $this->deleteFolderAsyncWithHttpInfo($request)
             ->then(
@@ -10233,12 +10233,12 @@ class EmailApi
      *
      * Delete folder
      *
-     * @param Requests\deleteFolderRequest $request is a request object for operation
+     * @param Requests\DeleteFolderRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteFolderAsyncWithHttpInfo(Requests\deleteFolderRequest $request) 
+    public function deleteFolderAsyncWithHttpInfo(Requests\DeleteFolderRequest $request) 
     {
         $returnType = '';
         $request = $this->deleteFolderRequest($request);
@@ -10268,12 +10268,12 @@ class EmailApi
     /**
      * Create request for operation 'deleteFolder'
      *
-     * @param Requests\deleteFolderRequest $request is a request object for operation
+     * @param Requests\DeleteFolderRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function deleteFolderRequest(Requests\deleteFolderRequest $request)
+    protected function deleteFolderRequest(Requests\DeleteFolderRequest $request)
     {
         // verify the required parameter 'path' is set
         if ($request->path === null) {
@@ -10402,13 +10402,13 @@ class EmailApi
      *
      * Remove attachment from document
      *
-     * @param Requests\deleteMapiAttachmentRequest $request is a request object for operation
+     * @param Requests\DeleteMapiAttachmentRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deleteMapiAttachment(Requests\deleteMapiAttachmentRequest $request)
+    public function deleteMapiAttachment(Requests\DeleteMapiAttachmentRequest $request)
     {
         try {
              $this->deleteMapiAttachmentWithHttpInfo($request);
@@ -10423,13 +10423,13 @@ class EmailApi
      *
      * Remove attachment from document
      *
-     * @param Requests\deleteMapiAttachmentRequest $request is a request object for operation
+     * @param Requests\DeleteMapiAttachmentRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteMapiAttachmentWithHttpInfo(Requests\deleteMapiAttachmentRequest $request)
+    public function deleteMapiAttachmentWithHttpInfo(Requests\DeleteMapiAttachmentRequest $request)
     {
         $returnType = '';
         $request = $this->deleteMapiAttachmentRequest($request);
@@ -10467,12 +10467,12 @@ class EmailApi
      *
      * Remove attachment from document
      *
-     * @param Requests\deleteMapiAttachmentRequest $request is a request object for operation
+     * @param Requests\DeleteMapiAttachmentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteMapiAttachmentAsync(Requests\deleteMapiAttachmentRequest $request) 
+    public function deleteMapiAttachmentAsync(Requests\DeleteMapiAttachmentRequest $request) 
     {
         return $this->deleteMapiAttachmentAsyncWithHttpInfo($request)
             ->then(
@@ -10487,12 +10487,12 @@ class EmailApi
      *
      * Remove attachment from document
      *
-     * @param Requests\deleteMapiAttachmentRequest $request is a request object for operation
+     * @param Requests\DeleteMapiAttachmentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteMapiAttachmentAsyncWithHttpInfo(Requests\deleteMapiAttachmentRequest $request) 
+    public function deleteMapiAttachmentAsyncWithHttpInfo(Requests\DeleteMapiAttachmentRequest $request) 
     {
         $returnType = '';
         $request = $this->deleteMapiAttachmentRequest($request);
@@ -10522,12 +10522,12 @@ class EmailApi
     /**
      * Create request for operation 'deleteMapiAttachment'
      *
-     * @param Requests\deleteMapiAttachmentRequest $request is a request object for operation
+     * @param Requests\DeleteMapiAttachmentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function deleteMapiAttachmentRequest(Requests\deleteMapiAttachmentRequest $request)
+    protected function deleteMapiAttachmentRequest(Requests\DeleteMapiAttachmentRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -10656,13 +10656,13 @@ class EmailApi
      *
      * Delete document properties
      *
-     * @param Requests\deleteMapiPropertiesRequest $request is a request object for operation
+     * @param Requests\DeleteMapiPropertiesRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function deleteMapiProperties(Requests\deleteMapiPropertiesRequest $request)
+    public function deleteMapiProperties(Requests\DeleteMapiPropertiesRequest $request)
     {
         try {
              $this->deleteMapiPropertiesWithHttpInfo($request);
@@ -10677,13 +10677,13 @@ class EmailApi
      *
      * Delete document properties
      *
-     * @param Requests\deleteMapiPropertiesRequest $request is a request object for operation
+     * @param Requests\DeleteMapiPropertiesRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deleteMapiPropertiesWithHttpInfo(Requests\deleteMapiPropertiesRequest $request)
+    public function deleteMapiPropertiesWithHttpInfo(Requests\DeleteMapiPropertiesRequest $request)
     {
         $returnType = '';
         $request = $this->deleteMapiPropertiesRequest($request);
@@ -10721,12 +10721,12 @@ class EmailApi
      *
      * Delete document properties
      *
-     * @param Requests\deleteMapiPropertiesRequest $request is a request object for operation
+     * @param Requests\DeleteMapiPropertiesRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteMapiPropertiesAsync(Requests\deleteMapiPropertiesRequest $request) 
+    public function deleteMapiPropertiesAsync(Requests\DeleteMapiPropertiesRequest $request) 
     {
         return $this->deleteMapiPropertiesAsyncWithHttpInfo($request)
             ->then(
@@ -10741,12 +10741,12 @@ class EmailApi
      *
      * Delete document properties
      *
-     * @param Requests\deleteMapiPropertiesRequest $request is a request object for operation
+     * @param Requests\DeleteMapiPropertiesRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function deleteMapiPropertiesAsyncWithHttpInfo(Requests\deleteMapiPropertiesRequest $request) 
+    public function deleteMapiPropertiesAsyncWithHttpInfo(Requests\DeleteMapiPropertiesRequest $request) 
     {
         $returnType = '';
         $request = $this->deleteMapiPropertiesRequest($request);
@@ -10776,12 +10776,12 @@ class EmailApi
     /**
      * Create request for operation 'deleteMapiProperties'
      *
-     * @param Requests\deleteMapiPropertiesRequest $request is a request object for operation
+     * @param Requests\DeleteMapiPropertiesRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function deleteMapiPropertiesRequest(Requests\deleteMapiPropertiesRequest $request)
+    protected function deleteMapiPropertiesRequest(Requests\DeleteMapiPropertiesRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -10901,13 +10901,13 @@ class EmailApi
      *
      * Download file
      *
-     * @param Requests\downloadFileRequest $request is a request object for operation
+     * @param Requests\DownloadFileRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
-    public function downloadFile(Requests\downloadFileRequest $request)
+    public function downloadFile(Requests\DownloadFileRequest $request)
     {
         try {
              list($response) = $this->downloadFileWithHttpInfo($request);
@@ -10924,13 +10924,13 @@ class EmailApi
      *
      * Download file
      *
-     * @param Requests\downloadFileRequest $request is a request object for operation
+     * @param Requests\DownloadFileRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function downloadFileWithHttpInfo(Requests\downloadFileRequest $request)
+    public function downloadFileWithHttpInfo(Requests\DownloadFileRequest $request)
     {
         $returnType = '\SplFileObject';
         $request = $this->downloadFileRequest($request);
@@ -10990,12 +10990,12 @@ class EmailApi
      *
      * Download file
      *
-     * @param Requests\downloadFileRequest $request is a request object for operation
+     * @param Requests\DownloadFileRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function downloadFileAsync(Requests\downloadFileRequest $request) 
+    public function downloadFileAsync(Requests\DownloadFileRequest $request) 
     {
         return $this->downloadFileAsyncWithHttpInfo($request)
             ->then(
@@ -11010,12 +11010,12 @@ class EmailApi
      *
      * Download file
      *
-     * @param Requests\downloadFileRequest $request is a request object for operation
+     * @param Requests\DownloadFileRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function downloadFileAsyncWithHttpInfo(Requests\downloadFileRequest $request) 
+    public function downloadFileAsyncWithHttpInfo(Requests\DownloadFileRequest $request) 
     {
         $returnType = '\SplFileObject';
         $request = $this->downloadFileRequest($request);
@@ -11063,12 +11063,12 @@ class EmailApi
     /**
      * Create request for operation 'downloadFile'
      *
-     * @param Requests\downloadFileRequest $request is a request object for operation
+     * @param Requests\DownloadFileRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function downloadFileRequest(Requests\downloadFileRequest $request)
+    protected function downloadFileRequest(Requests\DownloadFileRequest $request)
     {
         // verify the required parameter 'path' is set
         if ($request->path === null) {
@@ -11197,13 +11197,13 @@ class EmailApi
      *
      * Fetch message mime from email account
      *
-     * @param Requests\fetchEmailMessageRequest $request is a request object for operation
+     * @param Requests\FetchEmailMessageRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Email\Model\MimeResponse
      */
-    public function fetchEmailMessage(Requests\fetchEmailMessageRequest $request)
+    public function fetchEmailMessage(Requests\FetchEmailMessageRequest $request)
     {
         try {
              list($response) = $this->fetchEmailMessageWithHttpInfo($request);
@@ -11220,13 +11220,13 @@ class EmailApi
      *
      * Fetch message mime from email account
      *
-     * @param Requests\fetchEmailMessageRequest $request is a request object for operation
+     * @param Requests\FetchEmailMessageRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Email\Model\MimeResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function fetchEmailMessageWithHttpInfo(Requests\fetchEmailMessageRequest $request)
+    public function fetchEmailMessageWithHttpInfo(Requests\FetchEmailMessageRequest $request)
     {
         $returnType = '\Aspose\Email\Model\MimeResponse';
         $request = $this->fetchEmailMessageRequest($request);
@@ -11286,12 +11286,12 @@ class EmailApi
      *
      * Fetch message mime from email account
      *
-     * @param Requests\fetchEmailMessageRequest $request is a request object for operation
+     * @param Requests\FetchEmailMessageRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function fetchEmailMessageAsync(Requests\fetchEmailMessageRequest $request) 
+    public function fetchEmailMessageAsync(Requests\FetchEmailMessageRequest $request) 
     {
         return $this->fetchEmailMessageAsyncWithHttpInfo($request)
             ->then(
@@ -11306,12 +11306,12 @@ class EmailApi
      *
      * Fetch message mime from email account
      *
-     * @param Requests\fetchEmailMessageRequest $request is a request object for operation
+     * @param Requests\FetchEmailMessageRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function fetchEmailMessageAsyncWithHttpInfo(Requests\fetchEmailMessageRequest $request) 
+    public function fetchEmailMessageAsyncWithHttpInfo(Requests\FetchEmailMessageRequest $request) 
     {
         $returnType = '\Aspose\Email\Model\MimeResponse';
         $request = $this->fetchEmailMessageRequest($request);
@@ -11359,12 +11359,12 @@ class EmailApi
     /**
      * Create request for operation 'fetchEmailMessage'
      *
-     * @param Requests\fetchEmailMessageRequest $request is a request object for operation
+     * @param Requests\FetchEmailMessageRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function fetchEmailMessageRequest(Requests\fetchEmailMessageRequest $request)
+    protected function fetchEmailMessageRequest(Requests\FetchEmailMessageRequest $request)
     {
         // verify the required parameter 'message_id' is set
         if ($request->message_id === null) {
@@ -11522,13 +11522,13 @@ class EmailApi
      *
      * Get calendar file properties
      *
-     * @param Requests\getCalendarRequest $request is a request object for operation
+     * @param Requests\GetCalendarRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Email\Model\HierarchicalObject
      */
-    public function getCalendar(Requests\getCalendarRequest $request)
+    public function getCalendar(Requests\GetCalendarRequest $request)
     {
         try {
              list($response) = $this->getCalendarWithHttpInfo($request);
@@ -11545,13 +11545,13 @@ class EmailApi
      *
      * Get calendar file properties
      *
-     * @param Requests\getCalendarRequest $request is a request object for operation
+     * @param Requests\GetCalendarRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Email\Model\HierarchicalObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCalendarWithHttpInfo(Requests\getCalendarRequest $request)
+    public function getCalendarWithHttpInfo(Requests\GetCalendarRequest $request)
     {
         $returnType = '\Aspose\Email\Model\HierarchicalObject';
         $request = $this->getCalendarRequest($request);
@@ -11611,12 +11611,12 @@ class EmailApi
      *
      * Get calendar file properties
      *
-     * @param Requests\getCalendarRequest $request is a request object for operation
+     * @param Requests\GetCalendarRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCalendarAsync(Requests\getCalendarRequest $request) 
+    public function getCalendarAsync(Requests\GetCalendarRequest $request) 
     {
         return $this->getCalendarAsyncWithHttpInfo($request)
             ->then(
@@ -11631,12 +11631,12 @@ class EmailApi
      *
      * Get calendar file properties
      *
-     * @param Requests\getCalendarRequest $request is a request object for operation
+     * @param Requests\GetCalendarRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCalendarAsyncWithHttpInfo(Requests\getCalendarRequest $request) 
+    public function getCalendarAsyncWithHttpInfo(Requests\GetCalendarRequest $request) 
     {
         $returnType = '\Aspose\Email\Model\HierarchicalObject';
         $request = $this->getCalendarRequest($request);
@@ -11684,12 +11684,12 @@ class EmailApi
     /**
      * Create request for operation 'getCalendar'
      *
-     * @param Requests\getCalendarRequest $request is a request object for operation
+     * @param Requests\GetCalendarRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getCalendarRequest(Requests\getCalendarRequest $request)
+    protected function getCalendarRequest(Requests\GetCalendarRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -11818,13 +11818,13 @@ class EmailApi
      *
      * Get iCalendar document attachment by name
      *
-     * @param Requests\getCalendarAttachmentRequest $request is a request object for operation
+     * @param Requests\GetCalendarAttachmentRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
-    public function getCalendarAttachment(Requests\getCalendarAttachmentRequest $request)
+    public function getCalendarAttachment(Requests\GetCalendarAttachmentRequest $request)
     {
         try {
              list($response) = $this->getCalendarAttachmentWithHttpInfo($request);
@@ -11841,13 +11841,13 @@ class EmailApi
      *
      * Get iCalendar document attachment by name
      *
-     * @param Requests\getCalendarAttachmentRequest $request is a request object for operation
+     * @param Requests\GetCalendarAttachmentRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCalendarAttachmentWithHttpInfo(Requests\getCalendarAttachmentRequest $request)
+    public function getCalendarAttachmentWithHttpInfo(Requests\GetCalendarAttachmentRequest $request)
     {
         $returnType = '\SplFileObject';
         $request = $this->getCalendarAttachmentRequest($request);
@@ -11907,12 +11907,12 @@ class EmailApi
      *
      * Get iCalendar document attachment by name
      *
-     * @param Requests\getCalendarAttachmentRequest $request is a request object for operation
+     * @param Requests\GetCalendarAttachmentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCalendarAttachmentAsync(Requests\getCalendarAttachmentRequest $request) 
+    public function getCalendarAttachmentAsync(Requests\GetCalendarAttachmentRequest $request) 
     {
         return $this->getCalendarAttachmentAsyncWithHttpInfo($request)
             ->then(
@@ -11927,12 +11927,12 @@ class EmailApi
      *
      * Get iCalendar document attachment by name
      *
-     * @param Requests\getCalendarAttachmentRequest $request is a request object for operation
+     * @param Requests\GetCalendarAttachmentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCalendarAttachmentAsyncWithHttpInfo(Requests\getCalendarAttachmentRequest $request) 
+    public function getCalendarAttachmentAsyncWithHttpInfo(Requests\GetCalendarAttachmentRequest $request) 
     {
         $returnType = '\SplFileObject';
         $request = $this->getCalendarAttachmentRequest($request);
@@ -11980,12 +11980,12 @@ class EmailApi
     /**
      * Create request for operation 'getCalendarAttachment'
      *
-     * @param Requests\getCalendarAttachmentRequest $request is a request object for operation
+     * @param Requests\GetCalendarAttachmentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getCalendarAttachmentRequest(Requests\getCalendarAttachmentRequest $request)
+    protected function getCalendarAttachmentRequest(Requests\GetCalendarAttachmentRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -12123,13 +12123,13 @@ class EmailApi
      *
      * Get iCalendar files list in folder on storage
      *
-     * @param Requests\getCalendarListRequest $request is a request object for operation
+     * @param Requests\GetCalendarListRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Email\Model\ListResponseOfHierarchicalObjectResponse
      */
-    public function getCalendarList(Requests\getCalendarListRequest $request)
+    public function getCalendarList(Requests\GetCalendarListRequest $request)
     {
         try {
              list($response) = $this->getCalendarListWithHttpInfo($request);
@@ -12146,13 +12146,13 @@ class EmailApi
      *
      * Get iCalendar files list in folder on storage
      *
-     * @param Requests\getCalendarListRequest $request is a request object for operation
+     * @param Requests\GetCalendarListRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Email\Model\ListResponseOfHierarchicalObjectResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getCalendarListWithHttpInfo(Requests\getCalendarListRequest $request)
+    public function getCalendarListWithHttpInfo(Requests\GetCalendarListRequest $request)
     {
         $returnType = '\Aspose\Email\Model\ListResponseOfHierarchicalObjectResponse';
         $request = $this->getCalendarListRequest($request);
@@ -12212,12 +12212,12 @@ class EmailApi
      *
      * Get iCalendar files list in folder on storage
      *
-     * @param Requests\getCalendarListRequest $request is a request object for operation
+     * @param Requests\GetCalendarListRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCalendarListAsync(Requests\getCalendarListRequest $request) 
+    public function getCalendarListAsync(Requests\GetCalendarListRequest $request) 
     {
         return $this->getCalendarListAsyncWithHttpInfo($request)
             ->then(
@@ -12232,12 +12232,12 @@ class EmailApi
      *
      * Get iCalendar files list in folder on storage
      *
-     * @param Requests\getCalendarListRequest $request is a request object for operation
+     * @param Requests\GetCalendarListRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getCalendarListAsyncWithHttpInfo(Requests\getCalendarListRequest $request) 
+    public function getCalendarListAsyncWithHttpInfo(Requests\GetCalendarListRequest $request) 
     {
         $returnType = '\Aspose\Email\Model\ListResponseOfHierarchicalObjectResponse';
         $request = $this->getCalendarListRequest($request);
@@ -12285,12 +12285,12 @@ class EmailApi
     /**
      * Create request for operation 'getCalendarList'
      *
-     * @param Requests\getCalendarListRequest $request is a request object for operation
+     * @param Requests\GetCalendarListRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getCalendarListRequest(Requests\getCalendarListRequest $request)
+    protected function getCalendarListRequest(Requests\GetCalendarListRequest $request)
     {
         // verify the required parameter 'folder' is set
         if ($request->folder === null) {
@@ -12442,13 +12442,13 @@ class EmailApi
      *
      * Get attachment file by name
      *
-     * @param Requests\getContactAttachmentRequest $request is a request object for operation
+     * @param Requests\GetContactAttachmentRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
-    public function getContactAttachment(Requests\getContactAttachmentRequest $request)
+    public function getContactAttachment(Requests\GetContactAttachmentRequest $request)
     {
         try {
              list($response) = $this->getContactAttachmentWithHttpInfo($request);
@@ -12465,13 +12465,13 @@ class EmailApi
      *
      * Get attachment file by name
      *
-     * @param Requests\getContactAttachmentRequest $request is a request object for operation
+     * @param Requests\GetContactAttachmentRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getContactAttachmentWithHttpInfo(Requests\getContactAttachmentRequest $request)
+    public function getContactAttachmentWithHttpInfo(Requests\GetContactAttachmentRequest $request)
     {
         $returnType = '\SplFileObject';
         $request = $this->getContactAttachmentRequest($request);
@@ -12531,12 +12531,12 @@ class EmailApi
      *
      * Get attachment file by name
      *
-     * @param Requests\getContactAttachmentRequest $request is a request object for operation
+     * @param Requests\GetContactAttachmentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getContactAttachmentAsync(Requests\getContactAttachmentRequest $request) 
+    public function getContactAttachmentAsync(Requests\GetContactAttachmentRequest $request) 
     {
         return $this->getContactAttachmentAsyncWithHttpInfo($request)
             ->then(
@@ -12551,12 +12551,12 @@ class EmailApi
      *
      * Get attachment file by name
      *
-     * @param Requests\getContactAttachmentRequest $request is a request object for operation
+     * @param Requests\GetContactAttachmentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getContactAttachmentAsyncWithHttpInfo(Requests\getContactAttachmentRequest $request) 
+    public function getContactAttachmentAsyncWithHttpInfo(Requests\GetContactAttachmentRequest $request) 
     {
         $returnType = '\SplFileObject';
         $request = $this->getContactAttachmentRequest($request);
@@ -12604,12 +12604,12 @@ class EmailApi
     /**
      * Create request for operation 'getContactAttachment'
      *
-     * @param Requests\getContactAttachmentRequest $request is a request object for operation
+     * @param Requests\GetContactAttachmentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getContactAttachmentRequest(Requests\getContactAttachmentRequest $request)
+    protected function getContactAttachmentRequest(Requests\GetContactAttachmentRequest $request)
     {
         // verify the required parameter 'format' is set
         if ($request->format === null) {
@@ -12756,13 +12756,13 @@ class EmailApi
      *
      * Get contact list from storage folder
      *
-     * @param Requests\getContactListRequest $request is a request object for operation
+     * @param Requests\GetContactListRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Email\Model\ListResponseOfHierarchicalObjectResponse
      */
-    public function getContactList(Requests\getContactListRequest $request)
+    public function getContactList(Requests\GetContactListRequest $request)
     {
         try {
              list($response) = $this->getContactListWithHttpInfo($request);
@@ -12779,13 +12779,13 @@ class EmailApi
      *
      * Get contact list from storage folder
      *
-     * @param Requests\getContactListRequest $request is a request object for operation
+     * @param Requests\GetContactListRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Email\Model\ListResponseOfHierarchicalObjectResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getContactListWithHttpInfo(Requests\getContactListRequest $request)
+    public function getContactListWithHttpInfo(Requests\GetContactListRequest $request)
     {
         $returnType = '\Aspose\Email\Model\ListResponseOfHierarchicalObjectResponse';
         $request = $this->getContactListRequest($request);
@@ -12845,12 +12845,12 @@ class EmailApi
      *
      * Get contact list from storage folder
      *
-     * @param Requests\getContactListRequest $request is a request object for operation
+     * @param Requests\GetContactListRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getContactListAsync(Requests\getContactListRequest $request) 
+    public function getContactListAsync(Requests\GetContactListRequest $request) 
     {
         return $this->getContactListAsyncWithHttpInfo($request)
             ->then(
@@ -12865,12 +12865,12 @@ class EmailApi
      *
      * Get contact list from storage folder
      *
-     * @param Requests\getContactListRequest $request is a request object for operation
+     * @param Requests\GetContactListRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getContactListAsyncWithHttpInfo(Requests\getContactListRequest $request) 
+    public function getContactListAsyncWithHttpInfo(Requests\GetContactListRequest $request) 
     {
         $returnType = '\Aspose\Email\Model\ListResponseOfHierarchicalObjectResponse';
         $request = $this->getContactListRequest($request);
@@ -12918,12 +12918,12 @@ class EmailApi
     /**
      * Create request for operation 'getContactList'
      *
-     * @param Requests\getContactListRequest $request is a request object for operation
+     * @param Requests\GetContactListRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getContactListRequest(Requests\getContactListRequest $request)
+    protected function getContactListRequest(Requests\GetContactListRequest $request)
     {
         // verify the required parameter 'format' is set
         if ($request->format === null) {
@@ -13072,13 +13072,13 @@ class EmailApi
      *
      * Get contact document properties
      *
-     * @param Requests\getContactPropertiesRequest $request is a request object for operation
+     * @param Requests\GetContactPropertiesRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Email\Model\HierarchicalObject
      */
-    public function getContactProperties(Requests\getContactPropertiesRequest $request)
+    public function getContactProperties(Requests\GetContactPropertiesRequest $request)
     {
         try {
              list($response) = $this->getContactPropertiesWithHttpInfo($request);
@@ -13095,13 +13095,13 @@ class EmailApi
      *
      * Get contact document properties
      *
-     * @param Requests\getContactPropertiesRequest $request is a request object for operation
+     * @param Requests\GetContactPropertiesRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Email\Model\HierarchicalObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getContactPropertiesWithHttpInfo(Requests\getContactPropertiesRequest $request)
+    public function getContactPropertiesWithHttpInfo(Requests\GetContactPropertiesRequest $request)
     {
         $returnType = '\Aspose\Email\Model\HierarchicalObject';
         $request = $this->getContactPropertiesRequest($request);
@@ -13161,12 +13161,12 @@ class EmailApi
      *
      * Get contact document properties
      *
-     * @param Requests\getContactPropertiesRequest $request is a request object for operation
+     * @param Requests\GetContactPropertiesRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getContactPropertiesAsync(Requests\getContactPropertiesRequest $request) 
+    public function getContactPropertiesAsync(Requests\GetContactPropertiesRequest $request) 
     {
         return $this->getContactPropertiesAsyncWithHttpInfo($request)
             ->then(
@@ -13181,12 +13181,12 @@ class EmailApi
      *
      * Get contact document properties
      *
-     * @param Requests\getContactPropertiesRequest $request is a request object for operation
+     * @param Requests\GetContactPropertiesRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getContactPropertiesAsyncWithHttpInfo(Requests\getContactPropertiesRequest $request) 
+    public function getContactPropertiesAsyncWithHttpInfo(Requests\GetContactPropertiesRequest $request) 
     {
         $returnType = '\Aspose\Email\Model\HierarchicalObject';
         $request = $this->getContactPropertiesRequest($request);
@@ -13234,12 +13234,12 @@ class EmailApi
     /**
      * Create request for operation 'getContactProperties'
      *
-     * @param Requests\getContactPropertiesRequest $request is a request object for operation
+     * @param Requests\GetContactPropertiesRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getContactPropertiesRequest(Requests\getContactPropertiesRequest $request)
+    protected function getContactPropertiesRequest(Requests\GetContactPropertiesRequest $request)
     {
         // verify the required parameter 'format' is set
         if ($request->format === null) {
@@ -13377,13 +13377,13 @@ class EmailApi
      *
      * Get disc usage
      *
-     * @param Requests\getDiscUsageRequest $request is a request object for operation
+     * @param Requests\GetDiscUsageRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Email\Model\DiscUsage
      */
-    public function getDiscUsage(Requests\getDiscUsageRequest $request)
+    public function getDiscUsage(Requests\GetDiscUsageRequest $request)
     {
         try {
              list($response) = $this->getDiscUsageWithHttpInfo($request);
@@ -13400,13 +13400,13 @@ class EmailApi
      *
      * Get disc usage
      *
-     * @param Requests\getDiscUsageRequest $request is a request object for operation
+     * @param Requests\GetDiscUsageRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Email\Model\DiscUsage, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getDiscUsageWithHttpInfo(Requests\getDiscUsageRequest $request)
+    public function getDiscUsageWithHttpInfo(Requests\GetDiscUsageRequest $request)
     {
         $returnType = '\Aspose\Email\Model\DiscUsage';
         $request = $this->getDiscUsageRequest($request);
@@ -13466,12 +13466,12 @@ class EmailApi
      *
      * Get disc usage
      *
-     * @param Requests\getDiscUsageRequest $request is a request object for operation
+     * @param Requests\GetDiscUsageRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDiscUsageAsync(Requests\getDiscUsageRequest $request) 
+    public function getDiscUsageAsync(Requests\GetDiscUsageRequest $request) 
     {
         return $this->getDiscUsageAsyncWithHttpInfo($request)
             ->then(
@@ -13486,12 +13486,12 @@ class EmailApi
      *
      * Get disc usage
      *
-     * @param Requests\getDiscUsageRequest $request is a request object for operation
+     * @param Requests\GetDiscUsageRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDiscUsageAsyncWithHttpInfo(Requests\getDiscUsageRequest $request) 
+    public function getDiscUsageAsyncWithHttpInfo(Requests\GetDiscUsageRequest $request) 
     {
         $returnType = '\Aspose\Email\Model\DiscUsage';
         $request = $this->getDiscUsageRequest($request);
@@ -13539,12 +13539,12 @@ class EmailApi
     /**
      * Create request for operation 'getDiscUsage'
      *
-     * @param Requests\getDiscUsageRequest $request is a request object for operation
+     * @param Requests\GetDiscUsageRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getDiscUsageRequest(Requests\getDiscUsageRequest $request)
+    protected function getDiscUsageRequest(Requests\GetDiscUsageRequest $request)
     {
 
         $resourcePath = '/email/storage/disc';
@@ -13654,13 +13654,13 @@ class EmailApi
      *
      * Get email document
      *
-     * @param Requests\getEmailRequest $request is a request object for operation
+     * @param Requests\GetEmailRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Email\Model\EmailDocument
      */
-    public function getEmail(Requests\getEmailRequest $request)
+    public function getEmail(Requests\GetEmailRequest $request)
     {
         try {
              list($response) = $this->getEmailWithHttpInfo($request);
@@ -13677,13 +13677,13 @@ class EmailApi
      *
      * Get email document
      *
-     * @param Requests\getEmailRequest $request is a request object for operation
+     * @param Requests\GetEmailRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Email\Model\EmailDocument, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getEmailWithHttpInfo(Requests\getEmailRequest $request)
+    public function getEmailWithHttpInfo(Requests\GetEmailRequest $request)
     {
         $returnType = '\Aspose\Email\Model\EmailDocument';
         $request = $this->getEmailRequest($request);
@@ -13743,12 +13743,12 @@ class EmailApi
      *
      * Get email document
      *
-     * @param Requests\getEmailRequest $request is a request object for operation
+     * @param Requests\GetEmailRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEmailAsync(Requests\getEmailRequest $request) 
+    public function getEmailAsync(Requests\GetEmailRequest $request) 
     {
         return $this->getEmailAsyncWithHttpInfo($request)
             ->then(
@@ -13763,12 +13763,12 @@ class EmailApi
      *
      * Get email document
      *
-     * @param Requests\getEmailRequest $request is a request object for operation
+     * @param Requests\GetEmailRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEmailAsyncWithHttpInfo(Requests\getEmailRequest $request) 
+    public function getEmailAsyncWithHttpInfo(Requests\GetEmailRequest $request) 
     {
         $returnType = '\Aspose\Email\Model\EmailDocument';
         $request = $this->getEmailRequest($request);
@@ -13816,12 +13816,12 @@ class EmailApi
     /**
      * Create request for operation 'getEmail'
      *
-     * @param Requests\getEmailRequest $request is a request object for operation
+     * @param Requests\GetEmailRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getEmailRequest(Requests\getEmailRequest $request)
+    protected function getEmailRequest(Requests\GetEmailRequest $request)
     {
         // verify the required parameter 'file_name' is set
         if ($request->file_name === null) {
@@ -13950,13 +13950,13 @@ class EmailApi
      *
      * Get email attachment by name
      *
-     * @param Requests\getEmailAttachmentRequest $request is a request object for operation
+     * @param Requests\GetEmailAttachmentRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
-    public function getEmailAttachment(Requests\getEmailAttachmentRequest $request)
+    public function getEmailAttachment(Requests\GetEmailAttachmentRequest $request)
     {
         try {
              list($response) = $this->getEmailAttachmentWithHttpInfo($request);
@@ -13973,13 +13973,13 @@ class EmailApi
      *
      * Get email attachment by name
      *
-     * @param Requests\getEmailAttachmentRequest $request is a request object for operation
+     * @param Requests\GetEmailAttachmentRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getEmailAttachmentWithHttpInfo(Requests\getEmailAttachmentRequest $request)
+    public function getEmailAttachmentWithHttpInfo(Requests\GetEmailAttachmentRequest $request)
     {
         $returnType = '\SplFileObject';
         $request = $this->getEmailAttachmentRequest($request);
@@ -14039,12 +14039,12 @@ class EmailApi
      *
      * Get email attachment by name
      *
-     * @param Requests\getEmailAttachmentRequest $request is a request object for operation
+     * @param Requests\GetEmailAttachmentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEmailAttachmentAsync(Requests\getEmailAttachmentRequest $request) 
+    public function getEmailAttachmentAsync(Requests\GetEmailAttachmentRequest $request) 
     {
         return $this->getEmailAttachmentAsyncWithHttpInfo($request)
             ->then(
@@ -14059,12 +14059,12 @@ class EmailApi
      *
      * Get email attachment by name
      *
-     * @param Requests\getEmailAttachmentRequest $request is a request object for operation
+     * @param Requests\GetEmailAttachmentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEmailAttachmentAsyncWithHttpInfo(Requests\getEmailAttachmentRequest $request) 
+    public function getEmailAttachmentAsyncWithHttpInfo(Requests\GetEmailAttachmentRequest $request) 
     {
         $returnType = '\SplFileObject';
         $request = $this->getEmailAttachmentRequest($request);
@@ -14112,12 +14112,12 @@ class EmailApi
     /**
      * Create request for operation 'getEmailAttachment'
      *
-     * @param Requests\getEmailAttachmentRequest $request is a request object for operation
+     * @param Requests\GetEmailAttachmentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getEmailAttachmentRequest(Requests\getEmailAttachmentRequest $request)
+    protected function getEmailAttachmentRequest(Requests\GetEmailAttachmentRequest $request)
     {
         // verify the required parameter 'attachment' is set
         if ($request->attachment === null) {
@@ -14255,13 +14255,13 @@ class EmailApi
      *
      * Get an email document property by its name
      *
-     * @param Requests\getEmailPropertyRequest $request is a request object for operation
+     * @param Requests\GetEmailPropertyRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Email\Model\EmailPropertyResponse
      */
-    public function getEmailProperty(Requests\getEmailPropertyRequest $request)
+    public function getEmailProperty(Requests\GetEmailPropertyRequest $request)
     {
         try {
              list($response) = $this->getEmailPropertyWithHttpInfo($request);
@@ -14278,13 +14278,13 @@ class EmailApi
      *
      * Get an email document property by its name
      *
-     * @param Requests\getEmailPropertyRequest $request is a request object for operation
+     * @param Requests\GetEmailPropertyRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Email\Model\EmailPropertyResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getEmailPropertyWithHttpInfo(Requests\getEmailPropertyRequest $request)
+    public function getEmailPropertyWithHttpInfo(Requests\GetEmailPropertyRequest $request)
     {
         $returnType = '\Aspose\Email\Model\EmailPropertyResponse';
         $request = $this->getEmailPropertyRequest($request);
@@ -14344,12 +14344,12 @@ class EmailApi
      *
      * Get an email document property by its name
      *
-     * @param Requests\getEmailPropertyRequest $request is a request object for operation
+     * @param Requests\GetEmailPropertyRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEmailPropertyAsync(Requests\getEmailPropertyRequest $request) 
+    public function getEmailPropertyAsync(Requests\GetEmailPropertyRequest $request) 
     {
         return $this->getEmailPropertyAsyncWithHttpInfo($request)
             ->then(
@@ -14364,12 +14364,12 @@ class EmailApi
      *
      * Get an email document property by its name
      *
-     * @param Requests\getEmailPropertyRequest $request is a request object for operation
+     * @param Requests\GetEmailPropertyRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getEmailPropertyAsyncWithHttpInfo(Requests\getEmailPropertyRequest $request) 
+    public function getEmailPropertyAsyncWithHttpInfo(Requests\GetEmailPropertyRequest $request) 
     {
         $returnType = '\Aspose\Email\Model\EmailPropertyResponse';
         $request = $this->getEmailPropertyRequest($request);
@@ -14417,12 +14417,12 @@ class EmailApi
     /**
      * Create request for operation 'getEmailProperty'
      *
-     * @param Requests\getEmailPropertyRequest $request is a request object for operation
+     * @param Requests\GetEmailPropertyRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getEmailPropertyRequest(Requests\getEmailPropertyRequest $request)
+    protected function getEmailPropertyRequest(Requests\GetEmailPropertyRequest $request)
     {
         // verify the required parameter 'property_name' is set
         if ($request->property_name === null) {
@@ -14560,13 +14560,13 @@ class EmailApi
      *
      * Get file versions
      *
-     * @param Requests\getFileVersionsRequest $request is a request object for operation
+     * @param Requests\GetFileVersionsRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Email\Model\FileVersions
      */
-    public function getFileVersions(Requests\getFileVersionsRequest $request)
+    public function getFileVersions(Requests\GetFileVersionsRequest $request)
     {
         try {
              list($response) = $this->getFileVersionsWithHttpInfo($request);
@@ -14583,13 +14583,13 @@ class EmailApi
      *
      * Get file versions
      *
-     * @param Requests\getFileVersionsRequest $request is a request object for operation
+     * @param Requests\GetFileVersionsRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Email\Model\FileVersions, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getFileVersionsWithHttpInfo(Requests\getFileVersionsRequest $request)
+    public function getFileVersionsWithHttpInfo(Requests\GetFileVersionsRequest $request)
     {
         $returnType = '\Aspose\Email\Model\FileVersions';
         $request = $this->getFileVersionsRequest($request);
@@ -14649,12 +14649,12 @@ class EmailApi
      *
      * Get file versions
      *
-     * @param Requests\getFileVersionsRequest $request is a request object for operation
+     * @param Requests\GetFileVersionsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getFileVersionsAsync(Requests\getFileVersionsRequest $request) 
+    public function getFileVersionsAsync(Requests\GetFileVersionsRequest $request) 
     {
         return $this->getFileVersionsAsyncWithHttpInfo($request)
             ->then(
@@ -14669,12 +14669,12 @@ class EmailApi
      *
      * Get file versions
      *
-     * @param Requests\getFileVersionsRequest $request is a request object for operation
+     * @param Requests\GetFileVersionsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getFileVersionsAsyncWithHttpInfo(Requests\getFileVersionsRequest $request) 
+    public function getFileVersionsAsyncWithHttpInfo(Requests\GetFileVersionsRequest $request) 
     {
         $returnType = '\Aspose\Email\Model\FileVersions';
         $request = $this->getFileVersionsRequest($request);
@@ -14722,12 +14722,12 @@ class EmailApi
     /**
      * Create request for operation 'getFileVersions'
      *
-     * @param Requests\getFileVersionsRequest $request is a request object for operation
+     * @param Requests\GetFileVersionsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getFileVersionsRequest(Requests\getFileVersionsRequest $request)
+    protected function getFileVersionsRequest(Requests\GetFileVersionsRequest $request)
     {
         // verify the required parameter 'path' is set
         if ($request->path === null) {
@@ -14846,13 +14846,13 @@ class EmailApi
      *
      * Get all files and folders within a folder
      *
-     * @param Requests\getFilesListRequest $request is a request object for operation
+     * @param Requests\GetFilesListRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Email\Model\FilesList
      */
-    public function getFilesList(Requests\getFilesListRequest $request)
+    public function getFilesList(Requests\GetFilesListRequest $request)
     {
         try {
              list($response) = $this->getFilesListWithHttpInfo($request);
@@ -14869,13 +14869,13 @@ class EmailApi
      *
      * Get all files and folders within a folder
      *
-     * @param Requests\getFilesListRequest $request is a request object for operation
+     * @param Requests\GetFilesListRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Email\Model\FilesList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getFilesListWithHttpInfo(Requests\getFilesListRequest $request)
+    public function getFilesListWithHttpInfo(Requests\GetFilesListRequest $request)
     {
         $returnType = '\Aspose\Email\Model\FilesList';
         $request = $this->getFilesListRequest($request);
@@ -14935,12 +14935,12 @@ class EmailApi
      *
      * Get all files and folders within a folder
      *
-     * @param Requests\getFilesListRequest $request is a request object for operation
+     * @param Requests\GetFilesListRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getFilesListAsync(Requests\getFilesListRequest $request) 
+    public function getFilesListAsync(Requests\GetFilesListRequest $request) 
     {
         return $this->getFilesListAsyncWithHttpInfo($request)
             ->then(
@@ -14955,12 +14955,12 @@ class EmailApi
      *
      * Get all files and folders within a folder
      *
-     * @param Requests\getFilesListRequest $request is a request object for operation
+     * @param Requests\GetFilesListRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getFilesListAsyncWithHttpInfo(Requests\getFilesListRequest $request) 
+    public function getFilesListAsyncWithHttpInfo(Requests\GetFilesListRequest $request) 
     {
         $returnType = '\Aspose\Email\Model\FilesList';
         $request = $this->getFilesListRequest($request);
@@ -15008,12 +15008,12 @@ class EmailApi
     /**
      * Create request for operation 'getFilesList'
      *
-     * @param Requests\getFilesListRequest $request is a request object for operation
+     * @param Requests\GetFilesListRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getFilesListRequest(Requests\getFilesListRequest $request)
+    protected function getFilesListRequest(Requests\GetFilesListRequest $request)
     {
         // verify the required parameter 'path' is set
         if ($request->path === null) {
@@ -15132,13 +15132,13 @@ class EmailApi
      *
      * Get document attachment as file stream
      *
-     * @param Requests\getMapiAttachmentRequest $request is a request object for operation
+     * @param Requests\GetMapiAttachmentRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \SplFileObject
      */
-    public function getMapiAttachment(Requests\getMapiAttachmentRequest $request)
+    public function getMapiAttachment(Requests\GetMapiAttachmentRequest $request)
     {
         try {
              list($response) = $this->getMapiAttachmentWithHttpInfo($request);
@@ -15155,13 +15155,13 @@ class EmailApi
      *
      * Get document attachment as file stream
      *
-     * @param Requests\getMapiAttachmentRequest $request is a request object for operation
+     * @param Requests\GetMapiAttachmentRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getMapiAttachmentWithHttpInfo(Requests\getMapiAttachmentRequest $request)
+    public function getMapiAttachmentWithHttpInfo(Requests\GetMapiAttachmentRequest $request)
     {
         $returnType = '\SplFileObject';
         $request = $this->getMapiAttachmentRequest($request);
@@ -15221,12 +15221,12 @@ class EmailApi
      *
      * Get document attachment as file stream
      *
-     * @param Requests\getMapiAttachmentRequest $request is a request object for operation
+     * @param Requests\GetMapiAttachmentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getMapiAttachmentAsync(Requests\getMapiAttachmentRequest $request) 
+    public function getMapiAttachmentAsync(Requests\GetMapiAttachmentRequest $request) 
     {
         return $this->getMapiAttachmentAsyncWithHttpInfo($request)
             ->then(
@@ -15241,12 +15241,12 @@ class EmailApi
      *
      * Get document attachment as file stream
      *
-     * @param Requests\getMapiAttachmentRequest $request is a request object for operation
+     * @param Requests\GetMapiAttachmentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getMapiAttachmentAsyncWithHttpInfo(Requests\getMapiAttachmentRequest $request) 
+    public function getMapiAttachmentAsyncWithHttpInfo(Requests\GetMapiAttachmentRequest $request) 
     {
         $returnType = '\SplFileObject';
         $request = $this->getMapiAttachmentRequest($request);
@@ -15294,12 +15294,12 @@ class EmailApi
     /**
      * Create request for operation 'getMapiAttachment'
      *
-     * @param Requests\getMapiAttachmentRequest $request is a request object for operation
+     * @param Requests\GetMapiAttachmentRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getMapiAttachmentRequest(Requests\getMapiAttachmentRequest $request)
+    protected function getMapiAttachmentRequest(Requests\GetMapiAttachmentRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -15437,13 +15437,13 @@ class EmailApi
      *
      * Get document attachment list
      *
-     * @param Requests\getMapiAttachmentsRequest $request is a request object for operation
+     * @param Requests\GetMapiAttachmentsRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Email\Model\ListResponseOfString
      */
-    public function getMapiAttachments(Requests\getMapiAttachmentsRequest $request)
+    public function getMapiAttachments(Requests\GetMapiAttachmentsRequest $request)
     {
         try {
              list($response) = $this->getMapiAttachmentsWithHttpInfo($request);
@@ -15460,13 +15460,13 @@ class EmailApi
      *
      * Get document attachment list
      *
-     * @param Requests\getMapiAttachmentsRequest $request is a request object for operation
+     * @param Requests\GetMapiAttachmentsRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Email\Model\ListResponseOfString, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getMapiAttachmentsWithHttpInfo(Requests\getMapiAttachmentsRequest $request)
+    public function getMapiAttachmentsWithHttpInfo(Requests\GetMapiAttachmentsRequest $request)
     {
         $returnType = '\Aspose\Email\Model\ListResponseOfString';
         $request = $this->getMapiAttachmentsRequest($request);
@@ -15526,12 +15526,12 @@ class EmailApi
      *
      * Get document attachment list
      *
-     * @param Requests\getMapiAttachmentsRequest $request is a request object for operation
+     * @param Requests\GetMapiAttachmentsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getMapiAttachmentsAsync(Requests\getMapiAttachmentsRequest $request) 
+    public function getMapiAttachmentsAsync(Requests\GetMapiAttachmentsRequest $request) 
     {
         return $this->getMapiAttachmentsAsyncWithHttpInfo($request)
             ->then(
@@ -15546,12 +15546,12 @@ class EmailApi
      *
      * Get document attachment list
      *
-     * @param Requests\getMapiAttachmentsRequest $request is a request object for operation
+     * @param Requests\GetMapiAttachmentsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getMapiAttachmentsAsyncWithHttpInfo(Requests\getMapiAttachmentsRequest $request) 
+    public function getMapiAttachmentsAsyncWithHttpInfo(Requests\GetMapiAttachmentsRequest $request) 
     {
         $returnType = '\Aspose\Email\Model\ListResponseOfString';
         $request = $this->getMapiAttachmentsRequest($request);
@@ -15599,12 +15599,12 @@ class EmailApi
     /**
      * Create request for operation 'getMapiAttachments'
      *
-     * @param Requests\getMapiAttachmentsRequest $request is a request object for operation
+     * @param Requests\GetMapiAttachmentsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getMapiAttachmentsRequest(Requests\getMapiAttachmentsRequest $request)
+    protected function getMapiAttachmentsRequest(Requests\GetMapiAttachmentsRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -15733,13 +15733,13 @@ class EmailApi
      *
      * Get document list from storage folder
      *
-     * @param Requests\getMapiListRequest $request is a request object for operation
+     * @param Requests\GetMapiListRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Email\Model\ListResponseOfHierarchicalObjectResponse
      */
-    public function getMapiList(Requests\getMapiListRequest $request)
+    public function getMapiList(Requests\GetMapiListRequest $request)
     {
         try {
              list($response) = $this->getMapiListWithHttpInfo($request);
@@ -15756,13 +15756,13 @@ class EmailApi
      *
      * Get document list from storage folder
      *
-     * @param Requests\getMapiListRequest $request is a request object for operation
+     * @param Requests\GetMapiListRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Email\Model\ListResponseOfHierarchicalObjectResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getMapiListWithHttpInfo(Requests\getMapiListRequest $request)
+    public function getMapiListWithHttpInfo(Requests\GetMapiListRequest $request)
     {
         $returnType = '\Aspose\Email\Model\ListResponseOfHierarchicalObjectResponse';
         $request = $this->getMapiListRequest($request);
@@ -15822,12 +15822,12 @@ class EmailApi
      *
      * Get document list from storage folder
      *
-     * @param Requests\getMapiListRequest $request is a request object for operation
+     * @param Requests\GetMapiListRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getMapiListAsync(Requests\getMapiListRequest $request) 
+    public function getMapiListAsync(Requests\GetMapiListRequest $request) 
     {
         return $this->getMapiListAsyncWithHttpInfo($request)
             ->then(
@@ -15842,12 +15842,12 @@ class EmailApi
      *
      * Get document list from storage folder
      *
-     * @param Requests\getMapiListRequest $request is a request object for operation
+     * @param Requests\GetMapiListRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getMapiListAsyncWithHttpInfo(Requests\getMapiListRequest $request) 
+    public function getMapiListAsyncWithHttpInfo(Requests\GetMapiListRequest $request) 
     {
         $returnType = '\Aspose\Email\Model\ListResponseOfHierarchicalObjectResponse';
         $request = $this->getMapiListRequest($request);
@@ -15895,12 +15895,12 @@ class EmailApi
     /**
      * Create request for operation 'getMapiList'
      *
-     * @param Requests\getMapiListRequest $request is a request object for operation
+     * @param Requests\GetMapiListRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getMapiListRequest(Requests\getMapiListRequest $request)
+    protected function getMapiListRequest(Requests\GetMapiListRequest $request)
     {
 
         $resourcePath = '/email/Mapi';
@@ -16040,13 +16040,13 @@ class EmailApi
      *
      * Get document properties
      *
-     * @param Requests\getMapiPropertiesRequest $request is a request object for operation
+     * @param Requests\GetMapiPropertiesRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Email\Model\HierarchicalObjectResponse
      */
-    public function getMapiProperties(Requests\getMapiPropertiesRequest $request)
+    public function getMapiProperties(Requests\GetMapiPropertiesRequest $request)
     {
         try {
              list($response) = $this->getMapiPropertiesWithHttpInfo($request);
@@ -16063,13 +16063,13 @@ class EmailApi
      *
      * Get document properties
      *
-     * @param Requests\getMapiPropertiesRequest $request is a request object for operation
+     * @param Requests\GetMapiPropertiesRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Email\Model\HierarchicalObjectResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getMapiPropertiesWithHttpInfo(Requests\getMapiPropertiesRequest $request)
+    public function getMapiPropertiesWithHttpInfo(Requests\GetMapiPropertiesRequest $request)
     {
         $returnType = '\Aspose\Email\Model\HierarchicalObjectResponse';
         $request = $this->getMapiPropertiesRequest($request);
@@ -16129,12 +16129,12 @@ class EmailApi
      *
      * Get document properties
      *
-     * @param Requests\getMapiPropertiesRequest $request is a request object for operation
+     * @param Requests\GetMapiPropertiesRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getMapiPropertiesAsync(Requests\getMapiPropertiesRequest $request) 
+    public function getMapiPropertiesAsync(Requests\GetMapiPropertiesRequest $request) 
     {
         return $this->getMapiPropertiesAsyncWithHttpInfo($request)
             ->then(
@@ -16149,12 +16149,12 @@ class EmailApi
      *
      * Get document properties
      *
-     * @param Requests\getMapiPropertiesRequest $request is a request object for operation
+     * @param Requests\GetMapiPropertiesRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getMapiPropertiesAsyncWithHttpInfo(Requests\getMapiPropertiesRequest $request) 
+    public function getMapiPropertiesAsyncWithHttpInfo(Requests\GetMapiPropertiesRequest $request) 
     {
         $returnType = '\Aspose\Email\Model\HierarchicalObjectResponse';
         $request = $this->getMapiPropertiesRequest($request);
@@ -16202,12 +16202,12 @@ class EmailApi
     /**
      * Create request for operation 'getMapiProperties'
      *
-     * @param Requests\getMapiPropertiesRequest $request is a request object for operation
+     * @param Requests\GetMapiPropertiesRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getMapiPropertiesRequest(Requests\getMapiPropertiesRequest $request)
+    protected function getMapiPropertiesRequest(Requests\GetMapiPropertiesRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -16336,13 +16336,13 @@ class EmailApi
      *
      * Get folders list in email account
      *
-     * @param Requests\listEmailFoldersRequest $request is a request object for operation
+     * @param Requests\ListEmailFoldersRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Email\Model\ListResponseOfMailServerFolder
      */
-    public function listEmailFolders(Requests\listEmailFoldersRequest $request)
+    public function listEmailFolders(Requests\ListEmailFoldersRequest $request)
     {
         try {
              list($response) = $this->listEmailFoldersWithHttpInfo($request);
@@ -16359,13 +16359,13 @@ class EmailApi
      *
      * Get folders list in email account
      *
-     * @param Requests\listEmailFoldersRequest $request is a request object for operation
+     * @param Requests\ListEmailFoldersRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Email\Model\ListResponseOfMailServerFolder, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listEmailFoldersWithHttpInfo(Requests\listEmailFoldersRequest $request)
+    public function listEmailFoldersWithHttpInfo(Requests\ListEmailFoldersRequest $request)
     {
         $returnType = '\Aspose\Email\Model\ListResponseOfMailServerFolder';
         $request = $this->listEmailFoldersRequest($request);
@@ -16425,12 +16425,12 @@ class EmailApi
      *
      * Get folders list in email account
      *
-     * @param Requests\listEmailFoldersRequest $request is a request object for operation
+     * @param Requests\ListEmailFoldersRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listEmailFoldersAsync(Requests\listEmailFoldersRequest $request) 
+    public function listEmailFoldersAsync(Requests\ListEmailFoldersRequest $request) 
     {
         return $this->listEmailFoldersAsyncWithHttpInfo($request)
             ->then(
@@ -16445,12 +16445,12 @@ class EmailApi
      *
      * Get folders list in email account
      *
-     * @param Requests\listEmailFoldersRequest $request is a request object for operation
+     * @param Requests\ListEmailFoldersRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listEmailFoldersAsyncWithHttpInfo(Requests\listEmailFoldersRequest $request) 
+    public function listEmailFoldersAsyncWithHttpInfo(Requests\ListEmailFoldersRequest $request) 
     {
         $returnType = '\Aspose\Email\Model\ListResponseOfMailServerFolder';
         $request = $this->listEmailFoldersRequest($request);
@@ -16498,12 +16498,12 @@ class EmailApi
     /**
      * Create request for operation 'listEmailFolders'
      *
-     * @param Requests\listEmailFoldersRequest $request is a request object for operation
+     * @param Requests\ListEmailFoldersRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listEmailFoldersRequest(Requests\listEmailFoldersRequest $request)
+    protected function listEmailFoldersRequest(Requests\ListEmailFoldersRequest $request)
     {
         // verify the required parameter 'first_account' is set
         if ($request->first_account === null) {
@@ -16657,13 +16657,13 @@ class EmailApi
      *
      * Get messages from folder, filtered by query
      *
-     * @param Requests\listEmailMessagesRequest $request is a request object for operation
+     * @param Requests\ListEmailMessagesRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Email\Model\ListResponseOfString
      */
-    public function listEmailMessages(Requests\listEmailMessagesRequest $request)
+    public function listEmailMessages(Requests\ListEmailMessagesRequest $request)
     {
         try {
              list($response) = $this->listEmailMessagesWithHttpInfo($request);
@@ -16680,13 +16680,13 @@ class EmailApi
      *
      * Get messages from folder, filtered by query
      *
-     * @param Requests\listEmailMessagesRequest $request is a request object for operation
+     * @param Requests\ListEmailMessagesRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Email\Model\ListResponseOfString, HTTP status code, HTTP response headers (array of strings)
      */
-    public function listEmailMessagesWithHttpInfo(Requests\listEmailMessagesRequest $request)
+    public function listEmailMessagesWithHttpInfo(Requests\ListEmailMessagesRequest $request)
     {
         $returnType = '\Aspose\Email\Model\ListResponseOfString';
         $request = $this->listEmailMessagesRequest($request);
@@ -16746,12 +16746,12 @@ class EmailApi
      *
      * Get messages from folder, filtered by query
      *
-     * @param Requests\listEmailMessagesRequest $request is a request object for operation
+     * @param Requests\ListEmailMessagesRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listEmailMessagesAsync(Requests\listEmailMessagesRequest $request) 
+    public function listEmailMessagesAsync(Requests\ListEmailMessagesRequest $request) 
     {
         return $this->listEmailMessagesAsyncWithHttpInfo($request)
             ->then(
@@ -16766,12 +16766,12 @@ class EmailApi
      *
      * Get messages from folder, filtered by query
      *
-     * @param Requests\listEmailMessagesRequest $request is a request object for operation
+     * @param Requests\ListEmailMessagesRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function listEmailMessagesAsyncWithHttpInfo(Requests\listEmailMessagesRequest $request) 
+    public function listEmailMessagesAsyncWithHttpInfo(Requests\ListEmailMessagesRequest $request) 
     {
         $returnType = '\Aspose\Email\Model\ListResponseOfString';
         $request = $this->listEmailMessagesRequest($request);
@@ -16819,12 +16819,12 @@ class EmailApi
     /**
      * Create request for operation 'listEmailMessages'
      *
-     * @param Requests\listEmailMessagesRequest $request is a request object for operation
+     * @param Requests\ListEmailMessagesRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function listEmailMessagesRequest(Requests\listEmailMessagesRequest $request)
+    protected function listEmailMessagesRequest(Requests\ListEmailMessagesRequest $request)
     {
         // verify the required parameter 'folder' is set
         if ($request->folder === null) {
@@ -17006,13 +17006,13 @@ class EmailApi
      *
      * Move file
      *
-     * @param Requests\moveFileRequest $request is a request object for operation
+     * @param Requests\MoveFileRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function moveFile(Requests\moveFileRequest $request)
+    public function moveFile(Requests\MoveFileRequest $request)
     {
         try {
              $this->moveFileWithHttpInfo($request);
@@ -17027,13 +17027,13 @@ class EmailApi
      *
      * Move file
      *
-     * @param Requests\moveFileRequest $request is a request object for operation
+     * @param Requests\MoveFileRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function moveFileWithHttpInfo(Requests\moveFileRequest $request)
+    public function moveFileWithHttpInfo(Requests\MoveFileRequest $request)
     {
         $returnType = '';
         $request = $this->moveFileRequest($request);
@@ -17071,12 +17071,12 @@ class EmailApi
      *
      * Move file
      *
-     * @param Requests\moveFileRequest $request is a request object for operation
+     * @param Requests\MoveFileRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function moveFileAsync(Requests\moveFileRequest $request) 
+    public function moveFileAsync(Requests\MoveFileRequest $request) 
     {
         return $this->moveFileAsyncWithHttpInfo($request)
             ->then(
@@ -17091,12 +17091,12 @@ class EmailApi
      *
      * Move file
      *
-     * @param Requests\moveFileRequest $request is a request object for operation
+     * @param Requests\MoveFileRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function moveFileAsyncWithHttpInfo(Requests\moveFileRequest $request) 
+    public function moveFileAsyncWithHttpInfo(Requests\MoveFileRequest $request) 
     {
         $returnType = '';
         $request = $this->moveFileRequest($request);
@@ -17126,12 +17126,12 @@ class EmailApi
     /**
      * Create request for operation 'moveFile'
      *
-     * @param Requests\moveFileRequest $request is a request object for operation
+     * @param Requests\MoveFileRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function moveFileRequest(Requests\moveFileRequest $request)
+    protected function moveFileRequest(Requests\MoveFileRequest $request)
     {
         // verify the required parameter 'src_path' is set
         if ($request->src_path === null) {
@@ -17284,13 +17284,13 @@ class EmailApi
      *
      * Move folder
      *
-     * @param Requests\moveFolderRequest $request is a request object for operation
+     * @param Requests\MoveFolderRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function moveFolder(Requests\moveFolderRequest $request)
+    public function moveFolder(Requests\MoveFolderRequest $request)
     {
         try {
              $this->moveFolderWithHttpInfo($request);
@@ -17305,13 +17305,13 @@ class EmailApi
      *
      * Move folder
      *
-     * @param Requests\moveFolderRequest $request is a request object for operation
+     * @param Requests\MoveFolderRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function moveFolderWithHttpInfo(Requests\moveFolderRequest $request)
+    public function moveFolderWithHttpInfo(Requests\MoveFolderRequest $request)
     {
         $returnType = '';
         $request = $this->moveFolderRequest($request);
@@ -17349,12 +17349,12 @@ class EmailApi
      *
      * Move folder
      *
-     * @param Requests\moveFolderRequest $request is a request object for operation
+     * @param Requests\MoveFolderRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function moveFolderAsync(Requests\moveFolderRequest $request) 
+    public function moveFolderAsync(Requests\MoveFolderRequest $request) 
     {
         return $this->moveFolderAsyncWithHttpInfo($request)
             ->then(
@@ -17369,12 +17369,12 @@ class EmailApi
      *
      * Move folder
      *
-     * @param Requests\moveFolderRequest $request is a request object for operation
+     * @param Requests\MoveFolderRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function moveFolderAsyncWithHttpInfo(Requests\moveFolderRequest $request) 
+    public function moveFolderAsyncWithHttpInfo(Requests\MoveFolderRequest $request) 
     {
         $returnType = '';
         $request = $this->moveFolderRequest($request);
@@ -17404,12 +17404,12 @@ class EmailApi
     /**
      * Create request for operation 'moveFolder'
      *
-     * @param Requests\moveFolderRequest $request is a request object for operation
+     * @param Requests\MoveFolderRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function moveFolderRequest(Requests\moveFolderRequest $request)
+    protected function moveFolderRequest(Requests\MoveFolderRequest $request)
     {
         // verify the required parameter 'src_path' is set
         if ($request->src_path === null) {
@@ -17552,13 +17552,13 @@ class EmailApi
      *
      * Check if file or folder exists
      *
-     * @param Requests\objectExistsRequest $request is a request object for operation
+     * @param Requests\ObjectExistsRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Email\Model\ObjectExist
      */
-    public function objectExists(Requests\objectExistsRequest $request)
+    public function objectExists(Requests\ObjectExistsRequest $request)
     {
         try {
              list($response) = $this->objectExistsWithHttpInfo($request);
@@ -17575,13 +17575,13 @@ class EmailApi
      *
      * Check if file or folder exists
      *
-     * @param Requests\objectExistsRequest $request is a request object for operation
+     * @param Requests\ObjectExistsRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Email\Model\ObjectExist, HTTP status code, HTTP response headers (array of strings)
      */
-    public function objectExistsWithHttpInfo(Requests\objectExistsRequest $request)
+    public function objectExistsWithHttpInfo(Requests\ObjectExistsRequest $request)
     {
         $returnType = '\Aspose\Email\Model\ObjectExist';
         $request = $this->objectExistsRequest($request);
@@ -17641,12 +17641,12 @@ class EmailApi
      *
      * Check if file or folder exists
      *
-     * @param Requests\objectExistsRequest $request is a request object for operation
+     * @param Requests\ObjectExistsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function objectExistsAsync(Requests\objectExistsRequest $request) 
+    public function objectExistsAsync(Requests\ObjectExistsRequest $request) 
     {
         return $this->objectExistsAsyncWithHttpInfo($request)
             ->then(
@@ -17661,12 +17661,12 @@ class EmailApi
      *
      * Check if file or folder exists
      *
-     * @param Requests\objectExistsRequest $request is a request object for operation
+     * @param Requests\ObjectExistsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function objectExistsAsyncWithHttpInfo(Requests\objectExistsRequest $request) 
+    public function objectExistsAsyncWithHttpInfo(Requests\ObjectExistsRequest $request) 
     {
         $returnType = '\Aspose\Email\Model\ObjectExist';
         $request = $this->objectExistsRequest($request);
@@ -17714,12 +17714,12 @@ class EmailApi
     /**
      * Create request for operation 'objectExists'
      *
-     * @param Requests\objectExistsRequest $request is a request object for operation
+     * @param Requests\ObjectExistsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function objectExistsRequest(Requests\objectExistsRequest $request)
+    protected function objectExistsRequest(Requests\ObjectExistsRequest $request)
     {
         // verify the required parameter 'path' is set
         if ($request->path === null) {
@@ -17848,13 +17848,13 @@ class EmailApi
      *
      * Create email account file (*.account) with login/password authentication
      *
-     * @param Requests\saveMailAccountRequest $request is a request object for operation
+     * @param Requests\SaveMailAccountRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function saveMailAccount(Requests\saveMailAccountRequest $request)
+    public function saveMailAccount(Requests\SaveMailAccountRequest $request)
     {
         try {
              $this->saveMailAccountWithHttpInfo($request);
@@ -17869,13 +17869,13 @@ class EmailApi
      *
      * Create email account file (*.account) with login/password authentication
      *
-     * @param Requests\saveMailAccountRequest $request is a request object for operation
+     * @param Requests\SaveMailAccountRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function saveMailAccountWithHttpInfo(Requests\saveMailAccountRequest $request)
+    public function saveMailAccountWithHttpInfo(Requests\SaveMailAccountRequest $request)
     {
         $returnType = '';
         $request = $this->saveMailAccountRequest($request);
@@ -17913,12 +17913,12 @@ class EmailApi
      *
      * Create email account file (*.account) with login/password authentication
      *
-     * @param Requests\saveMailAccountRequest $request is a request object for operation
+     * @param Requests\SaveMailAccountRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function saveMailAccountAsync(Requests\saveMailAccountRequest $request) 
+    public function saveMailAccountAsync(Requests\SaveMailAccountRequest $request) 
     {
         return $this->saveMailAccountAsyncWithHttpInfo($request)
             ->then(
@@ -17933,12 +17933,12 @@ class EmailApi
      *
      * Create email account file (*.account) with login/password authentication
      *
-     * @param Requests\saveMailAccountRequest $request is a request object for operation
+     * @param Requests\SaveMailAccountRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function saveMailAccountAsyncWithHttpInfo(Requests\saveMailAccountRequest $request) 
+    public function saveMailAccountAsyncWithHttpInfo(Requests\SaveMailAccountRequest $request) 
     {
         $returnType = '';
         $request = $this->saveMailAccountRequest($request);
@@ -17968,12 +17968,12 @@ class EmailApi
     /**
      * Create request for operation 'saveMailAccount'
      *
-     * @param Requests\saveMailAccountRequest $request is a request object for operation
+     * @param Requests\SaveMailAccountRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function saveMailAccountRequest(Requests\saveMailAccountRequest $request)
+    protected function saveMailAccountRequest(Requests\SaveMailAccountRequest $request)
     {
         // verify the required parameter 'request' is set
         if ($request->request === null) {
@@ -18084,13 +18084,13 @@ class EmailApi
      *
      * Create email account file (*.account) with OAuth
      *
-     * @param Requests\saveMailOAuthAccountRequest $request is a request object for operation
+     * @param Requests\SaveMailOAuthAccountRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function saveMailOAuthAccount(Requests\saveMailOAuthAccountRequest $request)
+    public function saveMailOAuthAccount(Requests\SaveMailOAuthAccountRequest $request)
     {
         try {
              $this->saveMailOAuthAccountWithHttpInfo($request);
@@ -18105,13 +18105,13 @@ class EmailApi
      *
      * Create email account file (*.account) with OAuth
      *
-     * @param Requests\saveMailOAuthAccountRequest $request is a request object for operation
+     * @param Requests\SaveMailOAuthAccountRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function saveMailOAuthAccountWithHttpInfo(Requests\saveMailOAuthAccountRequest $request)
+    public function saveMailOAuthAccountWithHttpInfo(Requests\SaveMailOAuthAccountRequest $request)
     {
         $returnType = '';
         $request = $this->saveMailOAuthAccountRequest($request);
@@ -18149,12 +18149,12 @@ class EmailApi
      *
      * Create email account file (*.account) with OAuth
      *
-     * @param Requests\saveMailOAuthAccountRequest $request is a request object for operation
+     * @param Requests\SaveMailOAuthAccountRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function saveMailOAuthAccountAsync(Requests\saveMailOAuthAccountRequest $request) 
+    public function saveMailOAuthAccountAsync(Requests\SaveMailOAuthAccountRequest $request) 
     {
         return $this->saveMailOAuthAccountAsyncWithHttpInfo($request)
             ->then(
@@ -18169,12 +18169,12 @@ class EmailApi
      *
      * Create email account file (*.account) with OAuth
      *
-     * @param Requests\saveMailOAuthAccountRequest $request is a request object for operation
+     * @param Requests\SaveMailOAuthAccountRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function saveMailOAuthAccountAsyncWithHttpInfo(Requests\saveMailOAuthAccountRequest $request) 
+    public function saveMailOAuthAccountAsyncWithHttpInfo(Requests\SaveMailOAuthAccountRequest $request) 
     {
         $returnType = '';
         $request = $this->saveMailOAuthAccountRequest($request);
@@ -18204,12 +18204,12 @@ class EmailApi
     /**
      * Create request for operation 'saveMailOAuthAccount'
      *
-     * @param Requests\saveMailOAuthAccountRequest $request is a request object for operation
+     * @param Requests\SaveMailOAuthAccountRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function saveMailOAuthAccountRequest(Requests\saveMailOAuthAccountRequest $request)
+    protected function saveMailOAuthAccountRequest(Requests\SaveMailOAuthAccountRequest $request)
     {
         // verify the required parameter 'request' is set
         if ($request->request === null) {
@@ -18320,13 +18320,13 @@ class EmailApi
      *
      * Send an email from *.eml file located on storage
      *
-     * @param Requests\sendEmailRequest $request is a request object for operation
+     * @param Requests\SendEmailRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function sendEmail(Requests\sendEmailRequest $request)
+    public function sendEmail(Requests\SendEmailRequest $request)
     {
         try {
              $this->sendEmailWithHttpInfo($request);
@@ -18341,13 +18341,13 @@ class EmailApi
      *
      * Send an email from *.eml file located on storage
      *
-     * @param Requests\sendEmailRequest $request is a request object for operation
+     * @param Requests\SendEmailRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function sendEmailWithHttpInfo(Requests\sendEmailRequest $request)
+    public function sendEmailWithHttpInfo(Requests\SendEmailRequest $request)
     {
         $returnType = '';
         $request = $this->sendEmailRequest($request);
@@ -18385,12 +18385,12 @@ class EmailApi
      *
      * Send an email from *.eml file located on storage
      *
-     * @param Requests\sendEmailRequest $request is a request object for operation
+     * @param Requests\SendEmailRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sendEmailAsync(Requests\sendEmailRequest $request) 
+    public function sendEmailAsync(Requests\SendEmailRequest $request) 
     {
         return $this->sendEmailAsyncWithHttpInfo($request)
             ->then(
@@ -18405,12 +18405,12 @@ class EmailApi
      *
      * Send an email from *.eml file located on storage
      *
-     * @param Requests\sendEmailRequest $request is a request object for operation
+     * @param Requests\SendEmailRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sendEmailAsyncWithHttpInfo(Requests\sendEmailRequest $request) 
+    public function sendEmailAsyncWithHttpInfo(Requests\SendEmailRequest $request) 
     {
         $returnType = '';
         $request = $this->sendEmailRequest($request);
@@ -18440,12 +18440,12 @@ class EmailApi
     /**
      * Create request for operation 'sendEmail'
      *
-     * @param Requests\sendEmailRequest $request is a request object for operation
+     * @param Requests\SendEmailRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function sendEmailRequest(Requests\sendEmailRequest $request)
+    protected function sendEmailRequest(Requests\SendEmailRequest $request)
     {
         // verify the required parameter 'request' is set
         if ($request->request === null) {
@@ -18556,13 +18556,13 @@ class EmailApi
      *
      * Send an email specified by MIME in request
      *
-     * @param Requests\sendEmailMimeRequest $request is a request object for operation
+     * @param Requests\SendEmailMimeRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function sendEmailMime(Requests\sendEmailMimeRequest $request)
+    public function sendEmailMime(Requests\SendEmailMimeRequest $request)
     {
         try {
              $this->sendEmailMimeWithHttpInfo($request);
@@ -18577,13 +18577,13 @@ class EmailApi
      *
      * Send an email specified by MIME in request
      *
-     * @param Requests\sendEmailMimeRequest $request is a request object for operation
+     * @param Requests\SendEmailMimeRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function sendEmailMimeWithHttpInfo(Requests\sendEmailMimeRequest $request)
+    public function sendEmailMimeWithHttpInfo(Requests\SendEmailMimeRequest $request)
     {
         $returnType = '';
         $request = $this->sendEmailMimeRequest($request);
@@ -18621,12 +18621,12 @@ class EmailApi
      *
      * Send an email specified by MIME in request
      *
-     * @param Requests\sendEmailMimeRequest $request is a request object for operation
+     * @param Requests\SendEmailMimeRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sendEmailMimeAsync(Requests\sendEmailMimeRequest $request) 
+    public function sendEmailMimeAsync(Requests\SendEmailMimeRequest $request) 
     {
         return $this->sendEmailMimeAsyncWithHttpInfo($request)
             ->then(
@@ -18641,12 +18641,12 @@ class EmailApi
      *
      * Send an email specified by MIME in request
      *
-     * @param Requests\sendEmailMimeRequest $request is a request object for operation
+     * @param Requests\SendEmailMimeRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function sendEmailMimeAsyncWithHttpInfo(Requests\sendEmailMimeRequest $request) 
+    public function sendEmailMimeAsyncWithHttpInfo(Requests\SendEmailMimeRequest $request) 
     {
         $returnType = '';
         $request = $this->sendEmailMimeRequest($request);
@@ -18676,12 +18676,12 @@ class EmailApi
     /**
      * Create request for operation 'sendEmailMime'
      *
-     * @param Requests\sendEmailMimeRequest $request is a request object for operation
+     * @param Requests\SendEmailMimeRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function sendEmailMimeRequest(Requests\sendEmailMimeRequest $request)
+    protected function sendEmailMimeRequest(Requests\SendEmailMimeRequest $request)
     {
         // verify the required parameter 'request' is set
         if ($request->request === null) {
@@ -18792,13 +18792,13 @@ class EmailApi
      *
      * Set email document property value
      *
-     * @param Requests\setEmailPropertyRequest $request is a request object for operation
+     * @param Requests\SetEmailPropertyRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Email\Model\EmailPropertyResponse
      */
-    public function setEmailProperty(Requests\setEmailPropertyRequest $request)
+    public function setEmailProperty(Requests\SetEmailPropertyRequest $request)
     {
         try {
              list($response) = $this->setEmailPropertyWithHttpInfo($request);
@@ -18815,13 +18815,13 @@ class EmailApi
      *
      * Set email document property value
      *
-     * @param Requests\setEmailPropertyRequest $request is a request object for operation
+     * @param Requests\SetEmailPropertyRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Email\Model\EmailPropertyResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function setEmailPropertyWithHttpInfo(Requests\setEmailPropertyRequest $request)
+    public function setEmailPropertyWithHttpInfo(Requests\SetEmailPropertyRequest $request)
     {
         $returnType = '\Aspose\Email\Model\EmailPropertyResponse';
         $request = $this->setEmailPropertyRequest($request);
@@ -18881,12 +18881,12 @@ class EmailApi
      *
      * Set email document property value
      *
-     * @param Requests\setEmailPropertyRequest $request is a request object for operation
+     * @param Requests\SetEmailPropertyRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function setEmailPropertyAsync(Requests\setEmailPropertyRequest $request) 
+    public function setEmailPropertyAsync(Requests\SetEmailPropertyRequest $request) 
     {
         return $this->setEmailPropertyAsyncWithHttpInfo($request)
             ->then(
@@ -18901,12 +18901,12 @@ class EmailApi
      *
      * Set email document property value
      *
-     * @param Requests\setEmailPropertyRequest $request is a request object for operation
+     * @param Requests\SetEmailPropertyRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function setEmailPropertyAsyncWithHttpInfo(Requests\setEmailPropertyRequest $request) 
+    public function setEmailPropertyAsyncWithHttpInfo(Requests\SetEmailPropertyRequest $request) 
     {
         $returnType = '\Aspose\Email\Model\EmailPropertyResponse';
         $request = $this->setEmailPropertyRequest($request);
@@ -18954,12 +18954,12 @@ class EmailApi
     /**
      * Create request for operation 'setEmailProperty'
      *
-     * @param Requests\setEmailPropertyRequest $request is a request object for operation
+     * @param Requests\SetEmailPropertyRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function setEmailPropertyRequest(Requests\setEmailPropertyRequest $request)
+    protected function setEmailPropertyRequest(Requests\SetEmailPropertyRequest $request)
     {
         // verify the required parameter 'property_name' is set
         if ($request->property_name === null) {
@@ -19088,13 +19088,13 @@ class EmailApi
      *
      * Sets \"Message is read\" flag
      *
-     * @param Requests\setEmailReadFlagRequest $request is a request object for operation
+     * @param Requests\SetEmailReadFlagRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function setEmailReadFlag(Requests\setEmailReadFlagRequest $request)
+    public function setEmailReadFlag(Requests\SetEmailReadFlagRequest $request)
     {
         try {
              $this->setEmailReadFlagWithHttpInfo($request);
@@ -19109,13 +19109,13 @@ class EmailApi
      *
      * Sets \"Message is read\" flag
      *
-     * @param Requests\setEmailReadFlagRequest $request is a request object for operation
+     * @param Requests\SetEmailReadFlagRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function setEmailReadFlagWithHttpInfo(Requests\setEmailReadFlagRequest $request)
+    public function setEmailReadFlagWithHttpInfo(Requests\SetEmailReadFlagRequest $request)
     {
         $returnType = '';
         $request = $this->setEmailReadFlagRequest($request);
@@ -19153,12 +19153,12 @@ class EmailApi
      *
      * Sets \"Message is read\" flag
      *
-     * @param Requests\setEmailReadFlagRequest $request is a request object for operation
+     * @param Requests\SetEmailReadFlagRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function setEmailReadFlagAsync(Requests\setEmailReadFlagRequest $request) 
+    public function setEmailReadFlagAsync(Requests\SetEmailReadFlagRequest $request) 
     {
         return $this->setEmailReadFlagAsyncWithHttpInfo($request)
             ->then(
@@ -19173,12 +19173,12 @@ class EmailApi
      *
      * Sets \"Message is read\" flag
      *
-     * @param Requests\setEmailReadFlagRequest $request is a request object for operation
+     * @param Requests\SetEmailReadFlagRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function setEmailReadFlagAsyncWithHttpInfo(Requests\setEmailReadFlagRequest $request) 
+    public function setEmailReadFlagAsyncWithHttpInfo(Requests\SetEmailReadFlagRequest $request) 
     {
         $returnType = '';
         $request = $this->setEmailReadFlagRequest($request);
@@ -19208,12 +19208,12 @@ class EmailApi
     /**
      * Create request for operation 'setEmailReadFlag'
      *
-     * @param Requests\setEmailReadFlagRequest $request is a request object for operation
+     * @param Requests\SetEmailReadFlagRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function setEmailReadFlagRequest(Requests\setEmailReadFlagRequest $request)
+    protected function setEmailReadFlagRequest(Requests\SetEmailReadFlagRequest $request)
     {
         // verify the required parameter 'request' is set
         if ($request->request === null) {
@@ -19324,13 +19324,13 @@ class EmailApi
      *
      * Check if storage exists
      *
-     * @param Requests\storageExistsRequest $request is a request object for operation
+     * @param Requests\StorageExistsRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Email\Model\StorageExist
      */
-    public function storageExists(Requests\storageExistsRequest $request)
+    public function storageExists(Requests\StorageExistsRequest $request)
     {
         try {
              list($response) = $this->storageExistsWithHttpInfo($request);
@@ -19347,13 +19347,13 @@ class EmailApi
      *
      * Check if storage exists
      *
-     * @param Requests\storageExistsRequest $request is a request object for operation
+     * @param Requests\StorageExistsRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Email\Model\StorageExist, HTTP status code, HTTP response headers (array of strings)
      */
-    public function storageExistsWithHttpInfo(Requests\storageExistsRequest $request)
+    public function storageExistsWithHttpInfo(Requests\StorageExistsRequest $request)
     {
         $returnType = '\Aspose\Email\Model\StorageExist';
         $request = $this->storageExistsRequest($request);
@@ -19413,12 +19413,12 @@ class EmailApi
      *
      * Check if storage exists
      *
-     * @param Requests\storageExistsRequest $request is a request object for operation
+     * @param Requests\StorageExistsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function storageExistsAsync(Requests\storageExistsRequest $request) 
+    public function storageExistsAsync(Requests\StorageExistsRequest $request) 
     {
         return $this->storageExistsAsyncWithHttpInfo($request)
             ->then(
@@ -19433,12 +19433,12 @@ class EmailApi
      *
      * Check if storage exists
      *
-     * @param Requests\storageExistsRequest $request is a request object for operation
+     * @param Requests\StorageExistsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function storageExistsAsyncWithHttpInfo(Requests\storageExistsRequest $request) 
+    public function storageExistsAsyncWithHttpInfo(Requests\StorageExistsRequest $request) 
     {
         $returnType = '\Aspose\Email\Model\StorageExist';
         $request = $this->storageExistsRequest($request);
@@ -19486,12 +19486,12 @@ class EmailApi
     /**
      * Create request for operation 'storageExists'
      *
-     * @param Requests\storageExistsRequest $request is a request object for operation
+     * @param Requests\StorageExistsRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function storageExistsRequest(Requests\storageExistsRequest $request)
+    protected function storageExistsRequest(Requests\StorageExistsRequest $request)
     {
         // verify the required parameter 'storage_name' is set
         if ($request->storage_name === null) {
@@ -19600,13 +19600,13 @@ class EmailApi
      *
      * Update calendar file properties
      *
-     * @param Requests\updateCalendarPropertiesRequest $request is a request object for operation
+     * @param Requests\UpdateCalendarPropertiesRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function updateCalendarProperties(Requests\updateCalendarPropertiesRequest $request)
+    public function updateCalendarProperties(Requests\UpdateCalendarPropertiesRequest $request)
     {
         try {
              $this->updateCalendarPropertiesWithHttpInfo($request);
@@ -19621,13 +19621,13 @@ class EmailApi
      *
      * Update calendar file properties
      *
-     * @param Requests\updateCalendarPropertiesRequest $request is a request object for operation
+     * @param Requests\UpdateCalendarPropertiesRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateCalendarPropertiesWithHttpInfo(Requests\updateCalendarPropertiesRequest $request)
+    public function updateCalendarPropertiesWithHttpInfo(Requests\UpdateCalendarPropertiesRequest $request)
     {
         $returnType = '';
         $request = $this->updateCalendarPropertiesRequest($request);
@@ -19665,12 +19665,12 @@ class EmailApi
      *
      * Update calendar file properties
      *
-     * @param Requests\updateCalendarPropertiesRequest $request is a request object for operation
+     * @param Requests\UpdateCalendarPropertiesRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateCalendarPropertiesAsync(Requests\updateCalendarPropertiesRequest $request) 
+    public function updateCalendarPropertiesAsync(Requests\UpdateCalendarPropertiesRequest $request) 
     {
         return $this->updateCalendarPropertiesAsyncWithHttpInfo($request)
             ->then(
@@ -19685,12 +19685,12 @@ class EmailApi
      *
      * Update calendar file properties
      *
-     * @param Requests\updateCalendarPropertiesRequest $request is a request object for operation
+     * @param Requests\UpdateCalendarPropertiesRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateCalendarPropertiesAsyncWithHttpInfo(Requests\updateCalendarPropertiesRequest $request) 
+    public function updateCalendarPropertiesAsyncWithHttpInfo(Requests\UpdateCalendarPropertiesRequest $request) 
     {
         $returnType = '';
         $request = $this->updateCalendarPropertiesRequest($request);
@@ -19720,12 +19720,12 @@ class EmailApi
     /**
      * Create request for operation 'updateCalendarProperties'
      *
-     * @param Requests\updateCalendarPropertiesRequest $request is a request object for operation
+     * @param Requests\UpdateCalendarPropertiesRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function updateCalendarPropertiesRequest(Requests\updateCalendarPropertiesRequest $request)
+    protected function updateCalendarPropertiesRequest(Requests\UpdateCalendarPropertiesRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -19845,13 +19845,13 @@ class EmailApi
      *
      * Update contact document properties
      *
-     * @param Requests\updateContactPropertiesRequest $request is a request object for operation
+     * @param Requests\UpdateContactPropertiesRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function updateContactProperties(Requests\updateContactPropertiesRequest $request)
+    public function updateContactProperties(Requests\UpdateContactPropertiesRequest $request)
     {
         try {
              $this->updateContactPropertiesWithHttpInfo($request);
@@ -19866,13 +19866,13 @@ class EmailApi
      *
      * Update contact document properties
      *
-     * @param Requests\updateContactPropertiesRequest $request is a request object for operation
+     * @param Requests\UpdateContactPropertiesRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateContactPropertiesWithHttpInfo(Requests\updateContactPropertiesRequest $request)
+    public function updateContactPropertiesWithHttpInfo(Requests\UpdateContactPropertiesRequest $request)
     {
         $returnType = '';
         $request = $this->updateContactPropertiesRequest($request);
@@ -19910,12 +19910,12 @@ class EmailApi
      *
      * Update contact document properties
      *
-     * @param Requests\updateContactPropertiesRequest $request is a request object for operation
+     * @param Requests\UpdateContactPropertiesRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateContactPropertiesAsync(Requests\updateContactPropertiesRequest $request) 
+    public function updateContactPropertiesAsync(Requests\UpdateContactPropertiesRequest $request) 
     {
         return $this->updateContactPropertiesAsyncWithHttpInfo($request)
             ->then(
@@ -19930,12 +19930,12 @@ class EmailApi
      *
      * Update contact document properties
      *
-     * @param Requests\updateContactPropertiesRequest $request is a request object for operation
+     * @param Requests\UpdateContactPropertiesRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateContactPropertiesAsyncWithHttpInfo(Requests\updateContactPropertiesRequest $request) 
+    public function updateContactPropertiesAsyncWithHttpInfo(Requests\UpdateContactPropertiesRequest $request) 
     {
         $returnType = '';
         $request = $this->updateContactPropertiesRequest($request);
@@ -19965,12 +19965,12 @@ class EmailApi
     /**
      * Create request for operation 'updateContactProperties'
      *
-     * @param Requests\updateContactPropertiesRequest $request is a request object for operation
+     * @param Requests\UpdateContactPropertiesRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function updateContactPropertiesRequest(Requests\updateContactPropertiesRequest $request)
+    protected function updateContactPropertiesRequest(Requests\UpdateContactPropertiesRequest $request)
     {
         // verify the required parameter 'format' is set
         if ($request->format === null) {
@@ -20099,13 +20099,13 @@ class EmailApi
      *
      * Update document properties
      *
-     * @param Requests\updateMapiPropertiesRequest $request is a request object for operation
+     * @param Requests\UpdateMapiPropertiesRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function updateMapiProperties(Requests\updateMapiPropertiesRequest $request)
+    public function updateMapiProperties(Requests\UpdateMapiPropertiesRequest $request)
     {
         try {
              $this->updateMapiPropertiesWithHttpInfo($request);
@@ -20120,13 +20120,13 @@ class EmailApi
      *
      * Update document properties
      *
-     * @param Requests\updateMapiPropertiesRequest $request is a request object for operation
+     * @param Requests\UpdateMapiPropertiesRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function updateMapiPropertiesWithHttpInfo(Requests\updateMapiPropertiesRequest $request)
+    public function updateMapiPropertiesWithHttpInfo(Requests\UpdateMapiPropertiesRequest $request)
     {
         $returnType = '';
         $request = $this->updateMapiPropertiesRequest($request);
@@ -20164,12 +20164,12 @@ class EmailApi
      *
      * Update document properties
      *
-     * @param Requests\updateMapiPropertiesRequest $request is a request object for operation
+     * @param Requests\UpdateMapiPropertiesRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateMapiPropertiesAsync(Requests\updateMapiPropertiesRequest $request) 
+    public function updateMapiPropertiesAsync(Requests\UpdateMapiPropertiesRequest $request) 
     {
         return $this->updateMapiPropertiesAsyncWithHttpInfo($request)
             ->then(
@@ -20184,12 +20184,12 @@ class EmailApi
      *
      * Update document properties
      *
-     * @param Requests\updateMapiPropertiesRequest $request is a request object for operation
+     * @param Requests\UpdateMapiPropertiesRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function updateMapiPropertiesAsyncWithHttpInfo(Requests\updateMapiPropertiesRequest $request) 
+    public function updateMapiPropertiesAsyncWithHttpInfo(Requests\UpdateMapiPropertiesRequest $request) 
     {
         $returnType = '';
         $request = $this->updateMapiPropertiesRequest($request);
@@ -20219,12 +20219,12 @@ class EmailApi
     /**
      * Create request for operation 'updateMapiProperties'
      *
-     * @param Requests\updateMapiPropertiesRequest $request is a request object for operation
+     * @param Requests\UpdateMapiPropertiesRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function updateMapiPropertiesRequest(Requests\updateMapiPropertiesRequest $request)
+    protected function updateMapiPropertiesRequest(Requests\UpdateMapiPropertiesRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
@@ -20344,13 +20344,13 @@ class EmailApi
      *
      * Upload file
      *
-     * @param Requests\uploadFileRequest $request is a request object for operation
+     * @param Requests\UploadFileRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Aspose\Email\Model\FilesUploadResult
      */
-    public function uploadFile(Requests\uploadFileRequest $request)
+    public function uploadFile(Requests\UploadFileRequest $request)
     {
         try {
              list($response) = $this->uploadFileWithHttpInfo($request);
@@ -20367,13 +20367,13 @@ class EmailApi
      *
      * Upload file
      *
-     * @param Requests\uploadFileRequest $request is a request object for operation
+     * @param Requests\UploadFileRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Aspose\Email\Model\FilesUploadResult, HTTP status code, HTTP response headers (array of strings)
      */
-    public function uploadFileWithHttpInfo(Requests\uploadFileRequest $request)
+    public function uploadFileWithHttpInfo(Requests\UploadFileRequest $request)
     {
         $returnType = '\Aspose\Email\Model\FilesUploadResult';
         $request = $this->uploadFileRequest($request);
@@ -20433,12 +20433,12 @@ class EmailApi
      *
      * Upload file
      *
-     * @param Requests\uploadFileRequest $request is a request object for operation
+     * @param Requests\UploadFileRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function uploadFileAsync(Requests\uploadFileRequest $request) 
+    public function uploadFileAsync(Requests\UploadFileRequest $request) 
     {
         return $this->uploadFileAsyncWithHttpInfo($request)
             ->then(
@@ -20453,12 +20453,12 @@ class EmailApi
      *
      * Upload file
      *
-     * @param Requests\uploadFileRequest $request is a request object for operation
+     * @param Requests\UploadFileRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function uploadFileAsyncWithHttpInfo(Requests\uploadFileRequest $request) 
+    public function uploadFileAsyncWithHttpInfo(Requests\UploadFileRequest $request) 
     {
         $returnType = '\Aspose\Email\Model\FilesUploadResult';
         $request = $this->uploadFileRequest($request);
@@ -20506,12 +20506,12 @@ class EmailApi
     /**
      * Create request for operation 'uploadFile'
      *
-     * @param Requests\uploadFileRequest $request is a request object for operation
+     * @param Requests\UploadFileRequest $request is a request object for operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function uploadFileRequest(Requests\uploadFileRequest $request)
+    protected function uploadFileRequest(Requests\UploadFileRequest $request)
     {
         // verify the required parameter 'path' is set
         if ($request->path === null) {

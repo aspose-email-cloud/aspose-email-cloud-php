@@ -31,10 +31,10 @@ namespace Aspose\Email\Model\Requests;
 /**
  * Request model for createMapi" operation.
  */
-class createMapiRequest
+class CreateMapiRequest
 {
     /**
-     * Initializes a new instance of the createMapiRequest class.
+     * Initializes a new instance of the CreateMapiRequest class.
      *  
      * @param string $name Document file name
      * @param \Aspose\Email\Model\HierarchicalObjectRequest $request Create document request

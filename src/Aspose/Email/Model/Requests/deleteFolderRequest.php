@@ -31,10 +31,10 @@ namespace Aspose\Email\Model\Requests;
 /**
  * Request model for deleteFolder" operation.
  */
-class deleteFolderRequest
+class DeleteFolderRequest
 {
     /**
-     * Initializes a new instance of the deleteFolderRequest class.
+     * Initializes a new instance of the DeleteFolderRequest class.
      *  
      * @param string $path Folder path e.g. '/folder'
      * @param string $storage_name Storage name

@@ -31,10 +31,10 @@ namespace Aspose\Email\Model\Requests;
 /**
  * Request model for fetchEmailMessage" operation.
  */
-class fetchEmailMessageRequest
+class FetchEmailMessageRequest
 {
     /**
-     * Initializes a new instance of the fetchEmailMessageRequest class.
+     * Initializes a new instance of the FetchEmailMessageRequest class.
      *  
      * @param string $message_id Message identifier
      * @param string $first_account Email account

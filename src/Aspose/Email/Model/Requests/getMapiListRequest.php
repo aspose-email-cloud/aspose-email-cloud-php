@@ -31,10 +31,10 @@ namespace Aspose\Email\Model\Requests;
 /**
  * Request model for getMapiList" operation.
  */
-class getMapiListRequest
+class GetMapiListRequest
 {
     /**
-     * Initializes a new instance of the getMapiListRequest class.
+     * Initializes a new instance of the GetMapiListRequest class.
      *  
      * @param string $folder Path to folder in storage
      * @param string $storage Storage name

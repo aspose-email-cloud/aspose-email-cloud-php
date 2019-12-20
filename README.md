@@ -42,9 +42,9 @@ $file = "iCalendarFileName.ics"; //iCalendar file name on storage
 $folder = "path/to/iCalendar/file/on/storage";
 $storage = "First Storage"; //Storage name
 
-$result = $api->getCalendar(new getCalendarRequest($file, $folder, $storage));
+$result = $api->getCalendar(new GetCalendarRequest($file, $folder, $storage));
 // or
-$promise = $api->getCalendarAsync(new getCalendarRequest($file, $folder, $storage));
+$promise = $api->getCalendarAsync(new GetCalendarRequest($file, $folder, $storage));
 $result = $promise->wait();
 ```
 
@@ -61,11 +61,11 @@ $path = "C:\\path\\to\\business\\card\\image\\on\\file\\system";
 $imageFile = "someFileName.png"; //Supports different image formats: PNG, JPEG, BMP, TIFF, GIF, etc.
 $storagePath = $folder."/".$imageFile;
 // Upload business card image to storage
-$api->uploadFile(new uploadFileRequest($storagePath, $path, $storage));
+$api->uploadFile(new UploadFileRequest($storagePath, $path, $storage));
 $outFolderPath = "some/folder/on/storage"; //Business card recognition results will be saved here
-$api->createFolder(new createFolderRequest($outFolderPath, $storage));
+$api->createFolder(new CreateFolderRequest($outFolderPath, $storage));
 // Call business card recognition action
-$result = $api->aiBcrParseStorage(new aiBcrParseStorageRequest(
+$result = $api->aiBcrParseStorage(new AiBcrParseStorageRequest(
     new AiBcrParseStorageRq(null,
         array( //We can process multiple images in one request
             new AiBcrImageStorageFile(true, //"isSingle" the image contains only one business card (you can upload image with multiple cards on it)
@@ -74,7 +74,7 @@ $result = $api->aiBcrParseStorage(new aiBcrParseStorageRequest(
 // Get file name from recognition result
 $contactFile = $result->getValue()[0]; //$result->getValue() can contain multiple files, if we sent multicard images or multiple images
 // You can download the VCard file, which produced by the recognition method ...
-$contactTempFile = $api->downloadFile(new downloadFileRequest(
+$contactTempFile = $api->downloadFile(new DownloadFileRequest(
     $contactFile->getFolderPath()."/".$contactFile->getFileName(),
     $storage));
 // ... read content and print it
@@ -82,7 +82,7 @@ $fileContent = $contactTempFile->fread($contactTempFile->getSize());
 echo $fileContent;
 // Also, you can get VCard object properties’ list using Contact API
 $contactProperties = $api->getContactProperties(
-    new getContactPropertiesRequest(
+    new GetContactPropertiesRequest(
         'vcard',
         $contactFile->getFileName(),
         $contactFile->getFolderPath(),
@@ -110,7 +110,7 @@ foreach($filtered as $property)
 $path = "C:\\path\\to\\business\\card\\image\\on\\file\\system";
 $content = file_get_contents($path);
 $imageBase64 = base64_encode($content);
-$result = $api->aiBcrParse(new aiBcrParseRequest(
+$result = $api->aiBcrParse(new AiBcrParseRequest(
     new AiBcrBase64Rq(null, array(new AiBcrBase64Image(true, $imageBase64)))));
 //Result contains all recognized VCard objects (only the one in our case)
 $contactProperties = $result->getValue()[0];
@@ -133,7 +133,7 @@ See examples below:
     <summary>Detect a person's gender by name</summary>
 
 ```php
-$result = $api->aiNameGenderize(new aiNameGenderizeRequest("John Cane"));
+$result = $api->aiNameGenderize(new AiNameGenderizeRequest("John Cane"));
 // the result contains a list of hypothesis about a person's gender.
 // all hypothesis include score, so you can use the most scored version,
 // which will be the first in a list:
@@ -145,7 +145,7 @@ echo $result->getValue()[0]->getGender(); //prints "Male"
     <summary>Format person's name using defined format</summary>
 
 ```php
-$result = $api->aiNameFormat(new aiNameFormatRequest(
+$result = $api->aiNameFormat(new AiNameFormatRequest(
     "Mr. John Michael Cane", null, null, null, null, "%t%L%f%m"));
 echo $result->getName(); //prints "Mr. Cane J. M."
 ```
@@ -157,7 +157,7 @@ echo $result->getName(); //prints "Mr. Cane J. M."
 ```php
 $first = "John Michael Cane";
 $second = "Cane J.";
-$result = $api->aiNameMatch(new aiNameMatchRequest($first, $second));
+$result = $api->aiNameMatch(new AiNameMatchRequest($first, $second));
 echo $result->getSimilarity() >= 0.5 ? "true" : "false"; //prints "true", names look similar
 ```
 </details>
@@ -167,7 +167,7 @@ echo $result->getSimilarity() >= 0.5 ? "true" : "false"; //prints "true", names 
 
 ```php
 $name = "Smith Bobby";
-$result = $api->aiNameExpand(new aiNameExpandRequest($name));
+$result = $api->aiNameExpand(new AiNameExpandRequest($name));
 $expandedNames = array_map(function($weightedName) {
     return $weightedName->getName();
 }, $result->getNames());
@@ -183,7 +183,7 @@ foreach($expandedNames as $name)
 
 ```php
 $prefix = "Dav";
-$result = $api->aiNameComplete(new aiNameCompleteRequest($prefix));
+$result = $api->aiNameComplete(new AiNameCompleteRequest($prefix));
 $names = array_map(function ($weightedName) use ($prefix) {
     return $prefix.$weightedName->getName();
 }, $result->getNames());
@@ -200,7 +200,7 @@ foreach($names as $name)
 ```php
 $address = "john-cane@gmail.com";
 $result = $api->aiNameParseEmailAddress(
-    new aiNameParseEmailAddressRequest($address));
+    new AiNameParseEmailAddressRequest($address));
 $extractedNames = array_map(function ($value) {
     return $value->getName();
 }, $result->getValue());

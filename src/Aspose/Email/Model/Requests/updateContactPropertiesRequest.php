@@ -31,10 +31,10 @@ namespace Aspose\Email\Model\Requests;
 /**
  * Request model for updateContactProperties" operation.
  */
-class updateContactPropertiesRequest
+class UpdateContactPropertiesRequest
 {
     /**
-     * Initializes a new instance of the updateContactPropertiesRequest class.
+     * Initializes a new instance of the UpdateContactPropertiesRequest class.
      *  
      * @param string $format Contact document format Enum, available values: VCard, WebDav, Msg
      * @param string $name Contact document file name

@@ -31,10 +31,10 @@ namespace Aspose\Email\Model\Requests;
 /**
  * Request model for deleteContactProperty" operation.
  */
-class deleteContactPropertyRequest
+class DeleteContactPropertyRequest
 {
     /**
-     * Initializes a new instance of the deleteContactPropertyRequest class.
+     * Initializes a new instance of the DeleteContactPropertyRequest class.
      *  
      * @param string $format Contact document format Enum, available values: VCard, WebDav, Msg
      * @param string $name Contact document file name

@@ -31,10 +31,10 @@ namespace Aspose\Email\Model\Requests;
 /**
  * Request model for aiNameComplete" operation.
  */
-class aiNameCompleteRequest
+class AiNameCompleteRequest
 {
     /**
-     * Initializes a new instance of the aiNameCompleteRequest class.
+     * Initializes a new instance of the AiNameCompleteRequest class.
      *  
      * @param string $name A name to complete (required)
      * @param string $language An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \"it\" or \"ita\" for Italian)

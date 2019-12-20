@@ -31,10 +31,10 @@ namespace Aspose\Email\Model\Requests;
 /**
  * Request model for aiNameFormatParsed" operation.
  */
-class aiNameFormatParsedRequest
+class AiNameFormatParsedRequest
 {
     /**
-     * Initializes a new instance of the aiNameFormatParsedRequest class.
+     * Initializes a new instance of the AiNameFormatParsedRequest class.
      *  
      * @param \Aspose\Email\Model\AiNameParsedRq $rq Parsed name with options
      */

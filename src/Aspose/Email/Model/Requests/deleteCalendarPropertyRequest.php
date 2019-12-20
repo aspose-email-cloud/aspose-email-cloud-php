@@ -31,10 +31,10 @@ namespace Aspose\Email\Model\Requests;
 /**
  * Request model for deleteCalendarProperty" operation.
  */
-class deleteCalendarPropertyRequest
+class DeleteCalendarPropertyRequest
 {
     /**
-     * Initializes a new instance of the deleteCalendarPropertyRequest class.
+     * Initializes a new instance of the DeleteCalendarPropertyRequest class.
      *  
      * @param string $name iCalendar file name in storage
      * @param string $member_name Indexed property name

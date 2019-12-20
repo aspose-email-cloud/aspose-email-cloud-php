@@ -31,10 +31,10 @@ namespace Aspose\Email\Model\Requests;
 /**
  * Request model for aiBcrParseStorage" operation.
  */
-class aiBcrParseStorageRequest
+class AiBcrParseStorageRequest
 {
     /**
-     * Initializes a new instance of the aiBcrParseStorageRequest class.
+     * Initializes a new instance of the AiBcrParseStorageRequest class.
      *  
      * @param \Aspose\Email\Model\AiBcrParseStorageRq $rq Request with images located on storage
      */

@@ -31,10 +31,10 @@ namespace Aspose\Email\Model\Requests;
 /**
  * Request model for aiNameGenderize" operation.
  */
-class aiNameGenderizeRequest
+class AiNameGenderizeRequest
 {
     /**
-     * Initializes a new instance of the aiNameGenderizeRequest class.
+     * Initializes a new instance of the AiNameGenderizeRequest class.
      *  
      * @param string $name A name to parse (required)
      * @param string $language An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \"it\" or \"ita\" for Italian)

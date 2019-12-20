@@ -31,10 +31,10 @@ namespace Aspose\Email\Model\Requests;
 /**
  * Request model for getMapiProperties" operation.
  */
-class getMapiPropertiesRequest
+class GetMapiPropertiesRequest
 {
     /**
-     * Initializes a new instance of the getMapiPropertiesRequest class.
+     * Initializes a new instance of the GetMapiPropertiesRequest class.
      *  
      * @param string $name Document file name
      * @param string $folder Path to folder in storage

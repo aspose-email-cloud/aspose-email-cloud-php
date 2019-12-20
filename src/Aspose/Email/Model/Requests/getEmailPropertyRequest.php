@@ -31,10 +31,10 @@ namespace Aspose\Email\Model\Requests;
 /**
  * Request model for getEmailProperty" operation.
  */
-class getEmailPropertyRequest
+class GetEmailPropertyRequest
 {
     /**
-     * Initializes a new instance of the getEmailPropertyRequest class.
+     * Initializes a new instance of the GetEmailPropertyRequest class.
      *  
      * @param string $property_name A property name
      * @param string $file_name Email document file name

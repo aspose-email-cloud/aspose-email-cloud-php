@@ -31,10 +31,10 @@ namespace Aspose\Email\Model\Requests;
 /**
  * Request model for getEmail" operation.
  */
-class getEmailRequest
+class GetEmailRequest
 {
     /**
-     * Initializes a new instance of the getEmailRequest class.
+     * Initializes a new instance of the GetEmailRequest class.
      *  
      * @param string $file_name Email document file name in storage
      * @param string $storage Storage name

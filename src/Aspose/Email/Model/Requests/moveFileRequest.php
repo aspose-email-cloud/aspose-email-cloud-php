@@ -31,10 +31,10 @@ namespace Aspose\Email\Model\Requests;
 /**
  * Request model for moveFile" operation.
  */
-class moveFileRequest
+class MoveFileRequest
 {
     /**
-     * Initializes a new instance of the moveFileRequest class.
+     * Initializes a new instance of the MoveFileRequest class.
      *  
      * @param string $src_path Source file path e.g. '/src.ext'
      * @param string $dest_path Destination file path e.g. '/dest.ext'

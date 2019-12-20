@@ -31,10 +31,10 @@ namespace Aspose\Email\Model\Requests;
 /**
  * Request model for updateMapiProperties" operation.
  */
-class updateMapiPropertiesRequest
+class UpdateMapiPropertiesRequest
 {
     /**
-     * Initializes a new instance of the updateMapiPropertiesRequest class.
+     * Initializes a new instance of the UpdateMapiPropertiesRequest class.
      *  
      * @param string $name Document file name
      * @param \Aspose\Email\Model\HierarchicalObjectRequest $request Properties that should be updated/added

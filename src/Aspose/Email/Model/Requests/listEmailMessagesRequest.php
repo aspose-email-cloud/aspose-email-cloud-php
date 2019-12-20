@@ -31,10 +31,10 @@ namespace Aspose\Email\Model\Requests;
 /**
  * Request model for listEmailMessages" operation.
  */
-class listEmailMessagesRequest
+class ListEmailMessagesRequest
 {
     /**
-     * Initializes a new instance of the listEmailMessagesRequest class.
+     * Initializes a new instance of the ListEmailMessagesRequest class.
      *  
      * @param string $folder A folder in email account
      * @param string $query_string A MailQuery search string

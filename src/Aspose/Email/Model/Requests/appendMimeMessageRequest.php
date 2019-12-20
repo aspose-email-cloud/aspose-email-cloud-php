@@ -31,10 +31,10 @@ namespace Aspose\Email\Model\Requests;
 /**
  * Request model for appendMimeMessage" operation.
  */
-class appendMimeMessageRequest
+class AppendMimeMessageRequest
 {
     /**
-     * Initializes a new instance of the appendMimeMessageRequest class.
+     * Initializes a new instance of the AppendMimeMessageRequest class.
      *  
      * @param \Aspose\Email\Model\AppendEmailMimeBaseRequest $request Append email request
      */

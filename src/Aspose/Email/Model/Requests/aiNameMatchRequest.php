@@ -31,10 +31,10 @@ namespace Aspose\Email\Model\Requests;
 /**
  * Request model for aiNameMatch" operation.
  */
-class aiNameMatchRequest
+class AiNameMatchRequest
 {
     /**
-     * Initializes a new instance of the aiNameMatchRequest class.
+     * Initializes a new instance of the AiNameMatchRequest class.
      *  
      * @param string $name A name to match (required)
      * @param string $other_name Another name to match (required)

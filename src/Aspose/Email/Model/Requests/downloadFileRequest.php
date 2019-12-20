@@ -31,10 +31,10 @@ namespace Aspose\Email\Model\Requests;
 /**
  * Request model for downloadFile" operation.
  */
-class downloadFileRequest
+class DownloadFileRequest
 {
     /**
-     * Initializes a new instance of the downloadFileRequest class.
+     * Initializes a new instance of the DownloadFileRequest class.
      *  
      * @param string $path File path e.g. '/folder/file.ext'
      * @param string $storage_name Storage name

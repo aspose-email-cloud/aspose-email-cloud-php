@@ -31,10 +31,10 @@ namespace Aspose\Email\Model\Requests;
 /**
  * Request model for aiNameFormat" operation.
  */
-class aiNameFormatRequest
+class AiNameFormatRequest
 {
     /**
-     * Initializes a new instance of the aiNameFormatRequest class.
+     * Initializes a new instance of the AiNameFormatRequest class.
      *  
      * @param string $name A name to format (required)
      * @param string $language An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \"it\" or \"ita\" for Italian)

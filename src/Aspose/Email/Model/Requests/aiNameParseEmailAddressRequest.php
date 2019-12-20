@@ -31,10 +31,10 @@ namespace Aspose\Email\Model\Requests;
 /**
  * Request model for aiNameParseEmailAddress" operation.
  */
-class aiNameParseEmailAddressRequest
+class AiNameParseEmailAddressRequest
 {
     /**
-     * Initializes a new instance of the aiNameParseEmailAddressRequest class.
+     * Initializes a new instance of the AiNameParseEmailAddressRequest class.
      *  
      * @param string $email_address Email address to parse (required)
      * @param string $language An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \"it\" or \"ita\" for Italian)

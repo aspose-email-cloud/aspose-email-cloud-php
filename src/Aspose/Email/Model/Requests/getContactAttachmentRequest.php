@@ -31,10 +31,10 @@ namespace Aspose\Email\Model\Requests;
 /**
  * Request model for getContactAttachment" operation.
  */
-class getContactAttachmentRequest
+class GetContactAttachmentRequest
 {
     /**
-     * Initializes a new instance of the getContactAttachmentRequest class.
+     * Initializes a new instance of the GetContactAttachmentRequest class.
      *  
      * @param string $format Contact document format. Enum, available values: VCard, WebDav, Msg
      * @param string $name Contact document file name
