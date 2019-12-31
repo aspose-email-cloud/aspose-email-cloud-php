@@ -1,4 +1,4 @@
-<?php
+hp
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="deleteEmailMessageRequest.php">
@@ -49,3 +49,4 @@ class DeleteEmailMessageRequest
     public $request;
 }
 ?>
+<?p

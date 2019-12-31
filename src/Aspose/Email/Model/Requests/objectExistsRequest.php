@@ -1,4 +1,4 @@
-<?php
+hp
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="objectExistsRequest.php">
@@ -63,3 +63,4 @@ class ObjectExistsRequest
     public $version_id;
 }
 ?>
+<?p

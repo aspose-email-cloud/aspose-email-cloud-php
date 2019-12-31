@@ -1,4 +1,4 @@
-<?php
+hp
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="updateContactPropertiesRequest.php">
@@ -63,3 +63,4 @@ class UpdateContactPropertiesRequest
     public $request;
 }
 ?>
+<?p

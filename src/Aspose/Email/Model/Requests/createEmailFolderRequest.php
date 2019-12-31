@@ -1,4 +1,4 @@
-<?php
+hp
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="createEmailFolderRequest.php">
@@ -49,3 +49,4 @@ class CreateEmailFolderRequest
     public $request;
 }
 ?>
+<?p
