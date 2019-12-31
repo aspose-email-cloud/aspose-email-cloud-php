@@ -28,13 +28,13 @@
 
 namespace Aspose\Email\Model\Requests;
 
-/*
+/**
  * Request model for fetchEmailMessage" operation.
  */
-class fetchEmailMessageRequest
+class FetchEmailMessageRequest
 {
-    /*
-     * Initializes a new instance of the fetchEmailMessageRequest class.
+    /**
+     * Initializes a new instance of the FetchEmailMessageRequest class.
      *  
      * @param string $message_id Message identifier
      * @param string $first_account Email account
@@ -51,27 +51,27 @@ class fetchEmailMessageRequest
         $this->storage_folder = $storage_folder;
     }
 
-    /*
+    /**
      * Message identifier
      */
     public $message_id;
 	
-    /*
+    /**
      * Email account
      */
     public $first_account;
 	
-    /*
+    /**
      * Additional email account (should be specified for POP/IMAP accounts and should be SMTP account)
      */
     public $second_account;
 	
-    /*
+    /**
      * Storage name where account file(s) located
      */
     public $storage;
 	
-    /*
+    /**
      * Folder in storage where account file(s) located
      */
     public $storage_folder;

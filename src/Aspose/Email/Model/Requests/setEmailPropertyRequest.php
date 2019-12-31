@@ -28,17 +28,17 @@
 
 namespace Aspose\Email\Model\Requests;
 
-/*
+/**
  * Request model for setEmailProperty" operation.
  */
-class setEmailPropertyRequest
+class SetEmailPropertyRequest
 {
-    /*
-     * Initializes a new instance of the setEmailPropertyRequest class.
+    /**
+     * Initializes a new instance of the SetEmailPropertyRequest class.
      *  
      * @param string $property_name A property name that should be changed
      * @param string $file_name Email document file name
-     * @param \Aspose\Email\Model\SetEmailPropertyRequest $request A property that should be changed and optional Storage info to specify             where the file located
+     * @param \Aspose\Email\Model\SetEmailPropertyRequest $request A property that should be changed and optional Storage info to specify where the file located
      */
     public function __construct($property_name, $file_name, $request)             
     {
@@ -47,18 +47,18 @@ class setEmailPropertyRequest
         $this->request = $request;
     }
 
-    /*
+    /**
      * A property name that should be changed
      */
     public $property_name;
 	
-    /*
+    /**
      * Email document file name
      */
     public $file_name;
 	
-    /*
-     * A property that should be changed and optional Storage info to specify             where the file located
+    /**
+     * A property that should be changed and optional Storage info to specify where the file located
      */
     public $request;
 }

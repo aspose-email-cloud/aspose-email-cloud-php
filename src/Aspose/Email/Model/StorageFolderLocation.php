@@ -25,7 +25,7 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
-/*
+/**
  * StorageFolderLocation
  */
 
@@ -34,7 +34,7 @@ namespace Aspose\Email\Model;
 use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
-/*
+/**
  * StorageFolderLocation
  *
  * @description A storage folder location information
@@ -43,14 +43,14 @@ class StorageFolderLocation implements ArrayAccess
 {
     const DISCRIMINATOR = 'Type';
 
-    /*
+    /**
      * The original name of the model.
      *
      * @var string
      */
     protected static $swaggerModelName = "StorageFolderLocation";
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @var string[]
@@ -60,7 +60,7 @@ class StorageFolderLocation implements ArrayAccess
         'folder_path' => 'string'
     ];
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @var string[]
@@ -70,7 +70,7 @@ class StorageFolderLocation implements ArrayAccess
         'folder_path' => null
     ];
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @return array
@@ -80,7 +80,7 @@ class StorageFolderLocation implements ArrayAccess
         return self::$swaggerTypes;
     }
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @return array
@@ -90,7 +90,7 @@ class StorageFolderLocation implements ArrayAccess
         return self::$swaggerFormats;
     }
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -101,7 +101,7 @@ class StorageFolderLocation implements ArrayAccess
         'folder_path' => 'folderPath'
     ];
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
@@ -111,7 +111,7 @@ class StorageFolderLocation implements ArrayAccess
         'folder_path' => 'setFolderPath'
     ];
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @var string[]
@@ -121,7 +121,7 @@ class StorageFolderLocation implements ArrayAccess
         'folder_path' => 'getFolderPath'
     ];
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -132,7 +132,7 @@ class StorageFolderLocation implements ArrayAccess
         return self::$attributeMap;
     }
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @return array
@@ -142,7 +142,7 @@ class StorageFolderLocation implements ArrayAccess
         return self::$setters;
     }
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @return array
@@ -152,7 +152,7 @@ class StorageFolderLocation implements ArrayAccess
         return self::$getters;
     }
 
-    /*
+    /**
      * The original name of the model.
      *
      * @return string
@@ -166,30 +166,33 @@ class StorageFolderLocation implements ArrayAccess
 
     
 
-    /*
+    /**
      * Associative array for storing property values
      *
      * @var mixed[]
      */
     protected $container = [];
 
-    /*
-     * Constructor
-     *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+    /**
+     * Initializes a new instance of the StorageFolderLocation class.
+     *  
+     * @param string $storage A storage name
+     * @param string $folder_path A path to a folder in specified storage
      */
-    public function __construct(array $data = null)
+    public function __construct($storage = null, $folder_path = null)
     {
-        $this->container['storage'] = isset($data['storage']) ? $data['storage'] : null;
-        $this->container['folder_path'] = isset($data['folder_path']) ? $data['folder_path'] : null;
+        $this->container['storage'] = null;
+        $this->container['folder_path'] = null;
+
+        if ($storage != null) $this->setStorage($storage);
+        if ($folder_path != null) $this->setFolderPath($folder_path);
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('Type', self::$attributeMap);
         $this->container[$discriminator] = static::$swaggerModelName;
     }
 
-    /*
+    /**
      * Show all the invalid properties with reasons.
      *
      * @return array invalid properties with reasons
@@ -201,7 +204,7 @@ class StorageFolderLocation implements ArrayAccess
         return $invalidProperties;
     }
 
-    /*
+    /**
      * Validate all the properties in the model
      * return true if all passed
      *
@@ -214,7 +217,7 @@ class StorageFolderLocation implements ArrayAccess
     }
 
 
-    /*
+    /**
      * Gets storage
      *
      * @return string
@@ -224,7 +227,7 @@ class StorageFolderLocation implements ArrayAccess
         return $this->container['storage'];
     }
 
-    /*
+    /**
      * Sets storage
      *
      * @param string $storage A storage name
@@ -238,7 +241,7 @@ class StorageFolderLocation implements ArrayAccess
         return $this;
     }
 
-    /*
+    /**
      * Gets folder_path
      *
      * @return string
@@ -248,7 +251,7 @@ class StorageFolderLocation implements ArrayAccess
         return $this->container['folder_path'];
     }
 
-    /*
+    /**
      * Sets folder_path
      *
      * @param string $folder_path A path to a folder in specified storage
@@ -261,7 +264,7 @@ class StorageFolderLocation implements ArrayAccess
 
         return $this;
     }
-    /*
+    /**
      * Returns true if offset exists. False otherwise.
      *
      * @param integer $offset Offset
@@ -273,7 +276,7 @@ class StorageFolderLocation implements ArrayAccess
         return isset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets offset.
      *
      * @param integer $offset Offset
@@ -285,7 +288,7 @@ class StorageFolderLocation implements ArrayAccess
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
-    /*
+    /**
      * Sets value based on offset.
      *
      * @param integer $offset Offset
@@ -302,7 +305,7 @@ class StorageFolderLocation implements ArrayAccess
         }
     }
 
-    /*
+    /**
      * Unsets offset.
      *
      * @param integer $offset Offset
@@ -314,7 +317,7 @@ class StorageFolderLocation implements ArrayAccess
         unset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets the string presentation of the object
      *
      * @return string

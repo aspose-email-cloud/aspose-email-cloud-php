@@ -28,13 +28,13 @@
 
 namespace Aspose\Email\Model\Requests;
 
-/*
+/**
  * Request model for deleteMapiProperties" operation.
  */
-class deleteMapiPropertiesRequest
+class DeleteMapiPropertiesRequest
 {
-    /*
-     * Initializes a new instance of the deleteMapiPropertiesRequest class.
+    /**
+     * Initializes a new instance of the DeleteMapiPropertiesRequest class.
      *  
      * @param string $name Document file name
      * @param \Aspose\Email\Model\HierarchicalObjectRequest $request Properties that should be deleted
@@ -45,12 +45,12 @@ class deleteMapiPropertiesRequest
         $this->request = $request;
     }
 
-    /*
+    /**
      * Document file name
      */
     public $name;
 	
-    /*
+    /**
      * Properties that should be deleted
      */
     public $request;

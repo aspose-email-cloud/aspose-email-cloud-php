@@ -30,13 +30,13 @@ namespace Aspose\Email;
 
 use \Exception;
 
-/*
+/**
  * ApiException Class Doc Comment
  */
 class HeaderSelector
 {
 
-    /*
+    /**
      * Selects headers for request
      * @param string[] $accept type of header
      * @param string[] $contentTypes types of content
@@ -55,7 +55,7 @@ class HeaderSelector
         return $headers;
     }
 
-    /*
+    /**
      * Selects headers for multipart form
      * @param string[] $accept type of header
      * @return array
@@ -65,10 +65,11 @@ class HeaderSelector
         $headers = $this->selectHeaders($accept, []);
 
         unset($headers['Content-Type']);
+        $headers['Content-Type'] = "multipart/form-data";
         return $headers;
     }
 
-    /*
+    /**
      * Return the header 'Accept' based on an array of Accept provided
      *
      * @param string[] $accept Array of header
@@ -86,7 +87,7 @@ class HeaderSelector
         }
     }
 
-    /*
+    /**
      * Return the content type based on an array of content-type provided
      *
      * @param string[] $contentType Array fo content-type

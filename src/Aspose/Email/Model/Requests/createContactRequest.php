@@ -28,15 +28,15 @@
 
 namespace Aspose\Email\Model\Requests;
 
-/*
+/**
  * Request model for createContact" operation.
  */
-class createContactRequest
+class CreateContactRequest
 {
-    /*
-     * Initializes a new instance of the createContactRequest class.
+    /**
+     * Initializes a new instance of the CreateContactRequest class.
      *  
-     * @param string $format Contact document format
+     * @param string $format Contact document format Enum, available values: VCard, WebDav, Msg
      * @param string $name Contact document file name
      * @param \Aspose\Email\Model\HierarchicalObjectRequest $request Create contact request
      */
@@ -47,17 +47,17 @@ class createContactRequest
         $this->request = $request;
     }
 
-    /*
-     * Contact document format
+    /**
+     * Contact document format Enum, available values: VCard, WebDav, Msg
      */
     public $format;
 	
-    /*
+    /**
      * Contact document file name
      */
     public $name;
 	
-    /*
+    /**
      * Create contact request
      */
     public $request;

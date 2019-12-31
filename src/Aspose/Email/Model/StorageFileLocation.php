@@ -25,14 +25,14 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
-/*
+/**
  * StorageFileLocation
  */
 
 namespace Aspose\Email\Model;
 use \Aspose\Email\ObjectSerializer;
 
-/*
+/**
  * StorageFileLocation
  *
  * @description A storage file location information
@@ -41,14 +41,14 @@ class StorageFileLocation extends StorageFolderLocation
 {
     const DISCRIMINATOR = null;
 
-    /*
+    /**
      * The original name of the model.
      *
      * @var string
      */
     protected static $swaggerModelName = "StorageFileLocation";
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @var string[]
@@ -57,7 +57,7 @@ class StorageFileLocation extends StorageFolderLocation
         'file_name' => 'string'
     ];
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @var string[]
@@ -66,7 +66,7 @@ class StorageFileLocation extends StorageFolderLocation
         'file_name' => null
     ];
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @return array
@@ -76,7 +76,7 @@ class StorageFileLocation extends StorageFolderLocation
         return self::$swaggerTypes + parent::swaggerTypes();
     }
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @return array
@@ -86,7 +86,7 @@ class StorageFileLocation extends StorageFolderLocation
         return self::$swaggerFormats + parent::swaggerFormats();
     }
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -96,7 +96,7 @@ class StorageFileLocation extends StorageFolderLocation
         'file_name' => 'fileName'
     ];
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
@@ -105,7 +105,7 @@ class StorageFileLocation extends StorageFolderLocation
         'file_name' => 'setFileName'
     ];
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @var string[]
@@ -114,7 +114,7 @@ class StorageFileLocation extends StorageFolderLocation
         'file_name' => 'getFileName'
     ];
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -125,7 +125,7 @@ class StorageFileLocation extends StorageFolderLocation
         return parent::attributeMap() + self::$attributeMap;
     }
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @return array
@@ -135,7 +135,7 @@ class StorageFileLocation extends StorageFolderLocation
         return parent::setters() + self::$setters;
     }
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @return array
@@ -145,7 +145,7 @@ class StorageFileLocation extends StorageFolderLocation
         return parent::getters() + self::$getters;
     }
 
-    /*
+    /**
      * The original name of the model.
      *
      * @return string
@@ -160,20 +160,24 @@ class StorageFileLocation extends StorageFolderLocation
     
 
 
-    /*
-     * Constructor
-     *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+    /**
+     * Initializes a new instance of the StorageFileLocation class.
+     *  
+     * @param string $storage A storage name
+     * @param string $folder_path A path to a folder in specified storage
+     * @param string $file_name A file name in storage
      */
-    public function __construct(array $data = null)
+    public function __construct($storage = null, $folder_path = null, $file_name = null)
     {
-        parent::__construct($data);
+        parent::__construct();
+        $this->container['file_name'] = null;
 
-        $this->container['file_name'] = isset($data['file_name']) ? $data['file_name'] : null;
+        if ($storage != null) $this->setStorage($storage);
+        if ($folder_path != null) $this->setFolderPath($folder_path);
+        if ($file_name != null) $this->setFileName($file_name);
     }
 
-    /*
+    /**
      * Show all the invalid properties with reasons.
      *
      * @return array invalid properties with reasons
@@ -192,7 +196,7 @@ class StorageFileLocation extends StorageFolderLocation
         return $invalidProperties;
     }
 
-    /*
+    /**
      * Validate all the properties in the model
      * return true if all passed
      *
@@ -214,7 +218,7 @@ class StorageFileLocation extends StorageFolderLocation
     }
 
 
-    /*
+    /**
      * Gets file_name
      *
      * @return string
@@ -224,7 +228,7 @@ class StorageFileLocation extends StorageFolderLocation
         return $this->container['file_name'];
     }
 
-    /*
+    /**
      * Sets file_name
      *
      * @param string $file_name A file name in storage
@@ -242,7 +246,7 @@ class StorageFileLocation extends StorageFolderLocation
 
         return $this;
     }
-    /*
+    /**
      * Returns true if offset exists. False otherwise.
      *
      * @param integer $offset Offset
@@ -254,7 +258,7 @@ class StorageFileLocation extends StorageFolderLocation
         return isset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets offset.
      *
      * @param integer $offset Offset
@@ -266,7 +270,7 @@ class StorageFileLocation extends StorageFolderLocation
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
-    /*
+    /**
      * Sets value based on offset.
      *
      * @param integer $offset Offset
@@ -283,7 +287,7 @@ class StorageFileLocation extends StorageFolderLocation
         }
     }
 
-    /*
+    /**
      * Unsets offset.
      *
      * @param integer $offset Offset
@@ -295,7 +299,7 @@ class StorageFileLocation extends StorageFolderLocation
         unset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets the string presentation of the object
      *
      * @return string

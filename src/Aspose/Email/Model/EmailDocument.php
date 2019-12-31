@@ -25,7 +25,7 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
-/*
+/**
  * EmailDocument
  */
 
@@ -34,7 +34,7 @@ namespace Aspose\Email\Model;
 use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
-/*
+/**
  * EmailDocument
  *
  * @description Represents Email document DTO.
@@ -43,14 +43,14 @@ class EmailDocument implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
-    /*
+    /**
      * The original name of the model.
      *
      * @var string
      */
     protected static $swaggerModelName = "EmailDocument";
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @var string[]
@@ -60,7 +60,7 @@ class EmailDocument implements ArrayAccess
         'document_properties' => '\Aspose\Email\Model\EmailProperties'
     ];
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @var string[]
@@ -70,7 +70,7 @@ class EmailDocument implements ArrayAccess
         'document_properties' => null
     ];
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @return array
@@ -80,7 +80,7 @@ class EmailDocument implements ArrayAccess
         return self::$swaggerTypes;
     }
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @return array
@@ -90,7 +90,7 @@ class EmailDocument implements ArrayAccess
         return self::$swaggerFormats;
     }
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -101,7 +101,7 @@ class EmailDocument implements ArrayAccess
         'document_properties' => 'documentProperties'
     ];
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
@@ -111,7 +111,7 @@ class EmailDocument implements ArrayAccess
         'document_properties' => 'setDocumentProperties'
     ];
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @var string[]
@@ -121,7 +121,7 @@ class EmailDocument implements ArrayAccess
         'document_properties' => 'getDocumentProperties'
     ];
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -132,7 +132,7 @@ class EmailDocument implements ArrayAccess
         return self::$attributeMap;
     }
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @return array
@@ -142,7 +142,7 @@ class EmailDocument implements ArrayAccess
         return self::$setters;
     }
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @return array
@@ -152,7 +152,7 @@ class EmailDocument implements ArrayAccess
         return self::$getters;
     }
 
-    /*
+    /**
      * The original name of the model.
      *
      * @return string
@@ -166,26 +166,29 @@ class EmailDocument implements ArrayAccess
 
     
 
-    /*
+    /**
      * Associative array for storing property values
      *
      * @var mixed[]
      */
     protected $container = [];
 
-    /*
-     * Constructor
-     *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+    /**
+     * Initializes a new instance of the EmailDocument class.
+     *  
+     * @param \Aspose\Email\Model\Link[] $links Links that originate from this document.
+     * @param \Aspose\Email\Model\EmailProperties $document_properties List of document properties.
      */
-    public function __construct(array $data = null)
+    public function __construct($links = null, $document_properties = null)
     {
-        $this->container['links'] = isset($data['links']) ? $data['links'] : null;
-        $this->container['document_properties'] = isset($data['document_properties']) ? $data['document_properties'] : null;
+        $this->container['links'] = null;
+        $this->container['document_properties'] = null;
+
+        if ($links != null) $this->setLinks($links);
+        if ($document_properties != null) $this->setDocumentProperties($document_properties);
     }
 
-    /*
+    /**
      * Show all the invalid properties with reasons.
      *
      * @return array invalid properties with reasons
@@ -200,7 +203,7 @@ class EmailDocument implements ArrayAccess
         return $invalidProperties;
     }
 
-    /*
+    /**
      * Validate all the properties in the model
      * return true if all passed
      *
@@ -216,7 +219,7 @@ class EmailDocument implements ArrayAccess
     }
 
 
-    /*
+    /**
      * Gets links
      *
      * @return \Aspose\Email\Model\Link[]
@@ -226,7 +229,7 @@ class EmailDocument implements ArrayAccess
         return $this->container['links'];
     }
 
-    /*
+    /**
      * Sets links
      *
      * @param \Aspose\Email\Model\Link[] $links Links that originate from this document.
@@ -240,7 +243,7 @@ class EmailDocument implements ArrayAccess
         return $this;
     }
 
-    /*
+    /**
      * Gets document_properties
      *
      * @return \Aspose\Email\Model\EmailProperties
@@ -250,7 +253,7 @@ class EmailDocument implements ArrayAccess
         return $this->container['document_properties'];
     }
 
-    /*
+    /**
      * Sets document_properties
      *
      * @param \Aspose\Email\Model\EmailProperties $document_properties List of document properties.
@@ -263,7 +266,7 @@ class EmailDocument implements ArrayAccess
 
         return $this;
     }
-    /*
+    /**
      * Returns true if offset exists. False otherwise.
      *
      * @param integer $offset Offset
@@ -275,7 +278,7 @@ class EmailDocument implements ArrayAccess
         return isset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets offset.
      *
      * @param integer $offset Offset
@@ -287,7 +290,7 @@ class EmailDocument implements ArrayAccess
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
-    /*
+    /**
      * Sets value based on offset.
      *
      * @param integer $offset Offset
@@ -304,7 +307,7 @@ class EmailDocument implements ArrayAccess
         }
     }
 
-    /*
+    /**
      * Unsets offset.
      *
      * @param integer $offset Offset
@@ -316,7 +319,7 @@ class EmailDocument implements ArrayAccess
         unset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets the string presentation of the object
      *
      * @return string

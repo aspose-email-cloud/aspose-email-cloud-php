@@ -28,13 +28,13 @@
 
 namespace Aspose\Email\Model\Requests;
 
-/*
+/**
  * Request model for createFolder" operation.
  */
-class createFolderRequest
+class CreateFolderRequest
 {
-    /*
-     * Initializes a new instance of the createFolderRequest class.
+    /**
+     * Initializes a new instance of the CreateFolderRequest class.
      *  
      * @param string $path Folder path to create e.g. 'folder_1/folder_2/'
      * @param string $storage_name Storage name
@@ -45,12 +45,12 @@ class createFolderRequest
         $this->storage_name = $storage_name;
     }
 
-    /*
+    /**
      * Folder path to create e.g. 'folder_1/folder_2/'
      */
     public $path;
 	
-    /*
+    /**
      * Storage name
      */
     public $storage_name;

@@ -28,13 +28,13 @@
 
 namespace Aspose\Email\Model\Requests;
 
-/*
+/**
  * Request model for sendEmailMime" operation.
  */
-class sendEmailMimeRequest
+class SendEmailMimeRequest
 {
-    /*
-     * Initializes a new instance of the sendEmailMimeRequest class.
+    /**
+     * Initializes a new instance of the SendEmailMimeRequest class.
      *  
      * @param \Aspose\Email\Model\SendEmailMimeBaseRequest $request Send email request
      */
@@ -43,7 +43,7 @@ class sendEmailMimeRequest
         $this->request = $request;
     }
 
-    /*
+    /**
      * Send email request
      */
     public $request;

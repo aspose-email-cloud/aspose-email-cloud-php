@@ -25,7 +25,7 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
-/*
+/**
  * EmailDocumentResponse
  */
 
@@ -34,7 +34,7 @@ namespace Aspose\Email\Model;
 use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
-/*
+/**
  * EmailDocumentResponse
  *
  * @description An email document response
@@ -43,14 +43,14 @@ class EmailDocumentResponse implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
-    /*
+    /**
      * The original name of the model.
      *
      * @var string
      */
     protected static $swaggerModelName = "EmailDocumentResponse";
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @var string[]
@@ -59,7 +59,7 @@ class EmailDocumentResponse implements ArrayAccess
         'document' => '\Aspose\Email\Model\EmailDocument'
     ];
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @var string[]
@@ -68,7 +68,7 @@ class EmailDocumentResponse implements ArrayAccess
         'document' => null
     ];
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @return array
@@ -78,7 +78,7 @@ class EmailDocumentResponse implements ArrayAccess
         return self::$swaggerTypes;
     }
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @return array
@@ -88,7 +88,7 @@ class EmailDocumentResponse implements ArrayAccess
         return self::$swaggerFormats;
     }
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -98,7 +98,7 @@ class EmailDocumentResponse implements ArrayAccess
         'document' => 'document'
     ];
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
@@ -107,7 +107,7 @@ class EmailDocumentResponse implements ArrayAccess
         'document' => 'setDocument'
     ];
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @var string[]
@@ -116,7 +116,7 @@ class EmailDocumentResponse implements ArrayAccess
         'document' => 'getDocument'
     ];
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -127,7 +127,7 @@ class EmailDocumentResponse implements ArrayAccess
         return self::$attributeMap;
     }
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @return array
@@ -137,7 +137,7 @@ class EmailDocumentResponse implements ArrayAccess
         return self::$setters;
     }
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @return array
@@ -147,7 +147,7 @@ class EmailDocumentResponse implements ArrayAccess
         return self::$getters;
     }
 
-    /*
+    /**
      * The original name of the model.
      *
      * @return string
@@ -161,25 +161,26 @@ class EmailDocumentResponse implements ArrayAccess
 
     
 
-    /*
+    /**
      * Associative array for storing property values
      *
      * @var mixed[]
      */
     protected $container = [];
 
-    /*
-     * Constructor
-     *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+    /**
+     * Initializes a new instance of the EmailDocumentResponse class.
+     *  
+     * @param \Aspose\Email\Model\EmailDocument $document An email document requested
      */
-    public function __construct(array $data = null)
+    public function __construct($document = null)
     {
-        $this->container['document'] = isset($data['document']) ? $data['document'] : null;
+        $this->container['document'] = null;
+
+        if ($document != null) $this->setDocument($document);
     }
 
-    /*
+    /**
      * Show all the invalid properties with reasons.
      *
      * @return array invalid properties with reasons
@@ -191,7 +192,7 @@ class EmailDocumentResponse implements ArrayAccess
         return $invalidProperties;
     }
 
-    /*
+    /**
      * Validate all the properties in the model
      * return true if all passed
      *
@@ -204,7 +205,7 @@ class EmailDocumentResponse implements ArrayAccess
     }
 
 
-    /*
+    /**
      * Gets document
      *
      * @return \Aspose\Email\Model\EmailDocument
@@ -214,7 +215,7 @@ class EmailDocumentResponse implements ArrayAccess
         return $this->container['document'];
     }
 
-    /*
+    /**
      * Sets document
      *
      * @param \Aspose\Email\Model\EmailDocument $document An email document requested
@@ -227,7 +228,7 @@ class EmailDocumentResponse implements ArrayAccess
 
         return $this;
     }
-    /*
+    /**
      * Returns true if offset exists. False otherwise.
      *
      * @param integer $offset Offset
@@ -239,7 +240,7 @@ class EmailDocumentResponse implements ArrayAccess
         return isset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets offset.
      *
      * @param integer $offset Offset
@@ -251,7 +252,7 @@ class EmailDocumentResponse implements ArrayAccess
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
-    /*
+    /**
      * Sets value based on offset.
      *
      * @param integer $offset Offset
@@ -268,7 +269,7 @@ class EmailDocumentResponse implements ArrayAccess
         }
     }
 
-    /*
+    /**
      * Unsets offset.
      *
      * @param integer $offset Offset
@@ -280,7 +281,7 @@ class EmailDocumentResponse implements ArrayAccess
         unset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets the string presentation of the object
      *
      * @return string

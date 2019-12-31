@@ -25,7 +25,7 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
-/*
+/**
  * Error
  */
 
@@ -34,7 +34,7 @@ namespace Aspose\Email\Model;
 use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
-/*
+/**
  * Error
  *
  * @description Error
@@ -43,14 +43,14 @@ class Error implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
-    /*
+    /**
      * The original name of the model.
      *
      * @var string
      */
     protected static $swaggerModelName = "Error";
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @var string[]
@@ -62,7 +62,7 @@ class Error implements ArrayAccess
         'inner_error' => '\Aspose\Email\Model\ErrorDetails'
     ];
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @var string[]
@@ -74,7 +74,7 @@ class Error implements ArrayAccess
         'inner_error' => null
     ];
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @return array
@@ -84,7 +84,7 @@ class Error implements ArrayAccess
         return self::$swaggerTypes;
     }
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @return array
@@ -94,7 +94,7 @@ class Error implements ArrayAccess
         return self::$swaggerFormats;
     }
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -107,7 +107,7 @@ class Error implements ArrayAccess
         'inner_error' => 'innerError'
     ];
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
@@ -119,7 +119,7 @@ class Error implements ArrayAccess
         'inner_error' => 'setInnerError'
     ];
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @var string[]
@@ -131,7 +131,7 @@ class Error implements ArrayAccess
         'inner_error' => 'getInnerError'
     ];
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -142,7 +142,7 @@ class Error implements ArrayAccess
         return self::$attributeMap;
     }
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @return array
@@ -152,7 +152,7 @@ class Error implements ArrayAccess
         return self::$setters;
     }
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @return array
@@ -162,7 +162,7 @@ class Error implements ArrayAccess
         return self::$getters;
     }
 
-    /*
+    /**
      * The original name of the model.
      *
      * @return string
@@ -176,28 +176,35 @@ class Error implements ArrayAccess
 
     
 
-    /*
+    /**
      * Associative array for storing property values
      *
      * @var mixed[]
      */
     protected $container = [];
 
-    /*
-     * Constructor
-     *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+    /**
+     * Initializes a new instance of the Error class.
+     *  
+     * @param string $code Code
+     * @param string $message Message
+     * @param string $description Description
+     * @param \Aspose\Email\Model\ErrorDetails $inner_error Inner Error
      */
-    public function __construct(array $data = null)
+    public function __construct($code = null, $message = null, $description = null, $inner_error = null)
     {
-        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
-        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
-        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
-        $this->container['inner_error'] = isset($data['inner_error']) ? $data['inner_error'] : null;
+        $this->container['code'] = null;
+        $this->container['message'] = null;
+        $this->container['description'] = null;
+        $this->container['inner_error'] = null;
+
+        if ($code != null) $this->setCode($code);
+        if ($message != null) $this->setMessage($message);
+        if ($description != null) $this->setDescription($description);
+        if ($inner_error != null) $this->setInnerError($inner_error);
     }
 
-    /*
+    /**
      * Show all the invalid properties with reasons.
      *
      * @return array invalid properties with reasons
@@ -209,7 +216,7 @@ class Error implements ArrayAccess
         return $invalidProperties;
     }
 
-    /*
+    /**
      * Validate all the properties in the model
      * return true if all passed
      *
@@ -222,7 +229,7 @@ class Error implements ArrayAccess
     }
 
 
-    /*
+    /**
      * Gets code
      *
      * @return string
@@ -232,7 +239,7 @@ class Error implements ArrayAccess
         return $this->container['code'];
     }
 
-    /*
+    /**
      * Sets code
      *
      * @param string $code Code
@@ -246,7 +253,7 @@ class Error implements ArrayAccess
         return $this;
     }
 
-    /*
+    /**
      * Gets message
      *
      * @return string
@@ -256,7 +263,7 @@ class Error implements ArrayAccess
         return $this->container['message'];
     }
 
-    /*
+    /**
      * Sets message
      *
      * @param string $message Message
@@ -270,7 +277,7 @@ class Error implements ArrayAccess
         return $this;
     }
 
-    /*
+    /**
      * Gets description
      *
      * @return string
@@ -280,7 +287,7 @@ class Error implements ArrayAccess
         return $this->container['description'];
     }
 
-    /*
+    /**
      * Sets description
      *
      * @param string $description Description
@@ -294,7 +301,7 @@ class Error implements ArrayAccess
         return $this;
     }
 
-    /*
+    /**
      * Gets inner_error
      *
      * @return \Aspose\Email\Model\ErrorDetails
@@ -304,7 +311,7 @@ class Error implements ArrayAccess
         return $this->container['inner_error'];
     }
 
-    /*
+    /**
      * Sets inner_error
      *
      * @param \Aspose\Email\Model\ErrorDetails $inner_error Inner Error
@@ -317,7 +324,7 @@ class Error implements ArrayAccess
 
         return $this;
     }
-    /*
+    /**
      * Returns true if offset exists. False otherwise.
      *
      * @param integer $offset Offset
@@ -329,7 +336,7 @@ class Error implements ArrayAccess
         return isset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets offset.
      *
      * @param integer $offset Offset
@@ -341,7 +348,7 @@ class Error implements ArrayAccess
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
-    /*
+    /**
      * Sets value based on offset.
      *
      * @param integer $offset Offset
@@ -358,7 +365,7 @@ class Error implements ArrayAccess
         }
     }
 
-    /*
+    /**
      * Unsets offset.
      *
      * @param integer $offset Offset
@@ -370,7 +377,7 @@ class Error implements ArrayAccess
         unset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets the string presentation of the object
      *
      * @return string

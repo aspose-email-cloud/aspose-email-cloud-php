@@ -28,12 +28,12 @@
 
 namespace Aspose\Email;
 
-/*
+/**
  * ObjectSerializer
  */
 class ObjectSerializer
 {
-    /*
+    /**
      * Serialize data
      *
      * @param mixed  $data   the data to serialize
@@ -77,7 +77,7 @@ class ObjectSerializer
         }
     }
 
-    /*
+    /**
      * Sanitize filename by removing path.
      * e.g. ../../sun.gif becomes sun.gif
      *
@@ -94,7 +94,7 @@ class ObjectSerializer
         }
     }
 
-    /*
+    /**
      * Take value and turn it into a string suitable for inclusion in
      * the path, by url-encoding.
      *
@@ -104,10 +104,10 @@ class ObjectSerializer
      */
     public static function toPathValue($value)
     {
-        return rawurlencode(self::toString($value));
+        return self::toString($value);
     }
 
-    /*
+    /**
      * Take value and turn it into a string suitable for inclusion in
      * the query, by imploding comma-separated if it's an object.
      * If it's a string, pass through unchanged. It will be url-encoded
@@ -126,7 +126,7 @@ class ObjectSerializer
         }
     }
 
-    /*
+    /**
      * Take value and turn it into a string suitable for inclusion in
      * the header. If it's a string, pass through unchanged
      * If it's a datetime object, format it in ISO8601
@@ -140,7 +140,7 @@ class ObjectSerializer
         return self::toString($value);
     }
 
-    /*
+    /**
      * Take value and turn it into a string suitable for inclusion in
      * the http body (form parameter). If it's a string, pass through unchanged
      * If it's a datetime object, format it in ISO8601
@@ -158,7 +158,7 @@ class ObjectSerializer
         }
     }
 
-    /*
+    /**
      * Take value and turn it into a string suitable for inclusion in
      * the parameter. If it's a string, pass through unchanged
      * If it's a datetime object, format it in ISO8601
@@ -177,7 +177,7 @@ class ObjectSerializer
         }
     }
 
-    /*
+    /**
      * Serialize an array to a string.
      *
      * @param array  $collection                 collection to serialize to a string
@@ -208,7 +208,7 @@ class ObjectSerializer
         }
     }
 
-    /*
+    /**
      * Deserialize a JSON string into an object
      *
      * @param mixed    $data        object or primitive to be deserialized

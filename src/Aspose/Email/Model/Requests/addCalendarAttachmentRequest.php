@@ -28,13 +28,13 @@
 
 namespace Aspose\Email\Model\Requests;
 
-/*
+/**
  * Request model for addCalendarAttachment" operation.
  */
-class addCalendarAttachmentRequest
+class AddCalendarAttachmentRequest
 {
-    /*
-     * Initializes a new instance of the addCalendarAttachmentRequest class.
+    /**
+     * Initializes a new instance of the AddCalendarAttachmentRequest class.
      *  
      * @param string $name Calendar file name in storage
      * @param string $attachment Attachment file name in storage
@@ -47,17 +47,17 @@ class addCalendarAttachmentRequest
         $this->request = $request;
     }
 
-    /*
+    /**
      * Calendar file name in storage
      */
     public $name;
 	
-    /*
+    /**
      * Attachment file name in storage
      */
     public $attachment;
 	
-    /*
+    /**
      * Storage name and folder path for calendar and attachment files
      */
     public $request;

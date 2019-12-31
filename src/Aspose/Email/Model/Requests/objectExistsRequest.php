@@ -28,13 +28,13 @@
 
 namespace Aspose\Email\Model\Requests;
 
-/*
+/**
  * Request model for objectExists" operation.
  */
-class objectExistsRequest
+class ObjectExistsRequest
 {
-    /*
-     * Initializes a new instance of the objectExistsRequest class.
+    /**
+     * Initializes a new instance of the ObjectExistsRequest class.
      *  
      * @param string $path File or folder path e.g. '/file.ext' or '/folder'
      * @param string $storage_name Storage name
@@ -47,17 +47,17 @@ class objectExistsRequest
         $this->version_id = $version_id;
     }
 
-    /*
+    /**
      * File or folder path e.g. '/file.ext' or '/folder'
      */
     public $path;
 	
-    /*
+    /**
      * Storage name
      */
     public $storage_name;
 	
-    /*
+    /**
      * File version ID
      */
     public $version_id;

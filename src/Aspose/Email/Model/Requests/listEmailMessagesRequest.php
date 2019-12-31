@@ -28,13 +28,13 @@
 
 namespace Aspose\Email\Model\Requests;
 
-/*
+/**
  * Request model for listEmailMessages" operation.
  */
-class listEmailMessagesRequest
+class ListEmailMessagesRequest
 {
-    /*
-     * Initializes a new instance of the listEmailMessagesRequest class.
+    /**
+     * Initializes a new instance of the ListEmailMessagesRequest class.
      *  
      * @param string $folder A folder in email account
      * @param string $query_string A MailQuery search string
@@ -55,37 +55,37 @@ class listEmailMessagesRequest
         $this->recursive = $recursive;
     }
 
-    /*
+    /**
      * A folder in email account
      */
     public $folder;
 	
-    /*
+    /**
      * A MailQuery search string
      */
     public $query_string;
 	
-    /*
+    /**
      * Email account
      */
     public $first_account;
 	
-    /*
+    /**
      * Additional email account (should be specified for POP/IMAP accounts and should be SMTP account)
      */
     public $second_account;
 	
-    /*
+    /**
      * Storage name where account file(s) located
      */
     public $storage;
 	
-    /*
+    /**
      * Folder in storage where account file(s) located
      */
     public $storage_folder;
 	
-    /*
+    /**
      * Specifies that should message be searched in subfolders recursively
      */
     public $recursive;

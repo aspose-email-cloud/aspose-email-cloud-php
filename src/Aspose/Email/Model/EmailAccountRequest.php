@@ -25,7 +25,7 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
-/*
+/**
  * EmailAccountRequest
  */
 
@@ -34,7 +34,7 @@ namespace Aspose\Email\Model;
 use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
-/*
+/**
  * EmailAccountRequest
  *
  * @description Email account settings request
@@ -43,14 +43,14 @@ class EmailAccountRequest implements ArrayAccess
 {
     const DISCRIMINATOR = 'Type';
 
-    /*
+    /**
      * The original name of the model.
      *
      * @var string
      */
     protected static $swaggerModelName = "EmailAccountRequest";
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @var string[]
@@ -59,13 +59,13 @@ class EmailAccountRequest implements ArrayAccess
         'host' => 'string',
         'port' => 'int',
         'login' => 'string',
-        'security_options' => 'object',
-        'protocol_type' => 'object',
+        'security_options' => 'string',
+        'protocol_type' => 'string',
         'description' => 'string',
         'storage_file' => '\Aspose\Email\Model\StorageFileLocation'
     ];
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @var string[]
@@ -80,7 +80,7 @@ class EmailAccountRequest implements ArrayAccess
         'storage_file' => null
     ];
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @return array
@@ -90,7 +90,7 @@ class EmailAccountRequest implements ArrayAccess
         return self::$swaggerTypes;
     }
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @return array
@@ -100,7 +100,7 @@ class EmailAccountRequest implements ArrayAccess
         return self::$swaggerFormats;
     }
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -116,7 +116,7 @@ class EmailAccountRequest implements ArrayAccess
         'storage_file' => 'storageFile'
     ];
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
@@ -131,7 +131,7 @@ class EmailAccountRequest implements ArrayAccess
         'storage_file' => 'setStorageFile'
     ];
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @var string[]
@@ -146,7 +146,7 @@ class EmailAccountRequest implements ArrayAccess
         'storage_file' => 'getStorageFile'
     ];
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -157,7 +157,7 @@ class EmailAccountRequest implements ArrayAccess
         return self::$attributeMap;
     }
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @return array
@@ -167,7 +167,7 @@ class EmailAccountRequest implements ArrayAccess
         return self::$setters;
     }
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @return array
@@ -177,7 +177,7 @@ class EmailAccountRequest implements ArrayAccess
         return self::$getters;
     }
 
-    /*
+    /**
      * The original name of the model.
      *
      * @return string
@@ -191,35 +191,48 @@ class EmailAccountRequest implements ArrayAccess
 
     
 
-    /*
+    /**
      * Associative array for storing property values
      *
      * @var mixed[]
      */
     protected $container = [];
 
-    /*
-     * Constructor
-     *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+    /**
+     * Initializes a new instance of the EmailAccountRequest class.
+     *  
+     * @param string $host Email account host
+     * @param int $port Email account port
+     * @param string $login Email account login
+     * @param string $security_options Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
+     * @param string $protocol_type Type of connection protocol. Enum, available values: IMAP, POP3, SMTP, EWS, WebDav
+     * @param string $description Email account description
+     * @param \Aspose\Email\Model\StorageFileLocation $storage_file A storage file location info to store email account
      */
-    public function __construct(array $data = null)
+    public function __construct($host = null, $port = null, $login = null, $security_options = null, $protocol_type = null, $description = null, $storage_file = null)
     {
-        $this->container['host'] = isset($data['host']) ? $data['host'] : null;
-        $this->container['port'] = isset($data['port']) ? $data['port'] : null;
-        $this->container['login'] = isset($data['login']) ? $data['login'] : null;
-        $this->container['security_options'] = isset($data['security_options']) ? $data['security_options'] : null;
-        $this->container['protocol_type'] = isset($data['protocol_type']) ? $data['protocol_type'] : null;
-        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
-        $this->container['storage_file'] = isset($data['storage_file']) ? $data['storage_file'] : null;
+        $this->container['host'] = null;
+        $this->container['port'] = null;
+        $this->container['login'] = null;
+        $this->container['security_options'] = null;
+        $this->container['protocol_type'] = null;
+        $this->container['description'] = null;
+        $this->container['storage_file'] = null;
+
+        if ($host != null) $this->setHost($host);
+        if ($port != null) $this->setPort($port);
+        if ($login != null) $this->setLogin($login);
+        if ($security_options != null) $this->setSecurityOptions($security_options);
+        if ($protocol_type != null) $this->setProtocolType($protocol_type);
+        if ($description != null) $this->setDescription($description);
+        if ($storage_file != null) $this->setStorageFile($storage_file);
 
         // Initialize discriminator property with the model name.
         $discriminator = array_search('Type', self::$attributeMap);
         $this->container[$discriminator] = static::$swaggerModelName;
     }
 
-    /*
+    /**
      * Show all the invalid properties with reasons.
      *
      * @return array invalid properties with reasons
@@ -248,16 +261,24 @@ class EmailAccountRequest implements ArrayAccess
         if ($this->container['security_options'] === null) {
             $invalidProperties[] = "'security_options' can't be null";
         }
+        if ((strlen($this->container['security_options']) < 1)) {
+            $invalidProperties[] = "invalid value for 'security_options', the character length must be bigger than or equal to 1.";
+        }
+
         if ($this->container['protocol_type'] === null) {
             $invalidProperties[] = "'protocol_type' can't be null";
         }
+        if ((strlen($this->container['protocol_type']) < 1)) {
+            $invalidProperties[] = "invalid value for 'protocol_type', the character length must be bigger than or equal to 1.";
+        }
+
         if ($this->container['storage_file'] === null) {
             $invalidProperties[] = "'storage_file' can't be null";
         }
         return $invalidProperties;
     }
 
-    /*
+    /**
      * Validate all the properties in the model
      * return true if all passed
      *
@@ -284,7 +305,13 @@ class EmailAccountRequest implements ArrayAccess
         if ($this->container['security_options'] === null) {
             return false;
         }
+        if (strlen($this->container['security_options']) < 1) {
+            return false;
+        }
         if ($this->container['protocol_type'] === null) {
+            return false;
+        }
+        if (strlen($this->container['protocol_type']) < 1) {
             return false;
         }
         if ($this->container['storage_file'] === null) {
@@ -294,7 +321,7 @@ class EmailAccountRequest implements ArrayAccess
     }
 
 
-    /*
+    /**
      * Gets host
      *
      * @return string
@@ -304,7 +331,7 @@ class EmailAccountRequest implements ArrayAccess
         return $this->container['host'];
     }
 
-    /*
+    /**
      * Sets host
      *
      * @param string $host Email account host
@@ -323,7 +350,7 @@ class EmailAccountRequest implements ArrayAccess
         return $this;
     }
 
-    /*
+    /**
      * Gets port
      *
      * @return int
@@ -333,7 +360,7 @@ class EmailAccountRequest implements ArrayAccess
         return $this->container['port'];
     }
 
-    /*
+    /**
      * Sets port
      *
      * @param int $port Email account port
@@ -347,7 +374,7 @@ class EmailAccountRequest implements ArrayAccess
         return $this;
     }
 
-    /*
+    /**
      * Gets login
      *
      * @return string
@@ -357,7 +384,7 @@ class EmailAccountRequest implements ArrayAccess
         return $this->container['login'];
     }
 
-    /*
+    /**
      * Sets login
      *
      * @param string $login Email account login
@@ -376,55 +403,65 @@ class EmailAccountRequest implements ArrayAccess
         return $this;
     }
 
-    /*
+    /**
      * Gets security_options
      *
-     * @return object
+     * @return string
      */
     public function getSecurityOptions()
     {
         return $this->container['security_options'];
     }
 
-    /*
+    /**
      * Sets security_options
      *
-     * @param object $security_options Email account security options
+     * @param string $security_options Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
      *
      * @return $this
      */
     public function setSecurityOptions($security_options)
     {
+
+        if ((strlen($security_options) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $security_options when calling EmailAccountRequest., must be bigger than or equal to 1.');
+        }
+
         $this->container['security_options'] = $security_options;
 
         return $this;
     }
 
-    /*
+    /**
      * Gets protocol_type
      *
-     * @return object
+     * @return string
      */
     public function getProtocolType()
     {
         return $this->container['protocol_type'];
     }
 
-    /*
+    /**
      * Sets protocol_type
      *
-     * @param object $protocol_type Email account protocol type
+     * @param string $protocol_type Type of connection protocol. Enum, available values: IMAP, POP3, SMTP, EWS, WebDav
      *
      * @return $this
      */
     public function setProtocolType($protocol_type)
     {
+
+        if ((strlen($protocol_type) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $protocol_type when calling EmailAccountRequest., must be bigger than or equal to 1.');
+        }
+
         $this->container['protocol_type'] = $protocol_type;
 
         return $this;
     }
 
-    /*
+    /**
      * Gets description
      *
      * @return string
@@ -434,7 +471,7 @@ class EmailAccountRequest implements ArrayAccess
         return $this->container['description'];
     }
 
-    /*
+    /**
      * Sets description
      *
      * @param string $description Email account description
@@ -448,7 +485,7 @@ class EmailAccountRequest implements ArrayAccess
         return $this;
     }
 
-    /*
+    /**
      * Gets storage_file
      *
      * @return \Aspose\Email\Model\StorageFileLocation
@@ -458,7 +495,7 @@ class EmailAccountRequest implements ArrayAccess
         return $this->container['storage_file'];
     }
 
-    /*
+    /**
      * Sets storage_file
      *
      * @param \Aspose\Email\Model\StorageFileLocation $storage_file A storage file location info to store email account
@@ -471,7 +508,7 @@ class EmailAccountRequest implements ArrayAccess
 
         return $this;
     }
-    /*
+    /**
      * Returns true if offset exists. False otherwise.
      *
      * @param integer $offset Offset
@@ -483,7 +520,7 @@ class EmailAccountRequest implements ArrayAccess
         return isset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets offset.
      *
      * @param integer $offset Offset
@@ -495,7 +532,7 @@ class EmailAccountRequest implements ArrayAccess
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
-    /*
+    /**
      * Sets value based on offset.
      *
      * @param integer $offset Offset
@@ -512,7 +549,7 @@ class EmailAccountRequest implements ArrayAccess
         }
     }
 
-    /*
+    /**
      * Unsets offset.
      *
      * @param integer $offset Offset
@@ -524,7 +561,7 @@ class EmailAccountRequest implements ArrayAccess
         unset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets the string presentation of the object
      *
      * @return string

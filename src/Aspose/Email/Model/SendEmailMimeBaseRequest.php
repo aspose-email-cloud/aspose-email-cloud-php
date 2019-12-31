@@ -25,14 +25,14 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
-/*
+/**
  * SendEmailMimeBaseRequest
  */
 
 namespace Aspose\Email\Model;
 use \Aspose\Email\ObjectSerializer;
 
-/*
+/**
  * SendEmailMimeBaseRequest
  *
  * @description Send email MIME request
@@ -41,14 +41,14 @@ class SendEmailMimeBaseRequest extends AccountBaseRequest
 {
     const DISCRIMINATOR = null;
 
-    /*
+    /**
      * The original name of the model.
      *
      * @var string
      */
     protected static $swaggerModelName = "SendEmailMimeBaseRequest";
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @var string[]
@@ -57,7 +57,7 @@ class SendEmailMimeBaseRequest extends AccountBaseRequest
         'base64_mime_message' => 'string'
     ];
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @var string[]
@@ -66,7 +66,7 @@ class SendEmailMimeBaseRequest extends AccountBaseRequest
         'base64_mime_message' => null
     ];
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @return array
@@ -76,7 +76,7 @@ class SendEmailMimeBaseRequest extends AccountBaseRequest
         return self::$swaggerTypes + parent::swaggerTypes();
     }
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @return array
@@ -86,7 +86,7 @@ class SendEmailMimeBaseRequest extends AccountBaseRequest
         return self::$swaggerFormats + parent::swaggerFormats();
     }
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -96,7 +96,7 @@ class SendEmailMimeBaseRequest extends AccountBaseRequest
         'base64_mime_message' => 'base64MimeMessage'
     ];
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
@@ -105,7 +105,7 @@ class SendEmailMimeBaseRequest extends AccountBaseRequest
         'base64_mime_message' => 'setBase64MimeMessage'
     ];
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @var string[]
@@ -114,7 +114,7 @@ class SendEmailMimeBaseRequest extends AccountBaseRequest
         'base64_mime_message' => 'getBase64MimeMessage'
     ];
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -125,7 +125,7 @@ class SendEmailMimeBaseRequest extends AccountBaseRequest
         return parent::attributeMap() + self::$attributeMap;
     }
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @return array
@@ -135,7 +135,7 @@ class SendEmailMimeBaseRequest extends AccountBaseRequest
         return parent::setters() + self::$setters;
     }
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @return array
@@ -145,7 +145,7 @@ class SendEmailMimeBaseRequest extends AccountBaseRequest
         return parent::getters() + self::$getters;
     }
 
-    /*
+    /**
      * The original name of the model.
      *
      * @return string
@@ -160,20 +160,26 @@ class SendEmailMimeBaseRequest extends AccountBaseRequest
     
 
 
-    /*
-     * Constructor
-     *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+    /**
+     * Initializes a new instance of the SendEmailMimeBaseRequest class.
+     *  
+     * @param string $first_account First account storage file name for receiving emails (or universal one)
+     * @param string $second_account Second account storage file name for sending emails (ignored if first is universal)
+     * @param \Aspose\Email\Model\StorageFolderLocation $storage_folder Storage folder location of account files
+     * @param string $base64_mime_message Email document serialized as MIME
      */
-    public function __construct(array $data = null)
+    public function __construct($first_account = null, $second_account = null, $storage_folder = null, $base64_mime_message = null)
     {
-        parent::__construct($data);
+        parent::__construct();
+        $this->container['base64_mime_message'] = null;
 
-        $this->container['base64_mime_message'] = isset($data['base64_mime_message']) ? $data['base64_mime_message'] : null;
+        if ($first_account != null) $this->setFirstAccount($first_account);
+        if ($second_account != null) $this->setSecondAccount($second_account);
+        if ($storage_folder != null) $this->setStorageFolder($storage_folder);
+        if ($base64_mime_message != null) $this->setBase64MimeMessage($base64_mime_message);
     }
 
-    /*
+    /**
      * Show all the invalid properties with reasons.
      *
      * @return array invalid properties with reasons
@@ -192,7 +198,7 @@ class SendEmailMimeBaseRequest extends AccountBaseRequest
         return $invalidProperties;
     }
 
-    /*
+    /**
      * Validate all the properties in the model
      * return true if all passed
      *
@@ -214,7 +220,7 @@ class SendEmailMimeBaseRequest extends AccountBaseRequest
     }
 
 
-    /*
+    /**
      * Gets base64_mime_message
      *
      * @return string
@@ -224,7 +230,7 @@ class SendEmailMimeBaseRequest extends AccountBaseRequest
         return $this->container['base64_mime_message'];
     }
 
-    /*
+    /**
      * Sets base64_mime_message
      *
      * @param string $base64_mime_message Email document serialized as MIME
@@ -242,7 +248,7 @@ class SendEmailMimeBaseRequest extends AccountBaseRequest
 
         return $this;
     }
-    /*
+    /**
      * Returns true if offset exists. False otherwise.
      *
      * @param integer $offset Offset
@@ -254,7 +260,7 @@ class SendEmailMimeBaseRequest extends AccountBaseRequest
         return isset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets offset.
      *
      * @param integer $offset Offset
@@ -266,7 +272,7 @@ class SendEmailMimeBaseRequest extends AccountBaseRequest
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
-    /*
+    /**
      * Sets value based on offset.
      *
      * @param integer $offset Offset
@@ -283,7 +289,7 @@ class SendEmailMimeBaseRequest extends AccountBaseRequest
         }
     }
 
-    /*
+    /**
      * Unsets offset.
      *
      * @param integer $offset Offset
@@ -295,7 +301,7 @@ class SendEmailMimeBaseRequest extends AccountBaseRequest
         unset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets the string presentation of the object
      *
      * @return string

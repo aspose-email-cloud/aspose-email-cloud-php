@@ -28,15 +28,15 @@
 
 namespace Aspose\Email\Model\Requests;
 
-/*
+/**
  * Request model for updateContactProperties" operation.
  */
-class updateContactPropertiesRequest
+class UpdateContactPropertiesRequest
 {
-    /*
-     * Initializes a new instance of the updateContactPropertiesRequest class.
+    /**
+     * Initializes a new instance of the UpdateContactPropertiesRequest class.
      *  
-     * @param string $format Contact document format
+     * @param string $format Contact document format Enum, available values: VCard, WebDav, Msg
      * @param string $name Contact document file name
      * @param \Aspose\Email\Model\HierarchicalObjectRequest $request Properties that should be updated/added
      */
@@ -47,17 +47,17 @@ class updateContactPropertiesRequest
         $this->request = $request;
     }
 
-    /*
-     * Contact document format
+    /**
+     * Contact document format Enum, available values: VCard, WebDav, Msg
      */
     public $format;
 	
-    /*
+    /**
      * Contact document file name
      */
     public $name;
 	
-    /*
+    /**
      * Properties that should be updated/added
      */
     public $request;

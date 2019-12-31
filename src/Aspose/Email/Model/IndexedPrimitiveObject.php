@@ -25,14 +25,14 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
-/*
+/**
  * IndexedPrimitiveObject
  */
 
 namespace Aspose\Email\Model;
 use \Aspose\Email\ObjectSerializer;
 
-/*
+/**
  * IndexedPrimitiveObject
  *
  * @description Simple indexed property
@@ -41,14 +41,14 @@ class IndexedPrimitiveObject extends BaseObject
 {
     const DISCRIMINATOR = null;
 
-    /*
+    /**
      * The original name of the model.
      *
      * @var string
      */
     protected static $swaggerModelName = "IndexedPrimitiveObject";
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @var string[]
@@ -58,7 +58,7 @@ class IndexedPrimitiveObject extends BaseObject
         'value' => 'string'
     ];
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @var string[]
@@ -68,7 +68,7 @@ class IndexedPrimitiveObject extends BaseObject
         'value' => null
     ];
 
-    /*
+    /**
      * Array of property to type mappings. Used for (de)serialization
      *
      * @return array
@@ -78,7 +78,7 @@ class IndexedPrimitiveObject extends BaseObject
         return self::$swaggerTypes + parent::swaggerTypes();
     }
 
-    /*
+    /**
      * Array of property to format mappings. Used for (de)serialization
      *
      * @return array
@@ -88,7 +88,7 @@ class IndexedPrimitiveObject extends BaseObject
         return self::$swaggerFormats + parent::swaggerFormats();
     }
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -99,7 +99,7 @@ class IndexedPrimitiveObject extends BaseObject
         'value' => 'value'
     ];
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
@@ -109,7 +109,7 @@ class IndexedPrimitiveObject extends BaseObject
         'value' => 'setValue'
     ];
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @var string[]
@@ -119,7 +119,7 @@ class IndexedPrimitiveObject extends BaseObject
         'value' => 'getValue'
     ];
 
-    /*
+    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -130,7 +130,7 @@ class IndexedPrimitiveObject extends BaseObject
         return parent::attributeMap() + self::$attributeMap;
     }
 
-    /*
+    /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @return array
@@ -140,7 +140,7 @@ class IndexedPrimitiveObject extends BaseObject
         return parent::setters() + self::$setters;
     }
 
-    /*
+    /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @return array
@@ -150,7 +150,7 @@ class IndexedPrimitiveObject extends BaseObject
         return parent::getters() + self::$getters;
     }
 
-    /*
+    /**
      * The original name of the model.
      *
      * @return string
@@ -165,21 +165,27 @@ class IndexedPrimitiveObject extends BaseObject
     
 
 
-    /*
-     * Constructor
-     *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+    /**
+     * Initializes a new instance of the IndexedPrimitiveObject class.
+     *  
+     * @param string $name Gets or sets the name of an object.
+     * @param string $type Property type. Used for deserialization purposes
+     * @param int $index Index of property in list
+     * @param string $value Gets or sets the name of a property.
      */
-    public function __construct(array $data = null)
+    public function __construct($name = null, $type = null, $index = null, $value = null)
     {
-        parent::__construct($data);
+        parent::__construct();
+        $this->container['index'] = null;
+        $this->container['value'] = null;
 
-        $this->container['index'] = isset($data['index']) ? $data['index'] : null;
-        $this->container['value'] = isset($data['value']) ? $data['value'] : null;
+        if ($name != null) $this->setName($name);
+        if ($type != null) $this->setType($type);
+        if ($index != null) $this->setIndex($index);
+        if ($value != null) $this->setValue($value);
     }
 
-    /*
+    /**
      * Show all the invalid properties with reasons.
      *
      * @return array invalid properties with reasons
@@ -194,7 +200,7 @@ class IndexedPrimitiveObject extends BaseObject
         return $invalidProperties;
     }
 
-    /*
+    /**
      * Validate all the properties in the model
      * return true if all passed
      *
@@ -213,7 +219,7 @@ class IndexedPrimitiveObject extends BaseObject
     }
 
 
-    /*
+    /**
      * Gets index
      *
      * @return int
@@ -223,7 +229,7 @@ class IndexedPrimitiveObject extends BaseObject
         return $this->container['index'];
     }
 
-    /*
+    /**
      * Sets index
      *
      * @param int $index Index of property in list
@@ -237,7 +243,7 @@ class IndexedPrimitiveObject extends BaseObject
         return $this;
     }
 
-    /*
+    /**
      * Gets value
      *
      * @return string
@@ -247,7 +253,7 @@ class IndexedPrimitiveObject extends BaseObject
         return $this->container['value'];
     }
 
-    /*
+    /**
      * Sets value
      *
      * @param string $value Gets or sets the name of a property.
@@ -260,7 +266,7 @@ class IndexedPrimitiveObject extends BaseObject
 
         return $this;
     }
-    /*
+    /**
      * Returns true if offset exists. False otherwise.
      *
      * @param integer $offset Offset
@@ -272,7 +278,7 @@ class IndexedPrimitiveObject extends BaseObject
         return isset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets offset.
      *
      * @param integer $offset Offset
@@ -284,7 +290,7 @@ class IndexedPrimitiveObject extends BaseObject
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
 
-    /*
+    /**
      * Sets value based on offset.
      *
      * @param integer $offset Offset
@@ -301,7 +307,7 @@ class IndexedPrimitiveObject extends BaseObject
         }
     }
 
-    /*
+    /**
      * Unsets offset.
      *
      * @param integer $offset Offset
@@ -313,7 +319,7 @@ class IndexedPrimitiveObject extends BaseObject
         unset($this->container[$offset]);
     }
 
-    /*
+    /**
      * Gets the string presentation of the object
      *
      * @return string

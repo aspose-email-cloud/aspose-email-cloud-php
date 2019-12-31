@@ -28,13 +28,13 @@
 
 namespace Aspose\Email\Model\Requests;
 
-/*
+/**
  * Request model for updateCalendarProperties" operation.
  */
-class updateCalendarPropertiesRequest
+class UpdateCalendarPropertiesRequest
 {
-    /*
-     * Initializes a new instance of the updateCalendarPropertiesRequest class.
+    /**
+     * Initializes a new instance of the UpdateCalendarPropertiesRequest class.
      *  
      * @param string $name iCalendar file name in storage
      * @param \Aspose\Email\Model\HierarchicalObjectRequest $request Calendar properties update request
@@ -45,12 +45,12 @@ class updateCalendarPropertiesRequest
         $this->request = $request;
     }
 
-    /*
+    /**
      * iCalendar file name in storage
      */
     public $name;
 	
-    /*
+    /**
      * Calendar properties update request
      */
     public $request;

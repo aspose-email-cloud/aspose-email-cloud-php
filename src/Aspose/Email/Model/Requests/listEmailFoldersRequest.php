@@ -28,13 +28,13 @@
 
 namespace Aspose\Email\Model\Requests;
 
-/*
+/**
  * Request model for listEmailFolders" operation.
  */
-class listEmailFoldersRequest
+class ListEmailFoldersRequest
 {
-    /*
-     * Initializes a new instance of the listEmailFoldersRequest class.
+    /**
+     * Initializes a new instance of the ListEmailFoldersRequest class.
      *  
      * @param string $first_account Email account
      * @param string $second_account Additional email account (should be specified for POP/IMAP accounts and should be SMTP account)
@@ -51,27 +51,27 @@ class listEmailFoldersRequest
         $this->parent_folder = $parent_folder;
     }
 
-    /*
+    /**
      * Email account
      */
     public $first_account;
 	
-    /*
+    /**
      * Additional email account (should be specified for POP/IMAP accounts and should be SMTP account)
      */
     public $second_account;
 	
-    /*
+    /**
      * Storage name where account file(s) located
      */
     public $storage;
 	
-    /*
+    /**
      * Folder in storage where account file(s) located
      */
     public $storage_folder;
 	
-    /*
+    /**
      * Folder in which subfolders should be listed
      */
     public $parent_folder;

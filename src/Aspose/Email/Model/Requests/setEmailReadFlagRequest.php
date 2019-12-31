@@ -28,13 +28,13 @@
 
 namespace Aspose\Email\Model\Requests;
 
-/*
+/**
  * Request model for setEmailReadFlag" operation.
  */
-class setEmailReadFlagRequest
+class SetEmailReadFlagRequest
 {
-    /*
-     * Initializes a new instance of the setEmailReadFlagRequest class.
+    /**
+     * Initializes a new instance of the SetEmailReadFlagRequest class.
      *  
      * @param \Aspose\Email\Model\SetMessageReadFlagAccountBaseRequest $request Message is read request
      */
@@ -43,7 +43,7 @@ class setEmailReadFlagRequest
         $this->request = $request;
     }
 
-    /*
+    /**
      * Message is read request
      */
     public $request;

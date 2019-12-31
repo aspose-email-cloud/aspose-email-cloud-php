@@ -28,13 +28,13 @@
 
 namespace Aspose\Email\Model\Requests;
 
-/*
+/**
  * Request model for addMapiAttachment" operation.
  */
-class addMapiAttachmentRequest
+class AddMapiAttachmentRequest
 {
-    /*
-     * Initializes a new instance of the addMapiAttachmentRequest class.
+    /**
+     * Initializes a new instance of the AddMapiAttachmentRequest class.
      *  
      * @param string $name Document file name
      * @param string $attachment Attachment file name
@@ -47,17 +47,17 @@ class addMapiAttachmentRequest
         $this->request = $request;
     }
 
-    /*
+    /**
      * Document file name
      */
     public $name;
 	
-    /*
+    /**
      * Attachment file name
      */
     public $attachment;
 	
-    /*
+    /**
      * Add attachment request
      */
     public $request;

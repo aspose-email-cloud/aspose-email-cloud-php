@@ -28,13 +28,13 @@
 
 namespace Aspose\Email\Model\Requests;
 
-/*
+/**
  * Request model for deleteFile" operation.
  */
-class deleteFileRequest
+class DeleteFileRequest
 {
-    /*
-     * Initializes a new instance of the deleteFileRequest class.
+    /**
+     * Initializes a new instance of the DeleteFileRequest class.
      *  
      * @param string $path File path e.g. '/folder/file.ext'
      * @param string $storage_name Storage name
@@ -47,17 +47,17 @@ class deleteFileRequest
         $this->version_id = $version_id;
     }
 
-    /*
+    /**
      * File path e.g. '/folder/file.ext'
      */
     public $path;
 	
-    /*
+    /**
      * Storage name
      */
     public $storage_name;
 	
-    /*
+    /**
      * File version ID to delete
      */
     public $version_id;

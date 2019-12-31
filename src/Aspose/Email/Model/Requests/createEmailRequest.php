@@ -28,13 +28,13 @@
 
 namespace Aspose\Email\Model\Requests;
 
-/*
+/**
  * Request model for createEmail" operation.
  */
-class createEmailRequest
+class CreateEmailRequest
 {
-    /*
-     * Initializes a new instance of the createEmailRequest class.
+    /**
+     * Initializes a new instance of the CreateEmailRequest class.
      *  
      * @param string $file_name Email document file name in storage
      * @param \Aspose\Email\Model\CreateEmailRequest $request An email document and optional Storage info to specify where the file should be located
@@ -45,12 +45,12 @@ class createEmailRequest
         $this->request = $request;
     }
 
-    /*
+    /**
      * Email document file name in storage
      */
     public $file_name;
 	
-    /*
+    /**
      * An email document and optional Storage info to specify where the file should be located
      */
     public $request;

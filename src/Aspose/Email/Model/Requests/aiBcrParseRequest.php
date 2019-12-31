@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ContactFormat.php">
+ * <copyright company="Aspose" file="aiBcrParseRequest.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -25,40 +25,27 @@
  * </summary>
  * --------------------------------------------------------------------------------------------------------------------
  */
-/*
- * ContactFormat
- */
 
-namespace Aspose\Email\Model;
-use \Aspose\Email\ObjectSerializer;
+namespace Aspose\Email\Model\Requests;
 
-/*
- * ContactFormat
- *
- * @description 
+/**
+ * Request model for aiBcrParse" operation.
  */
-class ContactFormat
+class AiBcrParseRequest
 {
-    /*
-     * Possible values of this enum
+    /**
+     * Initializes a new instance of the AiBcrParseRequest class.
+     *  
+     * @param \Aspose\Email\Model\AiBcrBase64Rq $rq Request with base64 images data
      */
-    const V_CARD = 'VCard';
-    const WEB_DAV = 'WebDav';
-    const MSG = 'Msg';
-    
-    /*
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public static function getAllowableEnumValues()
+    public function __construct($rq)             
     {
-        return [
-            self::V_CARD,
-            self::WEB_DAV,
-            self::MSG,
-        ];
+        $this->rq = $rq;
     }
+
+    /**
+     * Request with base64 images data
+     */
+    public $rq;
 }
-
-
 ?>
