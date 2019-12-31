@@ -69,7 +69,8 @@ $api->createFolder(new CreateFolderRequest($outFolderPath, $storage));
 $result = $api->aiBcrParseStorage(new AiBcrParseStorageRequest(
     new AiBcrParseStorageRq(null,
         array( //We can process multiple images in one request
-            new AiBcrImageStorageFile(true, //"isSingle" the image contains only one business card (you can upload image with multiple cards on it)
+            new AiBcrImageStorageFile(true, //Flag isSingle determines that image contains single VCard or more.
+                                            //Only single VCard on image variant is supported in current version.
                 new StorageFileLocation($storage, $folder, $imageFile))),
         new StorageFolderLocation($storage, $outFolderPath))));
 // Get file name from recognition result
