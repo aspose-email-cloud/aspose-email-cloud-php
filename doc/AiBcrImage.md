@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**is_single** | **bool** | Determines that image contains single VCard or more | 
+**is_single** | **bool** | Determines that image contains single VCard or more. Ignored in current version. Multiple cards on image support will be added soon | 
 
 
 

@@ -11,8 +11,6 @@ Class | Method | HTTP request | Description
 *EmailApi* | [**aiBcrOcr**](EmailApi.md#aibcrocr) | **POST** /email/AiBcr/ocr | Ocr images
 *EmailApi* | [**aiBcrOcrStorage**](EmailApi.md#aibcrocrstorage) | **POST** /email/AiBcr/ocr-storage | Ocr images from storage
 *EmailApi* | [**aiBcrParse**](EmailApi.md#aibcrparse) | **POST** /email/AiBcr/parse | Parse images to vCard properties
-*EmailApi* | [**aiBcrParseOcrData**](EmailApi.md#aibcrparseocrdata) | **POST** /email/AiBcr/parse-ocr-data | Parse OCR data to vCard properties
-*EmailApi* | [**aiBcrParseOcrDataStorage**](EmailApi.md#aibcrparseocrdatastorage) | **POST** /email/AiBcr/parse-ocr-data-storage | Parse vCards from OCR data and save them to Storage
 *EmailApi* | [**aiBcrParseStorage**](EmailApi.md#aibcrparsestorage) | **POST** /email/AiBcr/parse-storage | Parse images from storage to vCard files
 *EmailApi* | [**aiNameComplete**](EmailApi.md#ainamecomplete) | **GET** /email/AiName/complete | The call proposes k most probable names for given starting characters
 *EmailApi* | [**aiNameExpand**](EmailApi.md#ainameexpand) | **GET** /email/AiName/expand | Expands a person&#39;s name into a list of possible alternatives using options for expanding instructions
@@ -136,7 +134,6 @@ Class | Method | HTTP request | Description
  - [AiBcrBase64Image](AiBcrBase64Image.md)
  - [AiBcrBase64Rq](AiBcrBase64Rq.md)
  - [AiBcrImageStorageFile](AiBcrImageStorageFile.md)
- - [AiBcrParseOcrDataRq](AiBcrParseOcrDataRq.md)
  - [AiBcrStorageImageRq](AiBcrStorageImageRq.md)
  - [AiNameParsedMatchRq](AiNameParsedMatchRq.md)
  - [AppendEmailAccountBaseRequest](AppendEmailAccountBaseRequest.md)
@@ -154,7 +151,6 @@ Class | Method | HTTP request | Description
  - [SendEmailMimeBaseRequest](SendEmailMimeBaseRequest.md)
  - [SetMessageReadFlagAccountBaseRequest](SetMessageReadFlagAccountBaseRequest.md)
  - [StorageFileLocation](StorageFileLocation.md)
- - [AiBcrParseOcrDataStorageRq](AiBcrParseOcrDataStorageRq.md)
  - [AiBcrParseStorageRq](AiBcrParseStorageRq.md)
  - [AppendEmailBaseRequest](AppendEmailBaseRequest.md)
  - [AppendEmailMimeBaseRequest](AppendEmailMimeBaseRequest.md)

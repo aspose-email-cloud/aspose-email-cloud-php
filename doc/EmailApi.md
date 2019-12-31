@@ -1,6 +1,6 @@
 # Aspose\Email\EmailApi
 
-All URIs are relative to *https://localhost:53637/v3.0*
+All URIs are relative to *https://api-qa.aspose.cloud/v3.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,8 +11,6 @@ Method | HTTP request | Description
 [**aiBcrOcr**](EmailApi.md#aiBcrOcr) | **POST** /email/AiBcr/ocr | Ocr images
 [**aiBcrOcrStorage**](EmailApi.md#aiBcrOcrStorage) | **POST** /email/AiBcr/ocr-storage | Ocr images from storage
 [**aiBcrParse**](EmailApi.md#aiBcrParse) | **POST** /email/AiBcr/parse | Parse images to vCard properties
-[**aiBcrParseOcrData**](EmailApi.md#aiBcrParseOcrData) | **POST** /email/AiBcr/parse-ocr-data | Parse OCR data to vCard properties
-[**aiBcrParseOcrDataStorage**](EmailApi.md#aiBcrParseOcrDataStorage) | **POST** /email/AiBcr/parse-ocr-data-storage | Parse vCards from OCR data and save them to Storage
 [**aiBcrParseStorage**](EmailApi.md#aiBcrParseStorage) | **POST** /email/AiBcr/parse-storage | Parse images from storage to vCard files
 [**aiNameComplete**](EmailApi.md#aiNameComplete) | **GET** /email/AiName/complete | The call proposes k most probable names for given starting characters
 [**aiNameExpand**](EmailApi.md#aiNameExpand) | **GET** /email/AiName/expand | Expands a person&#39;s name into a list of possible alternatives using options for expanding instructions
@@ -255,52 +253,6 @@ new Aspose\Email\Model\Requests\AiBcrParseRequest(
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **rq** | [**\Aspose\Email\Model\AiBcrBase64Rq**](AiBcrBase64Rq.md)| Request with base64 images data |
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
-# **aiBcrParseOcrData**
-```php
-function \Aspose\Email\Model\ListResponseOfHierarchicalObject aiBcrParseOcrData(Requests\AiBcrParseOcrDataRequest $request)
-```
-Parse OCR data to vCard properties
-
-### Return type
-
-[**\Aspose\Email\Model\ListResponseOfHierarchicalObject**](ListResponseOfHierarchicalObject.md)
-
-### Request parameters
-```php
-new Aspose\Email\Model\Requests\AiBcrParseOcrDataRequest(
-    $rq)
-```
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **rq** | [**\Aspose\Email\Model\AiBcrParseOcrDataRq**](AiBcrParseOcrDataRq.md)|  |
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
-# **aiBcrParseOcrDataStorage**
-```php
-function \Aspose\Email\Model\ListResponseOfStorageFileLocation aiBcrParseOcrDataStorage(Requests\AiBcrParseOcrDataStorageRequest $request)
-```
-Parse vCards from OCR data and save them to Storage
-
-### Return type
-
-[**\Aspose\Email\Model\ListResponseOfStorageFileLocation**](ListResponseOfStorageFileLocation.md)
-
-### Request parameters
-```php
-new Aspose\Email\Model\Requests\AiBcrParseOcrDataStorageRequest(
-    $rq)
-```
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **rq** | [**\Aspose\Email\Model\AiBcrParseOcrDataStorageRq**](AiBcrParseOcrDataStorageRq.md)|  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 

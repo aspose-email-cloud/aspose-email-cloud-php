@@ -163,7 +163,7 @@ class AiBcrBase64Image extends AiBcrImage
     /**
      * Initializes a new instance of the AiBcrBase64Image class.
      *  
-     * @param bool $is_single Determines that image contains single VCard or more
+     * @param bool $is_single Determines that image contains single VCard or more. Ignored in current version. Multiple cards on image support will be added soon
      * @param string $base64_data Image data in base64
      */
     public function __construct($is_single = null, $base64_data = null)

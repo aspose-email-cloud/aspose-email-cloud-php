@@ -171,7 +171,7 @@ class AiBcrImage implements ArrayAccess
     /**
      * Initializes a new instance of the AiBcrImage class.
      *  
-     * @param bool $is_single Determines that image contains single VCard or more
+     * @param bool $is_single Determines that image contains single VCard or more. Ignored in current version. Multiple cards on image support will be added soon
      */
     public function __construct($is_single = null)
     {
@@ -228,7 +228,7 @@ class AiBcrImage implements ArrayAccess
     /**
      * Sets is_single
      *
-     * @param bool $is_single Determines that image contains single VCard or more
+     * @param bool $is_single Determines that image contains single VCard or more. Ignored in current version. Multiple cards on image support will be added soon
      *
      * @return $this
      */
