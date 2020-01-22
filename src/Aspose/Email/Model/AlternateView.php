@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ValueResponse.php">
+ * <copyright company="Aspose" file="AlternateView.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,20 +26,18 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /**
- * ValueResponse
+ * AlternateView
  */
 
 namespace Aspose\Email\Model;
-
-use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
 /**
- * ValueResponse
+ * AlternateView
  *
- * @description String value object
+ * @description Represents the format to view a message.
  */
-class ValueResponse implements ArrayAccess
+class AlternateView extends AttachmentBase 
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +46,7 @@ class ValueResponse implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "ValueResponse";
+    protected static $swaggerModelName = "AlternateView";
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +54,8 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'value' => 'string'
+        'base_uri' => 'string',
+        'linked_resources' => '\Aspose\Email\Model\LinkedResource[]'
     ];
 
     /**
@@ -65,7 +64,8 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'value' => null
+        'base_uri' => null,
+        'linked_resources' => null
     ];
 
     /**
@@ -75,7 +75,7 @@ class ValueResponse implements ArrayAccess
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /**
@@ -85,7 +85,7 @@ class ValueResponse implements ArrayAccess
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /**
@@ -95,7 +95,8 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'value' => 'value'
+        'base_uri' => 'baseUri',
+        'linked_resources' => 'linkedResources'
     ];
 
     /**
@@ -104,7 +105,8 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'value' => 'setValue'
+        'base_uri' => 'setBaseUri',
+        'linked_resources' => 'setLinkedResources'
     ];
 
     /**
@@ -113,7 +115,8 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'value' => 'getValue'
+        'base_uri' => 'getBaseUri',
+        'linked_resources' => 'getLinkedResources'
     ];
 
     /**
@@ -124,7 +127,7 @@ class ValueResponse implements ArrayAccess
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -134,7 +137,7 @@ class ValueResponse implements ArrayAccess
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -144,7 +147,7 @@ class ValueResponse implements ArrayAccess
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -161,23 +164,29 @@ class ValueResponse implements ArrayAccess
 
     
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
-     * Initializes a new instance of the ValueResponse class.
+     * Initializes a new instance of the AlternateView class.
      *  
-     * @param string $value Gets or sets string content.
+     * @param string $base64_data Attachment file content as Base64 string.
+     * @param string $content_id Attachment content id
+     * @param \Aspose\Email\Model\ContentType $content_type Content type
+     * @param map[string,string] $headers Attachment headers.
+     * @param string $base_uri Base URI.
+     * @param \Aspose\Email\Model\LinkedResource[] $linked_resources Embedded resources referred to by this alternate view.
      */
-    public function __construct($value = null)
+    public function __construct($base64_data = null, $content_id = null, $content_type = null, $headers = null, $base_uri = null, $linked_resources = null)
     {
-        $this->container['value'] = null;
+        parent::__construct();
+        $this->container['base_uri'] = null;
+        $this->container['linked_resources'] = null;
 
-        if ($value != null) $this->setValue($value);
+        if ($base64_data != null) $this->setBase64Data($base64_data);
+        if ($content_id != null) $this->setContentId($content_id);
+        if ($content_type != null) $this->setContentType($content_type);
+        if ($headers != null) $this->setHeaders($headers);
+        if ($base_uri != null) $this->setBaseUri($base_uri);
+        if ($linked_resources != null) $this->setLinkedResources($linked_resources);
     }
 
     /**
@@ -187,7 +196,7 @@ class ValueResponse implements ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -200,31 +209,58 @@ class ValueResponse implements ArrayAccess
      */
     public function valid()
     {
+        if (!parent::valid()) {
+            return false;
+        }
 
         return true;
     }
 
 
     /**
-     * Gets value
+     * Gets base_uri
      *
      * @return string
      */
-    public function getValue()
+    public function getBaseUri()
     {
-        return $this->container['value'];
+        return $this->container['base_uri'];
     }
 
     /**
-     * Sets value
+     * Sets base_uri
      *
-     * @param string $value Gets or sets string content.
+     * @param string $base_uri Base URI.
      *
      * @return $this
      */
-    public function setValue($value)
+    public function setBaseUri($base_uri)
     {
-        $this->container['value'] = $value;
+        $this->container['base_uri'] = $base_uri;
+
+        return $this;
+    }
+
+    /**
+     * Gets linked_resources
+     *
+     * @return \Aspose\Email\Model\LinkedResource[]
+     */
+    public function getLinkedResources()
+    {
+        return $this->container['linked_resources'];
+    }
+
+    /**
+     * Sets linked_resources
+     *
+     * @param \Aspose\Email\Model\LinkedResource[] $linked_resources Embedded resources referred to by this alternate view.
+     *
+     * @return $this
+     */
+    public function setLinkedResources($linked_resources)
+    {
+        $this->container['linked_resources'] = $linked_resources;
 
         return $this;
     }

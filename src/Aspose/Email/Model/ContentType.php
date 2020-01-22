@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ValueResponse.php">
+ * <copyright company="Aspose" file="ContentType.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,7 +26,7 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /**
- * ValueResponse
+ * ContentType
  */
 
 namespace Aspose\Email\Model;
@@ -35,11 +35,11 @@ use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
 /**
- * ValueResponse
+ * ContentType
  *
- * @description String value object
+ * @description Represents a Content-Type header.
  */
-class ValueResponse implements ArrayAccess
+class ContentType implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class ValueResponse implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "ValueResponse";
+    protected static $swaggerModelName = "ContentType";
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,11 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'value' => 'string'
+        'boundary' => 'string',
+        'char_set' => 'string',
+        'media_type' => 'string',
+        'name' => 'string',
+        'parameters' => '\Aspose\Email\Model\ContentTypeParameter[]'
     ];
 
     /**
@@ -65,7 +69,11 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'value' => null
+        'boundary' => null,
+        'char_set' => null,
+        'media_type' => null,
+        'name' => null,
+        'parameters' => null
     ];
 
     /**
@@ -95,7 +103,11 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'value' => 'value'
+        'boundary' => 'boundary',
+        'char_set' => 'charSet',
+        'media_type' => 'mediaType',
+        'name' => 'name',
+        'parameters' => 'parameters'
     ];
 
     /**
@@ -104,7 +116,11 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'value' => 'setValue'
+        'boundary' => 'setBoundary',
+        'char_set' => 'setCharSet',
+        'media_type' => 'setMediaType',
+        'name' => 'setName',
+        'parameters' => 'setParameters'
     ];
 
     /**
@@ -113,7 +129,11 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'value' => 'getValue'
+        'boundary' => 'getBoundary',
+        'char_set' => 'getCharSet',
+        'media_type' => 'getMediaType',
+        'name' => 'getName',
+        'parameters' => 'getParameters'
     ];
 
     /**
@@ -169,15 +189,27 @@ class ValueResponse implements ArrayAccess
     protected $container = [];
 
     /**
-     * Initializes a new instance of the ValueResponse class.
+     * Initializes a new instance of the ContentType class.
      *  
-     * @param string $value Gets or sets string content.
+     * @param string $boundary The boundary parameter included in the Content-Type header.
+     * @param string $char_set CharSet parameter.
+     * @param string $media_type The internet media type.
+     * @param string $name Name parameter.
+     * @param \Aspose\Email\Model\ContentTypeParameter[] $parameters Full list of parameters
      */
-    public function __construct($value = null)
+    public function __construct($boundary = null, $char_set = null, $media_type = null, $name = null, $parameters = null)
     {
-        $this->container['value'] = null;
+        $this->container['boundary'] = null;
+        $this->container['char_set'] = null;
+        $this->container['media_type'] = null;
+        $this->container['name'] = null;
+        $this->container['parameters'] = null;
 
-        if ($value != null) $this->setValue($value);
+        if ($boundary != null) $this->setBoundary($boundary);
+        if ($char_set != null) $this->setCharSet($char_set);
+        if ($media_type != null) $this->setMediaType($media_type);
+        if ($name != null) $this->setName($name);
+        if ($parameters != null) $this->setParameters($parameters);
     }
 
     /**
@@ -206,25 +238,121 @@ class ValueResponse implements ArrayAccess
 
 
     /**
-     * Gets value
+     * Gets boundary
      *
      * @return string
      */
-    public function getValue()
+    public function getBoundary()
     {
-        return $this->container['value'];
+        return $this->container['boundary'];
     }
 
     /**
-     * Sets value
+     * Sets boundary
      *
-     * @param string $value Gets or sets string content.
+     * @param string $boundary The boundary parameter included in the Content-Type header.
      *
      * @return $this
      */
-    public function setValue($value)
+    public function setBoundary($boundary)
     {
-        $this->container['value'] = $value;
+        $this->container['boundary'] = $boundary;
+
+        return $this;
+    }
+
+    /**
+     * Gets char_set
+     *
+     * @return string
+     */
+    public function getCharSet()
+    {
+        return $this->container['char_set'];
+    }
+
+    /**
+     * Sets char_set
+     *
+     * @param string $char_set CharSet parameter.
+     *
+     * @return $this
+     */
+    public function setCharSet($char_set)
+    {
+        $this->container['char_set'] = $char_set;
+
+        return $this;
+    }
+
+    /**
+     * Gets media_type
+     *
+     * @return string
+     */
+    public function getMediaType()
+    {
+        return $this->container['media_type'];
+    }
+
+    /**
+     * Sets media_type
+     *
+     * @param string $media_type The internet media type.
+     *
+     * @return $this
+     */
+    public function setMediaType($media_type)
+    {
+        $this->container['media_type'] = $media_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string $name Name parameter.
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets parameters
+     *
+     * @return \Aspose\Email\Model\ContentTypeParameter[]
+     */
+    public function getParameters()
+    {
+        return $this->container['parameters'];
+    }
+
+    /**
+     * Sets parameters
+     *
+     * @param \Aspose\Email\Model\ContentTypeParameter[] $parameters Full list of parameters
+     *
+     * @return $this
+     */
+    public function setParameters($parameters)
+    {
+        $this->container['parameters'] = $parameters;
 
         return $this;
     }

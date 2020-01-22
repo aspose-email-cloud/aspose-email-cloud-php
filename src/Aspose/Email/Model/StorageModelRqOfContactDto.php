@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ValueResponse.php">
+ * <copyright company="Aspose" file="StorageModelRqOfContactDto.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,7 +26,7 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /**
- * ValueResponse
+ * StorageModelRqOfContactDto
  */
 
 namespace Aspose\Email\Model;
@@ -35,11 +35,10 @@ use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
 /**
- * ValueResponse
+ * StorageModelRqOfContactDto
  *
- * @description String value object
  */
-class ValueResponse implements ArrayAccess
+class StorageModelRqOfContactDto implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +47,7 @@ class ValueResponse implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "ValueResponse";
+    protected static $swaggerModelName = "StorageModelRqOfContactDto";
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +55,8 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'value' => 'string'
+        'value' => '\Aspose\Email\Model\ContactDto',
+        'storage_folder' => '\Aspose\Email\Model\StorageFolderLocation'
     ];
 
     /**
@@ -65,7 +65,8 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'value' => null
+        'value' => null,
+        'storage_folder' => null
     ];
 
     /**
@@ -95,7 +96,8 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'value' => 'value'
+        'value' => 'value',
+        'storage_folder' => 'storageFolder'
     ];
 
     /**
@@ -104,7 +106,8 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'value' => 'setValue'
+        'value' => 'setValue',
+        'storage_folder' => 'setStorageFolder'
     ];
 
     /**
@@ -113,7 +116,8 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'value' => 'getValue'
+        'value' => 'getValue',
+        'storage_folder' => 'getStorageFolder'
     ];
 
     /**
@@ -169,15 +173,18 @@ class ValueResponse implements ArrayAccess
     protected $container = [];
 
     /**
-     * Initializes a new instance of the ValueResponse class.
+     * Initializes a new instance of the StorageModelRqOfContactDto class.
      *  
-     * @param string $value Gets or sets string content.
+     * @param \Aspose\Email\Model\ContactDto $value 
+     * @param \Aspose\Email\Model\StorageFolderLocation $storage_folder 
      */
-    public function __construct($value = null)
+    public function __construct($value = null, $storage_folder = null)
     {
         $this->container['value'] = null;
+        $this->container['storage_folder'] = null;
 
         if ($value != null) $this->setValue($value);
+        if ($storage_folder != null) $this->setStorageFolder($storage_folder);
     }
 
     /**
@@ -208,7 +215,7 @@ class ValueResponse implements ArrayAccess
     /**
      * Gets value
      *
-     * @return string
+     * @return \Aspose\Email\Model\ContactDto
      */
     public function getValue()
     {
@@ -218,13 +225,37 @@ class ValueResponse implements ArrayAccess
     /**
      * Sets value
      *
-     * @param string $value Gets or sets string content.
+     * @param \Aspose\Email\Model\ContactDto $value value
      *
      * @return $this
      */
     public function setValue($value)
     {
         $this->container['value'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets storage_folder
+     *
+     * @return \Aspose\Email\Model\StorageFolderLocation
+     */
+    public function getStorageFolder()
+    {
+        return $this->container['storage_folder'];
+    }
+
+    /**
+     * Sets storage_folder
+     *
+     * @param \Aspose\Email\Model\StorageFolderLocation $storage_folder storage_folder
+     *
+     * @return $this
+     */
+    public function setStorageFolder($storage_folder)
+    {
+        $this->container['storage_folder'] = $storage_folder;
 
         return $this;
     }

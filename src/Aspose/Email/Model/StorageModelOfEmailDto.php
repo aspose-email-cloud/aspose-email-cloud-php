@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ValueResponse.php">
+ * <copyright company="Aspose" file="StorageModelOfEmailDto.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,7 +26,7 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /**
- * ValueResponse
+ * StorageModelOfEmailDto
  */
 
 namespace Aspose\Email\Model;
@@ -35,11 +35,10 @@ use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
 /**
- * ValueResponse
+ * StorageModelOfEmailDto
  *
- * @description String value object
  */
-class ValueResponse implements ArrayAccess
+class StorageModelOfEmailDto implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +47,7 @@ class ValueResponse implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "ValueResponse";
+    protected static $swaggerModelName = "StorageModelOfEmailDto";
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +55,8 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'value' => 'string'
+        'storage_file' => '\Aspose\Email\Model\StorageFileLocation',
+        'value' => '\Aspose\Email\Model\EmailDto'
     ];
 
     /**
@@ -65,6 +65,7 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
+        'storage_file' => null,
         'value' => null
     ];
 
@@ -95,6 +96,7 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'storage_file' => 'storageFile',
         'value' => 'value'
     ];
 
@@ -104,6 +106,7 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'storage_file' => 'setStorageFile',
         'value' => 'setValue'
     ];
 
@@ -113,6 +116,7 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'storage_file' => 'getStorageFile',
         'value' => 'getValue'
     ];
 
@@ -169,14 +173,17 @@ class ValueResponse implements ArrayAccess
     protected $container = [];
 
     /**
-     * Initializes a new instance of the ValueResponse class.
+     * Initializes a new instance of the StorageModelOfEmailDto class.
      *  
-     * @param string $value Gets or sets string content.
+     * @param \Aspose\Email\Model\StorageFileLocation $storage_file 
+     * @param \Aspose\Email\Model\EmailDto $value 
      */
-    public function __construct($value = null)
+    public function __construct($storage_file = null, $value = null)
     {
+        $this->container['storage_file'] = null;
         $this->container['value'] = null;
 
+        if ($storage_file != null) $this->setStorageFile($storage_file);
         if ($value != null) $this->setValue($value);
     }
 
@@ -206,9 +213,33 @@ class ValueResponse implements ArrayAccess
 
 
     /**
+     * Gets storage_file
+     *
+     * @return \Aspose\Email\Model\StorageFileLocation
+     */
+    public function getStorageFile()
+    {
+        return $this->container['storage_file'];
+    }
+
+    /**
+     * Sets storage_file
+     *
+     * @param \Aspose\Email\Model\StorageFileLocation $storage_file storage_file
+     *
+     * @return $this
+     */
+    public function setStorageFile($storage_file)
+    {
+        $this->container['storage_file'] = $storage_file;
+
+        return $this;
+    }
+
+    /**
      * Gets value
      *
-     * @return string
+     * @return \Aspose\Email\Model\EmailDto
      */
     public function getValue()
     {
@@ -218,7 +249,7 @@ class ValueResponse implements ArrayAccess
     /**
      * Sets value
      *
-     * @param string $value Gets or sets string content.
+     * @param \Aspose\Email\Model\EmailDto $value value
      *
      * @return $this
      */

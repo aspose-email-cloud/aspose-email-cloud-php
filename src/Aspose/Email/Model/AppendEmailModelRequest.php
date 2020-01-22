@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ValueResponse.php">
+ * <copyright company="Aspose" file="AppendEmailModelRequest.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,20 +26,18 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /**
- * ValueResponse
+ * AppendEmailModelRequest
  */
 
 namespace Aspose\Email\Model;
-
-use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
 /**
- * ValueResponse
+ * AppendEmailModelRequest
  *
- * @description String value object
+ * @description Append email request
  */
-class ValueResponse implements ArrayAccess
+class AppendEmailModelRequest extends AppendEmailAccountBaseRequest 
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +46,7 @@ class ValueResponse implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "ValueResponse";
+    protected static $swaggerModelName = "AppendEmailModelRequest";
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +54,7 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'value' => 'string'
+        'message' => '\Aspose\Email\Model\EmailDto'
     ];
 
     /**
@@ -65,7 +63,7 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'value' => null
+        'message' => null
     ];
 
     /**
@@ -75,7 +73,7 @@ class ValueResponse implements ArrayAccess
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /**
@@ -85,7 +83,7 @@ class ValueResponse implements ArrayAccess
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /**
@@ -95,7 +93,7 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'value' => 'value'
+        'message' => 'message'
     ];
 
     /**
@@ -104,7 +102,7 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'value' => 'setValue'
+        'message' => 'setMessage'
     ];
 
     /**
@@ -113,7 +111,7 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'value' => 'getValue'
+        'message' => 'getMessage'
     ];
 
     /**
@@ -124,7 +122,7 @@ class ValueResponse implements ArrayAccess
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -134,7 +132,7 @@ class ValueResponse implements ArrayAccess
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -144,7 +142,7 @@ class ValueResponse implements ArrayAccess
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -161,23 +159,28 @@ class ValueResponse implements ArrayAccess
 
     
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
-     * Initializes a new instance of the ValueResponse class.
+     * Initializes a new instance of the AppendEmailModelRequest class.
      *  
-     * @param string $value Gets or sets string content.
+     * @param string $first_account First account storage file name for receiving emails (or universal one)
+     * @param string $second_account Second account storage file name for sending emails (ignored if first is universal)
+     * @param \Aspose\Email\Model\StorageFolderLocation $storage_folder Storage folder location of account files
+     * @param string $folder Email account folder to store a message
+     * @param bool $mark_as_sent Mark message as sent
+     * @param \Aspose\Email\Model\EmailDto $message Email document
      */
-    public function __construct($value = null)
+    public function __construct($first_account = null, $second_account = null, $storage_folder = null, $folder = null, $mark_as_sent = null, $message = null)
     {
-        $this->container['value'] = null;
+        parent::__construct();
+        $this->container['message'] = null;
 
-        if ($value != null) $this->setValue($value);
+        if ($first_account != null) $this->setFirstAccount($first_account);
+        if ($second_account != null) $this->setSecondAccount($second_account);
+        if ($storage_folder != null) $this->setStorageFolder($storage_folder);
+        if ($folder != null) $this->setFolder($folder);
+        if ($mark_as_sent != null) $this->setMarkAsSent($mark_as_sent);
+        if ($message != null) $this->setMessage($message);
     }
 
     /**
@@ -187,8 +190,11 @@ class ValueResponse implements ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
+        if ($this->container['message'] === null) {
+            $invalidProperties[] = "'message' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -200,31 +206,37 @@ class ValueResponse implements ArrayAccess
      */
     public function valid()
     {
+        if (!parent::valid()) {
+            return false;
+        }
 
+        if ($this->container['message'] === null) {
+            return false;
+        }
         return true;
     }
 
 
     /**
-     * Gets value
+     * Gets message
      *
-     * @return string
+     * @return \Aspose\Email\Model\EmailDto
      */
-    public function getValue()
+    public function getMessage()
     {
-        return $this->container['value'];
+        return $this->container['message'];
     }
 
     /**
-     * Sets value
+     * Sets message
      *
-     * @param string $value Gets or sets string content.
+     * @param \Aspose\Email\Model\EmailDto $message Email document
      *
      * @return $this
      */
-    public function setValue($value)
+    public function setMessage($message)
     {
-        $this->container['value'] = $value;
+        $this->container['message'] = $message;
 
         return $this;
     }
