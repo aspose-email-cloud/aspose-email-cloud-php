@@ -37,7 +37,7 @@ use \Aspose\Email\ObjectSerializer;
 /**
  * CalendarDto
  *
- * @description iCalendar document representation
+ * @description iCalendar document representation.
  */
 class CalendarDto implements ArrayAccess
 {
@@ -271,26 +271,26 @@ class CalendarDto implements ArrayAccess
     /**
      * Initializes a new instance of the CalendarDto class.
      *  
-     * @param \Aspose\Email\Model\Attachment[] $attachments Document attachments
-     * @param \Aspose\Email\Model\MailAddress[] $attendees Event attendees
-     * @param string $description Description
-     * @param \DateTime $end_date End date
-     * @param string $end_time_zone End time zone
-     * @param string[] $flags Appointment flags
-     * @param bool $is_description_html Indicates if description is in HTML format
-     * @param string $location Location
+     * @param \Aspose\Email\Model\Attachment[] $attachments Document attachments.
+     * @param \Aspose\Email\Model\MailAddress[] $attendees Event attendees.
+     * @param string $description Description.
+     * @param \DateTime $end_date End date.
+     * @param string $end_time_zone End time zone.
+     * @param string[] $flags Appointment flags. Items: Enumerates iCalendar flags. Enum, available values: None, AllDayEvent
+     * @param bool $is_description_html Indicates if description is in HTML format.
+     * @param string $location Location.
      * @param string $method Defines the iCalendar object method type associated with the calendar document. Enum, available values: None, Publish, Request, Reply, Add, Cancel, Refresh, Counter, DeclineCounter
      * @param string $microsoft_busy_status Specifies the BUSY status. Enum, available values: NotDefined, Free, Tentative, Busy, Oof
      * @param string $microsoft_intended_status Specifies the INTENDED status. Enum, available values: NotDefined, Free, Tentative, Busy, Oof
-     * @param \Aspose\Email\Model\MailAddress[] $optional_attendees Optional attendees
-     * @param \Aspose\Email\Model\MailAddress $organizer Event organizer
+     * @param \Aspose\Email\Model\MailAddress[] $optional_attendees Optional attendees.
+     * @param \Aspose\Email\Model\MailAddress $organizer Event organizer.
      * @param string $recurrence_string String representation of recurrence pattern (See iCalendar RFC, \"Recurrence rule\" section). For example:               For daily recurrence:         \"FREQ=DAILY;COUNT=10;WKST=MO\"                   For monthly recurrence:         \"BYSETPOS=1;BYDAY=MO,TU,WE,TH,FR;FREQ=MONTHLY;INTERVAL=10;WKST=MO\"                   For yearly recurrence:         \"BYMONTHDAY=30;BYMONTH=1;FREQ=YEARLY;WKST=MO\"
-     * @param \Aspose\Email\Model\CalendarReminder[] $reminders Reminders
+     * @param \Aspose\Email\Model\CalendarReminder[] $reminders Reminders.
      * @param string $sequence_id The sequence id. Read only.
-     * @param \DateTime $start_date Start date
-     * @param string $start_time_zone Start time zone
+     * @param \DateTime $start_date Start date.
+     * @param string $start_time_zone Start time zone.
      * @param string $status Defines the overall status or confirmation for the calendar document. Enum, available values: NotDefined, Cancelled, Tentative, Confirmed
-     * @param string $summary Summary
+     * @param string $summary Summary.
      * @param string $transparency Specifies whether or not this appointment is intended to be visible in availability searches. Enum, available values: NotDefined, Transparent, Opaque
      */
     public function __construct($attachments = null, $attendees = null, $description = null, $end_date = null, $end_time_zone = null, $flags = null, $is_description_html = null, $location = null, $method = null, $microsoft_busy_status = null, $microsoft_intended_status = null, $optional_attendees = null, $organizer = null, $recurrence_string = null, $reminders = null, $sequence_id = null, $start_date = null, $start_time_zone = null, $status = null, $summary = null, $transparency = null)
@@ -451,7 +451,7 @@ class CalendarDto implements ArrayAccess
     /**
      * Sets attachments
      *
-     * @param \Aspose\Email\Model\Attachment[] $attachments Document attachments
+     * @param \Aspose\Email\Model\Attachment[] $attachments Document attachments.
      *
      * @return $this
      */
@@ -475,7 +475,7 @@ class CalendarDto implements ArrayAccess
     /**
      * Sets attendees
      *
-     * @param \Aspose\Email\Model\MailAddress[] $attendees Event attendees
+     * @param \Aspose\Email\Model\MailAddress[] $attendees Event attendees.
      *
      * @return $this
      */
@@ -499,7 +499,7 @@ class CalendarDto implements ArrayAccess
     /**
      * Sets description
      *
-     * @param string $description Description
+     * @param string $description Description.
      *
      * @return $this
      */
@@ -523,7 +523,7 @@ class CalendarDto implements ArrayAccess
     /**
      * Sets end_date
      *
-     * @param \DateTime $end_date End date
+     * @param \DateTime $end_date End date.
      *
      * @return $this
      */
@@ -547,7 +547,7 @@ class CalendarDto implements ArrayAccess
     /**
      * Sets end_time_zone
      *
-     * @param string $end_time_zone End time zone
+     * @param string $end_time_zone End time zone.
      *
      * @return $this
      */
@@ -571,7 +571,7 @@ class CalendarDto implements ArrayAccess
     /**
      * Sets flags
      *
-     * @param string[] $flags Appointment flags
+     * @param string[] $flags Appointment flags. Items: Enumerates iCalendar flags. Enum, available values: None, AllDayEvent
      *
      * @return $this
      */
@@ -595,7 +595,7 @@ class CalendarDto implements ArrayAccess
     /**
      * Sets is_description_html
      *
-     * @param bool $is_description_html Indicates if description is in HTML format
+     * @param bool $is_description_html Indicates if description is in HTML format.
      *
      * @return $this
      */
@@ -619,7 +619,7 @@ class CalendarDto implements ArrayAccess
     /**
      * Sets location
      *
-     * @param string $location Location
+     * @param string $location Location.
      *
      * @return $this
      */
@@ -720,7 +720,7 @@ class CalendarDto implements ArrayAccess
     /**
      * Sets optional_attendees
      *
-     * @param \Aspose\Email\Model\MailAddress[] $optional_attendees Optional attendees
+     * @param \Aspose\Email\Model\MailAddress[] $optional_attendees Optional attendees.
      *
      * @return $this
      */
@@ -744,7 +744,7 @@ class CalendarDto implements ArrayAccess
     /**
      * Sets organizer
      *
-     * @param \Aspose\Email\Model\MailAddress $organizer Event organizer
+     * @param \Aspose\Email\Model\MailAddress $organizer Event organizer.
      *
      * @return $this
      */
@@ -792,7 +792,7 @@ class CalendarDto implements ArrayAccess
     /**
      * Sets reminders
      *
-     * @param \Aspose\Email\Model\CalendarReminder[] $reminders Reminders
+     * @param \Aspose\Email\Model\CalendarReminder[] $reminders Reminders.
      *
      * @return $this
      */
@@ -840,7 +840,7 @@ class CalendarDto implements ArrayAccess
     /**
      * Sets start_date
      *
-     * @param \DateTime $start_date Start date
+     * @param \DateTime $start_date Start date.
      *
      * @return $this
      */
@@ -864,7 +864,7 @@ class CalendarDto implements ArrayAccess
     /**
      * Sets start_time_zone
      *
-     * @param string $start_time_zone Start time zone
+     * @param string $start_time_zone Start time zone.
      *
      * @return $this
      */
@@ -912,7 +912,7 @@ class CalendarDto implements ArrayAccess
     /**
      * Sets summary
      *
-     * @param string $summary Summary
+     * @param string $summary Summary.
      *
      * @return $this
      */

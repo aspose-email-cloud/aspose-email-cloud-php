@@ -36,16 +36,16 @@ class AppendEmailModelMessageRequest
     /**
      * Initializes a new instance of the AppendEmailModelMessageRequest class.
      *  
-     * @param \Aspose\Email\Model\AppendEmailModelRequest $request Append email request
+     * @param \Aspose\Email\Model\AppendEmailModelRq $rq Append email request
      */
-    public function __construct($request)             
+    public function __construct($rq)             
     {
-        $this->request = $request;
+        $this->rq = $rq;
     }
 
     /**
      * Append email request
      */
-    public $request;
+    public $rq;
 }
 ?>

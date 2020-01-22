@@ -707,13 +707,13 @@ Adds an email from model to specified folder in email account
 ### Request parameters
 ```php
 new Aspose\Email\Model\Requests\AppendEmailModelMessageRequest(
-    $request)
+    $rq)
 ```
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**\Aspose\Email\Model\AppendEmailModelRequest**](AppendEmailModelRequest.md)| Append email request |
+ **rq** | [**\Aspose\Email\Model\AppendEmailModelRq**](AppendEmailModelRq.md)| Append email request |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -2357,13 +2357,13 @@ void (empty response body)
 ### Request parameters
 ```php
 new Aspose\Email\Model\Requests\SendEmailModelRequest(
-    $request)
+    $rq)
 ```
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**\Aspose\Email\Model\SendEmailModelRequest**](SendEmailModelRequest.md)| Send email request |
+ **rq** | [**\Aspose\Email\Model\SendEmailModelRq**](SendEmailModelRq.md)| Send email request |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 

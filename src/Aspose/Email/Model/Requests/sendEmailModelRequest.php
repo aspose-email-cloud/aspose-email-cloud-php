@@ -36,16 +36,16 @@ class SendEmailModelRequest
     /**
      * Initializes a new instance of the SendEmailModelRequest class.
      *  
-     * @param \Aspose\Email\Model\SendEmailModelRequest $request Send email request
+     * @param \Aspose\Email\Model\SendEmailModelRq $rq Send email request
      */
-    public function __construct($request)             
+    public function __construct($rq)             
     {
-        $this->request = $request;
+        $this->rq = $rq;
     }
 
     /**
      * Send email request
      */
-    public $request;
+    public $rq;
 }
 ?>

@@ -1,11 +1,11 @@
-# SendEmailModelRequest
+# AppendEmailModelRq
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**message** | [**\Aspose\Email\Model\EmailDto**](EmailDto.md) | Message to send | [optional] 
+**message** | [**\Aspose\Email\Model\EmailDto**](EmailDto.md) | Email document | 
 
- Parent class: [AccountBaseRequest](AccountBaseRequest.md)
+ Parent class: [AppendEmailAccountBaseRequest](AppendEmailAccountBaseRequest.md)
 
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 

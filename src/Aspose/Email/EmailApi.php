@@ -6721,9 +6721,9 @@ class EmailApi
      */
     protected function appendEmailModelMessageRequest(Requests\AppendEmailModelMessageRequest $request)
     {
-        // verify the required parameter 'request' is set
-        if ($request->request === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $request when calling appendEmailModelMessage');
+        // verify the required parameter 'rq' is set
+        if ($request->rq === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $rq when calling appendEmailModelMessage');
         }
 
         $resourcePath = '/email/client/AppendModel';
@@ -6740,11 +6740,11 @@ class EmailApi
         $formFiles = [];
         // body params
         $_tempBody = null;
-        if (isset($request->request)) {
-            if (is_string($request->request)) {
-                $_tempBody = "\"" . $request->request . "\"";   
+        if (isset($request->rq)) {
+            if (is_string($request->rq)) {
+                $_tempBody = "\"" . $request->rq . "\"";   
             } else {
-                $_tempBody = $request->request;
+                $_tempBody = $request->rq;
             }
         }
 
@@ -23661,9 +23661,9 @@ class EmailApi
      */
     protected function sendEmailModelRequest(Requests\SendEmailModelRequest $request)
     {
-        // verify the required parameter 'request' is set
-        if ($request->request === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $request when calling sendEmailModel');
+        // verify the required parameter 'rq' is set
+        if ($request->rq === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $rq when calling sendEmailModel');
         }
 
         $resourcePath = '/email/client/SendModel';
@@ -23680,11 +23680,11 @@ class EmailApi
         $formFiles = [];
         // body params
         $_tempBody = null;
-        if (isset($request->request)) {
-            if (is_string($request->request)) {
-                $_tempBody = "\"" . $request->request . "\"";   
+        if (isset($request->rq)) {
+            if (is_string($request->rq)) {
+                $_tempBody = "\"" . $request->rq . "\"";   
             } else {
-                $_tempBody = $request->request;
+                $_tempBody = $request->rq;
             }
         }
 

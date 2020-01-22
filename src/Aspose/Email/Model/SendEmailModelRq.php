@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="SendEmailModelRequest.php">
+ * <copyright company="Aspose" file="SendEmailModelRq.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,18 +26,18 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /**
- * SendEmailModelRequest
+ * SendEmailModelRq
  */
 
 namespace Aspose\Email\Model;
 use \Aspose\Email\ObjectSerializer;
 
 /**
- * SendEmailModelRequest
+ * SendEmailModelRq
  *
  * @description Send email model request
  */
-class SendEmailModelRequest extends AccountBaseRequest 
+class SendEmailModelRq extends AccountBaseRequest 
 {
     const DISCRIMINATOR = null;
 
@@ -46,7 +46,7 @@ class SendEmailModelRequest extends AccountBaseRequest
      *
      * @var string
      */
-    protected static $swaggerModelName = "SendEmailModelRequest";
+    protected static $swaggerModelName = "SendEmailModelRq";
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -161,7 +161,7 @@ class SendEmailModelRequest extends AccountBaseRequest
 
 
     /**
-     * Initializes a new instance of the SendEmailModelRequest class.
+     * Initializes a new instance of the SendEmailModelRq class.
      *  
      * @param string $first_account First account storage file name for receiving emails (or universal one)
      * @param string $second_account Second account storage file name for sending emails (ignored if first is universal)

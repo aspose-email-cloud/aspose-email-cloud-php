@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="AppendEmailModelRequest.php">
+ * <copyright company="Aspose" file="AppendEmailModelRq.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,18 +26,18 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /**
- * AppendEmailModelRequest
+ * AppendEmailModelRq
  */
 
 namespace Aspose\Email\Model;
 use \Aspose\Email\ObjectSerializer;
 
 /**
- * AppendEmailModelRequest
+ * AppendEmailModelRq
  *
  * @description Append email request
  */
-class AppendEmailModelRequest extends AppendEmailAccountBaseRequest 
+class AppendEmailModelRq extends AppendEmailAccountBaseRequest 
 {
     const DISCRIMINATOR = null;
 
@@ -46,7 +46,7 @@ class AppendEmailModelRequest extends AppendEmailAccountBaseRequest
      *
      * @var string
      */
-    protected static $swaggerModelName = "AppendEmailModelRequest";
+    protected static $swaggerModelName = "AppendEmailModelRq";
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -161,7 +161,7 @@ class AppendEmailModelRequest extends AppendEmailAccountBaseRequest
 
 
     /**
-     * Initializes a new instance of the AppendEmailModelRequest class.
+     * Initializes a new instance of the AppendEmailModelRq class.
      *  
      * @param string $first_account First account storage file name for receiving emails (or universal one)
      * @param string $second_account Second account storage file name for sending emails (ignored if first is universal)

@@ -334,7 +334,7 @@ class EmailDto implements ArrayAccess
      * @param string $body_type The content type of message body. Enum, available values: PlainText, Html, Rtf
      * @param \Aspose\Email\Model\MailAddress[] $cc CC recipients.
      * @param \DateTime $date Message date.
-     * @param string[] $delivery_notification_options Delivery notifications.
+     * @param string[] $delivery_notification_options Delivery notifications. Items: Email delivery notification options. Enum, available values: Delay, Never, None, OnFailure, OnSuccess
      * @param \Aspose\Email\Model\MailAddress $from From address.
      * @param map[string,string] $headers Document headers.
      * @param string $html_body HTML body.
@@ -712,7 +712,7 @@ class EmailDto implements ArrayAccess
     /**
      * Sets delivery_notification_options
      *
-     * @param string[] $delivery_notification_options Delivery notifications.
+     * @param string[] $delivery_notification_options Delivery notifications. Items: Email delivery notification options. Enum, available values: Delay, Never, None, OnFailure, OnSuccess
      *
      * @return $this
      */

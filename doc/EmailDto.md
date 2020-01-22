@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **body_type** | **string** | The content type of message body. Enum, available values: PlainText, Html, Rtf | 
 **cc** | [**\Aspose\Email\Model\MailAddress[]**](MailAddress.md) | CC recipients. | [optional] 
 **date** | [**\DateTime**](\DateTime.md) | Message date. | 
-**delivery_notification_options** | **string[]** | Delivery notifications. | [optional] 
+**delivery_notification_options** | **string[]** | Delivery notifications. Items: Email delivery notification options. Enum, available values: Delay, Never, None, OnFailure, OnSuccess | [optional] 
 **from** | [**\Aspose\Email\Model\MailAddress**](MailAddress.md) | From address. | [optional] 
 **headers** | **map[string,string]** | Document headers. | [optional] 
 **html_body** | **string** | HTML body. | [optional] 
