@@ -326,14 +326,10 @@ class EmailApiTest extends TestCase
             ->setGivenName("Alex")
             ->setEmailAddresses(array(new EmailAddress(
                 new EnumWithCustomOfEmailAddressCategory("Work"),
-                "Alex Thomas",
-                true,
-                null,
-                "alex.thomas@work.com")))
+                "Alex Thomas", true, null, "alex.thomas@work.com")))
             ->setPhoneNumbers(array(new PhoneNumber(
                 new EnumWithCustomOfPhoneNumberCategory("Work"),
-                "+49211424721",
-                true)));
+                "+49211424721", true)));
         $contactFile = uniqid() . ".vcf";
         self::getApi()->saveContactModel(
             new SaveContactModelRequest(
