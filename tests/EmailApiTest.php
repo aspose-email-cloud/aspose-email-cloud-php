@@ -163,6 +163,9 @@ class EmailApiTest extends TestCase
         $this->assertEqualsWithDelta($startDate->getTimestamp(), $factStartDate->getTimestamp(), 1);
     }
 
+    /**
+     * @group pipeline
+     */
     public function testAiNameGenderize(): void
     {
         $result = self::getApi()->aiNameGenderize(new AiNameGenderizeRequest("John Cane"));
@@ -170,12 +173,18 @@ class EmailApiTest extends TestCase
         $this->assertEquals('Male', $result->getValue()[0]->getGender());
     }
 
+    /**
+     * @group pipeline
+     */
     public function testAiNameFormat(): void
     {
         $result = self::getApi()->aiNameFormat(new AiNameFormatRequest("Mr. John Michael Cane", null, null, null, null, "%t%L%f%m"));
         $this->assertEquals("Mr. Cane J. M.", $result->getName());
     }
 
+    /**
+     * @group pipeline
+     */
     public function testAiNameMatch(): void
     {
         $first = "John Michael Cane";
@@ -184,6 +193,9 @@ class EmailApiTest extends TestCase
         $this->assertGreaterThan(0.5, $result->getSimilarity());
     }
 
+    /**
+     * @group pipeline
+     */
     public function testAiNameExpand(): void
     {
         $name = "Smith Bobby";
@@ -195,6 +207,9 @@ class EmailApiTest extends TestCase
         $this->assertContains("B. Smith", $expandedNames);
     }
 
+    /**
+     * @group pipeline
+     */
     public function testAiNameComplete(): void
     {
         $prefix = "Dav";
@@ -207,6 +222,9 @@ class EmailApiTest extends TestCase
         $this->assertContains("Davis", $names);
     }
 
+    /**
+     * @group pipeline
+     */
     public function testAiNameParseEmailAddress(): void
     {
         $address = "john-cane@gmail.com";
@@ -225,6 +243,9 @@ class EmailApiTest extends TestCase
         $this->assertEquals("Cane", $surname->getValue());
     }
 
+    /**
+     * @group pipeline
+     */
     public function testAiBcrParseStorage(): void
     {
         $path = dirname(__FILE__)."\\data\\test_single_0001.png";
@@ -257,6 +278,9 @@ class EmailApiTest extends TestCase
         $this->assertGreaterThanOrEqual(3, count($contactProperties->getInternalProperties()));
     }
 
+    /**
+     * @group pipeline
+     */
     public function testAiBcrParse(): void
     {
         $path = dirname(__FILE__)."\\data\\test_single_0001.png";
@@ -342,6 +366,9 @@ class EmailApiTest extends TestCase
         $this->assertTrue($exist->getExists());
     }
 
+    /**
+     * @group pipeline
+     */
     public function testAiBcrParseModel(): void
     {
         $path = dirname(__FILE__)."\\data\\test_single_0001.png";
