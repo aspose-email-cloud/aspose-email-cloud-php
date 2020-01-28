@@ -11,6 +11,8 @@ Method | HTTP request | Description
 [**aiBcrOcr**](EmailApi.md#aiBcrOcr) | **POST** /email/AiBcr/ocr | Ocr images
 [**aiBcrOcrStorage**](EmailApi.md#aiBcrOcrStorage) | **POST** /email/AiBcr/ocr-storage | Ocr images from storage
 [**aiBcrParse**](EmailApi.md#aiBcrParse) | **POST** /email/AiBcr/parse | Parse images to vCard properties
+[**aiBcrParseModel**](EmailApi.md#aiBcrParseModel) | **POST** /email/AiBcr/parse-model | Parse images to vCard document models
+[**aiBcrParseOcrDataModel**](EmailApi.md#aiBcrParseOcrDataModel) | **POST** /email/AiBcr/parse-ocr-data-model | Parse OCR data to vCard document models
 [**aiBcrParseStorage**](EmailApi.md#aiBcrParseStorage) | **POST** /email/AiBcr/parse-storage | Parse images from storage to vCard files
 [**aiNameComplete**](EmailApi.md#aiNameComplete) | **GET** /email/AiName/complete | The call proposes k most probable names for given starting characters
 [**aiNameExpand**](EmailApi.md#aiNameExpand) | **GET** /email/AiName/expand | Expands a person&#39;s name into a list of possible alternatives using options for expanding instructions
@@ -24,7 +26,10 @@ Method | HTTP request | Description
 [**aiNameParse**](EmailApi.md#aiNameParse) | **GET** /email/AiName/parse | Parse name to components
 [**aiNameParseEmailAddress**](EmailApi.md#aiNameParseEmailAddress) | **GET** /email/AiName/parse-email-address | Parse person&#39;s name out of an email address
 [**appendEmailMessage**](EmailApi.md#appendEmailMessage) | **PUT** /email/client/Append | Adds an email from *.eml file to specified folder in email account
+[**appendEmailModelMessage**](EmailApi.md#appendEmailModelMessage) | **PUT** /email/client/AppendModel | Adds an email from model to specified folder in email account
 [**appendMimeMessage**](EmailApi.md#appendMimeMessage) | **PUT** /email/client/AppendMime | Adds an email from MIME to specified folder in email account
+[**convertCalendarModelToAlternate**](EmailApi.md#convertCalendarModelToAlternate) | **PUT** /email/CalendarModel/as-alternate | Convert iCalendar to AlternateView
+[**convertEmail**](EmailApi.md#convertEmail) | **PUT** /email/convert/{format} | Converts email document to specified format and returns as file
 [**copyFile**](EmailApi.md#copyFile) | **PUT** /email/storage/file/copy/{srcPath} | Copy file
 [**copyFolder**](EmailApi.md#copyFolder) | **PUT** /email/storage/folder/copy/{srcPath} | Copy folder
 [**createCalendar**](EmailApi.md#createCalendar) | **PUT** /email/Calendar/{name} | Create calendar file
@@ -43,15 +48,24 @@ Method | HTTP request | Description
 [**deleteMapiProperties**](EmailApi.md#deleteMapiProperties) | **DELETE** /email/Mapi/{name}/properties | Delete document properties
 [**downloadFile**](EmailApi.md#downloadFile) | **GET** /email/storage/file/{path} | Download file
 [**fetchEmailMessage**](EmailApi.md#fetchEmailMessage) | **GET** /email/client/Fetch | Fetch message mime from email account
+[**fetchEmailModel**](EmailApi.md#fetchEmailModel) | **GET** /email/client/FetchModel | Fetch message model from email account
 [**getCalendar**](EmailApi.md#getCalendar) | **GET** /email/Calendar/{name}/properties | Get calendar file properties
 [**getCalendarAttachment**](EmailApi.md#getCalendarAttachment) | **GET** /email/Calendar/{name}/attachments/{attachment} | Get iCalendar document attachment by name
 [**getCalendarList**](EmailApi.md#getCalendarList) | **GET** /email/Calendar | Get iCalendar files list in folder on storage
+[**getCalendarModel**](EmailApi.md#getCalendarModel) | **GET** /email/CalendarModel/{name} | Get calendar file
+[**getCalendarModelAsAlternate**](EmailApi.md#getCalendarModelAsAlternate) | **GET** /email/CalendarModel/{name}/as-alternate/{calendarAction} | Get iCalendar from storage as AlternateView
+[**getCalendarModelList**](EmailApi.md#getCalendarModelList) | **GET** /email/CalendarModel | Get iCalendar list from storage folder
 [**getContactAttachment**](EmailApi.md#getContactAttachment) | **GET** /email/Contact/{format}/{name}/attachments/{attachment} | Get attachment file by name
 [**getContactList**](EmailApi.md#getContactList) | **GET** /email/Contact/{format} | Get contact list from storage folder
+[**getContactModel**](EmailApi.md#getContactModel) | **GET** /email/ContactModel/{format}/{name} | Get contact document.
+[**getContactModelList**](EmailApi.md#getContactModelList) | **GET** /email/ContactModel/{format} | Get contact list from storage folder.
 [**getContactProperties**](EmailApi.md#getContactProperties) | **GET** /email/Contact/{format}/{name}/properties | Get contact document properties
 [**getDiscUsage**](EmailApi.md#getDiscUsage) | **GET** /email/storage/disc | Get disc usage
 [**getEmail**](EmailApi.md#getEmail) | **GET** /email/{fileName} | Get email document
+[**getEmailAsFile**](EmailApi.md#getEmailAsFile) | **GET** /email/{fileName}/as-file/{format} | Converts email document from storage to specified format and returns as file
 [**getEmailAttachment**](EmailApi.md#getEmailAttachment) | **GET** /email/{fileName}/attachments/{attachment} | Get email attachment by name
+[**getEmailModel**](EmailApi.md#getEmailModel) | **GET** /email/model/{format}/{name} | Get email document.
+[**getEmailModelList**](EmailApi.md#getEmailModelList) | **GET** /email/model/{format} | Get email list from storage folder.
 [**getEmailProperty**](EmailApi.md#getEmailProperty) | **GET** /email/{fileName}/properties/{propertyName} | Get an email document property by its name
 [**getFileVersions**](EmailApi.md#getFileVersions) | **GET** /email/storage/version/{path} | Get file versions
 [**getFilesList**](EmailApi.md#getFilesList) | **GET** /email/storage/folder/{path} | Get all files and folders within a folder
@@ -61,13 +75,18 @@ Method | HTTP request | Description
 [**getMapiProperties**](EmailApi.md#getMapiProperties) | **GET** /email/Mapi/{name}/properties | Get document properties
 [**listEmailFolders**](EmailApi.md#listEmailFolders) | **GET** /email/client/ListFolders | Get folders list in email account
 [**listEmailMessages**](EmailApi.md#listEmailMessages) | **GET** /email/client/ListMessages | Get messages from folder, filtered by query
+[**listEmailModels**](EmailApi.md#listEmailModels) | **GET** /email/client/ListMessagesModel | Get messages from folder, filtered by query
 [**moveFile**](EmailApi.md#moveFile) | **PUT** /email/storage/file/move/{srcPath} | Move file
 [**moveFolder**](EmailApi.md#moveFolder) | **PUT** /email/storage/folder/move/{srcPath} | Move folder
 [**objectExists**](EmailApi.md#objectExists) | **GET** /email/storage/exist/{path} | Check if file or folder exists
+[**saveCalendarModel**](EmailApi.md#saveCalendarModel) | **PUT** /email/CalendarModel/{name} | Save iCalendar
+[**saveContactModel**](EmailApi.md#saveContactModel) | **PUT** /email/ContactModel/{format}/{name} | Save contact.
+[**saveEmailModel**](EmailApi.md#saveEmailModel) | **PUT** /email/model/{format}/{name} | Save email document.
 [**saveMailAccount**](EmailApi.md#saveMailAccount) | **POST** /email/client/SaveMailAccount | Create email account file (*.account) with login/password authentication
 [**saveMailOAuthAccount**](EmailApi.md#saveMailOAuthAccount) | **POST** /email/client/SaveMailOAuthAccount | Create email account file (*.account) with OAuth
 [**sendEmail**](EmailApi.md#sendEmail) | **POST** /email/client/Send | Send an email from *.eml file located on storage
 [**sendEmailMime**](EmailApi.md#sendEmailMime) | **POST** /email/client/SendMime | Send an email specified by MIME in request
+[**sendEmailModel**](EmailApi.md#sendEmailModel) | **POST** /email/client/SendModel | Send an email specified by model in request
 [**setEmailProperty**](EmailApi.md#setEmailProperty) | **PUT** /email/{fileName}/properties/{propertyName} | Set email document property value
 [**setEmailReadFlag**](EmailApi.md#setEmailReadFlag) | **POST** /email/client/SetReadFlag | Sets \&quot;Message is read\&quot; flag
 [**storageExists**](EmailApi.md#storageExists) | **GET** /email/storage/{storageName}/exist | Check if storage exists
@@ -253,6 +272,52 @@ new Aspose\Email\Model\Requests\AiBcrParseRequest(
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **rq** | [**\Aspose\Email\Model\AiBcrBase64Rq**](AiBcrBase64Rq.md)| Request with base64 images data |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **aiBcrParseModel**
+```php
+function \Aspose\Email\Model\ListResponseOfContactDto aiBcrParseModel(Requests\AiBcrParseModelRequest $request)
+```
+Parse images to vCard document models
+
+### Return type
+
+[**\Aspose\Email\Model\ListResponseOfContactDto**](ListResponseOfContactDto.md)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\AiBcrParseModelRequest(
+    $rq)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **rq** | [**\Aspose\Email\Model\AiBcrBase64Rq**](AiBcrBase64Rq.md)| Request with base64 images data |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **aiBcrParseOcrDataModel**
+```php
+function \Aspose\Email\Model\ListResponseOfContactDto aiBcrParseOcrDataModel(Requests\AiBcrParseOcrDataModelRequest $request)
+```
+Parse OCR data to vCard document models
+
+### Return type
+
+[**\Aspose\Email\Model\ListResponseOfContactDto**](ListResponseOfContactDto.md)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\AiBcrParseOcrDataModelRequest(
+    $rq)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **rq** | [**\Aspose\Email\Model\AiBcrParseOcrDataRq**](AiBcrParseOcrDataRq.md)|  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -629,6 +694,29 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+# **appendEmailModelMessage**
+```php
+function \Aspose\Email\Model\ValueResponse appendEmailModelMessage(Requests\AppendEmailModelMessageRequest $request)
+```
+Adds an email from model to specified folder in email account
+
+### Return type
+
+[**\Aspose\Email\Model\ValueResponse**](ValueResponse.md)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\AppendEmailModelMessageRequest(
+    $rq)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **rq** | [**\Aspose\Email\Model\AppendEmailModelRq**](AppendEmailModelRq.md)| Append email request |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 # **appendMimeMessage**
 ```php
 function \Aspose\Email\Model\ValueResponse appendMimeMessage(Requests\AppendMimeMessageRequest $request)
@@ -649,6 +737,54 @@ new Aspose\Email\Model\Requests\AppendMimeMessageRequest(
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **request** | [**\Aspose\Email\Model\AppendEmailMimeBaseRequest**](AppendEmailMimeBaseRequest.md)| Append email request |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **convertCalendarModelToAlternate**
+```php
+function \Aspose\Email\Model\AlternateView convertCalendarModelToAlternate(Requests\ConvertCalendarModelToAlternateRequest $request)
+```
+Convert iCalendar to AlternateView
+
+### Return type
+
+[**\Aspose\Email\Model\AlternateView**](AlternateView.md)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\ConvertCalendarModelToAlternateRequest(
+    $rq)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **rq** | [**\Aspose\Email\Model\CalendarDtoAlternateRq**](CalendarDtoAlternateRq.md)| iCalendar to AlternateView request |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **convertEmail**
+```php
+function \SplFileObject convertEmail(Requests\ConvertEmailRequest $request)
+```
+Converts email document to specified format and returns as file
+
+### Return type
+
+[**\SplFileObject**](\SplFileObject.md)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\ConvertEmailRequest(
+    $format,
+    $file)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **format** | **string**| File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html |
+ **file** | **\SplFileObject**| File to upload |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1132,6 +1268,37 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+# **fetchEmailModel**
+```php
+function \Aspose\Email\Model\EmailDto fetchEmailModel(Requests\FetchEmailModelRequest $request)
+```
+Fetch message model from email account
+
+### Return type
+
+[**\Aspose\Email\Model\EmailDto**](EmailDto.md)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\FetchEmailModelRequest(
+    $message_id,
+    $first_account,
+    $second_account,
+    $storage,
+    $storage_folder)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **message_id** | **string**| Message identifier |
+ **first_account** | **string**| Email account |
+ **second_account** | **string**| Additional email account (should be specified for POP/IMAP accounts and should be SMTP account) | [optional]
+ **storage** | **string**| Storage name where account file(s) located | [optional]
+ **storage_folder** | **string**| Folder in storage where account file(s) located | [optional]
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 # **getCalendar**
 ```php
 function \Aspose\Email\Model\HierarchicalObject getCalendar(Requests\GetCalendarRequest $request)
@@ -1217,6 +1384,93 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+# **getCalendarModel**
+```php
+function \Aspose\Email\Model\CalendarDto getCalendarModel(Requests\GetCalendarModelRequest $request)
+```
+Get calendar file
+
+### Return type
+
+[**\Aspose\Email\Model\CalendarDto**](CalendarDto.md)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\GetCalendarModelRequest(
+    $name,
+    $folder,
+    $storage)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string**| iCalendar file name in storage |
+ **folder** | **string**| Path to folder in storage | [optional]
+ **storage** | **string**| Storage name | [optional]
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **getCalendarModelAsAlternate**
+```php
+function \Aspose\Email\Model\AlternateView getCalendarModelAsAlternate(Requests\GetCalendarModelAsAlternateRequest $request)
+```
+Get iCalendar from storage as AlternateView
+
+### Return type
+
+[**\Aspose\Email\Model\AlternateView**](AlternateView.md)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\GetCalendarModelAsAlternateRequest(
+    $name,
+    $calendar_action,
+    $sequence_id,
+    $folder,
+    $storage)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string**| iCalendar file name in storage |
+ **calendar_action** | **string**| iCalendar method type Enum, available values: Create, Update, Cancel |
+ **sequence_id** | **string**| The sequence id | [optional]
+ **folder** | **string**| Path to folder in storage | [optional]
+ **storage** | **string**| Storage name | [optional]
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **getCalendarModelList**
+```php
+function \Aspose\Email\Model\CalendarDtoList getCalendarModelList(Requests\GetCalendarModelListRequest $request)
+```
+Get iCalendar list from storage folder
+
+### Return type
+
+[**\Aspose\Email\Model\CalendarDtoList**](CalendarDtoList.md)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\GetCalendarModelListRequest(
+    $folder,
+    $items_per_page,
+    $page_number,
+    $storage)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **folder** | **string**| Path to folder in storage |
+ **items_per_page** | **int**| Count of items on page | [optional] [default to 10]
+ **page_number** | **int**| Page number | [optional] [default to 0]
+ **storage** | **string**| Storage name | [optional]
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 # **getContactAttachment**
 ```php
 function \SplFileObject getContactAttachment(Requests\GetContactAttachmentRequest $request)
@@ -1276,6 +1530,66 @@ Name | Type | Description  | Notes
  **storage** | **string**| Storage name | [optional]
  **items_per_page** | **int**| Count of items on page | [optional] [default to 10]
  **page_number** | **int**| Page number | [optional] [default to 0]
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **getContactModel**
+```php
+function \Aspose\Email\Model\ContactDto getContactModel(Requests\GetContactModelRequest $request)
+```
+Get contact document.
+
+### Return type
+
+[**\Aspose\Email\Model\ContactDto**](ContactDto.md)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\GetContactModelRequest(
+    $format,
+    $name,
+    $folder,
+    $storage)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **format** | **string**| Contact document format. Enum, available values: VCard, WebDav, Msg |
+ **name** | **string**| Contact document file name. |
+ **folder** | **string**| Path to folder in storage. | [optional]
+ **storage** | **string**| Storage name. | [optional]
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **getContactModelList**
+```php
+function \Aspose\Email\Model\ContactDtoList getContactModelList(Requests\GetContactModelListRequest $request)
+```
+Get contact list from storage folder.
+
+### Return type
+
+[**\Aspose\Email\Model\ContactDtoList**](ContactDtoList.md)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\GetContactModelListRequest(
+    $format,
+    $folder,
+    $storage,
+    $items_per_page,
+    $page_number)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **format** | **string**| Contact document format. Enum, available values: VCard, WebDav, Msg |
+ **folder** | **string**| Path to folder in storage. | [optional]
+ **storage** | **string**| Storage name. | [optional]
+ **items_per_page** | **int**| Count of items on page. | [optional] [default to 10]
+ **page_number** | **int**| Page number. | [optional] [default to 0]
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1358,6 +1672,35 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+# **getEmailAsFile**
+```php
+function \SplFileObject getEmailAsFile(Requests\GetEmailAsFileRequest $request)
+```
+Converts email document from storage to specified format and returns as file
+
+### Return type
+
+[**\SplFileObject**](\SplFileObject.md)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\GetEmailAsFileRequest(
+    $file_name,
+    $format,
+    $storage,
+    $folder)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file_name** | **string**| Email document file name |
+ **format** | **string**| File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html |
+ **storage** | **string**| Storage name | [optional]
+ **folder** | **string**| Path to folder in storage | [optional]
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 # **getEmailAttachment**
 ```php
 function \SplFileObject getEmailAttachment(Requests\GetEmailAttachmentRequest $request)
@@ -1384,6 +1727,66 @@ Name | Type | Description  | Notes
  **file_name** | **string**| Email document file name |
  **storage** | **string**| Storage name | [optional]
  **folder** | **string**| Path to folder in storage | [optional]
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **getEmailModel**
+```php
+function \Aspose\Email\Model\EmailDto getEmailModel(Requests\GetEmailModelRequest $request)
+```
+Get email document.
+
+### Return type
+
+[**\Aspose\Email\Model\EmailDto**](EmailDto.md)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\GetEmailModelRequest(
+    $format,
+    $name,
+    $folder,
+    $storage)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **format** | **string**| Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html |
+ **name** | **string**| Email document file name. |
+ **folder** | **string**| Path to folder in storage. | [optional]
+ **storage** | **string**| Storage name. | [optional]
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **getEmailModelList**
+```php
+function \Aspose\Email\Model\EmailDtoList getEmailModelList(Requests\GetEmailModelListRequest $request)
+```
+Get email list from storage folder.
+
+### Return type
+
+[**\Aspose\Email\Model\EmailDtoList**](EmailDtoList.md)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\GetEmailModelListRequest(
+    $format,
+    $folder,
+    $storage,
+    $items_per_page,
+    $page_number)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **format** | **string**| Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html |
+ **folder** | **string**| Path to folder in storage. | [optional]
+ **storage** | **string**| Storage name. | [optional]
+ **items_per_page** | **int**| Count of items on page. | [optional] [default to 10]
+ **page_number** | **int**| Page number. | [optional] [default to 0]
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1615,7 +2018,7 @@ function \Aspose\Email\Model\ListResponseOfString listEmailMessages(Requests\Lis
 ```
 Get messages from folder, filtered by query
 
-The query string should have the following view.      The example of a simple expression:       '<Field name>' <Comparison operator> '<Field value>',  where &lt;Field Name&gt; - the name of a message field through which filtering is made, &lt;Comparison operator&gt; - comparison operators, as their name implies, allow to compare message field and specified value, &lt;Field value&gt; - value to be compared with a message field.      The number of simple expressions can make a compound one, ex.:     (<Simple expression 1> & <Simple expression 2>) | <Simple expression 3>,  where \"&amp;\" - logical-AND operator, \"|\" - logical-OR operator      At present the following values are allowed as a field name (<Field name>):  \"To\" - represents a TO field of message, \"Text\" - represents string in the header or body of the message, \"Bcc\" - represents a BCC field of message, \"Body\" - represents a string in the body of message, \"Cc\" - represents a CC field of message, \"From\" - represents a From field of message, \"Subject\" - represents a string in the subject of message, \"InternalDate\" - represents an internal date of message, \"SentDate\" - represents a sent date of message      Additionally, the following field names are allowed for IMAP-protocol:  \"Answered\" - represents an /Answered flag of message \"Seen\" - represents a /Seen flag of message \"Flagged\" - represents a /Flagged flag of message \"Draft\" - represents a /Draft flag of message \"Deleted\" - represents a Deleted/ flag of message \"Recent\" - represents a Deleted/ flag of message \"MessageSize\" - represents a size (in bytes) of message      Additionally, the following field names are allowed for Exchange:  \"IsRead\" - Indicates whether the message has been read \"HasAttachment\" - Indicates whether or not the message has attachments \"IsSubmitted\" - Indicates whether the message has been submitted to the Outbox \"ContentClass\" - represents a content class of item      Additionally, the following field names are allowed for pst/ost files:  \"MessageClass\" - Represents a message class \"ContainerClass\" - Represents a folder container class \"Importance\" - Represents a message importance \"MessageSize\" - represents a size (in bytes) of message \"FolderName\" - represents a folder name \"ContentsCount\" - represents a total number of items in the folder \"UnreadContentsCount\" - represents the number of unread items in the folder. \"Subfolders\" - Indicates whether or not the folder has subfolders \"Read\" - the message is marked as having been read \"HasAttachment\" - the message has at least one attachment \"Unsent\" - the message is still being composed \"Unmodified\" - the message has not been modified since it was first saved (if unsent) or it was delivered (if sent) \"FromMe\" - the user receiving the message was also the user who sent the message \"Resend\" - the message includes a request for a resend operation with a non-delivery report \"NotifyRead\" - the user who sent the message has requested notification when a recipient first reads it \"NotifyUnread\" - the user who sent the message has requested notification when a recipient deletes it before reading or the Message object expires \"EverRead\" - the message has been read at least once      The field value (<Field value>) can take the following values:     For text fields - any string,     For date type fields - the string of \"d-MMM-yyy\" format, ex. \"10-Feb-2009\",     For flags (fields of boolean type) - either \"True\", or \"False\"
+The query string should have the following view.      The example of a simple expression:       '<Field name>' <Comparison operator> '<Field value>',  where &lt;Field Name&gt; - the name of a message field through which filtering is made, &lt;Comparison operator&gt; - comparison operators, as their name implies, allow to compare message field and specified value, &lt;Field value&gt; - value to be compared with a message field.      The number of simple expressions can make a compound one, ex.:     (<Simple expression 1> & <Simple expression 2>) | <Simple expression 3     >,  where \"&amp;\" - logical-AND operator, \"|\" - logical-OR operator      At present the following values are allowed as a field name (<Field name>):  \"To\" - represents a TO field of message, \"Text\" - represents string in the header or body of the message, \"Bcc\" - represents a BCC field of message, \"Body\" - represents a string in the body of message, \"Cc\" - represents a CC field of message, \"From\" - represents a From field of message, \"Subject\" - represents a string in the subject of message, \"InternalDate\" - represents an internal date of message, \"SentDate\" - represents a sent date of message      Additionally, the following field names are allowed for IMAP-protocol:  \"Answered\" - represents an /Answered flag of message \"Seen\" - represents a /Seen flag of message \"Flagged\" - represents a /Flagged flag of message \"Draft\" - represents a /Draft flag of message \"Deleted\" - represents a Deleted/ flag of message \"Recent\" - represents a Deleted/ flag of message \"MessageSize\" - represents a size (in bytes) of message      Additionally, the following field names are allowed for Exchange:  \"IsRead\" - Indicates whether the message has been read \"HasAttachment\" - Indicates whether or not the message has attachments \"IsSubmitted\" - Indicates whether the message has been submitted to the Outbox \"ContentClass\" - represents a content class of item      Additionally, the following field names are allowed for pst/ost files:  \"MessageClass\" - Represents a message class \"ContainerClass\" - Represents a folder container class \"Importance\" - Represents a message importance \"MessageSize\" - represents a size (in bytes) of message \"FolderName\" - represents a folder name \"ContentsCount\" - represents a total number of items in the folder \"UnreadContentsCount\" - represents the number of unread items in the folder. \"Subfolders\" - Indicates whether or not the folder has subfolders \"Read\" - the message is marked as having been read \"HasAttachment\" - the message has at least one attachment \"Unsent\" - the message is still being composed \"Unmodified\" - the message has not been modified since it was first saved (if unsent) or it was delivered (if sent) \"FromMe\" - the user receiving the message was also the user who sent the message \"Resend\" - the message includes a request for a resend operation with a non-delivery report \"NotifyRead\" - the user who sent the message has requested notification when a recipient first reads it \"NotifyUnread\" - the user who sent the message has requested notification when a recipient deletes it before reading or the Message object expires \"EverRead\" - the message has been read at least once      The field value (<Field value>) can take the following values:     For text fields - any string,     For date type fields - the string of \"d-MMM-yyy\" format, ex. \"10-Feb-2009\",     For flags (fields of boolean type) - either \"True\", or \"False\"
 
 ### Return type
 
@@ -1624,6 +2027,43 @@ The query string should have the following view.      The example of a simple ex
 ### Request parameters
 ```php
 new Aspose\Email\Model\Requests\ListEmailMessagesRequest(
+    $folder,
+    $query_string,
+    $first_account,
+    $second_account,
+    $storage,
+    $storage_folder,
+    $recursive)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **folder** | **string**| A folder in email account |
+ **query_string** | **string**| A MailQuery search string |
+ **first_account** | **string**| Email account |
+ **second_account** | **string**| Additional email account (should be specified for POP/IMAP accounts and should be SMTP account) | [optional]
+ **storage** | **string**| Storage name where account file(s) located | [optional]
+ **storage_folder** | **string**| Folder in storage where account file(s) located | [optional]
+ **recursive** | **bool**| Specifies that should message be searched in subfolders recursively | [optional] [default to false]
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **listEmailModels**
+```php
+function \Aspose\Email\Model\ListResponseOfEmailDto listEmailModels(Requests\ListEmailModelsRequest $request)
+```
+Get messages from folder, filtered by query
+
+The query string should have the following view.      The example of a simple expression:       '<Field name>' <Comparison operator> '<Field value>',  where &lt;Field Name&gt; - the name of a message field through which filtering is made, &lt;Comparison operator&gt; - comparison operators, as their name implies, allow to compare message field and specified value, &lt;Field value&gt; - value to be compared with a message field.      The number of simple expressions can make a compound one, ex.:     (<Simple expression 1> & <Simple expression 2>) | <Simple expression 3     >,  where \"&amp;\" - logical-AND operator, \"|\" - logical-OR operator      At present the following values are allowed as a field name (<Field name>):  \"To\" - represents a TO field of message, \"Text\" - represents string in the header or body of the message, \"Bcc\" - represents a BCC field of message, \"Body\" - represents a string in the body of message, \"Cc\" - represents a CC field of message, \"From\" - represents a From field of message, \"Subject\" - represents a string in the subject of message, \"InternalDate\" - represents an internal date of message, \"SentDate\" - represents a sent date of message      Additionally, the following field names are allowed for IMAP-protocol:  \"Answered\" - represents an /Answered flag of message \"Seen\" - represents a /Seen flag of message \"Flagged\" - represents a /Flagged flag of message \"Draft\" - represents a /Draft flag of message \"Deleted\" - represents a Deleted/ flag of message \"Recent\" - represents a Deleted/ flag of message \"MessageSize\" - represents a size (in bytes) of message      Additionally, the following field names are allowed for Exchange:  \"IsRead\" - Indicates whether the message has been read \"HasAttachment\" - Indicates whether or not the message has attachments \"IsSubmitted\" - Indicates whether the message has been submitted to the Outbox \"ContentClass\" - represents a content class of item      Additionally, the following field names are allowed for pst/ost files:  \"MessageClass\" - Represents a message class \"ContainerClass\" - Represents a folder container class \"Importance\" - Represents a message importance \"MessageSize\" - represents a size (in bytes) of message \"FolderName\" - represents a folder name \"ContentsCount\" - represents a total number of items in the folder \"UnreadContentsCount\" - represents the number of unread items in the folder. \"Subfolders\" - Indicates whether or not the folder has subfolders \"Read\" - the message is marked as having been read \"HasAttachment\" - the message has at least one attachment \"Unsent\" - the message is still being composed \"Unmodified\" - the message has not been modified since it was first saved (if unsent) or it was delivered (if sent) \"FromMe\" - the user receiving the message was also the user who sent the message \"Resend\" - the message includes a request for a resend operation with a non-delivery report \"NotifyRead\" - the user who sent the message has requested notification when a recipient first reads it \"NotifyUnread\" - the user who sent the message has requested notification when a recipient deletes it before reading or the Message object expires \"EverRead\" - the message has been read at least once      The field value (<Field value>) can take the following values:     For text fields - any string,     For date type fields - the string of \"d-MMM-yyy\" format, ex. \"10-Feb-2009\",     For flags (fields of boolean type) - either \"True\", or \"False\"
+
+### Return type
+
+[**\Aspose\Email\Model\ListResponseOfEmailDto**](ListResponseOfEmailDto.md)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\ListEmailModelsRequest(
     $folder,
     $query_string,
     $first_account,
@@ -1733,6 +2173,85 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+# **saveCalendarModel**
+```php
+function saveCalendarModel(Requests\SaveCalendarModelRequest $request)
+```
+Save iCalendar
+
+### Return type
+
+void (empty response body)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\SaveCalendarModelRequest(
+    $name,
+    $rq)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string**| iCalendar file name in storage |
+ **rq** | [**\Aspose\Email\Model\StorageModelRqOfCalendarDto**](StorageModelRqOfCalendarDto.md)| Calendar properties update request |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **saveContactModel**
+```php
+function saveContactModel(Requests\SaveContactModelRequest $request)
+```
+Save contact.
+
+### Return type
+
+void (empty response body)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\SaveContactModelRequest(
+    $format,
+    $name,
+    $rq)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **format** | **string**| Contact document format. Enum, available values: VCard, WebDav, Msg |
+ **name** | **string**| Contact document file name. |
+ **rq** | [**\Aspose\Email\Model\StorageModelRqOfContactDto**](StorageModelRqOfContactDto.md)| Create contact request. |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **saveEmailModel**
+```php
+function saveEmailModel(Requests\SaveEmailModelRequest $request)
+```
+Save email document.
+
+### Return type
+
+void (empty response body)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\SaveEmailModelRequest(
+    $format,
+    $name,
+    $rq)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **format** | **string**| File format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html |
+ **name** | **string**| iCalendar file name in storage. |
+ **rq** | [**\Aspose\Email\Model\StorageModelRqOfEmailDto**](StorageModelRqOfEmailDto.md)| Calendar properties update request. |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 # **saveMailAccount**
 ```php
 function saveMailAccount(Requests\SaveMailAccountRequest $request)
@@ -1822,6 +2341,29 @@ new Aspose\Email\Model\Requests\SendEmailMimeRequest(
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **request** | [**\Aspose\Email\Model\SendEmailMimeBaseRequest**](SendEmailMimeBaseRequest.md)| Send email request |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **sendEmailModel**
+```php
+function sendEmailModel(Requests\SendEmailModelRequest $request)
+```
+Send an email specified by model in request
+
+### Return type
+
+void (empty response body)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\SendEmailModelRequest(
+    $rq)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **rq** | [**\Aspose\Email\Model\SendEmailModelRq**](SendEmailModelRq.md)| Send email request |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 

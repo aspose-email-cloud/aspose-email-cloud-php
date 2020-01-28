@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ValueResponse.php">
+ * <copyright company="Aspose" file="InstantMessengerAddress.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,7 +26,7 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /**
- * ValueResponse
+ * InstantMessengerAddress
  */
 
 namespace Aspose\Email\Model;
@@ -35,11 +35,11 @@ use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
 /**
- * ValueResponse
+ * InstantMessengerAddress
  *
- * @description String value object
+ * @description Instant messenger address.
  */
-class ValueResponse implements ArrayAccess
+class InstantMessengerAddress implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class ValueResponse implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "ValueResponse";
+    protected static $swaggerModelName = "InstantMessengerAddress";
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,9 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'value' => 'string'
+        'category' => '\Aspose\Email\Model\EnumWithCustomOfInstantMessengerCategory',
+        'address' => 'string',
+        'preferred' => 'bool'
     ];
 
     /**
@@ -65,7 +67,9 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'value' => null
+        'category' => null,
+        'address' => null,
+        'preferred' => null
     ];
 
     /**
@@ -95,7 +99,9 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'value' => 'value'
+        'category' => 'category',
+        'address' => 'address',
+        'preferred' => 'preferred'
     ];
 
     /**
@@ -104,7 +110,9 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'value' => 'setValue'
+        'category' => 'setCategory',
+        'address' => 'setAddress',
+        'preferred' => 'setPreferred'
     ];
 
     /**
@@ -113,7 +121,9 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'value' => 'getValue'
+        'category' => 'getCategory',
+        'address' => 'getAddress',
+        'preferred' => 'getPreferred'
     ];
 
     /**
@@ -169,15 +179,21 @@ class ValueResponse implements ArrayAccess
     protected $container = [];
 
     /**
-     * Initializes a new instance of the ValueResponse class.
+     * Initializes a new instance of the InstantMessengerAddress class.
      *  
-     * @param string $value Gets or sets string content.
+     * @param \Aspose\Email\Model\EnumWithCustomOfInstantMessengerCategory $category Address category.
+     * @param string $address Address.
+     * @param bool $preferred Determines whether this address is preferred.
      */
-    public function __construct($value = null)
+    public function __construct($category = null, $address = null, $preferred = null)
     {
-        $this->container['value'] = null;
+        $this->container['category'] = null;
+        $this->container['address'] = null;
+        $this->container['preferred'] = null;
 
-        if ($value != null) $this->setValue($value);
+        if ($category != null) $this->setCategory($category);
+        if ($address != null) $this->setAddress($address);
+        if ($preferred != null) $this->setPreferred($preferred);
     }
 
     /**
@@ -189,6 +205,9 @@ class ValueResponse implements ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['preferred'] === null) {
+            $invalidProperties[] = "'preferred' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -201,30 +220,81 @@ class ValueResponse implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['preferred'] === null) {
+            return false;
+        }
         return true;
     }
 
 
     /**
-     * Gets value
+     * Gets category
      *
-     * @return string
+     * @return \Aspose\Email\Model\EnumWithCustomOfInstantMessengerCategory
      */
-    public function getValue()
+    public function getCategory()
     {
-        return $this->container['value'];
+        return $this->container['category'];
     }
 
     /**
-     * Sets value
+     * Sets category
      *
-     * @param string $value Gets or sets string content.
+     * @param \Aspose\Email\Model\EnumWithCustomOfInstantMessengerCategory $category Address category.
      *
      * @return $this
      */
-    public function setValue($value)
+    public function setCategory($category)
     {
-        $this->container['value'] = $value;
+        $this->container['category'] = $category;
+
+        return $this;
+    }
+
+    /**
+     * Gets address
+     *
+     * @return string
+     */
+    public function getAddress()
+    {
+        return $this->container['address'];
+    }
+
+    /**
+     * Sets address
+     *
+     * @param string $address Address.
+     *
+     * @return $this
+     */
+    public function setAddress($address)
+    {
+        $this->container['address'] = $address;
+
+        return $this;
+    }
+
+    /**
+     * Gets preferred
+     *
+     * @return bool
+     */
+    public function getPreferred()
+    {
+        return $this->container['preferred'];
+    }
+
+    /**
+     * Sets preferred
+     *
+     * @param bool $preferred Determines whether this address is preferred.
+     *
+     * @return $this
+     */
+    public function setPreferred($preferred)
+    {
+        $this->container['preferred'] = $preferred;
 
         return $this;
     }

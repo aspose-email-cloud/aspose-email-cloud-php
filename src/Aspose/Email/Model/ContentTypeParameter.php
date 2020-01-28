@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ValueResponse.php">
+ * <copyright company="Aspose" file="ContentTypeParameter.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,7 +26,7 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /**
- * ValueResponse
+ * ContentTypeParameter
  */
 
 namespace Aspose\Email\Model;
@@ -35,11 +35,11 @@ use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
 /**
- * ValueResponse
+ * ContentTypeParameter
  *
- * @description String value object
+ * @description Content-Type header parameter
  */
-class ValueResponse implements ArrayAccess
+class ContentTypeParameter implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class ValueResponse implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "ValueResponse";
+    protected static $swaggerModelName = "ContentTypeParameter";
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -56,6 +56,7 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
+        'name' => 'string',
         'value' => 'string'
     ];
 
@@ -65,6 +66,7 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
+        'name' => null,
         'value' => null
     ];
 
@@ -95,6 +97,7 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'name' => 'name',
         'value' => 'value'
     ];
 
@@ -104,6 +107,7 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'name' => 'setName',
         'value' => 'setValue'
     ];
 
@@ -113,6 +117,7 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'name' => 'getName',
         'value' => 'getValue'
     ];
 
@@ -169,14 +174,17 @@ class ValueResponse implements ArrayAccess
     protected $container = [];
 
     /**
-     * Initializes a new instance of the ValueResponse class.
+     * Initializes a new instance of the ContentTypeParameter class.
      *  
-     * @param string $value Gets or sets string content.
+     * @param string $name Parameter name
+     * @param string $value Parameter value
      */
-    public function __construct($value = null)
+    public function __construct($name = null, $value = null)
     {
+        $this->container['name'] = null;
         $this->container['value'] = null;
 
+        if ($name != null) $this->setName($name);
         if ($value != null) $this->setValue($value);
     }
 
@@ -206,6 +214,30 @@ class ValueResponse implements ArrayAccess
 
 
     /**
+     * Gets name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string $name Parameter name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
      * Gets value
      *
      * @return string
@@ -218,7 +250,7 @@ class ValueResponse implements ArrayAccess
     /**
      * Sets value
      *
-     * @param string $value Gets or sets string content.
+     * @param string $value Parameter value
      *
      * @return $this
      */

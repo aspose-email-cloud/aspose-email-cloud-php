@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ValueResponse.php">
+ * <copyright company="Aspose" file="EnumWithCustomOfPhoneNumberCategory.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,7 +26,7 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /**
- * ValueResponse
+ * EnumWithCustomOfPhoneNumberCategory
  */
 
 namespace Aspose\Email\Model;
@@ -35,11 +35,10 @@ use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
 /**
- * ValueResponse
+ * EnumWithCustomOfPhoneNumberCategory
  *
- * @description String value object
  */
-class ValueResponse implements ArrayAccess
+class EnumWithCustomOfPhoneNumberCategory implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +47,7 @@ class ValueResponse implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "ValueResponse";
+    protected static $swaggerModelName = "EnumWithCustomOfPhoneNumberCategory";
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +55,8 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'value' => 'string'
+        'value' => 'string',
+        'description' => 'string'
     ];
 
     /**
@@ -65,7 +65,8 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'value' => null
+        'value' => null,
+        'description' => null
     ];
 
     /**
@@ -95,7 +96,8 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'value' => 'value'
+        'value' => 'value',
+        'description' => 'description'
     ];
 
     /**
@@ -104,7 +106,8 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'value' => 'setValue'
+        'value' => 'setValue',
+        'description' => 'setDescription'
     ];
 
     /**
@@ -113,7 +116,8 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'value' => 'getValue'
+        'value' => 'getValue',
+        'description' => 'getDescription'
     ];
 
     /**
@@ -169,15 +173,18 @@ class ValueResponse implements ArrayAccess
     protected $container = [];
 
     /**
-     * Initializes a new instance of the ValueResponse class.
+     * Initializes a new instance of the EnumWithCustomOfPhoneNumberCategory class.
      *  
-     * @param string $value Gets or sets string content.
+     * @param string $value Phone number category. Enum, available values: Custom, Home, Work, Office, Mobile, Fax, HomeFax, WorkFax, Pager, Car, Isdn, Telex, Callback, Radio, Company, TtyTdd, Assistant, Primary
+     * @param string $description 
      */
-    public function __construct($value = null)
+    public function __construct($value = null, $description = null)
     {
         $this->container['value'] = null;
+        $this->container['description'] = null;
 
         if ($value != null) $this->setValue($value);
+        if ($description != null) $this->setDescription($description);
     }
 
     /**
@@ -189,6 +196,9 @@ class ValueResponse implements ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['value'] === null) {
+            $invalidProperties[] = "'value' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -201,6 +211,9 @@ class ValueResponse implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['value'] === null) {
+            return false;
+        }
         return true;
     }
 
@@ -218,13 +231,37 @@ class ValueResponse implements ArrayAccess
     /**
      * Sets value
      *
-     * @param string $value Gets or sets string content.
+     * @param string $value Phone number category. Enum, available values: Custom, Home, Work, Office, Mobile, Fax, HomeFax, WorkFax, Pager, Car, Isdn, Telex, Callback, Radio, Company, TtyTdd, Assistant, Primary
      *
      * @return $this
      */
     public function setValue($value)
     {
         $this->container['value'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /**
+     * Sets description
+     *
+     * @param string $description description
+     *
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->container['description'] = $description;
 
         return $this;
     }

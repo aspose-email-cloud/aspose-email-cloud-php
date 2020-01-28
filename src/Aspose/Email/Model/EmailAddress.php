@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ValueResponse.php">
+ * <copyright company="Aspose" file="EmailAddress.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,7 +26,7 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /**
- * ValueResponse
+ * EmailAddress
  */
 
 namespace Aspose\Email\Model;
@@ -35,11 +35,11 @@ use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
 /**
- * ValueResponse
+ * EmailAddress
  *
- * @description String value object
+ * @description Email address.
  */
-class ValueResponse implements ArrayAccess
+class EmailAddress implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class ValueResponse implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "ValueResponse";
+    protected static $swaggerModelName = "EmailAddress";
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,11 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'value' => 'string'
+        'category' => '\Aspose\Email\Model\EnumWithCustomOfEmailAddressCategory',
+        'display_name' => 'string',
+        'preferred' => 'bool',
+        'routing_type' => 'string',
+        'address' => 'string'
     ];
 
     /**
@@ -65,7 +69,11 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'value' => null
+        'category' => null,
+        'display_name' => null,
+        'preferred' => null,
+        'routing_type' => null,
+        'address' => null
     ];
 
     /**
@@ -95,7 +103,11 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'value' => 'value'
+        'category' => 'category',
+        'display_name' => 'displayName',
+        'preferred' => 'preferred',
+        'routing_type' => 'routingType',
+        'address' => 'address'
     ];
 
     /**
@@ -104,7 +116,11 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'value' => 'setValue'
+        'category' => 'setCategory',
+        'display_name' => 'setDisplayName',
+        'preferred' => 'setPreferred',
+        'routing_type' => 'setRoutingType',
+        'address' => 'setAddress'
     ];
 
     /**
@@ -113,7 +129,11 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'value' => 'getValue'
+        'category' => 'getCategory',
+        'display_name' => 'getDisplayName',
+        'preferred' => 'getPreferred',
+        'routing_type' => 'getRoutingType',
+        'address' => 'getAddress'
     ];
 
     /**
@@ -169,15 +189,27 @@ class ValueResponse implements ArrayAccess
     protected $container = [];
 
     /**
-     * Initializes a new instance of the ValueResponse class.
+     * Initializes a new instance of the EmailAddress class.
      *  
-     * @param string $value Gets or sets string content.
+     * @param \Aspose\Email\Model\EnumWithCustomOfEmailAddressCategory $category Address category.
+     * @param string $display_name Display name.
+     * @param bool $preferred Defines whether email address is preferred.
+     * @param string $routing_type A routing type for an email.
+     * @param string $address Email address.
      */
-    public function __construct($value = null)
+    public function __construct($category = null, $display_name = null, $preferred = null, $routing_type = null, $address = null)
     {
-        $this->container['value'] = null;
+        $this->container['category'] = null;
+        $this->container['display_name'] = null;
+        $this->container['preferred'] = null;
+        $this->container['routing_type'] = null;
+        $this->container['address'] = null;
 
-        if ($value != null) $this->setValue($value);
+        if ($category != null) $this->setCategory($category);
+        if ($display_name != null) $this->setDisplayName($display_name);
+        if ($preferred != null) $this->setPreferred($preferred);
+        if ($routing_type != null) $this->setRoutingType($routing_type);
+        if ($address != null) $this->setAddress($address);
     }
 
     /**
@@ -189,6 +221,9 @@ class ValueResponse implements ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['preferred'] === null) {
+            $invalidProperties[] = "'preferred' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -201,30 +236,129 @@ class ValueResponse implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['preferred'] === null) {
+            return false;
+        }
         return true;
     }
 
 
     /**
-     * Gets value
+     * Gets category
      *
-     * @return string
+     * @return \Aspose\Email\Model\EnumWithCustomOfEmailAddressCategory
      */
-    public function getValue()
+    public function getCategory()
     {
-        return $this->container['value'];
+        return $this->container['category'];
     }
 
     /**
-     * Sets value
+     * Sets category
      *
-     * @param string $value Gets or sets string content.
+     * @param \Aspose\Email\Model\EnumWithCustomOfEmailAddressCategory $category Address category.
      *
      * @return $this
      */
-    public function setValue($value)
+    public function setCategory($category)
     {
-        $this->container['value'] = $value;
+        $this->container['category'] = $category;
+
+        return $this;
+    }
+
+    /**
+     * Gets display_name
+     *
+     * @return string
+     */
+    public function getDisplayName()
+    {
+        return $this->container['display_name'];
+    }
+
+    /**
+     * Sets display_name
+     *
+     * @param string $display_name Display name.
+     *
+     * @return $this
+     */
+    public function setDisplayName($display_name)
+    {
+        $this->container['display_name'] = $display_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets preferred
+     *
+     * @return bool
+     */
+    public function getPreferred()
+    {
+        return $this->container['preferred'];
+    }
+
+    /**
+     * Sets preferred
+     *
+     * @param bool $preferred Defines whether email address is preferred.
+     *
+     * @return $this
+     */
+    public function setPreferred($preferred)
+    {
+        $this->container['preferred'] = $preferred;
+
+        return $this;
+    }
+
+    /**
+     * Gets routing_type
+     *
+     * @return string
+     */
+    public function getRoutingType()
+    {
+        return $this->container['routing_type'];
+    }
+
+    /**
+     * Sets routing_type
+     *
+     * @param string $routing_type A routing type for an email.
+     *
+     * @return $this
+     */
+    public function setRoutingType($routing_type)
+    {
+        $this->container['routing_type'] = $routing_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets address
+     *
+     * @return string
+     */
+    public function getAddress()
+    {
+        return $this->container['address'];
+    }
+
+    /**
+     * Sets address
+     *
+     * @param string $address Email address.
+     *
+     * @return $this
+     */
+    public function setAddress($address)
+    {
+        $this->container['address'] = $address;
 
         return $this;
     }

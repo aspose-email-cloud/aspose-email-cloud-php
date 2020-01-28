@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ValueResponse.php">
+ * <copyright company="Aspose" file="CustomerEvent.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,7 +26,7 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /**
- * ValueResponse
+ * CustomerEvent
  */
 
 namespace Aspose\Email\Model;
@@ -35,11 +35,11 @@ use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
 /**
- * ValueResponse
+ * CustomerEvent
  *
- * @description String value object
+ * @description Event.
  */
-class ValueResponse implements ArrayAccess
+class CustomerEvent implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class ValueResponse implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "ValueResponse";
+    protected static $swaggerModelName = "CustomerEvent";
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,8 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'value' => 'string'
+        'category' => '\Aspose\Email\Model\EnumWithCustomOfEventCategory',
+        'date' => '\DateTime'
     ];
 
     /**
@@ -65,7 +66,8 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'value' => null
+        'category' => null,
+        'date' => 'date-time'
     ];
 
     /**
@@ -95,7 +97,8 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'value' => 'value'
+        'category' => 'category',
+        'date' => 'date'
     ];
 
     /**
@@ -104,7 +107,8 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'value' => 'setValue'
+        'category' => 'setCategory',
+        'date' => 'setDate'
     ];
 
     /**
@@ -113,7 +117,8 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'value' => 'getValue'
+        'category' => 'getCategory',
+        'date' => 'getDate'
     ];
 
     /**
@@ -169,15 +174,18 @@ class ValueResponse implements ArrayAccess
     protected $container = [];
 
     /**
-     * Initializes a new instance of the ValueResponse class.
+     * Initializes a new instance of the CustomerEvent class.
      *  
-     * @param string $value Gets or sets string content.
+     * @param \Aspose\Email\Model\EnumWithCustomOfEventCategory $category Event category.
+     * @param \DateTime $date Event date.
      */
-    public function __construct($value = null)
+    public function __construct($category = null, $date = null)
     {
-        $this->container['value'] = null;
+        $this->container['category'] = null;
+        $this->container['date'] = null;
 
-        if ($value != null) $this->setValue($value);
+        if ($category != null) $this->setCategory($category);
+        if ($date != null) $this->setDate($date);
     }
 
     /**
@@ -189,6 +197,9 @@ class ValueResponse implements ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['date'] === null) {
+            $invalidProperties[] = "'date' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -201,30 +212,57 @@ class ValueResponse implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['date'] === null) {
+            return false;
+        }
         return true;
     }
 
 
     /**
-     * Gets value
+     * Gets category
      *
-     * @return string
+     * @return \Aspose\Email\Model\EnumWithCustomOfEventCategory
      */
-    public function getValue()
+    public function getCategory()
     {
-        return $this->container['value'];
+        return $this->container['category'];
     }
 
     /**
-     * Sets value
+     * Sets category
      *
-     * @param string $value Gets or sets string content.
+     * @param \Aspose\Email\Model\EnumWithCustomOfEventCategory $category Event category.
      *
      * @return $this
      */
-    public function setValue($value)
+    public function setCategory($category)
     {
-        $this->container['value'] = $value;
+        $this->container['category'] = $category;
+
+        return $this;
+    }
+
+    /**
+     * Gets date
+     *
+     * @return \DateTime
+     */
+    public function getDate()
+    {
+        return $this->container['date'];
+    }
+
+    /**
+     * Sets date
+     *
+     * @param \DateTime $date Event date.
+     *
+     * @return $this
+     */
+    public function setDate($date)
+    {
+        $this->container['date'] = $date;
 
         return $this;
     }

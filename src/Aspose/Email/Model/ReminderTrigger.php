@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ValueResponse.php">
+ * <copyright company="Aspose" file="ReminderTrigger.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,7 +26,7 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /**
- * ValueResponse
+ * ReminderTrigger
  */
 
 namespace Aspose\Email\Model;
@@ -35,11 +35,11 @@ use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
 /**
- * ValueResponse
+ * ReminderTrigger
  *
- * @description String value object
+ * @description Specifies when an alarm will trigger.
  */
-class ValueResponse implements ArrayAccess
+class ReminderTrigger implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class ValueResponse implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "ValueResponse";
+    protected static $swaggerModelName = "ReminderTrigger";
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,9 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'value' => 'string'
+        'date_time' => '\DateTime',
+        'duration' => 'int',
+        'related' => 'string'
     ];
 
     /**
@@ -65,7 +67,9 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'value' => null
+        'date_time' => 'date-time',
+        'duration' => 'int64',
+        'related' => null
     ];
 
     /**
@@ -95,7 +99,9 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'value' => 'value'
+        'date_time' => 'dateTime',
+        'duration' => 'duration',
+        'related' => 'related'
     ];
 
     /**
@@ -104,7 +110,9 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'value' => 'setValue'
+        'date_time' => 'setDateTime',
+        'duration' => 'setDuration',
+        'related' => 'setRelated'
     ];
 
     /**
@@ -113,7 +121,9 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'value' => 'getValue'
+        'date_time' => 'getDateTime',
+        'duration' => 'getDuration',
+        'related' => 'getRelated'
     ];
 
     /**
@@ -169,15 +179,21 @@ class ValueResponse implements ArrayAccess
     protected $container = [];
 
     /**
-     * Initializes a new instance of the ValueResponse class.
+     * Initializes a new instance of the ReminderTrigger class.
      *  
-     * @param string $value Gets or sets string content.
+     * @param \DateTime $date_time A trigger set to an absolute date/time.
+     * @param int $duration Specifies a relative time in ticks for the trigger of the alarm.
+     * @param string $related Specify the relationship of the alarm trigger with respect to the start or end of the event. Enum, available values: Start, End
      */
-    public function __construct($value = null)
+    public function __construct($date_time = null, $duration = null, $related = null)
     {
-        $this->container['value'] = null;
+        $this->container['date_time'] = null;
+        $this->container['duration'] = null;
+        $this->container['related'] = null;
 
-        if ($value != null) $this->setValue($value);
+        if ($date_time != null) $this->setDateTime($date_time);
+        if ($duration != null) $this->setDuration($duration);
+        if ($related != null) $this->setRelated($related);
     }
 
     /**
@@ -189,6 +205,12 @@ class ValueResponse implements ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['date_time'] === null) {
+            $invalidProperties[] = "'date_time' can't be null";
+        }
+        if ($this->container['related'] === null) {
+            $invalidProperties[] = "'related' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -201,30 +223,84 @@ class ValueResponse implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['date_time'] === null) {
+            return false;
+        }
+        if ($this->container['related'] === null) {
+            return false;
+        }
         return true;
     }
 
 
     /**
-     * Gets value
+     * Gets date_time
      *
-     * @return string
+     * @return \DateTime
      */
-    public function getValue()
+    public function getDateTime()
     {
-        return $this->container['value'];
+        return $this->container['date_time'];
     }
 
     /**
-     * Sets value
+     * Sets date_time
      *
-     * @param string $value Gets or sets string content.
+     * @param \DateTime $date_time A trigger set to an absolute date/time.
      *
      * @return $this
      */
-    public function setValue($value)
+    public function setDateTime($date_time)
     {
-        $this->container['value'] = $value;
+        $this->container['date_time'] = $date_time;
+
+        return $this;
+    }
+
+    /**
+     * Gets duration
+     *
+     * @return int
+     */
+    public function getDuration()
+    {
+        return $this->container['duration'];
+    }
+
+    /**
+     * Sets duration
+     *
+     * @param int $duration Specifies a relative time in ticks for the trigger of the alarm.
+     *
+     * @return $this
+     */
+    public function setDuration($duration)
+    {
+        $this->container['duration'] = $duration;
+
+        return $this;
+    }
+
+    /**
+     * Gets related
+     *
+     * @return string
+     */
+    public function getRelated()
+    {
+        return $this->container['related'];
+    }
+
+    /**
+     * Sets related
+     *
+     * @param string $related Specify the relationship of the alarm trigger with respect to the start or end of the event. Enum, available values: Start, End
+     *
+     * @return $this
+     */
+    public function setRelated($related)
+    {
+        $this->container['related'] = $related;
 
         return $this;
     }

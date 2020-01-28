@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ValueResponse.php">
+ * <copyright company="Aspose" file="ListResponseOfStorageModelOfCalendarDto.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,7 +26,7 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /**
- * ValueResponse
+ * ListResponseOfStorageModelOfCalendarDto
  */
 
 namespace Aspose\Email\Model;
@@ -35,20 +35,19 @@ use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
 /**
- * ValueResponse
+ * ListResponseOfStorageModelOfCalendarDto
  *
- * @description String value object
  */
-class ValueResponse implements ArrayAccess
+class ListResponseOfStorageModelOfCalendarDto implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    const DISCRIMINATOR = 'Type';
 
     /**
      * The original name of the model.
      *
      * @var string
      */
-    protected static $swaggerModelName = "ValueResponse";
+    protected static $swaggerModelName = "ListResponseOfStorageModelOfCalendarDto";
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +55,7 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'value' => 'string'
+        'value' => '\Aspose\Email\Model\StorageModelOfCalendarDto[]'
     ];
 
     /**
@@ -169,15 +168,19 @@ class ValueResponse implements ArrayAccess
     protected $container = [];
 
     /**
-     * Initializes a new instance of the ValueResponse class.
+     * Initializes a new instance of the ListResponseOfStorageModelOfCalendarDto class.
      *  
-     * @param string $value Gets or sets string content.
+     * @param \Aspose\Email\Model\StorageModelOfCalendarDto[] $value 
      */
     public function __construct($value = null)
     {
         $this->container['value'] = null;
 
         if ($value != null) $this->setValue($value);
+
+        // Initialize discriminator property with the model name.
+        $discriminator = array_search('Type', self::$attributeMap);
+        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /**
@@ -208,7 +211,7 @@ class ValueResponse implements ArrayAccess
     /**
      * Gets value
      *
-     * @return string
+     * @return \Aspose\Email\Model\StorageModelOfCalendarDto[]
      */
     public function getValue()
     {
@@ -218,7 +221,7 @@ class ValueResponse implements ArrayAccess
     /**
      * Sets value
      *
-     * @param string $value Gets or sets string content.
+     * @param \Aspose\Email\Model\StorageModelOfCalendarDto[] $value value
      *
      * @return $this
      */

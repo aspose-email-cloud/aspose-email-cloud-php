@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ValueResponse.php">
+ * <copyright company="Aspose" file="CalendarDtoAlternateRq.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,7 +26,7 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /**
- * ValueResponse
+ * CalendarDtoAlternateRq
  */
 
 namespace Aspose\Email\Model;
@@ -35,11 +35,11 @@ use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
 /**
- * ValueResponse
+ * CalendarDtoAlternateRq
  *
- * @description String value object
+ * @description iCalendar document as AlternateView request
  */
-class ValueResponse implements ArrayAccess
+class CalendarDtoAlternateRq implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class ValueResponse implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "ValueResponse";
+    protected static $swaggerModelName = "CalendarDtoAlternateRq";
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,9 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'value' => 'string'
+        'value' => '\Aspose\Email\Model\CalendarDto',
+        'action' => 'string',
+        'sequence_id' => 'string'
     ];
 
     /**
@@ -65,7 +67,9 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'value' => null
+        'value' => null,
+        'action' => null,
+        'sequence_id' => null
     ];
 
     /**
@@ -95,7 +99,9 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'value' => 'value'
+        'value' => 'value',
+        'action' => 'action',
+        'sequence_id' => 'sequenceId'
     ];
 
     /**
@@ -104,7 +110,9 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'value' => 'setValue'
+        'value' => 'setValue',
+        'action' => 'setAction',
+        'sequence_id' => 'setSequenceId'
     ];
 
     /**
@@ -113,7 +121,9 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'value' => 'getValue'
+        'value' => 'getValue',
+        'action' => 'getAction',
+        'sequence_id' => 'getSequenceId'
     ];
 
     /**
@@ -169,15 +179,21 @@ class ValueResponse implements ArrayAccess
     protected $container = [];
 
     /**
-     * Initializes a new instance of the ValueResponse class.
+     * Initializes a new instance of the CalendarDtoAlternateRq class.
      *  
-     * @param string $value Gets or sets string content.
+     * @param \Aspose\Email\Model\CalendarDto $value iCalendar document model
+     * @param string $action iCalendar actions. Enum, available values: Create, Update, Cancel
+     * @param string $sequence_id iCalendar sequence id
      */
-    public function __construct($value = null)
+    public function __construct($value = null, $action = null, $sequence_id = null)
     {
         $this->container['value'] = null;
+        $this->container['action'] = null;
+        $this->container['sequence_id'] = null;
 
         if ($value != null) $this->setValue($value);
+        if ($action != null) $this->setAction($action);
+        if ($sequence_id != null) $this->setSequenceId($sequence_id);
     }
 
     /**
@@ -188,6 +204,16 @@ class ValueResponse implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        if ($this->container['value'] === null) {
+            $invalidProperties[] = "'value' can't be null";
+        }
+        if ($this->container['action'] === null) {
+            $invalidProperties[] = "'action' can't be null";
+        }
+        if ((strlen($this->container['action']) < 1)) {
+            $invalidProperties[] = "invalid value for 'action', the character length must be bigger than or equal to 1.";
+        }
 
         return $invalidProperties;
     }
@@ -201,6 +227,15 @@ class ValueResponse implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['value'] === null) {
+            return false;
+        }
+        if ($this->container['action'] === null) {
+            return false;
+        }
+        if (strlen($this->container['action']) < 1) {
+            return false;
+        }
         return true;
     }
 
@@ -208,7 +243,7 @@ class ValueResponse implements ArrayAccess
     /**
      * Gets value
      *
-     * @return string
+     * @return \Aspose\Email\Model\CalendarDto
      */
     public function getValue()
     {
@@ -218,13 +253,66 @@ class ValueResponse implements ArrayAccess
     /**
      * Sets value
      *
-     * @param string $value Gets or sets string content.
+     * @param \Aspose\Email\Model\CalendarDto $value iCalendar document model
      *
      * @return $this
      */
     public function setValue($value)
     {
         $this->container['value'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets action
+     *
+     * @return string
+     */
+    public function getAction()
+    {
+        return $this->container['action'];
+    }
+
+    /**
+     * Sets action
+     *
+     * @param string $action iCalendar actions. Enum, available values: Create, Update, Cancel
+     *
+     * @return $this
+     */
+    public function setAction($action)
+    {
+
+        if ((strlen($action) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $action when calling CalendarDtoAlternateRq., must be bigger than or equal to 1.');
+        }
+
+        $this->container['action'] = $action;
+
+        return $this;
+    }
+
+    /**
+     * Gets sequence_id
+     *
+     * @return string
+     */
+    public function getSequenceId()
+    {
+        return $this->container['sequence_id'];
+    }
+
+    /**
+     * Sets sequence_id
+     *
+     * @param string $sequence_id iCalendar sequence id
+     *
+     * @return $this
+     */
+    public function setSequenceId($sequence_id)
+    {
+        $this->container['sequence_id'] = $sequence_id;
 
         return $this;
     }

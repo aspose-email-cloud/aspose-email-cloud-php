@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ValueResponse.php">
+ * <copyright company="Aspose" file="LinkedResource.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,20 +26,18 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /**
- * ValueResponse
+ * LinkedResource
  */
 
 namespace Aspose\Email\Model;
-
-use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
 /**
- * ValueResponse
+ * LinkedResource
  *
- * @description String value object
+ * @description Represents an embedded resource in a message.
  */
-class ValueResponse implements ArrayAccess
+class LinkedResource extends AttachmentBase 
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +46,7 @@ class ValueResponse implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "ValueResponse";
+    protected static $swaggerModelName = "LinkedResource";
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +54,7 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'value' => 'string'
+        'content_link' => 'string'
     ];
 
     /**
@@ -65,7 +63,7 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'value' => null
+        'content_link' => null
     ];
 
     /**
@@ -75,7 +73,7 @@ class ValueResponse implements ArrayAccess
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /**
@@ -85,7 +83,7 @@ class ValueResponse implements ArrayAccess
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /**
@@ -95,7 +93,7 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'value' => 'value'
+        'content_link' => 'contentLink'
     ];
 
     /**
@@ -104,7 +102,7 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'value' => 'setValue'
+        'content_link' => 'setContentLink'
     ];
 
     /**
@@ -113,7 +111,7 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'value' => 'getValue'
+        'content_link' => 'getContentLink'
     ];
 
     /**
@@ -124,7 +122,7 @@ class ValueResponse implements ArrayAccess
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -134,7 +132,7 @@ class ValueResponse implements ArrayAccess
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -144,7 +142,7 @@ class ValueResponse implements ArrayAccess
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -161,23 +159,26 @@ class ValueResponse implements ArrayAccess
 
     
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
-     * Initializes a new instance of the ValueResponse class.
+     * Initializes a new instance of the LinkedResource class.
      *  
-     * @param string $value Gets or sets string content.
+     * @param string $base64_data Attachment file content as Base64 string.
+     * @param string $content_id Attachment content id
+     * @param \Aspose\Email\Model\ContentType $content_type Content type
+     * @param map[string,string] $headers Attachment headers.
+     * @param string $content_link URI that the resource must match.
      */
-    public function __construct($value = null)
+    public function __construct($base64_data = null, $content_id = null, $content_type = null, $headers = null, $content_link = null)
     {
-        $this->container['value'] = null;
+        parent::__construct();
+        $this->container['content_link'] = null;
 
-        if ($value != null) $this->setValue($value);
+        if ($base64_data != null) $this->setBase64Data($base64_data);
+        if ($content_id != null) $this->setContentId($content_id);
+        if ($content_type != null) $this->setContentType($content_type);
+        if ($headers != null) $this->setHeaders($headers);
+        if ($content_link != null) $this->setContentLink($content_link);
     }
 
     /**
@@ -187,7 +188,7 @@ class ValueResponse implements ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -200,31 +201,34 @@ class ValueResponse implements ArrayAccess
      */
     public function valid()
     {
+        if (!parent::valid()) {
+            return false;
+        }
 
         return true;
     }
 
 
     /**
-     * Gets value
+     * Gets content_link
      *
      * @return string
      */
-    public function getValue()
+    public function getContentLink()
     {
-        return $this->container['value'];
+        return $this->container['content_link'];
     }
 
     /**
-     * Sets value
+     * Sets content_link
      *
-     * @param string $value Gets or sets string content.
+     * @param string $content_link URI that the resource must match.
      *
      * @return $this
      */
-    public function setValue($value)
+    public function setContentLink($content_link)
     {
-        $this->container['value'] = $value;
+        $this->container['content_link'] = $content_link;
 
         return $this;
     }

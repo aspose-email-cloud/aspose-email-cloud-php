@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ValueResponse.php">
+ * <copyright company="Aspose" file="Url.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,7 +26,7 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /**
- * ValueResponse
+ * Url
  */
 
 namespace Aspose\Email\Model;
@@ -35,11 +35,11 @@ use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
 /**
- * ValueResponse
+ * Url
  *
- * @description String value object
+ * @description Url and its category.
  */
-class ValueResponse implements ArrayAccess
+class Url implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class ValueResponse implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "ValueResponse";
+    protected static $swaggerModelName = "Url";
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,9 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'value' => 'string'
+        'category' => '\Aspose\Email\Model\EnumWithCustomOfUrlCategory',
+        'preferred' => 'bool',
+        'href' => 'string'
     ];
 
     /**
@@ -65,7 +67,9 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'value' => null
+        'category' => null,
+        'preferred' => null,
+        'href' => null
     ];
 
     /**
@@ -95,7 +99,9 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'value' => 'value'
+        'category' => 'category',
+        'preferred' => 'preferred',
+        'href' => 'href'
     ];
 
     /**
@@ -104,7 +110,9 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'value' => 'setValue'
+        'category' => 'setCategory',
+        'preferred' => 'setPreferred',
+        'href' => 'setHref'
     ];
 
     /**
@@ -113,7 +121,9 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'value' => 'getValue'
+        'category' => 'getCategory',
+        'preferred' => 'getPreferred',
+        'href' => 'getHref'
     ];
 
     /**
@@ -169,15 +179,21 @@ class ValueResponse implements ArrayAccess
     protected $container = [];
 
     /**
-     * Initializes a new instance of the ValueResponse class.
+     * Initializes a new instance of the Url class.
      *  
-     * @param string $value Gets or sets string content.
+     * @param \Aspose\Email\Model\EnumWithCustomOfUrlCategory $category Url category.
+     * @param bool $preferred Defines whether url is preferred.
+     * @param string $href URL.
      */
-    public function __construct($value = null)
+    public function __construct($category = null, $preferred = null, $href = null)
     {
-        $this->container['value'] = null;
+        $this->container['category'] = null;
+        $this->container['preferred'] = null;
+        $this->container['href'] = null;
 
-        if ($value != null) $this->setValue($value);
+        if ($category != null) $this->setCategory($category);
+        if ($preferred != null) $this->setPreferred($preferred);
+        if ($href != null) $this->setHref($href);
     }
 
     /**
@@ -189,6 +205,9 @@ class ValueResponse implements ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['preferred'] === null) {
+            $invalidProperties[] = "'preferred' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -201,30 +220,81 @@ class ValueResponse implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['preferred'] === null) {
+            return false;
+        }
         return true;
     }
 
 
     /**
-     * Gets value
+     * Gets category
      *
-     * @return string
+     * @return \Aspose\Email\Model\EnumWithCustomOfUrlCategory
      */
-    public function getValue()
+    public function getCategory()
     {
-        return $this->container['value'];
+        return $this->container['category'];
     }
 
     /**
-     * Sets value
+     * Sets category
      *
-     * @param string $value Gets or sets string content.
+     * @param \Aspose\Email\Model\EnumWithCustomOfUrlCategory $category Url category.
      *
      * @return $this
      */
-    public function setValue($value)
+    public function setCategory($category)
     {
-        $this->container['value'] = $value;
+        $this->container['category'] = $category;
+
+        return $this;
+    }
+
+    /**
+     * Gets preferred
+     *
+     * @return bool
+     */
+    public function getPreferred()
+    {
+        return $this->container['preferred'];
+    }
+
+    /**
+     * Sets preferred
+     *
+     * @param bool $preferred Defines whether url is preferred.
+     *
+     * @return $this
+     */
+    public function setPreferred($preferred)
+    {
+        $this->container['preferred'] = $preferred;
+
+        return $this;
+    }
+
+    /**
+     * Gets href
+     *
+     * @return string
+     */
+    public function getHref()
+    {
+        return $this->container['href'];
+    }
+
+    /**
+     * Sets href
+     *
+     * @param string $href URL.
+     *
+     * @return $this
+     */
+    public function setHref($href)
+    {
+        $this->container['href'] = $href;
 
         return $this;
     }

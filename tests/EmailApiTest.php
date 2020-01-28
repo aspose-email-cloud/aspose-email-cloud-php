@@ -7,10 +7,20 @@ use Aspose\Email\Model\AiBcrBase64Image;
 use Aspose\Email\Model\AiBcrBase64Rq;
 use Aspose\Email\Model\AiBcrImageStorageFile;
 use Aspose\Email\Model\AiBcrParseStorageRq;
+use Aspose\Email\Model\CalendarDto;
+use Aspose\Email\Model\CalendarDtoAlternateRq;
+use Aspose\Email\Model\ContactDto;
+use Aspose\Email\Model\EmailAddress;
+use Aspose\Email\Model\EmailDto;
+use Aspose\Email\Model\EnumWithCustomOfEmailAddressCategory;
+use Aspose\Email\Model\EnumWithCustomOfPhoneNumberCategory;
 use Aspose\Email\Model\HierarchicalObject;
 use Aspose\Email\Model\HierarchicalObjectRequest;
 use Aspose\Email\Model\IndexedHierarchicalObject;
+use Aspose\Email\Model\MailAddress;
+use Aspose\Email\Model\PhoneNumber;
 use Aspose\Email\Model\PrimitiveObject;
+use Aspose\Email\Model\Requests\AiBcrParseModelRequest;
 use Aspose\Email\Model\Requests\aiBcrParseRequest;
 use Aspose\Email\Model\Requests\aiBcrParseStorageRequest;
 use Aspose\Email\Model\Requests\aiNameCompleteRequest;
@@ -19,17 +29,28 @@ use Aspose\Email\Model\Requests\aiNameFormatRequest;
 use Aspose\Email\Model\Requests\aiNameGenderizeRequest;
 use Aspose\Email\Model\Requests\aiNameMatchRequest;
 use Aspose\Email\Model\Requests\aiNameParseEmailAddressRequest;
+use Aspose\Email\Model\Requests\ConvertCalendarModelToAlternateRequest;
 use Aspose\Email\Model\Requests\createCalendarRequest;
 use Aspose\Email\Model\Requests\createContactRequest;
 use Aspose\Email\Model\Requests\createFolderRequest;
 use Aspose\Email\Model\Requests\deleteFolderRequest;
-use Aspose\Email\Model\Requests\downloadFileRequest;
+use Aspose\Email\Model\Requests\DownloadFileRequest;
 use Aspose\Email\Model\Requests\getCalendarRequest;
 use Aspose\Email\Model\Requests\getContactPropertiesRequest;
-use Aspose\Email\Model\Requests\objectExistsRequest;
+use Aspose\Email\Model\Requests\ObjectExistsRequest;
+use Aspose\Email\Model\Requests\SaveCalendarModelRequest;
+use Aspose\Email\Model\Requests\SaveContactModelRequest;
+use Aspose\Email\Model\Requests\SaveEmailModelRequest;
+use Aspose\Email\Model\Requests\SaveMailAccountRequest;
+use Aspose\Email\Model\Requests\SendEmailModelRequest;
 use Aspose\Email\Model\Requests\uploadFileRequest;
+use Aspose\Email\Model\SaveEmailAccountRequest;
+use Aspose\Email\Model\SendEmailModelRq;
 use Aspose\Email\Model\StorageFileLocation;
 use Aspose\Email\Model\StorageFolderLocation;
+use Aspose\Email\Model\StorageModelRqOfCalendarDto;
+use Aspose\Email\Model\StorageModelRqOfContactDto;
+use Aspose\Email\Model\StorageModelRqOfEmailDto;
 
 class EmailApiTest extends TestCase
 {
@@ -248,6 +269,89 @@ class EmailApiTest extends TestCase
             return $var->getName() == "DISPLAYNAME";
         }))[0];
         $this->assertRegExp("/Thomas/", $displayName->getValue());
+    }
+
+    /**
+     * @group pipeline
+     */
+    public function testCreateCalendarEmail(): void
+    {
+        $calendar = (new CalendarDto())
+            ->setAttendees(array(new MailAddress("Attendee Name", "attendee@aspose.com", "Accepted")))
+            ->setDescription("Some description")
+            ->setSummary("Some summary")
+            ->setOrganizer(new MailAddress("Organizer Name", "organizer@aspose.com", "Accepted"))
+            ->setStartDate(new DateTime())
+            ->setEndDate((new DateTime())->add(new DateInterval("PT1H")))
+            ->setLocation("Some location");
+        $folderLocation = new StorageFolderLocation(self::$storage, self::$folder);
+        $calendarFile = uniqid() . ".ics";
+        self::getApi()->saveCalendarModel(
+            new SaveCalendarModelRequest(
+                $calendarFile,
+                new StorageModelRqOfCalendarDto($calendar, $folderLocation)));
+
+        $exist = self::getApi()->objectExists(
+            new ObjectExistsRequest(self::$folder . "/" . $calendarFile, self::$storage));
+        $this->assertTrue($exist->getExists());
+
+        $alternate = self::getApi()->convertCalendarModelToAlternate(
+            new ConvertCalendarModelToAlternateRequest(
+                new CalendarDtoAlternateRq($calendar, "Create")));
+        $email = (new EmailDto())
+            ->setAlternateViews(array($alternate))
+            ->setFrom(new MailAddress("Organizer Name", "organizer@aspose.com"))
+            ->setTo(array(new MailAddress("Attendee Name", "attendee@aspose.com")))
+            ->setSubject("Some subject")
+            ->setBody("Some body");
+        $emailFile = uniqid() . ".eml";
+        self::getApi()->saveEmailModel(
+            new SaveEmailModelRequest(
+                "Eml", $emailFile,
+                new StorageModelRqOfEmailDto($email, $folderLocation)));
+        $downloaded = self::getApi()->downloadFile(
+            new DownloadFileRequest(self::$folder . "/" . $emailFile, self::$storage));
+        $downloadedContent = $downloaded->fread($downloaded->getSize());
+        $this->assertRegExp("/organizer@aspose.com/", $downloadedContent);
+    }
+
+    /**
+     * @group pipeline
+     */
+    public function testCreateContactModel(): void
+    {
+        $contact = (new ContactDto())
+            ->setGender("Male")
+            ->setSurname("Thomas")
+            ->setGivenName("Alex")
+            ->setEmailAddresses(array(new EmailAddress(
+                new EnumWithCustomOfEmailAddressCategory("Work"),
+                "Alex Thomas", true, null, "alex.thomas@work.com")))
+            ->setPhoneNumbers(array(new PhoneNumber(
+                new EnumWithCustomOfPhoneNumberCategory("Work"),
+                "+49211424721", true)));
+        $contactFile = uniqid() . ".vcf";
+        self::getApi()->saveContactModel(
+            new SaveContactModelRequest(
+                "VCard", $contactFile,
+                new StorageModelRqOfContactDto(
+                    $contact,
+                    new StorageFolderLocation(self::$storage, self::$folder))));
+        $exist = self::getApi()->objectExists(
+            new ObjectExistsRequest(self::$folder . "/" . $contactFile, self::$storage));
+        $this->assertTrue($exist->getExists());
+    }
+
+    public function testAiBcrParseModel(): void
+    {
+        $path = dirname(__FILE__)."\\data\\test_single_0001.png";
+        $content = file_get_contents($path);
+        $imageBase64 = base64_encode($content);
+        $result = self::getApi()->aiBcrParseModel(new AiBcrParseModelRequest(
+            new AiBcrBase64Rq(null, array(new AiBcrBase64Image(true, $imageBase64)))));
+        $this->assertEquals(1, count($result->getValue()));
+        $displayName = $result->getValue()[0]->getDisplayName();
+        $this->assertRegExp("/Thomas/", $displayName);
     }
 
     private function createCalendar(DateTime $startDate = null) : string

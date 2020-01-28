@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ValueResponse.php">
+ * <copyright company="Aspose" file="AttachmentBase.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,7 +26,7 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /**
- * ValueResponse
+ * AttachmentBase
  */
 
 namespace Aspose\Email\Model;
@@ -35,20 +35,20 @@ use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
 /**
- * ValueResponse
+ * AttachmentBase
  *
- * @description String value object
+ * @description AttachmentBase class
  */
-class ValueResponse implements ArrayAccess
+class AttachmentBase implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    const DISCRIMINATOR = 'Type';
 
     /**
      * The original name of the model.
      *
      * @var string
      */
-    protected static $swaggerModelName = "ValueResponse";
+    protected static $swaggerModelName = "AttachmentBase";
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,10 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'value' => 'string'
+        'base64_data' => 'string',
+        'content_id' => 'string',
+        'content_type' => '\Aspose\Email\Model\ContentType',
+        'headers' => 'map[string,string]'
     ];
 
     /**
@@ -65,7 +68,10 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'value' => null
+        'base64_data' => null,
+        'content_id' => null,
+        'content_type' => null,
+        'headers' => null
     ];
 
     /**
@@ -95,7 +101,10 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'value' => 'value'
+        'base64_data' => 'base64Data',
+        'content_id' => 'contentId',
+        'content_type' => 'contentType',
+        'headers' => 'headers'
     ];
 
     /**
@@ -104,7 +113,10 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'value' => 'setValue'
+        'base64_data' => 'setBase64Data',
+        'content_id' => 'setContentId',
+        'content_type' => 'setContentType',
+        'headers' => 'setHeaders'
     ];
 
     /**
@@ -113,7 +125,10 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'value' => 'getValue'
+        'base64_data' => 'getBase64Data',
+        'content_id' => 'getContentId',
+        'content_type' => 'getContentType',
+        'headers' => 'getHeaders'
     ];
 
     /**
@@ -169,15 +184,28 @@ class ValueResponse implements ArrayAccess
     protected $container = [];
 
     /**
-     * Initializes a new instance of the ValueResponse class.
+     * Initializes a new instance of the AttachmentBase class.
      *  
-     * @param string $value Gets or sets string content.
+     * @param string $base64_data Attachment file content as Base64 string.
+     * @param string $content_id Attachment content id
+     * @param \Aspose\Email\Model\ContentType $content_type Content type
+     * @param map[string,string] $headers Attachment headers.
      */
-    public function __construct($value = null)
+    public function __construct($base64_data = null, $content_id = null, $content_type = null, $headers = null)
     {
-        $this->container['value'] = null;
+        $this->container['base64_data'] = null;
+        $this->container['content_id'] = null;
+        $this->container['content_type'] = null;
+        $this->container['headers'] = null;
 
-        if ($value != null) $this->setValue($value);
+        if ($base64_data != null) $this->setBase64Data($base64_data);
+        if ($content_id != null) $this->setContentId($content_id);
+        if ($content_type != null) $this->setContentType($content_type);
+        if ($headers != null) $this->setHeaders($headers);
+
+        // Initialize discriminator property with the model name.
+        $discriminator = array_search('Type', self::$attributeMap);
+        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /**
@@ -206,25 +234,97 @@ class ValueResponse implements ArrayAccess
 
 
     /**
-     * Gets value
+     * Gets base64_data
      *
      * @return string
      */
-    public function getValue()
+    public function getBase64Data()
     {
-        return $this->container['value'];
+        return $this->container['base64_data'];
     }
 
     /**
-     * Sets value
+     * Sets base64_data
      *
-     * @param string $value Gets or sets string content.
+     * @param string $base64_data Attachment file content as Base64 string.
      *
      * @return $this
      */
-    public function setValue($value)
+    public function setBase64Data($base64_data)
     {
-        $this->container['value'] = $value;
+        $this->container['base64_data'] = $base64_data;
+
+        return $this;
+    }
+
+    /**
+     * Gets content_id
+     *
+     * @return string
+     */
+    public function getContentId()
+    {
+        return $this->container['content_id'];
+    }
+
+    /**
+     * Sets content_id
+     *
+     * @param string $content_id Attachment content id
+     *
+     * @return $this
+     */
+    public function setContentId($content_id)
+    {
+        $this->container['content_id'] = $content_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets content_type
+     *
+     * @return \Aspose\Email\Model\ContentType
+     */
+    public function getContentType()
+    {
+        return $this->container['content_type'];
+    }
+
+    /**
+     * Sets content_type
+     *
+     * @param \Aspose\Email\Model\ContentType $content_type Content type
+     *
+     * @return $this
+     */
+    public function setContentType($content_type)
+    {
+        $this->container['content_type'] = $content_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets headers
+     *
+     * @return map[string,string]
+     */
+    public function getHeaders()
+    {
+        return $this->container['headers'];
+    }
+
+    /**
+     * Sets headers
+     *
+     * @param map[string,string] $headers Attachment headers.
+     *
+     * @return $this
+     */
+    public function setHeaders($headers)
+    {
+        $this->container['headers'] = $headers;
 
         return $this;
     }

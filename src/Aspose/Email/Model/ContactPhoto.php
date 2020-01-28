@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ValueResponse.php">
+ * <copyright company="Aspose" file="ContactPhoto.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,7 +26,7 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /**
- * ValueResponse
+ * ContactPhoto
  */
 
 namespace Aspose\Email\Model;
@@ -35,11 +35,11 @@ use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
 /**
- * ValueResponse
+ * ContactPhoto
  *
- * @description String value object
+ * @description Person&#39;s photo.
  */
-class ValueResponse implements ArrayAccess
+class ContactPhoto implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class ValueResponse implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "ValueResponse";
+    protected static $swaggerModelName = "ContactPhoto";
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,8 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'value' => 'string'
+        'photo_image_format' => 'string',
+        'base64_data' => 'string'
     ];
 
     /**
@@ -65,7 +66,8 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'value' => null
+        'photo_image_format' => null,
+        'base64_data' => null
     ];
 
     /**
@@ -95,7 +97,8 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'value' => 'value'
+        'photo_image_format' => 'photoImageFormat',
+        'base64_data' => 'base64Data'
     ];
 
     /**
@@ -104,7 +107,8 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'value' => 'setValue'
+        'photo_image_format' => 'setPhotoImageFormat',
+        'base64_data' => 'setBase64Data'
     ];
 
     /**
@@ -113,7 +117,8 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'value' => 'getValue'
+        'photo_image_format' => 'getPhotoImageFormat',
+        'base64_data' => 'getBase64Data'
     ];
 
     /**
@@ -169,15 +174,18 @@ class ValueResponse implements ArrayAccess
     protected $container = [];
 
     /**
-     * Initializes a new instance of the ValueResponse class.
+     * Initializes a new instance of the ContactPhoto class.
      *  
-     * @param string $value Gets or sets string content.
+     * @param string $photo_image_format MapiContact photo image format. Enum, available values: Undefined, Jpeg, Gif, Wmf, Bmp, Tiff
+     * @param string $base64_data Photo serialized as base64 string.
      */
-    public function __construct($value = null)
+    public function __construct($photo_image_format = null, $base64_data = null)
     {
-        $this->container['value'] = null;
+        $this->container['photo_image_format'] = null;
+        $this->container['base64_data'] = null;
 
-        if ($value != null) $this->setValue($value);
+        if ($photo_image_format != null) $this->setPhotoImageFormat($photo_image_format);
+        if ($base64_data != null) $this->setBase64Data($base64_data);
     }
 
     /**
@@ -189,6 +197,9 @@ class ValueResponse implements ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['photo_image_format'] === null) {
+            $invalidProperties[] = "'photo_image_format' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -201,30 +212,57 @@ class ValueResponse implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['photo_image_format'] === null) {
+            return false;
+        }
         return true;
     }
 
 
     /**
-     * Gets value
+     * Gets photo_image_format
      *
      * @return string
      */
-    public function getValue()
+    public function getPhotoImageFormat()
     {
-        return $this->container['value'];
+        return $this->container['photo_image_format'];
     }
 
     /**
-     * Sets value
+     * Sets photo_image_format
      *
-     * @param string $value Gets or sets string content.
+     * @param string $photo_image_format MapiContact photo image format. Enum, available values: Undefined, Jpeg, Gif, Wmf, Bmp, Tiff
      *
      * @return $this
      */
-    public function setValue($value)
+    public function setPhotoImageFormat($photo_image_format)
     {
-        $this->container['value'] = $value;
+        $this->container['photo_image_format'] = $photo_image_format;
+
+        return $this;
+    }
+
+    /**
+     * Gets base64_data
+     *
+     * @return string
+     */
+    public function getBase64Data()
+    {
+        return $this->container['base64_data'];
+    }
+
+    /**
+     * Sets base64_data
+     *
+     * @param string $base64_data Photo serialized as base64 string.
+     *
+     * @return $this
+     */
+    public function setBase64Data($base64_data)
+    {
+        $this->container['base64_data'] = $base64_data;
 
         return $this;
     }

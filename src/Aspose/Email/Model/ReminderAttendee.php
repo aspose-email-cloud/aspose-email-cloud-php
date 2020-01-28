@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ValueResponse.php">
+ * <copyright company="Aspose" file="ReminderAttendee.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,7 +26,7 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /**
- * ValueResponse
+ * ReminderAttendee
  */
 
 namespace Aspose\Email\Model;
@@ -35,11 +35,11 @@ use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
 /**
- * ValueResponse
+ * ReminderAttendee
  *
- * @description String value object
+ * @description Defines an \&quot;Attendee\&quot; within a alarm.
  */
-class ValueResponse implements ArrayAccess
+class ReminderAttendee implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class ValueResponse implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "ValueResponse";
+    protected static $swaggerModelName = "ReminderAttendee";
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,7 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'value' => 'string'
+        'address' => 'string'
     ];
 
     /**
@@ -65,7 +65,7 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'value' => null
+        'address' => null
     ];
 
     /**
@@ -95,7 +95,7 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'value' => 'value'
+        'address' => 'address'
     ];
 
     /**
@@ -104,7 +104,7 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'value' => 'setValue'
+        'address' => 'setAddress'
     ];
 
     /**
@@ -113,7 +113,7 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'value' => 'getValue'
+        'address' => 'getAddress'
     ];
 
     /**
@@ -169,15 +169,15 @@ class ValueResponse implements ArrayAccess
     protected $container = [];
 
     /**
-     * Initializes a new instance of the ValueResponse class.
+     * Initializes a new instance of the ReminderAttendee class.
      *  
-     * @param string $value Gets or sets string content.
+     * @param string $address Contains the email address.
      */
-    public function __construct($value = null)
+    public function __construct($address = null)
     {
-        $this->container['value'] = null;
+        $this->container['address'] = null;
 
-        if ($value != null) $this->setValue($value);
+        if ($address != null) $this->setAddress($address);
     }
 
     /**
@@ -206,25 +206,25 @@ class ValueResponse implements ArrayAccess
 
 
     /**
-     * Gets value
+     * Gets address
      *
      * @return string
      */
-    public function getValue()
+    public function getAddress()
     {
-        return $this->container['value'];
+        return $this->container['address'];
     }
 
     /**
-     * Sets value
+     * Sets address
      *
-     * @param string $value Gets or sets string content.
+     * @param string $address Contains the email address.
      *
      * @return $this
      */
-    public function setValue($value)
+    public function setAddress($address)
     {
-        $this->container['value'] = $value;
+        $this->container['address'] = $address;
 
         return $this;
     }

@@ -11,6 +11,8 @@ Class | Method | HTTP request | Description
 *EmailApi* | [**aiBcrOcr**](EmailApi.md#aibcrocr) | **POST** /email/AiBcr/ocr | Ocr images
 *EmailApi* | [**aiBcrOcrStorage**](EmailApi.md#aibcrocrstorage) | **POST** /email/AiBcr/ocr-storage | Ocr images from storage
 *EmailApi* | [**aiBcrParse**](EmailApi.md#aibcrparse) | **POST** /email/AiBcr/parse | Parse images to vCard properties
+*EmailApi* | [**aiBcrParseModel**](EmailApi.md#aibcrparsemodel) | **POST** /email/AiBcr/parse-model | Parse images to vCard document models
+*EmailApi* | [**aiBcrParseOcrDataModel**](EmailApi.md#aibcrparseocrdatamodel) | **POST** /email/AiBcr/parse-ocr-data-model | Parse OCR data to vCard document models
 *EmailApi* | [**aiBcrParseStorage**](EmailApi.md#aibcrparsestorage) | **POST** /email/AiBcr/parse-storage | Parse images from storage to vCard files
 *EmailApi* | [**aiNameComplete**](EmailApi.md#ainamecomplete) | **GET** /email/AiName/complete | The call proposes k most probable names for given starting characters
 *EmailApi* | [**aiNameExpand**](EmailApi.md#ainameexpand) | **GET** /email/AiName/expand | Expands a person&#39;s name into a list of possible alternatives using options for expanding instructions
@@ -24,7 +26,10 @@ Class | Method | HTTP request | Description
 *EmailApi* | [**aiNameParse**](EmailApi.md#ainameparse) | **GET** /email/AiName/parse | Parse name to components
 *EmailApi* | [**aiNameParseEmailAddress**](EmailApi.md#ainameparseemailaddress) | **GET** /email/AiName/parse-email-address | Parse person&#39;s name out of an email address
 *EmailApi* | [**appendEmailMessage**](EmailApi.md#appendemailmessage) | **PUT** /email/client/Append | Adds an email from *.eml file to specified folder in email account
+*EmailApi* | [**appendEmailModelMessage**](EmailApi.md#appendemailmodelmessage) | **PUT** /email/client/AppendModel | Adds an email from model to specified folder in email account
 *EmailApi* | [**appendMimeMessage**](EmailApi.md#appendmimemessage) | **PUT** /email/client/AppendMime | Adds an email from MIME to specified folder in email account
+*EmailApi* | [**convertCalendarModelToAlternate**](EmailApi.md#convertcalendarmodeltoalternate) | **PUT** /email/CalendarModel/as-alternate | Convert iCalendar to AlternateView
+*EmailApi* | [**convertEmail**](EmailApi.md#convertemail) | **PUT** /email/convert/{format} | Converts email document to specified format and returns as file
 *EmailApi* | [**copyFile**](EmailApi.md#copyfile) | **PUT** /email/storage/file/copy/{srcPath} | Copy file
 *EmailApi* | [**copyFolder**](EmailApi.md#copyfolder) | **PUT** /email/storage/folder/copy/{srcPath} | Copy folder
 *EmailApi* | [**createCalendar**](EmailApi.md#createcalendar) | **PUT** /email/Calendar/{name} | Create calendar file
@@ -43,15 +48,24 @@ Class | Method | HTTP request | Description
 *EmailApi* | [**deleteMapiProperties**](EmailApi.md#deletemapiproperties) | **DELETE** /email/Mapi/{name}/properties | Delete document properties
 *EmailApi* | [**downloadFile**](EmailApi.md#downloadfile) | **GET** /email/storage/file/{path} | Download file
 *EmailApi* | [**fetchEmailMessage**](EmailApi.md#fetchemailmessage) | **GET** /email/client/Fetch | Fetch message mime from email account
+*EmailApi* | [**fetchEmailModel**](EmailApi.md#fetchemailmodel) | **GET** /email/client/FetchModel | Fetch message model from email account
 *EmailApi* | [**getCalendar**](EmailApi.md#getcalendar) | **GET** /email/Calendar/{name}/properties | Get calendar file properties
 *EmailApi* | [**getCalendarAttachment**](EmailApi.md#getcalendarattachment) | **GET** /email/Calendar/{name}/attachments/{attachment} | Get iCalendar document attachment by name
 *EmailApi* | [**getCalendarList**](EmailApi.md#getcalendarlist) | **GET** /email/Calendar | Get iCalendar files list in folder on storage
+*EmailApi* | [**getCalendarModel**](EmailApi.md#getcalendarmodel) | **GET** /email/CalendarModel/{name} | Get calendar file
+*EmailApi* | [**getCalendarModelAsAlternate**](EmailApi.md#getcalendarmodelasalternate) | **GET** /email/CalendarModel/{name}/as-alternate/{calendarAction} | Get iCalendar from storage as AlternateView
+*EmailApi* | [**getCalendarModelList**](EmailApi.md#getcalendarmodellist) | **GET** /email/CalendarModel | Get iCalendar list from storage folder
 *EmailApi* | [**getContactAttachment**](EmailApi.md#getcontactattachment) | **GET** /email/Contact/{format}/{name}/attachments/{attachment} | Get attachment file by name
 *EmailApi* | [**getContactList**](EmailApi.md#getcontactlist) | **GET** /email/Contact/{format} | Get contact list from storage folder
+*EmailApi* | [**getContactModel**](EmailApi.md#getcontactmodel) | **GET** /email/ContactModel/{format}/{name} | Get contact document.
+*EmailApi* | [**getContactModelList**](EmailApi.md#getcontactmodellist) | **GET** /email/ContactModel/{format} | Get contact list from storage folder.
 *EmailApi* | [**getContactProperties**](EmailApi.md#getcontactproperties) | **GET** /email/Contact/{format}/{name}/properties | Get contact document properties
 *EmailApi* | [**getDiscUsage**](EmailApi.md#getdiscusage) | **GET** /email/storage/disc | Get disc usage
 *EmailApi* | [**getEmail**](EmailApi.md#getemail) | **GET** /email/{fileName} | Get email document
+*EmailApi* | [**getEmailAsFile**](EmailApi.md#getemailasfile) | **GET** /email/{fileName}/as-file/{format} | Converts email document from storage to specified format and returns as file
 *EmailApi* | [**getEmailAttachment**](EmailApi.md#getemailattachment) | **GET** /email/{fileName}/attachments/{attachment} | Get email attachment by name
+*EmailApi* | [**getEmailModel**](EmailApi.md#getemailmodel) | **GET** /email/model/{format}/{name} | Get email document.
+*EmailApi* | [**getEmailModelList**](EmailApi.md#getemailmodellist) | **GET** /email/model/{format} | Get email list from storage folder.
 *EmailApi* | [**getEmailProperty**](EmailApi.md#getemailproperty) | **GET** /email/{fileName}/properties/{propertyName} | Get an email document property by its name
 *EmailApi* | [**getFileVersions**](EmailApi.md#getfileversions) | **GET** /email/storage/version/{path} | Get file versions
 *EmailApi* | [**getFilesList**](EmailApi.md#getfileslist) | **GET** /email/storage/folder/{path} | Get all files and folders within a folder
@@ -61,13 +75,18 @@ Class | Method | HTTP request | Description
 *EmailApi* | [**getMapiProperties**](EmailApi.md#getmapiproperties) | **GET** /email/Mapi/{name}/properties | Get document properties
 *EmailApi* | [**listEmailFolders**](EmailApi.md#listemailfolders) | **GET** /email/client/ListFolders | Get folders list in email account
 *EmailApi* | [**listEmailMessages**](EmailApi.md#listemailmessages) | **GET** /email/client/ListMessages | Get messages from folder, filtered by query
+*EmailApi* | [**listEmailModels**](EmailApi.md#listemailmodels) | **GET** /email/client/ListMessagesModel | Get messages from folder, filtered by query
 *EmailApi* | [**moveFile**](EmailApi.md#movefile) | **PUT** /email/storage/file/move/{srcPath} | Move file
 *EmailApi* | [**moveFolder**](EmailApi.md#movefolder) | **PUT** /email/storage/folder/move/{srcPath} | Move folder
 *EmailApi* | [**objectExists**](EmailApi.md#objectexists) | **GET** /email/storage/exist/{path} | Check if file or folder exists
+*EmailApi* | [**saveCalendarModel**](EmailApi.md#savecalendarmodel) | **PUT** /email/CalendarModel/{name} | Save iCalendar
+*EmailApi* | [**saveContactModel**](EmailApi.md#savecontactmodel) | **PUT** /email/ContactModel/{format}/{name} | Save contact.
+*EmailApi* | [**saveEmailModel**](EmailApi.md#saveemailmodel) | **PUT** /email/model/{format}/{name} | Save email document.
 *EmailApi* | [**saveMailAccount**](EmailApi.md#savemailaccount) | **POST** /email/client/SaveMailAccount | Create email account file (*.account) with login/password authentication
 *EmailApi* | [**saveMailOAuthAccount**](EmailApi.md#savemailoauthaccount) | **POST** /email/client/SaveMailOAuthAccount | Create email account file (*.account) with OAuth
 *EmailApi* | [**sendEmail**](EmailApi.md#sendemail) | **POST** /email/client/Send | Send an email from *.eml file located on storage
 *EmailApi* | [**sendEmailMime**](EmailApi.md#sendemailmime) | **POST** /email/client/SendMime | Send an email specified by MIME in request
+*EmailApi* | [**sendEmailModel**](EmailApi.md#sendemailmodel) | **POST** /email/client/SendModel | Send an email specified by model in request
 *EmailApi* | [**setEmailProperty**](EmailApi.md#setemailproperty) | **PUT** /email/{fileName}/properties/{propertyName} | Set email document property value
 *EmailApi* | [**setEmailReadFlag**](EmailApi.md#setemailreadflag) | **POST** /email/client/SetReadFlag | Sets \&quot;Message is read\&quot; flag
 *EmailApi* | [**storageExists**](EmailApi.md#storageexists) | **GET** /email/storage/{storageName}/exist | Check if storage exists
@@ -97,15 +116,34 @@ Class | Method | HTTP request | Description
  - [AiNameParsedRq](AiNameParsedRq.md)
  - [AiNameWeighted](AiNameWeighted.md)
  - [AiNameWeightedVariants](AiNameWeightedVariants.md)
+ - [AssociatedPerson](AssociatedPerson.md)
+ - [AttachmentBase](AttachmentBase.md)
  - [BaseObject](BaseObject.md)
+ - [CalendarDto](CalendarDto.md)
+ - [CalendarDtoAlternateRq](CalendarDtoAlternateRq.md)
+ - [CalendarReminder](CalendarReminder.md)
+ - [ContactDto](ContactDto.md)
+ - [ContactPhoto](ContactPhoto.md)
+ - [ContentType](ContentType.md)
+ - [ContentTypeParameter](ContentTypeParameter.md)
  - [CreateEmailRequest](CreateEmailRequest.md)
+ - [CustomerEvent](CustomerEvent.md)
  - [DiscUsage](DiscUsage.md)
  - [EmailAccountRequest](EmailAccountRequest.md)
+ - [EmailAddress](EmailAddress.md)
  - [EmailDocument](EmailDocument.md)
  - [EmailDocumentResponse](EmailDocumentResponse.md)
+ - [EmailDto](EmailDto.md)
  - [EmailProperties](EmailProperties.md)
  - [EmailProperty](EmailProperty.md)
  - [EmailPropertyResponse](EmailPropertyResponse.md)
+ - [EnumWithCustomOfAssociatedPersonCategory](EnumWithCustomOfAssociatedPersonCategory.md)
+ - [EnumWithCustomOfEmailAddressCategory](EnumWithCustomOfEmailAddressCategory.md)
+ - [EnumWithCustomOfEventCategory](EnumWithCustomOfEventCategory.md)
+ - [EnumWithCustomOfInstantMessengerCategory](EnumWithCustomOfInstantMessengerCategory.md)
+ - [EnumWithCustomOfPhoneNumberCategory](EnumWithCustomOfPhoneNumberCategory.md)
+ - [EnumWithCustomOfPostalAddressCategory](EnumWithCustomOfPostalAddressCategory.md)
+ - [EnumWithCustomOfUrlCategory](EnumWithCustomOfUrlCategory.md)
  - [Error](Error.md)
  - [ErrorDetails](ErrorDetails.md)
  - [FileVersions](FileVersions.md)
@@ -113,44 +151,71 @@ Class | Method | HTTP request | Description
  - [FilesUploadResult](FilesUploadResult.md)
  - [HierarchicalObjectRequest](HierarchicalObjectRequest.md)
  - [HierarchicalObjectResponse](HierarchicalObjectResponse.md)
+ - [InstantMessengerAddress](InstantMessengerAddress.md)
  - [Link](Link.md)
  - [ListResponseOfAiBcrOcrData](ListResponseOfAiBcrOcrData.md)
  - [ListResponseOfAiNameComponent](ListResponseOfAiNameComponent.md)
  - [ListResponseOfAiNameExtracted](ListResponseOfAiNameExtracted.md)
  - [ListResponseOfAiNameGenderHypothesis](ListResponseOfAiNameGenderHypothesis.md)
+ - [ListResponseOfContactDto](ListResponseOfContactDto.md)
+ - [ListResponseOfEmailDto](ListResponseOfEmailDto.md)
  - [ListResponseOfHierarchicalObject](ListResponseOfHierarchicalObject.md)
  - [ListResponseOfHierarchicalObjectResponse](ListResponseOfHierarchicalObjectResponse.md)
  - [ListResponseOfMailServerFolder](ListResponseOfMailServerFolder.md)
  - [ListResponseOfStorageFileLocation](ListResponseOfStorageFileLocation.md)
+ - [ListResponseOfStorageModelOfCalendarDto](ListResponseOfStorageModelOfCalendarDto.md)
+ - [ListResponseOfStorageModelOfContactDto](ListResponseOfStorageModelOfContactDto.md)
+ - [ListResponseOfStorageModelOfEmailDto](ListResponseOfStorageModelOfEmailDto.md)
  - [ListResponseOfString](ListResponseOfString.md)
+ - [MailAddress](MailAddress.md)
  - [MailServerFolder](MailServerFolder.md)
  - [MimeResponse](MimeResponse.md)
  - [ObjectExist](ObjectExist.md)
+ - [PhoneNumber](PhoneNumber.md)
+ - [PostalAddress](PostalAddress.md)
+ - [ReminderAttendee](ReminderAttendee.md)
+ - [ReminderTrigger](ReminderTrigger.md)
  - [SetEmailPropertyRequest](SetEmailPropertyRequest.md)
  - [StorageExist](StorageExist.md)
  - [StorageFile](StorageFile.md)
  - [StorageFolderLocation](StorageFolderLocation.md)
+ - [StorageModelOfCalendarDto](StorageModelOfCalendarDto.md)
+ - [StorageModelOfContactDto](StorageModelOfContactDto.md)
+ - [StorageModelOfEmailDto](StorageModelOfEmailDto.md)
+ - [StorageModelRqOfCalendarDto](StorageModelRqOfCalendarDto.md)
+ - [StorageModelRqOfContactDto](StorageModelRqOfContactDto.md)
+ - [StorageModelRqOfEmailDto](StorageModelRqOfEmailDto.md)
+ - [Url](Url.md)
  - [ValueResponse](ValueResponse.md)
  - [AiBcrBase64Image](AiBcrBase64Image.md)
  - [AiBcrBase64Rq](AiBcrBase64Rq.md)
  - [AiBcrImageStorageFile](AiBcrImageStorageFile.md)
+ - [AiBcrParseOcrDataRq](AiBcrParseOcrDataRq.md)
  - [AiBcrStorageImageRq](AiBcrStorageImageRq.md)
  - [AiNameParsedMatchRq](AiNameParsedMatchRq.md)
+ - [AlternateView](AlternateView.md)
  - [AppendEmailAccountBaseRequest](AppendEmailAccountBaseRequest.md)
+ - [Attachment](Attachment.md)
+ - [CalendarDtoList](CalendarDtoList.md)
+ - [ContactDtoList](ContactDtoList.md)
  - [CreateFolderBaseRequest](CreateFolderBaseRequest.md)
  - [DeleteFolderBaseRequest](DeleteFolderBaseRequest.md)
  - [DeleteMessageBaseRequest](DeleteMessageBaseRequest.md)
+ - [EmailDtoList](EmailDtoList.md)
  - [FileVersion](FileVersion.md)
  - [HierarchicalObject](HierarchicalObject.md)
  - [IndexedHierarchicalObject](IndexedHierarchicalObject.md)
  - [IndexedPrimitiveObject](IndexedPrimitiveObject.md)
+ - [LinkedResource](LinkedResource.md)
  - [PrimitiveObject](PrimitiveObject.md)
  - [SaveEmailAccountRequest](SaveEmailAccountRequest.md)
  - [SaveOAuthEmailAccountRequest](SaveOAuthEmailAccountRequest.md)
  - [SendEmailBaseRequest](SendEmailBaseRequest.md)
  - [SendEmailMimeBaseRequest](SendEmailMimeBaseRequest.md)
+ - [SendEmailModelRq](SendEmailModelRq.md)
  - [SetMessageReadFlagAccountBaseRequest](SetMessageReadFlagAccountBaseRequest.md)
  - [StorageFileLocation](StorageFileLocation.md)
  - [AiBcrParseStorageRq](AiBcrParseStorageRq.md)
  - [AppendEmailBaseRequest](AppendEmailBaseRequest.md)
  - [AppendEmailMimeBaseRequest](AppendEmailMimeBaseRequest.md)
+ - [AppendEmailModelRq](AppendEmailModelRq.md)

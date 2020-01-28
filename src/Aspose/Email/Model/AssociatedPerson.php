@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ValueResponse.php">
+ * <copyright company="Aspose" file="AssociatedPerson.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,7 +26,7 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /**
- * ValueResponse
+ * AssociatedPerson
  */
 
 namespace Aspose\Email\Model;
@@ -35,11 +35,11 @@ use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
 /**
- * ValueResponse
+ * AssociatedPerson
  *
- * @description String value object
+ * @description Describes associated person.
  */
-class ValueResponse implements ArrayAccess
+class AssociatedPerson implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class ValueResponse implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "ValueResponse";
+    protected static $swaggerModelName = "AssociatedPerson";
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,9 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'value' => 'string'
+        'name' => 'string',
+        'category' => '\Aspose\Email\Model\EnumWithCustomOfAssociatedPersonCategory',
+        'preferred' => 'bool'
     ];
 
     /**
@@ -65,7 +67,9 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'value' => null
+        'name' => null,
+        'category' => null,
+        'preferred' => null
     ];
 
     /**
@@ -95,7 +99,9 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'value' => 'value'
+        'name' => 'name',
+        'category' => 'category',
+        'preferred' => 'preferred'
     ];
 
     /**
@@ -104,7 +110,9 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'value' => 'setValue'
+        'name' => 'setName',
+        'category' => 'setCategory',
+        'preferred' => 'setPreferred'
     ];
 
     /**
@@ -113,7 +121,9 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'value' => 'getValue'
+        'name' => 'getName',
+        'category' => 'getCategory',
+        'preferred' => 'getPreferred'
     ];
 
     /**
@@ -169,15 +179,21 @@ class ValueResponse implements ArrayAccess
     protected $container = [];
 
     /**
-     * Initializes a new instance of the ValueResponse class.
+     * Initializes a new instance of the AssociatedPerson class.
      *  
-     * @param string $value Gets or sets string content.
+     * @param string $name Associated person's name.
+     * @param \Aspose\Email\Model\EnumWithCustomOfAssociatedPersonCategory $category Associated person's category.
+     * @param bool $preferred Defines whether associated person is preferred.
      */
-    public function __construct($value = null)
+    public function __construct($name = null, $category = null, $preferred = null)
     {
-        $this->container['value'] = null;
+        $this->container['name'] = null;
+        $this->container['category'] = null;
+        $this->container['preferred'] = null;
 
-        if ($value != null) $this->setValue($value);
+        if ($name != null) $this->setName($name);
+        if ($category != null) $this->setCategory($category);
+        if ($preferred != null) $this->setPreferred($preferred);
     }
 
     /**
@@ -189,6 +205,9 @@ class ValueResponse implements ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['preferred'] === null) {
+            $invalidProperties[] = "'preferred' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -201,30 +220,81 @@ class ValueResponse implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['preferred'] === null) {
+            return false;
+        }
         return true;
     }
 
 
     /**
-     * Gets value
+     * Gets name
      *
      * @return string
      */
-    public function getValue()
+    public function getName()
     {
-        return $this->container['value'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets value
+     * Sets name
      *
-     * @param string $value Gets or sets string content.
+     * @param string $name Associated person's name.
      *
      * @return $this
      */
-    public function setValue($value)
+    public function setName($name)
     {
-        $this->container['value'] = $value;
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets category
+     *
+     * @return \Aspose\Email\Model\EnumWithCustomOfAssociatedPersonCategory
+     */
+    public function getCategory()
+    {
+        return $this->container['category'];
+    }
+
+    /**
+     * Sets category
+     *
+     * @param \Aspose\Email\Model\EnumWithCustomOfAssociatedPersonCategory $category Associated person's category.
+     *
+     * @return $this
+     */
+    public function setCategory($category)
+    {
+        $this->container['category'] = $category;
+
+        return $this;
+    }
+
+    /**
+     * Gets preferred
+     *
+     * @return bool
+     */
+    public function getPreferred()
+    {
+        return $this->container['preferred'];
+    }
+
+    /**
+     * Sets preferred
+     *
+     * @param bool $preferred Defines whether associated person is preferred.
+     *
+     * @return $this
+     */
+    public function setPreferred($preferred)
+    {
+        $this->container['preferred'] = $preferred;
 
         return $this;
     }

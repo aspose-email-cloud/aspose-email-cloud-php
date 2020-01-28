@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ValueResponse.php">
+ * <copyright company="Aspose" file="ListResponseOfContactDto.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,7 +26,7 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /**
- * ValueResponse
+ * ListResponseOfContactDto
  */
 
 namespace Aspose\Email\Model;
@@ -35,11 +35,10 @@ use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
 /**
- * ValueResponse
+ * ListResponseOfContactDto
  *
- * @description String value object
  */
-class ValueResponse implements ArrayAccess
+class ListResponseOfContactDto implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +47,7 @@ class ValueResponse implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "ValueResponse";
+    protected static $swaggerModelName = "ListResponseOfContactDto";
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +55,7 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'value' => 'string'
+        'value' => '\Aspose\Email\Model\ContactDto[]'
     ];
 
     /**
@@ -169,9 +168,9 @@ class ValueResponse implements ArrayAccess
     protected $container = [];
 
     /**
-     * Initializes a new instance of the ValueResponse class.
+     * Initializes a new instance of the ListResponseOfContactDto class.
      *  
-     * @param string $value Gets or sets string content.
+     * @param \Aspose\Email\Model\ContactDto[] $value 
      */
     public function __construct($value = null)
     {
@@ -208,7 +207,7 @@ class ValueResponse implements ArrayAccess
     /**
      * Gets value
      *
-     * @return string
+     * @return \Aspose\Email\Model\ContactDto[]
      */
     public function getValue()
     {
@@ -218,7 +217,7 @@ class ValueResponse implements ArrayAccess
     /**
      * Sets value
      *
-     * @param string $value Gets or sets string content.
+     * @param \Aspose\Email\Model\ContactDto[] $value value
      *
      * @return $this
      */

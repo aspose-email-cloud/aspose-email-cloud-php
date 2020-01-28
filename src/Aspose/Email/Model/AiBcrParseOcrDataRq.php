@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ValueResponse.php">
+ * <copyright company="Aspose" file="AiBcrParseOcrDataRq.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,20 +26,18 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /**
- * ValueResponse
+ * AiBcrParseOcrDataRq
  */
 
 namespace Aspose\Email\Model;
-
-use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
 /**
- * ValueResponse
+ * AiBcrParseOcrDataRq
  *
- * @description String value object
+ * @description Parse ocr data request
  */
-class ValueResponse implements ArrayAccess
+class AiBcrParseOcrDataRq extends AiBcrRq 
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +46,7 @@ class ValueResponse implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "ValueResponse";
+    protected static $swaggerModelName = "AiBcrParseOcrDataRq";
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +54,7 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'value' => 'string'
+        'data' => '\Aspose\Email\Model\AiBcrOcrData[]'
     ];
 
     /**
@@ -65,7 +63,7 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'value' => null
+        'data' => null
     ];
 
     /**
@@ -75,7 +73,7 @@ class ValueResponse implements ArrayAccess
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /**
@@ -85,7 +83,7 @@ class ValueResponse implements ArrayAccess
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /**
@@ -95,7 +93,7 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'value' => 'value'
+        'data' => 'data'
     ];
 
     /**
@@ -104,7 +102,7 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'value' => 'setValue'
+        'data' => 'setData'
     ];
 
     /**
@@ -113,7 +111,7 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'value' => 'getValue'
+        'data' => 'getData'
     ];
 
     /**
@@ -124,7 +122,7 @@ class ValueResponse implements ArrayAccess
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -134,7 +132,7 @@ class ValueResponse implements ArrayAccess
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -144,7 +142,7 @@ class ValueResponse implements ArrayAccess
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -161,23 +159,20 @@ class ValueResponse implements ArrayAccess
 
     
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
-     * Initializes a new instance of the ValueResponse class.
+     * Initializes a new instance of the AiBcrParseOcrDataRq class.
      *  
-     * @param string $value Gets or sets string content.
+     * @param \Aspose\Email\Model\AiBcrOptions $options Recognition options
+     * @param \Aspose\Email\Model\AiBcrOcrData[] $data OCR data
      */
-    public function __construct($value = null)
+    public function __construct($options = null, $data = null)
     {
-        $this->container['value'] = null;
+        parent::__construct();
+        $this->container['data'] = null;
 
-        if ($value != null) $this->setValue($value);
+        if ($options != null) $this->setOptions($options);
+        if ($data != null) $this->setData($data);
     }
 
     /**
@@ -187,8 +182,11 @@ class ValueResponse implements ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
+        if ($this->container['data'] === null) {
+            $invalidProperties[] = "'data' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -200,31 +198,37 @@ class ValueResponse implements ArrayAccess
      */
     public function valid()
     {
+        if (!parent::valid()) {
+            return false;
+        }
 
+        if ($this->container['data'] === null) {
+            return false;
+        }
         return true;
     }
 
 
     /**
-     * Gets value
+     * Gets data
      *
-     * @return string
+     * @return \Aspose\Email\Model\AiBcrOcrData[]
      */
-    public function getValue()
+    public function getData()
     {
-        return $this->container['value'];
+        return $this->container['data'];
     }
 
     /**
-     * Sets value
+     * Sets data
      *
-     * @param string $value Gets or sets string content.
+     * @param \Aspose\Email\Model\AiBcrOcrData[] $data OCR data
      *
      * @return $this
      */
-    public function setValue($value)
+    public function setData($data)
     {
-        $this->container['value'] = $value;
+        $this->container['data'] = $data;
 
         return $this;
     }

@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ValueResponse.php">
+ * <copyright company="Aspose" file="MailAddress.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,7 +26,7 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /**
- * ValueResponse
+ * MailAddress
  */
 
 namespace Aspose\Email\Model;
@@ -35,11 +35,11 @@ use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
 /**
- * ValueResponse
+ * MailAddress
  *
- * @description String value object
+ * @description Represents the address of a message.
  */
-class ValueResponse implements ArrayAccess
+class MailAddress implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class ValueResponse implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "ValueResponse";
+    protected static $swaggerModelName = "MailAddress";
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,9 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'value' => 'string'
+        'display_name' => 'string',
+        'address' => 'string',
+        'participation_status' => 'string'
     ];
 
     /**
@@ -65,7 +67,9 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'value' => null
+        'display_name' => null,
+        'address' => null,
+        'participation_status' => null
     ];
 
     /**
@@ -95,7 +99,9 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'value' => 'value'
+        'display_name' => 'displayName',
+        'address' => 'address',
+        'participation_status' => 'participationStatus'
     ];
 
     /**
@@ -104,7 +110,9 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'value' => 'setValue'
+        'display_name' => 'setDisplayName',
+        'address' => 'setAddress',
+        'participation_status' => 'setParticipationStatus'
     ];
 
     /**
@@ -113,7 +121,9 @@ class ValueResponse implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'value' => 'getValue'
+        'display_name' => 'getDisplayName',
+        'address' => 'getAddress',
+        'participation_status' => 'getParticipationStatus'
     ];
 
     /**
@@ -169,15 +179,21 @@ class ValueResponse implements ArrayAccess
     protected $container = [];
 
     /**
-     * Initializes a new instance of the ValueResponse class.
+     * Initializes a new instance of the MailAddress class.
      *  
-     * @param string $value Gets or sets string content.
+     * @param string $display_name Display name
+     * @param string $address Address
+     * @param string $participation_status Identifies the participation status for the calendar user. Enum, available values: NeedsAction, Accepted, Declined, Tentative, Delegated
      */
-    public function __construct($value = null)
+    public function __construct($display_name = null, $address = null, $participation_status = null)
     {
-        $this->container['value'] = null;
+        $this->container['display_name'] = null;
+        $this->container['address'] = null;
+        $this->container['participation_status'] = null;
 
-        if ($value != null) $this->setValue($value);
+        if ($display_name != null) $this->setDisplayName($display_name);
+        if ($address != null) $this->setAddress($address);
+        if ($participation_status != null) $this->setParticipationStatus($participation_status);
     }
 
     /**
@@ -189,6 +205,9 @@ class ValueResponse implements ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['participation_status'] === null) {
+            $invalidProperties[] = "'participation_status' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -201,30 +220,81 @@ class ValueResponse implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['participation_status'] === null) {
+            return false;
+        }
         return true;
     }
 
 
     /**
-     * Gets value
+     * Gets display_name
      *
      * @return string
      */
-    public function getValue()
+    public function getDisplayName()
     {
-        return $this->container['value'];
+        return $this->container['display_name'];
     }
 
     /**
-     * Sets value
+     * Sets display_name
      *
-     * @param string $value Gets or sets string content.
+     * @param string $display_name Display name
      *
      * @return $this
      */
-    public function setValue($value)
+    public function setDisplayName($display_name)
     {
-        $this->container['value'] = $value;
+        $this->container['display_name'] = $display_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets address
+     *
+     * @return string
+     */
+    public function getAddress()
+    {
+        return $this->container['address'];
+    }
+
+    /**
+     * Sets address
+     *
+     * @param string $address Address
+     *
+     * @return $this
+     */
+    public function setAddress($address)
+    {
+        $this->container['address'] = $address;
+
+        return $this;
+    }
+
+    /**
+     * Gets participation_status
+     *
+     * @return string
+     */
+    public function getParticipationStatus()
+    {
+        return $this->container['participation_status'];
+    }
+
+    /**
+     * Sets participation_status
+     *
+     * @param string $participation_status Identifies the participation status for the calendar user. Enum, available values: NeedsAction, Accepted, Declined, Tentative, Delegated
+     *
+     * @return $this
+     */
+    public function setParticipationStatus($participation_status)
+    {
+        $this->container['participation_status'] = $participation_status;
 
         return $this;
     }
