@@ -1,4 +1,4 @@
-hp
+<?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="deleteMapiPropertiesRequest.php">
@@ -56,4 +56,3 @@ class DeleteMapiPropertiesRequest
     public $request;
 }
 ?>
-<?p

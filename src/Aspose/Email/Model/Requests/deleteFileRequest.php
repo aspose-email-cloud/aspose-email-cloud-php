@@ -1,4 +1,4 @@
-hp
+<?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="deleteFileRequest.php">
@@ -63,4 +63,3 @@ class DeleteFileRequest
     public $version_id;
 }
 ?>
-<?p

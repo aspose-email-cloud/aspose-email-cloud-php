@@ -1,4 +1,4 @@
-hp
+<?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="moveFolderRequest.php">
@@ -70,4 +70,3 @@ class MoveFolderRequest
     public $dest_storage_name;
 }
 ?>
-<?p

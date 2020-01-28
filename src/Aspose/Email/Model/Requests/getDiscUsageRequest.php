@@ -1,4 +1,4 @@
-hp
+<?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="getDiscUsageRequest.php">
@@ -49,4 +49,3 @@ class GetDiscUsageRequest
     public $storage_name;
 }
 ?>
-<?p

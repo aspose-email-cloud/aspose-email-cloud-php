@@ -1,4 +1,4 @@
-hp
+<?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="getMapiListRequest.php">
@@ -70,4 +70,3 @@ class GetMapiListRequest
     public $page_number;
 }
 ?>
-<?p

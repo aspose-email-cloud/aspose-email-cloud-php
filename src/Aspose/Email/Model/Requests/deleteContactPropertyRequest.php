@@ -1,4 +1,4 @@
-hp
+<?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="deleteContactPropertyRequest.php">
@@ -77,4 +77,3 @@ class DeleteContactPropertyRequest
     public $folder;
 }
 ?>
-<?p

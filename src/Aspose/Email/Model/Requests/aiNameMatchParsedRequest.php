@@ -1,4 +1,4 @@
-hp
+<?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="aiNameMatchParsedRequest.php">
@@ -49,4 +49,3 @@ class AiNameMatchParsedRequest
     public $rq;
 }
 ?>
-<?p

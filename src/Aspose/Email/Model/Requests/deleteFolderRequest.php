@@ -1,4 +1,4 @@
-hp
+<?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="deleteFolderRequest.php">
@@ -63,4 +63,3 @@ class DeleteFolderRequest
     public $recursive;
 }
 ?>
-<?p

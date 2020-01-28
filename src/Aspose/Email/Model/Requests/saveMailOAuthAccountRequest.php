@@ -1,4 +1,4 @@
-hp
+<?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="saveMailOAuthAccountRequest.php">
@@ -49,4 +49,3 @@ class SaveMailOAuthAccountRequest
     public $request;
 }
 ?>
-<?p

@@ -1,4 +1,4 @@
-hp
+<?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="storageExistsRequest.php">
@@ -49,4 +49,3 @@ class StorageExistsRequest
     public $storage_name;
 }
 ?>
-<?p

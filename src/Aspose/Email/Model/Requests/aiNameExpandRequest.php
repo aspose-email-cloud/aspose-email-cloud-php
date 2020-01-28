@@ -1,4 +1,4 @@
-hp
+<?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="aiNameExpandRequest.php">
@@ -84,4 +84,3 @@ class AiNameExpandRequest
     public $style;
 }
 ?>
-<?p

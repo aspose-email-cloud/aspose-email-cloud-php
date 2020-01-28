@@ -1,4 +1,4 @@
-hp
+<?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="copyFileRequest.php">
@@ -77,4 +77,3 @@ class CopyFileRequest
     public $version_id;
 }
 ?>
-<?p

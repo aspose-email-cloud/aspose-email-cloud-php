@@ -1,4 +1,4 @@
-hp
+<?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="setEmailReadFlagRequest.php">
@@ -49,4 +49,3 @@ class SetEmailReadFlagRequest
     public $request;
 }
 ?>
-<?p

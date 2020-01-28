@@ -1,4 +1,4 @@
-hp
+<?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="listEmailFoldersRequest.php">
@@ -77,4 +77,3 @@ class ListEmailFoldersRequest
     public $parent_folder;
 }
 ?>
-<?p

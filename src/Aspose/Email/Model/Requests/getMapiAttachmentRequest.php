@@ -1,4 +1,4 @@
-hp
+<?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="getMapiAttachmentRequest.php">
@@ -70,4 +70,3 @@ class GetMapiAttachmentRequest
     public $storage;
 }
 ?>
-<?p

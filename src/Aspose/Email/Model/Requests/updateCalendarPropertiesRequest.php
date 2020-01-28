@@ -1,4 +1,4 @@
-hp
+<?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="updateCalendarPropertiesRequest.php">
@@ -56,4 +56,3 @@ class UpdateCalendarPropertiesRequest
     public $request;
 }
 ?>
-<?p

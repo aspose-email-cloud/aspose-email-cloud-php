@@ -1,4 +1,4 @@
-hp
+<?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="listEmailMessagesRequest.php">
@@ -91,4 +91,3 @@ class ListEmailMessagesRequest
     public $recursive;
 }
 ?>
-<?p

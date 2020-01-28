@@ -1,4 +1,4 @@
-hp
+<?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="getEmailAttachmentRequest.php">
@@ -70,4 +70,3 @@ class GetEmailAttachmentRequest
     public $folder;
 }
 ?>
-<?p

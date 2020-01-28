@@ -1,4 +1,4 @@
-hp
+<?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="aiBcrOcrStorageRequest.php">
@@ -49,4 +49,3 @@ class AiBcrOcrStorageRequest
     public $rq;
 }
 ?>
-<?p

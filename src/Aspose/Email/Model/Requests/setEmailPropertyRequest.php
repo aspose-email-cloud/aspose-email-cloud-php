@@ -1,4 +1,4 @@
-hp
+<?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="setEmailPropertyRequest.php">
@@ -63,4 +63,3 @@ class SetEmailPropertyRequest
     public $request;
 }
 ?>
-<?p

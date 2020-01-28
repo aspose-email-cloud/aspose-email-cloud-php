@@ -1,4 +1,4 @@
-hp
+<?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="appendEmailMessageRequest.php">
@@ -49,4 +49,3 @@ class AppendEmailMessageRequest
     public $request;
 }
 ?>
-<?p
