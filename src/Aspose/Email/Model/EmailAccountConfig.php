@@ -57,7 +57,7 @@ class EmailAccountConfig implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'display_name' => 'string',
-        'type' => 'string',
+        'protocol_type' => 'string',
         'host' => 'string',
         'port' => 'int',
         'socket_type' => 'string',
@@ -73,7 +73,7 @@ class EmailAccountConfig implements ArrayAccess
      */
     protected static $swaggerFormats = [
         'display_name' => null,
-        'type' => null,
+        'protocol_type' => null,
         'host' => null,
         'port' => 'int32',
         'socket_type' => null,
@@ -110,7 +110,7 @@ class EmailAccountConfig implements ArrayAccess
      */
     protected static $attributeMap = [
         'display_name' => 'displayName',
-        'type' => 'type',
+        'protocol_type' => 'protocolType',
         'host' => 'host',
         'port' => 'port',
         'socket_type' => 'socketType',
@@ -126,7 +126,7 @@ class EmailAccountConfig implements ArrayAccess
      */
     protected static $setters = [
         'display_name' => 'setDisplayName',
-        'type' => 'setType',
+        'protocol_type' => 'setProtocolType',
         'host' => 'setHost',
         'port' => 'setPort',
         'socket_type' => 'setSocketType',
@@ -142,7 +142,7 @@ class EmailAccountConfig implements ArrayAccess
      */
     protected static $getters = [
         'display_name' => 'getDisplayName',
-        'type' => 'getType',
+        'protocol_type' => 'getProtocolType',
         'host' => 'getHost',
         'port' => 'getPort',
         'socket_type' => 'getSocketType',
@@ -207,18 +207,18 @@ class EmailAccountConfig implements ArrayAccess
      * Initializes a new instance of the EmailAccountConfig class.
      *  
      * @param string $display_name Email account display name
-     * @param string $type Type of connection protocol. Enum, available values: IMAP, POP3, SMTP, EWS, WebDav
+     * @param string $protocol_type Type of connection protocol. Enum, available values: IMAP, POP3, SMTP, EWS, WebDav
      * @param string $host Email account host.
      * @param int $port Port.
-     * @param string $socket_type Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
+     * @param string $socket_type Security mode for a mail client Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
      * @param string[] $authentication_types Supported authentication types. Items: Email account authentication types. Enum, available values: NoAuth, OAuth2, PasswordCleartext, PasswordEncrypted, SmtpAfterPop, ClientIpAddress
      * @param \Aspose\Email\Model\NameValuePair[] $extra_info Extra account information.
      * @param bool $is_validated Determines that configuration validated. Set to false if validation skipped.
      */
-    public function __construct($display_name = null, $type = null, $host = null, $port = null, $socket_type = null, $authentication_types = null, $extra_info = null, $is_validated = null)
+    public function __construct($display_name = null, $protocol_type = null, $host = null, $port = null, $socket_type = null, $authentication_types = null, $extra_info = null, $is_validated = null)
     {
         $this->container['display_name'] = null;
-        $this->container['type'] = null;
+        $this->container['protocol_type'] = null;
         $this->container['host'] = null;
         $this->container['port'] = null;
         $this->container['socket_type'] = null;
@@ -227,7 +227,7 @@ class EmailAccountConfig implements ArrayAccess
         $this->container['is_validated'] = null;
 
         if ($display_name != null) $this->setDisplayName($display_name);
-        if ($type != null) $this->setType($type);
+        if ($protocol_type != null) $this->setProtocolType($protocol_type);
         if ($host != null) $this->setHost($host);
         if ($port != null) $this->setPort($port);
         if ($socket_type != null) $this->setSocketType($socket_type);
@@ -245,8 +245,8 @@ class EmailAccountConfig implements ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['type'] === null) {
-            $invalidProperties[] = "'type' can't be null";
+        if ($this->container['protocol_type'] === null) {
+            $invalidProperties[] = "'protocol_type' can't be null";
         }
         if ($this->container['socket_type'] === null) {
             $invalidProperties[] = "'socket_type' can't be null";
@@ -266,7 +266,7 @@ class EmailAccountConfig implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['type'] === null) {
+        if ($this->container['protocol_type'] === null) {
             return false;
         }
         if ($this->container['socket_type'] === null) {
@@ -304,25 +304,25 @@ class EmailAccountConfig implements ArrayAccess
     }
 
     /**
-     * Gets type
+     * Gets protocol_type
      *
      * @return string
      */
-    public function getType()
+    public function getProtocolType()
     {
-        return $this->container['type'];
+        return $this->container['protocol_type'];
     }
 
     /**
-     * Sets type
+     * Sets protocol_type
      *
-     * @param string $type Type of connection protocol. Enum, available values: IMAP, POP3, SMTP, EWS, WebDav
+     * @param string $protocol_type Type of connection protocol. Enum, available values: IMAP, POP3, SMTP, EWS, WebDav
      *
      * @return $this
      */
-    public function setType($type)
+    public function setProtocolType($protocol_type)
     {
-        $this->container['type'] = $type;
+        $this->container['protocol_type'] = $protocol_type;
 
         return $this;
     }
@@ -388,7 +388,7 @@ class EmailAccountConfig implements ArrayAccess
     /**
      * Sets socket_type
      *
-     * @param string $socket_type Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
+     * @param string $socket_type Security mode for a mail client Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
      *
      * @return $this
      */

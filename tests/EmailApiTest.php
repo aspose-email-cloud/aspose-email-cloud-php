@@ -389,10 +389,10 @@ class EmailApiTest extends TestCase
     public function testDiscoverEmailConfig(): void
     {
         $configs = self::getApi()->discoverEmailConfig(new DiscoverEmailConfigRequest(
-            "example@gmail.com"));
+            "example@gmail.com", true));
         $this->assertGreaterThanOrEqual(2, count($configs->getValue()));
         $smtp = array_values(array_filter($configs->getValue(), function(EmailAccountConfig $var) {
-            return $var->getType() == "SMTP";
+            return $var->getProtocolType() == "SMTP";
         }))[0];
         $this->assertEquals("smtp.gmail.com", $smtp->getHost());
     }

@@ -37,6 +37,7 @@ use \Aspose\Email\ObjectSerializer;
 /**
  * NameValuePair
  *
+ * @description An extended property.
  */
 class NameValuePair implements ArrayAccess
 {
@@ -175,8 +176,8 @@ class NameValuePair implements ArrayAccess
     /**
      * Initializes a new instance of the NameValuePair class.
      *  
-     * @param string $value 
-     * @param string $name 
+     * @param string $value Name of the property
+     * @param string $name Value of the property
      */
     public function __construct($value = null, $name = null)
     {
@@ -225,7 +226,7 @@ class NameValuePair implements ArrayAccess
     /**
      * Sets value
      *
-     * @param string $value value
+     * @param string $value Name of the property
      *
      * @return $this
      */
@@ -249,7 +250,7 @@ class NameValuePair implements ArrayAccess
     /**
      * Sets name
      *
-     * @param string $name name
+     * @param string $name Value of the property
      *
      * @return $this
      */

@@ -166,7 +166,7 @@ class SaveEmailAccountRequest extends EmailAccountRequest
      * @param string $host Email account host
      * @param int $port Email account port
      * @param string $login Email account login
-     * @param string $security_options Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
+     * @param string $security_options Security mode for a mail client Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
      * @param string $protocol_type Type of connection protocol. Enum, available values: IMAP, POP3, SMTP, EWS, WebDav
      * @param string $description Email account description
      * @param \Aspose\Email\Model\StorageFileLocation $storage_file A storage file location info to store email account

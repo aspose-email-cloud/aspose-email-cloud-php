@@ -99,7 +99,7 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'https://api-qa.aspose.cloud/v3.0';
+    protected $host = 'https://localhost:53637/v3.0';
 
     /**
      * User agent of the HTTP request, set to "PHP-Swagger" by default
