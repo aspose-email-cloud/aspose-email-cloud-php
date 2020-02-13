@@ -46,6 +46,9 @@ Class | Method | HTTP request | Description
 *EmailApi* | [**deleteFolder**](EmailApi.md#deletefolder) | **DELETE** /email/storage/folder/{path} | Delete folder
 *EmailApi* | [**deleteMapiAttachment**](EmailApi.md#deletemapiattachment) | **DELETE** /email/Mapi/{name}/attachments/{attachment} | Remove attachment from document
 *EmailApi* | [**deleteMapiProperties**](EmailApi.md#deletemapiproperties) | **DELETE** /email/Mapi/{name}/properties | Delete document properties
+*EmailApi* | [**discoverEmailConfig**](EmailApi.md#discoveremailconfig) | **GET** /email/config/discover | Discover email accounts by email address. Does not validate discovered accounts.
+*EmailApi* | [**discoverEmailConfigOauth**](EmailApi.md#discoveremailconfigoauth) | **POST** /email/config/discover/oauth | Discover email accounts by email address. Validates discovered accounts using OAuth 2.0.
+*EmailApi* | [**discoverEmailConfigPassword**](EmailApi.md#discoveremailconfigpassword) | **POST** /email/config/discover/password | Discover email accounts by email address. Validates discovered accounts using login and password.
 *EmailApi* | [**downloadFile**](EmailApi.md#downloadfile) | **GET** /email/storage/file/{path} | Download file
 *EmailApi* | [**fetchEmailMessage**](EmailApi.md#fetchemailmessage) | **GET** /email/client/Fetch | Fetch message mime from email account
 *EmailApi* | [**fetchEmailModel**](EmailApi.md#fetchemailmodel) | **GET** /email/client/FetchModel | Fetch message model from email account
@@ -129,6 +132,8 @@ Class | Method | HTTP request | Description
  - [CreateEmailRequest](CreateEmailRequest.md)
  - [CustomerEvent](CustomerEvent.md)
  - [DiscUsage](DiscUsage.md)
+ - [DiscoverEmailConfigRequest](DiscoverEmailConfigRequest.md)
+ - [EmailAccountConfig](EmailAccountConfig.md)
  - [EmailAccountRequest](EmailAccountRequest.md)
  - [EmailAddress](EmailAddress.md)
  - [EmailDocument](EmailDocument.md)
@@ -158,6 +163,7 @@ Class | Method | HTTP request | Description
  - [ListResponseOfAiNameExtracted](ListResponseOfAiNameExtracted.md)
  - [ListResponseOfAiNameGenderHypothesis](ListResponseOfAiNameGenderHypothesis.md)
  - [ListResponseOfContactDto](ListResponseOfContactDto.md)
+ - [ListResponseOfEmailAccountConfig](ListResponseOfEmailAccountConfig.md)
  - [ListResponseOfEmailDto](ListResponseOfEmailDto.md)
  - [ListResponseOfHierarchicalObject](ListResponseOfHierarchicalObject.md)
  - [ListResponseOfHierarchicalObjectResponse](ListResponseOfHierarchicalObjectResponse.md)
@@ -170,6 +176,7 @@ Class | Method | HTTP request | Description
  - [MailAddress](MailAddress.md)
  - [MailServerFolder](MailServerFolder.md)
  - [MimeResponse](MimeResponse.md)
+ - [NameValuePair](NameValuePair.md)
  - [ObjectExist](ObjectExist.md)
  - [PhoneNumber](PhoneNumber.md)
  - [PostalAddress](PostalAddress.md)
@@ -201,6 +208,9 @@ Class | Method | HTTP request | Description
  - [CreateFolderBaseRequest](CreateFolderBaseRequest.md)
  - [DeleteFolderBaseRequest](DeleteFolderBaseRequest.md)
  - [DeleteMessageBaseRequest](DeleteMessageBaseRequest.md)
+ - [DiscoverEmailConfigOauth](DiscoverEmailConfigOauth.md)
+ - [DiscoverEmailConfigPassword](DiscoverEmailConfigPassword.md)
+ - [EmailAccountConfigList](EmailAccountConfigList.md)
  - [EmailDtoList](EmailDtoList.md)
  - [FileVersion](FileVersion.md)
  - [HierarchicalObject](HierarchicalObject.md)
