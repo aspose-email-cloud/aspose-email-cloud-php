@@ -10,6 +10,7 @@ use Aspose\Email\Model\AiBcrParseStorageRq;
 use Aspose\Email\Model\CalendarDto;
 use Aspose\Email\Model\CalendarDtoAlternateRq;
 use Aspose\Email\Model\ContactDto;
+use Aspose\Email\Model\EmailAccountConfig;
 use Aspose\Email\Model\EmailAddress;
 use Aspose\Email\Model\EmailDto;
 use Aspose\Email\Model\EnumWithCustomOfEmailAddressCategory;
@@ -34,6 +35,7 @@ use Aspose\Email\Model\Requests\createCalendarRequest;
 use Aspose\Email\Model\Requests\createContactRequest;
 use Aspose\Email\Model\Requests\createFolderRequest;
 use Aspose\Email\Model\Requests\deleteFolderRequest;
+use Aspose\Email\Model\Requests\DiscoverEmailConfigRequest;
 use Aspose\Email\Model\Requests\DownloadFileRequest;
 use Aspose\Email\Model\Requests\getCalendarRequest;
 use Aspose\Email\Model\Requests\getContactPropertiesRequest;
@@ -379,6 +381,20 @@ class EmailApiTest extends TestCase
         $this->assertEquals(1, count($result->getValue()));
         $displayName = $result->getValue()[0]->getDisplayName();
         $this->assertRegExp("/Thomas/", $displayName);
+    }
+
+    /**
+     * @group pipeline
+     */
+    public function testDiscoverEmailConfig(): void
+    {
+        $configs = self::getApi()->discoverEmailConfig(new DiscoverEmailConfigRequest(
+            "example@gmail.com"));
+        $this->assertGreaterThanOrEqual(2, count($configs->getValue()));
+        $smtp = array_values(array_filter($configs->getValue(), function(EmailAccountConfig $var) {
+            return $var->getType() == "SMTP";
+        }))[0];
+        $this->assertEquals("smtp.gmail.com", $smtp->getHost());
     }
 
     private function createCalendar(DateTime $startDate = null) : string
