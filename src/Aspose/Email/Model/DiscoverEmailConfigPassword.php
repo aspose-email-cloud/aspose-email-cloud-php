@@ -36,7 +36,7 @@ use \Aspose\Email\ObjectSerializer;
  * DiscoverEmailConfigPassword
  *
  */
-class DiscoverEmailConfigPassword extends DiscoverEmailConfigRequest 
+class DiscoverEmailConfigPassword extends DiscoverEmailConfigRq 
 {
     const DISCRIMINATOR = null;
 

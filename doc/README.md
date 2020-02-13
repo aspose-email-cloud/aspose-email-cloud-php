@@ -132,7 +132,7 @@ Class | Method | HTTP request | Description
  - [CreateEmailRequest](CreateEmailRequest.md)
  - [CustomerEvent](CustomerEvent.md)
  - [DiscUsage](DiscUsage.md)
- - [DiscoverEmailConfigRequest](DiscoverEmailConfigRequest.md)
+ - [DiscoverEmailConfigRq](DiscoverEmailConfigRq.md)
  - [EmailAccountConfig](EmailAccountConfig.md)
  - [EmailAccountRequest](EmailAccountRequest.md)
  - [EmailAddress](EmailAddress.md)

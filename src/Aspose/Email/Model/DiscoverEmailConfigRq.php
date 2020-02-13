@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="DiscoverEmailConfigRequest.php">
+ * <copyright company="Aspose" file="DiscoverEmailConfigRq.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,7 +26,7 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /**
- * DiscoverEmailConfigRequest
+ * DiscoverEmailConfigRq
  */
 
 namespace Aspose\Email\Model;
@@ -35,11 +35,11 @@ use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
 /**
- * DiscoverEmailConfigRequest
+ * DiscoverEmailConfigRq
  *
  * @description Discover email configuration request.
  */
-class DiscoverEmailConfigRequest implements ArrayAccess
+class DiscoverEmailConfigRq implements ArrayAccess
 {
     const DISCRIMINATOR = 'Type';
 
@@ -48,7 +48,7 @@ class DiscoverEmailConfigRequest implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "DiscoverEmailConfigRequest";
+    protected static $swaggerModelName = "DiscoverEmailConfigRq";
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -179,7 +179,7 @@ class DiscoverEmailConfigRequest implements ArrayAccess
     protected $container = [];
 
     /**
-     * Initializes a new instance of the DiscoverEmailConfigRequest class.
+     * Initializes a new instance of the DiscoverEmailConfigRq class.
      *  
      * @param string $address Email address to discover.
      * @param bool $fast_processing Turns on fast processing. All discover systems will run in parallel. First discovered result will be returned.
@@ -265,7 +265,7 @@ class DiscoverEmailConfigRequest implements ArrayAccess
     {
 
         if ((strlen($address) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $address when calling DiscoverEmailConfigRequest., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $address when calling DiscoverEmailConfigRq., must be bigger than or equal to 1.');
         }
 
         $this->container['address'] = $address;
