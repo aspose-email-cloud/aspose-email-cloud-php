@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | **string** | Name of the property | [optional] 
-**name** | **string** | Value of the property | [optional] 
+**value** | **string** |  | [optional] 
+**name** | **string** |  | [optional] 
 
 
 
