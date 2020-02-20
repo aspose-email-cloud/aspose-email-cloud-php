@@ -99,7 +99,7 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'https://api-qa.aspose.cloud/v3.0';
+    protected $host = 'https://api.aspose.cloud';
 
     /**
      * User agent of the HTTP request, set to "PHP-Swagger" by default
@@ -349,7 +349,7 @@ class Configuration
      */
     public function setHost($host)
     {
-        $this->host = $host;
+        $this->host = rtrim($host, '/');
         return $this;
     }
 
@@ -370,7 +370,7 @@ class Configuration
      */
     public function setAuthUrl($url)
     {
-        $this->authUrl = $url;
+        $this->authUrl = rtrim($url, '/');
         return $this;
     }
 
