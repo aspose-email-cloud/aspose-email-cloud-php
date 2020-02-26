@@ -76,6 +76,7 @@ Method | HTTP request | Description
 [**getMapiAttachments**](EmailApi.md#getMapiAttachments) | **GET** /email/Mapi/{name}/attachments | Get document attachment list
 [**getMapiList**](EmailApi.md#getMapiList) | **GET** /email/Mapi | Get document list from storage folder
 [**getMapiProperties**](EmailApi.md#getMapiProperties) | **GET** /email/Mapi/{name}/properties | Get document properties
+[**isEmailAddressDisposable**](EmailApi.md#isEmailAddressDisposable) | **GET** /email/disposable/isDisposable/{address} | Check email address is disposable
 [**listEmailFolders**](EmailApi.md#listEmailFolders) | **GET** /email/client/ListFolders | Get folders list in email account
 [**listEmailMessages**](EmailApi.md#listEmailMessages) | **GET** /email/client/ListMessages | Get messages from folder, filtered by query
 [**listEmailModels**](EmailApi.md#listEmailModels) | **GET** /email/client/ListMessagesModel | Get messages from folder, filtered by query
@@ -2052,6 +2053,29 @@ Name | Type | Description  | Notes
  **name** | **string**| Document file name |
  **folder** | **string**| Path to folder in storage | [optional]
  **storage** | **string**| Storage name | [optional]
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **isEmailAddressDisposable**
+```php
+function \Aspose\Email\Model\ValueTOfBoolean isEmailAddressDisposable(Requests\IsEmailAddressDisposableRequest $request)
+```
+Check email address is disposable
+
+### Return type
+
+[**\Aspose\Email\Model\ValueTOfBoolean**](ValueTOfBoolean.md)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\IsEmailAddressDisposableRequest(
+    $address)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **address** | **string**| An email address to check |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
