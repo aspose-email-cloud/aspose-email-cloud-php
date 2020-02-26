@@ -39,6 +39,7 @@ use Aspose\Email\Model\Requests\DiscoverEmailConfigRequest;
 use Aspose\Email\Model\Requests\DownloadFileRequest;
 use Aspose\Email\Model\Requests\getCalendarRequest;
 use Aspose\Email\Model\Requests\getContactPropertiesRequest;
+use Aspose\Email\Model\Requests\IsEmailAddressDisposableRequest;
 use Aspose\Email\Model\Requests\ObjectExistsRequest;
 use Aspose\Email\Model\Requests\SaveCalendarModelRequest;
 use Aspose\Email\Model\Requests\SaveContactModelRequest;
@@ -395,6 +396,19 @@ class EmailApiTest extends TestCase
             return $var->getProtocolType() == "SMTP";
         }))[0];
         $this->assertEquals("smtp.gmail.com", $smtp->getHost());
+    }
+
+    /**
+     * @group pipeline
+     */
+    public function testIsDisposableEmail(): void
+    {
+        $disposable = self::getApi()->isEmailAddressDisposable(
+            new IsEmailAddressDisposableRequest("example@mailcatch.com"));
+        $this->assertTrue($disposable->getValue());
+        $regular = self::getApi()->isEmailAddressDisposable(
+            new IsEmailAddressDisposableRequest("example@gmail.com"));
+        $this->assertFalse($regular->getValue());
     }
 
     private function createCalendar(DateTime $startDate = null) : string
