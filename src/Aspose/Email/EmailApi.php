@@ -14061,11 +14061,11 @@ class EmailApi
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
+                ['multipart/form-data']
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
+                ['multipart/form-data'],
                 ['application/json']
             );
         }
@@ -15616,11 +15616,11 @@ class EmailApi
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
+                ['multipart/form-data']
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
+                ['multipart/form-data'],
                 ['application/json']
             );
         }
@@ -17736,11 +17736,11 @@ class EmailApi
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
+                ['multipart/form-data']
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
+                ['multipart/form-data'],
                 ['application/json']
             );
         }
@@ -18041,11 +18041,11 @@ class EmailApi
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
+                ['multipart/form-data']
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
+                ['multipart/form-data'],
                 ['application/json']
             );
         }
@@ -19844,11 +19844,11 @@ class EmailApi
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
+                ['multipart/form-data']
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
+                ['multipart/form-data'],
                 ['application/json']
             );
         }
