@@ -1,6 +1,6 @@
 # Aspose\Email\EmailApi
 
-All URIs are relative to *https://api.aspose.cloud/v3.0*
+All URIs are relative to *https://api-qa.aspose.cloud/v3.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -46,6 +46,9 @@ Method | HTTP request | Description
 [**deleteFolder**](EmailApi.md#deleteFolder) | **DELETE** /email/storage/folder/{path} | Delete folder
 [**deleteMapiAttachment**](EmailApi.md#deleteMapiAttachment) | **DELETE** /email/Mapi/{name}/attachments/{attachment} | Remove attachment from document
 [**deleteMapiProperties**](EmailApi.md#deleteMapiProperties) | **DELETE** /email/Mapi/{name}/properties | Delete document properties
+[**discoverEmailConfig**](EmailApi.md#discoverEmailConfig) | **GET** /email/config/discover | Discover email accounts by email address. Does not validate discovered accounts.
+[**discoverEmailConfigOauth**](EmailApi.md#discoverEmailConfigOauth) | **POST** /email/config/discover/oauth | Discover email accounts by email address. Validates discovered accounts using OAuth 2.0.
+[**discoverEmailConfigPassword**](EmailApi.md#discoverEmailConfigPassword) | **POST** /email/config/discover/password | Discover email accounts by email address. Validates discovered accounts using login and password.
 [**downloadFile**](EmailApi.md#downloadFile) | **GET** /email/storage/file/{path} | Download file
 [**fetchEmailMessage**](EmailApi.md#fetchEmailMessage) | **GET** /email/client/Fetch | Fetch message mime from email account
 [**fetchEmailModel**](EmailApi.md#fetchEmailModel) | **GET** /email/client/FetchModel | Fetch message model from email account
@@ -1207,6 +1210,77 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **string**| Document file name |
  **request** | [**\Aspose\Email\Model\HierarchicalObjectRequest**](HierarchicalObjectRequest.md)| Properties that should be deleted |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **discoverEmailConfig**
+```php
+function \Aspose\Email\Model\EmailAccountConfigList discoverEmailConfig(Requests\DiscoverEmailConfigRequest $request)
+```
+Discover email accounts by email address. Does not validate discovered accounts.
+
+### Return type
+
+[**\Aspose\Email\Model\EmailAccountConfigList**](EmailAccountConfigList.md)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\DiscoverEmailConfigRequest(
+    $address,
+    $fast_processing)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **address** | **string**| Email address |
+ **fast_processing** | **bool**| Turns on fast processing. All discover systems will run in parallel. First discovered result will be returned | [optional] [default to false]
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **discoverEmailConfigOauth**
+```php
+function \Aspose\Email\Model\EmailAccountConfigList discoverEmailConfigOauth(Requests\DiscoverEmailConfigOauthRequest $request)
+```
+Discover email accounts by email address. Validates discovered accounts using OAuth 2.0.
+
+### Return type
+
+[**\Aspose\Email\Model\EmailAccountConfigList**](EmailAccountConfigList.md)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\DiscoverEmailConfigOauthRequest(
+    $rq)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **rq** | [**\Aspose\Email\Model\DiscoverEmailConfigOauth**](DiscoverEmailConfigOauth.md)| Discover email configuration request. |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **discoverEmailConfigPassword**
+```php
+function \Aspose\Email\Model\EmailAccountConfigList discoverEmailConfigPassword(Requests\DiscoverEmailConfigPasswordRequest $request)
+```
+Discover email accounts by email address. Validates discovered accounts using login and password.
+
+### Return type
+
+[**\Aspose\Email\Model\EmailAccountConfigList**](EmailAccountConfigList.md)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\DiscoverEmailConfigPasswordRequest(
+    $rq)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **rq** | [**\Aspose\Email\Model\DiscoverEmailConfigPassword**](DiscoverEmailConfigPassword.md)| Discover email configuration request. |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
