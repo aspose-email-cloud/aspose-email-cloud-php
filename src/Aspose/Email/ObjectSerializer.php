@@ -285,6 +285,9 @@ class ObjectSerializer
         } else {
             // If a discriminator is defined and points to a valid subclass, use it.
             $discriminator = strtolower($class::DISCRIMINATOR);
+            if (empty($discriminator)) {
+                $discriminator = 'derivedType';
+            }
             if (!empty($discriminator) && isset($data->{$discriminator}) && is_string($data->{$discriminator})) {
                 $subclass = '\Aspose\Email\Model\\' . $data->{$discriminator};
                 if (is_subclass_of($subclass, $class)) {
