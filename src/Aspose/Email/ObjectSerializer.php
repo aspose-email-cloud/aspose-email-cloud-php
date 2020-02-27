@@ -285,7 +285,7 @@ class ObjectSerializer
         } else {
             // If a discriminator is defined and points to a valid subclass, use it.
             $discriminator = strtolower($class::DISCRIMINATOR);
-            if (empty($discriminator)) {
+            if (empty($discriminator) || !isset($data->{$discriminator})) {
                 $discriminator = 'derivedType';
             }
             if (!empty($discriminator) && isset($data->{$discriminator}) && is_string($data->{$discriminator})) {
