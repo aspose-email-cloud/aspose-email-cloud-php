@@ -21,4 +21,4 @@ jobs:
         appSid: ${{secrets.appSid}}
         appKey: ${{secrets.appKey}}
         apiBaseUrl: "https://api-qa.aspose.cloud"
-      run: vendor/phpunit/phpunit/phpunit --testsuite EmailApiTest --group pipeline tests
+      run: appKey=text vendor/phpunit/phpunit/phpunit --testsuite EmailApiTest --group pipeline tests
