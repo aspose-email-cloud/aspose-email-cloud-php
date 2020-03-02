@@ -1,4 +1,4 @@
-<phpunit>
+<phpunit bootstrap="replaceBootstrap">
     <testsuites>
         <testsuite name="EmailApiTest">
             <directory>tests</directory>
