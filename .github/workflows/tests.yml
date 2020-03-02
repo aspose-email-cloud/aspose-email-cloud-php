@@ -22,6 +22,7 @@ jobs:
         appKey: ${{secrets.appKey}}
         apiBaseUrl: "https://api-qa.aspose.cloud"
       run: |
+        php --version
         sed -i "s|replaceAppKey|$appKey|g" tests/phpunit.xml
         sed -i "s|replaceAppSid|$appSid|g" tests/phpunit.xml
         sed -i "s|replaceApiBaseUrl|$apiBaseUrl|g" tests/phpunit.xml
