@@ -1,4 +1,4 @@
-<phpunit bootstrap="/vendor/autoload.php">
+<phpunit>
     <testsuites>
         <testsuite name="EmailApiTest">
             <directory>tests</directory>
