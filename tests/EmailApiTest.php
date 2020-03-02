@@ -119,7 +119,7 @@ class EmailApiTest extends TestCase
      */
     public function testFile(): void
     {
-        $path = dirname(__FILE__)."\\data\\sample.ics";
+        $path = dirname(__FILE__).DIRECTORY_SEPARATOR."data".DIRECTORY_SEPARATOR."sample.ics";
         $storagePath = self::$folder."/".uniqid().".ics";
         self::getApi()->uploadFile(new UploadFileRequest($storagePath, $path, self::$storage));
         $exists = self::getApi()
@@ -250,7 +250,7 @@ class EmailApiTest extends TestCase
      */
     public function testAiBcrParseStorage(): void
     {
-        $path = dirname(__FILE__)."\\data\\test_single_0001.png";
+        $path = dirname(__FILE__).DIRECTORY_SEPARATOR."data".DIRECTORY_SEPARATOR."test_single_0001.png";
         $imageFile = uniqid().".png";
         $storagePath = self::$folder."/".$imageFile;
         // 1) Upload business card image to storage
@@ -285,7 +285,7 @@ class EmailApiTest extends TestCase
      */
     public function testAiBcrParse(): void
     {
-        $path = dirname(__FILE__)."\\data\\test_single_0001.png";
+        $path = dirname(__FILE__).DIRECTORY_SEPARATOR."data".DIRECTORY_SEPARATOR."test_single_0001.png";
         $content = file_get_contents($path);
         $imageBase64 = base64_encode($content);
         $result = self::getApi()->aiBcrParse(new AiBcrParseRequest(
@@ -373,7 +373,7 @@ class EmailApiTest extends TestCase
      */
     public function testAiBcrParseModel(): void
     {
-        $path = dirname(__FILE__)."\\data\\test_single_0001.png";
+        $path = dirname(__FILE__).DIRECTORY_SEPARATOR."data".DIRECTORY_SEPARATOR."test_single_0001.png";
         $content = file_get_contents($path);
         $imageBase64 = base64_encode($content);
         $result = self::getApi()->aiBcrParseModel(new AiBcrParseModelRequest(
