@@ -1,6 +1,6 @@
-<phpunit bootstrap=""replaceBootstrapPath"">
+<phpunit bootstrap="/vendor/autoload.php">
     <testsuites>
-        <testsuite name=""EmailApiTest"">
+        <testsuite name="EmailApiTest">
             <directory>tests</directory>
         </testsuite>
     </testsuites>
@@ -10,8 +10,8 @@
         </include>
     </groups>
     <php>
-        <env name=""appKey"" value=""replaceAppKey"" force=""true"" />
-        <env name=""appSid"" value=""replaceAppSid"" force=""true"" />
-        <env name=""apiBaseUrl"" value=""replaceApiBaseUrl"" force=""true"" />
+        <env name="appKey" value="replaceAppKey" force="true" />
+        <env name="appSid" value="replaceAppSid" force="true" />
+        <env name="apiBaseUrl" value="replaceApiBaseUrl" force="true" />
     </php>
 </phpunit>
