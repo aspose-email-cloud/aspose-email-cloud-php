@@ -25,4 +25,5 @@ jobs:
         sed -i "s|replaceAppKey|$appKey|g" tests/phpunit.xml
         sed -i "s|replaceAppSid|$appSid|g" tests/phpunit.xml
         sed -i "s|replaceApiBaseUrl|$apiBaseUrl|g" tests/phpunit.xml
+        sed -i "s|replaceBootstrap|$PWD/vendor/autoload.php|g" tests/phpunit.xml
         vendor/phpunit/phpunit/phpunit --configuration tests/phpunit.xml tests
