@@ -21,4 +21,8 @@ jobs:
         appSid: ${{secrets.appSid}}
         appKey: ${{secrets.appKey}}
         apiBaseUrl: "https://api-qa.aspose.cloud"
-      run: appKey=text vendor/phpunit/phpunit/phpunit --testsuite EmailApiTest --group pipeline tests
+      run: |
+        sed 's/replaceAppKey/${appKey}/g' tests/phpunit.xml > tests/phpunit.xml
+        sed 's/replaceAppSid/${appSid}/g' tests/phpunit.xml > tests/phpunit.xml
+        sed 's/replaceApiBaseUrl/${apiBaseUrl}/g' tests/phpunit.xml > tests/phpunit.xml
+        vendor/phpunit/phpunit/phpunit --configuration tests/phpunit.xml tests
