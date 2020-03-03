@@ -33,7 +33,7 @@ jobs:
         sed -i "s|replaceBootstrap|$PWD/vendor/autoload.php|g" tests/phpunit.xml
         vendor/phpunit/phpunit/phpunit --configuration tests/phpunit.xml tests
     - name: WebHook
-      uses: zzzze/webhook-trigger@master
+      uses: zzzze/webhook-trigger@v1.0.0
       with:
         data: "{\"repository\":{\"url\":\"https://packagist.org/packages/aspose/aspose-email-cloud\"}}"
         webhook_url: https://packagist.org/api/update-package?username=AsposeCloud&apiToken=${{secrets.PACKAGIST_TOKEN}}
