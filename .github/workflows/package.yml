@@ -34,7 +34,7 @@ jobs:
         vendor/phpunit/phpunit/phpunit --configuration tests/phpunit.xml tests
     - name: WebHook
       uses: zzzze/webhook-trigger@master
-        with:
-          data: "{\"repository\":{\"url\":\"https://packagist.org/packages/aspose/aspose-email-cloud\"}}"
-          webhook_url: https://packagist.org/api/update-package?username=AsposeCloud&apiToken=${{secrets.PACKAGIST_TOKEN}}
-          options: "-H \"Accept: application/json\" -H \"Authorization: token ${{ secrets.PACKAGIST_TOKEN }}\""
+      with:
+        data: "{\"repository\":{\"url\":\"https://packagist.org/packages/aspose/aspose-email-cloud\"}}"
+        webhook_url: https://packagist.org/api/update-package?username=AsposeCloud&apiToken=${{secrets.PACKAGIST_TOKEN}}
+        options: "-H \"Accept: application/json\" -H \"Authorization: token ${{ secrets.PACKAGIST_TOKEN }}\""
