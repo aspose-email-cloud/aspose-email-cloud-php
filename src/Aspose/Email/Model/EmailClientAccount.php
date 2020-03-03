@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="EmailAccountConfig.php">
+ * <copyright company="Aspose" file="EmailClientAccount.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,7 +26,7 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /**
- * EmailAccountConfig
+ * EmailClientAccount
  */
 
 namespace Aspose\Email\Model;
@@ -35,11 +35,11 @@ use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
 /**
- * EmailAccountConfig
+ * EmailClientAccount
  *
- * @description Email account configuration.
+ * @description A universal email client account
  */
-class EmailAccountConfig implements ArrayAccess
+class EmailClientAccount implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class EmailAccountConfig implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "EmailAccountConfig";
+    protected static $swaggerModelName = "EmailClientAccount";
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -56,14 +56,11 @@ class EmailAccountConfig implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'display_name' => 'string',
-        'protocol_type' => 'string',
         'host' => 'string',
         'port' => 'int',
-        'socket_type' => 'string',
-        'authentication_types' => 'string[]',
-        'extra_info' => '\Aspose\Email\Model\NameValuePair[]',
-        'is_validated' => 'bool'
+        'security_options' => 'string',
+        'protocol_type' => 'string',
+        'credentials' => '\Aspose\Email\Model\EmailClientAccountCredentials'
     ];
 
     /**
@@ -72,14 +69,11 @@ class EmailAccountConfig implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'display_name' => null,
-        'protocol_type' => null,
         'host' => null,
         'port' => 'int32',
-        'socket_type' => null,
-        'authentication_types' => null,
-        'extra_info' => null,
-        'is_validated' => null
+        'security_options' => null,
+        'protocol_type' => null,
+        'credentials' => null
     ];
 
     /**
@@ -109,14 +103,11 @@ class EmailAccountConfig implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'display_name' => 'displayName',
-        'protocol_type' => 'protocolType',
         'host' => 'host',
         'port' => 'port',
-        'socket_type' => 'socketType',
-        'authentication_types' => 'authenticationTypes',
-        'extra_info' => 'extraInfo',
-        'is_validated' => 'isValidated'
+        'security_options' => 'securityOptions',
+        'protocol_type' => 'protocolType',
+        'credentials' => 'credentials'
     ];
 
     /**
@@ -125,14 +116,11 @@ class EmailAccountConfig implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'display_name' => 'setDisplayName',
-        'protocol_type' => 'setProtocolType',
         'host' => 'setHost',
         'port' => 'setPort',
-        'socket_type' => 'setSocketType',
-        'authentication_types' => 'setAuthenticationTypes',
-        'extra_info' => 'setExtraInfo',
-        'is_validated' => 'setIsValidated'
+        'security_options' => 'setSecurityOptions',
+        'protocol_type' => 'setProtocolType',
+        'credentials' => 'setCredentials'
     ];
 
     /**
@@ -141,14 +129,11 @@ class EmailAccountConfig implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'display_name' => 'getDisplayName',
-        'protocol_type' => 'getProtocolType',
         'host' => 'getHost',
         'port' => 'getPort',
-        'socket_type' => 'getSocketType',
-        'authentication_types' => 'getAuthenticationTypes',
-        'extra_info' => 'getExtraInfo',
-        'is_validated' => 'getIsValidated'
+        'security_options' => 'getSecurityOptions',
+        'protocol_type' => 'getProtocolType',
+        'credentials' => 'getCredentials'
     ];
 
     /**
@@ -204,36 +189,27 @@ class EmailAccountConfig implements ArrayAccess
     protected $container = [];
 
     /**
-     * Initializes a new instance of the EmailAccountConfig class.
+     * Initializes a new instance of the EmailClientAccount class.
      *  
-     * @param string $display_name Email account display name
+     * @param string $host Mail server host name or IP address
+     * @param int $port Mail server port
+     * @param string $security_options Email account security mode Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
      * @param string $protocol_type Type of connection protocol. Enum, available values: IMAP, POP3, SMTP, EWS, WebDav
-     * @param string $host Email account host.
-     * @param int $port Port.
-     * @param string $socket_type Email account security mode Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
-     * @param string[] $authentication_types Supported authentication types. Items: Email account authentication types. Enum, available values: NoAuth, OAuth2, PasswordCleartext, PasswordEncrypted, SmtpAfterPop, ClientIpAddress
-     * @param \Aspose\Email\Model\NameValuePair[] $extra_info Extra account information.
-     * @param bool $is_validated Determines that configuration validated. Set to false if validation skipped.
+     * @param \Aspose\Email\Model\EmailClientAccountCredentials $credentials Email client account credentials
      */
-    public function __construct($display_name = null, $protocol_type = null, $host = null, $port = null, $socket_type = null, $authentication_types = null, $extra_info = null, $is_validated = null)
+    public function __construct($host = null, $port = null, $security_options = null, $protocol_type = null, $credentials = null)
     {
-        $this->container['display_name'] = null;
-        $this->container['protocol_type'] = null;
         $this->container['host'] = null;
         $this->container['port'] = null;
-        $this->container['socket_type'] = null;
-        $this->container['authentication_types'] = null;
-        $this->container['extra_info'] = null;
-        $this->container['is_validated'] = null;
+        $this->container['security_options'] = null;
+        $this->container['protocol_type'] = null;
+        $this->container['credentials'] = null;
 
-        if ($display_name != null) $this->setDisplayName($display_name);
-        if ($protocol_type != null) $this->setProtocolType($protocol_type);
         if ($host != null) $this->setHost($host);
         if ($port != null) $this->setPort($port);
-        if ($socket_type != null) $this->setSocketType($socket_type);
-        if ($authentication_types != null) $this->setAuthenticationTypes($authentication_types);
-        if ($extra_info != null) $this->setExtraInfo($extra_info);
-        if ($is_validated != null) $this->setIsValidated($is_validated);
+        if ($security_options != null) $this->setSecurityOptions($security_options);
+        if ($protocol_type != null) $this->setProtocolType($protocol_type);
+        if ($credentials != null) $this->setCredentials($credentials);
     }
 
     /**
@@ -245,14 +221,32 @@ class EmailAccountConfig implements ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['host'] === null) {
+            $invalidProperties[] = "'host' can't be null";
+        }
+        if ((strlen($this->container['host']) < 1)) {
+            $invalidProperties[] = "invalid value for 'host', the character length must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['port'] === null) {
+            $invalidProperties[] = "'port' can't be null";
+        }
+        if (($this->container['port'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'port', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['port'] < 1)) {
+            $invalidProperties[] = "invalid value for 'port', must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['security_options'] === null) {
+            $invalidProperties[] = "'security_options' can't be null";
+        }
         if ($this->container['protocol_type'] === null) {
             $invalidProperties[] = "'protocol_type' can't be null";
         }
-        if ($this->container['socket_type'] === null) {
-            $invalidProperties[] = "'socket_type' can't be null";
-        }
-        if ($this->container['is_validated'] === null) {
-            $invalidProperties[] = "'is_validated' can't be null";
+        if ($this->container['credentials'] === null) {
+            $invalidProperties[] = "'credentials' can't be null";
         }
         return $invalidProperties;
     }
@@ -266,13 +260,28 @@ class EmailAccountConfig implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['host'] === null) {
+            return false;
+        }
+        if (strlen($this->container['host']) < 1) {
+            return false;
+        }
+        if ($this->container['port'] === null) {
+            return false;
+        }
+        if ($this->container['port'] > 2147483647) {
+            return false;
+        }
+        if ($this->container['port'] < 1) {
+            return false;
+        }
+        if ($this->container['security_options'] === null) {
+            return false;
+        }
         if ($this->container['protocol_type'] === null) {
             return false;
         }
-        if ($this->container['socket_type'] === null) {
-            return false;
-        }
-        if ($this->container['is_validated'] === null) {
+        if ($this->container['credentials'] === null) {
             return false;
         }
         return true;
@@ -280,25 +289,86 @@ class EmailAccountConfig implements ArrayAccess
 
 
     /**
-     * Gets display_name
+     * Gets host
      *
      * @return string
      */
-    public function getDisplayName()
+    public function getHost()
     {
-        return $this->container['display_name'];
+        return $this->container['host'];
     }
 
     /**
-     * Sets display_name
+     * Sets host
      *
-     * @param string $display_name Email account display name
+     * @param string $host Mail server host name or IP address
      *
      * @return $this
      */
-    public function setDisplayName($display_name)
+    public function setHost($host)
     {
-        $this->container['display_name'] = $display_name;
+
+        if ((strlen($host) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $host when calling EmailClientAccount., must be bigger than or equal to 1.');
+        }
+
+        $this->container['host'] = $host;
+
+        return $this;
+    }
+
+    /**
+     * Gets port
+     *
+     * @return int
+     */
+    public function getPort()
+    {
+        return $this->container['port'];
+    }
+
+    /**
+     * Sets port
+     *
+     * @param int $port Mail server port
+     *
+     * @return $this
+     */
+    public function setPort($port)
+    {
+
+        if (($port > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $port when calling EmailClientAccount., must be smaller than or equal to 2147483647.');
+        }
+        if (($port < 1)) {
+            throw new \InvalidArgumentException('invalid value for $port when calling EmailClientAccount., must be bigger than or equal to 1.');
+        }
+
+        $this->container['port'] = $port;
+
+        return $this;
+    }
+
+    /**
+     * Gets security_options
+     *
+     * @return string
+     */
+    public function getSecurityOptions()
+    {
+        return $this->container['security_options'];
+    }
+
+    /**
+     * Sets security_options
+     *
+     * @param string $security_options Email account security mode Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
+     *
+     * @return $this
+     */
+    public function setSecurityOptions($security_options)
+    {
+        $this->container['security_options'] = $security_options;
 
         return $this;
     }
@@ -328,145 +398,25 @@ class EmailAccountConfig implements ArrayAccess
     }
 
     /**
-     * Gets host
+     * Gets credentials
      *
-     * @return string
+     * @return \Aspose\Email\Model\EmailClientAccountCredentials
      */
-    public function getHost()
+    public function getCredentials()
     {
-        return $this->container['host'];
+        return $this->container['credentials'];
     }
 
     /**
-     * Sets host
+     * Sets credentials
      *
-     * @param string $host Email account host.
+     * @param \Aspose\Email\Model\EmailClientAccountCredentials $credentials Email client account credentials
      *
      * @return $this
      */
-    public function setHost($host)
+    public function setCredentials($credentials)
     {
-        $this->container['host'] = $host;
-
-        return $this;
-    }
-
-    /**
-     * Gets port
-     *
-     * @return int
-     */
-    public function getPort()
-    {
-        return $this->container['port'];
-    }
-
-    /**
-     * Sets port
-     *
-     * @param int $port Port.
-     *
-     * @return $this
-     */
-    public function setPort($port)
-    {
-        $this->container['port'] = $port;
-
-        return $this;
-    }
-
-    /**
-     * Gets socket_type
-     *
-     * @return string
-     */
-    public function getSocketType()
-    {
-        return $this->container['socket_type'];
-    }
-
-    /**
-     * Sets socket_type
-     *
-     * @param string $socket_type Email account security mode Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
-     *
-     * @return $this
-     */
-    public function setSocketType($socket_type)
-    {
-        $this->container['socket_type'] = $socket_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets authentication_types
-     *
-     * @return string[]
-     */
-    public function getAuthenticationTypes()
-    {
-        return $this->container['authentication_types'];
-    }
-
-    /**
-     * Sets authentication_types
-     *
-     * @param string[] $authentication_types Supported authentication types. Items: Email account authentication types. Enum, available values: NoAuth, OAuth2, PasswordCleartext, PasswordEncrypted, SmtpAfterPop, ClientIpAddress
-     *
-     * @return $this
-     */
-    public function setAuthenticationTypes($authentication_types)
-    {
-        $this->container['authentication_types'] = $authentication_types;
-
-        return $this;
-    }
-
-    /**
-     * Gets extra_info
-     *
-     * @return \Aspose\Email\Model\NameValuePair[]
-     */
-    public function getExtraInfo()
-    {
-        return $this->container['extra_info'];
-    }
-
-    /**
-     * Sets extra_info
-     *
-     * @param \Aspose\Email\Model\NameValuePair[] $extra_info Extra account information.
-     *
-     * @return $this
-     */
-    public function setExtraInfo($extra_info)
-    {
-        $this->container['extra_info'] = $extra_info;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_validated
-     *
-     * @return bool
-     */
-    public function getIsValidated()
-    {
-        return $this->container['is_validated'];
-    }
-
-    /**
-     * Sets is_validated
-     *
-     * @param bool $is_validated Determines that configuration validated. Set to false if validation skipped.
-     *
-     * @return $this
-     */
-    public function setIsValidated($is_validated)
-    {
-        $this->container['is_validated'] = $is_validated;
+        $this->container['credentials'] = $credentials;
 
         return $this;
     }

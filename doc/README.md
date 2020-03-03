@@ -67,6 +67,7 @@ Class | Method | HTTP request | Description
 *EmailApi* | [**getEmail**](EmailApi.md#getemail) | **GET** /email/{fileName} | Get email document
 *EmailApi* | [**getEmailAsFile**](EmailApi.md#getemailasfile) | **GET** /email/{fileName}/as-file/{format} | Converts email document from storage to specified format and returns as file
 *EmailApi* | [**getEmailAttachment**](EmailApi.md#getemailattachment) | **GET** /email/{fileName}/attachments/{attachment} | Get email attachment by name
+*EmailApi* | [**getEmailClientAccount**](EmailApi.md#getemailclientaccount) | **GET** /email/client/email-client-account | Get email client account from storage
 *EmailApi* | [**getEmailModel**](EmailApi.md#getemailmodel) | **GET** /email/model/{format}/{name} | Get email document.
 *EmailApi* | [**getEmailModelList**](EmailApi.md#getemailmodellist) | **GET** /email/model/{format} | Get email list from storage folder.
 *EmailApi* | [**getEmailProperty**](EmailApi.md#getemailproperty) | **GET** /email/{fileName}/properties/{propertyName} | Get an email document property by its name
@@ -85,6 +86,7 @@ Class | Method | HTTP request | Description
 *EmailApi* | [**objectExists**](EmailApi.md#objectexists) | **GET** /email/storage/exist/{path} | Check if file or folder exists
 *EmailApi* | [**saveCalendarModel**](EmailApi.md#savecalendarmodel) | **PUT** /email/CalendarModel/{name} | Save iCalendar
 *EmailApi* | [**saveContactModel**](EmailApi.md#savecontactmodel) | **PUT** /email/ContactModel/{format}/{name} | Save contact.
+*EmailApi* | [**saveEmailClientAccount**](EmailApi.md#saveemailclientaccount) | **PUT** /email/client/email-client-account | Create email client account file (*.account) with any of supported credentials
 *EmailApi* | [**saveEmailModel**](EmailApi.md#saveemailmodel) | **PUT** /email/model/{format}/{name} | Save email document.
 *EmailApi* | [**saveMailAccount**](EmailApi.md#savemailaccount) | **POST** /email/client/SaveMailAccount | Create email account file (*.account) with login/password authentication
 *EmailApi* | [**saveMailOAuthAccount**](EmailApi.md#savemailoauthaccount) | **POST** /email/client/SaveMailOAuthAccount | Create email account file (*.account) with OAuth
@@ -137,6 +139,8 @@ Class | Method | HTTP request | Description
  - [EmailAccountConfig](EmailAccountConfig.md)
  - [EmailAccountRequest](EmailAccountRequest.md)
  - [EmailAddress](EmailAddress.md)
+ - [EmailClientAccount](EmailClientAccount.md)
+ - [EmailClientAccountCredentials](EmailClientAccountCredentials.md)
  - [EmailDocument](EmailDocument.md)
  - [EmailDocumentResponse](EmailDocumentResponse.md)
  - [EmailDto](EmailDto.md)
@@ -186,6 +190,7 @@ Class | Method | HTTP request | Description
  - [SetEmailPropertyRequest](SetEmailPropertyRequest.md)
  - [StorageExist](StorageExist.md)
  - [StorageFile](StorageFile.md)
+ - [StorageFileRqOfEmailClientAccount](StorageFileRqOfEmailClientAccount.md)
  - [StorageFolderLocation](StorageFolderLocation.md)
  - [StorageModelOfCalendarDto](StorageModelOfCalendarDto.md)
  - [StorageModelOfContactDto](StorageModelOfContactDto.md)
@@ -213,6 +218,8 @@ Class | Method | HTTP request | Description
  - [DiscoverEmailConfigOauth](DiscoverEmailConfigOauth.md)
  - [DiscoverEmailConfigPassword](DiscoverEmailConfigPassword.md)
  - [EmailAccountConfigList](EmailAccountConfigList.md)
+ - [EmailClientAccountOauthCredentials](EmailClientAccountOauthCredentials.md)
+ - [EmailClientAccountPasswordCredentials](EmailClientAccountPasswordCredentials.md)
  - [EmailDtoList](EmailDtoList.md)
  - [FileVersion](FileVersion.md)
  - [HierarchicalObject](HierarchicalObject.md)
