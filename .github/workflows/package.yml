@@ -1,0 +1,40 @@
+name: Deploy package
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: shivammathur/setup-php@v2
+      with:
+        php-version: '7.3'
+    - uses: actions/checkout@v2
+
+    - name: Validate composer.json and composer.lock
+      run: composer validate
+
+    - name: Install dependencies
+      run: composer install --prefer-dist --no-progress --no-suggest
+
+    - name: Run tests
+      env:
+        appSid: ${{secrets.appSidProd}}
+        appKey: ${{secrets.appKeyProd}}
+        apiBaseUrl: "https://api.aspose.cloud"
+      run: |
+        sed -i "s|replaceAppKey|$appKey|g" tests/phpunit.xml
+        sed -i "s|replaceAppSid|$appSid|g" tests/phpunit.xml
+        sed -i "s|replaceApiBaseUrl|$apiBaseUrl|g" tests/phpunit.xml
+        sed -i "s|replaceBootstrap|$PWD/vendor/autoload.php|g" tests/phpunit.xml
+        vendor/phpunit/phpunit/phpunit --configuration tests/phpunit.xml tests
+    - name: WebHook
+    uses: zzzze/webhook-trigger@master
+      with:
+        data: "{\"repository\":{\"url\":\"https://packagist.org/packages/aspose/aspose-email-cloud\"}}"
+        webhook_url: https://packagist.org/api/update-package?username=AsposeCloud&apiToken=${{secrets.PACKAGIST_TOKEN}}
+        options: "-H \"Accept: application/json\" -H \"Authorization: token ${{ secrets.PACKAGIST_TOKEN }}\""
