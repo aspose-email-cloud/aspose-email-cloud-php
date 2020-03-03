@@ -21,7 +21,7 @@ use Aspose\Email\Model\IndexedHierarchicalObject;
 use Aspose\Email\Model\MailAddress;
 use Aspose\Email\Model\PhoneNumber;
 use Aspose\Email\Model\PrimitiveObject;
-use Aspose\Email\Model\Requests\AiBcrParseModelRequest;
+use Aspose\Email\Model\Requests\aiBcrParseModelRequest;
 use Aspose\Email\Model\Requests\aiBcrParseRequest;
 use Aspose\Email\Model\Requests\aiBcrParseStorageRequest;
 use Aspose\Email\Model\Requests\aiNameCompleteRequest;
@@ -30,25 +30,21 @@ use Aspose\Email\Model\Requests\aiNameFormatRequest;
 use Aspose\Email\Model\Requests\aiNameGenderizeRequest;
 use Aspose\Email\Model\Requests\aiNameMatchRequest;
 use Aspose\Email\Model\Requests\aiNameParseEmailAddressRequest;
-use Aspose\Email\Model\Requests\ConvertCalendarModelToAlternateRequest;
+use Aspose\Email\Model\Requests\convertCalendarModelToAlternateRequest;
 use Aspose\Email\Model\Requests\createCalendarRequest;
 use Aspose\Email\Model\Requests\createContactRequest;
 use Aspose\Email\Model\Requests\createFolderRequest;
 use Aspose\Email\Model\Requests\deleteFolderRequest;
-use Aspose\Email\Model\Requests\DiscoverEmailConfigRequest;
-use Aspose\Email\Model\Requests\DownloadFileRequest;
+use Aspose\Email\Model\Requests\discoverEmailConfigRequest;
+use Aspose\Email\Model\Requests\downloadFileRequest;
 use Aspose\Email\Model\Requests\getCalendarRequest;
 use Aspose\Email\Model\Requests\getContactPropertiesRequest;
-use Aspose\Email\Model\Requests\IsEmailAddressDisposableRequest;
-use Aspose\Email\Model\Requests\ObjectExistsRequest;
-use Aspose\Email\Model\Requests\SaveCalendarModelRequest;
-use Aspose\Email\Model\Requests\SaveContactModelRequest;
-use Aspose\Email\Model\Requests\SaveEmailModelRequest;
-use Aspose\Email\Model\Requests\SaveMailAccountRequest;
-use Aspose\Email\Model\Requests\SendEmailModelRequest;
+use Aspose\Email\Model\Requests\isEmailAddressDisposableRequest;
+use Aspose\Email\Model\Requests\objectExistsRequest;
+use Aspose\Email\Model\Requests\saveCalendarModelRequest;
+use Aspose\Email\Model\Requests\saveContactModelRequest;
+use Aspose\Email\Model\Requests\saveEmailModelRequest;
 use Aspose\Email\Model\Requests\uploadFileRequest;
-use Aspose\Email\Model\SaveEmailAccountRequest;
-use Aspose\Email\Model\SendEmailModelRq;
 use Aspose\Email\Model\StorageFileLocation;
 use Aspose\Email\Model\StorageFolderLocation;
 use Aspose\Email\Model\StorageModelRqOfCalendarDto;
@@ -120,7 +116,7 @@ class EmailApiTest extends TestCase
      */
     public function testFile(): void
     {
-        $path = dirname(__FILE__)."\\data\\sample.ics";
+        $path = dirname(__FILE__).DIRECTORY_SEPARATOR."data".DIRECTORY_SEPARATOR."sample.ics";
         $storagePath = self::$folder."/".uniqid().".ics";
         self::getApi()->uploadFile(new UploadFileRequest($storagePath, $path, self::$storage));
         $exists = self::getApi()
@@ -251,7 +247,7 @@ class EmailApiTest extends TestCase
      */
     public function testAiBcrParseStorage(): void
     {
-        $path = dirname(__FILE__)."\\data\\test_single_0001.png";
+        $path = dirname(__FILE__).DIRECTORY_SEPARATOR."data".DIRECTORY_SEPARATOR."test_single_0001.png";
         $imageFile = uniqid().".png";
         $storagePath = self::$folder."/".$imageFile;
         // 1) Upload business card image to storage
@@ -286,7 +282,7 @@ class EmailApiTest extends TestCase
      */
     public function testAiBcrParse(): void
     {
-        $path = dirname(__FILE__)."\\data\\test_single_0001.png";
+        $path = dirname(__FILE__).DIRECTORY_SEPARATOR."data".DIRECTORY_SEPARATOR."test_single_0001.png";
         $content = file_get_contents($path);
         $imageBase64 = base64_encode($content);
         $result = self::getApi()->aiBcrParse(new AiBcrParseRequest(
@@ -374,7 +370,7 @@ class EmailApiTest extends TestCase
      */
     public function testAiBcrParseModel(): void
     {
-        $path = dirname(__FILE__)."\\data\\test_single_0001.png";
+        $path = dirname(__FILE__).DIRECTORY_SEPARATOR."data".DIRECTORY_SEPARATOR."test_single_0001.png";
         $content = file_get_contents($path);
         $imageBase64 = base64_encode($content);
         $result = self::getApi()->aiBcrParseModel(new AiBcrParseModelRequest(

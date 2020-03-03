@@ -1,0 +1,17 @@
+<phpunit bootstrap="replaceBootstrap">
+    <testsuites>
+        <testsuite name="EmailApiTest">
+            <directory>tests</directory>
+        </testsuite>
+    </testsuites>
+    <groups>
+        <include>
+            <group>pipeline</group>
+        </include>
+    </groups>
+    <php>
+        <env name="appKey" value="replaceAppKey" force="true" />
+        <env name="appSid" value="replaceAppSid" force="true" />
+        <env name="apiBaseUrl" value="replaceApiBaseUrl" force="true" />
+    </php>
+</phpunit>

@@ -1,0 +1,32 @@
+name: tests
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: shivammathur/setup-php@v2
+      with:
+        php-version: '7.3'
+    - uses: actions/checkout@v2
+
+    - name: Validate composer.json and composer.lock
+      run: composer validate
+
+    - name: Install dependencies
+      run: composer install --prefer-dist --no-progress --no-suggest
+
+    - name: Run tests
+      env:
+        appSid: ${{secrets.appSid}}
+        appKey: ${{secrets.appKey}}
+        apiBaseUrl: "https://api-qa.aspose.cloud"
+      run: |
+        sed -i "s|replaceAppKey|$appKey|g" tests/phpunit.xml
+        sed -i "s|replaceAppSid|$appSid|g" tests/phpunit.xml
+        sed -i "s|replaceApiBaseUrl|$apiBaseUrl|g" tests/phpunit.xml
+        sed -i "s|replaceBootstrap|$PWD/vendor/autoload.php|g" tests/phpunit.xml
+        vendor/phpunit/phpunit/phpunit --configuration tests/phpunit.xml tests
