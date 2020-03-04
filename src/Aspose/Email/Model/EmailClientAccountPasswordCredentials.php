@@ -173,7 +173,7 @@ class EmailClientAccountPasswordCredentials extends EmailClientAccountCredential
         $this->container['password'] = null;
 
         if ($login != null) $this->setLogin($login);
-        if ($discriminator != null) $this->setDiscriminator($discriminator);
+        $this->container['discriminator'] = (new \ReflectionClass($this))->getShortName();
         if ($password != null) $this->setPassword($password);
     }
 

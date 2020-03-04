@@ -12,6 +12,8 @@ use Aspose\Email\Model\CalendarDtoAlternateRq;
 use Aspose\Email\Model\ContactDto;
 use Aspose\Email\Model\EmailAccountConfig;
 use Aspose\Email\Model\EmailAddress;
+use Aspose\Email\Model\EmailClientAccount;
+use Aspose\Email\Model\EmailClientAccountPasswordCredentials;
 use Aspose\Email\Model\EmailDto;
 use Aspose\Email\Model\EnumWithCustomOfEmailAddressCategory;
 use Aspose\Email\Model\EnumWithCustomOfPhoneNumberCategory;
@@ -39,13 +41,16 @@ use Aspose\Email\Model\Requests\discoverEmailConfigRequest;
 use Aspose\Email\Model\Requests\downloadFileRequest;
 use Aspose\Email\Model\Requests\getCalendarRequest;
 use Aspose\Email\Model\Requests\getContactPropertiesRequest;
+use Aspose\Email\Model\Requests\getEmailClientAccountRequest;
 use Aspose\Email\Model\Requests\isEmailAddressDisposableRequest;
 use Aspose\Email\Model\Requests\objectExistsRequest;
 use Aspose\Email\Model\Requests\saveCalendarModelRequest;
 use Aspose\Email\Model\Requests\saveContactModelRequest;
+use Aspose\Email\Model\Requests\saveEmailClientAccountRequest;
 use Aspose\Email\Model\Requests\saveEmailModelRequest;
 use Aspose\Email\Model\Requests\uploadFileRequest;
 use Aspose\Email\Model\StorageFileLocation;
+use Aspose\Email\Model\StorageFileRqOfEmailClientAccount;
 use Aspose\Email\Model\StorageFolderLocation;
 use Aspose\Email\Model\StorageModelRqOfCalendarDto;
 use Aspose\Email\Model\StorageModelRqOfContactDto;
@@ -405,6 +410,31 @@ class EmailApiTest extends TestCase
         $regular = self::getApi()->isEmailAddressDisposable(
             new IsEmailAddressDisposableRequest("example@gmail.com"));
         $this->assertFalse($regular->getValue());
+    }
+
+    /**
+     * @group pipeline
+     */
+    public function testEmailClientAccount(): void
+    {
+        $account = new EmailClientAccount(
+            "smtp.gmail.com",
+            551,
+            "SSLAuto",
+            "SMTP",
+            new EmailClientAccountPasswordCredentials(
+                "login", null, "password"));
+        $fileName = uniqid() . ".account";
+        self::getApi()->saveEmailClientAccount(new SaveEmailClientAccountRequest(
+            new StorageFileRqOfEmailClientAccount(
+                $account, new StorageFileLocation(self::$storage, self::$folder, $fileName))));
+        $result = self::getApi()->getEmailClientAccount(new GetEmailClientAccountRequest(
+            $fileName, self::$folder, self::$storage));
+        $this->assertEquals("EmailClientAccountPasswordCredentials", $result->getCredentials()->getDiscriminator());
+        $this->assertEquals(
+            ((object)$account->getCredentials())->getPassword(),
+            ((object)$result->getCredentials())->getPassword());
+        $this->assertEquals($account->getHost(), $result->getHost());
     }
 
     private function createCalendar(DateTime $startDate = null) : string

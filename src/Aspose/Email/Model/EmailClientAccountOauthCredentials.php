@@ -194,7 +194,7 @@ class EmailClientAccountOauthCredentials extends EmailClientAccountCredentials
         $this->container['request_url'] = null;
 
         if ($login != null) $this->setLogin($login);
-        if ($discriminator != null) $this->setDiscriminator($discriminator);
+        $this->container['discriminator'] = (new \ReflectionClass($this))->getShortName();
         if ($client_id != null) $this->setClientId($client_id);
         if ($client_secret != null) $this->setClientSecret($client_secret);
         if ($refresh_token != null) $this->setRefreshToken($refresh_token);

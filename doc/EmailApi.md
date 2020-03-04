@@ -1,6 +1,6 @@
 # Aspose\Email\EmailApi
 
-All URIs are relative to *https://api-qa.aspose.cloud/v3.0*
+All URIs are relative to *https://api.aspose.cloud/v3.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
