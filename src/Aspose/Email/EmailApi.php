@@ -18434,15 +18434,17 @@ class EmailApi
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return void
+     * @return \Aspose\Email\Model\EmailClientMultiAccount
      */
     public function getEmailClientMultiAccount(Requests\GetEmailClientMultiAccountRequest $request)
     {
         try {
-             $this->getEmailClientMultiAccountWithHttpInfo($request);
+             list($response) = $this->getEmailClientMultiAccountWithHttpInfo($request);
+             return $response;
         }
         catch(RepeatRequestException $e) {
-             $this->getEmailClientMultiAccountWithHttpInfo($request);
+             list($response) = $this->getEmailClientMultiAccountWithHttpInfo($request);
+             return $response;
         } 
     }
 
@@ -18455,11 +18457,11 @@ class EmailApi
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Aspose\Email\Model\EmailClientMultiAccount, HTTP status code, HTTP response headers (array of strings)
      */
     public function getEmailClientMultiAccountWithHttpInfo(Requests\GetEmailClientMultiAccountRequest $request)
     {
-        $returnType = '';
+        $returnType = '\Aspose\Email\Model\EmailClientMultiAccount';
         $request = $this->getEmailClientMultiAccountRequest($request);
 
         try {
@@ -18481,10 +18483,32 @@ class EmailApi
                 throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+            
+            if ($this->config->getDebug()) {
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Email\Model\EmailClientMultiAccount', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
             }
             throw $e;
         }
@@ -18522,14 +18546,32 @@ class EmailApi
      */
     public function getEmailClientMultiAccountAsyncWithHttpInfo(Requests\GetEmailClientMultiAccountRequest $request) 
     {
-        $returnType = '';
+        $returnType = '\Aspose\Email\Model\EmailClientMultiAccount';
         $request = $this->getEmailClientMultiAccountRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->_createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+                    
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 },
                 function ($exception) {        
                     $response = $exception->getResponse();

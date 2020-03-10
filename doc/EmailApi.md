@@ -1838,13 +1838,13 @@ Name | Type | Description  | Notes
 
 # **getEmailClientMultiAccount**
 ```php
-function getEmailClientMultiAccount(Requests\GetEmailClientMultiAccountRequest $request)
+function \Aspose\Email\Model\EmailClientMultiAccount getEmailClientMultiAccount(Requests\GetEmailClientMultiAccountRequest $request)
 ```
 Get email client multi account file (*.multi.account). Will respond error if file extension is not \".multi.account\".
 
 ### Return type
 
-void (empty response body)
+[**\Aspose\Email\Model\EmailClientMultiAccount**](EmailClientMultiAccount.md)
 
 ### Request parameters
 ```php
