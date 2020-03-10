@@ -18426,6 +18426,273 @@ class EmailApi
     }
 
     /**
+     * Operation getEmailClientMultiAccount
+     *
+     * Get email client multi account file (*.multi.account). Will respond error if file extension is not \".multi.account\".
+     *
+     * @param Requests\GetEmailClientMultiAccountRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function getEmailClientMultiAccount(Requests\GetEmailClientMultiAccountRequest $request)
+    {
+        try {
+             $this->getEmailClientMultiAccountWithHttpInfo($request);
+        }
+        catch(RepeatRequestException $e) {
+             $this->getEmailClientMultiAccountWithHttpInfo($request);
+        } 
+    }
+
+    /**
+     * Operation getEmailClientMultiAccountWithHttpInfo
+     *
+     * Get email client multi account file (*.multi.account). Will respond error if file extension is not \".multi.account\".
+     *
+     * @param Requests\GetEmailClientMultiAccountRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getEmailClientMultiAccountWithHttpInfo(Requests\GetEmailClientMultiAccountRequest $request)
+    {
+        $returnType = '';
+        $request = $this->getEmailClientMultiAccountRequest($request);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null);
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                if ($statusCode === 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                }
+          
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getEmailClientMultiAccountAsync
+     *
+     * Get email client multi account file (*.multi.account). Will respond error if file extension is not \".multi.account\".
+     *
+     * @param Requests\GetEmailClientMultiAccountRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getEmailClientMultiAccountAsync(Requests\GetEmailClientMultiAccountRequest $request) 
+    {
+        return $this->getEmailClientMultiAccountAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getEmailClientMultiAccountAsyncWithHttpInfo
+     *
+     * Get email client multi account file (*.multi.account). Will respond error if file extension is not \".multi.account\".
+     *
+     * @param Requests\GetEmailClientMultiAccountRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getEmailClientMultiAccountAsyncWithHttpInfo(Requests\GetEmailClientMultiAccountRequest $request) 
+    {
+        $returnType = '';
+        $request = $this->getEmailClientMultiAccountRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+          
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    }
+          
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getEmailClientMultiAccount'
+     *
+     * @param Requests\GetEmailClientMultiAccountRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function getEmailClientMultiAccountRequest(Requests\GetEmailClientMultiAccountRequest $request)
+    {
+        // verify the required parameter 'name' is set
+        if ($request->name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $name when calling getEmailClientMultiAccount');
+        }
+        // verify the required parameter 'folder' is set
+        if ($request->folder === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $folder when calling getEmailClientMultiAccount');
+        }
+        // verify the required parameter 'storage' is set
+        if ($request->storage === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $storage when calling getEmailClientMultiAccount');
+        }
+
+        $resourcePath = '/email/client/multi-account';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $multipart = false;
+    
+
+        // query params
+        if ($request->name !== null) {
+            $localName = lcfirst('name');
+            $localValue = is_bool($request->name) ? ($request->name ? 'true' : 'false') : $request->name;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->folder !== null) {
+            $localName = lcfirst('folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+    
+    
+        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
+        $formFiles = [];
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers= $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContent = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = $formParams["data"];
+            }
+        }
+    
+        $this->_requestToken();
+
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
+        }
+    
+        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+    
+        $req = new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath,
+            $headers,
+            $httpBody
+        );
+        if ($this->config->getDebug()) {
+            $this->_writeRequestLog('GET', $this->config->getHost() . $resourcePath, $headers, $httpBody);
+        }
+        
+        return $req;
+    }
+
+    /**
      * Operation getEmailModel
      *
      * Get email document.
@@ -23901,6 +24168,242 @@ class EmailApi
         }
 
         $resourcePath = '/email/client/email-client-account';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $multipart = false;
+    
+
+    
+    
+        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
+        $formFiles = [];
+        // body params
+        $_tempBody = null;
+        if (isset($request->request)) {
+            if (is_string($request->request)) {
+                $_tempBody = "\"" . $request->request . "\"";   
+            } else {
+                $_tempBody = $request->request;
+            }
+        }
+
+        if ($multipart) {
+            $headers= $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContent = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = $formParams["data"];
+            }
+        }
+    
+        $this->_requestToken();
+
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
+        }
+    
+        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+    
+        $req = new Request(
+            'PUT',
+            $this->config->getHost() . $resourcePath,
+            $headers,
+            $httpBody
+        );
+        if ($this->config->getDebug()) {
+            $this->_writeRequestLog('PUT', $this->config->getHost() . $resourcePath, $headers, $httpBody);
+        }
+        
+        return $req;
+    }
+
+    /**
+     * Operation saveEmailClientMultiAccount
+     *
+     * Create email client multi account file (*.multi.account). Will respond error if file extension is not \".multi.account\".
+     *
+     * @param Requests\SaveEmailClientMultiAccountRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function saveEmailClientMultiAccount(Requests\SaveEmailClientMultiAccountRequest $request)
+    {
+        try {
+             $this->saveEmailClientMultiAccountWithHttpInfo($request);
+        }
+        catch(RepeatRequestException $e) {
+             $this->saveEmailClientMultiAccountWithHttpInfo($request);
+        } 
+    }
+
+    /**
+     * Operation saveEmailClientMultiAccountWithHttpInfo
+     *
+     * Create email client multi account file (*.multi.account). Will respond error if file extension is not \".multi.account\".
+     *
+     * @param Requests\SaveEmailClientMultiAccountRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function saveEmailClientMultiAccountWithHttpInfo(Requests\SaveEmailClientMultiAccountRequest $request)
+    {
+        $returnType = '';
+        $request = $this->saveEmailClientMultiAccountRequest($request);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null);
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                if ($statusCode === 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                }
+          
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation saveEmailClientMultiAccountAsync
+     *
+     * Create email client multi account file (*.multi.account). Will respond error if file extension is not \".multi.account\".
+     *
+     * @param Requests\SaveEmailClientMultiAccountRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function saveEmailClientMultiAccountAsync(Requests\SaveEmailClientMultiAccountRequest $request) 
+    {
+        return $this->saveEmailClientMultiAccountAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation saveEmailClientMultiAccountAsyncWithHttpInfo
+     *
+     * Create email client multi account file (*.multi.account). Will respond error if file extension is not \".multi.account\".
+     *
+     * @param Requests\SaveEmailClientMultiAccountRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function saveEmailClientMultiAccountAsyncWithHttpInfo(Requests\SaveEmailClientMultiAccountRequest $request) 
+    {
+        $returnType = '';
+        $request = $this->saveEmailClientMultiAccountRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+          
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    }
+          
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'saveEmailClientMultiAccount'
+     *
+     * @param Requests\SaveEmailClientMultiAccountRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function saveEmailClientMultiAccountRequest(Requests\SaveEmailClientMultiAccountRequest $request)
+    {
+        // verify the required parameter 'request' is set
+        if ($request->request === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $request when calling saveEmailClientMultiAccount');
+        }
+
+        $resourcePath = '/email/client/multi-account';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
