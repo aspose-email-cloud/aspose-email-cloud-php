@@ -1,10 +1,10 @@
-# NameValuePair
+# StorageFileRqOfEmailClientMultiAccount
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **string** | Property name | [optional] 
-**value** | **string** | Property value | [optional] 
+**value** | [**\Aspose\Email\Model\EmailClientMultiAccount**](EmailClientMultiAccount.md) |  | [optional] 
+**storage_file** | [**\Aspose\Email\Model\StorageFileLocation**](StorageFileLocation.md) |  | [optional] 
 
 
 

@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="NameValuePair.php">
+ * <copyright company="Aspose" file="ValueTOfBoolean.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,7 +26,7 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /**
- * NameValuePair
+ * ValueTOfBoolean
  */
 
 namespace Aspose\Email\Model;
@@ -35,11 +35,10 @@ use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
 /**
- * NameValuePair
+ * ValueTOfBoolean
  *
- * @description Name-Value property
  */
-class NameValuePair implements ArrayAccess
+class ValueTOfBoolean implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +47,7 @@ class NameValuePair implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "NameValuePair";
+    protected static $swaggerModelName = "ValueTOfBoolean";
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -56,8 +55,7 @@ class NameValuePair implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'name' => 'string',
-        'value' => 'string'
+        'value' => 'bool'
     ];
 
     /**
@@ -66,7 +64,6 @@ class NameValuePair implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'name' => null,
         'value' => null
     ];
 
@@ -97,7 +94,6 @@ class NameValuePair implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
         'value' => 'value'
     ];
 
@@ -107,7 +103,6 @@ class NameValuePair implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
         'value' => 'setValue'
     ];
 
@@ -117,7 +112,6 @@ class NameValuePair implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
         'value' => 'getValue'
     ];
 
@@ -174,17 +168,14 @@ class NameValuePair implements ArrayAccess
     protected $container = [];
 
     /**
-     * Initializes a new instance of the NameValuePair class.
+     * Initializes a new instance of the ValueTOfBoolean class.
      *  
-     * @param string $name Property name
-     * @param string $value Property value
+     * @param bool $value 
      */
-    public function __construct($name = null, $value = null)
+    public function __construct($value = null)
     {
-        $this->container['name'] = null;
         $this->container['value'] = null;
 
-        if ($name != null) $this->setName($name);
         if ($value != null) $this->setValue($value);
     }
 
@@ -197,6 +188,9 @@ class NameValuePair implements ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['value'] === null) {
+            $invalidProperties[] = "'value' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -209,38 +203,17 @@ class NameValuePair implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['value'] === null) {
+            return false;
+        }
         return true;
     }
 
 
     /**
-     * Gets name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string $name Property name
-     *
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
      * Gets value
      *
-     * @return string
+     * @return bool
      */
     public function getValue()
     {
@@ -250,7 +223,7 @@ class NameValuePair implements ArrayAccess
     /**
      * Sets value
      *
-     * @param string $value Property value
+     * @param bool $value value
      *
      * @return $this
      */

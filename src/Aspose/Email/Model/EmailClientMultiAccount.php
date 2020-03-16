@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="NameValuePair.php">
+ * <copyright company="Aspose" file="EmailClientMultiAccount.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,7 +26,7 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /**
- * NameValuePair
+ * EmailClientMultiAccount
  */
 
 namespace Aspose\Email\Model;
@@ -35,11 +35,11 @@ use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
 /**
- * NameValuePair
+ * EmailClientMultiAccount
  *
- * @description Name-Value property
+ * @description Email client virtual account, which contains several accounts
  */
-class NameValuePair implements ArrayAccess
+class EmailClientMultiAccount implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class NameValuePair implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "NameValuePair";
+    protected static $swaggerModelName = "EmailClientMultiAccount";
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -56,8 +56,8 @@ class NameValuePair implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'name' => 'string',
-        'value' => 'string'
+        'receive_accounts' => '\Aspose\Email\Model\EmailClientAccount[]',
+        'send_account' => '\Aspose\Email\Model\EmailClientAccount'
     ];
 
     /**
@@ -66,8 +66,8 @@ class NameValuePair implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'name' => null,
-        'value' => null
+        'receive_accounts' => null,
+        'send_account' => null
     ];
 
     /**
@@ -97,8 +97,8 @@ class NameValuePair implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-        'value' => 'value'
+        'receive_accounts' => 'receiveAccounts',
+        'send_account' => 'sendAccount'
     ];
 
     /**
@@ -107,8 +107,8 @@ class NameValuePair implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'value' => 'setValue'
+        'receive_accounts' => 'setReceiveAccounts',
+        'send_account' => 'setSendAccount'
     ];
 
     /**
@@ -117,8 +117,8 @@ class NameValuePair implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'value' => 'getValue'
+        'receive_accounts' => 'getReceiveAccounts',
+        'send_account' => 'getSendAccount'
     ];
 
     /**
@@ -174,18 +174,18 @@ class NameValuePair implements ArrayAccess
     protected $container = [];
 
     /**
-     * Initializes a new instance of the NameValuePair class.
+     * Initializes a new instance of the EmailClientMultiAccount class.
      *  
-     * @param string $name Property name
-     * @param string $value Property value
+     * @param \Aspose\Email\Model\EmailClientAccount[] $receive_accounts Email client receive accounts
+     * @param \Aspose\Email\Model\EmailClientAccount $send_account Email client send account
      */
-    public function __construct($name = null, $value = null)
+    public function __construct($receive_accounts = null, $send_account = null)
     {
-        $this->container['name'] = null;
-        $this->container['value'] = null;
+        $this->container['receive_accounts'] = null;
+        $this->container['send_account'] = null;
 
-        if ($name != null) $this->setName($name);
-        if ($value != null) $this->setValue($value);
+        if ($receive_accounts != null) $this->setReceiveAccounts($receive_accounts);
+        if ($send_account != null) $this->setSendAccount($send_account);
     }
 
     /**
@@ -197,6 +197,9 @@ class NameValuePair implements ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['receive_accounts'] === null) {
+            $invalidProperties[] = "'receive_accounts' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -209,54 +212,57 @@ class NameValuePair implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['receive_accounts'] === null) {
+            return false;
+        }
         return true;
     }
 
 
     /**
-     * Gets name
+     * Gets receive_accounts
      *
-     * @return string
+     * @return \Aspose\Email\Model\EmailClientAccount[]
      */
-    public function getName()
+    public function getReceiveAccounts()
     {
-        return $this->container['name'];
+        return $this->container['receive_accounts'];
     }
 
     /**
-     * Sets name
+     * Sets receive_accounts
      *
-     * @param string $name Property name
+     * @param \Aspose\Email\Model\EmailClientAccount[] $receive_accounts Email client receive accounts
      *
      * @return $this
      */
-    public function setName($name)
+    public function setReceiveAccounts($receive_accounts)
     {
-        $this->container['name'] = $name;
+        $this->container['receive_accounts'] = $receive_accounts;
 
         return $this;
     }
 
     /**
-     * Gets value
+     * Gets send_account
      *
-     * @return string
+     * @return \Aspose\Email\Model\EmailClientAccount
      */
-    public function getValue()
+    public function getSendAccount()
     {
-        return $this->container['value'];
+        return $this->container['send_account'];
     }
 
     /**
-     * Sets value
+     * Sets send_account
      *
-     * @param string $value Property value
+     * @param \Aspose\Email\Model\EmailClientAccount $send_account Email client send account
      *
      * @return $this
      */
-    public function setValue($value)
+    public function setSendAccount($send_account)
     {
-        $this->container['value'] = $value;
+        $this->container['send_account'] = $send_account;
 
         return $this;
     }

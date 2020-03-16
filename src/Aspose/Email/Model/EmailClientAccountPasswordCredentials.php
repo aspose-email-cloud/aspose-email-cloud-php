@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="NameValuePair.php">
+ * <copyright company="Aspose" file="EmailClientAccountPasswordCredentials.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,20 +26,18 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /**
- * NameValuePair
+ * EmailClientAccountPasswordCredentials
  */
 
 namespace Aspose\Email\Model;
-
-use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
 /**
- * NameValuePair
+ * EmailClientAccountPasswordCredentials
  *
- * @description Name-Value property
+ * @description Represents email client account password credentials
  */
-class NameValuePair implements ArrayAccess
+class EmailClientAccountPasswordCredentials extends EmailClientAccountCredentials 
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +46,7 @@ class NameValuePair implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "NameValuePair";
+    protected static $swaggerModelName = "EmailClientAccountPasswordCredentials";
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -56,8 +54,7 @@ class NameValuePair implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'name' => 'string',
-        'value' => 'string'
+        'password' => 'string'
     ];
 
     /**
@@ -66,8 +63,7 @@ class NameValuePair implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'name' => null,
-        'value' => null
+        'password' => null
     ];
 
     /**
@@ -77,7 +73,7 @@ class NameValuePair implements ArrayAccess
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /**
@@ -87,7 +83,7 @@ class NameValuePair implements ArrayAccess
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /**
@@ -97,8 +93,7 @@ class NameValuePair implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-        'value' => 'value'
+        'password' => 'password'
     ];
 
     /**
@@ -107,8 +102,7 @@ class NameValuePair implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'value' => 'setValue'
+        'password' => 'setPassword'
     ];
 
     /**
@@ -117,8 +111,7 @@ class NameValuePair implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'value' => 'getValue'
+        'password' => 'getPassword'
     ];
 
     /**
@@ -129,7 +122,7 @@ class NameValuePair implements ArrayAccess
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -139,7 +132,7 @@ class NameValuePair implements ArrayAccess
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -149,7 +142,7 @@ class NameValuePair implements ArrayAccess
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -166,26 +159,22 @@ class NameValuePair implements ArrayAccess
 
     
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
-     * Initializes a new instance of the NameValuePair class.
+     * Initializes a new instance of the EmailClientAccountPasswordCredentials class.
      *  
-     * @param string $name Property name
-     * @param string $value Property value
+     * @param string $login Email client account login
+     * @param string $discriminator 
+     * @param string $password Email client account password
      */
-    public function __construct($name = null, $value = null)
+    public function __construct($login = null, $discriminator = null, $password = null)
     {
-        $this->container['name'] = null;
-        $this->container['value'] = null;
+        parent::__construct();
+        $this->container['password'] = null;
 
-        if ($name != null) $this->setName($name);
-        if ($value != null) $this->setValue($value);
+        if ($login != null) $this->setLogin($login);
+        $this->container['discriminator'] = (new \ReflectionClass($this))->getShortName();
+        if ($password != null) $this->setPassword($password);
     }
 
     /**
@@ -195,7 +184,14 @@ class NameValuePair implements ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
+
+        if ($this->container['password'] === null) {
+            $invalidProperties[] = "'password' can't be null";
+        }
+        if ((strlen($this->container['password']) < 1)) {
+            $invalidProperties[] = "invalid value for 'password', the character length must be bigger than or equal to 1.";
+        }
 
         return $invalidProperties;
     }
@@ -208,55 +204,45 @@ class NameValuePair implements ArrayAccess
      */
     public function valid()
     {
+        if (!parent::valid()) {
+            return false;
+        }
 
+        if ($this->container['password'] === null) {
+            return false;
+        }
+        if (strlen($this->container['password']) < 1) {
+            return false;
+        }
         return true;
     }
 
 
     /**
-     * Gets name
+     * Gets password
      *
      * @return string
      */
-    public function getName()
+    public function getPassword()
     {
-        return $this->container['name'];
+        return $this->container['password'];
     }
 
     /**
-     * Sets name
+     * Sets password
      *
-     * @param string $name Property name
+     * @param string $password Email client account password
      *
      * @return $this
      */
-    public function setName($name)
+    public function setPassword($password)
     {
-        $this->container['name'] = $name;
 
-        return $this;
-    }
+        if ((strlen($password) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $password when calling EmailClientAccountPasswordCredentials., must be bigger than or equal to 1.');
+        }
 
-    /**
-     * Gets value
-     *
-     * @return string
-     */
-    public function getValue()
-    {
-        return $this->container['value'];
-    }
-
-    /**
-     * Sets value
-     *
-     * @param string $value Property value
-     *
-     * @return $this
-     */
-    public function setValue($value)
-    {
-        $this->container['value'] = $value;
+        $this->container['password'] = $password;
 
         return $this;
     }

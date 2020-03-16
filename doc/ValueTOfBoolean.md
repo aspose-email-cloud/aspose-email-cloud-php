@@ -1,10 +1,9 @@
-# NameValuePair
+# ValueTOfBoolean
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **string** | Property name | [optional] 
-**value** | **string** | Property value | [optional] 
+**value** | **bool** |  | 
 
 
 

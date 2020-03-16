@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="NameValuePair.php">
+ * <copyright company="Aspose" file="StorageFileRqOfEmailClientAccount.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,7 +26,7 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /**
- * NameValuePair
+ * StorageFileRqOfEmailClientAccount
  */
 
 namespace Aspose\Email\Model;
@@ -35,11 +35,10 @@ use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
 /**
- * NameValuePair
+ * StorageFileRqOfEmailClientAccount
  *
- * @description Name-Value property
  */
-class NameValuePair implements ArrayAccess
+class StorageFileRqOfEmailClientAccount implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +47,7 @@ class NameValuePair implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "NameValuePair";
+    protected static $swaggerModelName = "StorageFileRqOfEmailClientAccount";
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -56,8 +55,8 @@ class NameValuePair implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'name' => 'string',
-        'value' => 'string'
+        'value' => '\Aspose\Email\Model\EmailClientAccount',
+        'storage_file' => '\Aspose\Email\Model\StorageFileLocation'
     ];
 
     /**
@@ -66,8 +65,8 @@ class NameValuePair implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'name' => null,
-        'value' => null
+        'value' => null,
+        'storage_file' => null
     ];
 
     /**
@@ -97,8 +96,8 @@ class NameValuePair implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-        'value' => 'value'
+        'value' => 'value',
+        'storage_file' => 'storageFile'
     ];
 
     /**
@@ -107,8 +106,8 @@ class NameValuePair implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'value' => 'setValue'
+        'value' => 'setValue',
+        'storage_file' => 'setStorageFile'
     ];
 
     /**
@@ -117,8 +116,8 @@ class NameValuePair implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'value' => 'getValue'
+        'value' => 'getValue',
+        'storage_file' => 'getStorageFile'
     ];
 
     /**
@@ -174,18 +173,18 @@ class NameValuePair implements ArrayAccess
     protected $container = [];
 
     /**
-     * Initializes a new instance of the NameValuePair class.
+     * Initializes a new instance of the StorageFileRqOfEmailClientAccount class.
      *  
-     * @param string $name Property name
-     * @param string $value Property value
+     * @param \Aspose\Email\Model\EmailClientAccount $value 
+     * @param \Aspose\Email\Model\StorageFileLocation $storage_file 
      */
-    public function __construct($name = null, $value = null)
+    public function __construct($value = null, $storage_file = null)
     {
-        $this->container['name'] = null;
         $this->container['value'] = null;
+        $this->container['storage_file'] = null;
 
-        if ($name != null) $this->setName($name);
         if ($value != null) $this->setValue($value);
+        if ($storage_file != null) $this->setStorageFile($storage_file);
     }
 
     /**
@@ -214,33 +213,9 @@ class NameValuePair implements ArrayAccess
 
 
     /**
-     * Gets name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string $name Property name
-     *
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
      * Gets value
      *
-     * @return string
+     * @return \Aspose\Email\Model\EmailClientAccount
      */
     public function getValue()
     {
@@ -250,13 +225,37 @@ class NameValuePair implements ArrayAccess
     /**
      * Sets value
      *
-     * @param string $value Property value
+     * @param \Aspose\Email\Model\EmailClientAccount $value value
      *
      * @return $this
      */
     public function setValue($value)
     {
         $this->container['value'] = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets storage_file
+     *
+     * @return \Aspose\Email\Model\StorageFileLocation
+     */
+    public function getStorageFile()
+    {
+        return $this->container['storage_file'];
+    }
+
+    /**
+     * Sets storage_file
+     *
+     * @param \Aspose\Email\Model\StorageFileLocation $storage_file storage_file
+     *
+     * @return $this
+     */
+    public function setStorageFile($storage_file)
+    {
+        $this->container['storage_file'] = $storage_file;
 
         return $this;
     }

@@ -67,6 +67,8 @@ Method | HTTP request | Description
 [**getEmail**](EmailApi.md#getEmail) | **GET** /email/{fileName} | Get email document
 [**getEmailAsFile**](EmailApi.md#getEmailAsFile) | **GET** /email/{fileName}/as-file/{format} | Converts email document from storage to specified format and returns as file
 [**getEmailAttachment**](EmailApi.md#getEmailAttachment) | **GET** /email/{fileName}/attachments/{attachment} | Get email attachment by name
+[**getEmailClientAccount**](EmailApi.md#getEmailClientAccount) | **GET** /email/client/email-client-account | Get email client account from storage
+[**getEmailClientMultiAccount**](EmailApi.md#getEmailClientMultiAccount) | **GET** /email/client/multi-account | Get email client multi account file (*.multi.account). Will respond error if file extension is not \&quot;.multi.account\&quot;.
 [**getEmailModel**](EmailApi.md#getEmailModel) | **GET** /email/model/{format}/{name} | Get email document.
 [**getEmailModelList**](EmailApi.md#getEmailModelList) | **GET** /email/model/{format} | Get email list from storage folder.
 [**getEmailProperty**](EmailApi.md#getEmailProperty) | **GET** /email/{fileName}/properties/{propertyName} | Get an email document property by its name
@@ -76,6 +78,7 @@ Method | HTTP request | Description
 [**getMapiAttachments**](EmailApi.md#getMapiAttachments) | **GET** /email/Mapi/{name}/attachments | Get document attachment list
 [**getMapiList**](EmailApi.md#getMapiList) | **GET** /email/Mapi | Get document list from storage folder
 [**getMapiProperties**](EmailApi.md#getMapiProperties) | **GET** /email/Mapi/{name}/properties | Get document properties
+[**isEmailAddressDisposable**](EmailApi.md#isEmailAddressDisposable) | **GET** /email/disposable/isDisposable/{address} | Check email address is disposable
 [**listEmailFolders**](EmailApi.md#listEmailFolders) | **GET** /email/client/ListFolders | Get folders list in email account
 [**listEmailMessages**](EmailApi.md#listEmailMessages) | **GET** /email/client/ListMessages | Get messages from folder, filtered by query
 [**listEmailModels**](EmailApi.md#listEmailModels) | **GET** /email/client/ListMessagesModel | Get messages from folder, filtered by query
@@ -84,6 +87,8 @@ Method | HTTP request | Description
 [**objectExists**](EmailApi.md#objectExists) | **GET** /email/storage/exist/{path} | Check if file or folder exists
 [**saveCalendarModel**](EmailApi.md#saveCalendarModel) | **PUT** /email/CalendarModel/{name} | Save iCalendar
 [**saveContactModel**](EmailApi.md#saveContactModel) | **PUT** /email/ContactModel/{format}/{name} | Save contact.
+[**saveEmailClientAccount**](EmailApi.md#saveEmailClientAccount) | **PUT** /email/client/email-client-account | Create email client account file (*.account) with any of supported credentials
+[**saveEmailClientMultiAccount**](EmailApi.md#saveEmailClientMultiAccount) | **PUT** /email/client/multi-account | Create email client multi account file (*.multi.account). Will respond error if file extension is not \&quot;.multi.account\&quot;.
 [**saveEmailModel**](EmailApi.md#saveEmailModel) | **PUT** /email/model/{format}/{name} | Save email document.
 [**saveMailAccount**](EmailApi.md#saveMailAccount) | **POST** /email/client/SaveMailAccount | Create email account file (*.account) with login/password authentication
 [**saveMailOAuthAccount**](EmailApi.md#saveMailOAuthAccount) | **POST** /email/client/SaveMailOAuthAccount | Create email account file (*.account) with OAuth
@@ -1804,6 +1809,60 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+# **getEmailClientAccount**
+```php
+function \Aspose\Email\Model\EmailClientAccount getEmailClientAccount(Requests\GetEmailClientAccountRequest $request)
+```
+Get email client account from storage
+
+### Return type
+
+[**\Aspose\Email\Model\EmailClientAccount**](EmailClientAccount.md)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\GetEmailClientAccountRequest(
+    $name,
+    $folder,
+    $storage)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string**| File name on storage |
+ **folder** | **string**| Folder on storage |
+ **storage** | **string**| Storage name |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **getEmailClientMultiAccount**
+```php
+function \Aspose\Email\Model\EmailClientMultiAccount getEmailClientMultiAccount(Requests\GetEmailClientMultiAccountRequest $request)
+```
+Get email client multi account file (*.multi.account). Will respond error if file extension is not \".multi.account\".
+
+### Return type
+
+[**\Aspose\Email\Model\EmailClientMultiAccount**](EmailClientMultiAccount.md)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\GetEmailClientMultiAccountRequest(
+    $name,
+    $folder,
+    $storage)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string**| File name on storage |
+ **folder** | **string**| Folder on storage |
+ **storage** | **string**| Storage name |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 # **getEmailModel**
 ```php
 function \Aspose\Email\Model\EmailDto getEmailModel(Requests\GetEmailModelRequest $request)
@@ -2055,6 +2114,29 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+# **isEmailAddressDisposable**
+```php
+function \Aspose\Email\Model\ValueTOfBoolean isEmailAddressDisposable(Requests\IsEmailAddressDisposableRequest $request)
+```
+Check email address is disposable
+
+### Return type
+
+[**\Aspose\Email\Model\ValueTOfBoolean**](ValueTOfBoolean.md)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\IsEmailAddressDisposableRequest(
+    $address)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **address** | **string**| An email address to check |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 # **listEmailFolders**
 ```php
 function \Aspose\Email\Model\ListResponseOfMailServerFolder listEmailFolders(Requests\ListEmailFoldersRequest $request)
@@ -2296,6 +2378,52 @@ Name | Type | Description  | Notes
  **format** | **string**| Contact document format. Enum, available values: VCard, WebDav, Msg |
  **name** | **string**| Contact document file name. |
  **rq** | [**\Aspose\Email\Model\StorageModelRqOfContactDto**](StorageModelRqOfContactDto.md)| Create contact request. |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **saveEmailClientAccount**
+```php
+function saveEmailClientAccount(Requests\SaveEmailClientAccountRequest $request)
+```
+Create email client account file (*.account) with any of supported credentials
+
+### Return type
+
+void (empty response body)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\SaveEmailClientAccountRequest(
+    $request)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**\Aspose\Email\Model\StorageFileRqOfEmailClientAccount**](StorageFileRqOfEmailClientAccount.md)| Email account information |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **saveEmailClientMultiAccount**
+```php
+function saveEmailClientMultiAccount(Requests\SaveEmailClientMultiAccountRequest $request)
+```
+Create email client multi account file (*.multi.account). Will respond error if file extension is not \".multi.account\".
+
+### Return type
+
+void (empty response body)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\SaveEmailClientMultiAccountRequest(
+    $request)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**\Aspose\Email\Model\StorageFileRqOfEmailClientMultiAccount**](StorageFileRqOfEmailClientMultiAccount.md)| Email accounts information |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 

@@ -1,10 +1,10 @@
-# NameValuePair
+# EmailClientAccountCredentials
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **string** | Property name | [optional] 
-**value** | **string** | Property value | [optional] 
+**login** | **string** | Email client account login | 
+**discriminator** | **string** |  | 
 
 
 

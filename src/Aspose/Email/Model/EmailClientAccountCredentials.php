@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="NameValuePair.php">
+ * <copyright company="Aspose" file="EmailClientAccountCredentials.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,7 +26,7 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /**
- * NameValuePair
+ * EmailClientAccountCredentials
  */
 
 namespace Aspose\Email\Model;
@@ -35,20 +35,20 @@ use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
 /**
- * NameValuePair
+ * EmailClientAccountCredentials
  *
- * @description Name-Value property
+ * @description Represents email client account credentials
  */
-class NameValuePair implements ArrayAccess
+class EmailClientAccountCredentials implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    const DISCRIMINATOR = 'Type';
 
     /**
      * The original name of the model.
      *
      * @var string
      */
-    protected static $swaggerModelName = "NameValuePair";
+    protected static $swaggerModelName = "EmailClientAccountCredentials";
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -56,8 +56,8 @@ class NameValuePair implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'name' => 'string',
-        'value' => 'string'
+        'login' => 'string',
+        'discriminator' => 'string'
     ];
 
     /**
@@ -66,8 +66,8 @@ class NameValuePair implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'name' => null,
-        'value' => null
+        'login' => null,
+        'discriminator' => null
     ];
 
     /**
@@ -97,8 +97,8 @@ class NameValuePair implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-        'value' => 'value'
+        'login' => 'login',
+        'discriminator' => 'discriminator'
     ];
 
     /**
@@ -107,8 +107,8 @@ class NameValuePair implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'value' => 'setValue'
+        'login' => 'setLogin',
+        'discriminator' => 'setDiscriminator'
     ];
 
     /**
@@ -117,8 +117,8 @@ class NameValuePair implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'value' => 'getValue'
+        'login' => 'getLogin',
+        'discriminator' => 'getDiscriminator'
     ];
 
     /**
@@ -174,18 +174,22 @@ class NameValuePair implements ArrayAccess
     protected $container = [];
 
     /**
-     * Initializes a new instance of the NameValuePair class.
+     * Initializes a new instance of the EmailClientAccountCredentials class.
      *  
-     * @param string $name Property name
-     * @param string $value Property value
+     * @param string $login Email client account login
+     * @param string $discriminator 
      */
-    public function __construct($name = null, $value = null)
+    public function __construct($login = null, $discriminator = null)
     {
-        $this->container['name'] = null;
-        $this->container['value'] = null;
+        $this->container['login'] = null;
+        $this->container['discriminator'] = null;
 
-        if ($name != null) $this->setName($name);
-        if ($value != null) $this->setValue($value);
+        if ($login != null) $this->setLogin($login);
+        $this->container['discriminator'] = (new \ReflectionClass($this))->getShortName();
+
+        // Initialize discriminator property with the model name.
+        $discriminator = array_search('Type', self::$attributeMap);
+        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /**
@@ -197,6 +201,16 @@ class NameValuePair implements ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['login'] === null) {
+            $invalidProperties[] = "'login' can't be null";
+        }
+        if ((strlen($this->container['login']) < 1)) {
+            $invalidProperties[] = "invalid value for 'login', the character length must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['discriminator'] === null) {
+            $invalidProperties[] = "'discriminator' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -209,57 +223,66 @@ class NameValuePair implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['login'] === null) {
+            return false;
+        }
+        if (strlen($this->container['login']) < 1) {
+            return false;
+        }
+        if ($this->container['discriminator'] === null) {
+            return false;
+        }
         return true;
     }
 
 
     /**
-     * Gets name
+     * Gets login
      *
      * @return string
      */
-    public function getName()
+    public function getLogin()
     {
-        return $this->container['name'];
+        return $this->container['login'];
     }
 
     /**
-     * Sets name
+     * Sets login
      *
-     * @param string $name Property name
+     * @param string $login Email client account login
      *
      * @return $this
      */
-    public function setName($name)
+    public function setLogin($login)
     {
-        $this->container['name'] = $name;
+
+        if ((strlen($login) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $login when calling EmailClientAccountCredentials., must be bigger than or equal to 1.');
+        }
+
+        $this->container['login'] = $login;
 
         return $this;
     }
 
     /**
-     * Gets value
+     * Gets discriminator
      *
      * @return string
      */
-    public function getValue()
+    public function getDiscriminator()
     {
-        return $this->container['value'];
+        return $this->container['discriminator'];
     }
 
     /**
-     * Sets value
+     * Sets discriminator
      *
-     * @param string $value Property value
+     * @param string $discriminator discriminator
      *
      * @return $this
      */
-    public function setValue($value)
-    {
-        $this->container['value'] = $value;
-
-        return $this;
-    }
+    public function setDiscriminator($discriminator) { /* Does nothing */ }
     /**
      * Returns true if offset exists. False otherwise.
      *

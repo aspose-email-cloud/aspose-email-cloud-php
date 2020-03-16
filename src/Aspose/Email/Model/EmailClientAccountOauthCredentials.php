@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="SaveOAuthEmailAccountRequest.php">
+ * <copyright company="Aspose" file="EmailClientAccountOauthCredentials.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,18 +26,18 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /**
- * SaveOAuthEmailAccountRequest
+ * EmailClientAccountOauthCredentials
  */
 
 namespace Aspose\Email\Model;
 use \Aspose\Email\ObjectSerializer;
 
 /**
- * SaveOAuthEmailAccountRequest
+ * EmailClientAccountOauthCredentials
  *
- * @description Save email account settings with OAuth request
+ * @description Represents email client account OAuth 2.0 credentials
  */
-class SaveOAuthEmailAccountRequest extends EmailAccountRequest 
+class EmailClientAccountOauthCredentials extends EmailClientAccountCredentials 
 {
     const DISCRIMINATOR = null;
 
@@ -46,7 +46,7 @@ class SaveOAuthEmailAccountRequest extends EmailAccountRequest
      *
      * @var string
      */
-    protected static $swaggerModelName = "SaveOAuthEmailAccountRequest";
+    protected static $swaggerModelName = "EmailClientAccountOauthCredentials";
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -176,21 +176,16 @@ class SaveOAuthEmailAccountRequest extends EmailAccountRequest
 
 
     /**
-     * Initializes a new instance of the SaveOAuthEmailAccountRequest class.
+     * Initializes a new instance of the EmailClientAccountOauthCredentials class.
      *  
-     * @param string $host Email account host
-     * @param int $port Email account port
-     * @param string $login Email account login
-     * @param string $security_options Email account security mode Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
-     * @param string $protocol_type Type of connection protocol. Enum, available values: IMAP, POP3, SMTP, EWS, WebDav
-     * @param string $description Email account description
-     * @param \Aspose\Email\Model\StorageFileLocation $storage_file A storage file location info to store email account
-     * @param string $client_id OAuth client identifier
-     * @param string $client_secret OAuth client secret
-     * @param string $refresh_token OAuth refresh token
-     * @param string $request_url The url to obtain access token. If not specified, will try to discover from email account host.
+     * @param string $login Email client account login
+     * @param string $discriminator 
+     * @param string $client_id The client ID obtained from the Google Cloud Console during application registration.
+     * @param string $client_secret The client secret obtained during application registration.
+     * @param string $refresh_token OAuth 2.0 refresh token
+     * @param string $request_url The url to obtain access token. If not specified, will try to discover from email client account host.
      */
-    public function __construct($host = null, $port = null, $login = null, $security_options = null, $protocol_type = null, $description = null, $storage_file = null, $client_id = null, $client_secret = null, $refresh_token = null, $request_url = null)
+    public function __construct($login = null, $discriminator = null, $client_id = null, $client_secret = null, $refresh_token = null, $request_url = null)
     {
         parent::__construct();
         $this->container['client_id'] = null;
@@ -198,13 +193,8 @@ class SaveOAuthEmailAccountRequest extends EmailAccountRequest
         $this->container['refresh_token'] = null;
         $this->container['request_url'] = null;
 
-        if ($host != null) $this->setHost($host);
-        if ($port != null) $this->setPort($port);
         if ($login != null) $this->setLogin($login);
-        if ($security_options != null) $this->setSecurityOptions($security_options);
-        if ($protocol_type != null) $this->setProtocolType($protocol_type);
-        if ($description != null) $this->setDescription($description);
-        if ($storage_file != null) $this->setStorageFile($storage_file);
+        $this->container['discriminator'] = (new \ReflectionClass($this))->getShortName();
         if ($client_id != null) $this->setClientId($client_id);
         if ($client_secret != null) $this->setClientSecret($client_secret);
         if ($refresh_token != null) $this->setRefreshToken($refresh_token);
@@ -291,7 +281,7 @@ class SaveOAuthEmailAccountRequest extends EmailAccountRequest
     /**
      * Sets client_id
      *
-     * @param string $client_id OAuth client identifier
+     * @param string $client_id The client ID obtained from the Google Cloud Console during application registration.
      *
      * @return $this
      */
@@ -299,7 +289,7 @@ class SaveOAuthEmailAccountRequest extends EmailAccountRequest
     {
 
         if ((strlen($client_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $client_id when calling SaveOAuthEmailAccountRequest., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $client_id when calling EmailClientAccountOauthCredentials., must be bigger than or equal to 1.');
         }
 
         $this->container['client_id'] = $client_id;
@@ -320,7 +310,7 @@ class SaveOAuthEmailAccountRequest extends EmailAccountRequest
     /**
      * Sets client_secret
      *
-     * @param string $client_secret OAuth client secret
+     * @param string $client_secret The client secret obtained during application registration.
      *
      * @return $this
      */
@@ -328,7 +318,7 @@ class SaveOAuthEmailAccountRequest extends EmailAccountRequest
     {
 
         if ((strlen($client_secret) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $client_secret when calling SaveOAuthEmailAccountRequest., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $client_secret when calling EmailClientAccountOauthCredentials., must be bigger than or equal to 1.');
         }
 
         $this->container['client_secret'] = $client_secret;
@@ -349,7 +339,7 @@ class SaveOAuthEmailAccountRequest extends EmailAccountRequest
     /**
      * Sets refresh_token
      *
-     * @param string $refresh_token OAuth refresh token
+     * @param string $refresh_token OAuth 2.0 refresh token
      *
      * @return $this
      */
@@ -357,7 +347,7 @@ class SaveOAuthEmailAccountRequest extends EmailAccountRequest
     {
 
         if ((strlen($refresh_token) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $refresh_token when calling SaveOAuthEmailAccountRequest., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid length for $refresh_token when calling EmailClientAccountOauthCredentials., must be bigger than or equal to 1.');
         }
 
         $this->container['refresh_token'] = $refresh_token;
@@ -378,7 +368,7 @@ class SaveOAuthEmailAccountRequest extends EmailAccountRequest
     /**
      * Sets request_url
      *
-     * @param string $request_url The url to obtain access token. If not specified, will try to discover from email account host.
+     * @param string $request_url The url to obtain access token. If not specified, will try to discover from email client account host.
      *
      * @return $this
      */

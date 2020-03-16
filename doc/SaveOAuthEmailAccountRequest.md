@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **client_id** | **string** | OAuth client identifier | 
 **client_secret** | **string** | OAuth client secret | 
 **refresh_token** | **string** | OAuth refresh token | 
+**request_url** | **string** | The url to obtain access token. If not specified, will try to discover from email account host. | [optional] 
 
  Parent class: [EmailAccountRequest](EmailAccountRequest.md)
 
