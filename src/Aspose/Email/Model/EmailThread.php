@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="DeleteFolderBaseRequest.php">
+ * <copyright company="Aspose" file="EmailThread.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,18 +26,20 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /**
- * DeleteFolderBaseRequest
+ * EmailThread
  */
 
 namespace Aspose\Email\Model;
+
+use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
 /**
- * DeleteFolderBaseRequest
+ * EmailThread
  *
- * @description Delete folder request
+ * @description Email messages thread
  */
-class DeleteFolderBaseRequest extends AccountBaseRequest 
+class EmailThread implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -46,7 +48,7 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
      *
      * @var string
      */
-    protected static $swaggerModelName = "DeleteFolderBaseRequest";
+    protected static $swaggerModelName = "EmailThread";
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -54,8 +56,9 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'folder' => 'string',
-        'delete_permanently' => 'bool'
+        'id' => 'string',
+        'subject' => 'string',
+        'messages' => '\Aspose\Email\Model\EmailDto[]'
     ];
 
     /**
@@ -64,8 +67,9 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'folder' => null,
-        'delete_permanently' => null
+        'id' => null,
+        'subject' => null,
+        'messages' => null
     ];
 
     /**
@@ -75,7 +79,7 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes + parent::swaggerTypes();
+        return self::$swaggerTypes;
     }
 
     /**
@@ -85,7 +89,7 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats + parent::swaggerFormats();
+        return self::$swaggerFormats;
     }
 
     /**
@@ -95,8 +99,9 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
      * @var string[]
      */
     protected static $attributeMap = [
-        'folder' => 'folder',
-        'delete_permanently' => 'deletePermanently'
+        'id' => 'id',
+        'subject' => 'subject',
+        'messages' => 'messages'
     ];
 
     /**
@@ -105,8 +110,9 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
      * @var string[]
      */
     protected static $setters = [
-        'folder' => 'setFolder',
-        'delete_permanently' => 'setDeletePermanently'
+        'id' => 'setId',
+        'subject' => 'setSubject',
+        'messages' => 'setMessages'
     ];
 
     /**
@@ -115,8 +121,9 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
      * @var string[]
      */
     protected static $getters = [
-        'folder' => 'getFolder',
-        'delete_permanently' => 'getDeletePermanently'
+        'id' => 'getId',
+        'subject' => 'getSubject',
+        'messages' => 'getMessages'
     ];
 
     /**
@@ -127,7 +134,7 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
      */
     public static function attributeMap()
     {
-        return parent::attributeMap() + self::$attributeMap;
+        return self::$attributeMap;
     }
 
     /**
@@ -137,7 +144,7 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
      */
     public static function setters()
     {
-        return parent::setters() + self::$setters;
+        return self::$setters;
     }
 
     /**
@@ -147,7 +154,7 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
      */
     public static function getters()
     {
-        return parent::getters() + self::$getters;
+        return self::$getters;
     }
 
     /**
@@ -164,27 +171,29 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
 
     
 
+    /**
+     * Associative array for storing property values
+     *
+     * @var mixed[]
+     */
+    protected $container = [];
 
     /**
-     * Initializes a new instance of the DeleteFolderBaseRequest class.
+     * Initializes a new instance of the EmailThread class.
      *  
-     * @param string $first_account First account storage file name
-     * @param string $second_account Additional email account (for example, FirstAccount could be IMAP, and second one could be SMTP)
-     * @param \Aspose\Email\Model\StorageFolderLocation $storage_folder Storage folder location of account files
-     * @param string $folder Folder name
-     * @param bool $delete_permanently Specifies that folder should be deleted permanently
+     * @param string $id Thread identifier
+     * @param string $subject Thread subject
+     * @param \Aspose\Email\Model\EmailDto[] $messages List of messages in thread
      */
-    public function __construct($first_account = null, $second_account = null, $storage_folder = null, $folder = null, $delete_permanently = null)
+    public function __construct($id = null, $subject = null, $messages = null)
     {
-        parent::__construct();
-        $this->container['folder'] = null;
-        $this->container['delete_permanently'] = null;
+        $this->container['id'] = null;
+        $this->container['subject'] = null;
+        $this->container['messages'] = null;
 
-        if ($first_account != null) $this->setFirstAccount($first_account);
-        if ($second_account != null) $this->setSecondAccount($second_account);
-        if ($storage_folder != null) $this->setStorageFolder($storage_folder);
-        if ($folder != null) $this->setFolder($folder);
-        if ($delete_permanently != null) $this->setDeletePermanently($delete_permanently);
+        if ($id != null) $this->setId($id);
+        if ($subject != null) $this->setSubject($subject);
+        if ($messages != null) $this->setMessages($messages);
     }
 
     /**
@@ -194,18 +203,8 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = parent::listInvalidProperties();
+        $invalidProperties = [];
 
-        if ($this->container['folder'] === null) {
-            $invalidProperties[] = "'folder' can't be null";
-        }
-        if ((strlen($this->container['folder']) < 1)) {
-            $invalidProperties[] = "invalid value for 'folder', the character length must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['delete_permanently'] === null) {
-            $invalidProperties[] = "'delete_permanently' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -217,72 +216,79 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
      */
     public function valid()
     {
-        if (!parent::valid()) {
-            return false;
-        }
 
-        if ($this->container['folder'] === null) {
-            return false;
-        }
-        if (strlen($this->container['folder']) < 1) {
-            return false;
-        }
-        if ($this->container['delete_permanently'] === null) {
-            return false;
-        }
         return true;
     }
 
 
     /**
-     * Gets folder
+     * Gets id
      *
      * @return string
      */
-    public function getFolder()
+    public function getId()
     {
-        return $this->container['folder'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets folder
+     * Sets id
      *
-     * @param string $folder Folder name
+     * @param string $id Thread identifier
      *
      * @return $this
      */
-    public function setFolder($folder)
+    public function setId($id)
     {
-
-        if ((strlen($folder) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $folder when calling DeleteFolderBaseRequest., must be bigger than or equal to 1.');
-        }
-
-        $this->container['folder'] = $folder;
+        $this->container['id'] = $id;
 
         return $this;
     }
 
     /**
-     * Gets delete_permanently
+     * Gets subject
      *
-     * @return bool
+     * @return string
      */
-    public function getDeletePermanently()
+    public function getSubject()
     {
-        return $this->container['delete_permanently'];
+        return $this->container['subject'];
     }
 
     /**
-     * Sets delete_permanently
+     * Sets subject
      *
-     * @param bool $delete_permanently Specifies that folder should be deleted permanently
+     * @param string $subject Thread subject
      *
      * @return $this
      */
-    public function setDeletePermanently($delete_permanently)
+    public function setSubject($subject)
     {
-        $this->container['delete_permanently'] = $delete_permanently;
+        $this->container['subject'] = $subject;
+
+        return $this;
+    }
+
+    /**
+     * Gets messages
+     *
+     * @return \Aspose\Email\Model\EmailDto[]
+     */
+    public function getMessages()
+    {
+        return $this->container['messages'];
+    }
+
+    /**
+     * Sets messages
+     *
+     * @param \Aspose\Email\Model\EmailDto[] $messages List of messages in thread
+     *
+     * @return $this
+     */
+    public function setMessages($messages)
+    {
+        $this->container['messages'] = $messages;
 
         return $this;
     }

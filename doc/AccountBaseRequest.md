@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**first_account** | **string** | First account storage file name for receiving emails (or universal one) | 
-**second_account** | **string** | Second account storage file name for sending emails (ignored if first is universal) | [optional] 
+**first_account** | **string** | First account storage file name | 
+**second_account** | **string** | Additional email account (for example, FirstAccount could be IMAP, and second one could be SMTP) | [optional] 
 **storage_folder** | [**\Aspose\Email\Model\StorageFolderLocation**](StorageFolderLocation.md) | Storage folder location of account files | [optional] 
 
 

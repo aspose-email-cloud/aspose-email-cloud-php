@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="listEmailModelsRequest.php">
+ * <copyright company="Aspose" file="getEmailThreadRequest.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -29,41 +29,32 @@
 namespace Aspose\Email\Model\Requests;
 
 /**
- * Request model for listEmailModels" operation.
+ * Request model for getEmailThread" operation.
  */
-class ListEmailModelsRequest
+class GetEmailThreadRequest
 {
     /**
-     * Initializes a new instance of the ListEmailModelsRequest class.
+     * Initializes a new instance of the GetEmailThreadRequest class.
      *  
-     * @param string $folder A folder in email account
-     * @param string $query_string A MailQuery search string
+     * @param string $thread_id Thread identifier
      * @param string $first_account Email account
      * @param string $second_account Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)
      * @param string $storage Storage name where account file(s) located
      * @param string $storage_folder Folder in storage where account file(s) located
-     * @param bool $recursive Specifies that should message be searched in subfolders recursively
      */
-    public function __construct($folder, $query_string, $first_account, $second_account = null, $storage = null, $storage_folder = null, $recursive = null)             
+    public function __construct($thread_id, $first_account, $second_account = null, $storage = null, $storage_folder = null)             
     {
-        $this->folder = $folder;
-        $this->query_string = $query_string;
+        $this->thread_id = $thread_id;
         $this->first_account = $first_account;
         $this->second_account = $second_account;
         $this->storage = $storage;
         $this->storage_folder = $storage_folder;
-        $this->recursive = $recursive;
     }
 
     /**
-     * A folder in email account
+     * Thread identifier
      */
-    public $folder;
-	
-    /**
-     * A MailQuery search string
-     */
-    public $query_string;
+    public $thread_id;
 	
     /**
      * Email account
@@ -84,10 +75,5 @@ class ListEmailModelsRequest
      * Folder in storage where account file(s) located
      */
     public $storage_folder;
-	
-    /**
-     * Specifies that should message be searched in subfolders recursively
-     */
-    public $recursive;
 }
 ?>

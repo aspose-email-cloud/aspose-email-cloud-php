@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="DeleteFolderBaseRequest.php">
+ * <copyright company="Aspose" file="EmailThreadList.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,18 +26,18 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /**
- * DeleteFolderBaseRequest
+ * EmailThreadList
  */
 
 namespace Aspose\Email\Model;
 use \Aspose\Email\ObjectSerializer;
 
 /**
- * DeleteFolderBaseRequest
+ * EmailThreadList
  *
- * @description Delete folder request
+ * @description List of email threads
  */
-class DeleteFolderBaseRequest extends AccountBaseRequest 
+class EmailThreadList extends ListResponseOfEmailThread 
 {
     const DISCRIMINATOR = null;
 
@@ -46,7 +46,7 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
      *
      * @var string
      */
-    protected static $swaggerModelName = "DeleteFolderBaseRequest";
+    protected static $swaggerModelName = "EmailThreadList";
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -54,8 +54,7 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'folder' => 'string',
-        'delete_permanently' => 'bool'
+        
     ];
 
     /**
@@ -64,8 +63,7 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'folder' => null,
-        'delete_permanently' => null
+        
     ];
 
     /**
@@ -95,8 +93,7 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
      * @var string[]
      */
     protected static $attributeMap = [
-        'folder' => 'folder',
-        'delete_permanently' => 'deletePermanently'
+        
     ];
 
     /**
@@ -105,8 +102,7 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
      * @var string[]
      */
     protected static $setters = [
-        'folder' => 'setFolder',
-        'delete_permanently' => 'setDeletePermanently'
+        
     ];
 
     /**
@@ -115,8 +111,7 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
      * @var string[]
      */
     protected static $getters = [
-        'folder' => 'getFolder',
-        'delete_permanently' => 'getDeletePermanently'
+        
     ];
 
     /**
@@ -166,25 +161,15 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
 
 
     /**
-     * Initializes a new instance of the DeleteFolderBaseRequest class.
+     * Initializes a new instance of the EmailThreadList class.
      *  
-     * @param string $first_account First account storage file name
-     * @param string $second_account Additional email account (for example, FirstAccount could be IMAP, and second one could be SMTP)
-     * @param \Aspose\Email\Model\StorageFolderLocation $storage_folder Storage folder location of account files
-     * @param string $folder Folder name
-     * @param bool $delete_permanently Specifies that folder should be deleted permanently
+     * @param \Aspose\Email\Model\EmailThread[] $value 
      */
-    public function __construct($first_account = null, $second_account = null, $storage_folder = null, $folder = null, $delete_permanently = null)
+    public function __construct($value = null)
     {
         parent::__construct();
-        $this->container['folder'] = null;
-        $this->container['delete_permanently'] = null;
 
-        if ($first_account != null) $this->setFirstAccount($first_account);
-        if ($second_account != null) $this->setSecondAccount($second_account);
-        if ($storage_folder != null) $this->setStorageFolder($storage_folder);
-        if ($folder != null) $this->setFolder($folder);
-        if ($delete_permanently != null) $this->setDeletePermanently($delete_permanently);
+        if ($value != null) $this->setValue($value);
     }
 
     /**
@@ -196,16 +181,6 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
     {
         $invalidProperties = parent::listInvalidProperties();
 
-        if ($this->container['folder'] === null) {
-            $invalidProperties[] = "'folder' can't be null";
-        }
-        if ((strlen($this->container['folder']) < 1)) {
-            $invalidProperties[] = "invalid value for 'folder', the character length must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['delete_permanently'] === null) {
-            $invalidProperties[] = "'delete_permanently' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -221,71 +196,9 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
             return false;
         }
 
-        if ($this->container['folder'] === null) {
-            return false;
-        }
-        if (strlen($this->container['folder']) < 1) {
-            return false;
-        }
-        if ($this->container['delete_permanently'] === null) {
-            return false;
-        }
         return true;
     }
 
-
-    /**
-     * Gets folder
-     *
-     * @return string
-     */
-    public function getFolder()
-    {
-        return $this->container['folder'];
-    }
-
-    /**
-     * Sets folder
-     *
-     * @param string $folder Folder name
-     *
-     * @return $this
-     */
-    public function setFolder($folder)
-    {
-
-        if ((strlen($folder) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $folder when calling DeleteFolderBaseRequest., must be bigger than or equal to 1.');
-        }
-
-        $this->container['folder'] = $folder;
-
-        return $this;
-    }
-
-    /**
-     * Gets delete_permanently
-     *
-     * @return bool
-     */
-    public function getDeletePermanently()
-    {
-        return $this->container['delete_permanently'];
-    }
-
-    /**
-     * Sets delete_permanently
-     *
-     * @param bool $delete_permanently Specifies that folder should be deleted permanently
-     *
-     * @return $this
-     */
-    public function setDeletePermanently($delete_permanently)
-    {
-        $this->container['delete_permanently'] = $delete_permanently;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

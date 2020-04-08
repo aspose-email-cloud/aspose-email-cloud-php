@@ -72,6 +72,7 @@ Method | HTTP request | Description
 [**getEmailModel**](EmailApi.md#getEmailModel) | **GET** /email/model/{format}/{name} | Get email document.
 [**getEmailModelList**](EmailApi.md#getEmailModelList) | **GET** /email/model/{format} | Get email list from storage folder.
 [**getEmailProperty**](EmailApi.md#getEmailProperty) | **GET** /email/{fileName}/properties/{propertyName} | Get an email document property by its name
+[**getEmailThread**](EmailApi.md#getEmailThread) | **GET** /email/client/threads/{threadId} | Get message thread by id. All messages are fully fetched. For accounts with CacheFile only cached messages will be returned.
 [**getFileVersions**](EmailApi.md#getFileVersions) | **GET** /email/storage/version/{path} | Get file versions
 [**getFilesList**](EmailApi.md#getFilesList) | **GET** /email/storage/folder/{path} | Get all files and folders within a folder
 [**getMapiAttachment**](EmailApi.md#getMapiAttachment) | **GET** /email/Mapi/{name}/attachments/{attachment} | Get document attachment as file stream
@@ -82,6 +83,7 @@ Method | HTTP request | Description
 [**listEmailFolders**](EmailApi.md#listEmailFolders) | **GET** /email/client/ListFolders | Get folders list in email account
 [**listEmailMessages**](EmailApi.md#listEmailMessages) | **GET** /email/client/ListMessages | Get messages from folder, filtered by query
 [**listEmailModels**](EmailApi.md#listEmailModels) | **GET** /email/client/ListMessagesModel | Get messages from folder, filtered by query
+[**listEmailThreads**](EmailApi.md#listEmailThreads) | **GET** /email/client/threads | Get message threads from folder. All messages are partly fetched (without email body and other fields)
 [**moveFile**](EmailApi.md#moveFile) | **PUT** /email/storage/file/move/{srcPath} | Move file
 [**moveFolder**](EmailApi.md#moveFolder) | **PUT** /email/storage/folder/move/{srcPath} | Move folder
 [**objectExists**](EmailApi.md#objectExists) | **GET** /email/storage/exist/{path} | Check if file or folder exists
@@ -1341,7 +1343,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **message_id** | **string**| Message identifier |
  **first_account** | **string**| Email account |
- **second_account** | **string**| Additional email account (should be specified for POP/IMAP accounts and should be SMTP account) | [optional]
+ **second_account** | **string**| Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP) | [optional]
  **storage** | **string**| Storage name where account file(s) located | [optional]
  **storage_folder** | **string**| Folder in storage where account file(s) located | [optional]
 
@@ -1372,7 +1374,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **message_id** | **string**| Message identifier |
  **first_account** | **string**| Email account |
- **second_account** | **string**| Additional email account (should be specified for POP/IMAP accounts and should be SMTP account) | [optional]
+ **second_account** | **string**| Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP) | [optional]
  **storage** | **string**| Storage name where account file(s) located | [optional]
  **storage_folder** | **string**| Folder in storage where account file(s) located | [optional]
 
@@ -1952,6 +1954,37 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+# **getEmailThread**
+```php
+function \Aspose\Email\Model\EmailThread getEmailThread(Requests\GetEmailThreadRequest $request)
+```
+Get message thread by id. All messages are fully fetched. For accounts with CacheFile only cached messages will be returned.
+
+### Return type
+
+[**\Aspose\Email\Model\EmailThread**](EmailThread.md)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\GetEmailThreadRequest(
+    $thread_id,
+    $first_account,
+    $second_account,
+    $storage,
+    $storage_folder)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **thread_id** | **string**| Thread identifier |
+ **first_account** | **string**| Email account |
+ **second_account** | **string**| Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP) | [optional]
+ **storage** | **string**| Storage name where account file(s) located | [optional]
+ **storage_folder** | **string**| Folder in storage where account file(s) located | [optional]
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 # **getFileVersions**
 ```php
 function \Aspose\Email\Model\FileVersions getFileVersions(Requests\GetFileVersionsRequest $request)
@@ -2161,7 +2194,7 @@ new Aspose\Email\Model\Requests\ListEmailFoldersRequest(
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **first_account** | **string**| Email account |
- **second_account** | **string**| Additional email account (should be specified for POP/IMAP accounts and should be SMTP account) | [optional]
+ **second_account** | **string**| Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP) | [optional]
  **storage** | **string**| Storage name where account file(s) located | [optional]
  **storage_folder** | **string**| Folder in storage where account file(s) located | [optional]
  **parent_folder** | **string**| Folder in which subfolders should be listed | [optional]
@@ -2198,7 +2231,7 @@ Name | Type | Description  | Notes
  **folder** | **string**| A folder in email account |
  **query_string** | **string**| A MailQuery search string |
  **first_account** | **string**| Email account |
- **second_account** | **string**| Additional email account (should be specified for POP/IMAP accounts and should be SMTP account) | [optional]
+ **second_account** | **string**| Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP) | [optional]
  **storage** | **string**| Storage name where account file(s) located | [optional]
  **storage_folder** | **string**| Folder in storage where account file(s) located | [optional]
  **recursive** | **bool**| Specifies that should message be searched in subfolders recursively | [optional] [default to false]
@@ -2235,10 +2268,43 @@ Name | Type | Description  | Notes
  **folder** | **string**| A folder in email account |
  **query_string** | **string**| A MailQuery search string |
  **first_account** | **string**| Email account |
- **second_account** | **string**| Additional email account (should be specified for POP/IMAP accounts and should be SMTP account) | [optional]
+ **second_account** | **string**| Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP) | [optional]
  **storage** | **string**| Storage name where account file(s) located | [optional]
  **storage_folder** | **string**| Folder in storage where account file(s) located | [optional]
  **recursive** | **bool**| Specifies that should message be searched in subfolders recursively | [optional] [default to false]
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **listEmailThreads**
+```php
+function \Aspose\Email\Model\EmailThreadList listEmailThreads(Requests\ListEmailThreadsRequest $request)
+```
+Get message threads from folder. All messages are partly fetched (without email body and other fields)
+
+### Return type
+
+[**\Aspose\Email\Model\EmailThreadList**](EmailThreadList.md)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\ListEmailThreadsRequest(
+    $folder,
+    $first_account,
+    $second_account,
+    $storage,
+    $storage_folder,
+    $update_folder_cache)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **folder** | **string**| A folder in email account |
+ **first_account** | **string**| Email account |
+ **second_account** | **string**| Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP) | [optional]
+ **storage** | **string**| Storage name where account file(s) located | [optional]
+ **storage_folder** | **string**| Folder in storage where account file(s) located | [optional]
+ **update_folder_cache** | **bool**| This parameter is only used in accounts with CacheFile. If true - get new messages and update threads cache for given folder. If false, get only threads from cache without any calls to an email account | [optional] [default to true]
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 

@@ -72,6 +72,7 @@ Class | Method | HTTP request | Description
 *EmailApi* | [**getEmailModel**](EmailApi.md#getemailmodel) | **GET** /email/model/{format}/{name} | Get email document.
 *EmailApi* | [**getEmailModelList**](EmailApi.md#getemailmodellist) | **GET** /email/model/{format} | Get email list from storage folder.
 *EmailApi* | [**getEmailProperty**](EmailApi.md#getemailproperty) | **GET** /email/{fileName}/properties/{propertyName} | Get an email document property by its name
+*EmailApi* | [**getEmailThread**](EmailApi.md#getemailthread) | **GET** /email/client/threads/{threadId} | Get message thread by id. All messages are fully fetched. For accounts with CacheFile only cached messages will be returned.
 *EmailApi* | [**getFileVersions**](EmailApi.md#getfileversions) | **GET** /email/storage/version/{path} | Get file versions
 *EmailApi* | [**getFilesList**](EmailApi.md#getfileslist) | **GET** /email/storage/folder/{path} | Get all files and folders within a folder
 *EmailApi* | [**getMapiAttachment**](EmailApi.md#getmapiattachment) | **GET** /email/Mapi/{name}/attachments/{attachment} | Get document attachment as file stream
@@ -82,6 +83,7 @@ Class | Method | HTTP request | Description
 *EmailApi* | [**listEmailFolders**](EmailApi.md#listemailfolders) | **GET** /email/client/ListFolders | Get folders list in email account
 *EmailApi* | [**listEmailMessages**](EmailApi.md#listemailmessages) | **GET** /email/client/ListMessages | Get messages from folder, filtered by query
 *EmailApi* | [**listEmailModels**](EmailApi.md#listemailmodels) | **GET** /email/client/ListMessagesModel | Get messages from folder, filtered by query
+*EmailApi* | [**listEmailThreads**](EmailApi.md#listemailthreads) | **GET** /email/client/threads | Get message threads from folder. All messages are partly fetched (without email body and other fields)
 *EmailApi* | [**moveFile**](EmailApi.md#movefile) | **PUT** /email/storage/file/move/{srcPath} | Move file
 *EmailApi* | [**moveFolder**](EmailApi.md#movefolder) | **PUT** /email/storage/folder/move/{srcPath} | Move folder
 *EmailApi* | [**objectExists**](EmailApi.md#objectexists) | **GET** /email/storage/exist/{path} | Check if file or folder exists
@@ -150,6 +152,7 @@ Class | Method | HTTP request | Description
  - [EmailProperties](EmailProperties.md)
  - [EmailProperty](EmailProperty.md)
  - [EmailPropertyResponse](EmailPropertyResponse.md)
+ - [EmailThread](EmailThread.md)
  - [EnumWithCustomOfAssociatedPersonCategory](EnumWithCustomOfAssociatedPersonCategory.md)
  - [EnumWithCustomOfEmailAddressCategory](EnumWithCustomOfEmailAddressCategory.md)
  - [EnumWithCustomOfEventCategory](EnumWithCustomOfEventCategory.md)
@@ -173,6 +176,7 @@ Class | Method | HTTP request | Description
  - [ListResponseOfContactDto](ListResponseOfContactDto.md)
  - [ListResponseOfEmailAccountConfig](ListResponseOfEmailAccountConfig.md)
  - [ListResponseOfEmailDto](ListResponseOfEmailDto.md)
+ - [ListResponseOfEmailThread](ListResponseOfEmailThread.md)
  - [ListResponseOfHierarchicalObject](ListResponseOfHierarchicalObject.md)
  - [ListResponseOfHierarchicalObjectResponse](ListResponseOfHierarchicalObjectResponse.md)
  - [ListResponseOfMailServerFolder](ListResponseOfMailServerFolder.md)
@@ -225,6 +229,7 @@ Class | Method | HTTP request | Description
  - [EmailClientAccountOauthCredentials](EmailClientAccountOauthCredentials.md)
  - [EmailClientAccountPasswordCredentials](EmailClientAccountPasswordCredentials.md)
  - [EmailDtoList](EmailDtoList.md)
+ - [EmailThreadList](EmailThreadList.md)
  - [FileVersion](FileVersion.md)
  - [HierarchicalObject](HierarchicalObject.md)
  - [IndexedHierarchicalObject](IndexedHierarchicalObject.md)

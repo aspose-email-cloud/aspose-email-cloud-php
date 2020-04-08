@@ -38,7 +38,7 @@ class FetchEmailMessageRequest
      *  
      * @param string $message_id Message identifier
      * @param string $first_account Email account
-     * @param string $second_account Additional email account (should be specified for POP/IMAP accounts and should be SMTP account)
+     * @param string $second_account Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)
      * @param string $storage Storage name where account file(s) located
      * @param string $storage_folder Folder in storage where account file(s) located
      */
@@ -62,7 +62,7 @@ class FetchEmailMessageRequest
     public $first_account;
 	
     /**
-     * Additional email account (should be specified for POP/IMAP accounts and should be SMTP account)
+     * Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)
      */
     public $second_account;
 	

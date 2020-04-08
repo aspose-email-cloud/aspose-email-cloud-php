@@ -35,7 +35,7 @@ use \Aspose\Email\ObjectSerializer;
 /**
  * EmailDtoList
  *
- * @description List of email documents
+ * @description List of email documents from storage
  */
 class EmailDtoList extends ListResponseOfStorageModelOfEmailDto 
 {

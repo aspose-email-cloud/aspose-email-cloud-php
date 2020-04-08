@@ -39,7 +39,7 @@ class ListEmailMessagesRequest
      * @param string $folder A folder in email account
      * @param string $query_string A MailQuery search string
      * @param string $first_account Email account
-     * @param string $second_account Additional email account (should be specified for POP/IMAP accounts and should be SMTP account)
+     * @param string $second_account Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)
      * @param string $storage Storage name where account file(s) located
      * @param string $storage_folder Folder in storage where account file(s) located
      * @param bool $recursive Specifies that should message be searched in subfolders recursively
@@ -71,7 +71,7 @@ class ListEmailMessagesRequest
     public $first_account;
 	
     /**
-     * Additional email account (should be specified for POP/IMAP accounts and should be SMTP account)
+     * Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)
      */
     public $second_account;
 	

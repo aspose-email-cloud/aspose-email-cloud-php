@@ -163,8 +163,8 @@ class SendEmailMimeBaseRequest extends AccountBaseRequest
     /**
      * Initializes a new instance of the SendEmailMimeBaseRequest class.
      *  
-     * @param string $first_account First account storage file name for receiving emails (or universal one)
-     * @param string $second_account Second account storage file name for sending emails (ignored if first is universal)
+     * @param string $first_account First account storage file name
+     * @param string $second_account Additional email account (for example, FirstAccount could be IMAP, and second one could be SMTP)
      * @param \Aspose\Email\Model\StorageFolderLocation $storage_folder Storage folder location of account files
      * @param string $base64_mime_message Email document serialized as MIME
      */

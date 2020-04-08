@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="DeleteFolderBaseRequest.php">
+ * <copyright company="Aspose" file="ListResponseOfEmailThread.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,27 +26,28 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /**
- * DeleteFolderBaseRequest
+ * ListResponseOfEmailThread
  */
 
 namespace Aspose\Email\Model;
+
+use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
 /**
- * DeleteFolderBaseRequest
+ * ListResponseOfEmailThread
  *
- * @description Delete folder request
  */
-class DeleteFolderBaseRequest extends AccountBaseRequest 
+class ListResponseOfEmailThread implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    const DISCRIMINATOR = 'Type';
 
     /**
      * The original name of the model.
      *
      * @var string
      */
-    protected static $swaggerModelName = "DeleteFolderBaseRequest";
+    protected static $swaggerModelName = "ListResponseOfEmailThread";
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -54,8 +55,7 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'folder' => 'string',
-        'delete_permanently' => 'bool'
+        'value' => '\Aspose\Email\Model\EmailThread[]'
     ];
 
     /**
@@ -64,8 +64,7 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'folder' => null,
-        'delete_permanently' => null
+        'value' => null
     ];
 
     /**
@@ -75,7 +74,7 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes + parent::swaggerTypes();
+        return self::$swaggerTypes;
     }
 
     /**
@@ -85,7 +84,7 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats + parent::swaggerFormats();
+        return self::$swaggerFormats;
     }
 
     /**
@@ -95,8 +94,7 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
      * @var string[]
      */
     protected static $attributeMap = [
-        'folder' => 'folder',
-        'delete_permanently' => 'deletePermanently'
+        'value' => 'value'
     ];
 
     /**
@@ -105,8 +103,7 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
      * @var string[]
      */
     protected static $setters = [
-        'folder' => 'setFolder',
-        'delete_permanently' => 'setDeletePermanently'
+        'value' => 'setValue'
     ];
 
     /**
@@ -115,8 +112,7 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
      * @var string[]
      */
     protected static $getters = [
-        'folder' => 'getFolder',
-        'delete_permanently' => 'getDeletePermanently'
+        'value' => 'getValue'
     ];
 
     /**
@@ -127,7 +123,7 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
      */
     public static function attributeMap()
     {
-        return parent::attributeMap() + self::$attributeMap;
+        return self::$attributeMap;
     }
 
     /**
@@ -137,7 +133,7 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
      */
     public static function setters()
     {
-        return parent::setters() + self::$setters;
+        return self::$setters;
     }
 
     /**
@@ -147,7 +143,7 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
      */
     public static function getters()
     {
-        return parent::getters() + self::$getters;
+        return self::$getters;
     }
 
     /**
@@ -164,27 +160,27 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
 
     
 
+    /**
+     * Associative array for storing property values
+     *
+     * @var mixed[]
+     */
+    protected $container = [];
 
     /**
-     * Initializes a new instance of the DeleteFolderBaseRequest class.
+     * Initializes a new instance of the ListResponseOfEmailThread class.
      *  
-     * @param string $first_account First account storage file name
-     * @param string $second_account Additional email account (for example, FirstAccount could be IMAP, and second one could be SMTP)
-     * @param \Aspose\Email\Model\StorageFolderLocation $storage_folder Storage folder location of account files
-     * @param string $folder Folder name
-     * @param bool $delete_permanently Specifies that folder should be deleted permanently
+     * @param \Aspose\Email\Model\EmailThread[] $value 
      */
-    public function __construct($first_account = null, $second_account = null, $storage_folder = null, $folder = null, $delete_permanently = null)
+    public function __construct($value = null)
     {
-        parent::__construct();
-        $this->container['folder'] = null;
-        $this->container['delete_permanently'] = null;
+        $this->container['value'] = null;
 
-        if ($first_account != null) $this->setFirstAccount($first_account);
-        if ($second_account != null) $this->setSecondAccount($second_account);
-        if ($storage_folder != null) $this->setStorageFolder($storage_folder);
-        if ($folder != null) $this->setFolder($folder);
-        if ($delete_permanently != null) $this->setDeletePermanently($delete_permanently);
+        if ($value != null) $this->setValue($value);
+
+        // Initialize discriminator property with the model name.
+        $discriminator = array_search('Type', self::$attributeMap);
+        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /**
@@ -194,18 +190,8 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = parent::listInvalidProperties();
+        $invalidProperties = [];
 
-        if ($this->container['folder'] === null) {
-            $invalidProperties[] = "'folder' can't be null";
-        }
-        if ((strlen($this->container['folder']) < 1)) {
-            $invalidProperties[] = "invalid value for 'folder', the character length must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['delete_permanently'] === null) {
-            $invalidProperties[] = "'delete_permanently' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -217,72 +203,31 @@ class DeleteFolderBaseRequest extends AccountBaseRequest
      */
     public function valid()
     {
-        if (!parent::valid()) {
-            return false;
-        }
 
-        if ($this->container['folder'] === null) {
-            return false;
-        }
-        if (strlen($this->container['folder']) < 1) {
-            return false;
-        }
-        if ($this->container['delete_permanently'] === null) {
-            return false;
-        }
         return true;
     }
 
 
     /**
-     * Gets folder
+     * Gets value
      *
-     * @return string
+     * @return \Aspose\Email\Model\EmailThread[]
      */
-    public function getFolder()
+    public function getValue()
     {
-        return $this->container['folder'];
+        return $this->container['value'];
     }
 
     /**
-     * Sets folder
+     * Sets value
      *
-     * @param string $folder Folder name
+     * @param \Aspose\Email\Model\EmailThread[] $value value
      *
      * @return $this
      */
-    public function setFolder($folder)
+    public function setValue($value)
     {
-
-        if ((strlen($folder) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $folder when calling DeleteFolderBaseRequest., must be bigger than or equal to 1.');
-        }
-
-        $this->container['folder'] = $folder;
-
-        return $this;
-    }
-
-    /**
-     * Gets delete_permanently
-     *
-     * @return bool
-     */
-    public function getDeletePermanently()
-    {
-        return $this->container['delete_permanently'];
-    }
-
-    /**
-     * Sets delete_permanently
-     *
-     * @param bool $delete_permanently Specifies that folder should be deleted permanently
-     *
-     * @return $this
-     */
-    public function setDeletePermanently($delete_permanently)
-    {
-        $this->container['delete_permanently'] = $delete_permanently;
+        $this->container['value'] = $value;
 
         return $this;
     }

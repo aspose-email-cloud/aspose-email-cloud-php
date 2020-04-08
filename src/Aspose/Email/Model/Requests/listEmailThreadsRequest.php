@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="listEmailModelsRequest.php">
+ * <copyright company="Aspose" file="listEmailThreadsRequest.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -29,41 +29,34 @@
 namespace Aspose\Email\Model\Requests;
 
 /**
- * Request model for listEmailModels" operation.
+ * Request model for listEmailThreads" operation.
  */
-class ListEmailModelsRequest
+class ListEmailThreadsRequest
 {
     /**
-     * Initializes a new instance of the ListEmailModelsRequest class.
+     * Initializes a new instance of the ListEmailThreadsRequest class.
      *  
      * @param string $folder A folder in email account
-     * @param string $query_string A MailQuery search string
      * @param string $first_account Email account
      * @param string $second_account Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)
      * @param string $storage Storage name where account file(s) located
      * @param string $storage_folder Folder in storage where account file(s) located
-     * @param bool $recursive Specifies that should message be searched in subfolders recursively
+     * @param bool $update_folder_cache This parameter is only used in accounts with CacheFile. If true - get new messages and update threads cache for given folder. If false, get only threads from cache without any calls to an email account
      */
-    public function __construct($folder, $query_string, $first_account, $second_account = null, $storage = null, $storage_folder = null, $recursive = null)             
+    public function __construct($folder, $first_account, $second_account = null, $storage = null, $storage_folder = null, $update_folder_cache = null)             
     {
         $this->folder = $folder;
-        $this->query_string = $query_string;
         $this->first_account = $first_account;
         $this->second_account = $second_account;
         $this->storage = $storage;
         $this->storage_folder = $storage_folder;
-        $this->recursive = $recursive;
+        $this->update_folder_cache = $update_folder_cache;
     }
 
     /**
      * A folder in email account
      */
     public $folder;
-	
-    /**
-     * A MailQuery search string
-     */
-    public $query_string;
 	
     /**
      * Email account
@@ -86,8 +79,8 @@ class ListEmailModelsRequest
     public $storage_folder;
 	
     /**
-     * Specifies that should message be searched in subfolders recursively
+     * This parameter is only used in accounts with CacheFile. If true - get new messages and update threads cache for given folder. If false, get only threads from cache without any calls to an email account
      */
-    public $recursive;
+    public $update_folder_cache;
 }
 ?>
