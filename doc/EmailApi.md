@@ -42,6 +42,7 @@ Method | HTTP request | Description
 [**deleteContactProperty**](EmailApi.md#deleteContactProperty) | **DELETE** /email/Contact/{format}/{name}/properties/{memberName}/{index} | Delete property from indexed property list
 [**deleteEmailFolder**](EmailApi.md#deleteEmailFolder) | **DELETE** /email/client/DeleteFolder | Delete a folder in email account
 [**deleteEmailMessage**](EmailApi.md#deleteEmailMessage) | **DELETE** /email/client/DeleteMessage | Delete message from email account by id
+[**deleteEmailThread**](EmailApi.md#deleteEmailThread) | **DELETE** /email/client/threads/{threadId} | Delete thread by id. All messages from thread will also be deleted
 [**deleteFile**](EmailApi.md#deleteFile) | **DELETE** /email/storage/file/{path} | Delete file
 [**deleteFolder**](EmailApi.md#deleteFolder) | **DELETE** /email/storage/folder/{path} | Delete folder
 [**deleteMapiAttachment**](EmailApi.md#deleteMapiAttachment) | **DELETE** /email/Mapi/{name}/attachments/{attachment} | Remove attachment from document
@@ -99,6 +100,7 @@ Method | HTTP request | Description
 [**sendEmailModel**](EmailApi.md#sendEmailModel) | **POST** /email/client/SendModel | Send an email specified by model in request
 [**setEmailProperty**](EmailApi.md#setEmailProperty) | **PUT** /email/{fileName}/properties/{propertyName} | Set email document property value
 [**setEmailReadFlag**](EmailApi.md#setEmailReadFlag) | **POST** /email/client/SetReadFlag | Sets \&quot;Message is read\&quot; flag
+[**setEmailThreadReadFlag**](EmailApi.md#setEmailThreadReadFlag) | **PUT** /email/client/threads/{threadId}/read-flag | Mar all messages in thread as read or unread
 [**storageExists**](EmailApi.md#storageExists) | **GET** /email/storage/{storageName}/exist | Check if storage exists
 [**updateCalendarProperties**](EmailApi.md#updateCalendarProperties) | **PUT** /email/Calendar/{name}/properties | Update calendar file properties
 [**updateContactProperties**](EmailApi.md#updateContactProperties) | **PUT** /email/Contact/{format}/{name}/properties | Update contact document properties
@@ -1111,6 +1113,31 @@ new Aspose\Email\Model\Requests\DeleteEmailMessageRequest(
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **request** | [**\Aspose\Email\Model\DeleteMessageBaseRequest**](DeleteMessageBaseRequest.md)| Delete message request |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **deleteEmailThread**
+```php
+function deleteEmailThread(Requests\DeleteEmailThreadRequest $request)
+```
+Delete thread by id. All messages from thread will also be deleted
+
+### Return type
+
+void (empty response body)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\DeleteEmailThreadRequest(
+    $thread_id,
+    $request)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **thread_id** | **string**| Thread id |
+ **request** | [**\Aspose\Email\Model\DeleteEmailThreadAccountRq**](DeleteEmailThreadAccountRq.md)| Email account specifier |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -2254,8 +2281,8 @@ The query string should have the following view.      The example of a simple ex
 ```php
 new Aspose\Email\Model\Requests\ListEmailModelsRequest(
     $folder,
-    $query_string,
     $first_account,
+    $query_string,
     $second_account,
     $storage,
     $storage_folder,
@@ -2266,8 +2293,8 @@ new Aspose\Email\Model\Requests\ListEmailModelsRequest(
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **folder** | **string**| A folder in email account |
- **query_string** | **string**| A MailQuery search string |
  **first_account** | **string**| Email account |
+ **query_string** | **string**| A MailQuery search string | [optional]
  **second_account** | **string**| Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP) | [optional]
  **storage** | **string**| Storage name where account file(s) located | [optional]
  **storage_folder** | **string**| Folder in storage where account file(s) located | [optional]
@@ -2293,7 +2320,8 @@ new Aspose\Email\Model\Requests\ListEmailThreadsRequest(
     $second_account,
     $storage,
     $storage_folder,
-    $update_folder_cache)
+    $update_folder_cache,
+    $messages_cache_limit)
 ```
 
 
@@ -2305,6 +2333,7 @@ Name | Type | Description  | Notes
  **storage** | **string**| Storage name where account file(s) located | [optional]
  **storage_folder** | **string**| Folder in storage where account file(s) located | [optional]
  **update_folder_cache** | **bool**| This parameter is only used in accounts with CacheFile. If true - get new messages and update threads cache for given folder. If false, get only threads from cache without any calls to an email account | [optional] [default to true]
+ **messages_cache_limit** | **int**| Limit messages cache size if CacheFile is used. Ignored in accounts without limits support | [optional] [default to 200]
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -2682,6 +2711,31 @@ new Aspose\Email\Model\Requests\SetEmailReadFlagRequest(
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **request** | [**\Aspose\Email\Model\SetMessageReadFlagAccountBaseRequest**](SetMessageReadFlagAccountBaseRequest.md)| Message is read request |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **setEmailThreadReadFlag**
+```php
+function setEmailThreadReadFlag(Requests\SetEmailThreadReadFlagRequest $request)
+```
+Mar all messages in thread as read or unread
+
+### Return type
+
+void (empty response body)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\SetEmailThreadReadFlagRequest(
+    $thread_id,
+    $request)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **thread_id** | **string**| Thread id |
+ **request** | [**\Aspose\Email\Model\EmailThreadReadFlagRq**](EmailThreadReadFlagRq.md)| Email account specifier and IsRead flag |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 

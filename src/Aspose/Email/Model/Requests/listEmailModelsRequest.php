@@ -37,18 +37,18 @@ class ListEmailModelsRequest
      * Initializes a new instance of the ListEmailModelsRequest class.
      *  
      * @param string $folder A folder in email account
-     * @param string $query_string A MailQuery search string
      * @param string $first_account Email account
+     * @param string $query_string A MailQuery search string
      * @param string $second_account Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)
      * @param string $storage Storage name where account file(s) located
      * @param string $storage_folder Folder in storage where account file(s) located
      * @param bool $recursive Specifies that should message be searched in subfolders recursively
      */
-    public function __construct($folder, $query_string, $first_account, $second_account = null, $storage = null, $storage_folder = null, $recursive = null)             
+    public function __construct($folder, $first_account, $query_string = null, $second_account = null, $storage = null, $storage_folder = null, $recursive = null)             
     {
         $this->folder = $folder;
-        $this->query_string = $query_string;
         $this->first_account = $first_account;
+        $this->query_string = $query_string;
         $this->second_account = $second_account;
         $this->storage = $storage;
         $this->storage_folder = $storage_folder;
@@ -61,14 +61,14 @@ class ListEmailModelsRequest
     public $folder;
 	
     /**
-     * A MailQuery search string
-     */
-    public $query_string;
-	
-    /**
      * Email account
      */
     public $first_account;
+	
+    /**
+     * A MailQuery search string
+     */
+    public $query_string;
 	
     /**
      * Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)

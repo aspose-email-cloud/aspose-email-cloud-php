@@ -42,6 +42,7 @@ Class | Method | HTTP request | Description
 *EmailApi* | [**deleteContactProperty**](EmailApi.md#deletecontactproperty) | **DELETE** /email/Contact/{format}/{name}/properties/{memberName}/{index} | Delete property from indexed property list
 *EmailApi* | [**deleteEmailFolder**](EmailApi.md#deleteemailfolder) | **DELETE** /email/client/DeleteFolder | Delete a folder in email account
 *EmailApi* | [**deleteEmailMessage**](EmailApi.md#deleteemailmessage) | **DELETE** /email/client/DeleteMessage | Delete message from email account by id
+*EmailApi* | [**deleteEmailThread**](EmailApi.md#deleteemailthread) | **DELETE** /email/client/threads/{threadId} | Delete thread by id. All messages from thread will also be deleted
 *EmailApi* | [**deleteFile**](EmailApi.md#deletefile) | **DELETE** /email/storage/file/{path} | Delete file
 *EmailApi* | [**deleteFolder**](EmailApi.md#deletefolder) | **DELETE** /email/storage/folder/{path} | Delete folder
 *EmailApi* | [**deleteMapiAttachment**](EmailApi.md#deletemapiattachment) | **DELETE** /email/Mapi/{name}/attachments/{attachment} | Remove attachment from document
@@ -99,6 +100,7 @@ Class | Method | HTTP request | Description
 *EmailApi* | [**sendEmailModel**](EmailApi.md#sendemailmodel) | **POST** /email/client/SendModel | Send an email specified by model in request
 *EmailApi* | [**setEmailProperty**](EmailApi.md#setemailproperty) | **PUT** /email/{fileName}/properties/{propertyName} | Set email document property value
 *EmailApi* | [**setEmailReadFlag**](EmailApi.md#setemailreadflag) | **POST** /email/client/SetReadFlag | Sets \&quot;Message is read\&quot; flag
+*EmailApi* | [**setEmailThreadReadFlag**](EmailApi.md#setemailthreadreadflag) | **PUT** /email/client/threads/{threadId}/read-flag | Mar all messages in thread as read or unread
 *EmailApi* | [**storageExists**](EmailApi.md#storageexists) | **GET** /email/storage/{storageName}/exist | Check if storage exists
 *EmailApi* | [**updateCalendarProperties**](EmailApi.md#updatecalendarproperties) | **PUT** /email/Calendar/{name}/properties | Update calendar file properties
 *EmailApi* | [**updateContactProperties**](EmailApi.md#updatecontactproperties) | **PUT** /email/Contact/{format}/{name}/properties | Update contact document properties
@@ -221,6 +223,7 @@ Class | Method | HTTP request | Description
  - [CalendarDtoList](CalendarDtoList.md)
  - [ContactDtoList](ContactDtoList.md)
  - [CreateFolderBaseRequest](CreateFolderBaseRequest.md)
+ - [DeleteEmailThreadAccountRq](DeleteEmailThreadAccountRq.md)
  - [DeleteFolderBaseRequest](DeleteFolderBaseRequest.md)
  - [DeleteMessageBaseRequest](DeleteMessageBaseRequest.md)
  - [DiscoverEmailConfigOauth](DiscoverEmailConfigOauth.md)
@@ -230,6 +233,7 @@ Class | Method | HTTP request | Description
  - [EmailClientAccountPasswordCredentials](EmailClientAccountPasswordCredentials.md)
  - [EmailDtoList](EmailDtoList.md)
  - [EmailThreadList](EmailThreadList.md)
+ - [EmailThreadReadFlagRq](EmailThreadReadFlagRq.md)
  - [FileVersion](FileVersion.md)
  - [HierarchicalObject](HierarchicalObject.md)
  - [IndexedHierarchicalObject](IndexedHierarchicalObject.md)

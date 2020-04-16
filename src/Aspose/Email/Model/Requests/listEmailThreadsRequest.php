@@ -42,8 +42,9 @@ class ListEmailThreadsRequest
      * @param string $storage Storage name where account file(s) located
      * @param string $storage_folder Folder in storage where account file(s) located
      * @param bool $update_folder_cache This parameter is only used in accounts with CacheFile. If true - get new messages and update threads cache for given folder. If false, get only threads from cache without any calls to an email account
+     * @param int $messages_cache_limit Limit messages cache size if CacheFile is used. Ignored in accounts without limits support
      */
-    public function __construct($folder, $first_account, $second_account = null, $storage = null, $storage_folder = null, $update_folder_cache = null)             
+    public function __construct($folder, $first_account, $second_account = null, $storage = null, $storage_folder = null, $update_folder_cache = null, $messages_cache_limit = null)             
     {
         $this->folder = $folder;
         $this->first_account = $first_account;
@@ -51,6 +52,7 @@ class ListEmailThreadsRequest
         $this->storage = $storage;
         $this->storage_folder = $storage_folder;
         $this->update_folder_cache = $update_folder_cache;
+        $this->messages_cache_limit = $messages_cache_limit;
     }
 
     /**
@@ -82,5 +84,10 @@ class ListEmailThreadsRequest
      * This parameter is only used in accounts with CacheFile. If true - get new messages and update threads cache for given folder. If false, get only threads from cache without any calls to an email account
      */
     public $update_folder_cache;
+	
+    /**
+     * Limit messages cache size if CacheFile is used. Ignored in accounts without limits support
+     */
+    public $messages_cache_limit;
 }
 ?>
