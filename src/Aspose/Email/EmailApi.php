@@ -13352,6 +13352,16 @@ class EmailApi
             }
         }
         // query params
+        if ($request->folder !== null) {
+            $localName = lcfirst('folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if ($request->storage !== null) {
             $localName = lcfirst('storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
@@ -13670,6 +13680,16 @@ class EmailApi
         if ($request->second_account !== null) {
             $localName = lcfirst('secondAccount');
             $localValue = is_bool($request->second_account) ? ($request->second_account ? 'true' : 'false') : $request->second_account;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->folder !== null) {
+            $localName = lcfirst('folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -23638,6 +23658,487 @@ class EmailApi
     }
 
     /**
+     * Operation moveEmailMessage
+     *
+     * Move message to another folder
+     *
+     * @param Requests\MoveEmailMessageRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function moveEmailMessage(Requests\MoveEmailMessageRequest $request)
+    {
+        try {
+             $this->moveEmailMessageWithHttpInfo($request);
+        }
+        catch(RepeatRequestException $e) {
+             $this->moveEmailMessageWithHttpInfo($request);
+        } 
+    }
+
+    /**
+     * Operation moveEmailMessageWithHttpInfo
+     *
+     * Move message to another folder
+     *
+     * @param Requests\MoveEmailMessageRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function moveEmailMessageWithHttpInfo(Requests\MoveEmailMessageRequest $request)
+    {
+        $returnType = '';
+        $request = $this->moveEmailMessageRequest($request);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null);
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                if ($statusCode === 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                }
+          
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation moveEmailMessageAsync
+     *
+     * Move message to another folder
+     *
+     * @param Requests\MoveEmailMessageRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function moveEmailMessageAsync(Requests\MoveEmailMessageRequest $request) 
+    {
+        return $this->moveEmailMessageAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation moveEmailMessageAsyncWithHttpInfo
+     *
+     * Move message to another folder
+     *
+     * @param Requests\MoveEmailMessageRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function moveEmailMessageAsyncWithHttpInfo(Requests\MoveEmailMessageRequest $request) 
+    {
+        $returnType = '';
+        $request = $this->moveEmailMessageRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+          
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    }
+          
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'moveEmailMessage'
+     *
+     * @param Requests\MoveEmailMessageRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function moveEmailMessageRequest(Requests\MoveEmailMessageRequest $request)
+    {
+        // verify the required parameter 'request' is set
+        if ($request->request === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $request when calling moveEmailMessage');
+        }
+
+        $resourcePath = '/email/client/move';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $multipart = false;
+    
+
+    
+    
+        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
+        $formFiles = [];
+        // body params
+        $_tempBody = null;
+        if (isset($request->request)) {
+            if (is_string($request->request)) {
+                $_tempBody = "\"" . $request->request . "\"";   
+            } else {
+                $_tempBody = $request->request;
+            }
+        }
+
+        if ($multipart) {
+            $headers= $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContent = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = $formParams["data"];
+            }
+        }
+    
+        $this->_requestToken();
+
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
+        }
+    
+        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+    
+        $req = new Request(
+            'PUT',
+            $this->config->getHost() . $resourcePath,
+            $headers,
+            $httpBody
+        );
+        if ($this->config->getDebug()) {
+            $this->_writeRequestLog('PUT', $this->config->getHost() . $resourcePath, $headers, $httpBody);
+        }
+        
+        return $req;
+    }
+
+    /**
+     * Operation moveEmailThread
+     *
+     * Move thread to another folder
+     *
+     * @param Requests\MoveEmailThreadRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function moveEmailThread(Requests\MoveEmailThreadRequest $request)
+    {
+        try {
+             $this->moveEmailThreadWithHttpInfo($request);
+        }
+        catch(RepeatRequestException $e) {
+             $this->moveEmailThreadWithHttpInfo($request);
+        } 
+    }
+
+    /**
+     * Operation moveEmailThreadWithHttpInfo
+     *
+     * Move thread to another folder
+     *
+     * @param Requests\MoveEmailThreadRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function moveEmailThreadWithHttpInfo(Requests\MoveEmailThreadRequest $request)
+    {
+        $returnType = '';
+        $request = $this->moveEmailThreadRequest($request);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null);
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                if ($statusCode === 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                }
+          
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation moveEmailThreadAsync
+     *
+     * Move thread to another folder
+     *
+     * @param Requests\MoveEmailThreadRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function moveEmailThreadAsync(Requests\MoveEmailThreadRequest $request) 
+    {
+        return $this->moveEmailThreadAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation moveEmailThreadAsyncWithHttpInfo
+     *
+     * Move thread to another folder
+     *
+     * @param Requests\MoveEmailThreadRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function moveEmailThreadAsyncWithHttpInfo(Requests\MoveEmailThreadRequest $request) 
+    {
+        $returnType = '';
+        $request = $this->moveEmailThreadRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+          
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    }
+          
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'moveEmailThread'
+     *
+     * @param Requests\MoveEmailThreadRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function moveEmailThreadRequest(Requests\MoveEmailThreadRequest $request)
+    {
+        // verify the required parameter 'thread_id' is set
+        if ($request->thread_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $thread_id when calling moveEmailThread');
+        }
+        // verify the required parameter 'request' is set
+        if ($request->request === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $request when calling moveEmailThread');
+        }
+
+        $resourcePath = '/email/client/threads/{threadId}/move';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $multipart = false;
+    
+        // path params
+        if ($request->thread_id !== null) {
+            $localName = lcfirst('threadId');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->thread_id), $resourcePath);
+        }
+
+    
+    
+        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
+        $formFiles = [];
+        // body params
+        $_tempBody = null;
+        if (isset($request->request)) {
+            if (is_string($request->request)) {
+                $_tempBody = "\"" . $request->request . "\"";   
+            } else {
+                $_tempBody = $request->request;
+            }
+        }
+
+        if ($multipart) {
+            $headers= $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContent = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = $formParams["data"];
+            }
+        }
+    
+        $this->_requestToken();
+
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
+        }
+    
+        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+    
+        $req = new Request(
+            'PUT',
+            $this->config->getHost() . $resourcePath,
+            $headers,
+            $httpBody
+        );
+        if ($this->config->getDebug()) {
+            $this->_writeRequestLog('PUT', $this->config->getHost() . $resourcePath, $headers, $httpBody);
+        }
+        
+        return $req;
+    }
+
+    /**
      * Operation moveFile
      *
      * Move file
@@ -27419,7 +27920,7 @@ class EmailApi
     /**
      * Operation setEmailThreadReadFlag
      *
-     * Mar all messages in thread as read or unread
+     * Mark all messages in thread as read or unread
      *
      * @param Requests\SetEmailThreadReadFlagRequest $request is a request object for operation
      *
@@ -27440,7 +27941,7 @@ class EmailApi
     /**
      * Operation setEmailThreadReadFlagWithHttpInfo
      *
-     * Mar all messages in thread as read or unread
+     * Mark all messages in thread as read or unread
      *
      * @param Requests\SetEmailThreadReadFlagRequest $request is a request object for operation
      *
@@ -27484,7 +27985,7 @@ class EmailApi
     /**
      * Operation setEmailThreadReadFlagAsync
      *
-     * Mar all messages in thread as read or unread
+     * Mark all messages in thread as read or unread
      *
      * @param Requests\SetEmailThreadReadFlagRequest $request is a request object for operation
      *
@@ -27504,7 +28005,7 @@ class EmailApi
     /**
      * Operation setEmailThreadReadFlagAsyncWithHttpInfo
      *
-     * Mar all messages in thread as read or unread
+     * Mark all messages in thread as read or unread
      *
      * @param Requests\SetEmailThreadReadFlagRequest $request is a request object for operation
      *

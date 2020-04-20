@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="EmailThread.php">
+ * <copyright company="Aspose" file="MoveEmailThreadRq.php">
  *   Copyright (c) 2018 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,20 +26,18 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 /**
- * EmailThread
+ * MoveEmailThreadRq
  */
 
 namespace Aspose\Email\Model;
-
-use \ArrayAccess;
 use \Aspose\Email\ObjectSerializer;
 
 /**
- * EmailThread
+ * MoveEmailThreadRq
  *
- * @description Email messages thread
+ * @description Email thread move request
  */
-class EmailThread implements ArrayAccess
+class MoveEmailThreadRq extends AccountBaseRequest 
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +46,7 @@ class EmailThread implements ArrayAccess
      *
      * @var string
      */
-    protected static $swaggerModelName = "EmailThread";
+    protected static $swaggerModelName = "MoveEmailThreadRq";
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -56,10 +54,7 @@ class EmailThread implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'id' => 'string',
-        'subject' => 'string',
-        'messages' => '\Aspose\Email\Model\EmailDto[]',
-        'folder' => 'string'
+        'destination_folder' => 'string'
     ];
 
     /**
@@ -68,10 +63,7 @@ class EmailThread implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'id' => null,
-        'subject' => null,
-        'messages' => null,
-        'folder' => null
+        'destination_folder' => null
     ];
 
     /**
@@ -81,7 +73,7 @@ class EmailThread implements ArrayAccess
      */
     public static function swaggerTypes()
     {
-        return self::$swaggerTypes;
+        return self::$swaggerTypes + parent::swaggerTypes();
     }
 
     /**
@@ -91,7 +83,7 @@ class EmailThread implements ArrayAccess
      */
     public static function swaggerFormats()
     {
-        return self::$swaggerFormats;
+        return self::$swaggerFormats + parent::swaggerFormats();
     }
 
     /**
@@ -101,10 +93,7 @@ class EmailThread implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'subject' => 'subject',
-        'messages' => 'messages',
-        'folder' => 'folder'
+        'destination_folder' => 'destinationFolder'
     ];
 
     /**
@@ -113,10 +102,7 @@ class EmailThread implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'subject' => 'setSubject',
-        'messages' => 'setMessages',
-        'folder' => 'setFolder'
+        'destination_folder' => 'setDestinationFolder'
     ];
 
     /**
@@ -125,10 +111,7 @@ class EmailThread implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'subject' => 'getSubject',
-        'messages' => 'getMessages',
-        'folder' => 'getFolder'
+        'destination_folder' => 'getDestinationFolder'
     ];
 
     /**
@@ -139,7 +122,7 @@ class EmailThread implements ArrayAccess
      */
     public static function attributeMap()
     {
-        return self::$attributeMap;
+        return parent::attributeMap() + self::$attributeMap;
     }
 
     /**
@@ -149,7 +132,7 @@ class EmailThread implements ArrayAccess
      */
     public static function setters()
     {
-        return self::$setters;
+        return parent::setters() + self::$setters;
     }
 
     /**
@@ -159,7 +142,7 @@ class EmailThread implements ArrayAccess
      */
     public static function getters()
     {
-        return self::$getters;
+        return parent::getters() + self::$getters;
     }
 
     /**
@@ -176,32 +159,24 @@ class EmailThread implements ArrayAccess
 
     
 
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
 
     /**
-     * Initializes a new instance of the EmailThread class.
+     * Initializes a new instance of the MoveEmailThreadRq class.
      *  
-     * @param string $id Thread identifier
-     * @param string $subject Thread subject
-     * @param \Aspose\Email\Model\EmailDto[] $messages List of messages in thread
-     * @param string $folder Thread folder location
+     * @param string $first_account First account storage file name
+     * @param string $second_account Additional email account (for example, FirstAccount could be IMAP, and second one could be SMTP)
+     * @param \Aspose\Email\Model\StorageFolderLocation $storage_folder Storage folder location of account files
+     * @param string $destination_folder Email account folder to move thread to
      */
-    public function __construct($id = null, $subject = null, $messages = null, $folder = null)
+    public function __construct($first_account = null, $second_account = null, $storage_folder = null, $destination_folder = null)
     {
-        $this->container['id'] = null;
-        $this->container['subject'] = null;
-        $this->container['messages'] = null;
-        $this->container['folder'] = null;
+        parent::__construct();
+        $this->container['destination_folder'] = null;
 
-        if ($id != null) $this->setId($id);
-        if ($subject != null) $this->setSubject($subject);
-        if ($messages != null) $this->setMessages($messages);
-        if ($folder != null) $this->setFolder($folder);
+        if ($first_account != null) $this->setFirstAccount($first_account);
+        if ($second_account != null) $this->setSecondAccount($second_account);
+        if ($storage_folder != null) $this->setStorageFolder($storage_folder);
+        if ($destination_folder != null) $this->setDestinationFolder($destination_folder);
     }
 
     /**
@@ -211,7 +186,7 @@ class EmailThread implements ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalidProperties = [];
+        $invalidProperties = parent::listInvalidProperties();
 
         return $invalidProperties;
     }
@@ -224,103 +199,34 @@ class EmailThread implements ArrayAccess
      */
     public function valid()
     {
+        if (!parent::valid()) {
+            return false;
+        }
 
         return true;
     }
 
 
     /**
-     * Gets id
+     * Gets destination_folder
      *
      * @return string
      */
-    public function getId()
+    public function getDestinationFolder()
     {
-        return $this->container['id'];
+        return $this->container['destination_folder'];
     }
 
     /**
-     * Sets id
+     * Sets destination_folder
      *
-     * @param string $id Thread identifier
+     * @param string $destination_folder Email account folder to move thread to
      *
      * @return $this
      */
-    public function setId($id)
+    public function setDestinationFolder($destination_folder)
     {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets subject
-     *
-     * @return string
-     */
-    public function getSubject()
-    {
-        return $this->container['subject'];
-    }
-
-    /**
-     * Sets subject
-     *
-     * @param string $subject Thread subject
-     *
-     * @return $this
-     */
-    public function setSubject($subject)
-    {
-        $this->container['subject'] = $subject;
-
-        return $this;
-    }
-
-    /**
-     * Gets messages
-     *
-     * @return \Aspose\Email\Model\EmailDto[]
-     */
-    public function getMessages()
-    {
-        return $this->container['messages'];
-    }
-
-    /**
-     * Sets messages
-     *
-     * @param \Aspose\Email\Model\EmailDto[] $messages List of messages in thread
-     *
-     * @return $this
-     */
-    public function setMessages($messages)
-    {
-        $this->container['messages'] = $messages;
-
-        return $this;
-    }
-
-    /**
-     * Gets folder
-     *
-     * @return string
-     */
-    public function getFolder()
-    {
-        return $this->container['folder'];
-    }
-
-    /**
-     * Sets folder
-     *
-     * @param string $folder Thread folder location
-     *
-     * @return $this
-     */
-    public function setFolder($folder)
-    {
-        $this->container['folder'] = $folder;
+        $this->container['destination_folder'] = $destination_folder;
 
         return $this;
     }

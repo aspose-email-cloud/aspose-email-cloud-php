@@ -1,11 +1,9 @@
-# DeleteMessageBaseRequest
+# MoveEmailThreadRq
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**message_id** | **string** | Message identifier | 
-**folder** | **string** | Account folder where message located. Should be specified for some accounts | [optional] 
-**delete_permanently** | **bool** | Specifies that message should be deleted permanently | 
+**destination_folder** | **string** | Email account folder to move thread to | [optional] 
 
  Parent class: [AccountBaseRequest](AccountBaseRequest.md)
 

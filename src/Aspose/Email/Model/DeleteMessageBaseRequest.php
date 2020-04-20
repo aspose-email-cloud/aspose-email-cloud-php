@@ -55,6 +55,7 @@ class DeleteMessageBaseRequest extends AccountBaseRequest
      */
     protected static $swaggerTypes = [
         'message_id' => 'string',
+        'folder' => 'string',
         'delete_permanently' => 'bool'
     ];
 
@@ -65,6 +66,7 @@ class DeleteMessageBaseRequest extends AccountBaseRequest
      */
     protected static $swaggerFormats = [
         'message_id' => null,
+        'folder' => null,
         'delete_permanently' => null
     ];
 
@@ -96,6 +98,7 @@ class DeleteMessageBaseRequest extends AccountBaseRequest
      */
     protected static $attributeMap = [
         'message_id' => 'messageId',
+        'folder' => 'folder',
         'delete_permanently' => 'deletePermanently'
     ];
 
@@ -106,6 +109,7 @@ class DeleteMessageBaseRequest extends AccountBaseRequest
      */
     protected static $setters = [
         'message_id' => 'setMessageId',
+        'folder' => 'setFolder',
         'delete_permanently' => 'setDeletePermanently'
     ];
 
@@ -116,6 +120,7 @@ class DeleteMessageBaseRequest extends AccountBaseRequest
      */
     protected static $getters = [
         'message_id' => 'getMessageId',
+        'folder' => 'getFolder',
         'delete_permanently' => 'getDeletePermanently'
     ];
 
@@ -172,18 +177,21 @@ class DeleteMessageBaseRequest extends AccountBaseRequest
      * @param string $second_account Additional email account (for example, FirstAccount could be IMAP, and second one could be SMTP)
      * @param \Aspose\Email\Model\StorageFolderLocation $storage_folder Storage folder location of account files
      * @param string $message_id Message identifier
+     * @param string $folder Account folder where message located. Should be specified for some accounts
      * @param bool $delete_permanently Specifies that message should be deleted permanently
      */
-    public function __construct($first_account = null, $second_account = null, $storage_folder = null, $message_id = null, $delete_permanently = null)
+    public function __construct($first_account = null, $second_account = null, $storage_folder = null, $message_id = null, $folder = null, $delete_permanently = null)
     {
         parent::__construct();
         $this->container['message_id'] = null;
+        $this->container['folder'] = null;
         $this->container['delete_permanently'] = null;
 
         if ($first_account != null) $this->setFirstAccount($first_account);
         if ($second_account != null) $this->setSecondAccount($second_account);
         if ($storage_folder != null) $this->setStorageFolder($storage_folder);
         if ($message_id != null) $this->setMessageId($message_id);
+        if ($folder != null) $this->setFolder($folder);
         if ($delete_permanently != null) $this->setDeletePermanently($delete_permanently);
     }
 
@@ -259,6 +267,30 @@ class DeleteMessageBaseRequest extends AccountBaseRequest
         }
 
         $this->container['message_id'] = $message_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets folder
+     *
+     * @return string
+     */
+    public function getFolder()
+    {
+        return $this->container['folder'];
+    }
+
+    /**
+     * Sets folder
+     *
+     * @param string $folder Account folder where message located. Should be specified for some accounts
+     *
+     * @return $this
+     */
+    public function setFolder($folder)
+    {
+        $this->container['folder'] = $folder;
 
         return $this;
     }

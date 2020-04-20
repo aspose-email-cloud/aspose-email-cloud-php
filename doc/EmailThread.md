@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 **id** | **string** | Thread identifier | [optional] 
 **subject** | **string** | Thread subject | [optional] 
 **messages** | [**\Aspose\Email\Model\EmailDto[]**](EmailDto.md) | List of messages in thread | [optional] 
+**folder** | **string** | Thread folder location | [optional] 
 
 
 

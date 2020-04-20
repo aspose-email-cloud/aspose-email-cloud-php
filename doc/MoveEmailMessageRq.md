@@ -1,11 +1,11 @@
-# DeleteMessageBaseRequest
+# MoveEmailMessageRq
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**message_id** | **string** | Message identifier | 
-**folder** | **string** | Account folder where message located. Should be specified for some accounts | [optional] 
-**delete_permanently** | **bool** | Specifies that message should be deleted permanently | 
+**message_id** | **string** | Message identifier | [optional] 
+**source_folder** | **string** | Message source folder. Account root folder by default | [optional] 
+**destination_folder** | **string** | Folder in email account to move message to | [optional] 
 
  Parent class: [AccountBaseRequest](AccountBaseRequest.md)
 

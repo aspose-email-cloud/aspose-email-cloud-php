@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="getEmailRequest.php">
+ * <copyright company="Aspose" file="moveEmailMessageRequest.php">
  *   Copyright (c) 2018-2020 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -29,37 +29,23 @@
 namespace Aspose\Email\Model\Requests;
 
 /**
- * Request model for getEmail" operation.
+ * Request model for moveEmailMessage" operation.
  */
-class GetEmailRequest
+class MoveEmailMessageRequest
 {
     /**
-     * Initializes a new instance of the GetEmailRequest class.
+     * Initializes a new instance of the MoveEmailMessageRequest class.
      *  
-     * @param string $file_name Email document file name in storage
-     * @param string $storage Storage name
-     * @param string $folder Path to folder in storage
+     * @param \Aspose\Email\Model\MoveEmailMessageRq $request Email account, folder and message specifier
      */
-    public function __construct($file_name, $storage = null, $folder = null)             
+    public function __construct($request)             
     {
-        $this->file_name = $file_name;
-        $this->storage = $storage;
-        $this->folder = $folder;
+        $this->request = $request;
     }
 
     /**
-     * Email document file name in storage
+     * Email account, folder and message specifier
      */
-    public $file_name;
-	
-    /**
-     * Storage name
-     */
-    public $storage;
-	
-    /**
-     * Path to folder in storage
-     */
-    public $folder;
+    public $request;
 }
 ?>

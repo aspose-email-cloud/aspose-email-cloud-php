@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="fetchEmailModelRequest.php">
- *   Copyright (c) 2018 Aspose.Email for Cloud
+ *   Copyright (c) 2018-2020 Aspose.Email for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -39,14 +39,16 @@ class FetchEmailModelRequest
      * @param string $message_id Message identifier
      * @param string $first_account Email account
      * @param string $second_account Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)
+     * @param string $folder Account folder to fetch from (should be specified for some protocols such as IMAP)
      * @param string $storage Storage name where account file(s) located
      * @param string $storage_folder Folder in storage where account file(s) located
      */
-    public function __construct($message_id, $first_account, $second_account = null, $storage = null, $storage_folder = null)             
+    public function __construct($message_id, $first_account, $second_account = null, $folder = null, $storage = null, $storage_folder = null)             
     {
         $this->message_id = $message_id;
         $this->first_account = $first_account;
         $this->second_account = $second_account;
+        $this->folder = $folder;
         $this->storage = $storage;
         $this->storage_folder = $storage_folder;
     }
@@ -65,6 +67,11 @@ class FetchEmailModelRequest
      * Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)
      */
     public $second_account;
+	
+    /**
+     * Account folder to fetch from (should be specified for some protocols such as IMAP)
+     */
+    public $folder;
 	
     /**
      * Storage name where account file(s) located

@@ -85,6 +85,8 @@ Method | HTTP request | Description
 [**listEmailMessages**](EmailApi.md#listEmailMessages) | **GET** /email/client/ListMessages | Get messages from folder, filtered by query
 [**listEmailModels**](EmailApi.md#listEmailModels) | **GET** /email/client/ListMessagesModel | Get messages from folder, filtered by query
 [**listEmailThreads**](EmailApi.md#listEmailThreads) | **GET** /email/client/threads | Get message threads from folder. All messages are partly fetched (without email body and other fields)
+[**moveEmailMessage**](EmailApi.md#moveEmailMessage) | **PUT** /email/client/move | Move message to another folder
+[**moveEmailThread**](EmailApi.md#moveEmailThread) | **PUT** /email/client/threads/{threadId}/move | Move thread to another folder
 [**moveFile**](EmailApi.md#moveFile) | **PUT** /email/storage/file/move/{srcPath} | Move file
 [**moveFolder**](EmailApi.md#moveFolder) | **PUT** /email/storage/folder/move/{srcPath} | Move folder
 [**objectExists**](EmailApi.md#objectExists) | **GET** /email/storage/exist/{path} | Check if file or folder exists
@@ -100,7 +102,7 @@ Method | HTTP request | Description
 [**sendEmailModel**](EmailApi.md#sendEmailModel) | **POST** /email/client/SendModel | Send an email specified by model in request
 [**setEmailProperty**](EmailApi.md#setEmailProperty) | **PUT** /email/{fileName}/properties/{propertyName} | Set email document property value
 [**setEmailReadFlag**](EmailApi.md#setEmailReadFlag) | **POST** /email/client/SetReadFlag | Sets \&quot;Message is read\&quot; flag
-[**setEmailThreadReadFlag**](EmailApi.md#setEmailThreadReadFlag) | **PUT** /email/client/threads/{threadId}/read-flag | Mar all messages in thread as read or unread
+[**setEmailThreadReadFlag**](EmailApi.md#setEmailThreadReadFlag) | **PUT** /email/client/threads/{threadId}/read-flag | Mark all messages in thread as read or unread
 [**storageExists**](EmailApi.md#storageExists) | **GET** /email/storage/{storageName}/exist | Check if storage exists
 [**updateCalendarProperties**](EmailApi.md#updateCalendarProperties) | **PUT** /email/Calendar/{name}/properties | Update calendar file properties
 [**updateContactProperties**](EmailApi.md#updateContactProperties) | **PUT** /email/Contact/{format}/{name}/properties | Update contact document properties
@@ -1361,6 +1363,7 @@ new Aspose\Email\Model\Requests\FetchEmailMessageRequest(
     $message_id,
     $first_account,
     $second_account,
+    $folder,
     $storage,
     $storage_folder)
 ```
@@ -1371,6 +1374,7 @@ Name | Type | Description  | Notes
  **message_id** | **string**| Message identifier |
  **first_account** | **string**| Email account |
  **second_account** | **string**| Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP) | [optional]
+ **folder** | **string**| Account folder to fetch from (should be specified for some protocols such as IMAP) | [optional]
  **storage** | **string**| Storage name where account file(s) located | [optional]
  **storage_folder** | **string**| Folder in storage where account file(s) located | [optional]
 
@@ -1392,6 +1396,7 @@ new Aspose\Email\Model\Requests\FetchEmailModelRequest(
     $message_id,
     $first_account,
     $second_account,
+    $folder,
     $storage,
     $storage_folder)
 ```
@@ -1402,6 +1407,7 @@ Name | Type | Description  | Notes
  **message_id** | **string**| Message identifier |
  **first_account** | **string**| Email account |
  **second_account** | **string**| Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP) | [optional]
+ **folder** | **string**| Account folder to fetch from (should be specified for some protocols such as IMAP) | [optional]
  **storage** | **string**| Storage name where account file(s) located | [optional]
  **storage_folder** | **string**| Folder in storage where account file(s) located | [optional]
 
@@ -2337,6 +2343,54 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+# **moveEmailMessage**
+```php
+function moveEmailMessage(Requests\MoveEmailMessageRequest $request)
+```
+Move message to another folder
+
+### Return type
+
+void (empty response body)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\MoveEmailMessageRequest(
+    $request)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**\Aspose\Email\Model\MoveEmailMessageRq**](MoveEmailMessageRq.md)| Email account, folder and message specifier |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **moveEmailThread**
+```php
+function moveEmailThread(Requests\MoveEmailThreadRequest $request)
+```
+Move thread to another folder
+
+### Return type
+
+void (empty response body)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\MoveEmailThreadRequest(
+    $thread_id,
+    $request)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **thread_id** | **string**| Thread identifier |
+ **request** | [**\Aspose\Email\Model\MoveEmailThreadRq**](MoveEmailThreadRq.md)| Move thread request |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 # **moveFile**
 ```php
 function moveFile(Requests\MoveFileRequest $request)
@@ -2718,7 +2772,7 @@ Name | Type | Description  | Notes
 ```php
 function setEmailThreadReadFlag(Requests\SetEmailThreadReadFlagRequest $request)
 ```
-Mar all messages in thread as read or unread
+Mark all messages in thread as read or unread
 
 ### Return type
 
