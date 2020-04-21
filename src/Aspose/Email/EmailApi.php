@@ -20142,6 +20142,16 @@ class EmailApi
             }
         }
         // query params
+        if ($request->folder !== null) {
+            $localName = lcfirst('folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
         if ($request->storage !== null) {
             $localName = lcfirst('storage');
             $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;

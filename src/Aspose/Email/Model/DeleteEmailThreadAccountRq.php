@@ -54,7 +54,7 @@ class DeleteEmailThreadAccountRq extends AccountBaseRequest
      * @var string[]
      */
     protected static $swaggerTypes = [
-        
+        'folder' => 'string'
     ];
 
     /**
@@ -63,7 +63,7 @@ class DeleteEmailThreadAccountRq extends AccountBaseRequest
      * @var string[]
      */
     protected static $swaggerFormats = [
-        
+        'folder' => null
     ];
 
     /**
@@ -93,7 +93,7 @@ class DeleteEmailThreadAccountRq extends AccountBaseRequest
      * @var string[]
      */
     protected static $attributeMap = [
-        
+        'folder' => 'folder'
     ];
 
     /**
@@ -102,7 +102,7 @@ class DeleteEmailThreadAccountRq extends AccountBaseRequest
      * @var string[]
      */
     protected static $setters = [
-        
+        'folder' => 'setFolder'
     ];
 
     /**
@@ -111,7 +111,7 @@ class DeleteEmailThreadAccountRq extends AccountBaseRequest
      * @var string[]
      */
     protected static $getters = [
-        
+        'folder' => 'getFolder'
     ];
 
     /**
@@ -166,14 +166,17 @@ class DeleteEmailThreadAccountRq extends AccountBaseRequest
      * @param string $first_account First account storage file name
      * @param string $second_account Additional email account (for example, FirstAccount could be IMAP, and second one could be SMTP)
      * @param \Aspose\Email\Model\StorageFolderLocation $storage_folder Storage folder location of account files
+     * @param string $folder Specifies account folder to get thread from (required for some account types, such as EWS)
      */
-    public function __construct($first_account = null, $second_account = null, $storage_folder = null)
+    public function __construct($first_account = null, $second_account = null, $storage_folder = null, $folder = null)
     {
         parent::__construct();
+        $this->container['folder'] = null;
 
         if ($first_account != null) $this->setFirstAccount($first_account);
         if ($second_account != null) $this->setSecondAccount($second_account);
         if ($storage_folder != null) $this->setStorageFolder($storage_folder);
+        if ($folder != null) $this->setFolder($folder);
     }
 
     /**
@@ -203,6 +206,30 @@ class DeleteEmailThreadAccountRq extends AccountBaseRequest
         return true;
     }
 
+
+    /**
+     * Gets folder
+     *
+     * @return string
+     */
+    public function getFolder()
+    {
+        return $this->container['folder'];
+    }
+
+    /**
+     * Sets folder
+     *
+     * @param string $folder Specifies account folder to get thread from (required for some account types, such as EWS)
+     *
+     * @return $this
+     */
+    public function setFolder($folder)
+    {
+        $this->container['folder'] = $folder;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *

@@ -2003,6 +2003,7 @@ new Aspose\Email\Model\Requests\GetEmailThreadRequest(
     $thread_id,
     $first_account,
     $second_account,
+    $folder,
     $storage,
     $storage_folder)
 ```
@@ -2013,6 +2014,7 @@ Name | Type | Description  | Notes
  **thread_id** | **string**| Thread identifier |
  **first_account** | **string**| Email account |
  **second_account** | **string**| Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP) | [optional]
+ **folder** | **string**| Specifies account folder to get thread from (required for some account types, such as EWS) | [optional]
  **storage** | **string**| Storage name where account file(s) located | [optional]
  **storage_folder** | **string**| Folder in storage where account file(s) located | [optional]
 

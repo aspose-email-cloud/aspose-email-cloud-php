@@ -39,14 +39,16 @@ class GetEmailThreadRequest
      * @param string $thread_id Thread identifier
      * @param string $first_account Email account
      * @param string $second_account Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)
+     * @param string $folder Specifies account folder to get thread from (required for some account types, such as EWS)
      * @param string $storage Storage name where account file(s) located
      * @param string $storage_folder Folder in storage where account file(s) located
      */
-    public function __construct($thread_id, $first_account, $second_account = null, $storage = null, $storage_folder = null)             
+    public function __construct($thread_id, $first_account, $second_account = null, $folder = null, $storage = null, $storage_folder = null)             
     {
         $this->thread_id = $thread_id;
         $this->first_account = $first_account;
         $this->second_account = $second_account;
+        $this->folder = $folder;
         $this->storage = $storage;
         $this->storage_folder = $storage_folder;
     }
@@ -65,6 +67,11 @@ class GetEmailThreadRequest
      * Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)
      */
     public $second_account;
+	
+    /**
+     * Specifies account folder to get thread from (required for some account types, such as EWS)
+     */
+    public $folder;
 	
     /**
      * Storage name where account file(s) located

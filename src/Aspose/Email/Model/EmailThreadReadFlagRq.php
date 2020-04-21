@@ -54,7 +54,8 @@ class EmailThreadReadFlagRq extends AccountBaseRequest
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'is_read' => 'bool'
+        'is_read' => 'bool',
+        'folder' => 'string'
     ];
 
     /**
@@ -63,7 +64,8 @@ class EmailThreadReadFlagRq extends AccountBaseRequest
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'is_read' => null
+        'is_read' => null,
+        'folder' => null
     ];
 
     /**
@@ -93,7 +95,8 @@ class EmailThreadReadFlagRq extends AccountBaseRequest
      * @var string[]
      */
     protected static $attributeMap = [
-        'is_read' => 'isRead'
+        'is_read' => 'isRead',
+        'folder' => 'folder'
     ];
 
     /**
@@ -102,7 +105,8 @@ class EmailThreadReadFlagRq extends AccountBaseRequest
      * @var string[]
      */
     protected static $setters = [
-        'is_read' => 'setIsRead'
+        'is_read' => 'setIsRead',
+        'folder' => 'setFolder'
     ];
 
     /**
@@ -111,7 +115,8 @@ class EmailThreadReadFlagRq extends AccountBaseRequest
      * @var string[]
      */
     protected static $getters = [
-        'is_read' => 'getIsRead'
+        'is_read' => 'getIsRead',
+        'folder' => 'getFolder'
     ];
 
     /**
@@ -167,16 +172,19 @@ class EmailThreadReadFlagRq extends AccountBaseRequest
      * @param string $second_account Additional email account (for example, FirstAccount could be IMAP, and second one could be SMTP)
      * @param \Aspose\Email\Model\StorageFolderLocation $storage_folder Storage folder location of account files
      * @param bool $is_read Read flag to set. \"true\" by default
+     * @param string $folder Specifies account folder to get thread from (required for some account types, such as EWS)
      */
-    public function __construct($first_account = null, $second_account = null, $storage_folder = null, $is_read = null)
+    public function __construct($first_account = null, $second_account = null, $storage_folder = null, $is_read = null, $folder = null)
     {
         parent::__construct();
         $this->container['is_read'] = null;
+        $this->container['folder'] = null;
 
         if ($first_account != null) $this->setFirstAccount($first_account);
         if ($second_account != null) $this->setSecondAccount($second_account);
         if ($storage_folder != null) $this->setStorageFolder($storage_folder);
         if ($is_read != null) $this->setIsRead($is_read);
+        if ($folder != null) $this->setFolder($folder);
     }
 
     /**
@@ -233,6 +241,30 @@ class EmailThreadReadFlagRq extends AccountBaseRequest
     public function setIsRead($is_read)
     {
         $this->container['is_read'] = $is_read;
+
+        return $this;
+    }
+
+    /**
+     * Gets folder
+     *
+     * @return string
+     */
+    public function getFolder()
+    {
+        return $this->container['folder'];
+    }
+
+    /**
+     * Sets folder
+     *
+     * @param string $folder Specifies account folder to get thread from (required for some account types, such as EWS)
+     *
+     * @return $this
+     */
+    public function setFolder($folder)
+    {
+        $this->container['folder'] = $folder;
 
         return $this;
     }
