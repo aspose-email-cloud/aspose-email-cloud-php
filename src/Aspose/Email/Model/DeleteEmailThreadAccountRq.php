@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="DeleteEmailThreadAccountRq.php">
- *   Copyright (c) 2018 Aspose.Email for Cloud
+ *   Copyright (c) 2018-2020 Aspose.Email for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -54,7 +54,7 @@ class DeleteEmailThreadAccountRq extends AccountBaseRequest
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'folder' => 'string'
+        'folder_id' => 'string'
     ];
 
     /**
@@ -63,7 +63,7 @@ class DeleteEmailThreadAccountRq extends AccountBaseRequest
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'folder' => null
+        'folder_id' => null
     ];
 
     /**
@@ -93,7 +93,7 @@ class DeleteEmailThreadAccountRq extends AccountBaseRequest
      * @var string[]
      */
     protected static $attributeMap = [
-        'folder' => 'folder'
+        'folder_id' => 'folderId'
     ];
 
     /**
@@ -102,7 +102,7 @@ class DeleteEmailThreadAccountRq extends AccountBaseRequest
      * @var string[]
      */
     protected static $setters = [
-        'folder' => 'setFolder'
+        'folder_id' => 'setFolderId'
     ];
 
     /**
@@ -111,7 +111,7 @@ class DeleteEmailThreadAccountRq extends AccountBaseRequest
      * @var string[]
      */
     protected static $getters = [
-        'folder' => 'getFolder'
+        'folder_id' => 'getFolderId'
     ];
 
     /**
@@ -166,17 +166,17 @@ class DeleteEmailThreadAccountRq extends AccountBaseRequest
      * @param string $first_account First account storage file name
      * @param string $second_account Additional email account (for example, FirstAccount could be IMAP, and second one could be SMTP)
      * @param \Aspose\Email\Model\StorageFolderLocation $storage_folder Storage folder location of account files
-     * @param string $folder Specifies account folder to get thread from (required for some account types, such as EWS)
+     * @param string $folder_id Specifies account folder to get thread from (required for some account types, such as EWS). Use folder Id from ListEmailFolders (MailServerFolder.Id). For IMAP folder Id is always same as folder name.
      */
-    public function __construct($first_account = null, $second_account = null, $storage_folder = null, $folder = null)
+    public function __construct($first_account = null, $second_account = null, $storage_folder = null, $folder_id = null)
     {
         parent::__construct();
-        $this->container['folder'] = null;
+        $this->container['folder_id'] = null;
 
         if ($first_account != null) $this->setFirstAccount($first_account);
         if ($second_account != null) $this->setSecondAccount($second_account);
         if ($storage_folder != null) $this->setStorageFolder($storage_folder);
-        if ($folder != null) $this->setFolder($folder);
+        if ($folder_id != null) $this->setFolderId($folder_id);
     }
 
     /**
@@ -208,25 +208,25 @@ class DeleteEmailThreadAccountRq extends AccountBaseRequest
 
 
     /**
-     * Gets folder
+     * Gets folder_id
      *
      * @return string
      */
-    public function getFolder()
+    public function getFolderId()
     {
-        return $this->container['folder'];
+        return $this->container['folder_id'];
     }
 
     /**
-     * Sets folder
+     * Sets folder_id
      *
-     * @param string $folder Specifies account folder to get thread from (required for some account types, such as EWS)
+     * @param string $folder_id Specifies account folder to get thread from (required for some account types, such as EWS). Use folder Id from ListEmailFolders (MailServerFolder.Id). For IMAP folder Id is always same as folder name.
      *
      * @return $this
      */
-    public function setFolder($folder)
+    public function setFolderId($folder_id)
     {
-        $this->container['folder'] = $folder;
+        $this->container['folder_id'] = $folder_id;
 
         return $this;
     }

@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="MoveEmailThreadRq.php">
- *   Copyright (c) 2018 Aspose.Email for Cloud
+ *   Copyright (c) 2018-2020 Aspose.Email for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -54,7 +54,7 @@ class MoveEmailThreadRq extends AccountBaseRequest
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'destination_folder' => 'string'
+        'destination_folder_id' => 'string'
     ];
 
     /**
@@ -63,7 +63,7 @@ class MoveEmailThreadRq extends AccountBaseRequest
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'destination_folder' => null
+        'destination_folder_id' => null
     ];
 
     /**
@@ -93,7 +93,7 @@ class MoveEmailThreadRq extends AccountBaseRequest
      * @var string[]
      */
     protected static $attributeMap = [
-        'destination_folder' => 'destinationFolder'
+        'destination_folder_id' => 'destinationFolderId'
     ];
 
     /**
@@ -102,7 +102,7 @@ class MoveEmailThreadRq extends AccountBaseRequest
      * @var string[]
      */
     protected static $setters = [
-        'destination_folder' => 'setDestinationFolder'
+        'destination_folder_id' => 'setDestinationFolderId'
     ];
 
     /**
@@ -111,7 +111,7 @@ class MoveEmailThreadRq extends AccountBaseRequest
      * @var string[]
      */
     protected static $getters = [
-        'destination_folder' => 'getDestinationFolder'
+        'destination_folder_id' => 'getDestinationFolderId'
     ];
 
     /**
@@ -166,17 +166,17 @@ class MoveEmailThreadRq extends AccountBaseRequest
      * @param string $first_account First account storage file name
      * @param string $second_account Additional email account (for example, FirstAccount could be IMAP, and second one could be SMTP)
      * @param \Aspose\Email\Model\StorageFolderLocation $storage_folder Storage folder location of account files
-     * @param string $destination_folder Email account folder to move thread to
+     * @param string $destination_folder_id Email account folder id to move thread to. Use folder Id from ListEmailFolders (MailServerFolder.Id). For IMAP folder Id is always same as folder name.
      */
-    public function __construct($first_account = null, $second_account = null, $storage_folder = null, $destination_folder = null)
+    public function __construct($first_account = null, $second_account = null, $storage_folder = null, $destination_folder_id = null)
     {
         parent::__construct();
-        $this->container['destination_folder'] = null;
+        $this->container['destination_folder_id'] = null;
 
         if ($first_account != null) $this->setFirstAccount($first_account);
         if ($second_account != null) $this->setSecondAccount($second_account);
         if ($storage_folder != null) $this->setStorageFolder($storage_folder);
-        if ($destination_folder != null) $this->setDestinationFolder($destination_folder);
+        if ($destination_folder_id != null) $this->setDestinationFolderId($destination_folder_id);
     }
 
     /**
@@ -208,25 +208,25 @@ class MoveEmailThreadRq extends AccountBaseRequest
 
 
     /**
-     * Gets destination_folder
+     * Gets destination_folder_id
      *
      * @return string
      */
-    public function getDestinationFolder()
+    public function getDestinationFolderId()
     {
-        return $this->container['destination_folder'];
+        return $this->container['destination_folder_id'];
     }
 
     /**
-     * Sets destination_folder
+     * Sets destination_folder_id
      *
-     * @param string $destination_folder Email account folder to move thread to
+     * @param string $destination_folder_id Email account folder id to move thread to. Use folder Id from ListEmailFolders (MailServerFolder.Id). For IMAP folder Id is always same as folder name.
      *
      * @return $this
      */
-    public function setDestinationFolder($destination_folder)
+    public function setDestinationFolderId($destination_folder_id)
     {
-        $this->container['destination_folder'] = $destination_folder;
+        $this->container['destination_folder_id'] = $destination_folder_id;
 
         return $this;
     }

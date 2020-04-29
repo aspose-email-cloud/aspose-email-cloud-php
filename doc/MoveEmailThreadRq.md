@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**destination_folder** | **string** | Email account folder to move thread to | [optional] 
+**destination_folder_id** | **string** | Email account folder id to move thread to. Use folder Id from ListEmailFolders (MailServerFolder.Id). For IMAP folder Id is always same as folder name. | [optional] 
 
  Parent class: [AccountBaseRequest](AccountBaseRequest.md)
 

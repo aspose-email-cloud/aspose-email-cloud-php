@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="EmailAddress.php">
- *   Copyright (c) 2018 Aspose.Email for Cloud
+ *   Copyright (c) 2018-2020 Aspose.Email for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -60,7 +60,8 @@ class EmailAddress implements ArrayAccess
         'display_name' => 'string',
         'preferred' => 'bool',
         'routing_type' => 'string',
-        'address' => 'string'
+        'address' => 'string',
+        'original_address_string' => 'string'
     ];
 
     /**
@@ -73,7 +74,8 @@ class EmailAddress implements ArrayAccess
         'display_name' => null,
         'preferred' => null,
         'routing_type' => null,
-        'address' => null
+        'address' => null,
+        'original_address_string' => null
     ];
 
     /**
@@ -107,7 +109,8 @@ class EmailAddress implements ArrayAccess
         'display_name' => 'displayName',
         'preferred' => 'preferred',
         'routing_type' => 'routingType',
-        'address' => 'address'
+        'address' => 'address',
+        'original_address_string' => 'originalAddressString'
     ];
 
     /**
@@ -120,7 +123,8 @@ class EmailAddress implements ArrayAccess
         'display_name' => 'setDisplayName',
         'preferred' => 'setPreferred',
         'routing_type' => 'setRoutingType',
-        'address' => 'setAddress'
+        'address' => 'setAddress',
+        'original_address_string' => 'setOriginalAddressString'
     ];
 
     /**
@@ -133,7 +137,8 @@ class EmailAddress implements ArrayAccess
         'display_name' => 'getDisplayName',
         'preferred' => 'getPreferred',
         'routing_type' => 'getRoutingType',
-        'address' => 'getAddress'
+        'address' => 'getAddress',
+        'original_address_string' => 'getOriginalAddressString'
     ];
 
     /**
@@ -196,20 +201,23 @@ class EmailAddress implements ArrayAccess
      * @param bool $preferred Defines whether email address is preferred.
      * @param string $routing_type A routing type for an email.
      * @param string $address Email address.
+     * @param string $original_address_string The original e-mail address string
      */
-    public function __construct($category = null, $display_name = null, $preferred = null, $routing_type = null, $address = null)
+    public function __construct($category = null, $display_name = null, $preferred = null, $routing_type = null, $address = null, $original_address_string = null)
     {
         $this->container['category'] = null;
         $this->container['display_name'] = null;
         $this->container['preferred'] = null;
         $this->container['routing_type'] = null;
         $this->container['address'] = null;
+        $this->container['original_address_string'] = null;
 
         if ($category != null) $this->setCategory($category);
         if ($display_name != null) $this->setDisplayName($display_name);
         if ($preferred != null) $this->setPreferred($preferred);
         if ($routing_type != null) $this->setRoutingType($routing_type);
         if ($address != null) $this->setAddress($address);
+        if ($original_address_string != null) $this->setOriginalAddressString($original_address_string);
     }
 
     /**
@@ -359,6 +367,30 @@ class EmailAddress implements ArrayAccess
     public function setAddress($address)
     {
         $this->container['address'] = $address;
+
+        return $this;
+    }
+
+    /**
+     * Gets original_address_string
+     *
+     * @return string
+     */
+    public function getOriginalAddressString()
+    {
+        return $this->container['original_address_string'];
+    }
+
+    /**
+     * Sets original_address_string
+     *
+     * @param string $original_address_string The original e-mail address string
+     *
+     * @return $this
+     */
+    public function setOriginalAddressString($original_address_string)
+    {
+        $this->container['original_address_string'] = $original_address_string;
 
         return $this;
     }

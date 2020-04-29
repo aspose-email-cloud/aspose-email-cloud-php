@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="EmailApi.php">
- *   Copyright (c) 2018 Aspose.Email for Cloud
+ *   Copyright (c) 2018-2020 Aspose.Email for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -20142,9 +20142,9 @@ class EmailApi
             }
         }
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->folder_id !== null) {
+            $localName = lcfirst('folderId');
+            $localValue = is_bool($request->folder_id) ? ($request->folder_id ? 'true' : 'false') : $request->folder_id;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -23496,9 +23496,9 @@ class EmailApi
      */
     protected function listEmailThreadsRequest(Requests\ListEmailThreadsRequest $request)
     {
-        // verify the required parameter 'folder' is set
-        if ($request->folder === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $folder when calling listEmailThreads');
+        // verify the required parameter 'folder_id' is set
+        if ($request->folder_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $folder_id when calling listEmailThreads');
         }
         // verify the required parameter 'first_account' is set
         if ($request->first_account === null) {
@@ -23514,9 +23514,9 @@ class EmailApi
     
 
         // query params
-        if ($request->folder !== null) {
-            $localName = lcfirst('folder');
-            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+        if ($request->folder_id !== null) {
+            $localName = lcfirst('folderId');
+            $localValue = is_bool($request->folder_id) ? ($request->folder_id ? 'true' : 'false') : $request->folder_id;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {

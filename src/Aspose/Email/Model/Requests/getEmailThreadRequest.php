@@ -39,16 +39,16 @@ class GetEmailThreadRequest
      * @param string $thread_id Thread identifier
      * @param string $first_account Email account
      * @param string $second_account Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)
-     * @param string $folder Specifies account folder to get thread from (required for some account types, such as EWS)
+     * @param string $folder_id Specifies account folder to get thread from (required for some account types, such as EWS). Use folder Id from ListEmailFolders (MailServerFolder.Id). For IMAP folder Id is always same as folder name.
      * @param string $storage Storage name where account file(s) located
      * @param string $storage_folder Folder in storage where account file(s) located
      */
-    public function __construct($thread_id, $first_account, $second_account = null, $folder = null, $storage = null, $storage_folder = null)             
+    public function __construct($thread_id, $first_account, $second_account = null, $folder_id = null, $storage = null, $storage_folder = null)             
     {
         $this->thread_id = $thread_id;
         $this->first_account = $first_account;
         $this->second_account = $second_account;
-        $this->folder = $folder;
+        $this->folder_id = $folder_id;
         $this->storage = $storage;
         $this->storage_folder = $storage_folder;
     }
@@ -69,9 +69,9 @@ class GetEmailThreadRequest
     public $second_account;
 	
     /**
-     * Specifies account folder to get thread from (required for some account types, such as EWS)
+     * Specifies account folder to get thread from (required for some account types, such as EWS). Use folder Id from ListEmailFolders (MailServerFolder.Id). For IMAP folder Id is always same as folder name.
      */
-    public $folder;
+    public $folder_id;
 	
     /**
      * Storage name where account file(s) located

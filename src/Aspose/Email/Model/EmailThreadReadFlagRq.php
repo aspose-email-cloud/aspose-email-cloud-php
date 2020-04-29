@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="EmailThreadReadFlagRq.php">
- *   Copyright (c) 2018 Aspose.Email for Cloud
+ *   Copyright (c) 2018-2020 Aspose.Email for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -55,7 +55,7 @@ class EmailThreadReadFlagRq extends AccountBaseRequest
      */
     protected static $swaggerTypes = [
         'is_read' => 'bool',
-        'folder' => 'string'
+        'folder_id' => 'string'
     ];
 
     /**
@@ -65,7 +65,7 @@ class EmailThreadReadFlagRq extends AccountBaseRequest
      */
     protected static $swaggerFormats = [
         'is_read' => null,
-        'folder' => null
+        'folder_id' => null
     ];
 
     /**
@@ -96,7 +96,7 @@ class EmailThreadReadFlagRq extends AccountBaseRequest
      */
     protected static $attributeMap = [
         'is_read' => 'isRead',
-        'folder' => 'folder'
+        'folder_id' => 'folderId'
     ];
 
     /**
@@ -106,7 +106,7 @@ class EmailThreadReadFlagRq extends AccountBaseRequest
      */
     protected static $setters = [
         'is_read' => 'setIsRead',
-        'folder' => 'setFolder'
+        'folder_id' => 'setFolderId'
     ];
 
     /**
@@ -116,7 +116,7 @@ class EmailThreadReadFlagRq extends AccountBaseRequest
      */
     protected static $getters = [
         'is_read' => 'getIsRead',
-        'folder' => 'getFolder'
+        'folder_id' => 'getFolderId'
     ];
 
     /**
@@ -172,19 +172,19 @@ class EmailThreadReadFlagRq extends AccountBaseRequest
      * @param string $second_account Additional email account (for example, FirstAccount could be IMAP, and second one could be SMTP)
      * @param \Aspose\Email\Model\StorageFolderLocation $storage_folder Storage folder location of account files
      * @param bool $is_read Read flag to set. \"true\" by default
-     * @param string $folder Specifies account folder to get thread from (required for some account types, such as EWS)
+     * @param string $folder_id Specifies account folder to get thread from (required for some account types, such as EWS). Use folder Id from ListEmailFolders (MailServerFolder.Id). For IMAP folder Id is always same as folder name.
      */
-    public function __construct($first_account = null, $second_account = null, $storage_folder = null, $is_read = null, $folder = null)
+    public function __construct($first_account = null, $second_account = null, $storage_folder = null, $is_read = null, $folder_id = null)
     {
         parent::__construct();
         $this->container['is_read'] = null;
-        $this->container['folder'] = null;
+        $this->container['folder_id'] = null;
 
         if ($first_account != null) $this->setFirstAccount($first_account);
         if ($second_account != null) $this->setSecondAccount($second_account);
         if ($storage_folder != null) $this->setStorageFolder($storage_folder);
         if ($is_read != null) $this->setIsRead($is_read);
-        if ($folder != null) $this->setFolder($folder);
+        if ($folder_id != null) $this->setFolderId($folder_id);
     }
 
     /**
@@ -246,25 +246,25 @@ class EmailThreadReadFlagRq extends AccountBaseRequest
     }
 
     /**
-     * Gets folder
+     * Gets folder_id
      *
      * @return string
      */
-    public function getFolder()
+    public function getFolderId()
     {
-        return $this->container['folder'];
+        return $this->container['folder_id'];
     }
 
     /**
-     * Sets folder
+     * Sets folder_id
      *
-     * @param string $folder Specifies account folder to get thread from (required for some account types, such as EWS)
+     * @param string $folder_id Specifies account folder to get thread from (required for some account types, such as EWS). Use folder Id from ListEmailFolders (MailServerFolder.Id). For IMAP folder Id is always same as folder name.
      *
      * @return $this
      */
-    public function setFolder($folder)
+    public function setFolderId($folder_id)
     {
-        $this->container['folder'] = $folder;
+        $this->container['folder_id'] = $folder_id;
 
         return $this;
     }

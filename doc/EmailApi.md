@@ -2003,7 +2003,7 @@ new Aspose\Email\Model\Requests\GetEmailThreadRequest(
     $thread_id,
     $first_account,
     $second_account,
-    $folder,
+    $folder_id,
     $storage,
     $storage_folder)
 ```
@@ -2014,7 +2014,7 @@ Name | Type | Description  | Notes
  **thread_id** | **string**| Thread identifier |
  **first_account** | **string**| Email account |
  **second_account** | **string**| Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP) | [optional]
- **folder** | **string**| Specifies account folder to get thread from (required for some account types, such as EWS) | [optional]
+ **folder_id** | **string**| Specifies account folder to get thread from (required for some account types, such as EWS). Use folder Id from ListEmailFolders (MailServerFolder.Id). For IMAP folder Id is always same as folder name. | [optional]
  **storage** | **string**| Storage name where account file(s) located | [optional]
  **storage_folder** | **string**| Folder in storage where account file(s) located | [optional]
 
@@ -2323,7 +2323,7 @@ Get message threads from folder. All messages are partly fetched (without email 
 ### Request parameters
 ```php
 new Aspose\Email\Model\Requests\ListEmailThreadsRequest(
-    $folder,
+    $folder_id,
     $first_account,
     $second_account,
     $storage,
@@ -2335,7 +2335,7 @@ new Aspose\Email\Model\Requests\ListEmailThreadsRequest(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **folder** | **string**| A folder in email account |
+ **folder_id** | **string**| A folder id in email account. Use folder Id from ListEmailFolders (MailServerFolder.Id). For IMAP folder Id is always same as folder name. |
  **first_account** | **string**| Email account |
  **second_account** | **string**| Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP) | [optional]
  **storage** | **string**| Storage name where account file(s) located | [optional]
@@ -2600,7 +2600,7 @@ new Aspose\Email\Model\Requests\SaveEmailModelRequest(
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **format** | **string**| File format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html |
- **name** | **string**| iCalendar file name in storage. |
+ **name** | **string**| Email document file name in storage. |
  **rq** | [**\Aspose\Email\Model\StorageModelRqOfEmailDto**](StorageModelRqOfEmailDto.md)| Calendar properties update request. |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
