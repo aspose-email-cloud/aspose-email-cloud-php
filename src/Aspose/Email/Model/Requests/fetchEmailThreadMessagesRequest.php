@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="getEmailThreadRequest.php">
+ * <copyright company="Aspose" file="fetchEmailThreadMessagesRequest.php">
  *   Copyright (c) 2018-2020 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -29,26 +29,26 @@
 namespace Aspose\Email\Model\Requests;
 
 /**
- * Request model for getEmailThread" operation.
+ * Request model for fetchEmailThreadMessages" operation.
  */
-class GetEmailThreadRequest
+class FetchEmailThreadMessagesRequest
 {
     /**
-     * Initializes a new instance of the GetEmailThreadRequest class.
+     * Initializes a new instance of the FetchEmailThreadMessagesRequest class.
      *  
      * @param string $thread_id Thread identifier
      * @param string $first_account Email account
      * @param string $second_account Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)
-     * @param string $folder_id Specifies account folder to get thread from (required for some account types, such as EWS). Use folder Id from ListEmailFolders (MailServerFolder.Id). For IMAP folder Id is always same as folder name.
+     * @param string $folder Specifies account folder to get thread from
      * @param string $storage Storage name where account file(s) located
      * @param string $storage_folder Folder in storage where account file(s) located
      */
-    public function __construct($thread_id, $first_account, $second_account = null, $folder_id = null, $storage = null, $storage_folder = null)             
+    public function __construct($thread_id, $first_account, $second_account = null, $folder = null, $storage = null, $storage_folder = null)             
     {
         $this->thread_id = $thread_id;
         $this->first_account = $first_account;
         $this->second_account = $second_account;
-        $this->folder_id = $folder_id;
+        $this->folder = $folder;
         $this->storage = $storage;
         $this->storage_folder = $storage_folder;
     }
@@ -69,9 +69,9 @@ class GetEmailThreadRequest
     public $second_account;
 	
     /**
-     * Specifies account folder to get thread from (required for some account types, such as EWS). Use folder Id from ListEmailFolders (MailServerFolder.Id). For IMAP folder Id is always same as folder name.
+     * Specifies account folder to get thread from
      */
-    public $folder_id;
+    public $folder;
 	
     /**
      * Storage name where account file(s) located

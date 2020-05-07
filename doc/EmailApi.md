@@ -53,6 +53,7 @@ Method | HTTP request | Description
 [**downloadFile**](EmailApi.md#downloadFile) | **GET** /email/storage/file/{path} | Download file
 [**fetchEmailMessage**](EmailApi.md#fetchEmailMessage) | **GET** /email/client/Fetch | Fetch message mime from email account
 [**fetchEmailModel**](EmailApi.md#fetchEmailModel) | **GET** /email/client/FetchModel | Fetch message model from email account
+[**fetchEmailThreadMessages**](EmailApi.md#fetchEmailThreadMessages) | **GET** /email/client/threads/{threadId}/messages | Get messages from thread by id. All messages are fully fetched. For accounts with CacheFile only cached messages will be returned.
 [**getCalendar**](EmailApi.md#getCalendar) | **GET** /email/Calendar/{name}/properties | Get calendar file properties
 [**getCalendarAttachment**](EmailApi.md#getCalendarAttachment) | **GET** /email/Calendar/{name}/attachments/{attachment} | Get iCalendar document attachment by name
 [**getCalendarList**](EmailApi.md#getCalendarList) | **GET** /email/Calendar | Get iCalendar files list in folder on storage
@@ -73,7 +74,6 @@ Method | HTTP request | Description
 [**getEmailModel**](EmailApi.md#getEmailModel) | **GET** /email/model/{format}/{name} | Get email document.
 [**getEmailModelList**](EmailApi.md#getEmailModelList) | **GET** /email/model/{format} | Get email list from storage folder.
 [**getEmailProperty**](EmailApi.md#getEmailProperty) | **GET** /email/{fileName}/properties/{propertyName} | Get an email document property by its name
-[**getEmailThread**](EmailApi.md#getEmailThread) | **GET** /email/client/threads/{threadId} | Get message thread by id. All messages are fully fetched. For accounts with CacheFile only cached messages will be returned.
 [**getFileVersions**](EmailApi.md#getFileVersions) | **GET** /email/storage/version/{path} | Get file versions
 [**getFilesList**](EmailApi.md#getFilesList) | **GET** /email/storage/folder/{path} | Get all files and folders within a folder
 [**getMapiAttachment**](EmailApi.md#getMapiAttachment) | **GET** /email/Mapi/{name}/attachments/{attachment} | Get document attachment as file stream
@@ -1413,6 +1413,39 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+# **fetchEmailThreadMessages**
+```php
+function \Aspose\Email\Model\ListResponseOfEmailDto fetchEmailThreadMessages(Requests\FetchEmailThreadMessagesRequest $request)
+```
+Get messages from thread by id. All messages are fully fetched. For accounts with CacheFile only cached messages will be returned.
+
+### Return type
+
+[**\Aspose\Email\Model\ListResponseOfEmailDto**](ListResponseOfEmailDto.md)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\FetchEmailThreadMessagesRequest(
+    $thread_id,
+    $first_account,
+    $second_account,
+    $folder,
+    $storage,
+    $storage_folder)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **thread_id** | **string**| Thread identifier |
+ **first_account** | **string**| Email account |
+ **second_account** | **string**| Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP) | [optional]
+ **folder** | **string**| Specifies account folder to get thread from | [optional]
+ **storage** | **string**| Storage name where account file(s) located | [optional]
+ **storage_folder** | **string**| Folder in storage where account file(s) located | [optional]
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 # **getCalendar**
 ```php
 function \Aspose\Email\Model\HierarchicalObject getCalendar(Requests\GetCalendarRequest $request)
@@ -1987,39 +2020,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
-# **getEmailThread**
-```php
-function \Aspose\Email\Model\EmailThread getEmailThread(Requests\GetEmailThreadRequest $request)
-```
-Get message thread by id. All messages are fully fetched. For accounts with CacheFile only cached messages will be returned.
-
-### Return type
-
-[**\Aspose\Email\Model\EmailThread**](EmailThread.md)
-
-### Request parameters
-```php
-new Aspose\Email\Model\Requests\GetEmailThreadRequest(
-    $thread_id,
-    $first_account,
-    $second_account,
-    $folder_id,
-    $storage,
-    $storage_folder)
-```
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **thread_id** | **string**| Thread identifier |
- **first_account** | **string**| Email account |
- **second_account** | **string**| Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP) | [optional]
- **folder_id** | **string**| Specifies account folder to get thread from (required for some account types, such as EWS). Use folder Id from ListEmailFolders (MailServerFolder.Id). For IMAP folder Id is always same as folder name. | [optional]
- **storage** | **string**| Storage name where account file(s) located | [optional]
- **storage_folder** | **string**| Folder in storage where account file(s) located | [optional]
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
 # **getFileVersions**
 ```php
 function \Aspose\Email\Model\FileVersions getFileVersions(Requests\GetFileVersionsRequest $request)
@@ -2323,7 +2323,7 @@ Get message threads from folder. All messages are partly fetched (without email 
 ### Request parameters
 ```php
 new Aspose\Email\Model\Requests\ListEmailThreadsRequest(
-    $folder_id,
+    $folder,
     $first_account,
     $second_account,
     $storage,
@@ -2335,7 +2335,7 @@ new Aspose\Email\Model\Requests\ListEmailThreadsRequest(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **folder_id** | **string**| A folder id in email account. Use folder Id from ListEmailFolders (MailServerFolder.Id). For IMAP folder Id is always same as folder name. |
+ **folder** | **string**| A folder in email account. |
  **first_account** | **string**| Email account |
  **second_account** | **string**| Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP) | [optional]
  **storage** | **string**| Storage name where account file(s) located | [optional]

@@ -54,7 +54,7 @@ class MoveEmailThreadRq extends AccountBaseRequest
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'destination_folder_id' => 'string'
+        'destination_folder' => 'string'
     ];
 
     /**
@@ -63,7 +63,7 @@ class MoveEmailThreadRq extends AccountBaseRequest
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'destination_folder_id' => null
+        'destination_folder' => null
     ];
 
     /**
@@ -93,7 +93,7 @@ class MoveEmailThreadRq extends AccountBaseRequest
      * @var string[]
      */
     protected static $attributeMap = [
-        'destination_folder_id' => 'destinationFolderId'
+        'destination_folder' => 'destinationFolder'
     ];
 
     /**
@@ -102,7 +102,7 @@ class MoveEmailThreadRq extends AccountBaseRequest
      * @var string[]
      */
     protected static $setters = [
-        'destination_folder_id' => 'setDestinationFolderId'
+        'destination_folder' => 'setDestinationFolder'
     ];
 
     /**
@@ -111,7 +111,7 @@ class MoveEmailThreadRq extends AccountBaseRequest
      * @var string[]
      */
     protected static $getters = [
-        'destination_folder_id' => 'getDestinationFolderId'
+        'destination_folder' => 'getDestinationFolder'
     ];
 
     /**
@@ -166,17 +166,17 @@ class MoveEmailThreadRq extends AccountBaseRequest
      * @param string $first_account First account storage file name
      * @param string $second_account Additional email account (for example, FirstAccount could be IMAP, and second one could be SMTP)
      * @param \Aspose\Email\Model\StorageFolderLocation $storage_folder Storage folder location of account files
-     * @param string $destination_folder_id Email account folder id to move thread to. Use folder Id from ListEmailFolders (MailServerFolder.Id). For IMAP folder Id is always same as folder name.
+     * @param string $destination_folder Email account folder to move thread to
      */
-    public function __construct($first_account = null, $second_account = null, $storage_folder = null, $destination_folder_id = null)
+    public function __construct($first_account = null, $second_account = null, $storage_folder = null, $destination_folder = null)
     {
         parent::__construct();
-        $this->container['destination_folder_id'] = null;
+        $this->container['destination_folder'] = null;
 
         if ($first_account != null) $this->setFirstAccount($first_account);
         if ($second_account != null) $this->setSecondAccount($second_account);
         if ($storage_folder != null) $this->setStorageFolder($storage_folder);
-        if ($destination_folder_id != null) $this->setDestinationFolderId($destination_folder_id);
+        if ($destination_folder != null) $this->setDestinationFolder($destination_folder);
     }
 
     /**
@@ -208,25 +208,25 @@ class MoveEmailThreadRq extends AccountBaseRequest
 
 
     /**
-     * Gets destination_folder_id
+     * Gets destination_folder
      *
      * @return string
      */
-    public function getDestinationFolderId()
+    public function getDestinationFolder()
     {
-        return $this->container['destination_folder_id'];
+        return $this->container['destination_folder'];
     }
 
     /**
-     * Sets destination_folder_id
+     * Sets destination_folder
      *
-     * @param string $destination_folder_id Email account folder id to move thread to. Use folder Id from ListEmailFolders (MailServerFolder.Id). For IMAP folder Id is always same as folder name.
+     * @param string $destination_folder Email account folder to move thread to
      *
      * @return $this
      */
-    public function setDestinationFolderId($destination_folder_id)
+    public function setDestinationFolder($destination_folder)
     {
-        $this->container['destination_folder_id'] = $destination_folder_id;
+        $this->container['destination_folder'] = $destination_folder;
 
         return $this;
     }

@@ -54,7 +54,7 @@ class DeleteEmailThreadAccountRq extends AccountBaseRequest
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'folder_id' => 'string'
+        'folder' => 'string'
     ];
 
     /**
@@ -63,7 +63,7 @@ class DeleteEmailThreadAccountRq extends AccountBaseRequest
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'folder_id' => null
+        'folder' => null
     ];
 
     /**
@@ -93,7 +93,7 @@ class DeleteEmailThreadAccountRq extends AccountBaseRequest
      * @var string[]
      */
     protected static $attributeMap = [
-        'folder_id' => 'folderId'
+        'folder' => 'folder'
     ];
 
     /**
@@ -102,7 +102,7 @@ class DeleteEmailThreadAccountRq extends AccountBaseRequest
      * @var string[]
      */
     protected static $setters = [
-        'folder_id' => 'setFolderId'
+        'folder' => 'setFolder'
     ];
 
     /**
@@ -111,7 +111,7 @@ class DeleteEmailThreadAccountRq extends AccountBaseRequest
      * @var string[]
      */
     protected static $getters = [
-        'folder_id' => 'getFolderId'
+        'folder' => 'getFolder'
     ];
 
     /**
@@ -166,17 +166,17 @@ class DeleteEmailThreadAccountRq extends AccountBaseRequest
      * @param string $first_account First account storage file name
      * @param string $second_account Additional email account (for example, FirstAccount could be IMAP, and second one could be SMTP)
      * @param \Aspose\Email\Model\StorageFolderLocation $storage_folder Storage folder location of account files
-     * @param string $folder_id Specifies account folder to get thread from (required for some account types, such as EWS). Use folder Id from ListEmailFolders (MailServerFolder.Id). For IMAP folder Id is always same as folder name.
+     * @param string $folder Specifies account folder to get thread from
      */
-    public function __construct($first_account = null, $second_account = null, $storage_folder = null, $folder_id = null)
+    public function __construct($first_account = null, $second_account = null, $storage_folder = null, $folder = null)
     {
         parent::__construct();
-        $this->container['folder_id'] = null;
+        $this->container['folder'] = null;
 
         if ($first_account != null) $this->setFirstAccount($first_account);
         if ($second_account != null) $this->setSecondAccount($second_account);
         if ($storage_folder != null) $this->setStorageFolder($storage_folder);
-        if ($folder_id != null) $this->setFolderId($folder_id);
+        if ($folder != null) $this->setFolder($folder);
     }
 
     /**
@@ -208,25 +208,25 @@ class DeleteEmailThreadAccountRq extends AccountBaseRequest
 
 
     /**
-     * Gets folder_id
+     * Gets folder
      *
      * @return string
      */
-    public function getFolderId()
+    public function getFolder()
     {
-        return $this->container['folder_id'];
+        return $this->container['folder'];
     }
 
     /**
-     * Sets folder_id
+     * Sets folder
      *
-     * @param string $folder_id Specifies account folder to get thread from (required for some account types, such as EWS). Use folder Id from ListEmailFolders (MailServerFolder.Id). For IMAP folder Id is always same as folder name.
+     * @param string $folder Specifies account folder to get thread from
      *
      * @return $this
      */
-    public function setFolderId($folder_id)
+    public function setFolder($folder)
     {
-        $this->container['folder_id'] = $folder_id;
+        $this->container['folder'] = $folder;
 
         return $this;
     }

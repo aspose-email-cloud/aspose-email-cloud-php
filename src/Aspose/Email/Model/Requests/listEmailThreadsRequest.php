@@ -36,7 +36,7 @@ class ListEmailThreadsRequest
     /**
      * Initializes a new instance of the ListEmailThreadsRequest class.
      *  
-     * @param string $folder_id A folder id in email account. Use folder Id from ListEmailFolders (MailServerFolder.Id). For IMAP folder Id is always same as folder name.
+     * @param string $folder A folder in email account.
      * @param string $first_account Email account
      * @param string $second_account Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)
      * @param string $storage Storage name where account file(s) located
@@ -44,9 +44,9 @@ class ListEmailThreadsRequest
      * @param bool $update_folder_cache This parameter is only used in accounts with CacheFile. If true - get new messages and update threads cache for given folder. If false, get only threads from cache without any calls to an email account
      * @param int $messages_cache_limit Limit messages cache size if CacheFile is used. Ignored in accounts without limits support
      */
-    public function __construct($folder_id, $first_account, $second_account = null, $storage = null, $storage_folder = null, $update_folder_cache = null, $messages_cache_limit = null)             
+    public function __construct($folder, $first_account, $second_account = null, $storage = null, $storage_folder = null, $update_folder_cache = null, $messages_cache_limit = null)             
     {
-        $this->folder_id = $folder_id;
+        $this->folder = $folder;
         $this->first_account = $first_account;
         $this->second_account = $second_account;
         $this->storage = $storage;
@@ -56,9 +56,9 @@ class ListEmailThreadsRequest
     }
 
     /**
-     * A folder id in email account. Use folder Id from ListEmailFolders (MailServerFolder.Id). For IMAP folder Id is always same as folder name.
+     * A folder in email account.
      */
-    public $folder_id;
+    public $folder;
 	
     /**
      * Email account

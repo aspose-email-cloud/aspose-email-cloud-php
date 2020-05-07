@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **is_read** | **bool** | Read flag to set. \"true\" by default | 
-**folder_id** | **string** | Specifies account folder to get thread from (required for some account types, such as EWS). Use folder Id from ListEmailFolders (MailServerFolder.Id). For IMAP folder Id is always same as folder name. | [optional] 
+**folder** | **string** | Specifies account folder to get thread from | [optional] 
 
  Parent class: [AccountBaseRequest](AccountBaseRequest.md)
 
