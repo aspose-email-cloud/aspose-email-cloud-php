@@ -128,7 +128,7 @@ class EmailApiTest extends TestCase
     {
         $path = dirname(__FILE__).DIRECTORY_SEPARATOR."data".DIRECTORY_SEPARATOR."sample.ics";
         $storagePath = self::$folder."/".uniqid().".ics";
-        self::getApi()->uploadFile(new UploadFileRequest($storagePath, $path, self::$storage));
+        self::getApi()->uploadFile(new UploadFileRequest($storagePath, new SplFileObject($path), self::$storage));
         $exists = self::getApi()
             ->objectExists(new ObjectExistsRequest($storagePath, self::$storage));
         $this->assertTrue(
@@ -212,7 +212,9 @@ class EmailApiTest extends TestCase
         $expandedNames = array_map(function($weightedName) {
             return $weightedName->getName();
         }, $result->getNames());
+        /** @noinspection PhpUnitAssertContainsInspection */
         $this->assertContains("Mr. Smith", $expandedNames);
+        /** @noinspection PhpUnitAssertContainsInspection */
         $this->assertContains("B. Smith", $expandedNames);
     }
 
@@ -226,8 +228,11 @@ class EmailApiTest extends TestCase
         $names = array_map(function ($weightedName) use ($prefix) {
             return $prefix.$weightedName->getName();
         }, $result->getNames());
+        /** @noinspection PhpUnitAssertContainsInspection */
         $this->assertContains("David", $names);
+        /** @noinspection PhpUnitAssertContainsInspection */
         $this->assertContains("Dave", $names);
+        /** @noinspection PhpUnitAssertContainsInspection */
         $this->assertContains("Davis", $names);
     }
 
@@ -261,7 +266,7 @@ class EmailApiTest extends TestCase
         $imageFile = uniqid().".png";
         $storagePath = self::$folder."/".$imageFile;
         // 1) Upload business card image to storage
-        self::getApi()->uploadFile(new UploadFileRequest($storagePath, $path, self::$storage));
+        self::getApi()->uploadFile(new UploadFileRequest($storagePath, new SplFileObject($path), self::$storage));
         $outFolder = uniqid();
         $outFolderPath = self::$folder."/".$outFolder;
         self::getApi()->createFolder(new CreateFolderRequest($outFolderPath, self::$storage));
@@ -501,6 +506,3 @@ class EmailApiTest extends TestCase
         return $fileName;
     }
 }
-
-
-?>
