@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="convertEmailRequest.php">
+ * <copyright company="Aspose" file="convertCalendarModelToFileRequest.php">
  *   Copyright (c) 2018-2020 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -29,30 +29,30 @@
 namespace Aspose\Email\Model\Requests;
 
 /**
- * Request model for convertEmail" operation.
+ * Request model for convertCalendarModelToFile" operation.
  */
-class ConvertEmailRequest
+class ConvertCalendarModelToFileRequest
 {
     /**
-     * Initializes a new instance of the ConvertEmailRequest class.
+     * Initializes a new instance of the ConvertCalendarModelToFileRequest class.
      *  
-     * @param string $format File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
-     * @param \SplFileObject $file File to convert
+     * @param string $format File format Enum, available values: Ics, Msg
+     * @param \Aspose\Email\Model\CalendarDto $calendar_dto Calendar model to convert
      */
-    public function __construct($format, $file)             
+    public function __construct($format, $calendar_dto)             
     {
         $this->format = $format;
-        $this->file = $file;
+        $this->calendar_dto = $calendar_dto;
     }
 
     /**
-     * File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
+     * File format Enum, available values: Ics, Msg
      */
     public $format;
 	
     /**
-     * File to convert
+     * Calendar model to convert
      */
-    public $file;
+    public $calendar_dto;
 }
 ?>

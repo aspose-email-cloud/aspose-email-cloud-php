@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="convertEmailRequest.php">
+ * <copyright company="Aspose" file="getContactAsFileRequest.php">
  *   Copyright (c) 2018-2020 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -29,30 +29,51 @@
 namespace Aspose\Email\Model\Requests;
 
 /**
- * Request model for convertEmail" operation.
+ * Request model for getContactAsFile" operation.
  */
-class ConvertEmailRequest
+class GetContactAsFileRequest
 {
     /**
-     * Initializes a new instance of the ConvertEmailRequest class.
+     * Initializes a new instance of the GetContactAsFileRequest class.
      *  
-     * @param string $format File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
-     * @param \SplFileObject $file File to convert
+     * @param string $file_name Calendar document file name
+     * @param string $destination_format File format Enum, available values: VCard, WebDav, Msg
+     * @param string $format File format to convert from Enum, available values: VCard, WebDav, Msg
+     * @param string $storage Storage name
+     * @param string $folder Path to folder in storage
      */
-    public function __construct($format, $file)             
+    public function __construct($file_name, $destination_format, $format, $storage = null, $folder = null)             
     {
+        $this->file_name = $file_name;
+        $this->destination_format = $destination_format;
         $this->format = $format;
-        $this->file = $file;
+        $this->storage = $storage;
+        $this->folder = $folder;
     }
 
     /**
-     * File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
+     * Calendar document file name
+     */
+    public $file_name;
+	
+    /**
+     * File format Enum, available values: VCard, WebDav, Msg
+     */
+    public $destination_format;
+	
+    /**
+     * File format to convert from Enum, available values: VCard, WebDav, Msg
      */
     public $format;
 	
     /**
-     * File to convert
+     * Storage name
      */
-    public $file;
+    public $storage;
+	
+    /**
+     * Path to folder in storage
+     */
+    public $folder;
 }
 ?>
