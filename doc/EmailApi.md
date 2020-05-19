@@ -34,6 +34,7 @@ Method | HTTP request | Description
 [**convertContact**](EmailApi.md#convertContact) | **PUT** /email/ContactModel/{format}/convert/{destinationFormat} | Converts contact document to specified format and returns as file
 [**convertContactModelToFile**](EmailApi.md#convertContactModelToFile) | **PUT** /email/ContactModel/model-as-file/{destinationFormat} | Converts contact model to specified format and returns as file
 [**convertEmail**](EmailApi.md#convertEmail) | **PUT** /email/convert/{format} | Converts email document to specified format and returns as file
+[**convertEmailModelToFile**](EmailApi.md#convertEmailModelToFile) | **PUT** /email/model/model-as-file/{destinationFormat} | Converts Email model to specified format and returns as file
 [**copyFile**](EmailApi.md#copyFile) | **PUT** /email/storage/file/copy/{srcPath} | Copy file
 [**copyFolder**](EmailApi.md#copyFolder) | **PUT** /email/storage/folder/copy/{srcPath} | Copy folder
 [**createCalendar**](EmailApi.md#createCalendar) | **PUT** /email/Calendar/{name} | Create calendar file
@@ -61,12 +62,14 @@ Method | HTTP request | Description
 [**getCalendar**](EmailApi.md#getCalendar) | **GET** /email/Calendar/{name}/properties | Get calendar file properties
 [**getCalendarAsFile**](EmailApi.md#getCalendarAsFile) | **GET** /email/CalendarModel/{fileName}/as-file/{format} | Converts calendar document from storage to specified format and returns as file
 [**getCalendarAttachment**](EmailApi.md#getCalendarAttachment) | **GET** /email/Calendar/{name}/attachments/{attachment} | Get iCalendar document attachment by name
+[**getCalendarFileAsModel**](EmailApi.md#getCalendarFileAsModel) | **PUT** /email/CalendarModel/file-as-model | Converts calendar document to a model representation
 [**getCalendarList**](EmailApi.md#getCalendarList) | **GET** /email/Calendar | Get iCalendar files list in folder on storage
 [**getCalendarModel**](EmailApi.md#getCalendarModel) | **GET** /email/CalendarModel/{name} | Get calendar file
 [**getCalendarModelAsAlternate**](EmailApi.md#getCalendarModelAsAlternate) | **GET** /email/CalendarModel/{name}/as-alternate/{calendarAction} | Get iCalendar from storage as AlternateView
 [**getCalendarModelList**](EmailApi.md#getCalendarModelList) | **GET** /email/CalendarModel | Get iCalendar list from storage folder
 [**getContactAsFile**](EmailApi.md#getContactAsFile) | **GET** /email/ContactModel/{format}/{fileName}/as-file/{destinationFormat} | Converts calendar document from storage to specified format and returns as file
 [**getContactAttachment**](EmailApi.md#getContactAttachment) | **GET** /email/Contact/{format}/{name}/attachments/{attachment} | Get attachment file by name
+[**getContactFileAsModel**](EmailApi.md#getContactFileAsModel) | **PUT** /email/ContactModel/{format}/file-as-model | Converts contact document to a model representation
 [**getContactList**](EmailApi.md#getContactList) | **GET** /email/Contact/{format} | Get contact list from storage folder
 [**getContactModel**](EmailApi.md#getContactModel) | **GET** /email/ContactModel/{format}/{name} | Get contact document.
 [**getContactModelList**](EmailApi.md#getContactModelList) | **GET** /email/ContactModel/{format} | Get contact list from storage folder.
@@ -77,6 +80,7 @@ Method | HTTP request | Description
 [**getEmailAttachment**](EmailApi.md#getEmailAttachment) | **GET** /email/{fileName}/attachments/{attachment} | Get email attachment by name
 [**getEmailClientAccount**](EmailApi.md#getEmailClientAccount) | **GET** /email/client/email-client-account | Get email client account from storage
 [**getEmailClientMultiAccount**](EmailApi.md#getEmailClientMultiAccount) | **GET** /email/client/multi-account | Get email client multi account file (*.multi.account). Will respond error if file extension is not \&quot;.multi.account\&quot;.
+[**getEmailFileAsModel**](EmailApi.md#getEmailFileAsModel) | **PUT** /email/model/{format}/file-as-model | Converts email document to a model representation
 [**getEmailModel**](EmailApi.md#getEmailModel) | **GET** /email/model/{format}/{name} | Get email document.
 [**getEmailModelList**](EmailApi.md#getEmailModelList) | **GET** /email/model/{format} | Get email list from storage folder.
 [**getEmailProperty**](EmailApi.md#getEmailProperty) | **GET** /email/{fileName}/properties/{propertyName} | Get an email document property by its name
@@ -910,6 +914,31 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+# **convertEmailModelToFile**
+```php
+function \SplFileObject convertEmailModelToFile(Requests\ConvertEmailModelToFileRequest $request)
+```
+Converts Email model to specified format and returns as file
+
+### Return type
+
+[**\SplFileObject**](\SplFileObject.md)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\ConvertEmailModelToFileRequest(
+    $destination_format,
+    $email_dto)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **destination_format** | **string**| File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html |
+ **email_dto** | [**\Aspose\Email\Model\EmailDto**](EmailDto.md)| Email model to convert |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 # **copyFile**
 ```php
 function copyFile(Requests\CopyFileRequest $request)
@@ -1639,6 +1668,29 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+# **getCalendarFileAsModel**
+```php
+function \Aspose\Email\Model\CalendarDto getCalendarFileAsModel(Requests\GetCalendarFileAsModelRequest $request)
+```
+Converts calendar document to a model representation
+
+### Return type
+
+[**\Aspose\Email\Model\CalendarDto**](CalendarDto.md)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\GetCalendarFileAsModelRequest(
+    $file)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file** | **\SplFileObject**| File to convert |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 # **getCalendarList**
 ```php
 function \Aspose\Email\Model\ListResponseOfHierarchicalObjectResponse getCalendarList(Requests\GetCalendarListRequest $request)
@@ -1814,6 +1866,31 @@ Name | Type | Description  | Notes
  **attachment** | **string**| Attachment name or index |
  **folder** | **string**| Path to folder in storage | [optional]
  **storage** | **string**| Storage name | [optional]
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **getContactFileAsModel**
+```php
+function \Aspose\Email\Model\ContactDto getContactFileAsModel(Requests\GetContactFileAsModelRequest $request)
+```
+Converts contact document to a model representation
+
+### Return type
+
+[**\Aspose\Email\Model\ContactDto**](ContactDto.md)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\GetContactFileAsModelRequest(
+    $format,
+    $file)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **format** | **string**| File format Enum, available values: VCard, WebDav, Msg |
+ **file** | **\SplFileObject**| File to convert |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -2096,6 +2173,31 @@ Name | Type | Description  | Notes
  **name** | **string**| File name on storage |
  **folder** | **string**| Folder on storage |
  **storage** | **string**| Storage name |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **getEmailFileAsModel**
+```php
+function \Aspose\Email\Model\EmailDto getEmailFileAsModel(Requests\GetEmailFileAsModelRequest $request)
+```
+Converts email document to a model representation
+
+### Return type
+
+[**\Aspose\Email\Model\EmailDto**](EmailDto.md)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\GetEmailFileAsModelRequest(
+    $format,
+    $file)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **format** | **string**| File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html |
+ **file** | **\SplFileObject**| File to convert |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 

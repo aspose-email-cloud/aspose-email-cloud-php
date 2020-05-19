@@ -8835,6 +8835,293 @@ class EmailApi
     }
 
     /**
+     * Operation convertEmailModelToFile
+     *
+     * Converts Email model to specified format and returns as file
+     *
+     * @param Requests\ConvertEmailModelToFileRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \SplFileObject
+     */
+    public function convertEmailModelToFile(Requests\ConvertEmailModelToFileRequest $request)
+    {
+        try {
+             list($response) = $this->convertEmailModelToFileWithHttpInfo($request);
+             return $response;
+        }
+        catch(RepeatRequestException $e) {
+             list($response) = $this->convertEmailModelToFileWithHttpInfo($request);
+             return $response;
+        } 
+    }
+
+    /**
+     * Operation convertEmailModelToFileWithHttpInfo
+     *
+     * Converts Email model to specified format and returns as file
+     *
+     * @param Requests\ConvertEmailModelToFileRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function convertEmailModelToFileWithHttpInfo(Requests\ConvertEmailModelToFileRequest $request)
+    {
+        $returnType = '\SplFileObject';
+        $request = $this->convertEmailModelToFileRequest($request);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null);
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                if ($statusCode === 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                }
+          
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+            
+            if ($this->config->getDebug()) {
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\SplFileObject', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation convertEmailModelToFileAsync
+     *
+     * Converts Email model to specified format and returns as file
+     *
+     * @param Requests\ConvertEmailModelToFileRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function convertEmailModelToFileAsync(Requests\ConvertEmailModelToFileRequest $request) 
+    {
+        return $this->convertEmailModelToFileAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation convertEmailModelToFileAsyncWithHttpInfo
+     *
+     * Converts Email model to specified format and returns as file
+     *
+     * @param Requests\ConvertEmailModelToFileRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function convertEmailModelToFileAsyncWithHttpInfo(Requests\ConvertEmailModelToFileRequest $request) 
+    {
+        $returnType = '\SplFileObject';
+        $request = $this->convertEmailModelToFileRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+                    
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+          
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    }
+          
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'convertEmailModelToFile'
+     *
+     * @param Requests\ConvertEmailModelToFileRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function convertEmailModelToFileRequest(Requests\ConvertEmailModelToFileRequest $request)
+    {
+        // verify the required parameter 'destination_format' is set
+        if ($request->destination_format === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $destination_format when calling convertEmailModelToFile');
+        }
+        // verify the required parameter 'email_dto' is set
+        if ($request->email_dto === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $email_dto when calling convertEmailModelToFile');
+        }
+
+        $resourcePath = '/email/model/model-as-file/{destinationFormat}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $multipart = false;
+    
+        // path params
+        if ($request->destination_format !== null) {
+            $localName = lcfirst('destinationFormat');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->destination_format), $resourcePath);
+        }
+
+    
+    
+        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
+        $formFiles = [];
+        // body params
+        $_tempBody = null;
+        if (isset($request->email_dto)) {
+            if (is_string($request->email_dto)) {
+                $_tempBody = "\"" . $request->email_dto . "\"";   
+            } else {
+                $_tempBody = $request->email_dto;
+            }
+        }
+
+        if ($multipart) {
+            $headers= $this->headerSelector->selectHeadersForMultipart(
+                ['multipart/form-data']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['multipart/form-data'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContent = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = $formParams["data"];
+            }
+        }
+    
+        $this->_requestToken();
+
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
+        }
+    
+        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+    
+        $req = new Request(
+            'PUT',
+            $this->config->getHost() . $resourcePath,
+            $headers,
+            $httpBody
+        );
+        if ($this->config->getDebug()) {
+            $this->_writeRequestLog('PUT', $this->config->getHost() . $resourcePath, $headers, $httpBody);
+        }
+        
+        return $req;
+    }
+
+    /**
      * Operation copyFile
      *
      * Copy file
@@ -16200,6 +16487,287 @@ class EmailApi
     }
 
     /**
+     * Operation getCalendarFileAsModel
+     *
+     * Converts calendar document to a model representation
+     *
+     * @param Requests\GetCalendarFileAsModelRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Email\Model\CalendarDto
+     */
+    public function getCalendarFileAsModel(Requests\GetCalendarFileAsModelRequest $request)
+    {
+        try {
+             list($response) = $this->getCalendarFileAsModelWithHttpInfo($request);
+             return $response;
+        }
+        catch(RepeatRequestException $e) {
+             list($response) = $this->getCalendarFileAsModelWithHttpInfo($request);
+             return $response;
+        } 
+    }
+
+    /**
+     * Operation getCalendarFileAsModelWithHttpInfo
+     *
+     * Converts calendar document to a model representation
+     *
+     * @param Requests\GetCalendarFileAsModelRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Email\Model\CalendarDto, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getCalendarFileAsModelWithHttpInfo(Requests\GetCalendarFileAsModelRequest $request)
+    {
+        $returnType = '\Aspose\Email\Model\CalendarDto';
+        $request = $this->getCalendarFileAsModelRequest($request);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null);
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                if ($statusCode === 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                }
+          
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+            
+            if ($this->config->getDebug()) {
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Email\Model\CalendarDto', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getCalendarFileAsModelAsync
+     *
+     * Converts calendar document to a model representation
+     *
+     * @param Requests\GetCalendarFileAsModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getCalendarFileAsModelAsync(Requests\GetCalendarFileAsModelRequest $request) 
+    {
+        return $this->getCalendarFileAsModelAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getCalendarFileAsModelAsyncWithHttpInfo
+     *
+     * Converts calendar document to a model representation
+     *
+     * @param Requests\GetCalendarFileAsModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getCalendarFileAsModelAsyncWithHttpInfo(Requests\GetCalendarFileAsModelRequest $request) 
+    {
+        $returnType = '\Aspose\Email\Model\CalendarDto';
+        $request = $this->getCalendarFileAsModelRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+                    
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+          
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    }
+          
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getCalendarFileAsModel'
+     *
+     * @param Requests\GetCalendarFileAsModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function getCalendarFileAsModelRequest(Requests\GetCalendarFileAsModelRequest $request)
+    {
+        // verify the required parameter 'file' is set
+        if ($request->file === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $file when calling getCalendarFileAsModel');
+        }
+
+        $resourcePath = '/email/CalendarModel/file-as-model';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $multipart = false;
+    
+
+    
+    
+        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
+        $formFiles = [];
+        // form params
+        if ($request->file !== null) {
+            $multipart = true;
+            $filename = ObjectSerializer::toFormValue($request->file);
+            $handle = fopen($filename, "rb");
+            $fsize = filesize($filename);
+            $contents = fread($handle, $fsize);
+            $formParams['file'] = $contents;
+            $formFiles['file'] = basename($filename);
+        }
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers= $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContent = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = $formParams["data"];
+            }
+        }
+    
+        $this->_requestToken();
+
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
+        }
+    
+        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+    
+        $req = new Request(
+            'PUT',
+            $this->config->getHost() . $resourcePath,
+            $headers,
+            $httpBody
+        );
+        if ($this->config->getDebug()) {
+            $this->_writeRequestLog('PUT', $this->config->getHost() . $resourcePath, $headers, $httpBody);
+        }
+        
+        return $req;
+    }
+
+    /**
      * Operation getCalendarList
      *
      * Get iCalendar files list in folder on storage
@@ -18063,6 +18631,296 @@ class EmailApi
         );
         if ($this->config->getDebug()) {
             $this->_writeRequestLog('GET', $this->config->getHost() . $resourcePath, $headers, $httpBody);
+        }
+        
+        return $req;
+    }
+
+    /**
+     * Operation getContactFileAsModel
+     *
+     * Converts contact document to a model representation
+     *
+     * @param Requests\GetContactFileAsModelRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Email\Model\ContactDto
+     */
+    public function getContactFileAsModel(Requests\GetContactFileAsModelRequest $request)
+    {
+        try {
+             list($response) = $this->getContactFileAsModelWithHttpInfo($request);
+             return $response;
+        }
+        catch(RepeatRequestException $e) {
+             list($response) = $this->getContactFileAsModelWithHttpInfo($request);
+             return $response;
+        } 
+    }
+
+    /**
+     * Operation getContactFileAsModelWithHttpInfo
+     *
+     * Converts contact document to a model representation
+     *
+     * @param Requests\GetContactFileAsModelRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Email\Model\ContactDto, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getContactFileAsModelWithHttpInfo(Requests\GetContactFileAsModelRequest $request)
+    {
+        $returnType = '\Aspose\Email\Model\ContactDto';
+        $request = $this->getContactFileAsModelRequest($request);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null);
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                if ($statusCode === 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                }
+          
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+            
+            if ($this->config->getDebug()) {
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Email\Model\ContactDto', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getContactFileAsModelAsync
+     *
+     * Converts contact document to a model representation
+     *
+     * @param Requests\GetContactFileAsModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getContactFileAsModelAsync(Requests\GetContactFileAsModelRequest $request) 
+    {
+        return $this->getContactFileAsModelAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getContactFileAsModelAsyncWithHttpInfo
+     *
+     * Converts contact document to a model representation
+     *
+     * @param Requests\GetContactFileAsModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getContactFileAsModelAsyncWithHttpInfo(Requests\GetContactFileAsModelRequest $request) 
+    {
+        $returnType = '\Aspose\Email\Model\ContactDto';
+        $request = $this->getContactFileAsModelRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+                    
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+          
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    }
+          
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getContactFileAsModel'
+     *
+     * @param Requests\GetContactFileAsModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function getContactFileAsModelRequest(Requests\GetContactFileAsModelRequest $request)
+    {
+        // verify the required parameter 'format' is set
+        if ($request->format === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $format when calling getContactFileAsModel');
+        }
+        // verify the required parameter 'file' is set
+        if ($request->file === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $file when calling getContactFileAsModel');
+        }
+
+        $resourcePath = '/email/ContactModel/{format}/file-as-model';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $multipart = false;
+    
+        // path params
+        if ($request->format !== null) {
+            $localName = lcfirst('format');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->format), $resourcePath);
+        }
+
+    
+    
+        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
+        $formFiles = [];
+        // form params
+        if ($request->file !== null) {
+            $multipart = true;
+            $filename = ObjectSerializer::toFormValue($request->file);
+            $handle = fopen($filename, "rb");
+            $fsize = filesize($filename);
+            $contents = fread($handle, $fsize);
+            $formParams['file'] = $contents;
+            $formFiles['file'] = basename($filename);
+        }
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers= $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContent = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = $formParams["data"];
+            }
+        }
+    
+        $this->_requestToken();
+
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
+        }
+    
+        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+    
+        $req = new Request(
+            'PUT',
+            $this->config->getHost() . $resourcePath,
+            $headers,
+            $httpBody
+        );
+        if ($this->config->getDebug()) {
+            $this->_writeRequestLog('PUT', $this->config->getHost() . $resourcePath, $headers, $httpBody);
         }
         
         return $req;
@@ -21106,6 +21964,296 @@ class EmailApi
         );
         if ($this->config->getDebug()) {
             $this->_writeRequestLog('GET', $this->config->getHost() . $resourcePath, $headers, $httpBody);
+        }
+        
+        return $req;
+    }
+
+    /**
+     * Operation getEmailFileAsModel
+     *
+     * Converts email document to a model representation
+     *
+     * @param Requests\GetEmailFileAsModelRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Email\Model\EmailDto
+     */
+    public function getEmailFileAsModel(Requests\GetEmailFileAsModelRequest $request)
+    {
+        try {
+             list($response) = $this->getEmailFileAsModelWithHttpInfo($request);
+             return $response;
+        }
+        catch(RepeatRequestException $e) {
+             list($response) = $this->getEmailFileAsModelWithHttpInfo($request);
+             return $response;
+        } 
+    }
+
+    /**
+     * Operation getEmailFileAsModelWithHttpInfo
+     *
+     * Converts email document to a model representation
+     *
+     * @param Requests\GetEmailFileAsModelRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Email\Model\EmailDto, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getEmailFileAsModelWithHttpInfo(Requests\GetEmailFileAsModelRequest $request)
+    {
+        $returnType = '\Aspose\Email\Model\EmailDto';
+        $request = $this->getEmailFileAsModelRequest($request);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null);
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                if ($statusCode === 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                }
+          
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+            
+            if ($this->config->getDebug()) {
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Email\Model\EmailDto', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getEmailFileAsModelAsync
+     *
+     * Converts email document to a model representation
+     *
+     * @param Requests\GetEmailFileAsModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getEmailFileAsModelAsync(Requests\GetEmailFileAsModelRequest $request) 
+    {
+        return $this->getEmailFileAsModelAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getEmailFileAsModelAsyncWithHttpInfo
+     *
+     * Converts email document to a model representation
+     *
+     * @param Requests\GetEmailFileAsModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getEmailFileAsModelAsyncWithHttpInfo(Requests\GetEmailFileAsModelRequest $request) 
+    {
+        $returnType = '\Aspose\Email\Model\EmailDto';
+        $request = $this->getEmailFileAsModelRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+                    
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+          
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    }
+          
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getEmailFileAsModel'
+     *
+     * @param Requests\GetEmailFileAsModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function getEmailFileAsModelRequest(Requests\GetEmailFileAsModelRequest $request)
+    {
+        // verify the required parameter 'format' is set
+        if ($request->format === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $format when calling getEmailFileAsModel');
+        }
+        // verify the required parameter 'file' is set
+        if ($request->file === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $file when calling getEmailFileAsModel');
+        }
+
+        $resourcePath = '/email/model/{format}/file-as-model';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $multipart = false;
+    
+        // path params
+        if ($request->format !== null) {
+            $localName = lcfirst('format');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->format), $resourcePath);
+        }
+
+    
+    
+        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
+        $formFiles = [];
+        // form params
+        if ($request->file !== null) {
+            $multipart = true;
+            $filename = ObjectSerializer::toFormValue($request->file);
+            $handle = fopen($filename, "rb");
+            $fsize = filesize($filename);
+            $contents = fread($handle, $fsize);
+            $formParams['file'] = $contents;
+            $formFiles['file'] = basename($filename);
+        }
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers= $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContent = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = $formParams["data"];
+            }
+        }
+    
+        $this->_requestToken();
+
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
+        }
+    
+        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+    
+        $req = new Request(
+            'PUT',
+            $this->config->getHost() . $resourcePath,
+            $headers,
+            $httpBody
+        );
+        if ($this->config->getDebug()) {
+            $this->_writeRequestLog('PUT', $this->config->getHost() . $resourcePath, $headers, $httpBody);
         }
         
         return $req;
