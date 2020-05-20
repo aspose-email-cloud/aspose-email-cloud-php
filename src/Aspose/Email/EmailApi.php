@@ -7323,7 +7323,7 @@ class EmailApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['multipart/form-data'],
-                ['application/json']
+                ['multipart/form-data']
             );
         }
 
@@ -8187,7 +8187,7 @@ class EmailApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['multipart/form-data'],
-                ['application/json']
+                ['multipart/form-data']
             );
         }
 
@@ -8764,7 +8764,7 @@ class EmailApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['multipart/form-data'],
-                ['application/json']
+                ['multipart/form-data']
             );
         }
 
@@ -16697,7 +16697,7 @@ class EmailApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['application/json']
+                ['multipart/form-data']
             );
         }
 
@@ -18856,7 +18856,7 @@ class EmailApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['application/json']
+                ['multipart/form-data']
             );
         }
 
@@ -22189,7 +22189,7 @@ class EmailApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['application/json']
+                ['multipart/form-data']
             );
         }
 
