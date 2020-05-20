@@ -22143,27 +22143,18 @@ class EmailApi
      */
     protected function getEmailFileAsModelRequest(Requests\GetEmailFileAsModelRequest $request)
     {
-        // verify the required parameter 'format' is set
-        if ($request->format === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $format when calling getEmailFileAsModel');
-        }
         // verify the required parameter 'file' is set
         if ($request->file === null) {
             throw new \InvalidArgumentException('Missing the required parameter $file when calling getEmailFileAsModel');
         }
 
-        $resourcePath = '/email/model/{format}/file-as-model';
+        $resourcePath = '/email/model/file-as-model';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = "";
         $multipart = false;
     
-        // path params
-        if ($request->format !== null) {
-            $localName = lcfirst('format');
-            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->format), $resourcePath);
-        }
 
     
     

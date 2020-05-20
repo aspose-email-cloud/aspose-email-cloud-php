@@ -36,20 +36,13 @@ class GetEmailFileAsModelRequest
     /**
      * Initializes a new instance of the GetEmailFileAsModelRequest class.
      *  
-     * @param string $format File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
      * @param \SplFileObject $file File to convert
      */
-    public function __construct($format, $file)             
+    public function __construct($file)             
     {
-        $this->format = $format;
         $this->file = $file;
     }
 
-    /**
-     * File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
-     */
-    public $format;
-	
     /**
      * File to convert
      */
