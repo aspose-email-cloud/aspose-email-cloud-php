@@ -3,7 +3,13 @@
 use Aspose\Email\Configuration;
 use Aspose\Email\Model\Requests\convertCalendarModelToFileRequest;
 use Aspose\Email\Model\Requests\convertCalendarRequest;
+use Aspose\Email\Model\Requests\convertContactModelToFileRequest;
+use Aspose\Email\Model\Requests\convertContactRequest;
+use Aspose\Email\Model\Requests\convertEmailModelToFileRequest;
+use Aspose\Email\Model\Requests\convertEmailRequest;
 use Aspose\Email\Model\Requests\getCalendarFileAsModelRequest;
+use Aspose\Email\Model\Requests\getContactFileAsModelRequest;
+use Aspose\Email\Model\Requests\getEmailFileAsModelRequest;
 use PHPUnit\Framework\TestCase;
 use Aspose\Email\EmailApi;
 use Aspose\Email\Model\AiBcrBase64Image;
@@ -530,10 +536,54 @@ class EmailApiTest extends TestCase
         //ICS is a text format. We can read it to a string and check that it
         //contains specified location as a substring:
         $fileContent = $ics->fread($ics->getSize());
-        $this->assertRegExp("/".$location."/", $fileContent);
+        $this->assertRegExp("/" . $location . "/", $fileContent);
         //We can also convert the file back to a CalendarDto
         $dto = $api->getCalendarFileAsModel(new GetCalendarFileAsModelRequest($ics));
         $this->assertEquals($location, $dto->getLocation());
+    }
+
+    /**
+     * @group pipeline
+     */
+    public function testContactConverter(): void
+    {
+        $api = self::getApi();
+        $surname = 'Cane';
+        $contactDto = (new ContactDto())
+            ->setSurname($surname)
+            ->setGivenName('John')
+            ->setGender('Male')
+            ->setEmailAddresses(array((new EmailAddress())->setAddress('address@aspose.com')))
+            ->setPhoneNumbers(array((new PhoneNumber())->setNumber('+47235456456')));
+        $mapi = $api->convertContactModelToFile(new ConvertContactModelToFileRequest('Msg',
+            $contactDto));
+        $vcard = $api->convertContact(new ConvertContactRequest('VCard', 'Msg', $mapi));
+        $fileContent = $vcard->fread($vcard->getSize());
+        $this->assertRegExp("/" . $surname . "/", $fileContent);
+        $dto = $api->getContactFileAsModel(new GetContactFileAsModelRequest('VCard', $vcard));
+        $this->assertEquals($surname, $dto->getSurname());
+    }
+
+    /**
+     * @group pipeline
+     */
+    public function testEmailConverter(): void
+    {
+        $api = self::getApi();
+        $from = 'from@aspose.com';
+        $emailDto = (new EmailDto())
+            ->setFrom(new MailAddress(null, $from))
+            ->setTo(array(new MailAddress(null, 'to@aspose.com')))
+            ->setSubject('Some subject')
+            ->setBody('Some body')
+            ->setDate(new DateTime());
+        $mapi = $api->convertEmailModelToFile(new ConvertEmailModelToFileRequest('Msg',
+            $emailDto));
+        $eml = $api->convertEmail(new ConvertEmailRequest('Eml', $mapi));
+        $fileContent = $eml->fread($eml->getSize());
+        $this->assertRegExp("/" . $from . "/", $fileContent);
+        $dto = $api->getEmailFileAsModel(new GetEmailFileAsModelRequest($eml));
+        $this->assertEquals($from, $dto->getFrom()->getAddress());
     }
 
     private function createCalendar(DateTime $startDate = null): string
