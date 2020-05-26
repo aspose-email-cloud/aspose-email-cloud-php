@@ -54,7 +54,7 @@ class AiBcrImageStorageFile extends AiBcrImage
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'file' => '\Aspose\Email\Model\StorageFileLocation'
+        'file' => 'object'
     ];
 
     /**
@@ -164,7 +164,7 @@ class AiBcrImageStorageFile extends AiBcrImage
      * Initializes a new instance of the AiBcrImageStorageFile class.
      *  
      * @param bool $is_single Determines that image contains single VCard or more. Ignored in current version. Multiple cards on image support will be added soon
-     * @param \Aspose\Email\Model\StorageFileLocation $file Image location
+     * @param object $file Image location
      */
     public function __construct($is_single = null, $file = null)
     {
@@ -206,7 +206,7 @@ class AiBcrImageStorageFile extends AiBcrImage
     /**
      * Gets file
      *
-     * @return \Aspose\Email\Model\StorageFileLocation
+     * @return object
      */
     public function getFile()
     {
@@ -216,7 +216,7 @@ class AiBcrImageStorageFile extends AiBcrImage
     /**
      * Sets file
      *
-     * @param \Aspose\Email\Model\StorageFileLocation $file Image location
+     * @param object $file Image location
      *
      * @return $this
      */

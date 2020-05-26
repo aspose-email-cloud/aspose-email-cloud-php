@@ -9124,8 +9124,6 @@ class EmailApi
     /**
      * Operation copyFile
      *
-     * Copy file
-     *
      * @param Requests\CopyFileRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
@@ -9144,8 +9142,6 @@ class EmailApi
 
     /**
      * Operation copyFileWithHttpInfo
-     *
-     * Copy file
      *
      * @param Requests\CopyFileRequest $request is a request object for operation
      *
@@ -9189,7 +9185,7 @@ class EmailApi
     /**
      * Operation copyFileAsync
      *
-     * Copy file
+     * 
      *
      * @param Requests\CopyFileRequest $request is a request object for operation
      *
@@ -9209,7 +9205,7 @@ class EmailApi
     /**
      * Operation copyFileAsyncWithHttpInfo
      *
-     * Copy file
+     * 
      *
      * @param Requests\CopyFileRequest $request is a request object for operation
      *
@@ -9402,8 +9398,6 @@ class EmailApi
     /**
      * Operation copyFolder
      *
-     * Copy folder
-     *
      * @param Requests\CopyFolderRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
@@ -9422,8 +9416,6 @@ class EmailApi
 
     /**
      * Operation copyFolderWithHttpInfo
-     *
-     * Copy folder
      *
      * @param Requests\CopyFolderRequest $request is a request object for operation
      *
@@ -9467,7 +9459,7 @@ class EmailApi
     /**
      * Operation copyFolderAsync
      *
-     * Copy folder
+     * 
      *
      * @param Requests\CopyFolderRequest $request is a request object for operation
      *
@@ -9487,7 +9479,7 @@ class EmailApi
     /**
      * Operation copyFolderAsyncWithHttpInfo
      *
-     * Copy folder
+     * 
      *
      * @param Requests\CopyFolderRequest $request is a request object for operation
      *
@@ -10692,8 +10684,6 @@ class EmailApi
     /**
      * Operation createFolder
      *
-     * Create the folder
-     *
      * @param Requests\CreateFolderRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
@@ -10712,8 +10702,6 @@ class EmailApi
 
     /**
      * Operation createFolderWithHttpInfo
-     *
-     * Create the folder
      *
      * @param Requests\CreateFolderRequest $request is a request object for operation
      *
@@ -10757,7 +10745,7 @@ class EmailApi
     /**
      * Operation createFolderAsync
      *
-     * Create the folder
+     * 
      *
      * @param Requests\CreateFolderRequest $request is a request object for operation
      *
@@ -10777,7 +10765,7 @@ class EmailApi
     /**
      * Operation createFolderAsyncWithHttpInfo
      *
-     * Create the folder
+     * 
      *
      * @param Requests\CreateFolderRequest $request is a request object for operation
      *
@@ -12433,8 +12421,6 @@ class EmailApi
     /**
      * Operation deleteFile
      *
-     * Delete file
-     *
      * @param Requests\DeleteFileRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
@@ -12453,8 +12439,6 @@ class EmailApi
 
     /**
      * Operation deleteFileWithHttpInfo
-     *
-     * Delete file
      *
      * @param Requests\DeleteFileRequest $request is a request object for operation
      *
@@ -12498,7 +12482,7 @@ class EmailApi
     /**
      * Operation deleteFileAsync
      *
-     * Delete file
+     * 
      *
      * @param Requests\DeleteFileRequest $request is a request object for operation
      *
@@ -12518,7 +12502,7 @@ class EmailApi
     /**
      * Operation deleteFileAsyncWithHttpInfo
      *
-     * Delete file
+     * 
      *
      * @param Requests\DeleteFileRequest $request is a request object for operation
      *
@@ -12687,8 +12671,6 @@ class EmailApi
     /**
      * Operation deleteFolder
      *
-     * Delete folder
-     *
      * @param Requests\DeleteFolderRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
@@ -12707,8 +12689,6 @@ class EmailApi
 
     /**
      * Operation deleteFolderWithHttpInfo
-     *
-     * Delete folder
      *
      * @param Requests\DeleteFolderRequest $request is a request object for operation
      *
@@ -12752,7 +12732,7 @@ class EmailApi
     /**
      * Operation deleteFolderAsync
      *
-     * Delete folder
+     * 
      *
      * @param Requests\DeleteFolderRequest $request is a request object for operation
      *
@@ -12772,7 +12752,7 @@ class EmailApi
     /**
      * Operation deleteFolderAsyncWithHttpInfo
      *
-     * Delete folder
+     * 
      *
      * @param Requests\DeleteFolderRequest $request is a request object for operation
      *
@@ -14287,8 +14267,6 @@ class EmailApi
     /**
      * Operation downloadFile
      *
-     * Download file
-     *
      * @param Requests\DownloadFileRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
@@ -14309,8 +14287,6 @@ class EmailApi
 
     /**
      * Operation downloadFileWithHttpInfo
-     *
-     * Download file
      *
      * @param Requests\DownloadFileRequest $request is a request object for operation
      *
@@ -14376,7 +14352,7 @@ class EmailApi
     /**
      * Operation downloadFileAsync
      *
-     * Download file
+     * 
      *
      * @param Requests\DownloadFileRequest $request is a request object for operation
      *
@@ -14396,7 +14372,7 @@ class EmailApi
     /**
      * Operation downloadFileAsyncWithHttpInfo
      *
-     * Download file
+     * 
      *
      * @param Requests\DownloadFileRequest $request is a request object for operation
      *
@@ -20171,8 +20147,6 @@ class EmailApi
     /**
      * Operation getDiscUsage
      *
-     * Get disc usage
-     *
      * @param Requests\GetDiscUsageRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
@@ -20193,8 +20167,6 @@ class EmailApi
 
     /**
      * Operation getDiscUsageWithHttpInfo
-     *
-     * Get disc usage
      *
      * @param Requests\GetDiscUsageRequest $request is a request object for operation
      *
@@ -20260,7 +20232,7 @@ class EmailApi
     /**
      * Operation getDiscUsageAsync
      *
-     * Get disc usage
+     * 
      *
      * @param Requests\GetDiscUsageRequest $request is a request object for operation
      *
@@ -20280,7 +20252,7 @@ class EmailApi
     /**
      * Operation getDiscUsageAsyncWithHttpInfo
      *
-     * Get disc usage
+     * 
      *
      * @param Requests\GetDiscUsageRequest $request is a request object for operation
      *
@@ -23179,8 +23151,6 @@ class EmailApi
     /**
      * Operation getFileVersions
      *
-     * Get file versions
-     *
      * @param Requests\GetFileVersionsRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
@@ -23201,8 +23171,6 @@ class EmailApi
 
     /**
      * Operation getFileVersionsWithHttpInfo
-     *
-     * Get file versions
      *
      * @param Requests\GetFileVersionsRequest $request is a request object for operation
      *
@@ -23268,7 +23236,7 @@ class EmailApi
     /**
      * Operation getFileVersionsAsync
      *
-     * Get file versions
+     * 
      *
      * @param Requests\GetFileVersionsRequest $request is a request object for operation
      *
@@ -23288,7 +23256,7 @@ class EmailApi
     /**
      * Operation getFileVersionsAsyncWithHttpInfo
      *
-     * Get file versions
+     * 
      *
      * @param Requests\GetFileVersionsRequest $request is a request object for operation
      *
@@ -23465,8 +23433,6 @@ class EmailApi
     /**
      * Operation getFilesList
      *
-     * Get all files and folders within a folder
-     *
      * @param Requests\GetFilesListRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
@@ -23487,8 +23453,6 @@ class EmailApi
 
     /**
      * Operation getFilesListWithHttpInfo
-     *
-     * Get all files and folders within a folder
      *
      * @param Requests\GetFilesListRequest $request is a request object for operation
      *
@@ -23554,7 +23518,7 @@ class EmailApi
     /**
      * Operation getFilesListAsync
      *
-     * Get all files and folders within a folder
+     * 
      *
      * @param Requests\GetFilesListRequest $request is a request object for operation
      *
@@ -23574,7 +23538,7 @@ class EmailApi
     /**
      * Operation getFilesListAsyncWithHttpInfo
      *
-     * Get all files and folders within a folder
+     * 
      *
      * @param Requests\GetFilesListRequest $request is a request object for operation
      *
@@ -27072,8 +27036,6 @@ class EmailApi
     /**
      * Operation moveFile
      *
-     * Move file
-     *
      * @param Requests\MoveFileRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
@@ -27092,8 +27054,6 @@ class EmailApi
 
     /**
      * Operation moveFileWithHttpInfo
-     *
-     * Move file
      *
      * @param Requests\MoveFileRequest $request is a request object for operation
      *
@@ -27137,7 +27097,7 @@ class EmailApi
     /**
      * Operation moveFileAsync
      *
-     * Move file
+     * 
      *
      * @param Requests\MoveFileRequest $request is a request object for operation
      *
@@ -27157,7 +27117,7 @@ class EmailApi
     /**
      * Operation moveFileAsyncWithHttpInfo
      *
-     * Move file
+     * 
      *
      * @param Requests\MoveFileRequest $request is a request object for operation
      *
@@ -27350,8 +27310,6 @@ class EmailApi
     /**
      * Operation moveFolder
      *
-     * Move folder
-     *
      * @param Requests\MoveFolderRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
@@ -27370,8 +27328,6 @@ class EmailApi
 
     /**
      * Operation moveFolderWithHttpInfo
-     *
-     * Move folder
      *
      * @param Requests\MoveFolderRequest $request is a request object for operation
      *
@@ -27415,7 +27371,7 @@ class EmailApi
     /**
      * Operation moveFolderAsync
      *
-     * Move folder
+     * 
      *
      * @param Requests\MoveFolderRequest $request is a request object for operation
      *
@@ -27435,7 +27391,7 @@ class EmailApi
     /**
      * Operation moveFolderAsyncWithHttpInfo
      *
-     * Move folder
+     * 
      *
      * @param Requests\MoveFolderRequest $request is a request object for operation
      *
@@ -27618,8 +27574,6 @@ class EmailApi
     /**
      * Operation objectExists
      *
-     * Check if file or folder exists
-     *
      * @param Requests\ObjectExistsRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
@@ -27640,8 +27594,6 @@ class EmailApi
 
     /**
      * Operation objectExistsWithHttpInfo
-     *
-     * Check if file or folder exists
      *
      * @param Requests\ObjectExistsRequest $request is a request object for operation
      *
@@ -27707,7 +27659,7 @@ class EmailApi
     /**
      * Operation objectExistsAsync
      *
-     * Check if file or folder exists
+     * 
      *
      * @param Requests\ObjectExistsRequest $request is a request object for operation
      *
@@ -27727,7 +27679,7 @@ class EmailApi
     /**
      * Operation objectExistsAsyncWithHttpInfo
      *
-     * Check if file or folder exists
+     * 
      *
      * @param Requests\ObjectExistsRequest $request is a request object for operation
      *
@@ -31096,8 +31048,6 @@ class EmailApi
     /**
      * Operation storageExists
      *
-     * Check if storage exists
-     *
      * @param Requests\StorageExistsRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
@@ -31118,8 +31068,6 @@ class EmailApi
 
     /**
      * Operation storageExistsWithHttpInfo
-     *
-     * Check if storage exists
      *
      * @param Requests\StorageExistsRequest $request is a request object for operation
      *
@@ -31185,7 +31133,7 @@ class EmailApi
     /**
      * Operation storageExistsAsync
      *
-     * Check if storage exists
+     * 
      *
      * @param Requests\StorageExistsRequest $request is a request object for operation
      *
@@ -31205,7 +31153,7 @@ class EmailApi
     /**
      * Operation storageExistsAsyncWithHttpInfo
      *
-     * Check if storage exists
+     * 
      *
      * @param Requests\StorageExistsRequest $request is a request object for operation
      *
@@ -32116,8 +32064,6 @@ class EmailApi
     /**
      * Operation uploadFile
      *
-     * Upload file
-     *
      * @param Requests\UploadFileRequest $request is a request object for operation
      *
      * @throws \Aspose\Email\ApiException on non-2xx response
@@ -32138,8 +32084,6 @@ class EmailApi
 
     /**
      * Operation uploadFileWithHttpInfo
-     *
-     * Upload file
      *
      * @param Requests\UploadFileRequest $request is a request object for operation
      *
@@ -32205,7 +32149,7 @@ class EmailApi
     /**
      * Operation uploadFileAsync
      *
-     * Upload file
+     * 
      *
      * @param Requests\UploadFileRequest $request is a request object for operation
      *
@@ -32225,7 +32169,7 @@ class EmailApi
     /**
      * Operation uploadFileAsyncWithHttpInfo
      *
-     * Upload file
+     * 
      *
      * @param Requests\UploadFileRequest $request is a request object for operation
      *

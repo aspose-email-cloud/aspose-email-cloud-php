@@ -36,8 +36,8 @@ class GetFileVersionsRequest
     /**
      * Initializes a new instance of the GetFileVersionsRequest class.
      *  
-     * @param string $path File path e.g. '/file.ext'
-     * @param string $storage_name Storage name
+     * @param string $path 
+     * @param string $storage_name 
      */
     public function __construct($path, $storage_name = null)             
     {
@@ -46,12 +46,12 @@ class GetFileVersionsRequest
     }
 
     /**
-     * File path e.g. '/file.ext'
+     * Gets or sets path
      */
     public $path;
 	
     /**
-     * Storage name
+     * Gets or sets storage_name
      */
     public $storage_name;
 }

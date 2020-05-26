@@ -36,9 +36,9 @@ class DeleteFolderRequest
     /**
      * Initializes a new instance of the DeleteFolderRequest class.
      *  
-     * @param string $path Folder path e.g. '/folder'
-     * @param string $storage_name Storage name
-     * @param bool $recursive Enable to delete folders, subfolders and files
+     * @param string $path 
+     * @param string $storage_name 
+     * @param bool $recursive 
      */
     public function __construct($path, $storage_name = null, $recursive = null)             
     {
@@ -48,17 +48,17 @@ class DeleteFolderRequest
     }
 
     /**
-     * Folder path e.g. '/folder'
+     * Gets or sets path
      */
     public $path;
 	
     /**
-     * Storage name
+     * Gets or sets storage_name
      */
     public $storage_name;
 	
     /**
-     * Enable to delete folders, subfolders and files
+     * Gets or sets recursive
      */
     public $recursive;
 }

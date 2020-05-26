@@ -37,7 +37,6 @@ use \Aspose\Email\ObjectSerializer;
 /**
  * DiscUsage
  *
- * @description Class for disc space information.
  */
 class DiscUsage implements ArrayAccess
 {
@@ -176,8 +175,8 @@ class DiscUsage implements ArrayAccess
     /**
      * Initializes a new instance of the DiscUsage class.
      *  
-     * @param int $used_size Application used disc space.
-     * @param int $total_size Total disc space.
+     * @param int $used_size 
+     * @param int $total_size 
      */
     public function __construct($used_size = null, $total_size = null)
     {
@@ -238,7 +237,7 @@ class DiscUsage implements ArrayAccess
     /**
      * Sets used_size
      *
-     * @param int $used_size Application used disc space.
+     * @param int $used_size used_size
      *
      * @return $this
      */
@@ -262,7 +261,7 @@ class DiscUsage implements ArrayAccess
     /**
      * Sets total_size
      *
-     * @param int $total_size Total disc space.
+     * @param int $total_size total_size
      *
      * @return $this
      */

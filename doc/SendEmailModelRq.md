@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**message** | [**\Aspose\Email\Model\EmailDto**](EmailDto.md) | Message to send | [optional] 
+**message** | **object** | Message to send | [optional] 
 
  Parent class: [AccountBaseRequest](AccountBaseRequest.md)
 

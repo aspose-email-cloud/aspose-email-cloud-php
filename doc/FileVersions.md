@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | [**\Aspose\Email\Model\FileVersion[]**](FileVersion.md) | File versions FileVersion. | [optional] 
+**value** | [**\Aspose\Email\Model\FileVersion[]**](FileVersion.md) |  | [optional] 
 
 
 
