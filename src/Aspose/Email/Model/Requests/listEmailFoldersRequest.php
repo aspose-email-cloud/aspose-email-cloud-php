@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="listEmailFoldersRequest.php">
- *   Copyright (c) 2018 Aspose.Email for Cloud
+ *   Copyright (c) 2018-2020 Aspose.Email for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -37,7 +37,7 @@ class ListEmailFoldersRequest
      * Initializes a new instance of the ListEmailFoldersRequest class.
      *  
      * @param string $first_account Email account
-     * @param string $second_account Additional email account (should be specified for POP/IMAP accounts and should be SMTP account)
+     * @param string $second_account Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)
      * @param string $storage Storage name where account file(s) located
      * @param string $storage_folder Folder in storage where account file(s) located
      * @param string $parent_folder Folder in which subfolders should be listed
@@ -57,7 +57,7 @@ class ListEmailFoldersRequest
     public $first_account;
 	
     /**
-     * Additional email account (should be specified for POP/IMAP accounts and should be SMTP account)
+     * Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP)
      */
     public $second_account;
 	

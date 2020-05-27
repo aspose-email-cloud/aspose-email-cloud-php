@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ObjectSerializer.php">
- *   Copyright (c) 2018 Aspose.Email for Cloud
+ *   Copyright (c) 2018-2020 Aspose.Email for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -250,7 +250,14 @@ class ObjectSerializer
             // be interpreted as a missing field/value. Let's handle
             // this graceful.
             if (!empty($data)) {
-                return new \DateTime(date(\DATE_ATOM, preg_match("/^[1-9][0-9]*$/", $data)[0]));
+                $dateResult = \DateTime::createFromFormat(\DATE_ATOM, $data);
+                if (!$dateResult) {
+                    $dateResult = \DateTime::createFromFormat('Y-m-d\TH:i:s', $data);
+                }
+                if (!$dateResult) {
+                    return null;
+                }
+                return $dateResult;
             } else {
                 return null;
             }

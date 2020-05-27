@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="getFilesListRequest.php">
- *   Copyright (c) 2018 Aspose.Email for Cloud
+ *   Copyright (c) 2018-2020 Aspose.Email for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,8 +36,8 @@ class GetFilesListRequest
     /**
      * Initializes a new instance of the GetFilesListRequest class.
      *  
-     * @param string $path Folder path e.g. '/folder'
-     * @param string $storage_name Storage name
+     * @param string $path 
+     * @param string $storage_name 
      */
     public function __construct($path, $storage_name = null)             
     {
@@ -46,12 +46,12 @@ class GetFilesListRequest
     }
 
     /**
-     * Folder path e.g. '/folder'
+     * Gets or sets path
      */
     public $path;
 	
     /**
-     * Storage name
+     * Gets or sets storage_name
      */
     public $storage_name;
 }

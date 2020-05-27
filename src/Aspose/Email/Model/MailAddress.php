@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="MailAddress.php">
- *   Copyright (c) 2018 Aspose.Email for Cloud
+ *   Copyright (c) 2018-2020 Aspose.Email for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -58,7 +58,8 @@ class MailAddress implements ArrayAccess
     protected static $swaggerTypes = [
         'display_name' => 'string',
         'address' => 'string',
-        'participation_status' => 'string'
+        'participation_status' => 'string',
+        'original_address_string' => 'string'
     ];
 
     /**
@@ -69,7 +70,8 @@ class MailAddress implements ArrayAccess
     protected static $swaggerFormats = [
         'display_name' => null,
         'address' => null,
-        'participation_status' => null
+        'participation_status' => null,
+        'original_address_string' => null
     ];
 
     /**
@@ -101,7 +103,8 @@ class MailAddress implements ArrayAccess
     protected static $attributeMap = [
         'display_name' => 'displayName',
         'address' => 'address',
-        'participation_status' => 'participationStatus'
+        'participation_status' => 'participationStatus',
+        'original_address_string' => 'originalAddressString'
     ];
 
     /**
@@ -112,7 +115,8 @@ class MailAddress implements ArrayAccess
     protected static $setters = [
         'display_name' => 'setDisplayName',
         'address' => 'setAddress',
-        'participation_status' => 'setParticipationStatus'
+        'participation_status' => 'setParticipationStatus',
+        'original_address_string' => 'setOriginalAddressString'
     ];
 
     /**
@@ -123,7 +127,8 @@ class MailAddress implements ArrayAccess
     protected static $getters = [
         'display_name' => 'getDisplayName',
         'address' => 'getAddress',
-        'participation_status' => 'getParticipationStatus'
+        'participation_status' => 'getParticipationStatus',
+        'original_address_string' => 'getOriginalAddressString'
     ];
 
     /**
@@ -184,16 +189,19 @@ class MailAddress implements ArrayAccess
      * @param string $display_name Display name
      * @param string $address Address
      * @param string $participation_status Identifies the participation status for the calendar user. Enum, available values: NeedsAction, Accepted, Declined, Tentative, Delegated
+     * @param string $original_address_string The original e-mail address string
      */
-    public function __construct($display_name = null, $address = null, $participation_status = null)
+    public function __construct($display_name = null, $address = null, $participation_status = null, $original_address_string = null)
     {
         $this->container['display_name'] = null;
         $this->container['address'] = null;
         $this->container['participation_status'] = null;
+        $this->container['original_address_string'] = null;
 
         if ($display_name != null) $this->setDisplayName($display_name);
         if ($address != null) $this->setAddress($address);
         if ($participation_status != null) $this->setParticipationStatus($participation_status);
+        if ($original_address_string != null) $this->setOriginalAddressString($original_address_string);
     }
 
     /**
@@ -295,6 +303,30 @@ class MailAddress implements ArrayAccess
     public function setParticipationStatus($participation_status)
     {
         $this->container['participation_status'] = $participation_status;
+
+        return $this;
+    }
+
+    /**
+     * Gets original_address_string
+     *
+     * @return string
+     */
+    public function getOriginalAddressString()
+    {
+        return $this->container['original_address_string'];
+    }
+
+    /**
+     * Sets original_address_string
+     *
+     * @param string $original_address_string The original e-mail address string
+     *
+     * @return $this
+     */
+    public function setOriginalAddressString($original_address_string)
+    {
+        $this->container['original_address_string'] = $original_address_string;
 
         return $this;
     }

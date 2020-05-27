@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="AccountBaseRequest.php">
- *   Copyright (c) 2018 Aspose.Email for Cloud
+ *   Copyright (c) 2018-2020 Aspose.Email for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -181,8 +181,8 @@ class AccountBaseRequest implements ArrayAccess
     /**
      * Initializes a new instance of the AccountBaseRequest class.
      *  
-     * @param string $first_account First account storage file name for receiving emails (or universal one)
-     * @param string $second_account Second account storage file name for sending emails (ignored if first is universal)
+     * @param string $first_account First account storage file name
+     * @param string $second_account Additional email account (for example, FirstAccount could be IMAP, and second one could be SMTP)
      * @param \Aspose\Email\Model\StorageFolderLocation $storage_folder Storage folder location of account files
      */
     public function __construct($first_account = null, $second_account = null, $storage_folder = null)
@@ -251,7 +251,7 @@ class AccountBaseRequest implements ArrayAccess
     /**
      * Sets first_account
      *
-     * @param string $first_account First account storage file name for receiving emails (or universal one)
+     * @param string $first_account First account storage file name
      *
      * @return $this
      */
@@ -280,7 +280,7 @@ class AccountBaseRequest implements ArrayAccess
     /**
      * Sets second_account
      *
-     * @param string $second_account Second account storage file name for sending emails (ignored if first is universal)
+     * @param string $second_account Additional email account (for example, FirstAccount could be IMAP, and second one could be SMTP)
      *
      * @return $this
      */

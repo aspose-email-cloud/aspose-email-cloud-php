@@ -3,11 +3,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **string** | File or folder name. | [optional] 
-**is_folder** | **bool** | True if it is a folder. | 
-**modified_date** | [**\DateTime**](\DateTime.md) | File or folder last modified DateTime. | [optional] 
-**size** | **int** | File or folder size. | 
-**path** | **string** | File or folder path. | [optional] 
+**name** | **string** |  | [optional] 
+**is_folder** | **bool** |  | 
+**modified_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**size** | **int** |  | 
+**path** | **string** |  | [optional] 
 
 
 

@@ -1,6 +1,15 @@
 <?php
 
 use Aspose\Email\Configuration;
+use Aspose\Email\Model\Requests\convertCalendarModelToFileRequest;
+use Aspose\Email\Model\Requests\convertCalendarRequest;
+use Aspose\Email\Model\Requests\convertContactModelToFileRequest;
+use Aspose\Email\Model\Requests\convertContactRequest;
+use Aspose\Email\Model\Requests\convertEmailModelToFileRequest;
+use Aspose\Email\Model\Requests\convertEmailRequest;
+use Aspose\Email\Model\Requests\getCalendarFileAsModelRequest;
+use Aspose\Email\Model\Requests\getContactFileAsModelRequest;
+use Aspose\Email\Model\Requests\getEmailFileAsModelRequest;
 use PHPUnit\Framework\TestCase;
 use Aspose\Email\EmailApi;
 use Aspose\Email\Model\AiBcrBase64Image;
@@ -67,7 +76,7 @@ class EmailApiTest extends TestCase
     private static $folder;
     private static $storage = "First Storage";
 
-    private static function getApi() : EmailApi
+    private static function getApi(): EmailApi
     {
         return self::$api;
     }
@@ -80,11 +89,9 @@ class EmailApiTest extends TestCase
             ->setAppKey($_ENV["appKey"])
             ->setAppSid($_ENV["appSid"])
             ->setHost($_ENV["apiBaseUrl"]);
-        if (array_key_exists("authUrl", $_ENV))
-        {
+        if (array_key_exists("authUrl", $_ENV)) {
             $configuration->setAuthUrl($_ENV["authUrl"]);
         }
-        //$configuration->setDebug(true);
         self::$api = new EmailApi(null, $configuration);
         self::$api->createFolder(new CreateFolderRequest(self::$folder, self::$storage));
     }
@@ -100,8 +107,9 @@ class EmailApiTest extends TestCase
     public function testHierarchical(): void
     {
         $calendarFile = $this->createCalendar();
-        $calendar = self::getApi()->getCalendar(new GetCalendarRequest($calendarFile, self::$folder, self::$storage));
-        $filtered = array_values(array_filter($calendar->getInternalProperties(), function($var) {
+        $calendar = self::getApi()->getCalendar(new GetCalendarRequest($calendarFile, self::$folder,
+            self::$storage));
+        $filtered = array_values(array_filter($calendar->getInternalProperties(), function ($var) {
             return $var->getType() == "PrimitiveObject";
         }));
         $count = count($filtered);
@@ -116,7 +124,9 @@ class EmailApiTest extends TestCase
     public function testAsync(): void
     {
         $calendarFile = $this->createCalendar();
-        $promise = self::getApi()->getCalendarAsync(new GetCalendarRequest($calendarFile, self::$folder, self::$storage));
+        $promise =
+            self::getApi()->getCalendarAsync(new GetCalendarRequest($calendarFile, self::$folder,
+                self::$storage));
         $result = $promise->wait();
         $this->assertTrue(count($result->getInternalProperties()) >= 5);
     }
@@ -126,14 +136,17 @@ class EmailApiTest extends TestCase
      */
     public function testFile(): void
     {
-        $path = dirname(__FILE__).DIRECTORY_SEPARATOR."data".DIRECTORY_SEPARATOR."sample.ics";
-        $storagePath = self::$folder."/".uniqid().".ics";
-        self::getApi()->uploadFile(new UploadFileRequest($storagePath, $path, self::$storage));
+        $path =
+            dirname(__FILE__) . DIRECTORY_SEPARATOR . "data" . DIRECTORY_SEPARATOR . "sample.ics";
+        $storagePath = self::$folder . "/" . uniqid() . ".ics";
+        self::getApi()->uploadFile(new UploadFileRequest($storagePath, new SplFileObject($path),
+            self::$storage));
         $exists = self::getApi()
             ->objectExists(new ObjectExistsRequest($storagePath, self::$storage));
         $this->assertTrue(
             $exists->getExists());
-        $calendarTempFile = self::getApi()->downloadFile(new DownloadFileRequest($storagePath, self::$storage));
+        $calendarTempFile =
+            self::getApi()->downloadFile(new DownloadFileRequest($storagePath, self::$storage));
         $fileContent = $calendarTempFile->fread($calendarTempFile->getSize());
         $this->assertRegExp("/Access-A-Ride/", $fileContent);
     }
@@ -143,14 +156,16 @@ class EmailApiTest extends TestCase
      */
     public function testContactFormat(): void
     {
-        foreach(array("vcard", "msg") as $format)
-        {
+        foreach (array("vcard", "msg") as $format) {
             $extension = $format == "vcard" ? ".vcf" : ".msg";
-            $file = uniqid().$extension;
-            self::getApi()->createContact(new CreateContactRequest($format, $file, new HierarchicalObjectRequest(
-                new HierarchicalObject("CONTACT", null, []),
-                new StorageFolderLocation(self::$storage, self::$folder))));
-            $exist = self::getApi()->objectExists(new ObjectExistsRequest(self::$folder."/".$file, self::$storage));
+            $file = uniqid() . $extension;
+            self::getApi()->createContact(new CreateContactRequest($format, $file,
+                new HierarchicalObjectRequest(
+                    new HierarchicalObject("CONTACT", null, []),
+                    new StorageFolderLocation(self::$storage, self::$folder))));
+            $exist =
+                self::getApi()->objectExists(new ObjectExistsRequest(self::$folder . "/" . $file,
+                    self::$storage));
             $this->assertTrue($exist->getExists());
         }
     }
@@ -162,8 +177,10 @@ class EmailApiTest extends TestCase
     {
         $startDate = new DateTime();
         $calendarFile = $this->createCalendar($startDate);
-        $calendarData = self::getApi()->getCalendar(new GetCalendarRequest($calendarFile, self::$folder, self::$storage));
-        $propertiesArray = array_filter($calendarData->getInternalProperties(), function($var) {
+        $calendarData =
+            self::getApi()->getCalendar(new GetCalendarRequest($calendarFile, self::$folder,
+                self::$storage));
+        $propertiesArray = array_filter($calendarData->getInternalProperties(), function ($var) {
             return $var->getName() == "STARTDATE";
         });
         $property = array_values($propertiesArray)[0];
@@ -187,7 +204,9 @@ class EmailApiTest extends TestCase
      */
     public function testAiNameFormat(): void
     {
-        $result = self::getApi()->aiNameFormat(new AiNameFormatRequest("Mr. John Michael Cane", null, null, null, null, "%t%L%f%m"));
+        $result =
+            self::getApi()->aiNameFormat(new AiNameFormatRequest("Mr. John Michael Cane", null,
+                null, null, null, "%t%L%f%m"));
         $this->assertEquals("Mr. Cane J. M.", $result->getName());
     }
 
@@ -209,10 +228,12 @@ class EmailApiTest extends TestCase
     {
         $name = "Smith Bobby";
         $result = self::getApi()->aiNameExpand(new AiNameExpandRequest($name));
-        $expandedNames = array_map(function($weightedName) {
+        $expandedNames = array_map(function ($weightedName) {
             return $weightedName->getName();
         }, $result->getNames());
+        /** @noinspection PhpUnitAssertContainsInspection */
         $this->assertContains("Mr. Smith", $expandedNames);
+        /** @noinspection PhpUnitAssertContainsInspection */
         $this->assertContains("B. Smith", $expandedNames);
     }
 
@@ -224,10 +245,13 @@ class EmailApiTest extends TestCase
         $prefix = "Dav";
         $result = self::getApi()->aiNameComplete(new AiNameCompleteRequest($prefix));
         $names = array_map(function ($weightedName) use ($prefix) {
-            return $prefix.$weightedName->getName();
+            return $prefix . $weightedName->getName();
         }, $result->getNames());
+        /** @noinspection PhpUnitAssertContainsInspection */
         $this->assertContains("David", $names);
+        /** @noinspection PhpUnitAssertContainsInspection */
         $this->assertContains("Dave", $names);
+        /** @noinspection PhpUnitAssertContainsInspection */
         $this->assertContains("Davis", $names);
     }
 
@@ -237,7 +261,8 @@ class EmailApiTest extends TestCase
     public function testAiNameParseEmailAddress(): void
     {
         $address = "john-cane@gmail.com";
-        $result = self::getApi()->aiNameParseEmailAddress(new AiNameParseEmailAddressRequest($address));
+        $result =
+            self::getApi()->aiNameParseEmailAddress(new AiNameParseEmailAddressRequest($address));
         $extractedNames = array_map(function ($value) {
             return $value->getName();
         }, $result->getValue());
@@ -257,19 +282,22 @@ class EmailApiTest extends TestCase
      */
     public function testAiBcrParseStorage(): void
     {
-        $path = dirname(__FILE__).DIRECTORY_SEPARATOR."data".DIRECTORY_SEPARATOR."test_single_0001.png";
-        $imageFile = uniqid().".png";
-        $storagePath = self::$folder."/".$imageFile;
+        $path = dirname(__FILE__) . DIRECTORY_SEPARATOR . "data" . DIRECTORY_SEPARATOR .
+            "test_single_0001.png";
+        $imageFile = uniqid() . ".png";
+        $storagePath = self::$folder . "/" . $imageFile;
         // 1) Upload business card image to storage
-        self::getApi()->uploadFile(new UploadFileRequest($storagePath, $path, self::$storage));
+        self::getApi()->uploadFile(new UploadFileRequest($storagePath, new SplFileObject($path),
+            self::$storage));
         $outFolder = uniqid();
-        $outFolderPath = self::$folder."/".$outFolder;
+        $outFolderPath = self::$folder . "/" . $outFolder;
         self::getApi()->createFolder(new CreateFolderRequest($outFolderPath, self::$storage));
         // 2) Call business card recognition action
         $result = self::getApi()->aiBcrParseStorage(new AiBcrParseStorageRequest(
             new AiBcrParseStorageRq(
                 null,
-                array(new AiBcrImageStorageFile(true, new StorageFileLocation(self::$storage, self::$folder, $imageFile))),
+                array(new AiBcrImageStorageFile(true,
+                    new StorageFileLocation(self::$storage, self::$folder, $imageFile))),
                 new StorageFolderLocation(self::$storage, $outFolderPath))));
         //Check that only one file produced
         $this->assertEquals(1, count($result->getValue()));
@@ -277,13 +305,14 @@ class EmailApiTest extends TestCase
         $contactFile = $result->getValue()[0];
         // 4) Download VCard file, produced by recognition method, check it contains text "Thomas"
         $contactTempFile = self::getApi()->downloadFile(new DownloadFileRequest(
-            $contactFile->getFolderPath()."/".$contactFile->getFileName(),
+            $contactFile->getFolderPath() . "/" . $contactFile->getFileName(),
             self::$storage));
         $fileContent = $contactTempFile->fread($contactTempFile->getSize());
         $this->assertRegExp("/Thomas/", $fileContent);
         // 5) Get VCard object properties list, check that there are 3 properties or more
         $contactProperties = self::getApi()->getContactProperties(
-            new GetContactPropertiesRequest('vcard', $contactFile->getFileName(), $contactFile->getFolderPath(), self::$storage));
+            new GetContactPropertiesRequest('vcard', $contactFile->getFileName(),
+                $contactFile->getFolderPath(), self::$storage));
         $this->assertGreaterThanOrEqual(3, count($contactProperties->getInternalProperties()));
     }
 
@@ -292,15 +321,17 @@ class EmailApiTest extends TestCase
      */
     public function testAiBcrParse(): void
     {
-        $path = dirname(__FILE__).DIRECTORY_SEPARATOR."data".DIRECTORY_SEPARATOR."test_single_0001.png";
+        $path = dirname(__FILE__) . DIRECTORY_SEPARATOR . "data" . DIRECTORY_SEPARATOR .
+            "test_single_0001.png";
         $content = file_get_contents($path);
         $imageBase64 = base64_encode($content);
         $result = self::getApi()->aiBcrParse(new AiBcrParseRequest(
             new AiBcrBase64Rq(null, array(new AiBcrBase64Image(true, $imageBase64)))));
         $this->assertEquals(1, count($result->getValue()));
-        $displayName = array_values(array_filter($result->getValue()[0]->getInternalProperties(), function($var) {
-            return $var->getName() == "DISPLAYNAME";
-        }))[0];
+        $displayName = array_values(array_filter($result->getValue()[0]->getInternalProperties(),
+            function ($var) {
+                return $var->getName() == "DISPLAYNAME";
+            }))[0];
         $this->assertRegExp("/Thomas/", $displayName->getValue());
     }
 
@@ -310,7 +341,8 @@ class EmailApiTest extends TestCase
     public function testCreateCalendarEmail(): void
     {
         $calendar = (new CalendarDto())
-            ->setAttendees(array(new MailAddress("Attendee Name", "attendee@aspose.com", "Accepted")))
+            ->setAttendees(array(new MailAddress("Attendee Name", "attendee@aspose.com",
+                "Accepted")))
             ->setDescription("Some description")
             ->setSummary("Some summary")
             ->setOrganizer(new MailAddress("Organizer Name", "organizer@aspose.com", "Accepted"))
@@ -380,7 +412,8 @@ class EmailApiTest extends TestCase
      */
     public function testAiBcrParseModel(): void
     {
-        $path = dirname(__FILE__).DIRECTORY_SEPARATOR."data".DIRECTORY_SEPARATOR."test_single_0001.png";
+        $path = dirname(__FILE__) . DIRECTORY_SEPARATOR . "data" . DIRECTORY_SEPARATOR .
+            "test_single_0001.png";
         $content = file_get_contents($path);
         $imageBase64 = base64_encode($content);
         $result = self::getApi()->aiBcrParseModel(new AiBcrParseModelRequest(
@@ -398,7 +431,7 @@ class EmailApiTest extends TestCase
         $configs = self::getApi()->discoverEmailConfig(new DiscoverEmailConfigRequest(
             "example@gmail.com", true));
         $this->assertGreaterThanOrEqual(2, count($configs->getValue()));
-        $smtp = array_values(array_filter($configs->getValue(), function(EmailAccountConfig $var) {
+        $smtp = array_values(array_filter($configs->getValue(), function (EmailAccountConfig $var) {
             return $var->getProtocolType() == "SMTP";
         }))[0];
         $this->assertEquals("smtp.gmail.com", $smtp->getHost());
@@ -435,7 +468,8 @@ class EmailApiTest extends TestCase
                 $account, new StorageFileLocation(self::$storage, self::$folder, $fileName))));
         $result = self::getApi()->getEmailClientAccount(new GetEmailClientAccountRequest(
             $fileName, self::$folder, self::$storage));
-        $this->assertEquals("EmailClientAccountPasswordCredentials", $result->getCredentials()->getDiscriminator());
+        $this->assertEquals("EmailClientAccountPasswordCredentials",
+            $result->getCredentials()->getDiscriminator());
         $this->assertEquals(
             ((object)$account->getCredentials())->getPassword(),
             ((object)$result->getCredentials())->getPassword());
@@ -453,9 +487,9 @@ class EmailApiTest extends TestCase
                 new EmailClientAccount('imap.gmail.com', 993, 'SSLAuto', 'IMAP',
                     new EmailClientAccountPasswordCredentials(
                         'example@gmail.com', null, 'password')),
-                    new EmailClientAccount('exchange.outlook.com', 443, 'SSLAuto', 'EWS',
-                        new EmailClientAccountOauthCredentials(
-                            'example@outlook.com', null, 'clientId', 'clientSecret', 'refreshToken'))),
+                new EmailClientAccount('exchange.outlook.com', 443, 'SSLAuto', 'EWS',
+                    new EmailClientAccountOauthCredentials(
+                        'example@outlook.com', null, 'clientId', 'clientSecret', 'refreshToken'))),
             new EmailClientAccount('smtp.gmail.com', 465, 'SSLAuto', 'SMTP',
                 new EmailClientAccountPasswordCredentials(
                     'example@gmail.com', null, 'password')));
@@ -478,7 +512,81 @@ class EmailApiTest extends TestCase
             $multiAccountFromStorage->getSendAccount()->getCredentials()->getDiscriminator());
     }
 
-    private function createCalendar(DateTime $startDate = null) : string
+    /**
+     * @group pipeline
+     */
+    public function testCalendarConverter(): void
+    {
+        $api = self::getApi();
+        $location = 'Some location';
+        //Create DTO with specified location:
+        $calendarDto = (new CalendarDto())
+            ->setLocation($location)
+            ->setSummary('Some summary')
+            ->setDescription('Some description')
+            ->setStartDate(new DateTime())
+            ->setEndDate(new DateTime())
+            ->setOrganizer(new MailAddress(null, 'organizer@aspose.com'))
+            ->setAttendees(array(new MailAddress(null, 'attendee@aspose.com')));
+        //We can convert this DTO to a MAPI or ICS file:
+        $mapi = $api->convertCalendarModelToFile(new ConvertCalendarModelToFileRequest('Msg',
+            $calendarDto));
+        //Let's convert this file to an ICS format:
+        $ics = $api->convertCalendar(new ConvertCalendarRequest('Ics', $mapi));
+        //ICS is a text format. We can read it to a string and check that it
+        //contains specified location as a substring:
+        $fileContent = $ics->fread($ics->getSize());
+        $this->assertRegExp("/" . $location . "/", $fileContent);
+        //We can also convert the file back to a CalendarDto
+        $dto = $api->getCalendarFileAsModel(new GetCalendarFileAsModelRequest($ics));
+        $this->assertEquals($location, $dto->getLocation());
+    }
+
+    /**
+     * @group pipeline
+     */
+    public function testContactConverter(): void
+    {
+        $api = self::getApi();
+        $surname = 'Cane';
+        $contactDto = (new ContactDto())
+            ->setSurname($surname)
+            ->setGivenName('John')
+            ->setGender('Male')
+            ->setEmailAddresses(array((new EmailAddress())->setAddress('address@aspose.com')))
+            ->setPhoneNumbers(array((new PhoneNumber())->setNumber('+47235456456')));
+        $mapi = $api->convertContactModelToFile(new ConvertContactModelToFileRequest('Msg',
+            $contactDto));
+        $vcard = $api->convertContact(new ConvertContactRequest('VCard', 'Msg', $mapi));
+        $fileContent = $vcard->fread($vcard->getSize());
+        $this->assertRegExp("/" . $surname . "/", $fileContent);
+        $dto = $api->getContactFileAsModel(new GetContactFileAsModelRequest('VCard', $vcard));
+        $this->assertEquals($surname, $dto->getSurname());
+    }
+
+    /**
+     * @group pipeline
+     */
+    public function testEmailConverter(): void
+    {
+        $api = self::getApi();
+        $from = 'from@aspose.com';
+        $emailDto = (new EmailDto())
+            ->setFrom(new MailAddress(null, $from))
+            ->setTo(array(new MailAddress(null, 'to@aspose.com')))
+            ->setSubject('Some subject')
+            ->setBody('Some body')
+            ->setDate(new DateTime());
+        $mapi = $api->convertEmailModelToFile(new ConvertEmailModelToFileRequest('Msg',
+            $emailDto));
+        $eml = $api->convertEmail(new ConvertEmailRequest('Eml', $mapi));
+        $fileContent = $eml->fread($eml->getSize());
+        $this->assertRegExp("/" . $from . "/", $fileContent);
+        $dto = $api->getEmailFileAsModel(new GetEmailFileAsModelRequest($eml));
+        $this->assertEquals($from, $dto->getFrom()->getAddress());
+    }
+
+    private function createCalendar(DateTime $startDate = null): string
     {
         $startDate = $startDate == null ? new DateTime() : $startDate;
         $endDate = $startDate->add(new DateInterval("PT1H"));
@@ -501,6 +609,3 @@ class EmailApiTest extends TestCase
         return $fileName;
     }
 }
-
-
-?>

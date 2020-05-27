@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ObjectExist.php">
- *   Copyright (c) 2018 Aspose.Email for Cloud
+ *   Copyright (c) 2018-2020 Aspose.Email for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -37,7 +37,6 @@ use \Aspose\Email\ObjectSerializer;
 /**
  * ObjectExist
  *
- * @description Object exists
  */
 class ObjectExist implements ArrayAccess
 {
@@ -176,8 +175,8 @@ class ObjectExist implements ArrayAccess
     /**
      * Initializes a new instance of the ObjectExist class.
      *  
-     * @param bool $exists Indicates that the file or folder exists.
-     * @param bool $is_folder True if it is a folder, false if it is a file.
+     * @param bool $exists 
+     * @param bool $is_folder 
      */
     public function __construct($exists = null, $is_folder = null)
     {
@@ -238,7 +237,7 @@ class ObjectExist implements ArrayAccess
     /**
      * Sets exists
      *
-     * @param bool $exists Indicates that the file or folder exists.
+     * @param bool $exists exists
      *
      * @return $this
      */
@@ -262,7 +261,7 @@ class ObjectExist implements ArrayAccess
     /**
      * Sets is_folder
      *
-     * @param bool $is_folder True if it is a folder, false if it is a file.
+     * @param bool $is_folder is_folder
      *
      * @return $this
      */

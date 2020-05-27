@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="StorageExist.php">
- *   Copyright (c) 2018 Aspose.Email for Cloud
+ *   Copyright (c) 2018-2020 Aspose.Email for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -37,7 +37,6 @@ use \Aspose\Email\ObjectSerializer;
 /**
  * StorageExist
  *
- * @description Storage exists
  */
 class StorageExist implements ArrayAccess
 {
@@ -171,7 +170,7 @@ class StorageExist implements ArrayAccess
     /**
      * Initializes a new instance of the StorageExist class.
      *  
-     * @param bool $exists Shows that the storage exists.
+     * @param bool $exists 
      */
     public function __construct($exists = null)
     {
@@ -224,7 +223,7 @@ class StorageExist implements ArrayAccess
     /**
      * Sets exists
      *
-     * @param bool $exists Shows that the storage exists.
+     * @param bool $exists exists
      *
      * @return $this
      */

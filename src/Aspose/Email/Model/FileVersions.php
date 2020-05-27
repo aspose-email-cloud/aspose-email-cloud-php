@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="FileVersions.php">
- *   Copyright (c) 2018 Aspose.Email for Cloud
+ *   Copyright (c) 2018-2020 Aspose.Email for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -37,7 +37,6 @@ use \Aspose\Email\ObjectSerializer;
 /**
  * FileVersions
  *
- * @description File versions FileVersion.
  */
 class FileVersions implements ArrayAccess
 {
@@ -171,7 +170,7 @@ class FileVersions implements ArrayAccess
     /**
      * Initializes a new instance of the FileVersions class.
      *  
-     * @param \Aspose\Email\Model\FileVersion[] $value File versions FileVersion.
+     * @param \Aspose\Email\Model\FileVersion[] $value 
      */
     public function __construct($value = null)
     {
@@ -218,7 +217,7 @@ class FileVersions implements ArrayAccess
     /**
      * Sets value
      *
-     * @param \Aspose\Email\Model\FileVersion[] $value File versions FileVersion.
+     * @param \Aspose\Email\Model\FileVersion[] $value value
      *
      * @return $this
      */

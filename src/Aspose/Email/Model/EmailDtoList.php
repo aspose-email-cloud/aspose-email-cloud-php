@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="EmailDtoList.php">
- *   Copyright (c) 2018 Aspose.Email for Cloud
+ *   Copyright (c) 2018-2020 Aspose.Email for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -35,7 +35,7 @@ use \Aspose\Email\ObjectSerializer;
 /**
  * EmailDtoList
  *
- * @description List of email documents
+ * @description List of email documents from storage
  */
 class EmailDtoList extends ListResponseOfStorageModelOfEmailDto 
 {

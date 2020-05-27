@@ -28,52 +28,64 @@ Method | HTTP request | Description
 [**appendEmailMessage**](EmailApi.md#appendEmailMessage) | **PUT** /email/client/Append | Adds an email from *.eml file to specified folder in email account
 [**appendEmailModelMessage**](EmailApi.md#appendEmailModelMessage) | **PUT** /email/client/AppendModel | Adds an email from model to specified folder in email account
 [**appendMimeMessage**](EmailApi.md#appendMimeMessage) | **PUT** /email/client/AppendMime | Adds an email from MIME to specified folder in email account
+[**convertCalendar**](EmailApi.md#convertCalendar) | **PUT** /email/CalendarModel/convert/{format} | Converts calendar document to specified format and returns as file
 [**convertCalendarModelToAlternate**](EmailApi.md#convertCalendarModelToAlternate) | **PUT** /email/CalendarModel/as-alternate | Convert iCalendar to AlternateView
+[**convertCalendarModelToFile**](EmailApi.md#convertCalendarModelToFile) | **PUT** /email/CalendarModel/model-as-file/{format} | Converts calendar model to specified format and returns as file
+[**convertContact**](EmailApi.md#convertContact) | **PUT** /email/ContactModel/{format}/convert/{destinationFormat} | Converts contact document to specified format and returns as file
+[**convertContactModelToFile**](EmailApi.md#convertContactModelToFile) | **PUT** /email/ContactModel/model-as-file/{destinationFormat} | Converts contact model to specified format and returns as file
 [**convertEmail**](EmailApi.md#convertEmail) | **PUT** /email/convert/{format} | Converts email document to specified format and returns as file
-[**copyFile**](EmailApi.md#copyFile) | **PUT** /email/storage/file/copy/{srcPath} | Copy file
-[**copyFolder**](EmailApi.md#copyFolder) | **PUT** /email/storage/folder/copy/{srcPath} | Copy folder
+[**convertEmailModelToFile**](EmailApi.md#convertEmailModelToFile) | **PUT** /email/model/model-as-file/{destinationFormat} | Converts Email model to specified format and returns as file
+[**copyFile**](EmailApi.md#copyFile) | **PUT** /email/storage/file/copy/{srcPath} | 
+[**copyFolder**](EmailApi.md#copyFolder) | **PUT** /email/storage/folder/copy/{srcPath} | 
 [**createCalendar**](EmailApi.md#createCalendar) | **PUT** /email/Calendar/{name} | Create calendar file
 [**createContact**](EmailApi.md#createContact) | **PUT** /email/Contact/{format}/{name} | Create contact document
 [**createEmail**](EmailApi.md#createEmail) | **PUT** /email/{fileName} | Create an email document
 [**createEmailFolder**](EmailApi.md#createEmailFolder) | **PUT** /email/client/CreateFolder | Create new folder in email account
-[**createFolder**](EmailApi.md#createFolder) | **PUT** /email/storage/folder/{path} | Create the folder
+[**createFolder**](EmailApi.md#createFolder) | **PUT** /email/storage/folder/{path} | 
 [**createMapi**](EmailApi.md#createMapi) | **PUT** /email/Mapi/{name} | Create new document
 [**deleteCalendarProperty**](EmailApi.md#deleteCalendarProperty) | **DELETE** /email/Calendar/{name}/properties/{memberName}/{index} | Deletes indexed property by index and name. To delete Reminder attachment, use path ReminderAttachment/{ReminderIndex}/{AttachmentIndex}
 [**deleteContactProperty**](EmailApi.md#deleteContactProperty) | **DELETE** /email/Contact/{format}/{name}/properties/{memberName}/{index} | Delete property from indexed property list
 [**deleteEmailFolder**](EmailApi.md#deleteEmailFolder) | **DELETE** /email/client/DeleteFolder | Delete a folder in email account
 [**deleteEmailMessage**](EmailApi.md#deleteEmailMessage) | **DELETE** /email/client/DeleteMessage | Delete message from email account by id
-[**deleteFile**](EmailApi.md#deleteFile) | **DELETE** /email/storage/file/{path} | Delete file
-[**deleteFolder**](EmailApi.md#deleteFolder) | **DELETE** /email/storage/folder/{path} | Delete folder
+[**deleteEmailThread**](EmailApi.md#deleteEmailThread) | **DELETE** /email/client/threads/{threadId} | Delete thread by id. All messages from thread will also be deleted
+[**deleteFile**](EmailApi.md#deleteFile) | **DELETE** /email/storage/file/{path} | 
+[**deleteFolder**](EmailApi.md#deleteFolder) | **DELETE** /email/storage/folder/{path} | 
 [**deleteMapiAttachment**](EmailApi.md#deleteMapiAttachment) | **DELETE** /email/Mapi/{name}/attachments/{attachment} | Remove attachment from document
 [**deleteMapiProperties**](EmailApi.md#deleteMapiProperties) | **DELETE** /email/Mapi/{name}/properties | Delete document properties
 [**discoverEmailConfig**](EmailApi.md#discoverEmailConfig) | **GET** /email/config/discover | Discover email accounts by email address. Does not validate discovered accounts.
 [**discoverEmailConfigOauth**](EmailApi.md#discoverEmailConfigOauth) | **POST** /email/config/discover/oauth | Discover email accounts by email address. Validates discovered accounts using OAuth 2.0.
 [**discoverEmailConfigPassword**](EmailApi.md#discoverEmailConfigPassword) | **POST** /email/config/discover/password | Discover email accounts by email address. Validates discovered accounts using login and password.
-[**downloadFile**](EmailApi.md#downloadFile) | **GET** /email/storage/file/{path} | Download file
+[**downloadFile**](EmailApi.md#downloadFile) | **GET** /email/storage/file/{path} | 
 [**fetchEmailMessage**](EmailApi.md#fetchEmailMessage) | **GET** /email/client/Fetch | Fetch message mime from email account
 [**fetchEmailModel**](EmailApi.md#fetchEmailModel) | **GET** /email/client/FetchModel | Fetch message model from email account
+[**fetchEmailThreadMessages**](EmailApi.md#fetchEmailThreadMessages) | **GET** /email/client/threads/{threadId}/messages | Get messages from thread by id. All messages are fully fetched. For accounts with CacheFile only cached messages will be returned.
 [**getCalendar**](EmailApi.md#getCalendar) | **GET** /email/Calendar/{name}/properties | Get calendar file properties
+[**getCalendarAsFile**](EmailApi.md#getCalendarAsFile) | **GET** /email/CalendarModel/{fileName}/as-file/{format} | Converts calendar document from storage to specified format and returns as file
 [**getCalendarAttachment**](EmailApi.md#getCalendarAttachment) | **GET** /email/Calendar/{name}/attachments/{attachment} | Get iCalendar document attachment by name
+[**getCalendarFileAsModel**](EmailApi.md#getCalendarFileAsModel) | **PUT** /email/CalendarModel/file-as-model | Converts calendar document to a model representation
 [**getCalendarList**](EmailApi.md#getCalendarList) | **GET** /email/Calendar | Get iCalendar files list in folder on storage
 [**getCalendarModel**](EmailApi.md#getCalendarModel) | **GET** /email/CalendarModel/{name} | Get calendar file
 [**getCalendarModelAsAlternate**](EmailApi.md#getCalendarModelAsAlternate) | **GET** /email/CalendarModel/{name}/as-alternate/{calendarAction} | Get iCalendar from storage as AlternateView
 [**getCalendarModelList**](EmailApi.md#getCalendarModelList) | **GET** /email/CalendarModel | Get iCalendar list from storage folder
+[**getContactAsFile**](EmailApi.md#getContactAsFile) | **GET** /email/ContactModel/{format}/{fileName}/as-file/{destinationFormat} | Converts calendar document from storage to specified format and returns as file
 [**getContactAttachment**](EmailApi.md#getContactAttachment) | **GET** /email/Contact/{format}/{name}/attachments/{attachment} | Get attachment file by name
+[**getContactFileAsModel**](EmailApi.md#getContactFileAsModel) | **PUT** /email/ContactModel/{format}/file-as-model | Converts contact document to a model representation
 [**getContactList**](EmailApi.md#getContactList) | **GET** /email/Contact/{format} | Get contact list from storage folder
 [**getContactModel**](EmailApi.md#getContactModel) | **GET** /email/ContactModel/{format}/{name} | Get contact document.
 [**getContactModelList**](EmailApi.md#getContactModelList) | **GET** /email/ContactModel/{format} | Get contact list from storage folder.
 [**getContactProperties**](EmailApi.md#getContactProperties) | **GET** /email/Contact/{format}/{name}/properties | Get contact document properties
-[**getDiscUsage**](EmailApi.md#getDiscUsage) | **GET** /email/storage/disc | Get disc usage
+[**getDiscUsage**](EmailApi.md#getDiscUsage) | **GET** /email/storage/disc | 
 [**getEmail**](EmailApi.md#getEmail) | **GET** /email/{fileName} | Get email document
 [**getEmailAsFile**](EmailApi.md#getEmailAsFile) | **GET** /email/{fileName}/as-file/{format} | Converts email document from storage to specified format and returns as file
 [**getEmailAttachment**](EmailApi.md#getEmailAttachment) | **GET** /email/{fileName}/attachments/{attachment} | Get email attachment by name
 [**getEmailClientAccount**](EmailApi.md#getEmailClientAccount) | **GET** /email/client/email-client-account | Get email client account from storage
 [**getEmailClientMultiAccount**](EmailApi.md#getEmailClientMultiAccount) | **GET** /email/client/multi-account | Get email client multi account file (*.multi.account). Will respond error if file extension is not \&quot;.multi.account\&quot;.
+[**getEmailFileAsModel**](EmailApi.md#getEmailFileAsModel) | **PUT** /email/model/file-as-model | Converts email document to a model representation
 [**getEmailModel**](EmailApi.md#getEmailModel) | **GET** /email/model/{format}/{name} | Get email document.
 [**getEmailModelList**](EmailApi.md#getEmailModelList) | **GET** /email/model/{format} | Get email list from storage folder.
 [**getEmailProperty**](EmailApi.md#getEmailProperty) | **GET** /email/{fileName}/properties/{propertyName} | Get an email document property by its name
-[**getFileVersions**](EmailApi.md#getFileVersions) | **GET** /email/storage/version/{path} | Get file versions
-[**getFilesList**](EmailApi.md#getFilesList) | **GET** /email/storage/folder/{path} | Get all files and folders within a folder
+[**getFileVersions**](EmailApi.md#getFileVersions) | **GET** /email/storage/version/{path} | 
+[**getFilesList**](EmailApi.md#getFilesList) | **GET** /email/storage/folder/{path} | 
 [**getMapiAttachment**](EmailApi.md#getMapiAttachment) | **GET** /email/Mapi/{name}/attachments/{attachment} | Get document attachment as file stream
 [**getMapiAttachments**](EmailApi.md#getMapiAttachments) | **GET** /email/Mapi/{name}/attachments | Get document attachment list
 [**getMapiList**](EmailApi.md#getMapiList) | **GET** /email/Mapi | Get document list from storage folder
@@ -82,9 +94,12 @@ Method | HTTP request | Description
 [**listEmailFolders**](EmailApi.md#listEmailFolders) | **GET** /email/client/ListFolders | Get folders list in email account
 [**listEmailMessages**](EmailApi.md#listEmailMessages) | **GET** /email/client/ListMessages | Get messages from folder, filtered by query
 [**listEmailModels**](EmailApi.md#listEmailModels) | **GET** /email/client/ListMessagesModel | Get messages from folder, filtered by query
-[**moveFile**](EmailApi.md#moveFile) | **PUT** /email/storage/file/move/{srcPath} | Move file
-[**moveFolder**](EmailApi.md#moveFolder) | **PUT** /email/storage/folder/move/{srcPath} | Move folder
-[**objectExists**](EmailApi.md#objectExists) | **GET** /email/storage/exist/{path} | Check if file or folder exists
+[**listEmailThreads**](EmailApi.md#listEmailThreads) | **GET** /email/client/threads | Get message threads from folder. All messages are partly fetched (without email body and other fields)
+[**moveEmailMessage**](EmailApi.md#moveEmailMessage) | **PUT** /email/client/move | Move message to another folder
+[**moveEmailThread**](EmailApi.md#moveEmailThread) | **PUT** /email/client/threads/{threadId}/move | Move thread to another folder
+[**moveFile**](EmailApi.md#moveFile) | **PUT** /email/storage/file/move/{srcPath} | 
+[**moveFolder**](EmailApi.md#moveFolder) | **PUT** /email/storage/folder/move/{srcPath} | 
+[**objectExists**](EmailApi.md#objectExists) | **GET** /email/storage/exist/{path} | 
 [**saveCalendarModel**](EmailApi.md#saveCalendarModel) | **PUT** /email/CalendarModel/{name} | Save iCalendar
 [**saveContactModel**](EmailApi.md#saveContactModel) | **PUT** /email/ContactModel/{format}/{name} | Save contact.
 [**saveEmailClientAccount**](EmailApi.md#saveEmailClientAccount) | **PUT** /email/client/email-client-account | Create email client account file (*.account) with any of supported credentials
@@ -97,11 +112,12 @@ Method | HTTP request | Description
 [**sendEmailModel**](EmailApi.md#sendEmailModel) | **POST** /email/client/SendModel | Send an email specified by model in request
 [**setEmailProperty**](EmailApi.md#setEmailProperty) | **PUT** /email/{fileName}/properties/{propertyName} | Set email document property value
 [**setEmailReadFlag**](EmailApi.md#setEmailReadFlag) | **POST** /email/client/SetReadFlag | Sets \&quot;Message is read\&quot; flag
-[**storageExists**](EmailApi.md#storageExists) | **GET** /email/storage/{storageName}/exist | Check if storage exists
+[**setEmailThreadReadFlag**](EmailApi.md#setEmailThreadReadFlag) | **PUT** /email/client/threads/{threadId}/read-flag | Mark all messages in thread as read or unread
+[**storageExists**](EmailApi.md#storageExists) | **GET** /email/storage/{storageName}/exist | 
 [**updateCalendarProperties**](EmailApi.md#updateCalendarProperties) | **PUT** /email/Calendar/{name}/properties | Update calendar file properties
 [**updateContactProperties**](EmailApi.md#updateContactProperties) | **PUT** /email/Contact/{format}/{name}/properties | Update contact document properties
 [**updateMapiProperties**](EmailApi.md#updateMapiProperties) | **PUT** /email/Mapi/{name}/properties | Update document properties
-[**uploadFile**](EmailApi.md#uploadFile) | **PUT** /email/storage/file/{path} | Upload file
+[**uploadFile**](EmailApi.md#uploadFile) | **PUT** /email/storage/file/{path} | 
 
 
 # **addCalendarAttachment**
@@ -748,6 +764,31 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+# **convertCalendar**
+```php
+function \SplFileObject convertCalendar(Requests\ConvertCalendarRequest $request)
+```
+Converts calendar document to specified format and returns as file
+
+### Return type
+
+[**\SplFileObject**](\SplFileObject.md)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\ConvertCalendarRequest(
+    $format,
+    $file)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **format** | **string**| File format Enum, available values: Ics, Msg |
+ **file** | **\SplFileObject**| File to convert |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 # **convertCalendarModelToAlternate**
 ```php
 function \Aspose\Email\Model\AlternateView convertCalendarModelToAlternate(Requests\ConvertCalendarModelToAlternateRequest $request)
@@ -768,6 +809,83 @@ new Aspose\Email\Model\Requests\ConvertCalendarModelToAlternateRequest(
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **rq** | [**\Aspose\Email\Model\CalendarDtoAlternateRq**](CalendarDtoAlternateRq.md)| iCalendar to AlternateView request |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **convertCalendarModelToFile**
+```php
+function \SplFileObject convertCalendarModelToFile(Requests\ConvertCalendarModelToFileRequest $request)
+```
+Converts calendar model to specified format and returns as file
+
+### Return type
+
+[**\SplFileObject**](\SplFileObject.md)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\ConvertCalendarModelToFileRequest(
+    $format,
+    $calendar_dto)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **format** | **string**| File format Enum, available values: Ics, Msg |
+ **calendar_dto** | [**\Aspose\Email\Model\CalendarDto**](CalendarDto.md)| Calendar model to convert |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **convertContact**
+```php
+function \SplFileObject convertContact(Requests\ConvertContactRequest $request)
+```
+Converts contact document to specified format and returns as file
+
+### Return type
+
+[**\SplFileObject**](\SplFileObject.md)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\ConvertContactRequest(
+    $destination_format,
+    $format,
+    $file)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **destination_format** | **string**| File format to convert to Enum, available values: VCard, WebDav, Msg |
+ **format** | **string**| File format to convert from Enum, available values: VCard, WebDav, Msg |
+ **file** | **\SplFileObject**| File to convert |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **convertContactModelToFile**
+```php
+function \SplFileObject convertContactModelToFile(Requests\ConvertContactModelToFileRequest $request)
+```
+Converts contact model to specified format and returns as file
+
+### Return type
+
+[**\SplFileObject**](\SplFileObject.md)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\ConvertContactModelToFileRequest(
+    $destination_format,
+    $contact_dto)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **destination_format** | **string**| File format Enum, available values: VCard, WebDav, Msg |
+ **contact_dto** | [**\Aspose\Email\Model\ContactDto**](ContactDto.md)| Contact model to convert |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -792,7 +910,32 @@ new Aspose\Email\Model\Requests\ConvertEmailRequest(
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **format** | **string**| File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html |
- **file** | **\SplFileObject**| File to upload |
+ **file** | **\SplFileObject**| File to convert |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **convertEmailModelToFile**
+```php
+function \SplFileObject convertEmailModelToFile(Requests\ConvertEmailModelToFileRequest $request)
+```
+Converts Email model to specified format and returns as file
+
+### Return type
+
+[**\SplFileObject**](\SplFileObject.md)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\ConvertEmailModelToFileRequest(
+    $destination_format,
+    $email_dto)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **destination_format** | **string**| File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html |
+ **email_dto** | [**\Aspose\Email\Model\EmailDto**](EmailDto.md)| Email model to convert |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -800,7 +943,7 @@ Name | Type | Description  | Notes
 ```php
 function copyFile(Requests\CopyFileRequest $request)
 ```
-Copy file
+
 
 ### Return type
 
@@ -819,11 +962,11 @@ new Aspose\Email\Model\Requests\CopyFileRequest(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **src_path** | **string**| Source file path e.g. &#39;/folder/file.ext&#39; |
- **dest_path** | **string**| Destination file path |
- **src_storage_name** | **string**| Source storage name | [optional]
- **dest_storage_name** | **string**| Destination storage name | [optional]
- **version_id** | **string**| File version ID to copy | [optional]
+ **src_path** | **string**|  |
+ **dest_path** | **string**|  |
+ **src_storage_name** | **string**|  | [optional]
+ **dest_storage_name** | **string**|  | [optional]
+ **version_id** | **string**|  | [optional]
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -831,7 +974,7 @@ Name | Type | Description  | Notes
 ```php
 function copyFolder(Requests\CopyFolderRequest $request)
 ```
-Copy folder
+
 
 ### Return type
 
@@ -849,10 +992,10 @@ new Aspose\Email\Model\Requests\CopyFolderRequest(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **src_path** | **string**| Source folder path e.g. &#39;/src&#39; |
- **dest_path** | **string**| Destination folder path e.g. &#39;/dst&#39; |
- **src_storage_name** | **string**| Source storage name | [optional]
- **dest_storage_name** | **string**| Destination storage name | [optional]
+ **src_path** | **string**|  |
+ **dest_path** | **string**|  |
+ **src_storage_name** | **string**|  | [optional]
+ **dest_storage_name** | **string**|  | [optional]
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -960,7 +1103,7 @@ Name | Type | Description  | Notes
 ```php
 function createFolder(Requests\CreateFolderRequest $request)
 ```
-Create the folder
+
 
 ### Return type
 
@@ -976,8 +1119,8 @@ new Aspose\Email\Model\Requests\CreateFolderRequest(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **path** | **string**| Folder path to create e.g. &#39;folder_1/folder_2/&#39; |
- **storage_name** | **string**| Storage name | [optional]
+ **path** | **string**|  |
+ **storage_name** | **string**|  | [optional]
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1112,11 +1255,36 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+# **deleteEmailThread**
+```php
+function deleteEmailThread(Requests\DeleteEmailThreadRequest $request)
+```
+Delete thread by id. All messages from thread will also be deleted
+
+### Return type
+
+void (empty response body)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\DeleteEmailThreadRequest(
+    $thread_id,
+    $request)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **thread_id** | **string**| Thread id |
+ **request** | [**\Aspose\Email\Model\DeleteEmailThreadAccountRq**](DeleteEmailThreadAccountRq.md)| Email account specifier |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 # **deleteFile**
 ```php
 function deleteFile(Requests\DeleteFileRequest $request)
 ```
-Delete file
+
 
 ### Return type
 
@@ -1133,9 +1301,9 @@ new Aspose\Email\Model\Requests\DeleteFileRequest(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **path** | **string**| File path e.g. &#39;/folder/file.ext&#39; |
- **storage_name** | **string**| Storage name | [optional]
- **version_id** | **string**| File version ID to delete | [optional]
+ **path** | **string**|  |
+ **storage_name** | **string**|  | [optional]
+ **version_id** | **string**|  | [optional]
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1143,7 +1311,7 @@ Name | Type | Description  | Notes
 ```php
 function deleteFolder(Requests\DeleteFolderRequest $request)
 ```
-Delete folder
+
 
 ### Return type
 
@@ -1160,9 +1328,9 @@ new Aspose\Email\Model\Requests\DeleteFolderRequest(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **path** | **string**| Folder path e.g. &#39;/folder&#39; |
- **storage_name** | **string**| Storage name | [optional]
- **recursive** | **bool**| Enable to delete folders, subfolders and files | [optional] [default to false]
+ **path** | **string**|  |
+ **storage_name** | **string**|  | [optional]
+ **recursive** | **bool**|  | [optional] [default to false]
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1293,7 +1461,7 @@ Name | Type | Description  | Notes
 ```php
 function \SplFileObject downloadFile(Requests\DownloadFileRequest $request)
 ```
-Download file
+
 
 ### Return type
 
@@ -1310,9 +1478,9 @@ new Aspose\Email\Model\Requests\DownloadFileRequest(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **path** | **string**| File path e.g. &#39;/folder/file.ext&#39; |
- **storage_name** | **string**| Storage name | [optional]
- **version_id** | **string**| File version ID to download | [optional]
+ **path** | **string**|  |
+ **storage_name** | **string**|  | [optional]
+ **version_id** | **string**|  | [optional]
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1332,6 +1500,7 @@ new Aspose\Email\Model\Requests\FetchEmailMessageRequest(
     $message_id,
     $first_account,
     $second_account,
+    $folder,
     $storage,
     $storage_folder)
 ```
@@ -1341,7 +1510,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **message_id** | **string**| Message identifier |
  **first_account** | **string**| Email account |
- **second_account** | **string**| Additional email account (should be specified for POP/IMAP accounts and should be SMTP account) | [optional]
+ **second_account** | **string**| Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP) | [optional]
+ **folder** | **string**| Account folder to fetch from (should be specified for some protocols such as IMAP) | [optional]
  **storage** | **string**| Storage name where account file(s) located | [optional]
  **storage_folder** | **string**| Folder in storage where account file(s) located | [optional]
 
@@ -1363,6 +1533,7 @@ new Aspose\Email\Model\Requests\FetchEmailModelRequest(
     $message_id,
     $first_account,
     $second_account,
+    $folder,
     $storage,
     $storage_folder)
 ```
@@ -1372,7 +1543,41 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **message_id** | **string**| Message identifier |
  **first_account** | **string**| Email account |
- **second_account** | **string**| Additional email account (should be specified for POP/IMAP accounts and should be SMTP account) | [optional]
+ **second_account** | **string**| Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP) | [optional]
+ **folder** | **string**| Account folder to fetch from (should be specified for some protocols such as IMAP) | [optional]
+ **storage** | **string**| Storage name where account file(s) located | [optional]
+ **storage_folder** | **string**| Folder in storage where account file(s) located | [optional]
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **fetchEmailThreadMessages**
+```php
+function \Aspose\Email\Model\ListResponseOfEmailDto fetchEmailThreadMessages(Requests\FetchEmailThreadMessagesRequest $request)
+```
+Get messages from thread by id. All messages are fully fetched. For accounts with CacheFile only cached messages will be returned.
+
+### Return type
+
+[**\Aspose\Email\Model\ListResponseOfEmailDto**](ListResponseOfEmailDto.md)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\FetchEmailThreadMessagesRequest(
+    $thread_id,
+    $first_account,
+    $second_account,
+    $folder,
+    $storage,
+    $storage_folder)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **thread_id** | **string**| Thread identifier |
+ **first_account** | **string**| Email account |
+ **second_account** | **string**| Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP) | [optional]
+ **folder** | **string**| Specifies account folder to get thread from | [optional]
  **storage** | **string**| Storage name where account file(s) located | [optional]
  **storage_folder** | **string**| Folder in storage where account file(s) located | [optional]
 
@@ -1405,6 +1610,35 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+# **getCalendarAsFile**
+```php
+function \SplFileObject getCalendarAsFile(Requests\GetCalendarAsFileRequest $request)
+```
+Converts calendar document from storage to specified format and returns as file
+
+### Return type
+
+[**\SplFileObject**](\SplFileObject.md)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\GetCalendarAsFileRequest(
+    $file_name,
+    $format,
+    $storage,
+    $folder)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file_name** | **string**| Calendar document file name |
+ **format** | **string**| File format Enum, available values: Ics, Msg |
+ **storage** | **string**| Storage name | [optional]
+ **folder** | **string**| Path to folder in storage | [optional]
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 # **getCalendarAttachment**
 ```php
 function \SplFileObject getCalendarAttachment(Requests\GetCalendarAttachmentRequest $request)
@@ -1431,6 +1665,29 @@ Name | Type | Description  | Notes
  **attachment** | **string**| Attachment name or index |
  **folder** | **string**| Path to folder in storage | [optional]
  **storage** | **string**| Storage name | [optional]
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **getCalendarFileAsModel**
+```php
+function \Aspose\Email\Model\CalendarDto getCalendarFileAsModel(Requests\GetCalendarFileAsModelRequest $request)
+```
+Converts calendar document to a model representation
+
+### Return type
+
+[**\Aspose\Email\Model\CalendarDto**](CalendarDto.md)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\GetCalendarFileAsModelRequest(
+    $file)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file** | **\SplFileObject**| File to convert |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1550,6 +1807,37 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+# **getContactAsFile**
+```php
+function \SplFileObject getContactAsFile(Requests\GetContactAsFileRequest $request)
+```
+Converts calendar document from storage to specified format and returns as file
+
+### Return type
+
+[**\SplFileObject**](\SplFileObject.md)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\GetContactAsFileRequest(
+    $file_name,
+    $destination_format,
+    $format,
+    $storage,
+    $folder)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file_name** | **string**| Calendar document file name |
+ **destination_format** | **string**| File format Enum, available values: VCard, WebDav, Msg |
+ **format** | **string**| File format to convert from Enum, available values: VCard, WebDav, Msg |
+ **storage** | **string**| Storage name | [optional]
+ **folder** | **string**| Path to folder in storage | [optional]
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 # **getContactAttachment**
 ```php
 function \SplFileObject getContactAttachment(Requests\GetContactAttachmentRequest $request)
@@ -1578,6 +1866,31 @@ Name | Type | Description  | Notes
  **attachment** | **string**| Attachment name or index |
  **folder** | **string**| Path to folder in storage | [optional]
  **storage** | **string**| Storage name | [optional]
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **getContactFileAsModel**
+```php
+function \Aspose\Email\Model\ContactDto getContactFileAsModel(Requests\GetContactFileAsModelRequest $request)
+```
+Converts contact document to a model representation
+
+### Return type
+
+[**\Aspose\Email\Model\ContactDto**](ContactDto.md)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\GetContactFileAsModelRequest(
+    $format,
+    $file)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **format** | **string**| File format Enum, available values: VCard, WebDav, Msg |
+ **file** | **\SplFileObject**| File to convert |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1705,7 +2018,7 @@ Name | Type | Description  | Notes
 ```php
 function \Aspose\Email\Model\DiscUsage getDiscUsage(Requests\GetDiscUsageRequest $request)
 ```
-Get disc usage
+
 
 ### Return type
 
@@ -1720,7 +2033,7 @@ new Aspose\Email\Model\Requests\GetDiscUsageRequest(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **storage_name** | **string**| Storage name | [optional]
+ **storage_name** | **string**|  | [optional]
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1863,6 +2176,29 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+# **getEmailFileAsModel**
+```php
+function \Aspose\Email\Model\EmailDto getEmailFileAsModel(Requests\GetEmailFileAsModelRequest $request)
+```
+Converts email document to a model representation
+
+### Return type
+
+[**\Aspose\Email\Model\EmailDto**](EmailDto.md)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\GetEmailFileAsModelRequest(
+    $file)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file** | **\SplFileObject**| File to convert |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 # **getEmailModel**
 ```php
 function \Aspose\Email\Model\EmailDto getEmailModel(Requests\GetEmailModelRequest $request)
@@ -1956,7 +2292,7 @@ Name | Type | Description  | Notes
 ```php
 function \Aspose\Email\Model\FileVersions getFileVersions(Requests\GetFileVersionsRequest $request)
 ```
-Get file versions
+
 
 ### Return type
 
@@ -1972,8 +2308,8 @@ new Aspose\Email\Model\Requests\GetFileVersionsRequest(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **path** | **string**| File path e.g. &#39;/file.ext&#39; |
- **storage_name** | **string**| Storage name | [optional]
+ **path** | **string**|  |
+ **storage_name** | **string**|  | [optional]
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -1981,7 +2317,7 @@ Name | Type | Description  | Notes
 ```php
 function \Aspose\Email\Model\FilesList getFilesList(Requests\GetFilesListRequest $request)
 ```
-Get all files and folders within a folder
+
 
 ### Return type
 
@@ -1997,8 +2333,8 @@ new Aspose\Email\Model\Requests\GetFilesListRequest(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **path** | **string**| Folder path e.g. &#39;/folder&#39; |
- **storage_name** | **string**| Storage name | [optional]
+ **path** | **string**|  |
+ **storage_name** | **string**|  | [optional]
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -2161,7 +2497,7 @@ new Aspose\Email\Model\Requests\ListEmailFoldersRequest(
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **first_account** | **string**| Email account |
- **second_account** | **string**| Additional email account (should be specified for POP/IMAP accounts and should be SMTP account) | [optional]
+ **second_account** | **string**| Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP) | [optional]
  **storage** | **string**| Storage name where account file(s) located | [optional]
  **storage_folder** | **string**| Folder in storage where account file(s) located | [optional]
  **parent_folder** | **string**| Folder in which subfolders should be listed | [optional]
@@ -2198,7 +2534,7 @@ Name | Type | Description  | Notes
  **folder** | **string**| A folder in email account |
  **query_string** | **string**| A MailQuery search string |
  **first_account** | **string**| Email account |
- **second_account** | **string**| Additional email account (should be specified for POP/IMAP accounts and should be SMTP account) | [optional]
+ **second_account** | **string**| Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP) | [optional]
  **storage** | **string**| Storage name where account file(s) located | [optional]
  **storage_folder** | **string**| Folder in storage where account file(s) located | [optional]
  **recursive** | **bool**| Specifies that should message be searched in subfolders recursively | [optional] [default to false]
@@ -2221,8 +2557,8 @@ The query string should have the following view.      The example of a simple ex
 ```php
 new Aspose\Email\Model\Requests\ListEmailModelsRequest(
     $folder,
-    $query_string,
     $first_account,
+    $query_string,
     $second_account,
     $storage,
     $storage_folder,
@@ -2233,12 +2569,95 @@ new Aspose\Email\Model\Requests\ListEmailModelsRequest(
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **folder** | **string**| A folder in email account |
- **query_string** | **string**| A MailQuery search string |
  **first_account** | **string**| Email account |
- **second_account** | **string**| Additional email account (should be specified for POP/IMAP accounts and should be SMTP account) | [optional]
+ **query_string** | **string**| A MailQuery search string | [optional]
+ **second_account** | **string**| Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP) | [optional]
  **storage** | **string**| Storage name where account file(s) located | [optional]
  **storage_folder** | **string**| Folder in storage where account file(s) located | [optional]
  **recursive** | **bool**| Specifies that should message be searched in subfolders recursively | [optional] [default to false]
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **listEmailThreads**
+```php
+function \Aspose\Email\Model\EmailThreadList listEmailThreads(Requests\ListEmailThreadsRequest $request)
+```
+Get message threads from folder. All messages are partly fetched (without email body and other fields)
+
+### Return type
+
+[**\Aspose\Email\Model\EmailThreadList**](EmailThreadList.md)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\ListEmailThreadsRequest(
+    $folder,
+    $first_account,
+    $second_account,
+    $storage,
+    $storage_folder,
+    $update_folder_cache,
+    $messages_cache_limit)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **folder** | **string**| A folder in email account. |
+ **first_account** | **string**| Email account |
+ **second_account** | **string**| Additional email account (for example, firstAccount could be IMAP, and second one could be SMTP) | [optional]
+ **storage** | **string**| Storage name where account file(s) located | [optional]
+ **storage_folder** | **string**| Folder in storage where account file(s) located | [optional]
+ **update_folder_cache** | **bool**| This parameter is only used in accounts with CacheFile. If true - get new messages and update threads cache for given folder. If false, get only threads from cache without any calls to an email account | [optional] [default to true]
+ **messages_cache_limit** | **int**| Limit messages cache size if CacheFile is used. Ignored in accounts without limits support | [optional] [default to 200]
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **moveEmailMessage**
+```php
+function moveEmailMessage(Requests\MoveEmailMessageRequest $request)
+```
+Move message to another folder
+
+### Return type
+
+void (empty response body)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\MoveEmailMessageRequest(
+    $request)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**\Aspose\Email\Model\MoveEmailMessageRq**](MoveEmailMessageRq.md)| Email account, folder and message specifier |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **moveEmailThread**
+```php
+function moveEmailThread(Requests\MoveEmailThreadRequest $request)
+```
+Move thread to another folder
+
+### Return type
+
+void (empty response body)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\MoveEmailThreadRequest(
+    $thread_id,
+    $request)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **thread_id** | **string**| Thread identifier |
+ **request** | [**\Aspose\Email\Model\MoveEmailThreadRq**](MoveEmailThreadRq.md)| Move thread request |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -2246,7 +2665,7 @@ Name | Type | Description  | Notes
 ```php
 function moveFile(Requests\MoveFileRequest $request)
 ```
-Move file
+
 
 ### Return type
 
@@ -2265,11 +2684,11 @@ new Aspose\Email\Model\Requests\MoveFileRequest(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **src_path** | **string**| Source file path e.g. &#39;/src.ext&#39; |
- **dest_path** | **string**| Destination file path e.g. &#39;/dest.ext&#39; |
- **src_storage_name** | **string**| Source storage name | [optional]
- **dest_storage_name** | **string**| Destination storage name | [optional]
- **version_id** | **string**| File version ID to move | [optional]
+ **src_path** | **string**|  |
+ **dest_path** | **string**|  |
+ **src_storage_name** | **string**|  | [optional]
+ **dest_storage_name** | **string**|  | [optional]
+ **version_id** | **string**|  | [optional]
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -2277,7 +2696,7 @@ Name | Type | Description  | Notes
 ```php
 function moveFolder(Requests\MoveFolderRequest $request)
 ```
-Move folder
+
 
 ### Return type
 
@@ -2295,10 +2714,10 @@ new Aspose\Email\Model\Requests\MoveFolderRequest(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **src_path** | **string**| Folder path to move e.g. &#39;/folder&#39; |
- **dest_path** | **string**| Destination folder path to move to e.g &#39;/dst&#39; |
- **src_storage_name** | **string**| Source storage name | [optional]
- **dest_storage_name** | **string**| Destination storage name | [optional]
+ **src_path** | **string**|  |
+ **dest_path** | **string**|  |
+ **src_storage_name** | **string**|  | [optional]
+ **dest_storage_name** | **string**|  | [optional]
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -2306,7 +2725,7 @@ Name | Type | Description  | Notes
 ```php
 function \Aspose\Email\Model\ObjectExist objectExists(Requests\ObjectExistsRequest $request)
 ```
-Check if file or folder exists
+
 
 ### Return type
 
@@ -2323,9 +2742,9 @@ new Aspose\Email\Model\Requests\ObjectExistsRequest(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **path** | **string**| File or folder path e.g. &#39;/file.ext&#39; or &#39;/folder&#39; |
- **storage_name** | **string**| Storage name | [optional]
- **version_id** | **string**| File version ID | [optional]
+ **path** | **string**|  |
+ **storage_name** | **string**|  | [optional]
+ **version_id** | **string**|  | [optional]
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -2449,7 +2868,7 @@ new Aspose\Email\Model\Requests\SaveEmailModelRequest(
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **format** | **string**| File format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html |
- **name** | **string**| iCalendar file name in storage. |
+ **name** | **string**| Email document file name in storage. |
  **rq** | [**\Aspose\Email\Model\StorageModelRqOfEmailDto**](StorageModelRqOfEmailDto.md)| Calendar properties update request. |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
@@ -2619,11 +3038,36 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
+# **setEmailThreadReadFlag**
+```php
+function setEmailThreadReadFlag(Requests\SetEmailThreadReadFlagRequest $request)
+```
+Mark all messages in thread as read or unread
+
+### Return type
+
+void (empty response body)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\SetEmailThreadReadFlagRequest(
+    $thread_id,
+    $request)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **thread_id** | **string**| Thread id |
+ **request** | [**\Aspose\Email\Model\EmailThreadReadFlagRq**](EmailThreadReadFlagRq.md)| Email account specifier and IsRead flag |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
 # **storageExists**
 ```php
 function \Aspose\Email\Model\StorageExist storageExists(Requests\StorageExistsRequest $request)
 ```
-Check if storage exists
+
 
 ### Return type
 
@@ -2638,7 +3082,7 @@ new Aspose\Email\Model\Requests\StorageExistsRequest(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **storage_name** | **string**| Storage name |
+ **storage_name** | **string**|  |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -2723,7 +3167,7 @@ Name | Type | Description  | Notes
 ```php
 function \Aspose\Email\Model\FilesUploadResult uploadFile(Requests\UploadFileRequest $request)
 ```
-Upload file
+
 
 ### Return type
 
@@ -2740,9 +3184,9 @@ new Aspose\Email\Model\Requests\UploadFileRequest(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **path** | **string**| Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header. |
+ **path** | **string**|  |
  **file** | **\SplFileObject**| File to upload |
- **storage_name** | **string**| Storage name | [optional]
+ **storage_name** | **string**|  | [optional]
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 

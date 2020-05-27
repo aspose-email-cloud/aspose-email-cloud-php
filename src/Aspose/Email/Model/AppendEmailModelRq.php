@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="AppendEmailModelRq.php">
- *   Copyright (c) 2018 Aspose.Email for Cloud
+ *   Copyright (c) 2018-2020 Aspose.Email for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -54,7 +54,7 @@ class AppendEmailModelRq extends AppendEmailAccountBaseRequest
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'message' => '\Aspose\Email\Model\EmailDto'
+        'message' => 'object'
     ];
 
     /**
@@ -163,12 +163,12 @@ class AppendEmailModelRq extends AppendEmailAccountBaseRequest
     /**
      * Initializes a new instance of the AppendEmailModelRq class.
      *  
-     * @param string $first_account First account storage file name for receiving emails (or universal one)
-     * @param string $second_account Second account storage file name for sending emails (ignored if first is universal)
+     * @param string $first_account First account storage file name
+     * @param string $second_account Additional email account (for example, FirstAccount could be IMAP, and second one could be SMTP)
      * @param \Aspose\Email\Model\StorageFolderLocation $storage_folder Storage folder location of account files
      * @param string $folder Email account folder to store a message
      * @param bool $mark_as_sent Mark message as sent
-     * @param \Aspose\Email\Model\EmailDto $message Email document
+     * @param object $message Email document
      */
     public function __construct($first_account = null, $second_account = null, $storage_folder = null, $folder = null, $mark_as_sent = null, $message = null)
     {
@@ -220,7 +220,7 @@ class AppendEmailModelRq extends AppendEmailAccountBaseRequest
     /**
      * Gets message
      *
-     * @return \Aspose\Email\Model\EmailDto
+     * @return object
      */
     public function getMessage()
     {
@@ -230,7 +230,7 @@ class AppendEmailModelRq extends AppendEmailAccountBaseRequest
     /**
      * Sets message
      *
-     * @param \Aspose\Email\Model\EmailDto $message Email document
+     * @param object $message Email document
      *
      * @return $this
      */

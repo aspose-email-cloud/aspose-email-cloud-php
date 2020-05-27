@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="Error.php">
- *   Copyright (c) 2018 Aspose.Email for Cloud
+ *   Copyright (c) 2018-2020 Aspose.Email for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -37,7 +37,6 @@ use \Aspose\Email\ObjectSerializer;
 /**
  * Error
  *
- * @description Error
  */
 class Error implements ArrayAccess
 {
@@ -186,10 +185,10 @@ class Error implements ArrayAccess
     /**
      * Initializes a new instance of the Error class.
      *  
-     * @param string $code Code
-     * @param string $message Message
-     * @param string $description Description
-     * @param \Aspose\Email\Model\ErrorDetails $inner_error Inner Error
+     * @param string $code 
+     * @param string $message 
+     * @param string $description 
+     * @param \Aspose\Email\Model\ErrorDetails $inner_error 
      */
     public function __construct($code = null, $message = null, $description = null, $inner_error = null)
     {
@@ -242,7 +241,7 @@ class Error implements ArrayAccess
     /**
      * Sets code
      *
-     * @param string $code Code
+     * @param string $code code
      *
      * @return $this
      */
@@ -266,7 +265,7 @@ class Error implements ArrayAccess
     /**
      * Sets message
      *
-     * @param string $message Message
+     * @param string $message message
      *
      * @return $this
      */
@@ -290,7 +289,7 @@ class Error implements ArrayAccess
     /**
      * Sets description
      *
-     * @param string $description Description
+     * @param string $description description
      *
      * @return $this
      */
@@ -314,7 +313,7 @@ class Error implements ArrayAccess
     /**
      * Sets inner_error
      *
-     * @param \Aspose\Email\Model\ErrorDetails $inner_error Inner Error
+     * @param \Aspose\Email\Model\ErrorDetails $inner_error inner_error
      *
      * @return $this
      */

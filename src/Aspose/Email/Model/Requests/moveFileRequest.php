@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="moveFileRequest.php">
- *   Copyright (c) 2018 Aspose.Email for Cloud
+ *   Copyright (c) 2018-2020 Aspose.Email for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,11 +36,11 @@ class MoveFileRequest
     /**
      * Initializes a new instance of the MoveFileRequest class.
      *  
-     * @param string $src_path Source file path e.g. '/src.ext'
-     * @param string $dest_path Destination file path e.g. '/dest.ext'
-     * @param string $src_storage_name Source storage name
-     * @param string $dest_storage_name Destination storage name
-     * @param string $version_id File version ID to move
+     * @param string $src_path 
+     * @param string $dest_path 
+     * @param string $src_storage_name 
+     * @param string $dest_storage_name 
+     * @param string $version_id 
      */
     public function __construct($src_path, $dest_path, $src_storage_name = null, $dest_storage_name = null, $version_id = null)             
     {
@@ -52,27 +52,27 @@ class MoveFileRequest
     }
 
     /**
-     * Source file path e.g. '/src.ext'
+     * Gets or sets src_path
      */
     public $src_path;
 	
     /**
-     * Destination file path e.g. '/dest.ext'
+     * Gets or sets dest_path
      */
     public $dest_path;
 	
     /**
-     * Source storage name
+     * Gets or sets src_storage_name
      */
     public $src_storage_name;
 	
     /**
-     * Destination storage name
+     * Gets or sets dest_storage_name
      */
     public $dest_storage_name;
 	
     /**
-     * File version ID to move
+     * Gets or sets version_id
      */
     public $version_id;
 }

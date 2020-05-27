@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="EmailClientAccount.php">
- *   Copyright (c) 2018 Aspose.Email for Cloud
+ *   Copyright (c) 2018-2020 Aspose.Email for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -60,7 +60,8 @@ class EmailClientAccount implements ArrayAccess
         'port' => 'int',
         'security_options' => 'string',
         'protocol_type' => 'string',
-        'credentials' => '\Aspose\Email\Model\EmailClientAccountCredentials'
+        'credentials' => '\Aspose\Email\Model\EmailClientAccountCredentials',
+        'cache_file' => '\Aspose\Email\Model\StorageFileLocation'
     ];
 
     /**
@@ -73,7 +74,8 @@ class EmailClientAccount implements ArrayAccess
         'port' => 'int32',
         'security_options' => null,
         'protocol_type' => null,
-        'credentials' => null
+        'credentials' => null,
+        'cache_file' => null
     ];
 
     /**
@@ -107,7 +109,8 @@ class EmailClientAccount implements ArrayAccess
         'port' => 'port',
         'security_options' => 'securityOptions',
         'protocol_type' => 'protocolType',
-        'credentials' => 'credentials'
+        'credentials' => 'credentials',
+        'cache_file' => 'cacheFile'
     ];
 
     /**
@@ -120,7 +123,8 @@ class EmailClientAccount implements ArrayAccess
         'port' => 'setPort',
         'security_options' => 'setSecurityOptions',
         'protocol_type' => 'setProtocolType',
-        'credentials' => 'setCredentials'
+        'credentials' => 'setCredentials',
+        'cache_file' => 'setCacheFile'
     ];
 
     /**
@@ -133,7 +137,8 @@ class EmailClientAccount implements ArrayAccess
         'port' => 'getPort',
         'security_options' => 'getSecurityOptions',
         'protocol_type' => 'getProtocolType',
-        'credentials' => 'getCredentials'
+        'credentials' => 'getCredentials',
+        'cache_file' => 'getCacheFile'
     ];
 
     /**
@@ -196,20 +201,23 @@ class EmailClientAccount implements ArrayAccess
      * @param string $security_options Email account security mode Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
      * @param string $protocol_type Type of connection protocol. Enum, available values: IMAP, POP3, SMTP, EWS, WebDav
      * @param \Aspose\Email\Model\EmailClientAccountCredentials $credentials Email client account credentials
+     * @param \Aspose\Email\Model\StorageFileLocation $cache_file File with messages cache. Used to provide extra functions, which are not supported by account
      */
-    public function __construct($host = null, $port = null, $security_options = null, $protocol_type = null, $credentials = null)
+    public function __construct($host = null, $port = null, $security_options = null, $protocol_type = null, $credentials = null, $cache_file = null)
     {
         $this->container['host'] = null;
         $this->container['port'] = null;
         $this->container['security_options'] = null;
         $this->container['protocol_type'] = null;
         $this->container['credentials'] = null;
+        $this->container['cache_file'] = null;
 
         if ($host != null) $this->setHost($host);
         if ($port != null) $this->setPort($port);
         if ($security_options != null) $this->setSecurityOptions($security_options);
         if ($protocol_type != null) $this->setProtocolType($protocol_type);
         if ($credentials != null) $this->setCredentials($credentials);
+        if ($cache_file != null) $this->setCacheFile($cache_file);
     }
 
     /**
@@ -417,6 +425,30 @@ class EmailClientAccount implements ArrayAccess
     public function setCredentials($credentials)
     {
         $this->container['credentials'] = $credentials;
+
+        return $this;
+    }
+
+    /**
+     * Gets cache_file
+     *
+     * @return \Aspose\Email\Model\StorageFileLocation
+     */
+    public function getCacheFile()
+    {
+        return $this->container['cache_file'];
+    }
+
+    /**
+     * Sets cache_file
+     *
+     * @param \Aspose\Email\Model\StorageFileLocation $cache_file File with messages cache. Used to provide extra functions, which are not supported by account
+     *
+     * @return $this
+     */
+    public function setCacheFile($cache_file)
+    {
+        $this->container['cache_file'] = $cache_file;
 
         return $this;
     }

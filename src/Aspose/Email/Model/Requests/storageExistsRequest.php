@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="storageExistsRequest.php">
- *   Copyright (c) 2018 Aspose.Email for Cloud
+ *   Copyright (c) 2018-2020 Aspose.Email for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,7 +36,7 @@ class StorageExistsRequest
     /**
      * Initializes a new instance of the StorageExistsRequest class.
      *  
-     * @param string $storage_name Storage name
+     * @param string $storage_name 
      */
     public function __construct($storage_name)             
     {
@@ -44,7 +44,7 @@ class StorageExistsRequest
     }
 
     /**
-     * Storage name
+     * Gets or sets storage_name
      */
     public $storage_name;
 }

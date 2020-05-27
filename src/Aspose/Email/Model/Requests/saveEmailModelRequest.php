@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="saveEmailModelRequest.php">
- *   Copyright (c) 2018 Aspose.Email for Cloud
+ *   Copyright (c) 2018-2020 Aspose.Email for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -37,7 +37,7 @@ class SaveEmailModelRequest
      * Initializes a new instance of the SaveEmailModelRequest class.
      *  
      * @param string $format File format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
-     * @param string $name iCalendar file name in storage.
+     * @param string $name Email document file name in storage.
      * @param \Aspose\Email\Model\StorageModelRqOfEmailDto $rq Calendar properties update request.
      */
     public function __construct($format, $name, $rq)             
@@ -53,7 +53,7 @@ class SaveEmailModelRequest
     public $format;
 	
     /**
-     * iCalendar file name in storage.
+     * Email document file name in storage.
      */
     public $name;
 	

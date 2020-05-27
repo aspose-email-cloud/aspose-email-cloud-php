@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="SendEmailBaseRequest.php">
- *   Copyright (c) 2018 Aspose.Email for Cloud
+ *   Copyright (c) 2018-2020 Aspose.Email for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -54,7 +54,7 @@ class SendEmailBaseRequest extends AccountBaseRequest
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'email_file' => '\Aspose\Email\Model\StorageFileLocation'
+        'email_file' => 'object'
     ];
 
     /**
@@ -163,10 +163,10 @@ class SendEmailBaseRequest extends AccountBaseRequest
     /**
      * Initializes a new instance of the SendEmailBaseRequest class.
      *  
-     * @param string $first_account First account storage file name for receiving emails (or universal one)
-     * @param string $second_account Second account storage file name for sending emails (ignored if first is universal)
+     * @param string $first_account First account storage file name
+     * @param string $second_account Additional email account (for example, FirstAccount could be IMAP, and second one could be SMTP)
      * @param \Aspose\Email\Model\StorageFolderLocation $storage_folder Storage folder location of account files
-     * @param \Aspose\Email\Model\StorageFileLocation $email_file Email document (*.eml) file location in storage
+     * @param object $email_file Email document (*.eml) file location in storage
      */
     public function __construct($first_account = null, $second_account = null, $storage_folder = null, $email_file = null)
     {
@@ -216,7 +216,7 @@ class SendEmailBaseRequest extends AccountBaseRequest
     /**
      * Gets email_file
      *
-     * @return \Aspose\Email\Model\StorageFileLocation
+     * @return object
      */
     public function getEmailFile()
     {
@@ -226,7 +226,7 @@ class SendEmailBaseRequest extends AccountBaseRequest
     /**
      * Sets email_file
      *
-     * @param \Aspose\Email\Model\StorageFileLocation $email_file Email document (*.eml) file location in storage
+     * @param object $email_file Email document (*.eml) file location in storage
      *
      * @return $this
      */

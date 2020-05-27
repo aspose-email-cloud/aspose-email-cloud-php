@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="objectExistsRequest.php">
- *   Copyright (c) 2018 Aspose.Email for Cloud
+ *   Copyright (c) 2018-2020 Aspose.Email for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,9 +36,9 @@ class ObjectExistsRequest
     /**
      * Initializes a new instance of the ObjectExistsRequest class.
      *  
-     * @param string $path File or folder path e.g. '/file.ext' or '/folder'
-     * @param string $storage_name Storage name
-     * @param string $version_id File version ID
+     * @param string $path 
+     * @param string $storage_name 
+     * @param string $version_id 
      */
     public function __construct($path, $storage_name = null, $version_id = null)             
     {
@@ -48,17 +48,17 @@ class ObjectExistsRequest
     }
 
     /**
-     * File or folder path e.g. '/file.ext' or '/folder'
+     * Gets or sets path
      */
     public $path;
 	
     /**
-     * Storage name
+     * Gets or sets storage_name
      */
     public $storage_name;
 	
     /**
-     * File version ID
+     * Gets or sets version_id
      */
     public $version_id;
 }

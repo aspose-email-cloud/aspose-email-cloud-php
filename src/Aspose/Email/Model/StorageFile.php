@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="StorageFile.php">
- *   Copyright (c) 2018 Aspose.Email for Cloud
+ *   Copyright (c) 2018-2020 Aspose.Email for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -37,7 +37,6 @@ use \Aspose\Email\ObjectSerializer;
 /**
  * StorageFile
  *
- * @description File or folder information
  */
 class StorageFile implements ArrayAccess
 {
@@ -191,11 +190,11 @@ class StorageFile implements ArrayAccess
     /**
      * Initializes a new instance of the StorageFile class.
      *  
-     * @param string $name File or folder name.
-     * @param bool $is_folder True if it is a folder.
-     * @param \DateTime $modified_date File or folder last modified DateTime.
-     * @param int $size File or folder size.
-     * @param string $path File or folder path.
+     * @param string $name 
+     * @param bool $is_folder 
+     * @param \DateTime $modified_date 
+     * @param int $size 
+     * @param string $path 
      */
     public function __construct($name = null, $is_folder = null, $modified_date = null, $size = null, $path = null)
     {
@@ -266,7 +265,7 @@ class StorageFile implements ArrayAccess
     /**
      * Sets name
      *
-     * @param string $name File or folder name.
+     * @param string $name name
      *
      * @return $this
      */
@@ -290,7 +289,7 @@ class StorageFile implements ArrayAccess
     /**
      * Sets is_folder
      *
-     * @param bool $is_folder True if it is a folder.
+     * @param bool $is_folder is_folder
      *
      * @return $this
      */
@@ -314,7 +313,7 @@ class StorageFile implements ArrayAccess
     /**
      * Sets modified_date
      *
-     * @param \DateTime $modified_date File or folder last modified DateTime.
+     * @param \DateTime $modified_date modified_date
      *
      * @return $this
      */
@@ -338,7 +337,7 @@ class StorageFile implements ArrayAccess
     /**
      * Sets size
      *
-     * @param int $size File or folder size.
+     * @param int $size size
      *
      * @return $this
      */
@@ -362,7 +361,7 @@ class StorageFile implements ArrayAccess
     /**
      * Sets path
      *
-     * @param string $path File or folder path.
+     * @param string $path path
      *
      * @return $this
      */

@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="SendEmailModelRq.php">
- *   Copyright (c) 2018 Aspose.Email for Cloud
+ *   Copyright (c) 2018-2020 Aspose.Email for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -54,7 +54,7 @@ class SendEmailModelRq extends AccountBaseRequest
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'message' => '\Aspose\Email\Model\EmailDto'
+        'message' => 'object'
     ];
 
     /**
@@ -163,10 +163,10 @@ class SendEmailModelRq extends AccountBaseRequest
     /**
      * Initializes a new instance of the SendEmailModelRq class.
      *  
-     * @param string $first_account First account storage file name for receiving emails (or universal one)
-     * @param string $second_account Second account storage file name for sending emails (ignored if first is universal)
+     * @param string $first_account First account storage file name
+     * @param string $second_account Additional email account (for example, FirstAccount could be IMAP, and second one could be SMTP)
      * @param \Aspose\Email\Model\StorageFolderLocation $storage_folder Storage folder location of account files
-     * @param \Aspose\Email\Model\EmailDto $message Message to send
+     * @param object $message Message to send
      */
     public function __construct($first_account = null, $second_account = null, $storage_folder = null, $message = null)
     {
@@ -210,7 +210,7 @@ class SendEmailModelRq extends AccountBaseRequest
     /**
      * Gets message
      *
-     * @return \Aspose\Email\Model\EmailDto
+     * @return object
      */
     public function getMessage()
     {
@@ -220,7 +220,7 @@ class SendEmailModelRq extends AccountBaseRequest
     /**
      * Sets message
      *
-     * @param \Aspose\Email\Model\EmailDto $message Message to send
+     * @param object $message Message to send
      *
      * @return $this
      */

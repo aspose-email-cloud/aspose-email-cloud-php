@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="convertEmailRequest.php">
- *   Copyright (c) 2018 Aspose.Email for Cloud
+ *   Copyright (c) 2018-2020 Aspose.Email for Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -37,7 +37,7 @@ class ConvertEmailRequest
      * Initializes a new instance of the ConvertEmailRequest class.
      *  
      * @param string $format File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
-     * @param \SplFileObject $file File to upload
+     * @param \SplFileObject $file File to convert
      */
     public function __construct($format, $file)             
     {
@@ -51,7 +51,7 @@ class ConvertEmailRequest
     public $format;
 	
     /**
-     * File to upload
+     * File to convert
      */
     public $file;
 }
