@@ -38,7 +38,7 @@ class SaveEmailModelRequest
      *  
      * @param string $format File format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
      * @param string $name Email document file name in storage.
-     * @param \Aspose\Email\Model\StorageModelRqOfEmailDto $rq Calendar properties update request.
+     * @param \Aspose\Email\Model\StorageModelRqOfEmailDto $rq Email document create/update request.
      */
     public function __construct($format, $name, $rq)             
     {
@@ -58,7 +58,7 @@ class SaveEmailModelRequest
     public $name;
 	
     /**
-     * Calendar properties update request.
+     * Email document create/update request.
      */
     public $rq;
 }

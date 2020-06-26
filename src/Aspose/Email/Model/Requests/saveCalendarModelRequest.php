@@ -37,7 +37,7 @@ class SaveCalendarModelRequest
      * Initializes a new instance of the SaveCalendarModelRequest class.
      *  
      * @param string $name iCalendar file name in storage
-     * @param \Aspose\Email\Model\StorageModelRqOfCalendarDto $rq Calendar properties update request
+     * @param \Aspose\Email\Model\StorageModelRqOfCalendarDto $rq Calendar update request
      */
     public function __construct($name, $rq)             
     {
@@ -51,7 +51,7 @@ class SaveCalendarModelRequest
     public $name;
 	
     /**
-     * Calendar properties update request
+     * Calendar update request
      */
     public $rq;
 }
