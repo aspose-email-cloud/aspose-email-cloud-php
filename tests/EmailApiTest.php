@@ -278,7 +278,7 @@ class EmailApiTest extends TestCase
     }
 
     /**
-     * @group pipeline
+     * @group ai
      */
     public function testAiBcrParseStorage(): void
     {
@@ -317,7 +317,7 @@ class EmailApiTest extends TestCase
     }
 
     /**
-     * @group pipeline
+     * @group ai
      */
     public function testAiBcrParse(): void
     {
@@ -408,7 +408,7 @@ class EmailApiTest extends TestCase
     }
 
     /**
-     * @group pipeline
+     * @group ai
      */
     public function testAiBcrParseModel(): void
     {
