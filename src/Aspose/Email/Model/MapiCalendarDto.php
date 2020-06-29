@@ -70,7 +70,8 @@ class MapiCalendarDto extends MapiMessageItemBaseDto
         'sequence' => 'int',
         'start_date' => '\DateTime',
         'start_date_time_zone' => 'object',
-        'uid' => 'string'
+        'uid' => 'string',
+        'organizer' => 'object'
     ];
 
     /**
@@ -95,7 +96,8 @@ class MapiCalendarDto extends MapiMessageItemBaseDto
         'sequence' => 'int32',
         'start_date' => 'date-time',
         'start_date_time_zone' => null,
-        'uid' => null
+        'uid' => null,
+        'organizer' => null
     ];
 
     /**
@@ -141,7 +143,8 @@ class MapiCalendarDto extends MapiMessageItemBaseDto
         'sequence' => 'sequence',
         'start_date' => 'startDate',
         'start_date_time_zone' => 'startDateTimeZone',
-        'uid' => 'uid'
+        'uid' => 'uid',
+        'organizer' => 'organizer'
     ];
 
     /**
@@ -166,7 +169,8 @@ class MapiCalendarDto extends MapiMessageItemBaseDto
         'sequence' => 'setSequence',
         'start_date' => 'setStartDate',
         'start_date_time_zone' => 'setStartDateTimeZone',
-        'uid' => 'setUid'
+        'uid' => 'setUid',
+        'organizer' => 'setOrganizer'
     ];
 
     /**
@@ -191,7 +195,8 @@ class MapiCalendarDto extends MapiMessageItemBaseDto
         'sequence' => 'getSequence',
         'start_date' => 'getStartDate',
         'start_date_time_zone' => 'getStartDateTimeZone',
-        'uid' => 'getUid'
+        'uid' => 'getUid',
+        'organizer' => 'getOrganizer'
     ];
 
     /**
@@ -277,8 +282,9 @@ class MapiCalendarDto extends MapiMessageItemBaseDto
      * @param \DateTime $start_date Start date and time of the event. If the date is not set, default value for DateTime is returned.
      * @param object $start_date_time_zone Time zone information that indicates the time zone of the StartDate property.
      * @param string $uid Unique identifier.
+     * @param object $organizer Organizer
      */
-    public function __construct($attachments = null, $billing = null, $body = null, $body_html = null, $body_rtf = null, $body_type = null, $categories = null, $companies = null, $item_id = null, $message_class = null, $mileage = null, $recipients = null, $sensitivity = null, $subject = null, $subject_prefix = null, $properties = null, $discriminator = null, $appointment_counter_proposal = null, $attendees = null, $busy_status = null, $client_intent = null, $end_date = null, $end_date_time_zone = null, $is_all_day = null, $key_words = null, $location = null, $recurrence = null, $reminder_delta = null, $reminder_file_parameter = null, $reminder_set = null, $sequence = null, $start_date = null, $start_date_time_zone = null, $uid = null)
+    public function __construct($attachments = null, $billing = null, $body = null, $body_html = null, $body_rtf = null, $body_type = null, $categories = null, $companies = null, $item_id = null, $message_class = null, $mileage = null, $recipients = null, $sensitivity = null, $subject = null, $subject_prefix = null, $properties = null, $discriminator = null, $appointment_counter_proposal = null, $attendees = null, $busy_status = null, $client_intent = null, $end_date = null, $end_date_time_zone = null, $is_all_day = null, $key_words = null, $location = null, $recurrence = null, $reminder_delta = null, $reminder_file_parameter = null, $reminder_set = null, $sequence = null, $start_date = null, $start_date_time_zone = null, $uid = null, $organizer = null)
     {
         parent::__construct();
         $this->container['appointment_counter_proposal'] = null;
@@ -298,6 +304,7 @@ class MapiCalendarDto extends MapiMessageItemBaseDto
         $this->container['start_date'] = null;
         $this->container['start_date_time_zone'] = null;
         $this->container['uid'] = null;
+        $this->container['organizer'] = null;
 
         if ($attachments != null) $this->setAttachments($attachments);
         if ($billing != null) $this->setBilling($billing);
@@ -333,6 +340,7 @@ class MapiCalendarDto extends MapiMessageItemBaseDto
         if ($start_date != null) $this->setStartDate($start_date);
         if ($start_date_time_zone != null) $this->setStartDateTimeZone($start_date_time_zone);
         if ($uid != null) $this->setUid($uid);
+        if ($organizer != null) $this->setOrganizer($organizer);
     }
 
     /**
@@ -815,6 +823,30 @@ class MapiCalendarDto extends MapiMessageItemBaseDto
     public function setUid($uid)
     {
         $this->container['uid'] = $uid;
+
+        return $this;
+    }
+
+    /**
+     * Gets organizer
+     *
+     * @return object
+     */
+    public function getOrganizer()
+    {
+        return $this->container['organizer'];
+    }
+
+    /**
+     * Sets organizer
+     *
+     * @param object $organizer Organizer
+     *
+     * @return $this
+     */
+    public function setOrganizer($organizer)
+    {
+        $this->container['organizer'] = $organizer;
 
         return $this;
     }

@@ -16,7 +16,8 @@ Name | Type | Description | Notes
 **microsoft_intended_status** | **string** | Specifies the INTENDED status. Enum, available values: NotDefined, Free, Tentative, Busy, Oof | 
 **optional_attendees** | [**\Aspose\Email\Model\MailAddress[]**](MailAddress.md) | Optional attendees. | [optional] 
 **organizer** | [**\Aspose\Email\Model\MailAddress**](MailAddress.md) | Event organizer. | 
-**recurrence_string** | **string** | String representation of recurrence pattern (See iCalendar RFC, \"Recurrence rule\" section). For example:               For daily recurrence:         \"FREQ=DAILY;COUNT=10;WKST=MO\"                   For monthly recurrence:         \"BYSETPOS=1;BYDAY=MO,TU,WE,TH,FR;FREQ=MONTHLY;INTERVAL=10;WKST=MO\"                   For yearly recurrence:         \"BYMONTHDAY=30;BYMONTH=1;FREQ=YEARLY;WKST=MO\" | [optional] 
+**recurrence_string** | **string** | Deprecated, use 'Recurrence' property. String representation of recurrence pattern (See iCalendar RFC, \"Recurrence rule\" section). For example:               For daily recurrence:         \"FREQ=DAILY;COUNT=10;WKST=MO\"                   For monthly recurrence:         \"BYSETPOS=1;BYDAY=MO,TU,WE,TH,FR;FREQ=MONTHLY;INTERVAL=10;WKST=MO\"                   For yearly recurrence:         \"BYMONTHDAY=30;BYMONTH=1;FREQ=YEARLY;WKST=MO\" | [optional] 
+**recurrence** | [**\Aspose\Email\Model\RecurrencePatternDto**](RecurrencePatternDto.md) | Recurrence pattern | [optional] 
 **reminders** | [**\Aspose\Email\Model\CalendarReminder[]**](CalendarReminder.md) | Reminders. | [optional] 
 **sequence_id** | **string** | The sequence id. Read only. | [optional] 
 **start_date** | [**\DateTime**](\DateTime.md) | Start date. | 
