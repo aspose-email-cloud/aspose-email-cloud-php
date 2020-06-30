@@ -54,15 +54,15 @@ class MapiContactDto extends MapiMessageItemBaseDto
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'electronic_addresses' => 'object',
-        'events' => 'object',
-        'name_info' => 'object',
-        'other_fields' => 'object',
-        'personal_info' => 'object',
-        'photo' => 'object',
-        'physical_addresses' => 'object',
-        'professional_info' => 'object',
-        'telephones' => 'object'
+        'electronic_addresses' => '\Aspose\Email\Model\MapiContactElectronicAddressPropertySetDto',
+        'events' => '\Aspose\Email\Model\MapiContactEventPropertySetDto',
+        'name_info' => '\Aspose\Email\Model\MapiContactNamePropertySetDto',
+        'other_fields' => '\Aspose\Email\Model\MapiContactOtherPropertySetDto',
+        'personal_info' => '\Aspose\Email\Model\MapiContactPersonalInfoPropertySetDto',
+        'photo' => '\Aspose\Email\Model\MapiContactPhotoDto',
+        'physical_addresses' => '\Aspose\Email\Model\MapiContactPhysicalAddressPropertySetDto',
+        'professional_info' => '\Aspose\Email\Model\MapiContactProfessionalPropertySetDto',
+        'telephones' => '\Aspose\Email\Model\MapiContactTelephonePropertySetDto'
     ];
 
     /**
@@ -220,15 +220,15 @@ class MapiContactDto extends MapiMessageItemBaseDto
      * @param string $subject_prefix Subject prefix that typically indicates some action on a message, such as \"FW: \" for forwarding.
      * @param \Aspose\Email\Model\MapiPropertyDto[] $properties List of MAPI properties
      * @param string $discriminator 
-     * @param object $electronic_addresses Specify properties for up to three different e-mail addresses and three different fax addresses.
-     * @param object $events Specify events associated with a contact.
-     * @param object $name_info The properties are used to specify the name of the person represented by the contact.
-     * @param object $other_fields Specify other fields of contact.
-     * @param object $personal_info Specify other additional contact information.
-     * @param object $photo Contact photo.
-     * @param object $physical_addresses Specify three physical addresses: Home Address, Work Address, and Other Address. One of the addresses can be marked as the Mailing Address.
-     * @param object $professional_info Properties are used to store professional details for the person represented by the contact.
-     * @param object $telephones Specify telephone numbers for the contact.
+     * @param \Aspose\Email\Model\MapiContactElectronicAddressPropertySetDto $electronic_addresses Specify properties for up to three different e-mail addresses and three different fax addresses.
+     * @param \Aspose\Email\Model\MapiContactEventPropertySetDto $events Specify events associated with a contact.
+     * @param \Aspose\Email\Model\MapiContactNamePropertySetDto $name_info The properties are used to specify the name of the person represented by the contact.
+     * @param \Aspose\Email\Model\MapiContactOtherPropertySetDto $other_fields Specify other fields of contact.
+     * @param \Aspose\Email\Model\MapiContactPersonalInfoPropertySetDto $personal_info Specify other additional contact information.
+     * @param \Aspose\Email\Model\MapiContactPhotoDto $photo Contact photo.
+     * @param \Aspose\Email\Model\MapiContactPhysicalAddressPropertySetDto $physical_addresses Specify three physical addresses: Home Address, Work Address, and Other Address. One of the addresses can be marked as the Mailing Address.
+     * @param \Aspose\Email\Model\MapiContactProfessionalPropertySetDto $professional_info Properties are used to store professional details for the person represented by the contact.
+     * @param \Aspose\Email\Model\MapiContactTelephonePropertySetDto $telephones Specify telephone numbers for the contact.
      */
     public function __construct($attachments = null, $billing = null, $body = null, $body_html = null, $body_rtf = null, $body_type = null, $categories = null, $companies = null, $item_id = null, $message_class = null, $mileage = null, $recipients = null, $sensitivity = null, $subject = null, $subject_prefix = null, $properties = null, $discriminator = null, $electronic_addresses = null, $events = null, $name_info = null, $other_fields = null, $personal_info = null, $photo = null, $physical_addresses = null, $professional_info = null, $telephones = null)
     {
@@ -302,7 +302,7 @@ class MapiContactDto extends MapiMessageItemBaseDto
     /**
      * Gets electronic_addresses
      *
-     * @return object
+     * @return \Aspose\Email\Model\MapiContactElectronicAddressPropertySetDto
      */
     public function getElectronicAddresses()
     {
@@ -312,7 +312,7 @@ class MapiContactDto extends MapiMessageItemBaseDto
     /**
      * Sets electronic_addresses
      *
-     * @param object $electronic_addresses Specify properties for up to three different e-mail addresses and three different fax addresses.
+     * @param \Aspose\Email\Model\MapiContactElectronicAddressPropertySetDto $electronic_addresses Specify properties for up to three different e-mail addresses and three different fax addresses.
      *
      * @return $this
      */
@@ -326,7 +326,7 @@ class MapiContactDto extends MapiMessageItemBaseDto
     /**
      * Gets events
      *
-     * @return object
+     * @return \Aspose\Email\Model\MapiContactEventPropertySetDto
      */
     public function getEvents()
     {
@@ -336,7 +336,7 @@ class MapiContactDto extends MapiMessageItemBaseDto
     /**
      * Sets events
      *
-     * @param object $events Specify events associated with a contact.
+     * @param \Aspose\Email\Model\MapiContactEventPropertySetDto $events Specify events associated with a contact.
      *
      * @return $this
      */
@@ -350,7 +350,7 @@ class MapiContactDto extends MapiMessageItemBaseDto
     /**
      * Gets name_info
      *
-     * @return object
+     * @return \Aspose\Email\Model\MapiContactNamePropertySetDto
      */
     public function getNameInfo()
     {
@@ -360,7 +360,7 @@ class MapiContactDto extends MapiMessageItemBaseDto
     /**
      * Sets name_info
      *
-     * @param object $name_info The properties are used to specify the name of the person represented by the contact.
+     * @param \Aspose\Email\Model\MapiContactNamePropertySetDto $name_info The properties are used to specify the name of the person represented by the contact.
      *
      * @return $this
      */
@@ -374,7 +374,7 @@ class MapiContactDto extends MapiMessageItemBaseDto
     /**
      * Gets other_fields
      *
-     * @return object
+     * @return \Aspose\Email\Model\MapiContactOtherPropertySetDto
      */
     public function getOtherFields()
     {
@@ -384,7 +384,7 @@ class MapiContactDto extends MapiMessageItemBaseDto
     /**
      * Sets other_fields
      *
-     * @param object $other_fields Specify other fields of contact.
+     * @param \Aspose\Email\Model\MapiContactOtherPropertySetDto $other_fields Specify other fields of contact.
      *
      * @return $this
      */
@@ -398,7 +398,7 @@ class MapiContactDto extends MapiMessageItemBaseDto
     /**
      * Gets personal_info
      *
-     * @return object
+     * @return \Aspose\Email\Model\MapiContactPersonalInfoPropertySetDto
      */
     public function getPersonalInfo()
     {
@@ -408,7 +408,7 @@ class MapiContactDto extends MapiMessageItemBaseDto
     /**
      * Sets personal_info
      *
-     * @param object $personal_info Specify other additional contact information.
+     * @param \Aspose\Email\Model\MapiContactPersonalInfoPropertySetDto $personal_info Specify other additional contact information.
      *
      * @return $this
      */
@@ -422,7 +422,7 @@ class MapiContactDto extends MapiMessageItemBaseDto
     /**
      * Gets photo
      *
-     * @return object
+     * @return \Aspose\Email\Model\MapiContactPhotoDto
      */
     public function getPhoto()
     {
@@ -432,7 +432,7 @@ class MapiContactDto extends MapiMessageItemBaseDto
     /**
      * Sets photo
      *
-     * @param object $photo Contact photo.
+     * @param \Aspose\Email\Model\MapiContactPhotoDto $photo Contact photo.
      *
      * @return $this
      */
@@ -446,7 +446,7 @@ class MapiContactDto extends MapiMessageItemBaseDto
     /**
      * Gets physical_addresses
      *
-     * @return object
+     * @return \Aspose\Email\Model\MapiContactPhysicalAddressPropertySetDto
      */
     public function getPhysicalAddresses()
     {
@@ -456,7 +456,7 @@ class MapiContactDto extends MapiMessageItemBaseDto
     /**
      * Sets physical_addresses
      *
-     * @param object $physical_addresses Specify three physical addresses: Home Address, Work Address, and Other Address. One of the addresses can be marked as the Mailing Address.
+     * @param \Aspose\Email\Model\MapiContactPhysicalAddressPropertySetDto $physical_addresses Specify three physical addresses: Home Address, Work Address, and Other Address. One of the addresses can be marked as the Mailing Address.
      *
      * @return $this
      */
@@ -470,7 +470,7 @@ class MapiContactDto extends MapiMessageItemBaseDto
     /**
      * Gets professional_info
      *
-     * @return object
+     * @return \Aspose\Email\Model\MapiContactProfessionalPropertySetDto
      */
     public function getProfessionalInfo()
     {
@@ -480,7 +480,7 @@ class MapiContactDto extends MapiMessageItemBaseDto
     /**
      * Sets professional_info
      *
-     * @param object $professional_info Properties are used to store professional details for the person represented by the contact.
+     * @param \Aspose\Email\Model\MapiContactProfessionalPropertySetDto $professional_info Properties are used to store professional details for the person represented by the contact.
      *
      * @return $this
      */
@@ -494,7 +494,7 @@ class MapiContactDto extends MapiMessageItemBaseDto
     /**
      * Gets telephones
      *
-     * @return object
+     * @return \Aspose\Email\Model\MapiContactTelephonePropertySetDto
      */
     public function getTelephones()
     {
@@ -504,7 +504,7 @@ class MapiContactDto extends MapiMessageItemBaseDto
     /**
      * Sets telephones
      *
-     * @param object $telephones Specify telephone numbers for the contact.
+     * @param \Aspose\Email\Model\MapiContactTelephonePropertySetDto $telephones Specify telephone numbers for the contact.
      *
      * @return $this
      */

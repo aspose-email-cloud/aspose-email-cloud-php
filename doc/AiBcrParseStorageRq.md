@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**out_folder** | **object** | Parse output folder location on storage | 
+**out_folder** | [**\Aspose\Email\Model\StorageFolderLocation**](StorageFolderLocation.md) | Parse output folder location on storage | 
 
  Parent class: [AiBcrStorageImageRq](AiBcrStorageImageRq.md)
 

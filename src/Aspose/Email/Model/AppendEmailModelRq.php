@@ -54,7 +54,7 @@ class AppendEmailModelRq extends AppendEmailAccountBaseRequest
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'message' => 'object'
+        'message' => '\Aspose\Email\Model\EmailDto'
     ];
 
     /**
@@ -168,7 +168,7 @@ class AppendEmailModelRq extends AppendEmailAccountBaseRequest
      * @param \Aspose\Email\Model\StorageFolderLocation $storage_folder Storage folder location of account files
      * @param string $folder Email account folder to store a message
      * @param bool $mark_as_sent Mark message as sent
-     * @param object $message Email document
+     * @param \Aspose\Email\Model\EmailDto $message Email document
      */
     public function __construct($first_account = null, $second_account = null, $storage_folder = null, $folder = null, $mark_as_sent = null, $message = null)
     {
@@ -220,7 +220,7 @@ class AppendEmailModelRq extends AppendEmailAccountBaseRequest
     /**
      * Gets message
      *
-     * @return object
+     * @return \Aspose\Email\Model\EmailDto
      */
     public function getMessage()
     {
@@ -230,7 +230,7 @@ class AppendEmailModelRq extends AppendEmailAccountBaseRequest
     /**
      * Sets message
      *
-     * @param object $message Email document
+     * @param \Aspose\Email\Model\EmailDto $message Email document
      *
      * @return $this
      */

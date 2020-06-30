@@ -248,7 +248,7 @@ class MapiCalendarRecurrencePatternDto implements ArrayAccess
      * @param int $period Interval at which the meeting pattern repeats.
      * @param bool $sliding_flag Defines whether pattern is sliding or not.
      * @param \DateTime $start_date Start date of an item recurrence pattern.
-     * @param string $week_start_day Day of week Enum, available values: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
+     * @param string $week_start_day Day of week. Enum, available values: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
      * @param string $discriminator 
      */
     public function __construct($calendar_type = null, $deleted_instance_dates = null, $end_date = null, $end_type = null, $exceptions = null, $frequency = null, $modified_instance_dates = null, $occurrence_count = null, $pattern_type = null, $period = null, $sliding_flag = null, $start_date = null, $week_start_day = null, $discriminator = null)
@@ -680,7 +680,7 @@ class MapiCalendarRecurrencePatternDto implements ArrayAccess
     /**
      * Sets week_start_day
      *
-     * @param string $week_start_day Day of week Enum, available values: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
+     * @param string $week_start_day Day of week. Enum, available values: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
      *
      * @return $this
      */

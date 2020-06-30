@@ -54,7 +54,7 @@ class AiBcrParseStorageRq extends AiBcrStorageImageRq
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'out_folder' => 'object'
+        'out_folder' => '\Aspose\Email\Model\StorageFolderLocation'
     ];
 
     /**
@@ -165,7 +165,7 @@ class AiBcrParseStorageRq extends AiBcrStorageImageRq
      *  
      * @param \Aspose\Email\Model\AiBcrOptions $options Recognition options
      * @param \Aspose\Email\Model\AiBcrImageStorageFile[] $images List of images with business cards
-     * @param object $out_folder Parse output folder location on storage
+     * @param \Aspose\Email\Model\StorageFolderLocation $out_folder Parse output folder location on storage
      */
     public function __construct($options = null, $images = null, $out_folder = null)
     {
@@ -214,7 +214,7 @@ class AiBcrParseStorageRq extends AiBcrStorageImageRq
     /**
      * Gets out_folder
      *
-     * @return object
+     * @return \Aspose\Email\Model\StorageFolderLocation
      */
     public function getOutFolder()
     {
@@ -224,7 +224,7 @@ class AiBcrParseStorageRq extends AiBcrStorageImageRq
     /**
      * Sets out_folder
      *
-     * @param object $out_folder Parse output folder location on storage
+     * @param \Aspose\Email\Model\StorageFolderLocation $out_folder Parse output folder location on storage
      *
      * @return $this
      */

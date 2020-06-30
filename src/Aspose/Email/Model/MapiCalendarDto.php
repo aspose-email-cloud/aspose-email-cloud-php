@@ -55,23 +55,23 @@ class MapiCalendarDto extends MapiMessageItemBaseDto
      */
     protected static $swaggerTypes = [
         'appointment_counter_proposal' => 'bool',
-        'attendees' => 'object',
+        'attendees' => '\Aspose\Email\Model\MapiCalendarAttendeesDto',
         'busy_status' => 'string',
         'client_intent' => 'string[]',
         'end_date' => '\DateTime',
-        'end_date_time_zone' => 'object',
+        'end_date_time_zone' => '\Aspose\Email\Model\MapiCalendarTimeZoneDto',
         'is_all_day' => 'bool',
         'key_words' => 'string',
         'location' => 'string',
-        'recurrence' => 'object',
+        'recurrence' => '\Aspose\Email\Model\MapiCalendarEventRecurrenceDto',
         'reminder_delta' => 'int',
         'reminder_file_parameter' => 'string',
         'reminder_set' => 'bool',
         'sequence' => 'int',
         'start_date' => '\DateTime',
-        'start_date_time_zone' => 'object',
+        'start_date_time_zone' => '\Aspose\Email\Model\MapiCalendarTimeZoneDto',
         'uid' => 'string',
-        'organizer' => 'object'
+        'organizer' => '\Aspose\Email\Model\MapiElectronicAddressDto'
     ];
 
     /**
@@ -266,23 +266,23 @@ class MapiCalendarDto extends MapiMessageItemBaseDto
      * @param \Aspose\Email\Model\MapiPropertyDto[] $properties List of MAPI properties
      * @param string $discriminator 
      * @param bool $appointment_counter_proposal Value indicating whether a Meeting Response object is a counter proposal.
-     * @param object $attendees Attendees
+     * @param \Aspose\Email\Model\MapiCalendarAttendeesDto $attendees Attendees
      * @param string $busy_status Enumerates the mapi calendar possible busy status Enum, available values: Free, Tentative, Busy, OutOfOffice
      * @param string[] $client_intent Actions the user has taken on this Meeting object. Items: Enumerates the actions the user can taken on the Meeting object Enum, available values: Manager, Delegate, DeletedWithNoResponse, DeletedExceptionWithNoResponse, RespondedTentative, RespondedAccept, RespondedDecline, ModifiedStartTime, ModifiedEndTime, ModifiedLocation, RespondedExceptionDecline, Canceled, ExceptionCanceled
      * @param \DateTime $end_date End date and time of the event. If the date is not set, default value for DateTime is returned.
-     * @param object $end_date_time_zone Time zone information that indicates the time zone of the EndDate property.
+     * @param \Aspose\Email\Model\MapiCalendarTimeZoneDto $end_date_time_zone Time zone information that indicates the time zone of the EndDate property.
      * @param bool $is_all_day Value indicating whether the event is an all-day event.
      * @param string $key_words Categories of the calendar object.
      * @param string $location Location of the event.
-     * @param object $recurrence Recurrence properties.
+     * @param \Aspose\Email\Model\MapiCalendarEventRecurrenceDto $recurrence Recurrence properties.
      * @param int $reminder_delta Interval, in minutes, between the time at which the reminder first becomes overdue and the start time of the Calendar object.
      * @param string $reminder_file_parameter Full path of the sound that a client SHOULD play when the reminder becomes overdue.
      * @param bool $reminder_set Value indicating whether a reminder is set on the object.
      * @param int $sequence Sequence number.
      * @param \DateTime $start_date Start date and time of the event. If the date is not set, default value for DateTime is returned.
-     * @param object $start_date_time_zone Time zone information that indicates the time zone of the StartDate property.
+     * @param \Aspose\Email\Model\MapiCalendarTimeZoneDto $start_date_time_zone Time zone information that indicates the time zone of the StartDate property.
      * @param string $uid Unique identifier.
-     * @param object $organizer Organizer
+     * @param \Aspose\Email\Model\MapiElectronicAddressDto $organizer Organizer
      */
     public function __construct($attachments = null, $billing = null, $body = null, $body_html = null, $body_rtf = null, $body_type = null, $categories = null, $companies = null, $item_id = null, $message_class = null, $mileage = null, $recipients = null, $sensitivity = null, $subject = null, $subject_prefix = null, $properties = null, $discriminator = null, $appointment_counter_proposal = null, $attendees = null, $busy_status = null, $client_intent = null, $end_date = null, $end_date_time_zone = null, $is_all_day = null, $key_words = null, $location = null, $recurrence = null, $reminder_delta = null, $reminder_file_parameter = null, $reminder_set = null, $sequence = null, $start_date = null, $start_date_time_zone = null, $uid = null, $organizer = null)
     {
@@ -446,7 +446,7 @@ class MapiCalendarDto extends MapiMessageItemBaseDto
     /**
      * Gets attendees
      *
-     * @return object
+     * @return \Aspose\Email\Model\MapiCalendarAttendeesDto
      */
     public function getAttendees()
     {
@@ -456,7 +456,7 @@ class MapiCalendarDto extends MapiMessageItemBaseDto
     /**
      * Sets attendees
      *
-     * @param object $attendees Attendees
+     * @param \Aspose\Email\Model\MapiCalendarAttendeesDto $attendees Attendees
      *
      * @return $this
      */
@@ -542,7 +542,7 @@ class MapiCalendarDto extends MapiMessageItemBaseDto
     /**
      * Gets end_date_time_zone
      *
-     * @return object
+     * @return \Aspose\Email\Model\MapiCalendarTimeZoneDto
      */
     public function getEndDateTimeZone()
     {
@@ -552,7 +552,7 @@ class MapiCalendarDto extends MapiMessageItemBaseDto
     /**
      * Sets end_date_time_zone
      *
-     * @param object $end_date_time_zone Time zone information that indicates the time zone of the EndDate property.
+     * @param \Aspose\Email\Model\MapiCalendarTimeZoneDto $end_date_time_zone Time zone information that indicates the time zone of the EndDate property.
      *
      * @return $this
      */
@@ -638,7 +638,7 @@ class MapiCalendarDto extends MapiMessageItemBaseDto
     /**
      * Gets recurrence
      *
-     * @return object
+     * @return \Aspose\Email\Model\MapiCalendarEventRecurrenceDto
      */
     public function getRecurrence()
     {
@@ -648,7 +648,7 @@ class MapiCalendarDto extends MapiMessageItemBaseDto
     /**
      * Sets recurrence
      *
-     * @param object $recurrence Recurrence properties.
+     * @param \Aspose\Email\Model\MapiCalendarEventRecurrenceDto $recurrence Recurrence properties.
      *
      * @return $this
      */
@@ -782,7 +782,7 @@ class MapiCalendarDto extends MapiMessageItemBaseDto
     /**
      * Gets start_date_time_zone
      *
-     * @return object
+     * @return \Aspose\Email\Model\MapiCalendarTimeZoneDto
      */
     public function getStartDateTimeZone()
     {
@@ -792,7 +792,7 @@ class MapiCalendarDto extends MapiMessageItemBaseDto
     /**
      * Sets start_date_time_zone
      *
-     * @param object $start_date_time_zone Time zone information that indicates the time zone of the StartDate property.
+     * @param \Aspose\Email\Model\MapiCalendarTimeZoneDto $start_date_time_zone Time zone information that indicates the time zone of the StartDate property.
      *
      * @return $this
      */
@@ -830,7 +830,7 @@ class MapiCalendarDto extends MapiMessageItemBaseDto
     /**
      * Gets organizer
      *
-     * @return object
+     * @return \Aspose\Email\Model\MapiElectronicAddressDto
      */
     public function getOrganizer()
     {
@@ -840,7 +840,7 @@ class MapiCalendarDto extends MapiMessageItemBaseDto
     /**
      * Sets organizer
      *
-     * @param object $organizer Organizer
+     * @param \Aspose\Email\Model\MapiElectronicAddressDto $organizer Organizer
      *
      * @return $this
      */

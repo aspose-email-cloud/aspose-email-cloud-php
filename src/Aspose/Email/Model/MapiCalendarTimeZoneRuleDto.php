@@ -212,7 +212,7 @@ class MapiCalendarTimeZoneRuleDto implements ArrayAccess
      * Initializes a new instance of the MapiCalendarTimeZoneRuleDto class.
      *  
      * @param \DateTime $date Date and time that indicate when to begin using the Standard/Daylight time.
-     * @param string $day_of_week Day of week Enum, available values: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
+     * @param string $day_of_week Day of week. Enum, available values: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
      * @param int $hour Hour.
      * @param int $milliseconds Milliseconds.
      * @param int $minute Minute.
@@ -360,7 +360,7 @@ class MapiCalendarTimeZoneRuleDto implements ArrayAccess
     /**
      * Sets day_of_week
      *
-     * @param string $day_of_week Day of week Enum, available values: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
+     * @param string $day_of_week Day of week. Enum, available values: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
      *
      * @return $this
      */
