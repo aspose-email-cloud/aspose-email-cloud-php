@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **period** | **int** | Interval at which the meeting pattern repeats. | 
 **sliding_flag** | **bool** | Defines whether pattern is sliding or not. | 
 **start_date** | [**\DateTime**](\DateTime.md) | Start date of an item recurrence pattern. | 
-**week_start_day** | **object** | First day of the calendar week. | 
+**week_start_day** | **string** | Day of week Enum, available values: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday | 
 **discriminator** | **string** |  | 
 
 

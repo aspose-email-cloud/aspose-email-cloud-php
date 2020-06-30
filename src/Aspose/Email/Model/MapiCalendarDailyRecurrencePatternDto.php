@@ -175,7 +175,7 @@ class MapiCalendarDailyRecurrencePatternDto extends MapiCalendarRecurrencePatter
      * @param int $period Interval at which the meeting pattern repeats.
      * @param bool $sliding_flag Defines whether pattern is sliding or not.
      * @param \DateTime $start_date Start date of an item recurrence pattern.
-     * @param object $week_start_day First day of the calendar week.
+     * @param string $week_start_day Day of week Enum, available values: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
      * @param string $discriminator 
      * @param string[] $day_of_week Days of week at which the event occurs. Items: Enumerates the days of week of the mapi calendar recurrence pattern Enum, available values: Saturday, Friday, Thursday, Wednesday, Tuesday, Monday, Sunday
      */

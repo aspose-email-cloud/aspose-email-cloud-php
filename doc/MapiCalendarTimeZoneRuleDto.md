@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **date** | [**\DateTime**](\DateTime.md) | Date and time that indicate when to begin using the Standard/Daylight time. | 
-**day_of_week** | **object** | Day of week. | 
+**day_of_week** | **string** | Day of week Enum, available values: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday | 
 **hour** | **int** | Hour. | 
 **milliseconds** | **int** | Milliseconds. | 
 **minute** | **int** | Minute. | 

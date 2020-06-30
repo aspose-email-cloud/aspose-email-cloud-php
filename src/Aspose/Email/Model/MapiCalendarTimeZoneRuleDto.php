@@ -57,7 +57,7 @@ class MapiCalendarTimeZoneRuleDto implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'date' => '\DateTime',
-        'day_of_week' => 'object',
+        'day_of_week' => 'string',
         'hour' => 'int',
         'milliseconds' => 'int',
         'minute' => 'int',
@@ -212,7 +212,7 @@ class MapiCalendarTimeZoneRuleDto implements ArrayAccess
      * Initializes a new instance of the MapiCalendarTimeZoneRuleDto class.
      *  
      * @param \DateTime $date Date and time that indicate when to begin using the Standard/Daylight time.
-     * @param object $day_of_week Day of week.
+     * @param string $day_of_week Day of week Enum, available values: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
      * @param int $hour Hour.
      * @param int $milliseconds Milliseconds.
      * @param int $minute Minute.
@@ -350,7 +350,7 @@ class MapiCalendarTimeZoneRuleDto implements ArrayAccess
     /**
      * Gets day_of_week
      *
-     * @return object
+     * @return string
      */
     public function getDayOfWeek()
     {
@@ -360,7 +360,7 @@ class MapiCalendarTimeZoneRuleDto implements ArrayAccess
     /**
      * Sets day_of_week
      *
-     * @param object $day_of_week Day of week.
+     * @param string $day_of_week Day of week Enum, available values: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
      *
      * @return $this
      */
