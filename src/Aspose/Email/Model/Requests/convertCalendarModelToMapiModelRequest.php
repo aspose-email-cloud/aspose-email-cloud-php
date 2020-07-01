@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="convertCalendarDtoToMapiModelRequest.php">
+ * <copyright company="Aspose" file="convertCalendarModelToMapiModelRequest.php">
  *   Copyright (c) 2018-2020 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -29,12 +29,12 @@
 namespace Aspose\Email\Model\Requests;
 
 /**
- * Request model for convertCalendarDtoToMapiModel" operation.
+ * Request model for convertCalendarModelToMapiModel" operation.
  */
-class ConvertCalendarDtoToMapiModelRequest
+class ConvertCalendarModelToMapiModelRequest
 {
     /**
-     * Initializes a new instance of the ConvertCalendarDtoToMapiModelRequest class.
+     * Initializes a new instance of the ConvertCalendarModelToMapiModelRequest class.
      *  
      * @param \Aspose\Email\Model\CalendarDto $calendar_dto iCalendar model calendar representation
      */

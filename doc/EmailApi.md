@@ -29,9 +29,9 @@ Method | HTTP request | Description
 [**appendEmailModelMessage**](EmailApi.md#appendEmailModelMessage) | **PUT** /email/client/AppendModel | Adds an email from model to specified folder in email account
 [**appendMimeMessage**](EmailApi.md#appendMimeMessage) | **PUT** /email/client/AppendMime | Adds an email from MIME to specified folder in email account
 [**convertCalendar**](EmailApi.md#convertCalendar) | **PUT** /email/CalendarModel/convert/{format} | Converts calendar document to specified format and returns as file
-[**convertCalendarDtoToMapiModel**](EmailApi.md#convertCalendarDtoToMapiModel) | **PUT** /email/CalendarModel/model-as-mapi-model | Convert CalendarDto to MapiCalendarDto
 [**convertCalendarModelToAlternate**](EmailApi.md#convertCalendarModelToAlternate) | **PUT** /email/CalendarModel/as-alternate | Convert iCalendar to AlternateView
 [**convertCalendarModelToFile**](EmailApi.md#convertCalendarModelToFile) | **PUT** /email/CalendarModel/model-as-file/{format} | Converts calendar model to specified format and returns as file
+[**convertCalendarModelToMapiModel**](EmailApi.md#convertCalendarModelToMapiModel) | **PUT** /email/CalendarModel/model-as-mapi-model | Convert CalendarDto to MapiCalendarDto
 [**convertContact**](EmailApi.md#convertContact) | **PUT** /email/ContactModel/{format}/convert/{destinationFormat} | Converts contact document to specified format and returns as file
 [**convertContactModelToFile**](EmailApi.md#convertContactModelToFile) | **PUT** /email/ContactModel/model-as-file/{destinationFormat} | Converts contact model to specified format and returns as file
 [**convertContactModelToMapiModel**](EmailApi.md#convertContactModelToMapiModel) | **PUT** /email/ContactModel/model-as-mapi-model | Convert contact model to MAPI model contact representation
@@ -807,29 +807,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
-# **convertCalendarDtoToMapiModel**
-```php
-function \Aspose\Email\Model\MapiCalendarDto convertCalendarDtoToMapiModel(Requests\ConvertCalendarDtoToMapiModelRequest $request)
-```
-Convert CalendarDto to MapiCalendarDto
-
-### Return type
-
-[**\Aspose\Email\Model\MapiCalendarDto**](MapiCalendarDto.md)
-
-### Request parameters
-```php
-new Aspose\Email\Model\Requests\ConvertCalendarDtoToMapiModelRequest(
-    $calendar_dto)
-```
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **calendar_dto** | [**\Aspose\Email\Model\CalendarDto**](CalendarDto.md)| iCalendar model calendar representation |
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
 # **convertCalendarModelToAlternate**
 ```php
 function \Aspose\Email\Model\AlternateView convertCalendarModelToAlternate(Requests\ConvertCalendarModelToAlternateRequest $request)
@@ -875,6 +852,29 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **format** | **string**| File format Enum, available values: Ics, Msg |
  **calendar_dto** | [**\Aspose\Email\Model\CalendarDto**](CalendarDto.md)| Calendar model to convert |
+
+[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+
+# **convertCalendarModelToMapiModel**
+```php
+function \Aspose\Email\Model\MapiCalendarDto convertCalendarModelToMapiModel(Requests\ConvertCalendarModelToMapiModelRequest $request)
+```
+Convert CalendarDto to MapiCalendarDto
+
+### Return type
+
+[**\Aspose\Email\Model\MapiCalendarDto**](MapiCalendarDto.md)
+
+### Request parameters
+```php
+new Aspose\Email\Model\Requests\ConvertCalendarModelToMapiModelRequest(
+    $calendar_dto)
+```
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **calendar_dto** | [**\Aspose\Email\Model\CalendarDto**](CalendarDto.md)| iCalendar model calendar representation |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 

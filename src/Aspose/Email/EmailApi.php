@@ -7394,284 +7394,6 @@ class EmailApi
     }
 
     /**
-     * Operation convertCalendarDtoToMapiModel
-     *
-     * Convert CalendarDto to MapiCalendarDto
-     *
-     * @param Requests\ConvertCalendarDtoToMapiModelRequest $request is a request object for operation
-     *
-     * @throws \Aspose\Email\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \Aspose\Email\Model\MapiCalendarDto
-     */
-    public function convertCalendarDtoToMapiModel(Requests\ConvertCalendarDtoToMapiModelRequest $request)
-    {
-        try {
-             list($response) = $this->convertCalendarDtoToMapiModelWithHttpInfo($request);
-             return $response;
-        }
-        catch(RepeatRequestException $e) {
-             list($response) = $this->convertCalendarDtoToMapiModelWithHttpInfo($request);
-             return $response;
-        } 
-    }
-
-    /**
-     * Operation convertCalendarDtoToMapiModelWithHttpInfo
-     *
-     * Convert CalendarDto to MapiCalendarDto
-     *
-     * @param Requests\ConvertCalendarDtoToMapiModelRequest $request is a request object for operation
-     *
-     * @throws \Aspose\Email\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \Aspose\Email\Model\MapiCalendarDto, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function convertCalendarDtoToMapiModelWithHttpInfo(Requests\ConvertCalendarDtoToMapiModelRequest $request)
-    {
-        $returnType = '\Aspose\Email\Model\MapiCalendarDto';
-        $request = $this->convertCalendarDtoToMapiModelRequest($request);
-
-        try {
-            $options = $this->_createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null);
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                if ($statusCode === 401) {
-                    $this->_requestToken();
-                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
-                }
-          
-                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
-            }
-
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-            
-            if ($this->config->getDebug()) {
-                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            case 200:
-                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Email\Model\MapiCalendarDto', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation convertCalendarDtoToMapiModelAsync
-     *
-     * Convert CalendarDto to MapiCalendarDto
-     *
-     * @param Requests\ConvertCalendarDtoToMapiModelRequest $request is a request object for operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function convertCalendarDtoToMapiModelAsync(Requests\ConvertCalendarDtoToMapiModelRequest $request) 
-    {
-        return $this->convertCalendarDtoToMapiModelAsyncWithHttpInfo($request)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation convertCalendarDtoToMapiModelAsyncWithHttpInfo
-     *
-     * Convert CalendarDto to MapiCalendarDto
-     *
-     * @param Requests\ConvertCalendarDtoToMapiModelRequest $request is a request object for operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function convertCalendarDtoToMapiModelAsyncWithHttpInfo(Requests\ConvertCalendarDtoToMapiModelRequest $request) 
-    {
-        $returnType = '\Aspose\Email\Model\MapiCalendarDto';
-        $request = $this->convertCalendarDtoToMapiModelRequest($request);
-
-        return $this->client
-            ->sendAsync($request, $this->_createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-                    
-                    if ($this->config->getDebug()) {
-                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {        
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-          
-                    if ($exception instanceof RepeatRequestException) {
-                        $this->_requestToken();
-                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
-                    }
-          
-                    throw new ApiException(
-                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'convertCalendarDtoToMapiModel'
-     *
-     * @param Requests\ConvertCalendarDtoToMapiModelRequest $request is a request object for operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    protected function convertCalendarDtoToMapiModelRequest(Requests\ConvertCalendarDtoToMapiModelRequest $request)
-    {
-        // verify the required parameter 'calendar_dto' is set
-        if ($request->calendar_dto === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $calendar_dto when calling convertCalendarDtoToMapiModel');
-        }
-
-        $resourcePath = '/email/CalendarModel/model-as-mapi-model';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = "";
-        $multipart = false;
-    
-
-    
-    
-        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
-        $formFiles = [];
-        // body params
-        $_tempBody = null;
-        if (isset($request->calendar_dto)) {
-            if (is_string($request->calendar_dto)) {
-                $_tempBody = "\"" . $request->calendar_dto . "\"";   
-            } else {
-                $_tempBody = $request->calendar_dto;
-            }
-        }
-
-        if ($multipart) {
-            $headers= $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($httpBody);
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContent = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue
-                    ];
-                    if(isset($formFiles[$formParamName]))
-                    {
-                        $multipartContent['filename'] = $formFiles[$formParamName];
-                    }
-                    $multipartContents[] = $multipartContent;
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = $formParams["data"];
-            }
-        }
-    
-        $this->_requestToken();
-
-        if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
-        }
-    
-        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-    
-        $req = new Request(
-            'PUT',
-            $this->config->getHost() . $resourcePath,
-            $headers,
-            $httpBody
-        );
-        if ($this->config->getDebug()) {
-            $this->_writeRequestLog('PUT', $this->config->getHost() . $resourcePath, $headers, $httpBody);
-        }
-        
-        return $req;
-    }
-
-    /**
      * Operation convertCalendarModelToAlternate
      *
      * Convert iCalendar to AlternateView
@@ -8166,6 +7888,284 @@ class EmailApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['multipart/form-data'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContent = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = $formParams["data"];
+            }
+        }
+    
+        $this->_requestToken();
+
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
+        }
+    
+        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+    
+        $req = new Request(
+            'PUT',
+            $this->config->getHost() . $resourcePath,
+            $headers,
+            $httpBody
+        );
+        if ($this->config->getDebug()) {
+            $this->_writeRequestLog('PUT', $this->config->getHost() . $resourcePath, $headers, $httpBody);
+        }
+        
+        return $req;
+    }
+
+    /**
+     * Operation convertCalendarModelToMapiModel
+     *
+     * Convert CalendarDto to MapiCalendarDto
+     *
+     * @param Requests\ConvertCalendarModelToMapiModelRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Email\Model\MapiCalendarDto
+     */
+    public function convertCalendarModelToMapiModel(Requests\ConvertCalendarModelToMapiModelRequest $request)
+    {
+        try {
+             list($response) = $this->convertCalendarModelToMapiModelWithHttpInfo($request);
+             return $response;
+        }
+        catch(RepeatRequestException $e) {
+             list($response) = $this->convertCalendarModelToMapiModelWithHttpInfo($request);
+             return $response;
+        } 
+    }
+
+    /**
+     * Operation convertCalendarModelToMapiModelWithHttpInfo
+     *
+     * Convert CalendarDto to MapiCalendarDto
+     *
+     * @param Requests\ConvertCalendarModelToMapiModelRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Email\Model\MapiCalendarDto, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function convertCalendarModelToMapiModelWithHttpInfo(Requests\ConvertCalendarModelToMapiModelRequest $request)
+    {
+        $returnType = '\Aspose\Email\Model\MapiCalendarDto';
+        $request = $this->convertCalendarModelToMapiModelRequest($request);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null);
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                if ($statusCode === 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                }
+          
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+            
+            if ($this->config->getDebug()) {
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Email\Model\MapiCalendarDto', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation convertCalendarModelToMapiModelAsync
+     *
+     * Convert CalendarDto to MapiCalendarDto
+     *
+     * @param Requests\ConvertCalendarModelToMapiModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function convertCalendarModelToMapiModelAsync(Requests\ConvertCalendarModelToMapiModelRequest $request) 
+    {
+        return $this->convertCalendarModelToMapiModelAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation convertCalendarModelToMapiModelAsyncWithHttpInfo
+     *
+     * Convert CalendarDto to MapiCalendarDto
+     *
+     * @param Requests\ConvertCalendarModelToMapiModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function convertCalendarModelToMapiModelAsyncWithHttpInfo(Requests\ConvertCalendarModelToMapiModelRequest $request) 
+    {
+        $returnType = '\Aspose\Email\Model\MapiCalendarDto';
+        $request = $this->convertCalendarModelToMapiModelRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+                    
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+          
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    }
+          
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'convertCalendarModelToMapiModel'
+     *
+     * @param Requests\ConvertCalendarModelToMapiModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function convertCalendarModelToMapiModelRequest(Requests\ConvertCalendarModelToMapiModelRequest $request)
+    {
+        // verify the required parameter 'calendar_dto' is set
+        if ($request->calendar_dto === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $calendar_dto when calling convertCalendarModelToMapiModel');
+        }
+
+        $resourcePath = '/email/CalendarModel/model-as-mapi-model';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $multipart = false;
+    
+
+    
+    
+        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
+        $formFiles = [];
+        // body params
+        $_tempBody = null;
+        if (isset($request->calendar_dto)) {
+            if (is_string($request->calendar_dto)) {
+                $_tempBody = "\"" . $request->calendar_dto . "\"";   
+            } else {
+                $_tempBody = $request->calendar_dto;
+            }
+        }
+
+        if ($multipart) {
+            $headers= $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
                 ['application/json']
             );
         }
