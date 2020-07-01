@@ -39,7 +39,7 @@ use \Aspose\Email\ObjectSerializer;
  */
 class MapiPidPropertyDescriptor extends MapiPropertyDescriptor 
 {
-    const DISCRIMINATOR = 'discriminator';
+    const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -57,8 +57,7 @@ class MapiPidPropertyDescriptor extends MapiPropertyDescriptor
         'canonical_name' => 'string',
         'data_type' => 'string',
         'multiple_values_data_type' => 'bool',
-        'name' => 'string',
-        'discriminator' => 'string'
+        'name' => 'string'
     ];
 
     /**
@@ -70,8 +69,7 @@ class MapiPidPropertyDescriptor extends MapiPropertyDescriptor
         'canonical_name' => null,
         'data_type' => null,
         'multiple_values_data_type' => null,
-        'name' => null,
-        'discriminator' => null
+        'name' => null
     ];
 
     /**
@@ -104,8 +102,7 @@ class MapiPidPropertyDescriptor extends MapiPropertyDescriptor
         'canonical_name' => 'canonicalName',
         'data_type' => 'dataType',
         'multiple_values_data_type' => 'multipleValuesDataType',
-        'name' => 'name',
-        'discriminator' => 'discriminator'
+        'name' => 'name'
     ];
 
     /**
@@ -117,8 +114,7 @@ class MapiPidPropertyDescriptor extends MapiPropertyDescriptor
         'canonical_name' => 'setCanonicalName',
         'data_type' => 'setDataType',
         'multiple_values_data_type' => 'setMultipleValuesDataType',
-        'name' => 'setName',
-        'discriminator' => 'setDiscriminator'
+        'name' => 'setName'
     ];
 
     /**
@@ -130,8 +126,7 @@ class MapiPidPropertyDescriptor extends MapiPropertyDescriptor
         'canonical_name' => 'getCanonicalName',
         'data_type' => 'getDataType',
         'multiple_values_data_type' => 'getMultipleValuesDataType',
-        'name' => 'getName',
-        'discriminator' => 'getDiscriminator'
+        'name' => 'getName'
     ];
 
     /**
@@ -196,17 +191,12 @@ class MapiPidPropertyDescriptor extends MapiPropertyDescriptor
         $this->container['data_type'] = null;
         $this->container['multiple_values_data_type'] = null;
         $this->container['name'] = null;
-        $this->container['discriminator'] = null;
 
         $this->container['discriminator'] = (new \ReflectionClass($this))->getShortName();
         if ($canonical_name != null) $this->setCanonicalName($canonical_name);
         if ($data_type != null) $this->setDataType($data_type);
         if ($multiple_values_data_type != null) $this->setMultipleValuesDataType($multiple_values_data_type);
         if ($name != null) $this->setName($name);
-
-        // Initialize discriminator property with the model name.
-        $discriminator = array_search('discriminator', self::$attributeMap);
-        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /**
@@ -223,9 +213,6 @@ class MapiPidPropertyDescriptor extends MapiPropertyDescriptor
         }
         if ($this->container['multiple_values_data_type'] === null) {
             $invalidProperties[] = "'multiple_values_data_type' can't be null";
-        }
-        if ($this->container['discriminator'] === null) {
-            $invalidProperties[] = "'discriminator' can't be null";
         }
         return $invalidProperties;
     }
@@ -246,9 +233,6 @@ class MapiPidPropertyDescriptor extends MapiPropertyDescriptor
             return false;
         }
         if ($this->container['multiple_values_data_type'] === null) {
-            return false;
-        }
-        if ($this->container['discriminator'] === null) {
             return false;
         }
         return true;
@@ -350,25 +334,6 @@ class MapiPidPropertyDescriptor extends MapiPropertyDescriptor
 
         return $this;
     }
-
-    /**
-     * Gets discriminator
-     *
-     * @return string
-     */
-    public function getDiscriminator()
-    {
-        return $this->container['discriminator'];
-    }
-
-    /**
-     * Sets discriminator
-     *
-     * @param string $discriminator discriminator
-     *
-     * @return $this
-     */
-    public function setDiscriminator($discriminator) { /* Does nothing */ }
     /**
      * Returns true if offset exists. False otherwise.
      *

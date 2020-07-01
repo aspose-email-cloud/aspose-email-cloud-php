@@ -313,6 +313,7 @@ Class | Method | HTTP request | Description
  - [MapiLegacyFreeBusyPropertyDto](MapiLegacyFreeBusyPropertyDto.md)
  - [MapiMessageDto](MapiMessageDto.md)
  - [MapiMultiIntPropertyDto](MapiMultiIntPropertyDto.md)
+ - [MapiMultiStringPropertyDto](MapiMultiStringPropertyDto.md)
  - [MapiPhysicalAddressIndexPropertyDto](MapiPhysicalAddressIndexPropertyDto.md)
  - [MapiPidPropertyDescriptor](MapiPidPropertyDescriptor.md)
  - [MapiResponseTypePropertyDto](MapiResponseTypePropertyDto.md)

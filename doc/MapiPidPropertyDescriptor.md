@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 **data_type** | **string** | [MS-OXCDATA]: Data Structures Enum, available values: Unspecified, Null, Integer16, Integer32, Floating32, Floating64, Currency, FloatingTime, ErrorCode, Boolean, Integer64, String, String8, Time, Guid, ServerId, Restriction, RuleAction, Binary, MultipleInteger16, MultipleInteger32, MultipleFloating32, MultipleFloating64, MultipleCurrency, MultipleFloatingTime, MultipleBoolean, MultipleInteger64, MultipleString, MultipleString8, MultipleTime, MultipleGuid, MultipleBinary, Object | 
 **multiple_values_data_type** | **bool** | Indicates if data type contains of multiple values | 
 **name** | **string** | A string that identifies the property | [optional] 
-**discriminator** | **string** |  | 
 
  Parent class: [MapiPropertyDescriptor](MapiPropertyDescriptor.md)
 
