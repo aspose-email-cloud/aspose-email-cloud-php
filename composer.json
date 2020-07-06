@@ -18,6 +18,10 @@
     {
       "name": "Vladislav-Koliesnikov",
       "homepage": "https://github.com/aspose-email-cloud"
+    },
+    {
+      "name": "Marat-Gumerov",
+      "homepage": "https://github.com/aspose-email-cloud"
     }
   ],
   "config": {
@@ -36,7 +40,8 @@
   },
   "autoload": {
     "psr-0": {
-      "Aspose": "src/"
+      "Aspose": "src/",
+      "Test": "tests/"
     }
   }
 }

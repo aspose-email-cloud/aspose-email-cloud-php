@@ -1,6 +1,6 @@
 <phpunit bootstrap="replaceBootstrap">
     <testsuites>
-        <testsuite name="EmailApiTest">
+        <testsuite name="All tests">
             <directory>tests</directory>
         </testsuite>
     </testsuites>
