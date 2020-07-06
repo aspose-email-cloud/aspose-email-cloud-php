@@ -26,9 +26,9 @@ class EmailModelTest extends TestBase
         ));
         $eml = $api->convertEmail(new ConvertEmailRequest('Eml', $mapi));
         $fileContent = $eml->fread($eml->getSize());
-        $this->assertRegExp("/" . $emailDto->getFrom() . "/", $fileContent);
+        $this->assertRegExp("/" . $emailDto->getFrom()->getAddress() . "/", $fileContent);
         $dto = $api->getEmailFileAsModel(new GetEmailFileAsModelRequest($eml));
-        $this->assertEquals($emailDto->getFrom(), $dto->getFrom()->getAddress());
+        $this->assertEquals($emailDto->getFrom()->getAddress(), $dto->getFrom()->getAddress());
     }
 
     /**
