@@ -6,6 +6,7 @@ namespace Test;
 use Aspose\Email\Model\CalendarDto;
 use Aspose\Email\Model\CalendarDtoAlternateRq;
 use Aspose\Email\Model\ContactDto;
+use Aspose\Email\Model\DailyRecurrencePatternDto;
 use Aspose\Email\Model\EmailAddress;
 use Aspose\Email\Model\EmailDto;
 use Aspose\Email\Model\EnumWithCustomOfEmailAddressCategory;
@@ -214,6 +215,10 @@ class CalendarTest extends TestBase
             new ConvertCalendarModelToMapiModelRequest($calendar)
         );
         $this->assertEquals($calendar->getLocation(), $mapiCalendar->getLocation());
+        $this->assertEquals(
+            'MapiCalendarDailyRecurrencePatternDto',
+            $mapiCalendar->getRecurrence()->getRecurrencePattern()->getDiscriminator()
+        );
     }
 
     private function createCalendar(DateTime $startDate = null): string
@@ -257,6 +262,9 @@ class CalendarTest extends TestBase
             ->setOrganizer(new MailAddress("Organizer Name", "organizer@aspose.com", "Accepted"))
             ->setStartDate(new DateTime())
             ->setEndDate((new DateTime())->add(new DateInterval("PT1H")))
-            ->setLocation("Some location");
+            ->setLocation("Some location")
+            ->setRecurrence((new DailyRecurrencePatternDto())
+                ->setOccurs(10)
+                ->setWeekStart("Monday"));
     }
 }
