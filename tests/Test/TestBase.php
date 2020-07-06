@@ -10,7 +10,10 @@ use PHPUnit\Framework\TestCase;
 
 class TestBase extends TestCase
 {
-    protected static $api;
+    /**
+     * @var EmailApi
+     */
+    private static $api;
     protected static $folder;
     protected static $storage = "First Storage";
 

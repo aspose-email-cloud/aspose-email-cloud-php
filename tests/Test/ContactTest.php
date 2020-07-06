@@ -10,6 +10,7 @@ use Aspose\Email\Model\HierarchicalObject;
 use Aspose\Email\Model\HierarchicalObjectRequest;
 use Aspose\Email\Model\PhoneNumber;
 use Aspose\Email\Model\Requests\convertContactModelToFileRequest;
+use Aspose\Email\Model\Requests\convertContactModelToMapiModelRequest;
 use Aspose\Email\Model\Requests\convertContactRequest;
 use Aspose\Email\Model\Requests\createContactRequest;
 use Aspose\Email\Model\Requests\getContactFileAsModelRequest;
@@ -59,6 +60,19 @@ class ContactTest extends TestBase
         $this->assertRegExp("/" . $contactDto->getSurname() . "/", $fileContent);
         $dto = $api->getContactFileAsModel(new GetContactFileAsModelRequest('VCard', $vcard));
         $this->assertEquals($contactDto->getSurname(), $dto->getSurname());
+    }
+
+    /**
+     * @group pipeline
+     */
+    public function testConvertModelToMapiModel()
+    {
+        $api = self::getApi();
+        $contactDto = self::getContactDto();
+        $mapiContact = $api->convertContactModelToMapiModel(
+            new ConvertContactModelToMapiModelRequest($contactDto)
+        );
+        $this->assertEquals($contactDto->getSurname(), $mapiContact->getNameInfo()->getSurname());
     }
 
     /**

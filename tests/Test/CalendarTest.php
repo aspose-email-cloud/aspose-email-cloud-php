@@ -18,6 +18,7 @@ use Aspose\Email\Model\PhoneNumber;
 use Aspose\Email\Model\PrimitiveObject;
 use Aspose\Email\Model\Requests\convertCalendarModelToAlternateRequest;
 use Aspose\Email\Model\Requests\convertCalendarModelToFileRequest;
+use Aspose\Email\Model\Requests\convertCalendarModelToMapiModelRequest;
 use Aspose\Email\Model\Requests\convertCalendarRequest;
 use Aspose\Email\Model\Requests\createCalendarRequest;
 use Aspose\Email\Model\Requests\downloadFileRequest;
@@ -200,6 +201,19 @@ class CalendarTest extends TestBase
         //We can also convert the file back to a CalendarDto
         $dto = $api->getCalendarFileAsModel(new GetCalendarFileAsModelRequest($ics));
         $this->assertEquals($calendarDto->getLocation(), $dto->getLocation());
+    }
+
+    /**
+     * @group pipeline
+     */
+    public function testConvertModelToMapiModel()
+    {
+        $api = self::getApi();
+        $calendar = self::getCalendarDto();
+        $mapiCalendar = $api->convertCalendarModelToMapiModel(
+            new ConvertCalendarModelToMapiModelRequest($calendar)
+        );
+        $this->assertEquals($calendar->getLocation(), $mapiCalendar->getLocation());
     }
 
     private function createCalendar(DateTime $startDate = null): string
