@@ -36,7 +36,7 @@ class GetEmailFileAsMapiModelRequest
     /**
      * Initializes a new instance of the GetEmailFileAsMapiModelRequest class.
      *  
-     * @param string $file_format File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
+     * @param string $file_format File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
      * @param \SplFileObject $file File to convert
      */
     public function __construct($file_format, $file)             
@@ -46,7 +46,7 @@ class GetEmailFileAsMapiModelRequest
     }
 
     /**
-     * File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
+     * File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
      */
     public $file_format;
 	

@@ -36,7 +36,7 @@ class GetMapiMessageModelRequest
     /**
      * Initializes a new instance of the GetMapiMessageModelRequest class.
      *  
-     * @param string $format Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
+     * @param string $format Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
      * @param string $name Email document file name.
      * @param string $folder Path to folder in storage.
      * @param string $storage Storage name.
@@ -50,7 +50,7 @@ class GetMapiMessageModelRequest
     }
 
     /**
-     * Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
+     * Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
      */
     public $format;
 	

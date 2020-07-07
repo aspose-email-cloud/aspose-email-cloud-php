@@ -36,7 +36,7 @@ class ConvertEmailRequest
     /**
      * Initializes a new instance of the ConvertEmailRequest class.
      *  
-     * @param string $format File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
+     * @param string $format File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
      * @param \SplFileObject $file File to convert
      */
     public function __construct($format, $file)             
@@ -46,7 +46,7 @@ class ConvertEmailRequest
     }
 
     /**
-     * File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
+     * File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
      */
     public $format;
 	

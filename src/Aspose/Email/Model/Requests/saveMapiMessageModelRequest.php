@@ -36,7 +36,7 @@ class SaveMapiMessageModelRequest
     /**
      * Initializes a new instance of the SaveMapiMessageModelRequest class.
      *  
-     * @param string $format File format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
+     * @param string $format File format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
      * @param string $name Message file name in storage.
      * @param \Aspose\Email\Model\StorageModelRqOfMapiMessageDto $rq Message create/update request.
      */
@@ -48,7 +48,7 @@ class SaveMapiMessageModelRequest
     }
 
     /**
-     * File format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
+     * File format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
      */
     public $format;
 	

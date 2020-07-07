@@ -36,7 +36,7 @@ class ConvertMapiMessageModelToFileRequest
     /**
      * Initializes a new instance of the ConvertMapiMessageModelToFileRequest class.
      *  
-     * @param string $destination_format File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
+     * @param string $destination_format File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
      * @param \Aspose\Email\Model\MapiMessageDto $mapi_message MAPI message model to convert
      */
     public function __construct($destination_format, $mapi_message)             
@@ -46,7 +46,7 @@ class ConvertMapiMessageModelToFileRequest
     }
 
     /**
-     * File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
+     * File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
      */
     public $destination_format;
 	

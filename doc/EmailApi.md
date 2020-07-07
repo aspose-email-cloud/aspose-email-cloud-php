@@ -973,7 +973,7 @@ new Aspose\Email\Model\Requests\ConvertEmailRequest(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **format** | **string**| File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html |
+ **format** | **string**| File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef |
  **file** | **\SplFileObject**| File to convert |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
@@ -998,7 +998,7 @@ new Aspose\Email\Model\Requests\ConvertEmailModelToFileRequest(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **destination_format** | **string**| File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html |
+ **destination_format** | **string**| File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef |
  **email_dto** | [**\Aspose\Email\Model\EmailDto**](EmailDto.md)| Email model to convert |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
@@ -1165,7 +1165,7 @@ new Aspose\Email\Model\Requests\ConvertMapiMessageModelToFileRequest(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **destination_format** | **string**| File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html |
+ **destination_format** | **string**| File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef |
  **mapi_message** | [**\Aspose\Email\Model\MapiMessageDto**](MapiMessageDto.md)| MAPI message model to convert |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
@@ -2366,7 +2366,7 @@ new Aspose\Email\Model\Requests\GetEmailAsFileRequest(
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **file_name** | **string**| Email document file name |
- **format** | **string**| File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html |
+ **format** | **string**| File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef |
  **storage** | **string**| Storage name | [optional]
  **folder** | **string**| Path to folder in storage | [optional]
 
@@ -2475,7 +2475,7 @@ new Aspose\Email\Model\Requests\GetEmailFileAsMapiModelRequest(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file_format** | **string**| File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html |
+ **file_format** | **string**| File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef |
  **file** | **\SplFileObject**| File to convert |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
@@ -2525,7 +2525,7 @@ new Aspose\Email\Model\Requests\GetEmailModelRequest(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **format** | **string**| Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html |
+ **format** | **string**| Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef |
  **name** | **string**| Email document file name. |
  **folder** | **string**| Path to folder in storage. | [optional]
  **storage** | **string**| Storage name. | [optional]
@@ -2555,7 +2555,7 @@ new Aspose\Email\Model\Requests\GetEmailModelListRequest(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **format** | **string**| Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html |
+ **format** | **string**| Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef |
  **folder** | **string**| Path to folder in storage. | [optional]
  **storage** | **string**| Storage name. | [optional]
  **items_per_page** | **int**| Count of items on page. | [optional] [default to 10]
@@ -2805,7 +2805,7 @@ new Aspose\Email\Model\Requests\GetMapiMessageModelRequest(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **format** | **string**| Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html |
+ **format** | **string**| Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef |
  **name** | **string**| Email document file name. |
  **folder** | **string**| Path to folder in storage. | [optional]
  **storage** | **string**| Storage name. | [optional]
@@ -3256,7 +3256,7 @@ new Aspose\Email\Model\Requests\SaveEmailModelRequest(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **format** | **string**| File format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html |
+ **format** | **string**| File format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef |
  **name** | **string**| Email document file name in storage. |
  **rq** | [**\Aspose\Email\Model\StorageModelRqOfEmailDto**](StorageModelRqOfEmailDto.md)| Email document create/update request. |
 
@@ -3383,7 +3383,7 @@ new Aspose\Email\Model\Requests\SaveMapiMessageModelRequest(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **format** | **string**| File format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html |
+ **format** | **string**| File format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef |
  **name** | **string**| Message file name in storage. |
  **rq** | [**\Aspose\Email\Model\StorageModelRqOfMapiMessageDto**](StorageModelRqOfMapiMessageDto.md)| Message create/update request. |
 
