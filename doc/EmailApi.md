@@ -31,16 +31,16 @@ Method | HTTP request | Description
 [**convertCalendar**](EmailApi.md#convertCalendar) | **PUT** /email/CalendarModel/convert/{format} | Converts calendar document to specified format and returns as file
 [**convertCalendarModelToAlternate**](EmailApi.md#convertCalendarModelToAlternate) | **PUT** /email/CalendarModel/as-alternate | Convert iCalendar to AlternateView
 [**convertCalendarModelToFile**](EmailApi.md#convertCalendarModelToFile) | **PUT** /email/CalendarModel/model-as-file/{format} | Converts calendar model to specified format and returns as file
-[**convertCalendarModelToMapiModel**](EmailApi.md#convertCalendarModelToMapiModel) | **PUT** /email/CalendarModel/model-as-mapi-model | Convert CalendarDto to MapiCalendarDto
+[**convertCalendarModelToMapiModel**](EmailApi.md#convertCalendarModelToMapiModel) | **PUT** /email/CalendarModel/model-as-mapi-model | Converts CalendarDto to MapiCalendarDto.
 [**convertContact**](EmailApi.md#convertContact) | **PUT** /email/ContactModel/{format}/convert/{destinationFormat} | Converts contact document to specified format and returns as file
 [**convertContactModelToFile**](EmailApi.md#convertContactModelToFile) | **PUT** /email/ContactModel/model-as-file/{destinationFormat} | Converts contact model to specified format and returns as file
-[**convertContactModelToMapiModel**](EmailApi.md#convertContactModelToMapiModel) | **PUT** /email/ContactModel/model-as-mapi-model | Convert contact model to MAPI model contact representation
+[**convertContactModelToMapiModel**](EmailApi.md#convertContactModelToMapiModel) | **PUT** /email/ContactModel/model-as-mapi-model | Converts ContactDto to MapiContactDto.
 [**convertEmail**](EmailApi.md#convertEmail) | **PUT** /email/convert/{format} | Converts email document to specified format and returns as file
 [**convertEmailModelToFile**](EmailApi.md#convertEmailModelToFile) | **PUT** /email/model/model-as-file/{destinationFormat} | Converts Email model to specified format and returns as file
-[**convertEmailModelToMapiModel**](EmailApi.md#convertEmailModelToMapiModel) | **PUT** /email/model/model-as-mapi-model | Converts Email model to MAPI model message representation
+[**convertEmailModelToMapiModel**](EmailApi.md#convertEmailModelToMapiModel) | **PUT** /email/model/model-as-mapi-model | Converts EmailDto to MapiMessageDto.
 [**convertMapiCalendarModelToCalendarModel**](EmailApi.md#convertMapiCalendarModelToCalendarModel) | **PUT** /email/MapiCalendar/model-as-calendar-model | Converts MAPI calendar model to CalendarDto model
 [**convertMapiCalendarModelToFile**](EmailApi.md#convertMapiCalendarModelToFile) | **PUT** /email/MapiCalendar/model-as-file/{destinationFormat} | Converts MAPI calendar model to specified format and returns as file
-[**convertMapiContactModelToContactModel**](EmailApi.md#convertMapiContactModelToContactModel) | **PUT** /email/MapiContact/model-as-contact-model | Converts MAPI contact model to Contact model
+[**convertMapiContactModelToContactModel**](EmailApi.md#convertMapiContactModelToContactModel) | **PUT** /email/MapiContact/model-as-contact-model | Converts MAPI contact model to ContactDto model
 [**convertMapiContactModelToFile**](EmailApi.md#convertMapiContactModelToFile) | **PUT** /email/MapiContact/model-as-file/{destinationFormat} | Converts MAPI contact model to specified format and returns as file
 [**convertMapiMessageModelToEmailModel**](EmailApi.md#convertMapiMessageModelToEmailModel) | **PUT** /email/MapiMessage/model-as-email-model | Converts MAPI message model to EmailDto model
 [**convertMapiMessageModelToFile**](EmailApi.md#convertMapiMessageModelToFile) | **PUT** /email/MapiMessage/model-as-file/{destinationFormat} | Converts MAPI message model to specified format and returns as file
@@ -100,10 +100,10 @@ Method | HTTP request | Description
 [**getFilesList**](EmailApi.md#getFilesList) | **GET** /email/storage/folder/{path} | 
 [**getMapiAttachment**](EmailApi.md#getMapiAttachment) | **GET** /email/Mapi/{name}/attachments/{attachment} | Get document attachment as file stream
 [**getMapiAttachments**](EmailApi.md#getMapiAttachments) | **GET** /email/Mapi/{name}/attachments | Get document attachment list
-[**getMapiCalendarModel**](EmailApi.md#getMapiCalendarModel) | **GET** /email/MapiCalendar/{name} | Get calendar file
-[**getMapiContactModel**](EmailApi.md#getMapiContactModel) | **GET** /email/MapiContact/{format}/{name} | Get contact document.
+[**getMapiCalendarModel**](EmailApi.md#getMapiCalendarModel) | **GET** /email/MapiCalendar/{name} | Get MAPI calendar document.
+[**getMapiContactModel**](EmailApi.md#getMapiContactModel) | **GET** /email/MapiContact/{format}/{name} | Get MAPI contact document.
 [**getMapiList**](EmailApi.md#getMapiList) | **GET** /email/Mapi | Get document list from storage folder
-[**getMapiMessageModel**](EmailApi.md#getMapiMessageModel) | **GET** /email/MapiMessage/{format}/{name} | MAPI message document.
+[**getMapiMessageModel**](EmailApi.md#getMapiMessageModel) | **GET** /email/MapiMessage/{format}/{name} | Get MAPI message document.
 [**getMapiProperties**](EmailApi.md#getMapiProperties) | **GET** /email/Mapi/{name}/properties | Get document properties
 [**isEmailAddressDisposable**](EmailApi.md#isEmailAddressDisposable) | **GET** /email/disposable/isDisposable/{address} | Check email address is disposable
 [**listEmailFolders**](EmailApi.md#listEmailFolders) | **GET** /email/client/ListFolders | Get folders list in email account
@@ -123,8 +123,8 @@ Method | HTTP request | Description
 [**saveMailAccount**](EmailApi.md#saveMailAccount) | **POST** /email/client/SaveMailAccount | Create email account file (*.account) with login/password authentication
 [**saveMailOAuthAccount**](EmailApi.md#saveMailOAuthAccount) | **POST** /email/client/SaveMailOAuthAccount | Create email account file (*.account) with OAuth
 [**saveMapiCalendarModel**](EmailApi.md#saveMapiCalendarModel) | **PUT** /email/MapiCalendar/{format}/{name} | Save MAPI Calendar to storage.
-[**saveMapiContactModel**](EmailApi.md#saveMapiContactModel) | **PUT** /email/MapiContact/{format}/{name} | Save contact.
-[**saveMapiMessageModel**](EmailApi.md#saveMapiMessageModel) | **PUT** /email/MapiMessage/{format}/{name} | Save MAPI message.
+[**saveMapiContactModel**](EmailApi.md#saveMapiContactModel) | **PUT** /email/MapiContact/{format}/{name} | Save MAPI Contact to storage.
+[**saveMapiMessageModel**](EmailApi.md#saveMapiMessageModel) | **PUT** /email/MapiMessage/{format}/{name} | Save MAPI message to storage.
 [**sendEmail**](EmailApi.md#sendEmail) | **POST** /email/client/Send | Send an email from *.eml file located on storage
 [**sendEmailMime**](EmailApi.md#sendEmailMime) | **POST** /email/client/SendMime | Send an email specified by MIME in request
 [**sendEmailModel**](EmailApi.md#sendEmailModel) | **POST** /email/client/SendModel | Send an email specified by model in request
@@ -859,7 +859,7 @@ Name | Type | Description  | Notes
 ```php
 function \Aspose\Email\Model\MapiCalendarDto convertCalendarModelToMapiModel(Requests\ConvertCalendarModelToMapiModelRequest $request)
 ```
-Convert CalendarDto to MapiCalendarDto
+Converts CalendarDto to MapiCalendarDto.
 
 ### Return type
 
@@ -934,7 +934,7 @@ Name | Type | Description  | Notes
 ```php
 function \Aspose\Email\Model\MapiContactDto convertContactModelToMapiModel(Requests\ConvertContactModelToMapiModelRequest $request)
 ```
-Convert contact model to MAPI model contact representation
+Converts ContactDto to MapiContactDto.
 
 ### Return type
 
@@ -1007,7 +1007,7 @@ Name | Type | Description  | Notes
 ```php
 function \Aspose\Email\Model\MapiMessageDto convertEmailModelToMapiModel(Requests\ConvertEmailModelToMapiModelRequest $request)
 ```
-Converts Email model to MAPI model message representation
+Converts EmailDto to MapiMessageDto.
 
 ### Return type
 
@@ -1078,7 +1078,7 @@ Name | Type | Description  | Notes
 ```php
 function \Aspose\Email\Model\ContactDto convertMapiContactModelToContactModel(Requests\ConvertMapiContactModelToContactModelRequest $request)
 ```
-Converts MAPI contact model to Contact model
+Converts MAPI contact model to ContactDto model
 
 ### Return type
 
@@ -2702,7 +2702,7 @@ Name | Type | Description  | Notes
 ```php
 function \Aspose\Email\Model\MapiCalendarDto getMapiCalendarModel(Requests\GetMapiCalendarModelRequest $request)
 ```
-Get calendar file
+Get MAPI calendar document.
 
 ### Return type
 
@@ -2729,7 +2729,7 @@ Name | Type | Description  | Notes
 ```php
 function \Aspose\Email\Model\MapiContactDto getMapiContactModel(Requests\GetMapiContactModelRequest $request)
 ```
-Get contact document.
+Get MAPI contact document.
 
 ### Return type
 
@@ -2787,7 +2787,7 @@ Name | Type | Description  | Notes
 ```php
 function \Aspose\Email\Model\MapiMessageDto getMapiMessageModel(Requests\GetMapiMessageModelRequest $request)
 ```
-MAPI message document.
+Get MAPI message document.
 
 ### Return type
 
@@ -3339,7 +3339,7 @@ Name | Type | Description  | Notes
 ```php
 function saveMapiContactModel(Requests\SaveMapiContactModelRequest $request)
 ```
-Save contact.
+Save MAPI Contact to storage.
 
 ### Return type
 
@@ -3366,7 +3366,7 @@ Name | Type | Description  | Notes
 ```php
 function saveMapiMessageModel(Requests\SaveMapiMessageModelRequest $request)
 ```
-Save MAPI message.
+Save MAPI message to storage.
 
 ### Return type
 

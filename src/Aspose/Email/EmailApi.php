@@ -7961,7 +7961,7 @@ class EmailApi
     /**
      * Operation convertCalendarModelToMapiModel
      *
-     * Convert CalendarDto to MapiCalendarDto
+     * Converts CalendarDto to MapiCalendarDto.
      *
      * @param Requests\ConvertCalendarModelToMapiModelRequest $request is a request object for operation
      *
@@ -7984,7 +7984,7 @@ class EmailApi
     /**
      * Operation convertCalendarModelToMapiModelWithHttpInfo
      *
-     * Convert CalendarDto to MapiCalendarDto
+     * Converts CalendarDto to MapiCalendarDto.
      *
      * @param Requests\ConvertCalendarModelToMapiModelRequest $request is a request object for operation
      *
@@ -8050,7 +8050,7 @@ class EmailApi
     /**
      * Operation convertCalendarModelToMapiModelAsync
      *
-     * Convert CalendarDto to MapiCalendarDto
+     * Converts CalendarDto to MapiCalendarDto.
      *
      * @param Requests\ConvertCalendarModelToMapiModelRequest $request is a request object for operation
      *
@@ -8070,7 +8070,7 @@ class EmailApi
     /**
      * Operation convertCalendarModelToMapiModelAsyncWithHttpInfo
      *
-     * Convert CalendarDto to MapiCalendarDto
+     * Converts CalendarDto to MapiCalendarDto.
      *
      * @param Requests\ConvertCalendarModelToMapiModelRequest $request is a request object for operation
      *
@@ -8825,7 +8825,7 @@ class EmailApi
     /**
      * Operation convertContactModelToMapiModel
      *
-     * Convert contact model to MAPI model contact representation
+     * Converts ContactDto to MapiContactDto.
      *
      * @param Requests\ConvertContactModelToMapiModelRequest $request is a request object for operation
      *
@@ -8848,7 +8848,7 @@ class EmailApi
     /**
      * Operation convertContactModelToMapiModelWithHttpInfo
      *
-     * Convert contact model to MAPI model contact representation
+     * Converts ContactDto to MapiContactDto.
      *
      * @param Requests\ConvertContactModelToMapiModelRequest $request is a request object for operation
      *
@@ -8914,7 +8914,7 @@ class EmailApi
     /**
      * Operation convertContactModelToMapiModelAsync
      *
-     * Convert contact model to MAPI model contact representation
+     * Converts ContactDto to MapiContactDto.
      *
      * @param Requests\ConvertContactModelToMapiModelRequest $request is a request object for operation
      *
@@ -8934,7 +8934,7 @@ class EmailApi
     /**
      * Operation convertContactModelToMapiModelAsyncWithHttpInfo
      *
-     * Convert contact model to MAPI model contact representation
+     * Converts ContactDto to MapiContactDto.
      *
      * @param Requests\ConvertContactModelToMapiModelRequest $request is a request object for operation
      *
@@ -9680,7 +9680,7 @@ class EmailApi
     /**
      * Operation convertEmailModelToMapiModel
      *
-     * Converts Email model to MAPI model message representation
+     * Converts EmailDto to MapiMessageDto.
      *
      * @param Requests\ConvertEmailModelToMapiModelRequest $request is a request object for operation
      *
@@ -9703,7 +9703,7 @@ class EmailApi
     /**
      * Operation convertEmailModelToMapiModelWithHttpInfo
      *
-     * Converts Email model to MAPI model message representation
+     * Converts EmailDto to MapiMessageDto.
      *
      * @param Requests\ConvertEmailModelToMapiModelRequest $request is a request object for operation
      *
@@ -9769,7 +9769,7 @@ class EmailApi
     /**
      * Operation convertEmailModelToMapiModelAsync
      *
-     * Converts Email model to MAPI model message representation
+     * Converts EmailDto to MapiMessageDto.
      *
      * @param Requests\ConvertEmailModelToMapiModelRequest $request is a request object for operation
      *
@@ -9789,7 +9789,7 @@ class EmailApi
     /**
      * Operation convertEmailModelToMapiModelAsyncWithHttpInfo
      *
-     * Converts Email model to MAPI model message representation
+     * Converts EmailDto to MapiMessageDto.
      *
      * @param Requests\ConvertEmailModelToMapiModelRequest $request is a request object for operation
      *
@@ -10523,7 +10523,7 @@ class EmailApi
     /**
      * Operation convertMapiContactModelToContactModel
      *
-     * Converts MAPI contact model to Contact model
+     * Converts MAPI contact model to ContactDto model
      *
      * @param Requests\ConvertMapiContactModelToContactModelRequest $request is a request object for operation
      *
@@ -10546,7 +10546,7 @@ class EmailApi
     /**
      * Operation convertMapiContactModelToContactModelWithHttpInfo
      *
-     * Converts MAPI contact model to Contact model
+     * Converts MAPI contact model to ContactDto model
      *
      * @param Requests\ConvertMapiContactModelToContactModelRequest $request is a request object for operation
      *
@@ -10612,7 +10612,7 @@ class EmailApi
     /**
      * Operation convertMapiContactModelToContactModelAsync
      *
-     * Converts MAPI contact model to Contact model
+     * Converts MAPI contact model to ContactDto model
      *
      * @param Requests\ConvertMapiContactModelToContactModelRequest $request is a request object for operation
      *
@@ -10632,7 +10632,7 @@ class EmailApi
     /**
      * Operation convertMapiContactModelToContactModelAsyncWithHttpInfo
      *
-     * Converts MAPI contact model to Contact model
+     * Converts MAPI contact model to ContactDto model
      *
      * @param Requests\ConvertMapiContactModelToContactModelRequest $request is a request object for operation
      *
@@ -27706,7 +27706,7 @@ class EmailApi
     /**
      * Operation getMapiCalendarModel
      *
-     * Get calendar file
+     * Get MAPI calendar document.
      *
      * @param Requests\GetMapiCalendarModelRequest $request is a request object for operation
      *
@@ -27729,7 +27729,7 @@ class EmailApi
     /**
      * Operation getMapiCalendarModelWithHttpInfo
      *
-     * Get calendar file
+     * Get MAPI calendar document.
      *
      * @param Requests\GetMapiCalendarModelRequest $request is a request object for operation
      *
@@ -27795,7 +27795,7 @@ class EmailApi
     /**
      * Operation getMapiCalendarModelAsync
      *
-     * Get calendar file
+     * Get MAPI calendar document.
      *
      * @param Requests\GetMapiCalendarModelRequest $request is a request object for operation
      *
@@ -27815,7 +27815,7 @@ class EmailApi
     /**
      * Operation getMapiCalendarModelAsyncWithHttpInfo
      *
-     * Get calendar file
+     * Get MAPI calendar document.
      *
      * @param Requests\GetMapiCalendarModelRequest $request is a request object for operation
      *
@@ -28002,7 +28002,7 @@ class EmailApi
     /**
      * Operation getMapiContactModel
      *
-     * Get contact document.
+     * Get MAPI contact document.
      *
      * @param Requests\GetMapiContactModelRequest $request is a request object for operation
      *
@@ -28025,7 +28025,7 @@ class EmailApi
     /**
      * Operation getMapiContactModelWithHttpInfo
      *
-     * Get contact document.
+     * Get MAPI contact document.
      *
      * @param Requests\GetMapiContactModelRequest $request is a request object for operation
      *
@@ -28091,7 +28091,7 @@ class EmailApi
     /**
      * Operation getMapiContactModelAsync
      *
-     * Get contact document.
+     * Get MAPI contact document.
      *
      * @param Requests\GetMapiContactModelRequest $request is a request object for operation
      *
@@ -28111,7 +28111,7 @@ class EmailApi
     /**
      * Operation getMapiContactModelAsyncWithHttpInfo
      *
-     * Get contact document.
+     * Get MAPI contact document.
      *
      * @param Requests\GetMapiContactModelRequest $request is a request object for operation
      *
@@ -28614,7 +28614,7 @@ class EmailApi
     /**
      * Operation getMapiMessageModel
      *
-     * MAPI message document.
+     * Get MAPI message document.
      *
      * @param Requests\GetMapiMessageModelRequest $request is a request object for operation
      *
@@ -28637,7 +28637,7 @@ class EmailApi
     /**
      * Operation getMapiMessageModelWithHttpInfo
      *
-     * MAPI message document.
+     * Get MAPI message document.
      *
      * @param Requests\GetMapiMessageModelRequest $request is a request object for operation
      *
@@ -28703,7 +28703,7 @@ class EmailApi
     /**
      * Operation getMapiMessageModelAsync
      *
-     * MAPI message document.
+     * Get MAPI message document.
      *
      * @param Requests\GetMapiMessageModelRequest $request is a request object for operation
      *
@@ -28723,7 +28723,7 @@ class EmailApi
     /**
      * Operation getMapiMessageModelAsyncWithHttpInfo
      *
-     * MAPI message document.
+     * Get MAPI message document.
      *
      * @param Requests\GetMapiMessageModelRequest $request is a request object for operation
      *
@@ -34113,7 +34113,7 @@ class EmailApi
     /**
      * Operation saveMapiContactModel
      *
-     * Save contact.
+     * Save MAPI Contact to storage.
      *
      * @param Requests\SaveMapiContactModelRequest $request is a request object for operation
      *
@@ -34134,7 +34134,7 @@ class EmailApi
     /**
      * Operation saveMapiContactModelWithHttpInfo
      *
-     * Save contact.
+     * Save MAPI Contact to storage.
      *
      * @param Requests\SaveMapiContactModelRequest $request is a request object for operation
      *
@@ -34178,7 +34178,7 @@ class EmailApi
     /**
      * Operation saveMapiContactModelAsync
      *
-     * Save contact.
+     * Save MAPI Contact to storage.
      *
      * @param Requests\SaveMapiContactModelRequest $request is a request object for operation
      *
@@ -34198,7 +34198,7 @@ class EmailApi
     /**
      * Operation saveMapiContactModelAsyncWithHttpInfo
      *
-     * Save contact.
+     * Save MAPI Contact to storage.
      *
      * @param Requests\SaveMapiContactModelRequest $request is a request object for operation
      *
@@ -34367,7 +34367,7 @@ class EmailApi
     /**
      * Operation saveMapiMessageModel
      *
-     * Save MAPI message.
+     * Save MAPI message to storage.
      *
      * @param Requests\SaveMapiMessageModelRequest $request is a request object for operation
      *
@@ -34388,7 +34388,7 @@ class EmailApi
     /**
      * Operation saveMapiMessageModelWithHttpInfo
      *
-     * Save MAPI message.
+     * Save MAPI message to storage.
      *
      * @param Requests\SaveMapiMessageModelRequest $request is a request object for operation
      *
@@ -34432,7 +34432,7 @@ class EmailApi
     /**
      * Operation saveMapiMessageModelAsync
      *
-     * Save MAPI message.
+     * Save MAPI message to storage.
      *
      * @param Requests\SaveMapiMessageModelRequest $request is a request object for operation
      *
@@ -34452,7 +34452,7 @@ class EmailApi
     /**
      * Operation saveMapiMessageModelAsyncWithHttpInfo
      *
-     * Save MAPI message.
+     * Save MAPI message to storage.
      *
      * @param Requests\SaveMapiMessageModelRequest $request is a request object for operation
      *
