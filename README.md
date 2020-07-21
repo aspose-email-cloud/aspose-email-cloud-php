@@ -27,7 +27,7 @@ Aspose.Email Cloud is a REST API for creating email applications that work with 
     - `MapiContactDto` - represents the Microsoft Outlook contact information. 
 - Improved Recurrence pattern support for CalendarDto.
 
-See [Release notes](https://docs.aspose.cloud/display/emailcloud/Aspose.Email+Cloud+20.5+Release+Notes)
+See [Release notes](https://docs.aspose.cloud/display/emailcloud/Aspose.Email+Cloud+20.7+Release+Notes)
 
 ## How to use the SDK?
 The complete source code is available in the GIT repository.
