@@ -70,6 +70,7 @@ class CalendarDto implements ArrayAccess
         'optional_attendees' => '\Aspose\Email\Model\MailAddress[]',
         'organizer' => '\Aspose\Email\Model\MailAddress',
         'recurrence_string' => 'string',
+        'recurrence' => '\Aspose\Email\Model\RecurrencePatternDto',
         'reminders' => '\Aspose\Email\Model\CalendarReminder[]',
         'sequence_id' => 'string',
         'start_date' => '\DateTime',
@@ -99,6 +100,7 @@ class CalendarDto implements ArrayAccess
         'optional_attendees' => null,
         'organizer' => null,
         'recurrence_string' => null,
+        'recurrence' => null,
         'reminders' => null,
         'sequence_id' => null,
         'start_date' => 'date-time',
@@ -149,6 +151,7 @@ class CalendarDto implements ArrayAccess
         'optional_attendees' => 'optionalAttendees',
         'organizer' => 'organizer',
         'recurrence_string' => 'recurrenceString',
+        'recurrence' => 'recurrence',
         'reminders' => 'reminders',
         'sequence_id' => 'sequenceId',
         'start_date' => 'startDate',
@@ -178,6 +181,7 @@ class CalendarDto implements ArrayAccess
         'optional_attendees' => 'setOptionalAttendees',
         'organizer' => 'setOrganizer',
         'recurrence_string' => 'setRecurrenceString',
+        'recurrence' => 'setRecurrence',
         'reminders' => 'setReminders',
         'sequence_id' => 'setSequenceId',
         'start_date' => 'setStartDate',
@@ -207,6 +211,7 @@ class CalendarDto implements ArrayAccess
         'optional_attendees' => 'getOptionalAttendees',
         'organizer' => 'getOrganizer',
         'recurrence_string' => 'getRecurrenceString',
+        'recurrence' => 'getRecurrence',
         'reminders' => 'getReminders',
         'sequence_id' => 'getSequenceId',
         'start_date' => 'getStartDate',
@@ -284,7 +289,8 @@ class CalendarDto implements ArrayAccess
      * @param string $microsoft_intended_status Specifies the INTENDED status. Enum, available values: NotDefined, Free, Tentative, Busy, Oof
      * @param \Aspose\Email\Model\MailAddress[] $optional_attendees Optional attendees.
      * @param \Aspose\Email\Model\MailAddress $organizer Event organizer.
-     * @param string $recurrence_string String representation of recurrence pattern (See iCalendar RFC, \"Recurrence rule\" section). For example:               For daily recurrence:         \"FREQ=DAILY;COUNT=10;WKST=MO\"                   For monthly recurrence:         \"BYSETPOS=1;BYDAY=MO,TU,WE,TH,FR;FREQ=MONTHLY;INTERVAL=10;WKST=MO\"                   For yearly recurrence:         \"BYMONTHDAY=30;BYMONTH=1;FREQ=YEARLY;WKST=MO\"
+     * @param string $recurrence_string Deprecated, use 'Recurrence' property. String representation of recurrence pattern (See iCalendar RFC, \"Recurrence rule\" section). For example:               For daily recurrence:         \"FREQ=DAILY;COUNT=10;WKST=MO\"                   For monthly recurrence:         \"BYSETPOS=1;BYDAY=MO,TU,WE,TH,FR;FREQ=MONTHLY;INTERVAL=10;WKST=MO\"                   For yearly recurrence:         \"BYMONTHDAY=30;BYMONTH=1;FREQ=YEARLY;WKST=MO\"
+     * @param \Aspose\Email\Model\RecurrencePatternDto $recurrence Recurrence pattern
      * @param \Aspose\Email\Model\CalendarReminder[] $reminders Reminders.
      * @param string $sequence_id The sequence id. Read only.
      * @param \DateTime $start_date Start date.
@@ -293,7 +299,7 @@ class CalendarDto implements ArrayAccess
      * @param string $summary Summary.
      * @param string $transparency Specifies whether or not this appointment is intended to be visible in availability searches. Enum, available values: NotDefined, Transparent, Opaque
      */
-    public function __construct($attachments = null, $attendees = null, $description = null, $end_date = null, $end_time_zone = null, $flags = null, $is_description_html = null, $location = null, $method = null, $microsoft_busy_status = null, $microsoft_intended_status = null, $optional_attendees = null, $organizer = null, $recurrence_string = null, $reminders = null, $sequence_id = null, $start_date = null, $start_time_zone = null, $status = null, $summary = null, $transparency = null)
+    public function __construct($attachments = null, $attendees = null, $description = null, $end_date = null, $end_time_zone = null, $flags = null, $is_description_html = null, $location = null, $method = null, $microsoft_busy_status = null, $microsoft_intended_status = null, $optional_attendees = null, $organizer = null, $recurrence_string = null, $recurrence = null, $reminders = null, $sequence_id = null, $start_date = null, $start_time_zone = null, $status = null, $summary = null, $transparency = null)
     {
         $this->container['attachments'] = null;
         $this->container['attendees'] = null;
@@ -309,6 +315,7 @@ class CalendarDto implements ArrayAccess
         $this->container['optional_attendees'] = null;
         $this->container['organizer'] = null;
         $this->container['recurrence_string'] = null;
+        $this->container['recurrence'] = null;
         $this->container['reminders'] = null;
         $this->container['sequence_id'] = null;
         $this->container['start_date'] = null;
@@ -331,6 +338,7 @@ class CalendarDto implements ArrayAccess
         if ($optional_attendees != null) $this->setOptionalAttendees($optional_attendees);
         if ($organizer != null) $this->setOrganizer($organizer);
         if ($recurrence_string != null) $this->setRecurrenceString($recurrence_string);
+        if ($recurrence != null) $this->setRecurrence($recurrence);
         if ($reminders != null) $this->setReminders($reminders);
         if ($sequence_id != null) $this->setSequenceId($sequence_id);
         if ($start_date != null) $this->setStartDate($start_date);
@@ -768,13 +776,37 @@ class CalendarDto implements ArrayAccess
     /**
      * Sets recurrence_string
      *
-     * @param string $recurrence_string String representation of recurrence pattern (See iCalendar RFC, \"Recurrence rule\" section). For example:               For daily recurrence:         \"FREQ=DAILY;COUNT=10;WKST=MO\"                   For monthly recurrence:         \"BYSETPOS=1;BYDAY=MO,TU,WE,TH,FR;FREQ=MONTHLY;INTERVAL=10;WKST=MO\"                   For yearly recurrence:         \"BYMONTHDAY=30;BYMONTH=1;FREQ=YEARLY;WKST=MO\"
+     * @param string $recurrence_string Deprecated, use 'Recurrence' property. String representation of recurrence pattern (See iCalendar RFC, \"Recurrence rule\" section). For example:               For daily recurrence:         \"FREQ=DAILY;COUNT=10;WKST=MO\"                   For monthly recurrence:         \"BYSETPOS=1;BYDAY=MO,TU,WE,TH,FR;FREQ=MONTHLY;INTERVAL=10;WKST=MO\"                   For yearly recurrence:         \"BYMONTHDAY=30;BYMONTH=1;FREQ=YEARLY;WKST=MO\"
      *
      * @return $this
      */
     public function setRecurrenceString($recurrence_string)
     {
         $this->container['recurrence_string'] = $recurrence_string;
+
+        return $this;
+    }
+
+    /**
+     * Gets recurrence
+     *
+     * @return \Aspose\Email\Model\RecurrencePatternDto
+     */
+    public function getRecurrence()
+    {
+        return $this->container['recurrence'];
+    }
+
+    /**
+     * Sets recurrence
+     *
+     * @param \Aspose\Email\Model\RecurrencePatternDto $recurrence Recurrence pattern
+     *
+     * @return $this
+     */
+    public function setRecurrence($recurrence)
+    {
+        $this->container['recurrence'] = $recurrence;
 
         return $this;
     }

@@ -41,7 +41,7 @@ use \Aspose\Email\ObjectSerializer;
  */
 class ContactPhoto implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    const DISCRIMINATOR = 'Type';
 
     /**
      * The original name of the model.
@@ -57,7 +57,8 @@ class ContactPhoto implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'photo_image_format' => 'string',
-        'base64_data' => 'string'
+        'base64_data' => 'string',
+        'discriminator' => 'string'
     ];
 
     /**
@@ -67,7 +68,8 @@ class ContactPhoto implements ArrayAccess
      */
     protected static $swaggerFormats = [
         'photo_image_format' => null,
-        'base64_data' => null
+        'base64_data' => null,
+        'discriminator' => null
     ];
 
     /**
@@ -98,7 +100,8 @@ class ContactPhoto implements ArrayAccess
      */
     protected static $attributeMap = [
         'photo_image_format' => 'photoImageFormat',
-        'base64_data' => 'base64Data'
+        'base64_data' => 'base64Data',
+        'discriminator' => 'discriminator'
     ];
 
     /**
@@ -108,7 +111,8 @@ class ContactPhoto implements ArrayAccess
      */
     protected static $setters = [
         'photo_image_format' => 'setPhotoImageFormat',
-        'base64_data' => 'setBase64Data'
+        'base64_data' => 'setBase64Data',
+        'discriminator' => 'setDiscriminator'
     ];
 
     /**
@@ -118,7 +122,8 @@ class ContactPhoto implements ArrayAccess
      */
     protected static $getters = [
         'photo_image_format' => 'getPhotoImageFormat',
-        'base64_data' => 'getBase64Data'
+        'base64_data' => 'getBase64Data',
+        'discriminator' => 'getDiscriminator'
     ];
 
     /**
@@ -178,14 +183,21 @@ class ContactPhoto implements ArrayAccess
      *  
      * @param string $photo_image_format MapiContact photo image format. Enum, available values: Undefined, Jpeg, Gif, Wmf, Bmp, Tiff
      * @param string $base64_data Photo serialized as base64 string.
+     * @param string $discriminator 
      */
-    public function __construct($photo_image_format = null, $base64_data = null)
+    public function __construct($photo_image_format = null, $base64_data = null, $discriminator = null)
     {
         $this->container['photo_image_format'] = null;
         $this->container['base64_data'] = null;
+        $this->container['discriminator'] = null;
 
         if ($photo_image_format != null) $this->setPhotoImageFormat($photo_image_format);
         if ($base64_data != null) $this->setBase64Data($base64_data);
+        $this->container['discriminator'] = (new \ReflectionClass($this))->getShortName();
+
+        // Initialize discriminator property with the model name.
+        $discriminator = array_search('Type', self::$attributeMap);
+        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /**
@@ -200,6 +212,9 @@ class ContactPhoto implements ArrayAccess
         if ($this->container['photo_image_format'] === null) {
             $invalidProperties[] = "'photo_image_format' can't be null";
         }
+        if ($this->container['discriminator'] === null) {
+            $invalidProperties[] = "'discriminator' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -213,6 +228,9 @@ class ContactPhoto implements ArrayAccess
     {
 
         if ($this->container['photo_image_format'] === null) {
+            return false;
+        }
+        if ($this->container['discriminator'] === null) {
             return false;
         }
         return true;
@@ -266,6 +284,25 @@ class ContactPhoto implements ArrayAccess
 
         return $this;
     }
+
+    /**
+     * Gets discriminator
+     *
+     * @return string
+     */
+    public function getDiscriminator()
+    {
+        return $this->container['discriminator'];
+    }
+
+    /**
+     * Sets discriminator
+     *
+     * @param string $discriminator discriminator
+     *
+     * @return $this
+     */
+    public function setDiscriminator($discriminator) { /* Does nothing */ }
     /**
      * Returns true if offset exists. False otherwise.
      *

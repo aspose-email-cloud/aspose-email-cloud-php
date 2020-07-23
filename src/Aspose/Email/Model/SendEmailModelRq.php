@@ -54,7 +54,7 @@ class SendEmailModelRq extends AccountBaseRequest
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'message' => 'object'
+        'message' => '\Aspose\Email\Model\EmailDto'
     ];
 
     /**
@@ -166,7 +166,7 @@ class SendEmailModelRq extends AccountBaseRequest
      * @param string $first_account First account storage file name
      * @param string $second_account Additional email account (for example, FirstAccount could be IMAP, and second one could be SMTP)
      * @param \Aspose\Email\Model\StorageFolderLocation $storage_folder Storage folder location of account files
-     * @param object $message Message to send
+     * @param \Aspose\Email\Model\EmailDto $message Message to send
      */
     public function __construct($first_account = null, $second_account = null, $storage_folder = null, $message = null)
     {
@@ -210,7 +210,7 @@ class SendEmailModelRq extends AccountBaseRequest
     /**
      * Gets message
      *
-     * @return object
+     * @return \Aspose\Email\Model\EmailDto
      */
     public function getMessage()
     {
@@ -220,7 +220,7 @@ class SendEmailModelRq extends AccountBaseRequest
     /**
      * Sets message
      *
-     * @param object $message Message to send
+     * @param \Aspose\Email\Model\EmailDto $message Message to send
      *
      * @return $this
      */

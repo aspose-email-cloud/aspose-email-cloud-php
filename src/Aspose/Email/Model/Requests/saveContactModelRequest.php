@@ -38,7 +38,7 @@ class SaveContactModelRequest
      *  
      * @param string $format Contact document format. Enum, available values: VCard, WebDav, Msg
      * @param string $name Contact document file name.
-     * @param \Aspose\Email\Model\StorageModelRqOfContactDto $rq Create contact request.
+     * @param \Aspose\Email\Model\StorageModelRqOfContactDto $rq Create/Update contact request.
      */
     public function __construct($format, $name, $rq)             
     {
@@ -58,7 +58,7 @@ class SaveContactModelRequest
     public $name;
 	
     /**
-     * Create contact request.
+     * Create/Update contact request.
      */
     public $rq;
 }

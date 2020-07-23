@@ -7959,6 +7959,284 @@ class EmailApi
     }
 
     /**
+     * Operation convertCalendarModelToMapiModel
+     *
+     * Converts CalendarDto to MapiCalendarDto.
+     *
+     * @param Requests\ConvertCalendarModelToMapiModelRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Email\Model\MapiCalendarDto
+     */
+    public function convertCalendarModelToMapiModel(Requests\ConvertCalendarModelToMapiModelRequest $request)
+    {
+        try {
+             list($response) = $this->convertCalendarModelToMapiModelWithHttpInfo($request);
+             return $response;
+        }
+        catch(RepeatRequestException $e) {
+             list($response) = $this->convertCalendarModelToMapiModelWithHttpInfo($request);
+             return $response;
+        } 
+    }
+
+    /**
+     * Operation convertCalendarModelToMapiModelWithHttpInfo
+     *
+     * Converts CalendarDto to MapiCalendarDto.
+     *
+     * @param Requests\ConvertCalendarModelToMapiModelRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Email\Model\MapiCalendarDto, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function convertCalendarModelToMapiModelWithHttpInfo(Requests\ConvertCalendarModelToMapiModelRequest $request)
+    {
+        $returnType = '\Aspose\Email\Model\MapiCalendarDto';
+        $request = $this->convertCalendarModelToMapiModelRequest($request);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null);
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                if ($statusCode === 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                }
+          
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+            
+            if ($this->config->getDebug()) {
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Email\Model\MapiCalendarDto', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation convertCalendarModelToMapiModelAsync
+     *
+     * Converts CalendarDto to MapiCalendarDto.
+     *
+     * @param Requests\ConvertCalendarModelToMapiModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function convertCalendarModelToMapiModelAsync(Requests\ConvertCalendarModelToMapiModelRequest $request) 
+    {
+        return $this->convertCalendarModelToMapiModelAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation convertCalendarModelToMapiModelAsyncWithHttpInfo
+     *
+     * Converts CalendarDto to MapiCalendarDto.
+     *
+     * @param Requests\ConvertCalendarModelToMapiModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function convertCalendarModelToMapiModelAsyncWithHttpInfo(Requests\ConvertCalendarModelToMapiModelRequest $request) 
+    {
+        $returnType = '\Aspose\Email\Model\MapiCalendarDto';
+        $request = $this->convertCalendarModelToMapiModelRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+                    
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+          
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    }
+          
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'convertCalendarModelToMapiModel'
+     *
+     * @param Requests\ConvertCalendarModelToMapiModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function convertCalendarModelToMapiModelRequest(Requests\ConvertCalendarModelToMapiModelRequest $request)
+    {
+        // verify the required parameter 'calendar_dto' is set
+        if ($request->calendar_dto === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $calendar_dto when calling convertCalendarModelToMapiModel');
+        }
+
+        $resourcePath = '/email/CalendarModel/model-as-mapi-model';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $multipart = false;
+    
+
+    
+    
+        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
+        $formFiles = [];
+        // body params
+        $_tempBody = null;
+        if (isset($request->calendar_dto)) {
+            if (is_string($request->calendar_dto)) {
+                $_tempBody = "\"" . $request->calendar_dto . "\"";   
+            } else {
+                $_tempBody = $request->calendar_dto;
+            }
+        }
+
+        if ($multipart) {
+            $headers= $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContent = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = $formParams["data"];
+            }
+        }
+    
+        $this->_requestToken();
+
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
+        }
+    
+        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+    
+        $req = new Request(
+            'PUT',
+            $this->config->getHost() . $resourcePath,
+            $headers,
+            $httpBody
+        );
+        if ($this->config->getDebug()) {
+            $this->_writeRequestLog('PUT', $this->config->getHost() . $resourcePath, $headers, $httpBody);
+        }
+        
+        return $req;
+    }
+
+    /**
      * Operation convertContact
      *
      * Converts contact document to specified format and returns as file
@@ -8545,6 +8823,284 @@ class EmailApi
     }
 
     /**
+     * Operation convertContactModelToMapiModel
+     *
+     * Converts ContactDto to MapiContactDto.
+     *
+     * @param Requests\ConvertContactModelToMapiModelRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Email\Model\MapiContactDto
+     */
+    public function convertContactModelToMapiModel(Requests\ConvertContactModelToMapiModelRequest $request)
+    {
+        try {
+             list($response) = $this->convertContactModelToMapiModelWithHttpInfo($request);
+             return $response;
+        }
+        catch(RepeatRequestException $e) {
+             list($response) = $this->convertContactModelToMapiModelWithHttpInfo($request);
+             return $response;
+        } 
+    }
+
+    /**
+     * Operation convertContactModelToMapiModelWithHttpInfo
+     *
+     * Converts ContactDto to MapiContactDto.
+     *
+     * @param Requests\ConvertContactModelToMapiModelRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Email\Model\MapiContactDto, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function convertContactModelToMapiModelWithHttpInfo(Requests\ConvertContactModelToMapiModelRequest $request)
+    {
+        $returnType = '\Aspose\Email\Model\MapiContactDto';
+        $request = $this->convertContactModelToMapiModelRequest($request);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null);
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                if ($statusCode === 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                }
+          
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+            
+            if ($this->config->getDebug()) {
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Email\Model\MapiContactDto', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation convertContactModelToMapiModelAsync
+     *
+     * Converts ContactDto to MapiContactDto.
+     *
+     * @param Requests\ConvertContactModelToMapiModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function convertContactModelToMapiModelAsync(Requests\ConvertContactModelToMapiModelRequest $request) 
+    {
+        return $this->convertContactModelToMapiModelAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation convertContactModelToMapiModelAsyncWithHttpInfo
+     *
+     * Converts ContactDto to MapiContactDto.
+     *
+     * @param Requests\ConvertContactModelToMapiModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function convertContactModelToMapiModelAsyncWithHttpInfo(Requests\ConvertContactModelToMapiModelRequest $request) 
+    {
+        $returnType = '\Aspose\Email\Model\MapiContactDto';
+        $request = $this->convertContactModelToMapiModelRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+                    
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+          
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    }
+          
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'convertContactModelToMapiModel'
+     *
+     * @param Requests\ConvertContactModelToMapiModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function convertContactModelToMapiModelRequest(Requests\ConvertContactModelToMapiModelRequest $request)
+    {
+        // verify the required parameter 'contact_dto' is set
+        if ($request->contact_dto === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $contact_dto when calling convertContactModelToMapiModel');
+        }
+
+        $resourcePath = '/email/ContactModel/model-as-mapi-model';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $multipart = false;
+    
+
+    
+    
+        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
+        $formFiles = [];
+        // body params
+        $_tempBody = null;
+        if (isset($request->contact_dto)) {
+            if (is_string($request->contact_dto)) {
+                $_tempBody = "\"" . $request->contact_dto . "\"";   
+            } else {
+                $_tempBody = $request->contact_dto;
+            }
+        }
+
+        if ($multipart) {
+            $headers= $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContent = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = $formParams["data"];
+            }
+        }
+    
+        $this->_requestToken();
+
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
+        }
+    
+        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+    
+        $req = new Request(
+            'PUT',
+            $this->config->getHost() . $resourcePath,
+            $headers,
+            $httpBody
+        );
+        if ($this->config->getDebug()) {
+            $this->_writeRequestLog('PUT', $this->config->getHost() . $resourcePath, $headers, $httpBody);
+        }
+        
+        return $req;
+    }
+
+    /**
      * Operation convertEmail
      *
      * Converts email document to specified format and returns as file
@@ -9041,6 +9597,1979 @@ class EmailApi
                 $_tempBody = "\"" . $request->email_dto . "\"";   
             } else {
                 $_tempBody = $request->email_dto;
+            }
+        }
+
+        if ($multipart) {
+            $headers= $this->headerSelector->selectHeadersForMultipart(
+                ['multipart/form-data']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['multipart/form-data'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContent = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = $formParams["data"];
+            }
+        }
+    
+        $this->_requestToken();
+
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
+        }
+    
+        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+    
+        $req = new Request(
+            'PUT',
+            $this->config->getHost() . $resourcePath,
+            $headers,
+            $httpBody
+        );
+        if ($this->config->getDebug()) {
+            $this->_writeRequestLog('PUT', $this->config->getHost() . $resourcePath, $headers, $httpBody);
+        }
+        
+        return $req;
+    }
+
+    /**
+     * Operation convertEmailModelToMapiModel
+     *
+     * Converts EmailDto to MapiMessageDto.
+     *
+     * @param Requests\ConvertEmailModelToMapiModelRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Email\Model\MapiMessageDto
+     */
+    public function convertEmailModelToMapiModel(Requests\ConvertEmailModelToMapiModelRequest $request)
+    {
+        try {
+             list($response) = $this->convertEmailModelToMapiModelWithHttpInfo($request);
+             return $response;
+        }
+        catch(RepeatRequestException $e) {
+             list($response) = $this->convertEmailModelToMapiModelWithHttpInfo($request);
+             return $response;
+        } 
+    }
+
+    /**
+     * Operation convertEmailModelToMapiModelWithHttpInfo
+     *
+     * Converts EmailDto to MapiMessageDto.
+     *
+     * @param Requests\ConvertEmailModelToMapiModelRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Email\Model\MapiMessageDto, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function convertEmailModelToMapiModelWithHttpInfo(Requests\ConvertEmailModelToMapiModelRequest $request)
+    {
+        $returnType = '\Aspose\Email\Model\MapiMessageDto';
+        $request = $this->convertEmailModelToMapiModelRequest($request);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null);
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                if ($statusCode === 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                }
+          
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+            
+            if ($this->config->getDebug()) {
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Email\Model\MapiMessageDto', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation convertEmailModelToMapiModelAsync
+     *
+     * Converts EmailDto to MapiMessageDto.
+     *
+     * @param Requests\ConvertEmailModelToMapiModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function convertEmailModelToMapiModelAsync(Requests\ConvertEmailModelToMapiModelRequest $request) 
+    {
+        return $this->convertEmailModelToMapiModelAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation convertEmailModelToMapiModelAsyncWithHttpInfo
+     *
+     * Converts EmailDto to MapiMessageDto.
+     *
+     * @param Requests\ConvertEmailModelToMapiModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function convertEmailModelToMapiModelAsyncWithHttpInfo(Requests\ConvertEmailModelToMapiModelRequest $request) 
+    {
+        $returnType = '\Aspose\Email\Model\MapiMessageDto';
+        $request = $this->convertEmailModelToMapiModelRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+                    
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+          
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    }
+          
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'convertEmailModelToMapiModel'
+     *
+     * @param Requests\ConvertEmailModelToMapiModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function convertEmailModelToMapiModelRequest(Requests\ConvertEmailModelToMapiModelRequest $request)
+    {
+        // verify the required parameter 'email_dto' is set
+        if ($request->email_dto === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $email_dto when calling convertEmailModelToMapiModel');
+        }
+
+        $resourcePath = '/email/model/model-as-mapi-model';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $multipart = false;
+    
+
+    
+    
+        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
+        $formFiles = [];
+        // body params
+        $_tempBody = null;
+        if (isset($request->email_dto)) {
+            if (is_string($request->email_dto)) {
+                $_tempBody = "\"" . $request->email_dto . "\"";   
+            } else {
+                $_tempBody = $request->email_dto;
+            }
+        }
+
+        if ($multipart) {
+            $headers= $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContent = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = $formParams["data"];
+            }
+        }
+    
+        $this->_requestToken();
+
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
+        }
+    
+        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+    
+        $req = new Request(
+            'PUT',
+            $this->config->getHost() . $resourcePath,
+            $headers,
+            $httpBody
+        );
+        if ($this->config->getDebug()) {
+            $this->_writeRequestLog('PUT', $this->config->getHost() . $resourcePath, $headers, $httpBody);
+        }
+        
+        return $req;
+    }
+
+    /**
+     * Operation convertMapiCalendarModelToCalendarModel
+     *
+     * Converts MAPI calendar model to CalendarDto model
+     *
+     * @param Requests\ConvertMapiCalendarModelToCalendarModelRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Email\Model\CalendarDto
+     */
+    public function convertMapiCalendarModelToCalendarModel(Requests\ConvertMapiCalendarModelToCalendarModelRequest $request)
+    {
+        try {
+             list($response) = $this->convertMapiCalendarModelToCalendarModelWithHttpInfo($request);
+             return $response;
+        }
+        catch(RepeatRequestException $e) {
+             list($response) = $this->convertMapiCalendarModelToCalendarModelWithHttpInfo($request);
+             return $response;
+        } 
+    }
+
+    /**
+     * Operation convertMapiCalendarModelToCalendarModelWithHttpInfo
+     *
+     * Converts MAPI calendar model to CalendarDto model
+     *
+     * @param Requests\ConvertMapiCalendarModelToCalendarModelRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Email\Model\CalendarDto, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function convertMapiCalendarModelToCalendarModelWithHttpInfo(Requests\ConvertMapiCalendarModelToCalendarModelRequest $request)
+    {
+        $returnType = '\Aspose\Email\Model\CalendarDto';
+        $request = $this->convertMapiCalendarModelToCalendarModelRequest($request);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null);
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                if ($statusCode === 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                }
+          
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+            
+            if ($this->config->getDebug()) {
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Email\Model\CalendarDto', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation convertMapiCalendarModelToCalendarModelAsync
+     *
+     * Converts MAPI calendar model to CalendarDto model
+     *
+     * @param Requests\ConvertMapiCalendarModelToCalendarModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function convertMapiCalendarModelToCalendarModelAsync(Requests\ConvertMapiCalendarModelToCalendarModelRequest $request) 
+    {
+        return $this->convertMapiCalendarModelToCalendarModelAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation convertMapiCalendarModelToCalendarModelAsyncWithHttpInfo
+     *
+     * Converts MAPI calendar model to CalendarDto model
+     *
+     * @param Requests\ConvertMapiCalendarModelToCalendarModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function convertMapiCalendarModelToCalendarModelAsyncWithHttpInfo(Requests\ConvertMapiCalendarModelToCalendarModelRequest $request) 
+    {
+        $returnType = '\Aspose\Email\Model\CalendarDto';
+        $request = $this->convertMapiCalendarModelToCalendarModelRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+                    
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+          
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    }
+          
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'convertMapiCalendarModelToCalendarModel'
+     *
+     * @param Requests\ConvertMapiCalendarModelToCalendarModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function convertMapiCalendarModelToCalendarModelRequest(Requests\ConvertMapiCalendarModelToCalendarModelRequest $request)
+    {
+        // verify the required parameter 'mapi_calendar_dto' is set
+        if ($request->mapi_calendar_dto === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $mapi_calendar_dto when calling convertMapiCalendarModelToCalendarModel');
+        }
+
+        $resourcePath = '/email/MapiCalendar/model-as-calendar-model';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $multipart = false;
+    
+
+    
+    
+        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
+        $formFiles = [];
+        // body params
+        $_tempBody = null;
+        if (isset($request->mapi_calendar_dto)) {
+            if (is_string($request->mapi_calendar_dto)) {
+                $_tempBody = "\"" . $request->mapi_calendar_dto . "\"";   
+            } else {
+                $_tempBody = $request->mapi_calendar_dto;
+            }
+        }
+
+        if ($multipart) {
+            $headers= $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContent = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = $formParams["data"];
+            }
+        }
+    
+        $this->_requestToken();
+
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
+        }
+    
+        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+    
+        $req = new Request(
+            'PUT',
+            $this->config->getHost() . $resourcePath,
+            $headers,
+            $httpBody
+        );
+        if ($this->config->getDebug()) {
+            $this->_writeRequestLog('PUT', $this->config->getHost() . $resourcePath, $headers, $httpBody);
+        }
+        
+        return $req;
+    }
+
+    /**
+     * Operation convertMapiCalendarModelToFile
+     *
+     * Converts MAPI calendar model to specified format and returns as file
+     *
+     * @param Requests\ConvertMapiCalendarModelToFileRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \SplFileObject
+     */
+    public function convertMapiCalendarModelToFile(Requests\ConvertMapiCalendarModelToFileRequest $request)
+    {
+        try {
+             list($response) = $this->convertMapiCalendarModelToFileWithHttpInfo($request);
+             return $response;
+        }
+        catch(RepeatRequestException $e) {
+             list($response) = $this->convertMapiCalendarModelToFileWithHttpInfo($request);
+             return $response;
+        } 
+    }
+
+    /**
+     * Operation convertMapiCalendarModelToFileWithHttpInfo
+     *
+     * Converts MAPI calendar model to specified format and returns as file
+     *
+     * @param Requests\ConvertMapiCalendarModelToFileRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function convertMapiCalendarModelToFileWithHttpInfo(Requests\ConvertMapiCalendarModelToFileRequest $request)
+    {
+        $returnType = '\SplFileObject';
+        $request = $this->convertMapiCalendarModelToFileRequest($request);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null);
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                if ($statusCode === 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                }
+          
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+            
+            if ($this->config->getDebug()) {
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\SplFileObject', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation convertMapiCalendarModelToFileAsync
+     *
+     * Converts MAPI calendar model to specified format and returns as file
+     *
+     * @param Requests\ConvertMapiCalendarModelToFileRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function convertMapiCalendarModelToFileAsync(Requests\ConvertMapiCalendarModelToFileRequest $request) 
+    {
+        return $this->convertMapiCalendarModelToFileAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation convertMapiCalendarModelToFileAsyncWithHttpInfo
+     *
+     * Converts MAPI calendar model to specified format and returns as file
+     *
+     * @param Requests\ConvertMapiCalendarModelToFileRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function convertMapiCalendarModelToFileAsyncWithHttpInfo(Requests\ConvertMapiCalendarModelToFileRequest $request) 
+    {
+        $returnType = '\SplFileObject';
+        $request = $this->convertMapiCalendarModelToFileRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+                    
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+          
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    }
+          
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'convertMapiCalendarModelToFile'
+     *
+     * @param Requests\ConvertMapiCalendarModelToFileRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function convertMapiCalendarModelToFileRequest(Requests\ConvertMapiCalendarModelToFileRequest $request)
+    {
+        // verify the required parameter 'destination_format' is set
+        if ($request->destination_format === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $destination_format when calling convertMapiCalendarModelToFile');
+        }
+        // verify the required parameter 'mapi_calendar_dto' is set
+        if ($request->mapi_calendar_dto === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $mapi_calendar_dto when calling convertMapiCalendarModelToFile');
+        }
+
+        $resourcePath = '/email/MapiCalendar/model-as-file/{destinationFormat}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $multipart = false;
+    
+        // path params
+        if ($request->destination_format !== null) {
+            $localName = lcfirst('destinationFormat');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->destination_format), $resourcePath);
+        }
+
+    
+    
+        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
+        $formFiles = [];
+        // body params
+        $_tempBody = null;
+        if (isset($request->mapi_calendar_dto)) {
+            if (is_string($request->mapi_calendar_dto)) {
+                $_tempBody = "\"" . $request->mapi_calendar_dto . "\"";   
+            } else {
+                $_tempBody = $request->mapi_calendar_dto;
+            }
+        }
+
+        if ($multipart) {
+            $headers= $this->headerSelector->selectHeadersForMultipart(
+                ['multipart/form-data']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['multipart/form-data'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContent = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = $formParams["data"];
+            }
+        }
+    
+        $this->_requestToken();
+
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
+        }
+    
+        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+    
+        $req = new Request(
+            'PUT',
+            $this->config->getHost() . $resourcePath,
+            $headers,
+            $httpBody
+        );
+        if ($this->config->getDebug()) {
+            $this->_writeRequestLog('PUT', $this->config->getHost() . $resourcePath, $headers, $httpBody);
+        }
+        
+        return $req;
+    }
+
+    /**
+     * Operation convertMapiContactModelToContactModel
+     *
+     * Converts MAPI contact model to ContactDto model
+     *
+     * @param Requests\ConvertMapiContactModelToContactModelRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Email\Model\ContactDto
+     */
+    public function convertMapiContactModelToContactModel(Requests\ConvertMapiContactModelToContactModelRequest $request)
+    {
+        try {
+             list($response) = $this->convertMapiContactModelToContactModelWithHttpInfo($request);
+             return $response;
+        }
+        catch(RepeatRequestException $e) {
+             list($response) = $this->convertMapiContactModelToContactModelWithHttpInfo($request);
+             return $response;
+        } 
+    }
+
+    /**
+     * Operation convertMapiContactModelToContactModelWithHttpInfo
+     *
+     * Converts MAPI contact model to ContactDto model
+     *
+     * @param Requests\ConvertMapiContactModelToContactModelRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Email\Model\ContactDto, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function convertMapiContactModelToContactModelWithHttpInfo(Requests\ConvertMapiContactModelToContactModelRequest $request)
+    {
+        $returnType = '\Aspose\Email\Model\ContactDto';
+        $request = $this->convertMapiContactModelToContactModelRequest($request);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null);
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                if ($statusCode === 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                }
+          
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+            
+            if ($this->config->getDebug()) {
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Email\Model\ContactDto', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation convertMapiContactModelToContactModelAsync
+     *
+     * Converts MAPI contact model to ContactDto model
+     *
+     * @param Requests\ConvertMapiContactModelToContactModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function convertMapiContactModelToContactModelAsync(Requests\ConvertMapiContactModelToContactModelRequest $request) 
+    {
+        return $this->convertMapiContactModelToContactModelAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation convertMapiContactModelToContactModelAsyncWithHttpInfo
+     *
+     * Converts MAPI contact model to ContactDto model
+     *
+     * @param Requests\ConvertMapiContactModelToContactModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function convertMapiContactModelToContactModelAsyncWithHttpInfo(Requests\ConvertMapiContactModelToContactModelRequest $request) 
+    {
+        $returnType = '\Aspose\Email\Model\ContactDto';
+        $request = $this->convertMapiContactModelToContactModelRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+                    
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+          
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    }
+          
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'convertMapiContactModelToContactModel'
+     *
+     * @param Requests\ConvertMapiContactModelToContactModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function convertMapiContactModelToContactModelRequest(Requests\ConvertMapiContactModelToContactModelRequest $request)
+    {
+        // verify the required parameter 'mapi_contact_dto' is set
+        if ($request->mapi_contact_dto === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $mapi_contact_dto when calling convertMapiContactModelToContactModel');
+        }
+
+        $resourcePath = '/email/MapiContact/model-as-contact-model';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $multipart = false;
+    
+
+    
+    
+        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
+        $formFiles = [];
+        // body params
+        $_tempBody = null;
+        if (isset($request->mapi_contact_dto)) {
+            if (is_string($request->mapi_contact_dto)) {
+                $_tempBody = "\"" . $request->mapi_contact_dto . "\"";   
+            } else {
+                $_tempBody = $request->mapi_contact_dto;
+            }
+        }
+
+        if ($multipart) {
+            $headers= $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContent = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = $formParams["data"];
+            }
+        }
+    
+        $this->_requestToken();
+
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
+        }
+    
+        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+    
+        $req = new Request(
+            'PUT',
+            $this->config->getHost() . $resourcePath,
+            $headers,
+            $httpBody
+        );
+        if ($this->config->getDebug()) {
+            $this->_writeRequestLog('PUT', $this->config->getHost() . $resourcePath, $headers, $httpBody);
+        }
+        
+        return $req;
+    }
+
+    /**
+     * Operation convertMapiContactModelToFile
+     *
+     * Converts MAPI contact model to specified format and returns as file
+     *
+     * @param Requests\ConvertMapiContactModelToFileRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \SplFileObject
+     */
+    public function convertMapiContactModelToFile(Requests\ConvertMapiContactModelToFileRequest $request)
+    {
+        try {
+             list($response) = $this->convertMapiContactModelToFileWithHttpInfo($request);
+             return $response;
+        }
+        catch(RepeatRequestException $e) {
+             list($response) = $this->convertMapiContactModelToFileWithHttpInfo($request);
+             return $response;
+        } 
+    }
+
+    /**
+     * Operation convertMapiContactModelToFileWithHttpInfo
+     *
+     * Converts MAPI contact model to specified format and returns as file
+     *
+     * @param Requests\ConvertMapiContactModelToFileRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function convertMapiContactModelToFileWithHttpInfo(Requests\ConvertMapiContactModelToFileRequest $request)
+    {
+        $returnType = '\SplFileObject';
+        $request = $this->convertMapiContactModelToFileRequest($request);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null);
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                if ($statusCode === 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                }
+          
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+            
+            if ($this->config->getDebug()) {
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\SplFileObject', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation convertMapiContactModelToFileAsync
+     *
+     * Converts MAPI contact model to specified format and returns as file
+     *
+     * @param Requests\ConvertMapiContactModelToFileRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function convertMapiContactModelToFileAsync(Requests\ConvertMapiContactModelToFileRequest $request) 
+    {
+        return $this->convertMapiContactModelToFileAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation convertMapiContactModelToFileAsyncWithHttpInfo
+     *
+     * Converts MAPI contact model to specified format and returns as file
+     *
+     * @param Requests\ConvertMapiContactModelToFileRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function convertMapiContactModelToFileAsyncWithHttpInfo(Requests\ConvertMapiContactModelToFileRequest $request) 
+    {
+        $returnType = '\SplFileObject';
+        $request = $this->convertMapiContactModelToFileRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+                    
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+          
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    }
+          
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'convertMapiContactModelToFile'
+     *
+     * @param Requests\ConvertMapiContactModelToFileRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function convertMapiContactModelToFileRequest(Requests\ConvertMapiContactModelToFileRequest $request)
+    {
+        // verify the required parameter 'destination_format' is set
+        if ($request->destination_format === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $destination_format when calling convertMapiContactModelToFile');
+        }
+        // verify the required parameter 'mapi_contact_dto' is set
+        if ($request->mapi_contact_dto === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $mapi_contact_dto when calling convertMapiContactModelToFile');
+        }
+
+        $resourcePath = '/email/MapiContact/model-as-file/{destinationFormat}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $multipart = false;
+    
+        // path params
+        if ($request->destination_format !== null) {
+            $localName = lcfirst('destinationFormat');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->destination_format), $resourcePath);
+        }
+
+    
+    
+        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
+        $formFiles = [];
+        // body params
+        $_tempBody = null;
+        if (isset($request->mapi_contact_dto)) {
+            if (is_string($request->mapi_contact_dto)) {
+                $_tempBody = "\"" . $request->mapi_contact_dto . "\"";   
+            } else {
+                $_tempBody = $request->mapi_contact_dto;
+            }
+        }
+
+        if ($multipart) {
+            $headers= $this->headerSelector->selectHeadersForMultipart(
+                ['multipart/form-data']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['multipart/form-data'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContent = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = $formParams["data"];
+            }
+        }
+    
+        $this->_requestToken();
+
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
+        }
+    
+        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+    
+        $req = new Request(
+            'PUT',
+            $this->config->getHost() . $resourcePath,
+            $headers,
+            $httpBody
+        );
+        if ($this->config->getDebug()) {
+            $this->_writeRequestLog('PUT', $this->config->getHost() . $resourcePath, $headers, $httpBody);
+        }
+        
+        return $req;
+    }
+
+    /**
+     * Operation convertMapiMessageModelToEmailModel
+     *
+     * Converts MAPI message model to EmailDto model
+     *
+     * @param Requests\ConvertMapiMessageModelToEmailModelRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Email\Model\EmailDto
+     */
+    public function convertMapiMessageModelToEmailModel(Requests\ConvertMapiMessageModelToEmailModelRequest $request)
+    {
+        try {
+             list($response) = $this->convertMapiMessageModelToEmailModelWithHttpInfo($request);
+             return $response;
+        }
+        catch(RepeatRequestException $e) {
+             list($response) = $this->convertMapiMessageModelToEmailModelWithHttpInfo($request);
+             return $response;
+        } 
+    }
+
+    /**
+     * Operation convertMapiMessageModelToEmailModelWithHttpInfo
+     *
+     * Converts MAPI message model to EmailDto model
+     *
+     * @param Requests\ConvertMapiMessageModelToEmailModelRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Email\Model\EmailDto, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function convertMapiMessageModelToEmailModelWithHttpInfo(Requests\ConvertMapiMessageModelToEmailModelRequest $request)
+    {
+        $returnType = '\Aspose\Email\Model\EmailDto';
+        $request = $this->convertMapiMessageModelToEmailModelRequest($request);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null);
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                if ($statusCode === 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                }
+          
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+            
+            if ($this->config->getDebug()) {
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Email\Model\EmailDto', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation convertMapiMessageModelToEmailModelAsync
+     *
+     * Converts MAPI message model to EmailDto model
+     *
+     * @param Requests\ConvertMapiMessageModelToEmailModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function convertMapiMessageModelToEmailModelAsync(Requests\ConvertMapiMessageModelToEmailModelRequest $request) 
+    {
+        return $this->convertMapiMessageModelToEmailModelAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation convertMapiMessageModelToEmailModelAsyncWithHttpInfo
+     *
+     * Converts MAPI message model to EmailDto model
+     *
+     * @param Requests\ConvertMapiMessageModelToEmailModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function convertMapiMessageModelToEmailModelAsyncWithHttpInfo(Requests\ConvertMapiMessageModelToEmailModelRequest $request) 
+    {
+        $returnType = '\Aspose\Email\Model\EmailDto';
+        $request = $this->convertMapiMessageModelToEmailModelRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+                    
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+          
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    }
+          
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'convertMapiMessageModelToEmailModel'
+     *
+     * @param Requests\ConvertMapiMessageModelToEmailModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function convertMapiMessageModelToEmailModelRequest(Requests\ConvertMapiMessageModelToEmailModelRequest $request)
+    {
+        // verify the required parameter 'mapi_message' is set
+        if ($request->mapi_message === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $mapi_message when calling convertMapiMessageModelToEmailModel');
+        }
+
+        $resourcePath = '/email/MapiMessage/model-as-email-model';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $multipart = false;
+    
+
+    
+    
+        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
+        $formFiles = [];
+        // body params
+        $_tempBody = null;
+        if (isset($request->mapi_message)) {
+            if (is_string($request->mapi_message)) {
+                $_tempBody = "\"" . $request->mapi_message . "\"";   
+            } else {
+                $_tempBody = $request->mapi_message;
+            }
+        }
+
+        if ($multipart) {
+            $headers= $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContent = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = $formParams["data"];
+            }
+        }
+    
+        $this->_requestToken();
+
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
+        }
+    
+        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+    
+        $req = new Request(
+            'PUT',
+            $this->config->getHost() . $resourcePath,
+            $headers,
+            $httpBody
+        );
+        if ($this->config->getDebug()) {
+            $this->_writeRequestLog('PUT', $this->config->getHost() . $resourcePath, $headers, $httpBody);
+        }
+        
+        return $req;
+    }
+
+    /**
+     * Operation convertMapiMessageModelToFile
+     *
+     * Converts MAPI message model to specified format and returns as file
+     *
+     * @param Requests\ConvertMapiMessageModelToFileRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \SplFileObject
+     */
+    public function convertMapiMessageModelToFile(Requests\ConvertMapiMessageModelToFileRequest $request)
+    {
+        try {
+             list($response) = $this->convertMapiMessageModelToFileWithHttpInfo($request);
+             return $response;
+        }
+        catch(RepeatRequestException $e) {
+             list($response) = $this->convertMapiMessageModelToFileWithHttpInfo($request);
+             return $response;
+        } 
+    }
+
+    /**
+     * Operation convertMapiMessageModelToFileWithHttpInfo
+     *
+     * Converts MAPI message model to specified format and returns as file
+     *
+     * @param Requests\ConvertMapiMessageModelToFileRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function convertMapiMessageModelToFileWithHttpInfo(Requests\ConvertMapiMessageModelToFileRequest $request)
+    {
+        $returnType = '\SplFileObject';
+        $request = $this->convertMapiMessageModelToFileRequest($request);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null);
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                if ($statusCode === 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                }
+          
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+            
+            if ($this->config->getDebug()) {
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\SplFileObject', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation convertMapiMessageModelToFileAsync
+     *
+     * Converts MAPI message model to specified format and returns as file
+     *
+     * @param Requests\ConvertMapiMessageModelToFileRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function convertMapiMessageModelToFileAsync(Requests\ConvertMapiMessageModelToFileRequest $request) 
+    {
+        return $this->convertMapiMessageModelToFileAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation convertMapiMessageModelToFileAsyncWithHttpInfo
+     *
+     * Converts MAPI message model to specified format and returns as file
+     *
+     * @param Requests\ConvertMapiMessageModelToFileRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function convertMapiMessageModelToFileAsyncWithHttpInfo(Requests\ConvertMapiMessageModelToFileRequest $request) 
+    {
+        $returnType = '\SplFileObject';
+        $request = $this->convertMapiMessageModelToFileRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+                    
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+          
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    }
+          
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'convertMapiMessageModelToFile'
+     *
+     * @param Requests\ConvertMapiMessageModelToFileRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function convertMapiMessageModelToFileRequest(Requests\ConvertMapiMessageModelToFileRequest $request)
+    {
+        // verify the required parameter 'destination_format' is set
+        if ($request->destination_format === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $destination_format when calling convertMapiMessageModelToFile');
+        }
+        // verify the required parameter 'mapi_message' is set
+        if ($request->mapi_message === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $mapi_message when calling convertMapiMessageModelToFile');
+        }
+
+        $resourcePath = '/email/MapiMessage/model-as-file/{destinationFormat}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $multipart = false;
+    
+        // path params
+        if ($request->destination_format !== null) {
+            $localName = lcfirst('destinationFormat');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->destination_format), $resourcePath);
+        }
+
+    
+    
+        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
+        $formFiles = [];
+        // body params
+        $_tempBody = null;
+        if (isset($request->mapi_message)) {
+            if (is_string($request->mapi_message)) {
+                $_tempBody = "\"" . $request->mapi_message . "\"";   
+            } else {
+                $_tempBody = $request->mapi_message;
             }
         }
 
@@ -16463,6 +18992,287 @@ class EmailApi
     }
 
     /**
+     * Operation getCalendarFileAsMapiModel
+     *
+     * Converts calendar file to a MAPI model representation
+     *
+     * @param Requests\GetCalendarFileAsMapiModelRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Email\Model\MapiCalendarDto
+     */
+    public function getCalendarFileAsMapiModel(Requests\GetCalendarFileAsMapiModelRequest $request)
+    {
+        try {
+             list($response) = $this->getCalendarFileAsMapiModelWithHttpInfo($request);
+             return $response;
+        }
+        catch(RepeatRequestException $e) {
+             list($response) = $this->getCalendarFileAsMapiModelWithHttpInfo($request);
+             return $response;
+        } 
+    }
+
+    /**
+     * Operation getCalendarFileAsMapiModelWithHttpInfo
+     *
+     * Converts calendar file to a MAPI model representation
+     *
+     * @param Requests\GetCalendarFileAsMapiModelRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Email\Model\MapiCalendarDto, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getCalendarFileAsMapiModelWithHttpInfo(Requests\GetCalendarFileAsMapiModelRequest $request)
+    {
+        $returnType = '\Aspose\Email\Model\MapiCalendarDto';
+        $request = $this->getCalendarFileAsMapiModelRequest($request);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null);
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                if ($statusCode === 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                }
+          
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+            
+            if ($this->config->getDebug()) {
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Email\Model\MapiCalendarDto', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getCalendarFileAsMapiModelAsync
+     *
+     * Converts calendar file to a MAPI model representation
+     *
+     * @param Requests\GetCalendarFileAsMapiModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getCalendarFileAsMapiModelAsync(Requests\GetCalendarFileAsMapiModelRequest $request) 
+    {
+        return $this->getCalendarFileAsMapiModelAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getCalendarFileAsMapiModelAsyncWithHttpInfo
+     *
+     * Converts calendar file to a MAPI model representation
+     *
+     * @param Requests\GetCalendarFileAsMapiModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getCalendarFileAsMapiModelAsyncWithHttpInfo(Requests\GetCalendarFileAsMapiModelRequest $request) 
+    {
+        $returnType = '\Aspose\Email\Model\MapiCalendarDto';
+        $request = $this->getCalendarFileAsMapiModelRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+                    
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+          
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    }
+          
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getCalendarFileAsMapiModel'
+     *
+     * @param Requests\GetCalendarFileAsMapiModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function getCalendarFileAsMapiModelRequest(Requests\GetCalendarFileAsMapiModelRequest $request)
+    {
+        // verify the required parameter 'file' is set
+        if ($request->file === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $file when calling getCalendarFileAsMapiModel');
+        }
+
+        $resourcePath = '/email/MapiCalendar/file-as-model';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $multipart = false;
+    
+
+    
+    
+        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
+        $formFiles = [];
+        // form params
+        if ($request->file !== null) {
+            $multipart = true;
+            $filename = ObjectSerializer::toFormValue($request->file);
+            $handle = fopen($filename, "rb");
+            $fsize = filesize($filename);
+            $contents = fread($handle, $fsize);
+            $formParams['file'] = $contents;
+            $formFiles['file'] = basename($filename);
+        }
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers= $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['multipart/form-data']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContent = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = $formParams["data"];
+            }
+        }
+    
+        $this->_requestToken();
+
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
+        }
+    
+        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+    
+        $req = new Request(
+            'PUT',
+            $this->config->getHost() . $resourcePath,
+            $headers,
+            $httpBody
+        );
+        if ($this->config->getDebug()) {
+            $this->_writeRequestLog('PUT', $this->config->getHost() . $resourcePath, $headers, $httpBody);
+        }
+        
+        return $req;
+    }
+
+    /**
      * Operation getCalendarFileAsModel
      *
      * Converts calendar document to a model representation
@@ -18607,6 +21417,296 @@ class EmailApi
         );
         if ($this->config->getDebug()) {
             $this->_writeRequestLog('GET', $this->config->getHost() . $resourcePath, $headers, $httpBody);
+        }
+        
+        return $req;
+    }
+
+    /**
+     * Operation getContactFileAsMapiModel
+     *
+     * Converts contact file to a MAPI model representation
+     *
+     * @param Requests\GetContactFileAsMapiModelRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Email\Model\MapiContactDto
+     */
+    public function getContactFileAsMapiModel(Requests\GetContactFileAsMapiModelRequest $request)
+    {
+        try {
+             list($response) = $this->getContactFileAsMapiModelWithHttpInfo($request);
+             return $response;
+        }
+        catch(RepeatRequestException $e) {
+             list($response) = $this->getContactFileAsMapiModelWithHttpInfo($request);
+             return $response;
+        } 
+    }
+
+    /**
+     * Operation getContactFileAsMapiModelWithHttpInfo
+     *
+     * Converts contact file to a MAPI model representation
+     *
+     * @param Requests\GetContactFileAsMapiModelRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Email\Model\MapiContactDto, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getContactFileAsMapiModelWithHttpInfo(Requests\GetContactFileAsMapiModelRequest $request)
+    {
+        $returnType = '\Aspose\Email\Model\MapiContactDto';
+        $request = $this->getContactFileAsMapiModelRequest($request);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null);
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                if ($statusCode === 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                }
+          
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+            
+            if ($this->config->getDebug()) {
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Email\Model\MapiContactDto', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getContactFileAsMapiModelAsync
+     *
+     * Converts contact file to a MAPI model representation
+     *
+     * @param Requests\GetContactFileAsMapiModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getContactFileAsMapiModelAsync(Requests\GetContactFileAsMapiModelRequest $request) 
+    {
+        return $this->getContactFileAsMapiModelAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getContactFileAsMapiModelAsyncWithHttpInfo
+     *
+     * Converts contact file to a MAPI model representation
+     *
+     * @param Requests\GetContactFileAsMapiModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getContactFileAsMapiModelAsyncWithHttpInfo(Requests\GetContactFileAsMapiModelRequest $request) 
+    {
+        $returnType = '\Aspose\Email\Model\MapiContactDto';
+        $request = $this->getContactFileAsMapiModelRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+                    
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+          
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    }
+          
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getContactFileAsMapiModel'
+     *
+     * @param Requests\GetContactFileAsMapiModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function getContactFileAsMapiModelRequest(Requests\GetContactFileAsMapiModelRequest $request)
+    {
+        // verify the required parameter 'file_format' is set
+        if ($request->file_format === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $file_format when calling getContactFileAsMapiModel');
+        }
+        // verify the required parameter 'file' is set
+        if ($request->file === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $file when calling getContactFileAsMapiModel');
+        }
+
+        $resourcePath = '/email/MapiContact/{fileFormat}/file-as-model';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $multipart = false;
+    
+        // path params
+        if ($request->file_format !== null) {
+            $localName = lcfirst('fileFormat');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->file_format), $resourcePath);
+        }
+
+    
+    
+        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
+        $formFiles = [];
+        // form params
+        if ($request->file !== null) {
+            $multipart = true;
+            $filename = ObjectSerializer::toFormValue($request->file);
+            $handle = fopen($filename, "rb");
+            $fsize = filesize($filename);
+            $contents = fread($handle, $fsize);
+            $formParams['file'] = $contents;
+            $formFiles['file'] = basename($filename);
+        }
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers= $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['multipart/form-data']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContent = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = $formParams["data"];
+            }
+        }
+    
+        $this->_requestToken();
+
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
+        }
+    
+        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+    
+        $req = new Request(
+            'PUT',
+            $this->config->getHost() . $resourcePath,
+            $headers,
+            $httpBody
+        );
+        if ($this->config->getDebug()) {
+            $this->_writeRequestLog('PUT', $this->config->getHost() . $resourcePath, $headers, $httpBody);
         }
         
         return $req;
@@ -21942,6 +25042,296 @@ class EmailApi
     }
 
     /**
+     * Operation getEmailFileAsMapiModel
+     *
+     * Converts email file to a MAPI model representation
+     *
+     * @param Requests\GetEmailFileAsMapiModelRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Email\Model\MapiMessageDto
+     */
+    public function getEmailFileAsMapiModel(Requests\GetEmailFileAsMapiModelRequest $request)
+    {
+        try {
+             list($response) = $this->getEmailFileAsMapiModelWithHttpInfo($request);
+             return $response;
+        }
+        catch(RepeatRequestException $e) {
+             list($response) = $this->getEmailFileAsMapiModelWithHttpInfo($request);
+             return $response;
+        } 
+    }
+
+    /**
+     * Operation getEmailFileAsMapiModelWithHttpInfo
+     *
+     * Converts email file to a MAPI model representation
+     *
+     * @param Requests\GetEmailFileAsMapiModelRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Email\Model\MapiMessageDto, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getEmailFileAsMapiModelWithHttpInfo(Requests\GetEmailFileAsMapiModelRequest $request)
+    {
+        $returnType = '\Aspose\Email\Model\MapiMessageDto';
+        $request = $this->getEmailFileAsMapiModelRequest($request);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null);
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                if ($statusCode === 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                }
+          
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+            
+            if ($this->config->getDebug()) {
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Email\Model\MapiMessageDto', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getEmailFileAsMapiModelAsync
+     *
+     * Converts email file to a MAPI model representation
+     *
+     * @param Requests\GetEmailFileAsMapiModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getEmailFileAsMapiModelAsync(Requests\GetEmailFileAsMapiModelRequest $request) 
+    {
+        return $this->getEmailFileAsMapiModelAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getEmailFileAsMapiModelAsyncWithHttpInfo
+     *
+     * Converts email file to a MAPI model representation
+     *
+     * @param Requests\GetEmailFileAsMapiModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getEmailFileAsMapiModelAsyncWithHttpInfo(Requests\GetEmailFileAsMapiModelRequest $request) 
+    {
+        $returnType = '\Aspose\Email\Model\MapiMessageDto';
+        $request = $this->getEmailFileAsMapiModelRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+                    
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+          
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    }
+          
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getEmailFileAsMapiModel'
+     *
+     * @param Requests\GetEmailFileAsMapiModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function getEmailFileAsMapiModelRequest(Requests\GetEmailFileAsMapiModelRequest $request)
+    {
+        // verify the required parameter 'file_format' is set
+        if ($request->file_format === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $file_format when calling getEmailFileAsMapiModel');
+        }
+        // verify the required parameter 'file' is set
+        if ($request->file === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $file when calling getEmailFileAsMapiModel');
+        }
+
+        $resourcePath = '/email/MapiMessage/{fileFormat}/file-as-model';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $multipart = false;
+    
+        // path params
+        if ($request->file_format !== null) {
+            $localName = lcfirst('fileFormat');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->file_format), $resourcePath);
+        }
+
+    
+    
+        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
+        $formFiles = [];
+        // form params
+        if ($request->file !== null) {
+            $multipart = true;
+            $filename = ObjectSerializer::toFormValue($request->file);
+            $handle = fopen($filename, "rb");
+            $fsize = filesize($filename);
+            $contents = fread($handle, $fsize);
+            $formParams['file'] = $contents;
+            $formFiles['file'] = basename($filename);
+        }
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers= $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['multipart/form-data']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContent = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = $formParams["data"];
+            }
+        }
+    
+        $this->_requestToken();
+
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
+        }
+    
+        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+    
+        $req = new Request(
+            'PUT',
+            $this->config->getHost() . $resourcePath,
+            $headers,
+            $httpBody
+        );
+        if ($this->config->getDebug()) {
+            $this->_writeRequestLog('PUT', $this->config->getHost() . $resourcePath, $headers, $httpBody);
+        }
+        
+        return $req;
+    }
+
+    /**
      * Operation getEmailFileAsModel
      *
      * Converts email document to a model representation
@@ -24314,6 +27704,607 @@ class EmailApi
     }
 
     /**
+     * Operation getMapiCalendarModel
+     *
+     * Get MAPI calendar document.
+     *
+     * @param Requests\GetMapiCalendarModelRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Email\Model\MapiCalendarDto
+     */
+    public function getMapiCalendarModel(Requests\GetMapiCalendarModelRequest $request)
+    {
+        try {
+             list($response) = $this->getMapiCalendarModelWithHttpInfo($request);
+             return $response;
+        }
+        catch(RepeatRequestException $e) {
+             list($response) = $this->getMapiCalendarModelWithHttpInfo($request);
+             return $response;
+        } 
+    }
+
+    /**
+     * Operation getMapiCalendarModelWithHttpInfo
+     *
+     * Get MAPI calendar document.
+     *
+     * @param Requests\GetMapiCalendarModelRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Email\Model\MapiCalendarDto, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getMapiCalendarModelWithHttpInfo(Requests\GetMapiCalendarModelRequest $request)
+    {
+        $returnType = '\Aspose\Email\Model\MapiCalendarDto';
+        $request = $this->getMapiCalendarModelRequest($request);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null);
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                if ($statusCode === 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                }
+          
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+            
+            if ($this->config->getDebug()) {
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Email\Model\MapiCalendarDto', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getMapiCalendarModelAsync
+     *
+     * Get MAPI calendar document.
+     *
+     * @param Requests\GetMapiCalendarModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getMapiCalendarModelAsync(Requests\GetMapiCalendarModelRequest $request) 
+    {
+        return $this->getMapiCalendarModelAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getMapiCalendarModelAsyncWithHttpInfo
+     *
+     * Get MAPI calendar document.
+     *
+     * @param Requests\GetMapiCalendarModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getMapiCalendarModelAsyncWithHttpInfo(Requests\GetMapiCalendarModelRequest $request) 
+    {
+        $returnType = '\Aspose\Email\Model\MapiCalendarDto';
+        $request = $this->getMapiCalendarModelRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+                    
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+          
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    }
+          
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getMapiCalendarModel'
+     *
+     * @param Requests\GetMapiCalendarModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function getMapiCalendarModelRequest(Requests\GetMapiCalendarModelRequest $request)
+    {
+        // verify the required parameter 'name' is set
+        if ($request->name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $name when calling getMapiCalendarModel');
+        }
+
+        $resourcePath = '/email/MapiCalendar/{name}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $multipart = false;
+    
+        // path params
+        if ($request->name !== null) {
+            $localName = lcfirst('name');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+        }
+
+        // query params
+        if ($request->folder !== null) {
+            $localName = lcfirst('folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+    
+    
+        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
+        $formFiles = [];
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers= $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContent = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = $formParams["data"];
+            }
+        }
+    
+        $this->_requestToken();
+
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
+        }
+    
+        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+    
+        $req = new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath,
+            $headers,
+            $httpBody
+        );
+        if ($this->config->getDebug()) {
+            $this->_writeRequestLog('GET', $this->config->getHost() . $resourcePath, $headers, $httpBody);
+        }
+        
+        return $req;
+    }
+
+    /**
+     * Operation getMapiContactModel
+     *
+     * Get MAPI contact document.
+     *
+     * @param Requests\GetMapiContactModelRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Email\Model\MapiContactDto
+     */
+    public function getMapiContactModel(Requests\GetMapiContactModelRequest $request)
+    {
+        try {
+             list($response) = $this->getMapiContactModelWithHttpInfo($request);
+             return $response;
+        }
+        catch(RepeatRequestException $e) {
+             list($response) = $this->getMapiContactModelWithHttpInfo($request);
+             return $response;
+        } 
+    }
+
+    /**
+     * Operation getMapiContactModelWithHttpInfo
+     *
+     * Get MAPI contact document.
+     *
+     * @param Requests\GetMapiContactModelRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Email\Model\MapiContactDto, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getMapiContactModelWithHttpInfo(Requests\GetMapiContactModelRequest $request)
+    {
+        $returnType = '\Aspose\Email\Model\MapiContactDto';
+        $request = $this->getMapiContactModelRequest($request);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null);
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                if ($statusCode === 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                }
+          
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+            
+            if ($this->config->getDebug()) {
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Email\Model\MapiContactDto', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getMapiContactModelAsync
+     *
+     * Get MAPI contact document.
+     *
+     * @param Requests\GetMapiContactModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getMapiContactModelAsync(Requests\GetMapiContactModelRequest $request) 
+    {
+        return $this->getMapiContactModelAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getMapiContactModelAsyncWithHttpInfo
+     *
+     * Get MAPI contact document.
+     *
+     * @param Requests\GetMapiContactModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getMapiContactModelAsyncWithHttpInfo(Requests\GetMapiContactModelRequest $request) 
+    {
+        $returnType = '\Aspose\Email\Model\MapiContactDto';
+        $request = $this->getMapiContactModelRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+                    
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+          
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    }
+          
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getMapiContactModel'
+     *
+     * @param Requests\GetMapiContactModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function getMapiContactModelRequest(Requests\GetMapiContactModelRequest $request)
+    {
+        // verify the required parameter 'format' is set
+        if ($request->format === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $format when calling getMapiContactModel');
+        }
+        // verify the required parameter 'name' is set
+        if ($request->name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $name when calling getMapiContactModel');
+        }
+
+        $resourcePath = '/email/MapiContact/{format}/{name}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $multipart = false;
+    
+        // path params
+        if ($request->format !== null) {
+            $localName = lcfirst('format');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->format), $resourcePath);
+        }
+        // path params
+        if ($request->name !== null) {
+            $localName = lcfirst('name');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+        }
+
+        // query params
+        if ($request->folder !== null) {
+            $localName = lcfirst('folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+    
+    
+        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
+        $formFiles = [];
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers= $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContent = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = $formParams["data"];
+            }
+        }
+    
+        $this->_requestToken();
+
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
+        }
+    
+        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+    
+        $req = new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath,
+            $headers,
+            $httpBody
+        );
+        if ($this->config->getDebug()) {
+            $this->_writeRequestLog('GET', $this->config->getHost() . $resourcePath, $headers, $httpBody);
+        }
+        
+        return $req;
+    }
+
+    /**
      * Operation getMapiList
      *
      * Get document list from storage folder
@@ -24530,6 +28521,311 @@ class EmailApi
         if ($request->page_number !== null) {
             $localName = lcfirst('pageNumber');
             $localValue = is_bool($request->page_number) ? ($request->page_number ? 'true' : 'false') : $request->page_number;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+    
+    
+        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
+        $formFiles = [];
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers= $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContent = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = $formParams["data"];
+            }
+        }
+    
+        $this->_requestToken();
+
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
+        }
+    
+        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+    
+        $req = new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath,
+            $headers,
+            $httpBody
+        );
+        if ($this->config->getDebug()) {
+            $this->_writeRequestLog('GET', $this->config->getHost() . $resourcePath, $headers, $httpBody);
+        }
+        
+        return $req;
+    }
+
+    /**
+     * Operation getMapiMessageModel
+     *
+     * Get MAPI message document.
+     *
+     * @param Requests\GetMapiMessageModelRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Aspose\Email\Model\MapiMessageDto
+     */
+    public function getMapiMessageModel(Requests\GetMapiMessageModelRequest $request)
+    {
+        try {
+             list($response) = $this->getMapiMessageModelWithHttpInfo($request);
+             return $response;
+        }
+        catch(RepeatRequestException $e) {
+             list($response) = $this->getMapiMessageModelWithHttpInfo($request);
+             return $response;
+        } 
+    }
+
+    /**
+     * Operation getMapiMessageModelWithHttpInfo
+     *
+     * Get MAPI message document.
+     *
+     * @param Requests\GetMapiMessageModelRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Aspose\Email\Model\MapiMessageDto, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getMapiMessageModelWithHttpInfo(Requests\GetMapiMessageModelRequest $request)
+    {
+        $returnType = '\Aspose\Email\Model\MapiMessageDto';
+        $request = $this->getMapiMessageModelRequest($request);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null);
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                if ($statusCode === 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                }
+          
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+            
+            if ($this->config->getDebug()) {
+                $this->_writeResponseLog($statusCode, $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            case 200:
+                    $data = ObjectSerializer::deserialize($e->getResponseBody(), '\Aspose\Email\Model\MapiMessageDto', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getMapiMessageModelAsync
+     *
+     * Get MAPI message document.
+     *
+     * @param Requests\GetMapiMessageModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getMapiMessageModelAsync(Requests\GetMapiMessageModelRequest $request) 
+    {
+        return $this->getMapiMessageModelAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getMapiMessageModelAsyncWithHttpInfo
+     *
+     * Get MAPI message document.
+     *
+     * @param Requests\GetMapiMessageModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getMapiMessageModelAsyncWithHttpInfo(Requests\GetMapiMessageModelRequest $request) 
+    {
+        $returnType = '\Aspose\Email\Model\MapiMessageDto';
+        $request = $this->getMapiMessageModelRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+                    
+                    if ($this->config->getDebug()) {
+                        $this->_writeResponseLog($response->getStatusCode(), $response->getHeaders(), ObjectSerializer::deserialize($content, $returnType, []));
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+          
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    }
+          
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getMapiMessageModel'
+     *
+     * @param Requests\GetMapiMessageModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function getMapiMessageModelRequest(Requests\GetMapiMessageModelRequest $request)
+    {
+        // verify the required parameter 'format' is set
+        if ($request->format === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $format when calling getMapiMessageModel');
+        }
+        // verify the required parameter 'name' is set
+        if ($request->name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $name when calling getMapiMessageModel');
+        }
+
+        $resourcePath = '/email/MapiMessage/{format}/{name}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $multipart = false;
+    
+        // path params
+        if ($request->format !== null) {
+            $localName = lcfirst('format');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->format), $resourcePath);
+        }
+        // path params
+        if ($request->name !== null) {
+            $localName = lcfirst('name');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+        }
+
+        // query params
+        if ($request->folder !== null) {
+            $localName = lcfirst('folder');
+            $localValue = is_bool($request->folder) ? ($request->folder ? 'true' : 'false') : $request->folder;
+            if (strpos($resourcePath, '{' . $localName . '}') !== false) {
+                $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
+            } else {
+                $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
+            }
+        }
+        // query params
+        if ($request->storage !== null) {
+            $localName = lcfirst('storage');
+            $localValue = is_bool($request->storage) ? ($request->storage ? 'true' : 'false') : $request->storage;
             if (strpos($resourcePath, '{' . $localName . '}') !== false) {
                 $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($localValue), $resourcePath);
             } else {
@@ -29555,6 +33851,768 @@ class EmailApi
         );
         if ($this->config->getDebug()) {
             $this->_writeRequestLog('POST', $this->config->getHost() . $resourcePath, $headers, $httpBody);
+        }
+        
+        return $req;
+    }
+
+    /**
+     * Operation saveMapiCalendarModel
+     *
+     * Save MAPI Calendar to storage.
+     *
+     * @param Requests\SaveMapiCalendarModelRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function saveMapiCalendarModel(Requests\SaveMapiCalendarModelRequest $request)
+    {
+        try {
+             $this->saveMapiCalendarModelWithHttpInfo($request);
+        }
+        catch(RepeatRequestException $e) {
+             $this->saveMapiCalendarModelWithHttpInfo($request);
+        } 
+    }
+
+    /**
+     * Operation saveMapiCalendarModelWithHttpInfo
+     *
+     * Save MAPI Calendar to storage.
+     *
+     * @param Requests\SaveMapiCalendarModelRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function saveMapiCalendarModelWithHttpInfo(Requests\SaveMapiCalendarModelRequest $request)
+    {
+        $returnType = '';
+        $request = $this->saveMapiCalendarModelRequest($request);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null);
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                if ($statusCode === 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                }
+          
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation saveMapiCalendarModelAsync
+     *
+     * Save MAPI Calendar to storage.
+     *
+     * @param Requests\SaveMapiCalendarModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function saveMapiCalendarModelAsync(Requests\SaveMapiCalendarModelRequest $request) 
+    {
+        return $this->saveMapiCalendarModelAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation saveMapiCalendarModelAsyncWithHttpInfo
+     *
+     * Save MAPI Calendar to storage.
+     *
+     * @param Requests\SaveMapiCalendarModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function saveMapiCalendarModelAsyncWithHttpInfo(Requests\SaveMapiCalendarModelRequest $request) 
+    {
+        $returnType = '';
+        $request = $this->saveMapiCalendarModelRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+          
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    }
+          
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'saveMapiCalendarModel'
+     *
+     * @param Requests\SaveMapiCalendarModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function saveMapiCalendarModelRequest(Requests\SaveMapiCalendarModelRequest $request)
+    {
+        // verify the required parameter 'name' is set
+        if ($request->name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $name when calling saveMapiCalendarModel');
+        }
+        // verify the required parameter 'format' is set
+        if ($request->format === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $format when calling saveMapiCalendarModel');
+        }
+        // verify the required parameter 'rq' is set
+        if ($request->rq === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $rq when calling saveMapiCalendarModel');
+        }
+
+        $resourcePath = '/email/MapiCalendar/{format}/{name}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $multipart = false;
+    
+        // path params
+        if ($request->name !== null) {
+            $localName = lcfirst('name');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+        }
+        // path params
+        if ($request->format !== null) {
+            $localName = lcfirst('format');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->format), $resourcePath);
+        }
+
+    
+    
+        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
+        $formFiles = [];
+        // body params
+        $_tempBody = null;
+        if (isset($request->rq)) {
+            if (is_string($request->rq)) {
+                $_tempBody = "\"" . $request->rq . "\"";   
+            } else {
+                $_tempBody = $request->rq;
+            }
+        }
+
+        if ($multipart) {
+            $headers= $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContent = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = $formParams["data"];
+            }
+        }
+    
+        $this->_requestToken();
+
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
+        }
+    
+        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+    
+        $req = new Request(
+            'PUT',
+            $this->config->getHost() . $resourcePath,
+            $headers,
+            $httpBody
+        );
+        if ($this->config->getDebug()) {
+            $this->_writeRequestLog('PUT', $this->config->getHost() . $resourcePath, $headers, $httpBody);
+        }
+        
+        return $req;
+    }
+
+    /**
+     * Operation saveMapiContactModel
+     *
+     * Save MAPI Contact to storage.
+     *
+     * @param Requests\SaveMapiContactModelRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function saveMapiContactModel(Requests\SaveMapiContactModelRequest $request)
+    {
+        try {
+             $this->saveMapiContactModelWithHttpInfo($request);
+        }
+        catch(RepeatRequestException $e) {
+             $this->saveMapiContactModelWithHttpInfo($request);
+        } 
+    }
+
+    /**
+     * Operation saveMapiContactModelWithHttpInfo
+     *
+     * Save MAPI Contact to storage.
+     *
+     * @param Requests\SaveMapiContactModelRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function saveMapiContactModelWithHttpInfo(Requests\SaveMapiContactModelRequest $request)
+    {
+        $returnType = '';
+        $request = $this->saveMapiContactModelRequest($request);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null);
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                if ($statusCode === 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                }
+          
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation saveMapiContactModelAsync
+     *
+     * Save MAPI Contact to storage.
+     *
+     * @param Requests\SaveMapiContactModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function saveMapiContactModelAsync(Requests\SaveMapiContactModelRequest $request) 
+    {
+        return $this->saveMapiContactModelAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation saveMapiContactModelAsyncWithHttpInfo
+     *
+     * Save MAPI Contact to storage.
+     *
+     * @param Requests\SaveMapiContactModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function saveMapiContactModelAsyncWithHttpInfo(Requests\SaveMapiContactModelRequest $request) 
+    {
+        $returnType = '';
+        $request = $this->saveMapiContactModelRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+          
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    }
+          
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'saveMapiContactModel'
+     *
+     * @param Requests\SaveMapiContactModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function saveMapiContactModelRequest(Requests\SaveMapiContactModelRequest $request)
+    {
+        // verify the required parameter 'format' is set
+        if ($request->format === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $format when calling saveMapiContactModel');
+        }
+        // verify the required parameter 'name' is set
+        if ($request->name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $name when calling saveMapiContactModel');
+        }
+        // verify the required parameter 'rq' is set
+        if ($request->rq === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $rq when calling saveMapiContactModel');
+        }
+
+        $resourcePath = '/email/MapiContact/{format}/{name}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $multipart = false;
+    
+        // path params
+        if ($request->format !== null) {
+            $localName = lcfirst('format');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->format), $resourcePath);
+        }
+        // path params
+        if ($request->name !== null) {
+            $localName = lcfirst('name');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+        }
+
+    
+    
+        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
+        $formFiles = [];
+        // body params
+        $_tempBody = null;
+        if (isset($request->rq)) {
+            if (is_string($request->rq)) {
+                $_tempBody = "\"" . $request->rq . "\"";   
+            } else {
+                $_tempBody = $request->rq;
+            }
+        }
+
+        if ($multipart) {
+            $headers= $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContent = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = $formParams["data"];
+            }
+        }
+    
+        $this->_requestToken();
+
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
+        }
+    
+        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+    
+        $req = new Request(
+            'PUT',
+            $this->config->getHost() . $resourcePath,
+            $headers,
+            $httpBody
+        );
+        if ($this->config->getDebug()) {
+            $this->_writeRequestLog('PUT', $this->config->getHost() . $resourcePath, $headers, $httpBody);
+        }
+        
+        return $req;
+    }
+
+    /**
+     * Operation saveMapiMessageModel
+     *
+     * Save MAPI message to storage.
+     *
+     * @param Requests\SaveMapiMessageModelRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function saveMapiMessageModel(Requests\SaveMapiMessageModelRequest $request)
+    {
+        try {
+             $this->saveMapiMessageModelWithHttpInfo($request);
+        }
+        catch(RepeatRequestException $e) {
+             $this->saveMapiMessageModelWithHttpInfo($request);
+        } 
+    }
+
+    /**
+     * Operation saveMapiMessageModelWithHttpInfo
+     *
+     * Save MAPI message to storage.
+     *
+     * @param Requests\SaveMapiMessageModelRequest $request is a request object for operation
+     *
+     * @throws \Aspose\Email\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function saveMapiMessageModelWithHttpInfo(Requests\SaveMapiMessageModelRequest $request)
+    {
+        $returnType = '';
+        $request = $this->saveMapiMessageModelRequest($request);
+
+        try {
+            $options = $this->_createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse() ? $e->getResponse()->getHeaders() : null);
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                if ($statusCode === 401) {
+                    $this->_requestToken();
+                    throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                }
+          
+                throw new ApiException(sprintf('[%d] Error connecting to the API (%s)', $statusCode, $request->getUri()), $statusCode, $response->getHeaders(), $response->getBody());
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation saveMapiMessageModelAsync
+     *
+     * Save MAPI message to storage.
+     *
+     * @param Requests\SaveMapiMessageModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function saveMapiMessageModelAsync(Requests\SaveMapiMessageModelRequest $request) 
+    {
+        return $this->saveMapiMessageModelAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation saveMapiMessageModelAsyncWithHttpInfo
+     *
+     * Save MAPI message to storage.
+     *
+     * @param Requests\SaveMapiMessageModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function saveMapiMessageModelAsyncWithHttpInfo(Requests\SaveMapiMessageModelRequest $request) 
+    {
+        $returnType = '';
+        $request = $this->saveMapiMessageModelRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->_createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {        
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+          
+                    if ($exception instanceof RepeatRequestException) {
+                        $this->_requestToken();
+                        throw new RepeatRequestException("Request must be retried", $statusCode, $response->getHeaders(), $response->getBody());
+                    }
+          
+                    throw new ApiException(
+                        sprintf('[%d] Error connecting to the API (%s)', $statusCode, $exception->getRequest()->getUri()), $statusCode, $response->getHeaders(), $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'saveMapiMessageModel'
+     *
+     * @param Requests\SaveMapiMessageModelRequest $request is a request object for operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function saveMapiMessageModelRequest(Requests\SaveMapiMessageModelRequest $request)
+    {
+        // verify the required parameter 'format' is set
+        if ($request->format === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $format when calling saveMapiMessageModel');
+        }
+        // verify the required parameter 'name' is set
+        if ($request->name === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $name when calling saveMapiMessageModel');
+        }
+        // verify the required parameter 'rq' is set
+        if ($request->rq === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $rq when calling saveMapiMessageModel');
+        }
+
+        $resourcePath = '/email/MapiMessage/{format}/{name}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = "";
+        $multipart = false;
+    
+        // path params
+        if ($request->format !== null) {
+            $localName = lcfirst('format');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->format), $resourcePath);
+        }
+        // path params
+        if ($request->name !== null) {
+            $localName = lcfirst('name');
+            $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->name), $resourcePath);
+        }
+
+    
+    
+        $resourcePath = $this->_parseURL($resourcePath, $queryParams);
+        $formFiles = [];
+        // body params
+        $_tempBody = null;
+        if (isset($request->rq)) {
+            if (is_string($request->rq)) {
+                $_tempBody = "\"" . $request->rq . "\"";   
+            } else {
+                $_tempBody = $request->rq;
+            }
+        }
+
+        if ($multipart) {
+            $headers= $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContent = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                    if(isset($formFiles[$formParamName]))
+                    {
+                        $multipartContent['filename'] = $formFiles[$formParamName];
+                    }
+                    $multipartContents[] = $multipartContent;
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+                $headers["Content-Type"]="multipart/form-data; boundary=".($httpBody->getBoundary());
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = $formParams["data"];
+            }
+        }
+    
+        $this->_requestToken();
+
+        if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['x-aspose-client'] = $this->config->getUserAgent();
+        }
+    
+        $defaultHeaders['x-aspose-client-version'] = $this->config->getClientVersion();
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+    
+        $req = new Request(
+            'PUT',
+            $this->config->getHost() . $resourcePath,
+            $headers,
+            $httpBody
+        );
+        if ($this->config->getDebug()) {
+            $this->_writeRequestLog('PUT', $this->config->getHost() . $resourcePath, $headers, $httpBody);
         }
         
         return $req;

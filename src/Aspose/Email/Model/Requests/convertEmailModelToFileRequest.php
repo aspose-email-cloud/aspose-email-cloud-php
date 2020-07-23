@@ -36,7 +36,7 @@ class ConvertEmailModelToFileRequest
     /**
      * Initializes a new instance of the ConvertEmailModelToFileRequest class.
      *  
-     * @param string $destination_format File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
+     * @param string $destination_format File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
      * @param \Aspose\Email\Model\EmailDto $email_dto Email model to convert
      */
     public function __construct($destination_format, $email_dto)             
@@ -46,7 +46,7 @@ class ConvertEmailModelToFileRequest
     }
 
     /**
-     * File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html
+     * File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
      */
     public $destination_format;
 	

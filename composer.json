@@ -2,7 +2,7 @@
   "description": "This repository contains Aspose Cloud SDK for PHP source code. Aspose Cloud SDK for PHP lets PHP developers convert and process a variety of file formats in the cloud quickly and easily.",
   "name": "aspose/aspose-email-cloud",
   "type": "library",
-  "version": "20.5.0",
+  "version": "20.7.0.125",
   "license": "MIT",
   "keywords": [
     "aspose",
@@ -17,6 +17,10 @@
     },
     {
       "name": "Vladislav-Koliesnikov",
+      "homepage": "https://github.com/aspose-email-cloud"
+    },
+    {
+      "name": "Marat-Gumerov",
       "homepage": "https://github.com/aspose-email-cloud"
     }
   ],
@@ -36,7 +40,8 @@
   },
   "autoload": {
     "psr-0": {
-      "Aspose": "src/"
+      "Aspose": "src/",
+      "Test": "tests/"
     }
   }
 }

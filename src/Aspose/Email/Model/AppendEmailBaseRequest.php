@@ -54,7 +54,7 @@ class AppendEmailBaseRequest extends AppendEmailAccountBaseRequest
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'email_file' => 'object'
+        'email_file' => '\Aspose\Email\Model\StorageFileLocation'
     ];
 
     /**
@@ -168,7 +168,7 @@ class AppendEmailBaseRequest extends AppendEmailAccountBaseRequest
      * @param \Aspose\Email\Model\StorageFolderLocation $storage_folder Storage folder location of account files
      * @param string $folder Email account folder to store a message
      * @param bool $mark_as_sent Mark message as sent
-     * @param object $email_file Email document file location in storage
+     * @param \Aspose\Email\Model\StorageFileLocation $email_file Email document file location in storage
      */
     public function __construct($first_account = null, $second_account = null, $storage_folder = null, $folder = null, $mark_as_sent = null, $email_file = null)
     {
@@ -220,7 +220,7 @@ class AppendEmailBaseRequest extends AppendEmailAccountBaseRequest
     /**
      * Gets email_file
      *
-     * @return object
+     * @return \Aspose\Email\Model\StorageFileLocation
      */
     public function getEmailFile()
     {
@@ -230,7 +230,7 @@ class AppendEmailBaseRequest extends AppendEmailAccountBaseRequest
     /**
      * Sets email_file
      *
-     * @param object $email_file Email document file location in storage
+     * @param \Aspose\Email\Model\StorageFileLocation $email_file Email document file location in storage
      *
      * @return $this
      */
