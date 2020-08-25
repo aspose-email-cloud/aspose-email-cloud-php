@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="emailAsMapiRequest.php">
+ * <copyright company="Aspose" file="UploadFileRequest.php">
  *   Copyright (c) 2018-2020 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,26 +26,40 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 
-namespace Aspose\Email\Model\Requests;
+namespace Aspose\Email\Model;
 
 /**
- * Request model for emailAsMapi" operation.
+ * Request model for uploadFile" operation.
  */
-class EmailAsMapiRequest
+class UploadFileRequest
 {
     /**
-     * Initializes a new instance of the EmailAsMapiRequest class.
+     * Initializes a new instance of the UploadFileRequest class.
      *  
-     * @param \Aspose\Email\Model\EmailDto $email_dto Email model to convert
+     * @param string $path Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header.
+     * @param \SplFileObject $file File to upload
+     * @param string $storage_name Storage name
      */
-    public function __construct($email_dto)             
+    public function __construct($path, $file, $storage_name = null)             
     {
-        $this->email_dto = $email_dto;
+        $this->path = $path;
+        $this->file = $file;
+        $this->storage_name = $storage_name;
     }
 
     /**
-     * Email model to convert
+     * Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header.
      */
-    public $email_dto;
+    public $path;
+
+    /**
+     * File to upload
+     */
+    public $file;
+
+    /**
+     * Storage name
+     */
+    public $storage_name;
 }
 ?>

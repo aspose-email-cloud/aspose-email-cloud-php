@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="emailFromFileRequest.php">
+ * <copyright company="Aspose" file="ContactGetListRequest.php">
  *   Copyright (c) 2018-2020 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,33 +26,54 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 
-namespace Aspose\Email\Model\Requests;
+namespace Aspose\Email\Model;
 
 /**
- * Request model for emailFromFile" operation.
+ * Request model for contactGetList" operation.
  */
-class EmailFromFileRequest
+class ContactGetListRequest
 {
     /**
-     * Initializes a new instance of the EmailFromFileRequest class.
+     * Initializes a new instance of the ContactGetListRequest class.
      *  
-     * @param string $format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
-     * @param \SplFileObject $file File to convert
+     * @param string $format Contact document format. Enum, available values: VCard, WebDav, Msg
+     * @param string $folder Path to folder in storage.
+     * @param string $storage Storage name.
+     * @param int $items_per_page Count of items on page.
+     * @param int $page_number Page number.
      */
-    public function __construct($format, $file)             
+    public function __construct($format, $folder = null, $storage = null, $items_per_page = null, $page_number = null)             
     {
         $this->format = $format;
-        $this->file = $file;
+        $this->folder = $folder;
+        $this->storage = $storage;
+        $this->items_per_page = $items_per_page;
+        $this->page_number = $page_number;
     }
 
     /**
-     * Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
+     * Contact document format. Enum, available values: VCard, WebDav, Msg
      */
     public $format;
-	
+
     /**
-     * File to convert
+     * Path to folder in storage.
      */
-    public $file;
+    public $folder;
+
+    /**
+     * Storage name.
+     */
+    public $storage;
+
+    /**
+     * Count of items on page.
+     */
+    public $items_per_page;
+
+    /**
+     * Page number.
+     */
+    public $page_number;
 }
 ?>

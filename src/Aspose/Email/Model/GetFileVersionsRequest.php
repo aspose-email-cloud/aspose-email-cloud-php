@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="emailSaveRequest.php">
+ * <copyright company="Aspose" file="GetFileVersionsRequest.php">
  *   Copyright (c) 2018-2020 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,26 +26,33 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 
-namespace Aspose\Email\Model\Requests;
+namespace Aspose\Email\Model;
 
 /**
- * Request model for emailSave" operation.
+ * Request model for getFileVersions" operation.
  */
-class EmailSaveRequest
+class GetFileVersionsRequest
 {
     /**
-     * Initializes a new instance of the EmailSaveRequest class.
+     * Initializes a new instance of the GetFileVersionsRequest class.
      *  
-     * @param \Aspose\Email\Model\EmailSaveRequest $request Email document create/update request.
+     * @param string $path File path e.g. '/file.ext'
+     * @param string $storage_name Storage name
      */
-    public function __construct($request)             
+    public function __construct($path, $storage_name = null)             
     {
-        $this->request = $request;
+        $this->path = $path;
+        $this->storage_name = $storage_name;
     }
 
     /**
-     * Email document create/update request.
+     * File path e.g. '/file.ext'
      */
-    public $request;
+    public $path;
+
+    /**
+     * Storage name
+     */
+    public $storage_name;
 }
 ?>

@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="emailGetAsFileRequest.php">
+ * <copyright company="Aspose" file="CalendarConvertRequest.php">
  *   Copyright (c) 2018-2020 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,47 +26,33 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 
-namespace Aspose\Email\Model\Requests;
+namespace Aspose\Email\Model;
 
 /**
- * Request model for emailGetAsFile" operation.
+ * Request model for calendarConvert" operation.
  */
-class EmailGetAsFileRequest
+class CalendarConvertRequest
 {
     /**
-     * Initializes a new instance of the EmailGetAsFileRequest class.
+     * Initializes a new instance of the CalendarConvertRequest class.
      *  
-     * @param string $file_name Email document file name
-     * @param string $format File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
-     * @param string $storage Storage name
-     * @param string $folder Path to folder in storage
+     * @param string $format File format. Enum, available values: Ics, Msg
+     * @param \SplFileObject $file File to convert
      */
-    public function __construct($file_name, $format, $storage = null, $folder = null)             
+    public function __construct($format, $file)             
     {
-        $this->file_name = $file_name;
         $this->format = $format;
-        $this->storage = $storage;
-        $this->folder = $folder;
+        $this->file = $file;
     }
 
     /**
-     * Email document file name
-     */
-    public $file_name;
-	
-    /**
-     * File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
+     * File format. Enum, available values: Ics, Msg
      */
     public $format;
-	
+
     /**
-     * Storage name
+     * File to convert
      */
-    public $storage;
-	
-    /**
-     * Path to folder in storage
-     */
-    public $folder;
+    public $file;
 }
 ?>

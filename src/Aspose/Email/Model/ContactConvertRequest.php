@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="emailConvertRequest.php">
+ * <copyright company="Aspose" file="ContactConvertRequest.php">
  *   Copyright (c) 2018-2020 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,30 +26,37 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 
-namespace Aspose\Email\Model\Requests;
+namespace Aspose\Email\Model;
 
 /**
- * Request model for emailConvert" operation.
+ * Request model for contactConvert" operation.
  */
-class EmailConvertRequest
+class ContactConvertRequest
 {
     /**
-     * Initializes a new instance of the EmailConvertRequest class.
+     * Initializes a new instance of the ContactConvertRequest class.
      *  
-     * @param string $format File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
+     * @param string $to_format File format to convert to Enum, available values: VCard, WebDav, Msg
+     * @param string $from_format File format to convert from Enum, available values: VCard, WebDav, Msg
      * @param \SplFileObject $file File to convert
      */
-    public function __construct($format, $file)             
+    public function __construct($to_format, $from_format, $file)             
     {
-        $this->format = $format;
+        $this->to_format = $to_format;
+        $this->from_format = $from_format;
         $this->file = $file;
     }
 
     /**
-     * File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
+     * File format to convert to Enum, available values: VCard, WebDav, Msg
      */
-    public $format;
-	
+    public $to_format;
+
+    /**
+     * File format to convert from Enum, available values: VCard, WebDav, Msg
+     */
+    public $from_format;
+
     /**
      * File to convert
      */

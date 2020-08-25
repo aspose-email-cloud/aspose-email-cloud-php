@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="emailGetRequest.php">
+ * <copyright company="Aspose" file="ClientMessageFetchFileRequest.php">
  *   Copyright (c) 2018-2020 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,47 +26,61 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 
-namespace Aspose\Email\Model\Requests;
+namespace Aspose\Email\Model;
 
 /**
- * Request model for emailGet" operation.
+ * Request model for clientMessageFetchFile" operation.
  */
-class EmailGetRequest
+class ClientMessageFetchFileRequest
 {
     /**
-     * Initializes a new instance of the EmailGetRequest class.
+     * Initializes a new instance of the ClientMessageFetchFileRequest class.
      *  
-     * @param string $format Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
-     * @param string $file_name Email document file name.
-     * @param string $folder Path to folder in storage.
-     * @param string $storage Storage name.
+     * @param string $message_id Message identifier
+     * @param string $account Email account
+     * @param string $folder Account folder to fetch from (should be specified for some protocols such as IMAP)
+     * @param string $storage Storage name where account file located.
+     * @param string $account_storage_folder Folder in storage where account file located.
+     * @param string $format Fetched message file format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
      */
-    public function __construct($format, $file_name, $folder = null, $storage = null)             
+    public function __construct($message_id, $account, $folder = null, $storage = null, $account_storage_folder = null, $format = null)             
     {
-        $this->format = $format;
-        $this->file_name = $file_name;
+        $this->message_id = $message_id;
+        $this->account = $account;
         $this->folder = $folder;
         $this->storage = $storage;
+        $this->account_storage_folder = $account_storage_folder;
+        $this->format = $format;
     }
 
     /**
-     * Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
+     * Message identifier
      */
-    public $format;
-	
+    public $message_id;
+
     /**
-     * Email document file name.
+     * Email account
      */
-    public $file_name;
-	
+    public $account;
+
     /**
-     * Path to folder in storage.
+     * Account folder to fetch from (should be specified for some protocols such as IMAP)
      */
     public $folder;
-	
+
     /**
-     * Storage name.
+     * Storage name where account file located.
      */
     public $storage;
+
+    /**
+     * Folder in storage where account file located.
+     */
+    public $account_storage_folder;
+
+    /**
+     * Fetched message file format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
+     */
+    public $format;
 }
 ?>

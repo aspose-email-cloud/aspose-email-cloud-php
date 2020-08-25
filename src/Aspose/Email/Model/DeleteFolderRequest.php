@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="emailGetListRequest.php">
+ * <copyright company="Aspose" file="DeleteFolderRequest.php">
  *   Copyright (c) 2018-2020 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,54 +26,40 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 
-namespace Aspose\Email\Model\Requests;
+namespace Aspose\Email\Model;
 
 /**
- * Request model for emailGetList" operation.
+ * Request model for deleteFolder" operation.
  */
-class EmailGetListRequest
+class DeleteFolderRequest
 {
     /**
-     * Initializes a new instance of the EmailGetListRequest class.
+     * Initializes a new instance of the DeleteFolderRequest class.
      *  
-     * @param string $format Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
-     * @param string $folder Path to folder in storage.
-     * @param string $storage Storage name.
-     * @param int $items_per_page Count of items on page.
-     * @param int $page_number Page number.
+     * @param string $path Folder path e.g. '/folder'
+     * @param string $storage_name Storage name
+     * @param bool $recursive Enable to delete folders, subfolders and files
      */
-    public function __construct($format, $folder = null, $storage = null, $items_per_page = null, $page_number = null)             
+    public function __construct($path, $storage_name = null, $recursive = null)             
     {
-        $this->format = $format;
-        $this->folder = $folder;
-        $this->storage = $storage;
-        $this->items_per_page = $items_per_page;
-        $this->page_number = $page_number;
+        $this->path = $path;
+        $this->storage_name = $storage_name;
+        $this->recursive = $recursive;
     }
 
     /**
-     * Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
+     * Folder path e.g. '/folder'
      */
-    public $format;
-	
+    public $path;
+
     /**
-     * Path to folder in storage.
+     * Storage name
      */
-    public $folder;
-	
+    public $storage_name;
+
     /**
-     * Storage name.
+     * Enable to delete folders, subfolders and files
      */
-    public $storage;
-	
-    /**
-     * Count of items on page.
-     */
-    public $items_per_page;
-	
-    /**
-     * Page number.
-     */
-    public $page_number;
+    public $recursive;
 }
 ?>

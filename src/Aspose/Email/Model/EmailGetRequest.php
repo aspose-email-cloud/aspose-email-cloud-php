@@ -1,7 +1,7 @@
 <?php
 /*
  * --------------------------------------------------------------------------------------------------------------------
- * <copyright company="Aspose" file="emailAsFileRequest.php">
+ * <copyright company="Aspose" file="EmailGetRequest.php">
  *   Copyright (c) 2018-2020 Aspose.Email for Cloud
  * </copyright>
  * <summary>
@@ -26,26 +26,47 @@
  * --------------------------------------------------------------------------------------------------------------------
  */
 
-namespace Aspose\Email\Model\Requests;
+namespace Aspose\Email\Model;
 
 /**
- * Request model for emailAsFile" operation.
+ * Request model for emailGet" operation.
  */
-class EmailAsFileRequest
+class EmailGetRequest
 {
     /**
-     * Initializes a new instance of the EmailAsFileRequest class.
+     * Initializes a new instance of the EmailGetRequest class.
      *  
-     * @param \Aspose\Email\Model\EmailAsFileRequest $request Email model and format to convert.
+     * @param string $format Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
+     * @param string $file_name Email document file name.
+     * @param string $folder Path to folder in storage.
+     * @param string $storage Storage name.
      */
-    public function __construct($request)             
+    public function __construct($format, $file_name, $folder = null, $storage = null)             
     {
-        $this->request = $request;
+        $this->format = $format;
+        $this->file_name = $file_name;
+        $this->folder = $folder;
+        $this->storage = $storage;
     }
 
     /**
-     * Email model and format to convert.
+     * Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
      */
-    public $request;
+    public $format;
+
+    /**
+     * Email document file name.
+     */
+    public $file_name;
+
+    /**
+     * Path to folder in storage.
+     */
+    public $folder;
+
+    /**
+     * Storage name.
+     */
+    public $storage;
 }
 ?>
