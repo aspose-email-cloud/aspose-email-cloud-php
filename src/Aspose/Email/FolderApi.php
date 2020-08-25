@@ -88,17 +88,10 @@ class FolderApi extends ApiBase
      */
     public function copyFolderWithHttpInfo(Model\CopyFolderRequest $request)
     {
-        $returnType = '';
         $request = $this->copyFolderRequest($request);
-
-        try {
-            $response = $this->callClient($request);
-            return [null, $statusCode, $response->getHeaders()];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-            throw $e;
-        }
+    
+        $response = $this->callClient($request);
+        return [null, $response->getStatusCode(), $response->getHeaders()];
     }
 
     /**
@@ -133,13 +126,12 @@ class FolderApi extends ApiBase
      */
     public function copyFolderAsyncWithHttpInfo(Model\CopyFolderRequest $request)
     {
-        $returnType = '';
         $request = $this->copyFolderRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -176,7 +168,7 @@ class FolderApi extends ApiBase
         $queryParams = [];
         $headerParams = [];
         $multipart = false;
-    
+
         // path params
         if ($request->src_path !== null) {
             $localName = lcfirst('srcPath');
@@ -193,12 +185,6 @@ class FolderApi extends ApiBase
         $paramValue = $request->dest_storage_name;
         $paramBaseName = 'destStorageName';
         $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
-    
-
-        $resourcePath = $this->parseURL($resourcePath, $queryParams);
-        $formFiles = [];
-        // body params
-        $_tempBody = null;
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -210,20 +196,17 @@ class FolderApi extends ApiBase
                 ['application/json']
             );
         }
-        $headers = $this->mergeAllHeaders($headerParams, $headers);
-        $httpBody = $this->prepareRequestBody($headers, $_tempBody, $multipart, $formParams, $formFiles);
-
-        $req = new Request(
+        return $this->toClientRequest(
             'PUT',
-            $this->config->getHost() . $resourcePath,
+            null,
+            $resourcePath,
+            $queryParams,
+            $formParams,
+            [],
+            $multipart,
             $headers,
-            $httpBody
+            $headerParams
         );
-        if ($this->config->getDebug()) {
-            $this->writeRequestLog('PUT', $this->config->getHost() . $resourcePath, $headers, $httpBody);
-        }
-
-        return $req;
     }
             
     /**
@@ -260,17 +243,10 @@ class FolderApi extends ApiBase
      */
     public function createFolderWithHttpInfo(Model\CreateFolderRequest $request)
     {
-        $returnType = '';
         $request = $this->createFolderRequest($request);
-
-        try {
-            $response = $this->callClient($request);
-            return [null, $statusCode, $response->getHeaders()];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-            throw $e;
-        }
+    
+        $response = $this->callClient($request);
+        return [null, $response->getStatusCode(), $response->getHeaders()];
     }
 
     /**
@@ -305,13 +281,12 @@ class FolderApi extends ApiBase
      */
     public function createFolderAsyncWithHttpInfo(Model\CreateFolderRequest $request)
     {
-        $returnType = '';
         $request = $this->createFolderRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -342,7 +317,7 @@ class FolderApi extends ApiBase
         $queryParams = [];
         $headerParams = [];
         $multipart = false;
-    
+
         // path params
         if ($request->path !== null) {
             $localName = lcfirst('path');
@@ -353,12 +328,6 @@ class FolderApi extends ApiBase
         $paramValue = $request->storage_name;
         $paramBaseName = 'storageName';
         $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
-    
-
-        $resourcePath = $this->parseURL($resourcePath, $queryParams);
-        $formFiles = [];
-        // body params
-        $_tempBody = null;
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -370,20 +339,17 @@ class FolderApi extends ApiBase
                 ['application/json']
             );
         }
-        $headers = $this->mergeAllHeaders($headerParams, $headers);
-        $httpBody = $this->prepareRequestBody($headers, $_tempBody, $multipart, $formParams, $formFiles);
-
-        $req = new Request(
+        return $this->toClientRequest(
             'PUT',
-            $this->config->getHost() . $resourcePath,
+            null,
+            $resourcePath,
+            $queryParams,
+            $formParams,
+            [],
+            $multipart,
             $headers,
-            $httpBody
+            $headerParams
         );
-        if ($this->config->getDebug()) {
-            $this->writeRequestLog('PUT', $this->config->getHost() . $resourcePath, $headers, $httpBody);
-        }
-
-        return $req;
     }
             
     /**
@@ -420,17 +386,10 @@ class FolderApi extends ApiBase
      */
     public function deleteFolderWithHttpInfo(Model\DeleteFolderRequest $request)
     {
-        $returnType = '';
         $request = $this->deleteFolderRequest($request);
-
-        try {
-            $response = $this->callClient($request);
-            return [null, $statusCode, $response->getHeaders()];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-            throw $e;
-        }
+    
+        $response = $this->callClient($request);
+        return [null, $response->getStatusCode(), $response->getHeaders()];
     }
 
     /**
@@ -465,13 +424,12 @@ class FolderApi extends ApiBase
      */
     public function deleteFolderAsyncWithHttpInfo(Model\DeleteFolderRequest $request)
     {
-        $returnType = '';
         $request = $this->deleteFolderRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -502,7 +460,7 @@ class FolderApi extends ApiBase
         $queryParams = [];
         $headerParams = [];
         $multipart = false;
-    
+
         // path params
         if ($request->path !== null) {
             $localName = lcfirst('path');
@@ -516,12 +474,6 @@ class FolderApi extends ApiBase
         $paramValue = $request->recursive;
         $paramBaseName = 'recursive';
         $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
-    
-
-        $resourcePath = $this->parseURL($resourcePath, $queryParams);
-        $formFiles = [];
-        // body params
-        $_tempBody = null;
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -533,20 +485,17 @@ class FolderApi extends ApiBase
                 ['application/json']
             );
         }
-        $headers = $this->mergeAllHeaders($headerParams, $headers);
-        $httpBody = $this->prepareRequestBody($headers, $_tempBody, $multipart, $formParams, $formFiles);
-
-        $req = new Request(
+        return $this->toClientRequest(
             'DELETE',
-            $this->config->getHost() . $resourcePath,
+            null,
+            $resourcePath,
+            $queryParams,
+            $formParams,
+            [],
+            $multipart,
             $headers,
-            $httpBody
+            $headerParams
         );
-        if ($this->config->getDebug()) {
-            $this->writeRequestLog('DELETE', $this->config->getHost() . $resourcePath, $headers, $httpBody);
-        }
-
-        return $req;
     }
             
     /**
@@ -587,23 +536,9 @@ class FolderApi extends ApiBase
     {
         $returnType = '\Aspose\Email\Model\FilesList';
         $request = $this->getFilesListRequest($request);
-
-        try {
-            $response = $this->callClient($request);
-            return $this->processResponse($response, $returnType);
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Aspose\Email\Model\FilesList',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
+    
+        $response = $this->callClient($request);
+        return $this->processResponse($response, $returnType);
     }
 
     /**
@@ -675,7 +610,7 @@ class FolderApi extends ApiBase
         $queryParams = [];
         $headerParams = [];
         $multipart = false;
-    
+
         // path params
         if ($request->path !== null) {
             $localName = lcfirst('path');
@@ -686,12 +621,6 @@ class FolderApi extends ApiBase
         $paramValue = $request->storage_name;
         $paramBaseName = 'storageName';
         $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
-    
-
-        $resourcePath = $this->parseURL($resourcePath, $queryParams);
-        $formFiles = [];
-        // body params
-        $_tempBody = null;
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -703,20 +632,17 @@ class FolderApi extends ApiBase
                 ['application/json']
             );
         }
-        $headers = $this->mergeAllHeaders($headerParams, $headers);
-        $httpBody = $this->prepareRequestBody($headers, $_tempBody, $multipart, $formParams, $formFiles);
-
-        $req = new Request(
+        return $this->toClientRequest(
             'GET',
-            $this->config->getHost() . $resourcePath,
+            null,
+            $resourcePath,
+            $queryParams,
+            $formParams,
+            [],
+            $multipart,
             $headers,
-            $httpBody
+            $headerParams
         );
-        if ($this->config->getDebug()) {
-            $this->writeRequestLog('GET', $this->config->getHost() . $resourcePath, $headers, $httpBody);
-        }
-
-        return $req;
     }
             
     /**
@@ -753,17 +679,10 @@ class FolderApi extends ApiBase
      */
     public function moveFolderWithHttpInfo(Model\MoveFolderRequest $request)
     {
-        $returnType = '';
         $request = $this->moveFolderRequest($request);
-
-        try {
-            $response = $this->callClient($request);
-            return [null, $statusCode, $response->getHeaders()];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-            throw $e;
-        }
+    
+        $response = $this->callClient($request);
+        return [null, $response->getStatusCode(), $response->getHeaders()];
     }
 
     /**
@@ -798,13 +717,12 @@ class FolderApi extends ApiBase
      */
     public function moveFolderAsyncWithHttpInfo(Model\MoveFolderRequest $request)
     {
-        $returnType = '';
         $request = $this->moveFolderRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -841,7 +759,7 @@ class FolderApi extends ApiBase
         $queryParams = [];
         $headerParams = [];
         $multipart = false;
-    
+
         // path params
         if ($request->src_path !== null) {
             $localName = lcfirst('srcPath');
@@ -858,12 +776,6 @@ class FolderApi extends ApiBase
         $paramValue = $request->dest_storage_name;
         $paramBaseName = 'destStorageName';
         $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
-    
-
-        $resourcePath = $this->parseURL($resourcePath, $queryParams);
-        $formFiles = [];
-        // body params
-        $_tempBody = null;
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -875,19 +787,16 @@ class FolderApi extends ApiBase
                 ['application/json']
             );
         }
-        $headers = $this->mergeAllHeaders($headerParams, $headers);
-        $httpBody = $this->prepareRequestBody($headers, $_tempBody, $multipart, $formParams, $formFiles);
-
-        $req = new Request(
+        return $this->toClientRequest(
             'PUT',
-            $this->config->getHost() . $resourcePath,
+            null,
+            $resourcePath,
+            $queryParams,
+            $formParams,
+            [],
+            $multipart,
             $headers,
-            $httpBody
+            $headerParams
         );
-        if ($this->config->getDebug()) {
-            $this->writeRequestLog('PUT', $this->config->getHost() . $resourcePath, $headers, $httpBody);
-        }
-
-        return $req;
     }
 }

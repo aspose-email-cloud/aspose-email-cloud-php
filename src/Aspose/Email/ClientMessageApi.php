@@ -55,6 +55,128 @@ class ClientMessageApi extends ApiBase
 
             
     /**
+     * Operation clientMessageAppend
+     *
+     * Add email message to specified folder in email account.
+     *
+     * @param Model\ClientMessageAppendRequest $request Append email request.
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     * @return Model\ValueTOfString
+     */
+    public function clientMessageAppend($request)
+    {
+        try {
+             list($response) = $this->clientMessageAppendWithHttpInfo($request);
+             return $response;
+        } catch (RepeatRequestException $e) {
+             list($response) = $this->clientMessageAppendWithHttpInfo($request);
+             return $response;
+        }
+    }
+
+    /**
+     * Operation clientMessageAppendWithHttpInfo
+     *
+     * Add email message to specified folder in email account.
+     *
+     * @param Model\ClientMessageAppendRequest $request Append email request.
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     * @throws RepeatRequestException when request token is expired
+     * @return array of \Aspose\Email\Model\ValueTOfString, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function clientMessageAppendWithHttpInfo($request)
+    {
+        $returnType = '\Aspose\Email\Model\ValueTOfString';
+        $request = $this->clientMessageAppendRequest($request);
+    
+        $response = $this->callClient($request);
+        return $this->processResponse($response, $returnType);
+    }
+
+    /**
+     * Operation clientMessageAppendAsync
+     *
+     * Add email message to specified folder in email account.
+     *
+     * @param Model\ClientMessageAppendRequest $request Append email request.
+     *
+     * @throws InvalidArgumentException
+     * @return PromiseInterface
+     */
+    public function clientMessageAppendAsync($request)
+    {
+        return $this->clientMessageAppendAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation clientMessageAppendAsyncWithHttpInfo
+     *
+     * Add email message to specified folder in email account.
+     *
+     * @param Model\ClientMessageAppendRequest $request Append email request.
+     *
+     * @throws InvalidArgumentException
+     * @return PromiseInterface
+     */
+    public function clientMessageAppendAsyncWithHttpInfo($request)
+    {
+        $returnType = '\Aspose\Email\Model\ValueTOfString';
+        $request = $this->clientMessageAppendRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return $this->processResponse($response, $returnType);
+                },
+                function ($exception) {
+                    $this->handleClientException($exception);
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'clientMessageAppend'
+     *
+     * @param Model\ClientMessageAppendRequest $request Append email request.
+     *
+     * @throws InvalidArgumentException
+     * @return Request
+     */
+    protected function clientMessageAppendRequest($request)
+    {
+        // verify the required parameter '$request' is set
+        if ($request === null) {
+            throw new InvalidArgumentException(
+                'Missing the required parameter $request when calling clientMessageAppend'
+            );
+        }
+
+        // body params
+        if (is_string($request)) {
+            $httpBody = "\"" . $request . "\"";
+        } else {
+            $httpBody = $request;
+        }
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json'],
+            ['application/json']
+        );
+        $path = '/email/client/message/append';
+        return $this->toClientRequest('POST', $httpBody, $path, [], [], [], false, $headers, []);
+    }
+            
+    /**
      * Operation clientMessageAppendFile
      *
      * Add email message from file to specified folder in email account.
@@ -92,23 +214,9 @@ class ClientMessageApi extends ApiBase
     {
         $returnType = '\Aspose\Email\Model\ValueTOfString';
         $request = $this->clientMessageAppendFileRequest($request);
-
-        try {
-            $response = $this->callClient($request);
-            return $this->processResponse($response, $returnType);
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Aspose\Email\Model\ValueTOfString',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
+    
+        $response = $this->callClient($request);
+        return $this->processResponse($response, $returnType);
     }
 
     /**
@@ -186,7 +294,6 @@ class ClientMessageApi extends ApiBase
         $queryParams = [];
         $headerParams = [];
         $multipart = false;
-    
 
         // query params
         $paramValue = $request->account;
@@ -207,11 +314,9 @@ class ClientMessageApi extends ApiBase
         $paramValue = $request->mark_as_sent;
         $paramBaseName = 'markAsSent';
         $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
-    
 
-        $resourcePath = $this->parseURL($resourcePath, $queryParams);
-        $formFiles = [];
         // form params
+        $formFiles = [];
         if ($request->file !== null) {
             $multipart = true;
             $filename = ObjectSerializer::toFormValue($request->file);
@@ -221,8 +326,6 @@ class ClientMessageApi extends ApiBase
             $formParams['file'] = $contents;
             $formFiles['file'] = basename($filename);
         }
-        // body params
-        $_tempBody = null;
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -234,20 +337,135 @@ class ClientMessageApi extends ApiBase
                 ['multipart/form-data']
             );
         }
-        $headers = $this->mergeAllHeaders($headerParams, $headers);
-        $httpBody = $this->prepareRequestBody($headers, $_tempBody, $multipart, $formParams, $formFiles);
-
-        $req = new Request(
+        return $this->toClientRequest(
             'POST',
-            $this->config->getHost() . $resourcePath,
+            null,
+            $resourcePath,
+            $queryParams,
+            $formParams,
+            $formFiles,
+            $multipart,
             $headers,
-            $httpBody
+            $headerParams
         );
-        if ($this->config->getDebug()) {
-            $this->writeRequestLog('POST', $this->config->getHost() . $resourcePath, $headers, $httpBody);
+    }
+            
+    /**
+     * Operation clientMessageDelete
+     *
+     * Delete message.
+     *
+     * @param Model\ClientMessageDeleteRequest $request Delete message request.
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     * @return void
+     */
+    public function clientMessageDelete($request)
+    {
+        try {
+             $this->clientMessageDeleteWithHttpInfo($request);
+        } catch (RepeatRequestException $e) {
+             $this->clientMessageDeleteWithHttpInfo($request);
+        }
+    }
+
+    /**
+     * Operation clientMessageDeleteWithHttpInfo
+     *
+     * Delete message.
+     *
+     * @param Model\ClientMessageDeleteRequest $request Delete message request.
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     * @throws RepeatRequestException when request token is expired
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function clientMessageDeleteWithHttpInfo($request)
+    {
+        $request = $this->clientMessageDeleteRequest($request);
+    
+        $response = $this->callClient($request);
+        return [null, $response->getStatusCode(), $response->getHeaders()];
+    }
+
+    /**
+     * Operation clientMessageDeleteAsync
+     *
+     * Delete message.
+     *
+     * @param Model\ClientMessageDeleteRequest $request Delete message request.
+     *
+     * @throws InvalidArgumentException
+     * @return PromiseInterface
+     */
+    public function clientMessageDeleteAsync($request)
+    {
+        return $this->clientMessageDeleteAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation clientMessageDeleteAsyncWithHttpInfo
+     *
+     * Delete message.
+     *
+     * @param Model\ClientMessageDeleteRequest $request Delete message request.
+     *
+     * @throws InvalidArgumentException
+     * @return PromiseInterface
+     */
+    public function clientMessageDeleteAsyncWithHttpInfo($request)
+    {
+        $request = $this->clientMessageDeleteRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $this->handleClientException($exception);
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'clientMessageDelete'
+     *
+     * @param Model\ClientMessageDeleteRequest $request Delete message request.
+     *
+     * @throws InvalidArgumentException
+     * @return Request
+     */
+    protected function clientMessageDeleteRequest($request)
+    {
+        // verify the required parameter '$request' is set
+        if ($request === null) {
+            throw new InvalidArgumentException(
+                'Missing the required parameter $request when calling clientMessageDelete'
+            );
         }
 
-        return $req;
+        // body params
+        if (is_string($request)) {
+            $httpBody = "\"" . $request . "\"";
+        } else {
+            $httpBody = $request;
+        }
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json'],
+            ['application/json']
+        );
+        $path = '/email/client/message';
+        return $this->toClientRequest('DELETE', $httpBody, $path, [], [], [], false, $headers, []);
     }
             
     /**
@@ -288,23 +506,9 @@ class ClientMessageApi extends ApiBase
     {
         $returnType = '\Aspose\Email\Model\MailMessageBase';
         $request = $this->clientMessageFetchRequest($request);
-
-        try {
-            $response = $this->callClient($request);
-            return $this->processResponse($response, $returnType);
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Aspose\Email\Model\MailMessageBase',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
+    
+        $response = $this->callClient($request);
+        return $this->processResponse($response, $returnType);
     }
 
     /**
@@ -382,7 +586,6 @@ class ClientMessageApi extends ApiBase
         $queryParams = [];
         $headerParams = [];
         $multipart = false;
-    
 
         // query params
         $paramValue = $request->message_id;
@@ -406,12 +609,6 @@ class ClientMessageApi extends ApiBase
         $paramValue = $request->format;
         $paramBaseName = 'format';
         $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
-    
-
-        $resourcePath = $this->parseURL($resourcePath, $queryParams);
-        $formFiles = [];
-        // body params
-        $_tempBody = null;
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -423,20 +620,17 @@ class ClientMessageApi extends ApiBase
                 ['application/json']
             );
         }
-        $headers = $this->mergeAllHeaders($headerParams, $headers);
-        $httpBody = $this->prepareRequestBody($headers, $_tempBody, $multipart, $formParams, $formFiles);
-
-        $req = new Request(
+        return $this->toClientRequest(
             'GET',
-            $this->config->getHost() . $resourcePath,
+            null,
+            $resourcePath,
+            $queryParams,
+            $formParams,
+            [],
+            $multipart,
             $headers,
-            $httpBody
+            $headerParams
         );
-        if ($this->config->getDebug()) {
-            $this->writeRequestLog('GET', $this->config->getHost() . $resourcePath, $headers, $httpBody);
-        }
-
-        return $req;
     }
             
     /**
@@ -477,23 +671,9 @@ class ClientMessageApi extends ApiBase
     {
         $returnType = '\SplFileObject';
         $request = $this->clientMessageFetchFileRequest($request);
-
-        try {
-            $response = $this->callClient($request);
-            return $this->processResponse($response, $returnType);
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\SplFileObject',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
+    
+        $response = $this->callClient($request);
+        return $this->processResponse($response, $returnType);
     }
 
     /**
@@ -571,7 +751,6 @@ class ClientMessageApi extends ApiBase
         $queryParams = [];
         $headerParams = [];
         $multipart = false;
-    
 
         // query params
         $paramValue = $request->message_id;
@@ -592,12 +771,6 @@ class ClientMessageApi extends ApiBase
         $paramValue = $request->format;
         $paramBaseName = 'format';
         $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
-    
-
-        $resourcePath = $this->parseURL($resourcePath, $queryParams);
-        $formFiles = [];
-        // body params
-        $_tempBody = null;
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -609,20 +782,17 @@ class ClientMessageApi extends ApiBase
                 ['application/json']
             );
         }
-        $headers = $this->mergeAllHeaders($headerParams, $headers);
-        $httpBody = $this->prepareRequestBody($headers, $_tempBody, $multipart, $formParams, $formFiles);
-
-        $req = new Request(
+        return $this->toClientRequest(
             'GET',
-            $this->config->getHost() . $resourcePath,
+            null,
+            $resourcePath,
+            $queryParams,
+            $formParams,
+            [],
+            $multipart,
             $headers,
-            $httpBody
+            $headerParams
         );
-        if ($this->config->getDebug()) {
-            $this->writeRequestLog('GET', $this->config->getHost() . $resourcePath, $headers, $httpBody);
-        }
-
-        return $req;
     }
             
     /**
@@ -663,23 +833,9 @@ class ClientMessageApi extends ApiBase
     {
         $returnType = '\Aspose\Email\Model\MailMessageBaseList';
         $request = $this->clientMessageListRequest($request);
-
-        try {
-            $response = $this->callClient($request);
-            return $this->processResponse($response, $returnType);
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Aspose\Email\Model\MailMessageBaseList',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
+    
+        $response = $this->callClient($request);
+        return $this->processResponse($response, $returnType);
     }
 
     /**
@@ -757,7 +913,6 @@ class ClientMessageApi extends ApiBase
         $queryParams = [];
         $headerParams = [];
         $multipart = false;
-    
 
         // query params
         $paramValue = $request->folder;
@@ -784,12 +939,6 @@ class ClientMessageApi extends ApiBase
         $paramValue = $request->format;
         $paramBaseName = 'format';
         $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
-    
-
-        $resourcePath = $this->parseURL($resourcePath, $queryParams);
-        $formFiles = [];
-        // body params
-        $_tempBody = null;
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -801,20 +950,253 @@ class ClientMessageApi extends ApiBase
                 ['application/json']
             );
         }
-        $headers = $this->mergeAllHeaders($headerParams, $headers);
-        $httpBody = $this->prepareRequestBody($headers, $_tempBody, $multipart, $formParams, $formFiles);
-
-        $req = new Request(
+        return $this->toClientRequest(
             'GET',
-            $this->config->getHost() . $resourcePath,
+            null,
+            $resourcePath,
+            $queryParams,
+            $formParams,
+            [],
+            $multipart,
             $headers,
-            $httpBody
+            $headerParams
         );
-        if ($this->config->getDebug()) {
-            $this->writeRequestLog('GET', $this->config->getHost() . $resourcePath, $headers, $httpBody);
+    }
+            
+    /**
+     * Operation clientMessageMove
+     *
+     * Move message to another folder.
+     *
+     * @param Model\ClientMessageMoveRequest $request Move message request.
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     * @return void
+     */
+    public function clientMessageMove($request)
+    {
+        try {
+             $this->clientMessageMoveWithHttpInfo($request);
+        } catch (RepeatRequestException $e) {
+             $this->clientMessageMoveWithHttpInfo($request);
+        }
+    }
+
+    /**
+     * Operation clientMessageMoveWithHttpInfo
+     *
+     * Move message to another folder.
+     *
+     * @param Model\ClientMessageMoveRequest $request Move message request.
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     * @throws RepeatRequestException when request token is expired
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function clientMessageMoveWithHttpInfo($request)
+    {
+        $request = $this->clientMessageMoveRequest($request);
+    
+        $response = $this->callClient($request);
+        return [null, $response->getStatusCode(), $response->getHeaders()];
+    }
+
+    /**
+     * Operation clientMessageMoveAsync
+     *
+     * Move message to another folder.
+     *
+     * @param Model\ClientMessageMoveRequest $request Move message request.
+     *
+     * @throws InvalidArgumentException
+     * @return PromiseInterface
+     */
+    public function clientMessageMoveAsync($request)
+    {
+        return $this->clientMessageMoveAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation clientMessageMoveAsyncWithHttpInfo
+     *
+     * Move message to another folder.
+     *
+     * @param Model\ClientMessageMoveRequest $request Move message request.
+     *
+     * @throws InvalidArgumentException
+     * @return PromiseInterface
+     */
+    public function clientMessageMoveAsyncWithHttpInfo($request)
+    {
+        $request = $this->clientMessageMoveRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $this->handleClientException($exception);
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'clientMessageMove'
+     *
+     * @param Model\ClientMessageMoveRequest $request Move message request.
+     *
+     * @throws InvalidArgumentException
+     * @return Request
+     */
+    protected function clientMessageMoveRequest($request)
+    {
+        // verify the required parameter '$request' is set
+        if ($request === null) {
+            throw new InvalidArgumentException(
+                'Missing the required parameter $request when calling clientMessageMove'
+            );
         }
 
-        return $req;
+        // body params
+        if (is_string($request)) {
+            $httpBody = "\"" . $request . "\"";
+        } else {
+            $httpBody = $request;
+        }
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json'],
+            ['application/json']
+        );
+        $path = '/email/client/message/move';
+        return $this->toClientRequest('PUT', $httpBody, $path, [], [], [], false, $headers, []);
+    }
+            
+    /**
+     * Operation clientMessageSend
+     *
+     * Send an email specified by model in request.
+     *
+     * @param Model\ClientMessageSendRequest $request Send email request.
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     * @return void
+     */
+    public function clientMessageSend($request)
+    {
+        try {
+             $this->clientMessageSendWithHttpInfo($request);
+        } catch (RepeatRequestException $e) {
+             $this->clientMessageSendWithHttpInfo($request);
+        }
+    }
+
+    /**
+     * Operation clientMessageSendWithHttpInfo
+     *
+     * Send an email specified by model in request.
+     *
+     * @param Model\ClientMessageSendRequest $request Send email request.
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     * @throws RepeatRequestException when request token is expired
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function clientMessageSendWithHttpInfo($request)
+    {
+        $request = $this->clientMessageSendRequest($request);
+    
+        $response = $this->callClient($request);
+        return [null, $response->getStatusCode(), $response->getHeaders()];
+    }
+
+    /**
+     * Operation clientMessageSendAsync
+     *
+     * Send an email specified by model in request.
+     *
+     * @param Model\ClientMessageSendRequest $request Send email request.
+     *
+     * @throws InvalidArgumentException
+     * @return PromiseInterface
+     */
+    public function clientMessageSendAsync($request)
+    {
+        return $this->clientMessageSendAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation clientMessageSendAsyncWithHttpInfo
+     *
+     * Send an email specified by model in request.
+     *
+     * @param Model\ClientMessageSendRequest $request Send email request.
+     *
+     * @throws InvalidArgumentException
+     * @return PromiseInterface
+     */
+    public function clientMessageSendAsyncWithHttpInfo($request)
+    {
+        $request = $this->clientMessageSendRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $this->handleClientException($exception);
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'clientMessageSend'
+     *
+     * @param Model\ClientMessageSendRequest $request Send email request.
+     *
+     * @throws InvalidArgumentException
+     * @return Request
+     */
+    protected function clientMessageSendRequest($request)
+    {
+        // verify the required parameter '$request' is set
+        if ($request === null) {
+            throw new InvalidArgumentException(
+                'Missing the required parameter $request when calling clientMessageSend'
+            );
+        }
+
+        // body params
+        if (is_string($request)) {
+            $httpBody = "\"" . $request . "\"";
+        } else {
+            $httpBody = $request;
+        }
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json'],
+            ['application/json']
+        );
+        $path = '/email/client/message';
+        return $this->toClientRequest('POST', $httpBody, $path, [], [], [], false, $headers, []);
     }
             
     /**
@@ -851,17 +1233,10 @@ class ClientMessageApi extends ApiBase
      */
     public function clientMessageSendFileWithHttpInfo(Model\ClientMessageSendFileRequest $request)
     {
-        $returnType = '';
         $request = $this->clientMessageSendFileRequest($request);
-
-        try {
-            $response = $this->callClient($request);
-            return [null, $statusCode, $response->getHeaders()];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-            throw $e;
-        }
+    
+        $response = $this->callClient($request);
+        return [null, $response->getStatusCode(), $response->getHeaders()];
     }
 
     /**
@@ -896,13 +1271,12 @@ class ClientMessageApi extends ApiBase
      */
     public function clientMessageSendFileAsyncWithHttpInfo(Model\ClientMessageSendFileRequest $request)
     {
-        $returnType = '';
         $request = $this->clientMessageSendFileRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -939,7 +1313,6 @@ class ClientMessageApi extends ApiBase
         $queryParams = [];
         $headerParams = [];
         $multipart = false;
-    
 
         // query params
         $paramValue = $request->account;
@@ -954,11 +1327,9 @@ class ClientMessageApi extends ApiBase
         $paramValue = $request->format;
         $paramBaseName = 'format';
         $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
-    
 
-        $resourcePath = $this->parseURL($resourcePath, $queryParams);
-        $formFiles = [];
         // form params
+        $formFiles = [];
         if ($request->file !== null) {
             $multipart = true;
             $filename = ObjectSerializer::toFormValue($request->file);
@@ -968,8 +1339,6 @@ class ClientMessageApi extends ApiBase
             $formParams['file'] = $contents;
             $formFiles['file'] = basename($filename);
         }
-        // body params
-        $_tempBody = null;
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -981,19 +1350,134 @@ class ClientMessageApi extends ApiBase
                 ['multipart/form-data']
             );
         }
-        $headers = $this->mergeAllHeaders($headerParams, $headers);
-        $httpBody = $this->prepareRequestBody($headers, $_tempBody, $multipart, $formParams, $formFiles);
-
-        $req = new Request(
+        return $this->toClientRequest(
             'POST',
-            $this->config->getHost() . $resourcePath,
+            null,
+            $resourcePath,
+            $queryParams,
+            $formParams,
+            $formFiles,
+            $multipart,
             $headers,
-            $httpBody
+            $headerParams
         );
-        if ($this->config->getDebug()) {
-            $this->writeRequestLog('POST', $this->config->getHost() . $resourcePath, $headers, $httpBody);
+    }
+            
+    /**
+     * Operation clientMessageSetIsRead
+     *
+     * Mark message as read or unread.
+     *
+     * @param Model\ClientMessageSetIsReadRequest $request Delete message request.
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     * @return void
+     */
+    public function clientMessageSetIsRead($request)
+    {
+        try {
+             $this->clientMessageSetIsReadWithHttpInfo($request);
+        } catch (RepeatRequestException $e) {
+             $this->clientMessageSetIsReadWithHttpInfo($request);
+        }
+    }
+
+    /**
+     * Operation clientMessageSetIsReadWithHttpInfo
+     *
+     * Mark message as read or unread.
+     *
+     * @param Model\ClientMessageSetIsReadRequest $request Delete message request.
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     * @throws RepeatRequestException when request token is expired
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function clientMessageSetIsReadWithHttpInfo($request)
+    {
+        $request = $this->clientMessageSetIsReadRequest($request);
+    
+        $response = $this->callClient($request);
+        return [null, $response->getStatusCode(), $response->getHeaders()];
+    }
+
+    /**
+     * Operation clientMessageSetIsReadAsync
+     *
+     * Mark message as read or unread.
+     *
+     * @param Model\ClientMessageSetIsReadRequest $request Delete message request.
+     *
+     * @throws InvalidArgumentException
+     * @return PromiseInterface
+     */
+    public function clientMessageSetIsReadAsync($request)
+    {
+        return $this->clientMessageSetIsReadAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation clientMessageSetIsReadAsyncWithHttpInfo
+     *
+     * Mark message as read or unread.
+     *
+     * @param Model\ClientMessageSetIsReadRequest $request Delete message request.
+     *
+     * @throws InvalidArgumentException
+     * @return PromiseInterface
+     */
+    public function clientMessageSetIsReadAsyncWithHttpInfo($request)
+    {
+        $request = $this->clientMessageSetIsReadRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $this->handleClientException($exception);
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'clientMessageSetIsRead'
+     *
+     * @param Model\ClientMessageSetIsReadRequest $request Delete message request.
+     *
+     * @throws InvalidArgumentException
+     * @return Request
+     */
+    protected function clientMessageSetIsReadRequest($request)
+    {
+        // verify the required parameter '$request' is set
+        if ($request === null) {
+            throw new InvalidArgumentException(
+                'Missing the required parameter $request when calling clientMessageSetIsRead'
+            );
         }
 
-        return $req;
+        // body params
+        if (is_string($request)) {
+            $httpBody = "\"" . $request . "\"";
+        } else {
+            $httpBody = $request;
+        }
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json'],
+            ['application/json']
+        );
+        $path = '/email/client/message/set-is-read';
+        return $this->toClientRequest('PUT', $httpBody, $path, [], [], [], false, $headers, []);
     }
 }

@@ -92,23 +92,9 @@ class StorageApi extends ApiBase
     {
         $returnType = '\Aspose\Email\Model\DiscUsage';
         $request = $this->getDiscUsageRequest($request);
-
-        try {
-            $response = $this->callClient($request);
-            return $this->processResponse($response, $returnType);
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Aspose\Email\Model\DiscUsage',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
+    
+        $response = $this->callClient($request);
+        return $this->processResponse($response, $returnType);
     }
 
     /**
@@ -174,18 +160,11 @@ class StorageApi extends ApiBase
         $queryParams = [];
         $headerParams = [];
         $multipart = false;
-    
 
         // query params
         $paramValue = $request->storage_name;
         $paramBaseName = 'storageName';
         $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
-    
-
-        $resourcePath = $this->parseURL($resourcePath, $queryParams);
-        $formFiles = [];
-        // body params
-        $_tempBody = null;
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -197,20 +176,17 @@ class StorageApi extends ApiBase
                 ['application/json']
             );
         }
-        $headers = $this->mergeAllHeaders($headerParams, $headers);
-        $httpBody = $this->prepareRequestBody($headers, $_tempBody, $multipart, $formParams, $formFiles);
-
-        $req = new Request(
+        return $this->toClientRequest(
             'GET',
-            $this->config->getHost() . $resourcePath,
+            null,
+            $resourcePath,
+            $queryParams,
+            $formParams,
+            [],
+            $multipart,
             $headers,
-            $httpBody
+            $headerParams
         );
-        if ($this->config->getDebug()) {
-            $this->writeRequestLog('GET', $this->config->getHost() . $resourcePath, $headers, $httpBody);
-        }
-
-        return $req;
     }
             
     /**
@@ -251,23 +227,9 @@ class StorageApi extends ApiBase
     {
         $returnType = '\Aspose\Email\Model\FileVersions';
         $request = $this->getFileVersionsRequest($request);
-
-        try {
-            $response = $this->callClient($request);
-            return $this->processResponse($response, $returnType);
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Aspose\Email\Model\FileVersions',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
+    
+        $response = $this->callClient($request);
+        return $this->processResponse($response, $returnType);
     }
 
     /**
@@ -339,7 +301,7 @@ class StorageApi extends ApiBase
         $queryParams = [];
         $headerParams = [];
         $multipart = false;
-    
+
         // path params
         if ($request->path !== null) {
             $localName = lcfirst('path');
@@ -350,12 +312,6 @@ class StorageApi extends ApiBase
         $paramValue = $request->storage_name;
         $paramBaseName = 'storageName';
         $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
-    
-
-        $resourcePath = $this->parseURL($resourcePath, $queryParams);
-        $formFiles = [];
-        // body params
-        $_tempBody = null;
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -367,20 +323,17 @@ class StorageApi extends ApiBase
                 ['application/json']
             );
         }
-        $headers = $this->mergeAllHeaders($headerParams, $headers);
-        $httpBody = $this->prepareRequestBody($headers, $_tempBody, $multipart, $formParams, $formFiles);
-
-        $req = new Request(
+        return $this->toClientRequest(
             'GET',
-            $this->config->getHost() . $resourcePath,
+            null,
+            $resourcePath,
+            $queryParams,
+            $formParams,
+            [],
+            $multipart,
             $headers,
-            $httpBody
+            $headerParams
         );
-        if ($this->config->getDebug()) {
-            $this->writeRequestLog('GET', $this->config->getHost() . $resourcePath, $headers, $httpBody);
-        }
-
-        return $req;
     }
             
     /**
@@ -421,23 +374,9 @@ class StorageApi extends ApiBase
     {
         $returnType = '\Aspose\Email\Model\ObjectExist';
         $request = $this->objectExistsRequest($request);
-
-        try {
-            $response = $this->callClient($request);
-            return $this->processResponse($response, $returnType);
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Aspose\Email\Model\ObjectExist',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
+    
+        $response = $this->callClient($request);
+        return $this->processResponse($response, $returnType);
     }
 
     /**
@@ -509,7 +448,7 @@ class StorageApi extends ApiBase
         $queryParams = [];
         $headerParams = [];
         $multipart = false;
-    
+
         // path params
         if ($request->path !== null) {
             $localName = lcfirst('path');
@@ -523,12 +462,6 @@ class StorageApi extends ApiBase
         $paramValue = $request->version_id;
         $paramBaseName = 'versionId';
         $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
-    
-
-        $resourcePath = $this->parseURL($resourcePath, $queryParams);
-        $formFiles = [];
-        // body params
-        $_tempBody = null;
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -540,20 +473,17 @@ class StorageApi extends ApiBase
                 ['application/json']
             );
         }
-        $headers = $this->mergeAllHeaders($headerParams, $headers);
-        $httpBody = $this->prepareRequestBody($headers, $_tempBody, $multipart, $formParams, $formFiles);
-
-        $req = new Request(
+        return $this->toClientRequest(
             'GET',
-            $this->config->getHost() . $resourcePath,
+            null,
+            $resourcePath,
+            $queryParams,
+            $formParams,
+            [],
+            $multipart,
             $headers,
-            $httpBody
+            $headerParams
         );
-        if ($this->config->getDebug()) {
-            $this->writeRequestLog('GET', $this->config->getHost() . $resourcePath, $headers, $httpBody);
-        }
-
-        return $req;
     }
             
     /**
@@ -594,23 +524,9 @@ class StorageApi extends ApiBase
     {
         $returnType = '\Aspose\Email\Model\StorageExist';
         $request = $this->storageExistsRequest($request);
-
-        try {
-            $response = $this->callClient($request);
-            return $this->processResponse($response, $returnType);
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Aspose\Email\Model\StorageExist',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
+    
+        $response = $this->callClient($request);
+        return $this->processResponse($response, $returnType);
     }
 
     /**
@@ -682,20 +598,12 @@ class StorageApi extends ApiBase
         $queryParams = [];
         $headerParams = [];
         $multipart = false;
-    
+
         // path params
         if ($request->storage_name !== null) {
             $localName = lcfirst('storageName');
             $resourcePath = str_replace('{' . $localName . '}', ObjectSerializer::toPathValue($request->storage_name), $resourcePath);
         }
-
-        
-    
-
-        $resourcePath = $this->parseURL($resourcePath, $queryParams);
-        $formFiles = [];
-        // body params
-        $_tempBody = null;
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -707,19 +615,16 @@ class StorageApi extends ApiBase
                 ['application/json']
             );
         }
-        $headers = $this->mergeAllHeaders($headerParams, $headers);
-        $httpBody = $this->prepareRequestBody($headers, $_tempBody, $multipart, $formParams, $formFiles);
-
-        $req = new Request(
+        return $this->toClientRequest(
             'GET',
-            $this->config->getHost() . $resourcePath,
+            null,
+            $resourcePath,
+            $queryParams,
+            $formParams,
+            [],
+            $multipart,
             $headers,
-            $httpBody
+            $headerParams
         );
-        if ($this->config->getDebug()) {
-            $this->writeRequestLog('GET', $this->config->getHost() . $resourcePath, $headers, $httpBody);
-        }
-
-        return $req;
     }
 }

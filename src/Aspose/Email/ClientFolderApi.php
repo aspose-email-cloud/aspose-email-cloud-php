@@ -55,6 +55,242 @@ class ClientFolderApi extends ApiBase
 
             
     /**
+     * Operation clientFolderCreate
+     *
+     * Create new folder in email account
+     *
+     * @param Model\ClientFolderCreateRequest $request Create folder request
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     * @return void
+     */
+    public function clientFolderCreate($request)
+    {
+        try {
+             $this->clientFolderCreateWithHttpInfo($request);
+        } catch (RepeatRequestException $e) {
+             $this->clientFolderCreateWithHttpInfo($request);
+        }
+    }
+
+    /**
+     * Operation clientFolderCreateWithHttpInfo
+     *
+     * Create new folder in email account
+     *
+     * @param Model\ClientFolderCreateRequest $request Create folder request
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     * @throws RepeatRequestException when request token is expired
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function clientFolderCreateWithHttpInfo($request)
+    {
+        $request = $this->clientFolderCreateRequest($request);
+    
+        $response = $this->callClient($request);
+        return [null, $response->getStatusCode(), $response->getHeaders()];
+    }
+
+    /**
+     * Operation clientFolderCreateAsync
+     *
+     * Create new folder in email account
+     *
+     * @param Model\ClientFolderCreateRequest $request Create folder request
+     *
+     * @throws InvalidArgumentException
+     * @return PromiseInterface
+     */
+    public function clientFolderCreateAsync($request)
+    {
+        return $this->clientFolderCreateAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation clientFolderCreateAsyncWithHttpInfo
+     *
+     * Create new folder in email account
+     *
+     * @param Model\ClientFolderCreateRequest $request Create folder request
+     *
+     * @throws InvalidArgumentException
+     * @return PromiseInterface
+     */
+    public function clientFolderCreateAsyncWithHttpInfo($request)
+    {
+        $request = $this->clientFolderCreateRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $this->handleClientException($exception);
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'clientFolderCreate'
+     *
+     * @param Model\ClientFolderCreateRequest $request Create folder request
+     *
+     * @throws InvalidArgumentException
+     * @return Request
+     */
+    protected function clientFolderCreateRequest($request)
+    {
+        // verify the required parameter '$request' is set
+        if ($request === null) {
+            throw new InvalidArgumentException(
+                'Missing the required parameter $request when calling clientFolderCreate'
+            );
+        }
+
+        // body params
+        if (is_string($request)) {
+            $httpBody = "\"" . $request . "\"";
+        } else {
+            $httpBody = $request;
+        }
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json'],
+            ['application/json']
+        );
+        $path = '/email/client/folder';
+        return $this->toClientRequest('PUT', $httpBody, $path, [], [], [], false, $headers, []);
+    }
+            
+    /**
+     * Operation clientFolderDelete
+     *
+     * Delete a folder in email account
+     *
+     * @param Model\ClientFolderDeleteRequest $request Delete folder request
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     * @return void
+     */
+    public function clientFolderDelete($request)
+    {
+        try {
+             $this->clientFolderDeleteWithHttpInfo($request);
+        } catch (RepeatRequestException $e) {
+             $this->clientFolderDeleteWithHttpInfo($request);
+        }
+    }
+
+    /**
+     * Operation clientFolderDeleteWithHttpInfo
+     *
+     * Delete a folder in email account
+     *
+     * @param Model\ClientFolderDeleteRequest $request Delete folder request
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     * @throws RepeatRequestException when request token is expired
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function clientFolderDeleteWithHttpInfo($request)
+    {
+        $request = $this->clientFolderDeleteRequest($request);
+    
+        $response = $this->callClient($request);
+        return [null, $response->getStatusCode(), $response->getHeaders()];
+    }
+
+    /**
+     * Operation clientFolderDeleteAsync
+     *
+     * Delete a folder in email account
+     *
+     * @param Model\ClientFolderDeleteRequest $request Delete folder request
+     *
+     * @throws InvalidArgumentException
+     * @return PromiseInterface
+     */
+    public function clientFolderDeleteAsync($request)
+    {
+        return $this->clientFolderDeleteAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation clientFolderDeleteAsyncWithHttpInfo
+     *
+     * Delete a folder in email account
+     *
+     * @param Model\ClientFolderDeleteRequest $request Delete folder request
+     *
+     * @throws InvalidArgumentException
+     * @return PromiseInterface
+     */
+    public function clientFolderDeleteAsyncWithHttpInfo($request)
+    {
+        $request = $this->clientFolderDeleteRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $this->handleClientException($exception);
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'clientFolderDelete'
+     *
+     * @param Model\ClientFolderDeleteRequest $request Delete folder request
+     *
+     * @throws InvalidArgumentException
+     * @return Request
+     */
+    protected function clientFolderDeleteRequest($request)
+    {
+        // verify the required parameter '$request' is set
+        if ($request === null) {
+            throw new InvalidArgumentException(
+                'Missing the required parameter $request when calling clientFolderDelete'
+            );
+        }
+
+        // body params
+        if (is_string($request)) {
+            $httpBody = "\"" . $request . "\"";
+        } else {
+            $httpBody = $request;
+        }
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json'],
+            ['application/json']
+        );
+        $path = '/email/client/folder';
+        return $this->toClientRequest('DELETE', $httpBody, $path, [], [], [], false, $headers, []);
+    }
+            
+    /**
      * Operation clientFolderGetList
      *
      * Get folders list in email account
@@ -92,23 +328,9 @@ class ClientFolderApi extends ApiBase
     {
         $returnType = '\Aspose\Email\Model\MailServerFolderList';
         $request = $this->clientFolderGetListRequest($request);
-
-        try {
-            $response = $this->callClient($request);
-            return $this->processResponse($response, $returnType);
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Aspose\Email\Model\MailServerFolderList',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
+    
+        $response = $this->callClient($request);
+        return $this->processResponse($response, $returnType);
     }
 
     /**
@@ -180,7 +402,6 @@ class ClientFolderApi extends ApiBase
         $queryParams = [];
         $headerParams = [];
         $multipart = false;
-    
 
         // query params
         $paramValue = $request->account;
@@ -195,12 +416,6 @@ class ClientFolderApi extends ApiBase
         $paramValue = $request->parent_folder;
         $paramBaseName = 'parentFolder';
         $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
-    
-
-        $resourcePath = $this->parseURL($resourcePath, $queryParams);
-        $formFiles = [];
-        // body params
-        $_tempBody = null;
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -212,19 +427,16 @@ class ClientFolderApi extends ApiBase
                 ['application/json']
             );
         }
-        $headers = $this->mergeAllHeaders($headerParams, $headers);
-        $httpBody = $this->prepareRequestBody($headers, $_tempBody, $multipart, $formParams, $formFiles);
-
-        $req = new Request(
+        return $this->toClientRequest(
             'GET',
-            $this->config->getHost() . $resourcePath,
+            null,
+            $resourcePath,
+            $queryParams,
+            $formParams,
+            [],
+            $multipart,
             $headers,
-            $httpBody
+            $headerParams
         );
-        if ($this->config->getDebug()) {
-            $this->writeRequestLog('GET', $this->config->getHost() . $resourcePath, $headers, $httpBody);
-        }
-
-        return $req;
     }
 }

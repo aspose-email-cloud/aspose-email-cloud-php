@@ -92,23 +92,9 @@ class AiBcrApi extends ApiBase
     {
         $returnType = '\Aspose\Email\Model\ContactList';
         $request = $this->aiBcrParseRequest($request);
-
-        try {
-            $response = $this->callClient($request);
-            return $this->processResponse($response, $returnType);
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Aspose\Email\Model\ContactList',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
+    
+        $response = $this->callClient($request);
+        return $this->processResponse($response, $returnType);
     }
 
     /**
@@ -180,7 +166,6 @@ class AiBcrApi extends ApiBase
         $queryParams = [];
         $headerParams = [];
         $multipart = false;
-    
 
         // query params
         $paramValue = $request->countries;
@@ -192,11 +177,9 @@ class AiBcrApi extends ApiBase
         $paramValue = $request->is_single;
         $paramBaseName = 'isSingle';
         $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
-    
 
-        $resourcePath = $this->parseURL($resourcePath, $queryParams);
-        $formFiles = [];
         // form params
+        $formFiles = [];
         if ($request->file !== null) {
             $multipart = true;
             $filename = ObjectSerializer::toFormValue($request->file);
@@ -206,8 +189,6 @@ class AiBcrApi extends ApiBase
             $formParams['file'] = $contents;
             $formFiles['file'] = basename($filename);
         }
-        // body params
-        $_tempBody = null;
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -219,19 +200,138 @@ class AiBcrApi extends ApiBase
                 ['multipart/form-data']
             );
         }
-        $headers = $this->mergeAllHeaders($headerParams, $headers);
-        $httpBody = $this->prepareRequestBody($headers, $_tempBody, $multipart, $formParams, $formFiles);
-
-        $req = new Request(
+        return $this->toClientRequest(
             'PUT',
-            $this->config->getHost() . $resourcePath,
+            null,
+            $resourcePath,
+            $queryParams,
+            $formParams,
+            $formFiles,
+            $multipart,
             $headers,
-            $httpBody
+            $headerParams
         );
-        if ($this->config->getDebug()) {
-            $this->writeRequestLog('PUT', $this->config->getHost() . $resourcePath, $headers, $httpBody);
+    }
+            
+    /**
+     * Operation aiBcrParseStorage
+     *
+     * Parse images from storage to vCard files
+     *
+     * @param Model\AiBcrParseStorageRequest $request Request with images located on storage
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     * @return Model\StorageFileLocationList
+     */
+    public function aiBcrParseStorage($request)
+    {
+        try {
+             list($response) = $this->aiBcrParseStorageWithHttpInfo($request);
+             return $response;
+        } catch (RepeatRequestException $e) {
+             list($response) = $this->aiBcrParseStorageWithHttpInfo($request);
+             return $response;
+        }
+    }
+
+    /**
+     * Operation aiBcrParseStorageWithHttpInfo
+     *
+     * Parse images from storage to vCard files
+     *
+     * @param Model\AiBcrParseStorageRequest $request Request with images located on storage
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     * @throws RepeatRequestException when request token is expired
+     * @return array of \Aspose\Email\Model\StorageFileLocationList, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function aiBcrParseStorageWithHttpInfo($request)
+    {
+        $returnType = '\Aspose\Email\Model\StorageFileLocationList';
+        $request = $this->aiBcrParseStorageRequest($request);
+    
+        $response = $this->callClient($request);
+        return $this->processResponse($response, $returnType);
+    }
+
+    /**
+     * Operation aiBcrParseStorageAsync
+     *
+     * Parse images from storage to vCard files
+     *
+     * @param Model\AiBcrParseStorageRequest $request Request with images located on storage
+     *
+     * @throws InvalidArgumentException
+     * @return PromiseInterface
+     */
+    public function aiBcrParseStorageAsync($request)
+    {
+        return $this->aiBcrParseStorageAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation aiBcrParseStorageAsyncWithHttpInfo
+     *
+     * Parse images from storage to vCard files
+     *
+     * @param Model\AiBcrParseStorageRequest $request Request with images located on storage
+     *
+     * @throws InvalidArgumentException
+     * @return PromiseInterface
+     */
+    public function aiBcrParseStorageAsyncWithHttpInfo($request)
+    {
+        $returnType = '\Aspose\Email\Model\StorageFileLocationList';
+        $request = $this->aiBcrParseStorageRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return $this->processResponse($response, $returnType);
+                },
+                function ($exception) {
+                    $this->handleClientException($exception);
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'aiBcrParseStorage'
+     *
+     * @param Model\AiBcrParseStorageRequest $request Request with images located on storage
+     *
+     * @throws InvalidArgumentException
+     * @return Request
+     */
+    protected function aiBcrParseStorageRequest($request)
+    {
+        // verify the required parameter '$request' is set
+        if ($request === null) {
+            throw new InvalidArgumentException(
+                'Missing the required parameter $request when calling aiBcrParseStorage'
+            );
         }
 
-        return $req;
+        // body params
+        if (is_string($request)) {
+            $httpBody = "\"" . $request . "\"";
+        } else {
+            $httpBody = $request;
+        }
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json'],
+            ['application/json']
+        );
+        $path = '/email/AiBcr/parse-storage';
+        return $this->toClientRequest('PUT', $httpBody, $path, [], [], [], false, $headers, []);
     }
 }

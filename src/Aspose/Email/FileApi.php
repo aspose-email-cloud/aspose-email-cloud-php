@@ -88,17 +88,10 @@ class FileApi extends ApiBase
      */
     public function copyFileWithHttpInfo(Model\CopyFileRequest $request)
     {
-        $returnType = '';
         $request = $this->copyFileRequest($request);
-
-        try {
-            $response = $this->callClient($request);
-            return [null, $statusCode, $response->getHeaders()];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-            throw $e;
-        }
+    
+        $response = $this->callClient($request);
+        return [null, $response->getStatusCode(), $response->getHeaders()];
     }
 
     /**
@@ -133,13 +126,12 @@ class FileApi extends ApiBase
      */
     public function copyFileAsyncWithHttpInfo(Model\CopyFileRequest $request)
     {
-        $returnType = '';
         $request = $this->copyFileRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -176,7 +168,7 @@ class FileApi extends ApiBase
         $queryParams = [];
         $headerParams = [];
         $multipart = false;
-    
+
         // path params
         if ($request->src_path !== null) {
             $localName = lcfirst('srcPath');
@@ -196,12 +188,6 @@ class FileApi extends ApiBase
         $paramValue = $request->version_id;
         $paramBaseName = 'versionId';
         $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
-    
-
-        $resourcePath = $this->parseURL($resourcePath, $queryParams);
-        $formFiles = [];
-        // body params
-        $_tempBody = null;
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -213,20 +199,17 @@ class FileApi extends ApiBase
                 ['application/json']
             );
         }
-        $headers = $this->mergeAllHeaders($headerParams, $headers);
-        $httpBody = $this->prepareRequestBody($headers, $_tempBody, $multipart, $formParams, $formFiles);
-
-        $req = new Request(
+        return $this->toClientRequest(
             'PUT',
-            $this->config->getHost() . $resourcePath,
+            null,
+            $resourcePath,
+            $queryParams,
+            $formParams,
+            [],
+            $multipart,
             $headers,
-            $httpBody
+            $headerParams
         );
-        if ($this->config->getDebug()) {
-            $this->writeRequestLog('PUT', $this->config->getHost() . $resourcePath, $headers, $httpBody);
-        }
-
-        return $req;
     }
             
     /**
@@ -263,17 +246,10 @@ class FileApi extends ApiBase
      */
     public function deleteFileWithHttpInfo(Model\DeleteFileRequest $request)
     {
-        $returnType = '';
         $request = $this->deleteFileRequest($request);
-
-        try {
-            $response = $this->callClient($request);
-            return [null, $statusCode, $response->getHeaders()];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-            throw $e;
-        }
+    
+        $response = $this->callClient($request);
+        return [null, $response->getStatusCode(), $response->getHeaders()];
     }
 
     /**
@@ -308,13 +284,12 @@ class FileApi extends ApiBase
      */
     public function deleteFileAsyncWithHttpInfo(Model\DeleteFileRequest $request)
     {
-        $returnType = '';
         $request = $this->deleteFileRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -345,7 +320,7 @@ class FileApi extends ApiBase
         $queryParams = [];
         $headerParams = [];
         $multipart = false;
-    
+
         // path params
         if ($request->path !== null) {
             $localName = lcfirst('path');
@@ -359,12 +334,6 @@ class FileApi extends ApiBase
         $paramValue = $request->version_id;
         $paramBaseName = 'versionId';
         $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
-    
-
-        $resourcePath = $this->parseURL($resourcePath, $queryParams);
-        $formFiles = [];
-        // body params
-        $_tempBody = null;
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -376,20 +345,17 @@ class FileApi extends ApiBase
                 ['application/json']
             );
         }
-        $headers = $this->mergeAllHeaders($headerParams, $headers);
-        $httpBody = $this->prepareRequestBody($headers, $_tempBody, $multipart, $formParams, $formFiles);
-
-        $req = new Request(
+        return $this->toClientRequest(
             'DELETE',
-            $this->config->getHost() . $resourcePath,
+            null,
+            $resourcePath,
+            $queryParams,
+            $formParams,
+            [],
+            $multipart,
             $headers,
-            $httpBody
+            $headerParams
         );
-        if ($this->config->getDebug()) {
-            $this->writeRequestLog('DELETE', $this->config->getHost() . $resourcePath, $headers, $httpBody);
-        }
-
-        return $req;
     }
             
     /**
@@ -430,23 +396,9 @@ class FileApi extends ApiBase
     {
         $returnType = '\SplFileObject';
         $request = $this->downloadFileRequest($request);
-
-        try {
-            $response = $this->callClient($request);
-            return $this->processResponse($response, $returnType);
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\SplFileObject',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
+    
+        $response = $this->callClient($request);
+        return $this->processResponse($response, $returnType);
     }
 
     /**
@@ -518,7 +470,7 @@ class FileApi extends ApiBase
         $queryParams = [];
         $headerParams = [];
         $multipart = false;
-    
+
         // path params
         if ($request->path !== null) {
             $localName = lcfirst('path');
@@ -532,12 +484,6 @@ class FileApi extends ApiBase
         $paramValue = $request->version_id;
         $paramBaseName = 'versionId';
         $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
-    
-
-        $resourcePath = $this->parseURL($resourcePath, $queryParams);
-        $formFiles = [];
-        // body params
-        $_tempBody = null;
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -549,20 +495,17 @@ class FileApi extends ApiBase
                 ['application/json']
             );
         }
-        $headers = $this->mergeAllHeaders($headerParams, $headers);
-        $httpBody = $this->prepareRequestBody($headers, $_tempBody, $multipart, $formParams, $formFiles);
-
-        $req = new Request(
+        return $this->toClientRequest(
             'GET',
-            $this->config->getHost() . $resourcePath,
+            null,
+            $resourcePath,
+            $queryParams,
+            $formParams,
+            [],
+            $multipart,
             $headers,
-            $httpBody
+            $headerParams
         );
-        if ($this->config->getDebug()) {
-            $this->writeRequestLog('GET', $this->config->getHost() . $resourcePath, $headers, $httpBody);
-        }
-
-        return $req;
     }
             
     /**
@@ -599,17 +542,10 @@ class FileApi extends ApiBase
      */
     public function moveFileWithHttpInfo(Model\MoveFileRequest $request)
     {
-        $returnType = '';
         $request = $this->moveFileRequest($request);
-
-        try {
-            $response = $this->callClient($request);
-            return [null, $statusCode, $response->getHeaders()];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-            throw $e;
-        }
+    
+        $response = $this->callClient($request);
+        return [null, $response->getStatusCode(), $response->getHeaders()];
     }
 
     /**
@@ -644,13 +580,12 @@ class FileApi extends ApiBase
      */
     public function moveFileAsyncWithHttpInfo(Model\MoveFileRequest $request)
     {
-        $returnType = '';
         $request = $this->moveFileRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
-                function ($response) use ($returnType) {
+                function ($response) {
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
@@ -687,7 +622,7 @@ class FileApi extends ApiBase
         $queryParams = [];
         $headerParams = [];
         $multipart = false;
-    
+
         // path params
         if ($request->src_path !== null) {
             $localName = lcfirst('srcPath');
@@ -707,12 +642,6 @@ class FileApi extends ApiBase
         $paramValue = $request->version_id;
         $paramBaseName = 'versionId';
         $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
-    
-
-        $resourcePath = $this->parseURL($resourcePath, $queryParams);
-        $formFiles = [];
-        // body params
-        $_tempBody = null;
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -724,20 +653,17 @@ class FileApi extends ApiBase
                 ['application/json']
             );
         }
-        $headers = $this->mergeAllHeaders($headerParams, $headers);
-        $httpBody = $this->prepareRequestBody($headers, $_tempBody, $multipart, $formParams, $formFiles);
-
-        $req = new Request(
+        return $this->toClientRequest(
             'PUT',
-            $this->config->getHost() . $resourcePath,
+            null,
+            $resourcePath,
+            $queryParams,
+            $formParams,
+            [],
+            $multipart,
             $headers,
-            $httpBody
+            $headerParams
         );
-        if ($this->config->getDebug()) {
-            $this->writeRequestLog('PUT', $this->config->getHost() . $resourcePath, $headers, $httpBody);
-        }
-
-        return $req;
     }
             
     /**
@@ -778,23 +704,9 @@ class FileApi extends ApiBase
     {
         $returnType = '\Aspose\Email\Model\FilesUploadResult';
         $request = $this->uploadFileRequest($request);
-
-        try {
-            $response = $this->callClient($request);
-            return $this->processResponse($response, $returnType);
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Aspose\Email\Model\FilesUploadResult',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
+    
+        $response = $this->callClient($request);
+        return $this->processResponse($response, $returnType);
     }
 
     /**
@@ -872,7 +784,7 @@ class FileApi extends ApiBase
         $queryParams = [];
         $headerParams = [];
         $multipart = false;
-    
+
         // path params
         if ($request->path !== null) {
             $localName = lcfirst('path');
@@ -883,11 +795,9 @@ class FileApi extends ApiBase
         $paramValue = $request->storage_name;
         $paramBaseName = 'storageName';
         $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
-    
 
-        $resourcePath = $this->parseURL($resourcePath, $queryParams);
-        $formFiles = [];
         // form params
+        $formFiles = [];
         if ($request->file !== null) {
             $multipart = true;
             $filename = ObjectSerializer::toFormValue($request->file);
@@ -897,8 +807,6 @@ class FileApi extends ApiBase
             $formParams['file'] = $contents;
             $formFiles['file'] = basename($filename);
         }
-        // body params
-        $_tempBody = null;
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -910,19 +818,16 @@ class FileApi extends ApiBase
                 ['multipart/form-data']
             );
         }
-        $headers = $this->mergeAllHeaders($headerParams, $headers);
-        $httpBody = $this->prepareRequestBody($headers, $_tempBody, $multipart, $formParams, $formFiles);
-
-        $req = new Request(
+        return $this->toClientRequest(
             'PUT',
-            $this->config->getHost() . $resourcePath,
+            null,
+            $resourcePath,
+            $queryParams,
+            $formParams,
+            $formFiles,
+            $multipart,
             $headers,
-            $httpBody
+            $headerParams
         );
-        if ($this->config->getDebug()) {
-            $this->writeRequestLog('PUT', $this->config->getHost() . $resourcePath, $headers, $httpBody);
-        }
-
-        return $req;
     }
 }

@@ -55,6 +55,250 @@ class ContactApi extends ApiBase
 
             
     /**
+     * Operation contactAsFile
+     *
+     * Converts contact model to specified format and returns as file
+     *
+     * @param Model\ContactAsFileRequest $request Contact model and format to convert
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     * @return Model\\SplFileObject
+     */
+    public function contactAsFile($request)
+    {
+        try {
+             list($response) = $this->contactAsFileWithHttpInfo($request);
+             return $response;
+        } catch (RepeatRequestException $e) {
+             list($response) = $this->contactAsFileWithHttpInfo($request);
+             return $response;
+        }
+    }
+
+    /**
+     * Operation contactAsFileWithHttpInfo
+     *
+     * Converts contact model to specified format and returns as file
+     *
+     * @param Model\ContactAsFileRequest $request Contact model and format to convert
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     * @throws RepeatRequestException when request token is expired
+     * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function contactAsFileWithHttpInfo($request)
+    {
+        $returnType = '\SplFileObject';
+        $request = $this->contactAsFileRequest($request);
+    
+        $response = $this->callClient($request);
+        return $this->processResponse($response, $returnType);
+    }
+
+    /**
+     * Operation contactAsFileAsync
+     *
+     * Converts contact model to specified format and returns as file
+     *
+     * @param Model\ContactAsFileRequest $request Contact model and format to convert
+     *
+     * @throws InvalidArgumentException
+     * @return PromiseInterface
+     */
+    public function contactAsFileAsync($request)
+    {
+        return $this->contactAsFileAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation contactAsFileAsyncWithHttpInfo
+     *
+     * Converts contact model to specified format and returns as file
+     *
+     * @param Model\ContactAsFileRequest $request Contact model and format to convert
+     *
+     * @throws InvalidArgumentException
+     * @return PromiseInterface
+     */
+    public function contactAsFileAsyncWithHttpInfo($request)
+    {
+        $returnType = '\SplFileObject';
+        $request = $this->contactAsFileRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return $this->processResponse($response, $returnType);
+                },
+                function ($exception) {
+                    $this->handleClientException($exception);
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'contactAsFile'
+     *
+     * @param Model\ContactAsFileRequest $request Contact model and format to convert
+     *
+     * @throws InvalidArgumentException
+     * @return Request
+     */
+    protected function contactAsFileRequest($request)
+    {
+        // verify the required parameter '$request' is set
+        if ($request === null) {
+            throw new InvalidArgumentException(
+                'Missing the required parameter $request when calling contactAsFile'
+            );
+        }
+
+        // body params
+        if (is_string($request)) {
+            $httpBody = "\"" . $request . "\"";
+        } else {
+            $httpBody = $request;
+        }
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['multipart/form-data'],
+            ['application/json']
+        );
+        $path = '/email/Contact/as-file';
+        return $this->toClientRequest('PUT', $httpBody, $path, [], [], [], false, $headers, []);
+    }
+            
+    /**
+     * Operation contactAsMapi
+     *
+     * Converts ContactDto to MapiContactDto.
+     *
+     * @param Model\ContactDto $contact_dto Contact model to convert
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     * @return Model\MapiContactDto
+     */
+    public function contactAsMapi($contact_dto)
+    {
+        try {
+             list($response) = $this->contactAsMapiWithHttpInfo($contact_dto);
+             return $response;
+        } catch (RepeatRequestException $e) {
+             list($response) = $this->contactAsMapiWithHttpInfo($contact_dto);
+             return $response;
+        }
+    }
+
+    /**
+     * Operation contactAsMapiWithHttpInfo
+     *
+     * Converts ContactDto to MapiContactDto.
+     *
+     * @param Model\ContactDto $contact_dto Contact model to convert
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     * @throws RepeatRequestException when request token is expired
+     * @return array of \Aspose\Email\Model\MapiContactDto, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function contactAsMapiWithHttpInfo($contact_dto)
+    {
+        $returnType = '\Aspose\Email\Model\MapiContactDto';
+        $request = $this->contactAsMapiRequest($contact_dto);
+    
+        $response = $this->callClient($request);
+        return $this->processResponse($response, $returnType);
+    }
+
+    /**
+     * Operation contactAsMapiAsync
+     *
+     * Converts ContactDto to MapiContactDto.
+     *
+     * @param Model\ContactDto $contact_dto Contact model to convert
+     *
+     * @throws InvalidArgumentException
+     * @return PromiseInterface
+     */
+    public function contactAsMapiAsync($contact_dto)
+    {
+        return $this->contactAsMapiAsyncWithHttpInfo($contact_dto)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation contactAsMapiAsyncWithHttpInfo
+     *
+     * Converts ContactDto to MapiContactDto.
+     *
+     * @param Model\ContactDto $contact_dto Contact model to convert
+     *
+     * @throws InvalidArgumentException
+     * @return PromiseInterface
+     */
+    public function contactAsMapiAsyncWithHttpInfo($contact_dto)
+    {
+        $returnType = '\Aspose\Email\Model\MapiContactDto';
+        $request = $this->contactAsMapiRequest($contact_dto);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return $this->processResponse($response, $returnType);
+                },
+                function ($exception) {
+                    $this->handleClientException($exception);
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'contactAsMapi'
+     *
+     * @param Model\ContactDto $contact_dto Contact model to convert
+     *
+     * @throws InvalidArgumentException
+     * @return Request
+     */
+    protected function contactAsMapiRequest($contact_dto)
+    {
+        // verify the required parameter '$contact_dto' is set
+        if ($contact_dto === null) {
+            throw new InvalidArgumentException(
+                'Missing the required parameter $contact_dto when calling contactAsMapi'
+            );
+        }
+
+        // body params
+        if (is_string($contact_dto)) {
+            $httpBody = "\"" . $contact_dto . "\"";
+        } else {
+            $httpBody = $contact_dto;
+        }
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json'],
+            ['application/json']
+        );
+        $path = '/email/Contact/as-mapi';
+        return $this->toClientRequest('PUT', $httpBody, $path, [], [], [], false, $headers, []);
+    }
+            
+    /**
      * Operation contactConvert
      *
      * Converts contact document to specified format and returns as file
@@ -92,23 +336,9 @@ class ContactApi extends ApiBase
     {
         $returnType = '\SplFileObject';
         $request = $this->contactConvertRequest($request);
-
-        try {
-            $response = $this->callClient($request);
-            return $this->processResponse($response, $returnType);
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\SplFileObject',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
+    
+        $response = $this->callClient($request);
+        return $this->processResponse($response, $returnType);
     }
 
     /**
@@ -192,7 +422,6 @@ class ContactApi extends ApiBase
         $queryParams = [];
         $headerParams = [];
         $multipart = false;
-    
 
         // query params
         $paramValue = $request->to_format;
@@ -201,11 +430,9 @@ class ContactApi extends ApiBase
         $paramValue = $request->from_format;
         $paramBaseName = 'fromFormat';
         $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
-    
 
-        $resourcePath = $this->parseURL($resourcePath, $queryParams);
-        $formFiles = [];
         // form params
+        $formFiles = [];
         if ($request->file !== null) {
             $multipart = true;
             $filename = ObjectSerializer::toFormValue($request->file);
@@ -215,8 +442,6 @@ class ContactApi extends ApiBase
             $formParams['file'] = $contents;
             $formFiles['file'] = basename($filename);
         }
-        // body params
-        $_tempBody = null;
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -228,20 +453,17 @@ class ContactApi extends ApiBase
                 ['multipart/form-data']
             );
         }
-        $headers = $this->mergeAllHeaders($headerParams, $headers);
-        $httpBody = $this->prepareRequestBody($headers, $_tempBody, $multipart, $formParams, $formFiles);
-
-        $req = new Request(
+        return $this->toClientRequest(
             'PUT',
-            $this->config->getHost() . $resourcePath,
+            null,
+            $resourcePath,
+            $queryParams,
+            $formParams,
+            $formFiles,
+            $multipart,
             $headers,
-            $httpBody
+            $headerParams
         );
-        if ($this->config->getDebug()) {
-            $this->writeRequestLog('PUT', $this->config->getHost() . $resourcePath, $headers, $httpBody);
-        }
-
-        return $req;
     }
             
     /**
@@ -282,23 +504,9 @@ class ContactApi extends ApiBase
     {
         $returnType = '\Aspose\Email\Model\ContactDto';
         $request = $this->contactFromFileRequest($request);
-
-        try {
-            $response = $this->callClient($request);
-            return $this->processResponse($response, $returnType);
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Aspose\Email\Model\ContactDto',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
+    
+        $response = $this->callClient($request);
+        return $this->processResponse($response, $returnType);
     }
 
     /**
@@ -376,17 +584,14 @@ class ContactApi extends ApiBase
         $queryParams = [];
         $headerParams = [];
         $multipart = false;
-    
 
         // query params
         $paramValue = $request->format;
         $paramBaseName = 'format';
         $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
-    
 
-        $resourcePath = $this->parseURL($resourcePath, $queryParams);
-        $formFiles = [];
         // form params
+        $formFiles = [];
         if ($request->file !== null) {
             $multipart = true;
             $filename = ObjectSerializer::toFormValue($request->file);
@@ -396,8 +601,6 @@ class ContactApi extends ApiBase
             $formParams['file'] = $contents;
             $formFiles['file'] = basename($filename);
         }
-        // body params
-        $_tempBody = null;
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -409,20 +612,17 @@ class ContactApi extends ApiBase
                 ['multipart/form-data']
             );
         }
-        $headers = $this->mergeAllHeaders($headerParams, $headers);
-        $httpBody = $this->prepareRequestBody($headers, $_tempBody, $multipart, $formParams, $formFiles);
-
-        $req = new Request(
+        return $this->toClientRequest(
             'PUT',
-            $this->config->getHost() . $resourcePath,
+            null,
+            $resourcePath,
+            $queryParams,
+            $formParams,
+            $formFiles,
+            $multipart,
             $headers,
-            $httpBody
+            $headerParams
         );
-        if ($this->config->getDebug()) {
-            $this->writeRequestLog('PUT', $this->config->getHost() . $resourcePath, $headers, $httpBody);
-        }
-
-        return $req;
     }
             
     /**
@@ -463,23 +663,9 @@ class ContactApi extends ApiBase
     {
         $returnType = '\Aspose\Email\Model\ContactDto';
         $request = $this->contactGetRequest($request);
-
-        try {
-            $response = $this->callClient($request);
-            return $this->processResponse($response, $returnType);
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Aspose\Email\Model\ContactDto',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
+    
+        $response = $this->callClient($request);
+        return $this->processResponse($response, $returnType);
     }
 
     /**
@@ -557,7 +743,6 @@ class ContactApi extends ApiBase
         $queryParams = [];
         $headerParams = [];
         $multipart = false;
-    
 
         // query params
         $paramValue = $request->format;
@@ -572,12 +757,6 @@ class ContactApi extends ApiBase
         $paramValue = $request->storage;
         $paramBaseName = 'storage';
         $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
-    
-
-        $resourcePath = $this->parseURL($resourcePath, $queryParams);
-        $formFiles = [];
-        // body params
-        $_tempBody = null;
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -589,20 +768,17 @@ class ContactApi extends ApiBase
                 ['application/json']
             );
         }
-        $headers = $this->mergeAllHeaders($headerParams, $headers);
-        $httpBody = $this->prepareRequestBody($headers, $_tempBody, $multipart, $formParams, $formFiles);
-
-        $req = new Request(
+        return $this->toClientRequest(
             'GET',
-            $this->config->getHost() . $resourcePath,
+            null,
+            $resourcePath,
+            $queryParams,
+            $formParams,
+            [],
+            $multipart,
             $headers,
-            $httpBody
+            $headerParams
         );
-        if ($this->config->getDebug()) {
-            $this->writeRequestLog('GET', $this->config->getHost() . $resourcePath, $headers, $httpBody);
-        }
-
-        return $req;
     }
             
     /**
@@ -643,23 +819,9 @@ class ContactApi extends ApiBase
     {
         $returnType = '\SplFileObject';
         $request = $this->contactGetAsFileRequest($request);
-
-        try {
-            $response = $this->callClient($request);
-            return $this->processResponse($response, $returnType);
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\SplFileObject',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
+    
+        $response = $this->callClient($request);
+        return $this->processResponse($response, $returnType);
     }
 
     /**
@@ -743,7 +905,6 @@ class ContactApi extends ApiBase
         $queryParams = [];
         $headerParams = [];
         $multipart = false;
-    
 
         // query params
         $paramValue = $request->file_name;
@@ -761,12 +922,6 @@ class ContactApi extends ApiBase
         $paramValue = $request->folder;
         $paramBaseName = 'folder';
         $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
-    
-
-        $resourcePath = $this->parseURL($resourcePath, $queryParams);
-        $formFiles = [];
-        // body params
-        $_tempBody = null;
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -778,20 +933,17 @@ class ContactApi extends ApiBase
                 ['application/json']
             );
         }
-        $headers = $this->mergeAllHeaders($headerParams, $headers);
-        $httpBody = $this->prepareRequestBody($headers, $_tempBody, $multipart, $formParams, $formFiles);
-
-        $req = new Request(
+        return $this->toClientRequest(
             'GET',
-            $this->config->getHost() . $resourcePath,
+            null,
+            $resourcePath,
+            $queryParams,
+            $formParams,
+            [],
+            $multipart,
             $headers,
-            $httpBody
+            $headerParams
         );
-        if ($this->config->getDebug()) {
-            $this->writeRequestLog('GET', $this->config->getHost() . $resourcePath, $headers, $httpBody);
-        }
-
-        return $req;
     }
             
     /**
@@ -832,23 +984,9 @@ class ContactApi extends ApiBase
     {
         $returnType = '\Aspose\Email\Model\ContactStorageList';
         $request = $this->contactGetListRequest($request);
-
-        try {
-            $response = $this->callClient($request);
-            return $this->processResponse($response, $returnType);
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Aspose\Email\Model\ContactStorageList',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
+    
+        $response = $this->callClient($request);
+        return $this->processResponse($response, $returnType);
     }
 
     /**
@@ -920,7 +1058,6 @@ class ContactApi extends ApiBase
         $queryParams = [];
         $headerParams = [];
         $multipart = false;
-    
 
         // query params
         $paramValue = $request->format;
@@ -938,12 +1075,6 @@ class ContactApi extends ApiBase
         $paramValue = $request->page_number;
         $paramBaseName = 'pageNumber';
         $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
-    
-
-        $resourcePath = $this->parseURL($resourcePath, $queryParams);
-        $formFiles = [];
-        // body params
-        $_tempBody = null;
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -955,19 +1086,134 @@ class ContactApi extends ApiBase
                 ['application/json']
             );
         }
-        $headers = $this->mergeAllHeaders($headerParams, $headers);
-        $httpBody = $this->prepareRequestBody($headers, $_tempBody, $multipart, $formParams, $formFiles);
-
-        $req = new Request(
+        return $this->toClientRequest(
             'GET',
-            $this->config->getHost() . $resourcePath,
+            null,
+            $resourcePath,
+            $queryParams,
+            $formParams,
+            [],
+            $multipart,
             $headers,
-            $httpBody
+            $headerParams
         );
-        if ($this->config->getDebug()) {
-            $this->writeRequestLog('GET', $this->config->getHost() . $resourcePath, $headers, $httpBody);
+    }
+            
+    /**
+     * Operation contactSave
+     *
+     * Save contact to storage.
+     *
+     * @param Model\ContactSaveRequest $request Create/Update contact request.
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     * @return void
+     */
+    public function contactSave($request)
+    {
+        try {
+             $this->contactSaveWithHttpInfo($request);
+        } catch (RepeatRequestException $e) {
+             $this->contactSaveWithHttpInfo($request);
+        }
+    }
+
+    /**
+     * Operation contactSaveWithHttpInfo
+     *
+     * Save contact to storage.
+     *
+     * @param Model\ContactSaveRequest $request Create/Update contact request.
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     * @throws RepeatRequestException when request token is expired
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function contactSaveWithHttpInfo($request)
+    {
+        $request = $this->contactSaveRequest($request);
+    
+        $response = $this->callClient($request);
+        return [null, $response->getStatusCode(), $response->getHeaders()];
+    }
+
+    /**
+     * Operation contactSaveAsync
+     *
+     * Save contact to storage.
+     *
+     * @param Model\ContactSaveRequest $request Create/Update contact request.
+     *
+     * @throws InvalidArgumentException
+     * @return PromiseInterface
+     */
+    public function contactSaveAsync($request)
+    {
+        return $this->contactSaveAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation contactSaveAsyncWithHttpInfo
+     *
+     * Save contact to storage.
+     *
+     * @param Model\ContactSaveRequest $request Create/Update contact request.
+     *
+     * @throws InvalidArgumentException
+     * @return PromiseInterface
+     */
+    public function contactSaveAsyncWithHttpInfo($request)
+    {
+        $request = $this->contactSaveRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $this->handleClientException($exception);
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'contactSave'
+     *
+     * @param Model\ContactSaveRequest $request Create/Update contact request.
+     *
+     * @throws InvalidArgumentException
+     * @return Request
+     */
+    protected function contactSaveRequest($request)
+    {
+        // verify the required parameter '$request' is set
+        if ($request === null) {
+            throw new InvalidArgumentException(
+                'Missing the required parameter $request when calling contactSave'
+            );
         }
 
-        return $req;
+        // body params
+        if (is_string($request)) {
+            $httpBody = "\"" . $request . "\"";
+        } else {
+            $httpBody = $request;
+        }
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json'],
+            ['application/json']
+        );
+        $path = '/email/Contact';
+        return $this->toClientRequest('PUT', $httpBody, $path, [], [], [], false, $headers, []);
     }
 }

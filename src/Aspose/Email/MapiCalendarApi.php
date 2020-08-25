@@ -55,6 +55,250 @@ class MapiCalendarApi extends ApiBase
 
             
     /**
+     * Operation mapiCalendarAsCalendarDto
+     *
+     * Converts MAPI calendar model to CalendarDto model.
+     *
+     * @param Model\MapiCalendarDto $mapi_calendar_dto MAPI calendar model to convert.
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     * @return Model\CalendarDto
+     */
+    public function mapiCalendarAsCalendarDto($mapi_calendar_dto)
+    {
+        try {
+             list($response) = $this->mapiCalendarAsCalendarDtoWithHttpInfo($mapi_calendar_dto);
+             return $response;
+        } catch (RepeatRequestException $e) {
+             list($response) = $this->mapiCalendarAsCalendarDtoWithHttpInfo($mapi_calendar_dto);
+             return $response;
+        }
+    }
+
+    /**
+     * Operation mapiCalendarAsCalendarDtoWithHttpInfo
+     *
+     * Converts MAPI calendar model to CalendarDto model.
+     *
+     * @param Model\MapiCalendarDto $mapi_calendar_dto MAPI calendar model to convert.
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     * @throws RepeatRequestException when request token is expired
+     * @return array of \Aspose\Email\Model\CalendarDto, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function mapiCalendarAsCalendarDtoWithHttpInfo($mapi_calendar_dto)
+    {
+        $returnType = '\Aspose\Email\Model\CalendarDto';
+        $request = $this->mapiCalendarAsCalendarDtoRequest($mapi_calendar_dto);
+    
+        $response = $this->callClient($request);
+        return $this->processResponse($response, $returnType);
+    }
+
+    /**
+     * Operation mapiCalendarAsCalendarDtoAsync
+     *
+     * Converts MAPI calendar model to CalendarDto model.
+     *
+     * @param Model\MapiCalendarDto $mapi_calendar_dto MAPI calendar model to convert.
+     *
+     * @throws InvalidArgumentException
+     * @return PromiseInterface
+     */
+    public function mapiCalendarAsCalendarDtoAsync($mapi_calendar_dto)
+    {
+        return $this->mapiCalendarAsCalendarDtoAsyncWithHttpInfo($mapi_calendar_dto)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation mapiCalendarAsCalendarDtoAsyncWithHttpInfo
+     *
+     * Converts MAPI calendar model to CalendarDto model.
+     *
+     * @param Model\MapiCalendarDto $mapi_calendar_dto MAPI calendar model to convert.
+     *
+     * @throws InvalidArgumentException
+     * @return PromiseInterface
+     */
+    public function mapiCalendarAsCalendarDtoAsyncWithHttpInfo($mapi_calendar_dto)
+    {
+        $returnType = '\Aspose\Email\Model\CalendarDto';
+        $request = $this->mapiCalendarAsCalendarDtoRequest($mapi_calendar_dto);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return $this->processResponse($response, $returnType);
+                },
+                function ($exception) {
+                    $this->handleClientException($exception);
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'mapiCalendarAsCalendarDto'
+     *
+     * @param Model\MapiCalendarDto $mapi_calendar_dto MAPI calendar model to convert.
+     *
+     * @throws InvalidArgumentException
+     * @return Request
+     */
+    protected function mapiCalendarAsCalendarDtoRequest($mapi_calendar_dto)
+    {
+        // verify the required parameter '$mapi_calendar_dto' is set
+        if ($mapi_calendar_dto === null) {
+            throw new InvalidArgumentException(
+                'Missing the required parameter $mapi_calendar_dto when calling mapiCalendarAsCalendarDto'
+            );
+        }
+
+        // body params
+        if (is_string($mapi_calendar_dto)) {
+            $httpBody = "\"" . $mapi_calendar_dto . "\"";
+        } else {
+            $httpBody = $mapi_calendar_dto;
+        }
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json'],
+            ['application/json']
+        );
+        $path = '/email/MapiCalendar/as-calendar-dto';
+        return $this->toClientRequest('PUT', $httpBody, $path, [], [], [], false, $headers, []);
+    }
+            
+    /**
+     * Operation mapiCalendarAsFile
+     *
+     * Converts MAPI calendar model to specified format and returns as file.
+     *
+     * @param Model\MapiCalendarAsFileRequest $request MAPI calendar model to convert.
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     * @return Model\\SplFileObject
+     */
+    public function mapiCalendarAsFile($request)
+    {
+        try {
+             list($response) = $this->mapiCalendarAsFileWithHttpInfo($request);
+             return $response;
+        } catch (RepeatRequestException $e) {
+             list($response) = $this->mapiCalendarAsFileWithHttpInfo($request);
+             return $response;
+        }
+    }
+
+    /**
+     * Operation mapiCalendarAsFileWithHttpInfo
+     *
+     * Converts MAPI calendar model to specified format and returns as file.
+     *
+     * @param Model\MapiCalendarAsFileRequest $request MAPI calendar model to convert.
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     * @throws RepeatRequestException when request token is expired
+     * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function mapiCalendarAsFileWithHttpInfo($request)
+    {
+        $returnType = '\SplFileObject';
+        $request = $this->mapiCalendarAsFileRequest($request);
+    
+        $response = $this->callClient($request);
+        return $this->processResponse($response, $returnType);
+    }
+
+    /**
+     * Operation mapiCalendarAsFileAsync
+     *
+     * Converts MAPI calendar model to specified format and returns as file.
+     *
+     * @param Model\MapiCalendarAsFileRequest $request MAPI calendar model to convert.
+     *
+     * @throws InvalidArgumentException
+     * @return PromiseInterface
+     */
+    public function mapiCalendarAsFileAsync($request)
+    {
+        return $this->mapiCalendarAsFileAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation mapiCalendarAsFileAsyncWithHttpInfo
+     *
+     * Converts MAPI calendar model to specified format and returns as file.
+     *
+     * @param Model\MapiCalendarAsFileRequest $request MAPI calendar model to convert.
+     *
+     * @throws InvalidArgumentException
+     * @return PromiseInterface
+     */
+    public function mapiCalendarAsFileAsyncWithHttpInfo($request)
+    {
+        $returnType = '\SplFileObject';
+        $request = $this->mapiCalendarAsFileRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return $this->processResponse($response, $returnType);
+                },
+                function ($exception) {
+                    $this->handleClientException($exception);
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'mapiCalendarAsFile'
+     *
+     * @param Model\MapiCalendarAsFileRequest $request MAPI calendar model to convert.
+     *
+     * @throws InvalidArgumentException
+     * @return Request
+     */
+    protected function mapiCalendarAsFileRequest($request)
+    {
+        // verify the required parameter '$request' is set
+        if ($request === null) {
+            throw new InvalidArgumentException(
+                'Missing the required parameter $request when calling mapiCalendarAsFile'
+            );
+        }
+
+        // body params
+        if (is_string($request)) {
+            $httpBody = "\"" . $request . "\"";
+        } else {
+            $httpBody = $request;
+        }
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['multipart/form-data'],
+            ['application/json']
+        );
+        $path = '/email/MapiCalendar/as-file';
+        return $this->toClientRequest('PUT', $httpBody, $path, [], [], [], false, $headers, []);
+    }
+            
+    /**
      * Operation mapiCalendarFromFile
      *
      * Converts calendar file to a MAPI model representation.
@@ -92,23 +336,9 @@ class MapiCalendarApi extends ApiBase
     {
         $returnType = '\Aspose\Email\Model\MapiCalendarDto';
         $request = $this->mapiCalendarFromFileRequest($request);
-
-        try {
-            $response = $this->callClient($request);
-            return $this->processResponse($response, $returnType);
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Aspose\Email\Model\MapiCalendarDto',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
+    
+        $response = $this->callClient($request);
+        return $this->processResponse($response, $returnType);
     }
 
     /**
@@ -180,14 +410,9 @@ class MapiCalendarApi extends ApiBase
         $queryParams = [];
         $headerParams = [];
         $multipart = false;
-    
 
-        
-    
-
-        $resourcePath = $this->parseURL($resourcePath, $queryParams);
-        $formFiles = [];
         // form params
+        $formFiles = [];
         if ($request->file !== null) {
             $multipart = true;
             $filename = ObjectSerializer::toFormValue($request->file);
@@ -197,8 +422,6 @@ class MapiCalendarApi extends ApiBase
             $formParams['file'] = $contents;
             $formFiles['file'] = basename($filename);
         }
-        // body params
-        $_tempBody = null;
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -210,20 +433,17 @@ class MapiCalendarApi extends ApiBase
                 ['multipart/form-data']
             );
         }
-        $headers = $this->mergeAllHeaders($headerParams, $headers);
-        $httpBody = $this->prepareRequestBody($headers, $_tempBody, $multipart, $formParams, $formFiles);
-
-        $req = new Request(
+        return $this->toClientRequest(
             'PUT',
-            $this->config->getHost() . $resourcePath,
+            null,
+            $resourcePath,
+            $queryParams,
+            $formParams,
+            $formFiles,
+            $multipart,
             $headers,
-            $httpBody
+            $headerParams
         );
-        if ($this->config->getDebug()) {
-            $this->writeRequestLog('PUT', $this->config->getHost() . $resourcePath, $headers, $httpBody);
-        }
-
-        return $req;
     }
             
     /**
@@ -264,23 +484,9 @@ class MapiCalendarApi extends ApiBase
     {
         $returnType = '\Aspose\Email\Model\MapiCalendarDto';
         $request = $this->mapiCalendarGetRequest($request);
-
-        try {
-            $response = $this->callClient($request);
-            return $this->processResponse($response, $returnType);
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Aspose\Email\Model\MapiCalendarDto',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
+    
+        $response = $this->callClient($request);
+        return $this->processResponse($response, $returnType);
     }
 
     /**
@@ -352,7 +558,6 @@ class MapiCalendarApi extends ApiBase
         $queryParams = [];
         $headerParams = [];
         $multipart = false;
-    
 
         // query params
         $paramValue = $request->file_name;
@@ -364,12 +569,6 @@ class MapiCalendarApi extends ApiBase
         $paramValue = $request->storage;
         $paramBaseName = 'storage';
         $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
-    
-
-        $resourcePath = $this->parseURL($resourcePath, $queryParams);
-        $formFiles = [];
-        // body params
-        $_tempBody = null;
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -381,19 +580,134 @@ class MapiCalendarApi extends ApiBase
                 ['application/json']
             );
         }
-        $headers = $this->mergeAllHeaders($headerParams, $headers);
-        $httpBody = $this->prepareRequestBody($headers, $_tempBody, $multipart, $formParams, $formFiles);
-
-        $req = new Request(
+        return $this->toClientRequest(
             'GET',
-            $this->config->getHost() . $resourcePath,
+            null,
+            $resourcePath,
+            $queryParams,
+            $formParams,
+            [],
+            $multipart,
             $headers,
-            $httpBody
+            $headerParams
         );
-        if ($this->config->getDebug()) {
-            $this->writeRequestLog('GET', $this->config->getHost() . $resourcePath, $headers, $httpBody);
+    }
+            
+    /**
+     * Operation mapiCalendarSave
+     *
+     * Save MAPI Calendar to storage.
+     *
+     * @param Model\MapiCalendarSaveRequest $request Calendar create/update request.
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     * @return void
+     */
+    public function mapiCalendarSave($request)
+    {
+        try {
+             $this->mapiCalendarSaveWithHttpInfo($request);
+        } catch (RepeatRequestException $e) {
+             $this->mapiCalendarSaveWithHttpInfo($request);
+        }
+    }
+
+    /**
+     * Operation mapiCalendarSaveWithHttpInfo
+     *
+     * Save MAPI Calendar to storage.
+     *
+     * @param Model\MapiCalendarSaveRequest $request Calendar create/update request.
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     * @throws RepeatRequestException when request token is expired
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function mapiCalendarSaveWithHttpInfo($request)
+    {
+        $request = $this->mapiCalendarSaveRequest($request);
+    
+        $response = $this->callClient($request);
+        return [null, $response->getStatusCode(), $response->getHeaders()];
+    }
+
+    /**
+     * Operation mapiCalendarSaveAsync
+     *
+     * Save MAPI Calendar to storage.
+     *
+     * @param Model\MapiCalendarSaveRequest $request Calendar create/update request.
+     *
+     * @throws InvalidArgumentException
+     * @return PromiseInterface
+     */
+    public function mapiCalendarSaveAsync($request)
+    {
+        return $this->mapiCalendarSaveAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation mapiCalendarSaveAsyncWithHttpInfo
+     *
+     * Save MAPI Calendar to storage.
+     *
+     * @param Model\MapiCalendarSaveRequest $request Calendar create/update request.
+     *
+     * @throws InvalidArgumentException
+     * @return PromiseInterface
+     */
+    public function mapiCalendarSaveAsyncWithHttpInfo($request)
+    {
+        $request = $this->mapiCalendarSaveRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $this->handleClientException($exception);
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'mapiCalendarSave'
+     *
+     * @param Model\MapiCalendarSaveRequest $request Calendar create/update request.
+     *
+     * @throws InvalidArgumentException
+     * @return Request
+     */
+    protected function mapiCalendarSaveRequest($request)
+    {
+        // verify the required parameter '$request' is set
+        if ($request === null) {
+            throw new InvalidArgumentException(
+                'Missing the required parameter $request when calling mapiCalendarSave'
+            );
         }
 
-        return $req;
+        // body params
+        if (is_string($request)) {
+            $httpBody = "\"" . $request . "\"";
+        } else {
+            $httpBody = $request;
+        }
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json'],
+            ['application/json']
+        );
+        $path = '/email/MapiCalendar';
+        return $this->toClientRequest('PUT', $httpBody, $path, [], [], [], false, $headers, []);
     }
 }

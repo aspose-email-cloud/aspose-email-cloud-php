@@ -270,8 +270,13 @@ class ApiBase
         );
     }
 
-    protected function prepareRequestBody($headers, $bodyParam, $multipart, $formParams, $formFiles)
-    {
+    protected function prepareRequestBody(
+        $headers,
+        $bodyParam,
+        $multipart,
+        $formParams,
+        $formFiles
+    ) {
         $httpBody = "";
         if (isset($bodyParam)) {
             // $bodyParam is the method argument, if present
@@ -323,6 +328,34 @@ class ApiBase
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
         }
+    }
+
+    protected function toClientRequest(
+        $httpMethod,
+        $bodyParam,
+        $resourcePath,
+        $queryParams,
+        $formParams,
+        $formFiles,
+        $multipart,
+        $headers,
+        $headerParams)
+    {
+        $resourcePath = $this->parseURL($resourcePath, $queryParams);
+        $headers = $this->mergeAllHeaders($headerParams, $headers);
+        $httpBody = $this->prepareRequestBody($headers, $bodyParam, $multipart, $formParams, $formFiles);
+
+        $req = new Request(
+            $httpMethod,
+            $this->config->getHost() . $resourcePath,
+            $headers,
+            $httpBody
+        );
+        if ($this->config->getDebug()) {
+            $this->writeRequestLog($req->getMethod(), $req->getUri(), $req->getHeaders(), $req->getBody());
+        }
+
+        return $req;
     }
 
     private function getDefaultHeaders()

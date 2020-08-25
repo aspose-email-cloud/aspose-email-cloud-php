@@ -55,6 +55,372 @@ class CalendarApi extends ApiBase
 
             
     /**
+     * Operation calendarAsAlternate
+     *
+     * Convert iCalendar to AlternateView
+     *
+     * @param Model\CalendarAsAlternateRequest $request iCalendar to AlternateView request
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     * @return Model\AlternateView
+     */
+    public function calendarAsAlternate($request)
+    {
+        try {
+             list($response) = $this->calendarAsAlternateWithHttpInfo($request);
+             return $response;
+        } catch (RepeatRequestException $e) {
+             list($response) = $this->calendarAsAlternateWithHttpInfo($request);
+             return $response;
+        }
+    }
+
+    /**
+     * Operation calendarAsAlternateWithHttpInfo
+     *
+     * Convert iCalendar to AlternateView
+     *
+     * @param Model\CalendarAsAlternateRequest $request iCalendar to AlternateView request
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     * @throws RepeatRequestException when request token is expired
+     * @return array of \Aspose\Email\Model\AlternateView, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function calendarAsAlternateWithHttpInfo($request)
+    {
+        $returnType = '\Aspose\Email\Model\AlternateView';
+        $request = $this->calendarAsAlternateRequest($request);
+    
+        $response = $this->callClient($request);
+        return $this->processResponse($response, $returnType);
+    }
+
+    /**
+     * Operation calendarAsAlternateAsync
+     *
+     * Convert iCalendar to AlternateView
+     *
+     * @param Model\CalendarAsAlternateRequest $request iCalendar to AlternateView request
+     *
+     * @throws InvalidArgumentException
+     * @return PromiseInterface
+     */
+    public function calendarAsAlternateAsync($request)
+    {
+        return $this->calendarAsAlternateAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation calendarAsAlternateAsyncWithHttpInfo
+     *
+     * Convert iCalendar to AlternateView
+     *
+     * @param Model\CalendarAsAlternateRequest $request iCalendar to AlternateView request
+     *
+     * @throws InvalidArgumentException
+     * @return PromiseInterface
+     */
+    public function calendarAsAlternateAsyncWithHttpInfo($request)
+    {
+        $returnType = '\Aspose\Email\Model\AlternateView';
+        $request = $this->calendarAsAlternateRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return $this->processResponse($response, $returnType);
+                },
+                function ($exception) {
+                    $this->handleClientException($exception);
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'calendarAsAlternate'
+     *
+     * @param Model\CalendarAsAlternateRequest $request iCalendar to AlternateView request
+     *
+     * @throws InvalidArgumentException
+     * @return Request
+     */
+    protected function calendarAsAlternateRequest($request)
+    {
+        // verify the required parameter '$request' is set
+        if ($request === null) {
+            throw new InvalidArgumentException(
+                'Missing the required parameter $request when calling calendarAsAlternate'
+            );
+        }
+
+        // body params
+        if (is_string($request)) {
+            $httpBody = "\"" . $request . "\"";
+        } else {
+            $httpBody = $request;
+        }
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json'],
+            ['application/json']
+        );
+        $path = '/email/Calendar/as-alternate';
+        return $this->toClientRequest('PUT', $httpBody, $path, [], [], [], false, $headers, []);
+    }
+            
+    /**
+     * Operation calendarAsFile
+     *
+     * Converts calendar model to specified format and returns as file.
+     *
+     * @param Model\CalendarAsFileRequest $request Calendar model and format to convert.
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     * @return Model\\SplFileObject
+     */
+    public function calendarAsFile($request)
+    {
+        try {
+             list($response) = $this->calendarAsFileWithHttpInfo($request);
+             return $response;
+        } catch (RepeatRequestException $e) {
+             list($response) = $this->calendarAsFileWithHttpInfo($request);
+             return $response;
+        }
+    }
+
+    /**
+     * Operation calendarAsFileWithHttpInfo
+     *
+     * Converts calendar model to specified format and returns as file.
+     *
+     * @param Model\CalendarAsFileRequest $request Calendar model and format to convert.
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     * @throws RepeatRequestException when request token is expired
+     * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function calendarAsFileWithHttpInfo($request)
+    {
+        $returnType = '\SplFileObject';
+        $request = $this->calendarAsFileRequest($request);
+    
+        $response = $this->callClient($request);
+        return $this->processResponse($response, $returnType);
+    }
+
+    /**
+     * Operation calendarAsFileAsync
+     *
+     * Converts calendar model to specified format and returns as file.
+     *
+     * @param Model\CalendarAsFileRequest $request Calendar model and format to convert.
+     *
+     * @throws InvalidArgumentException
+     * @return PromiseInterface
+     */
+    public function calendarAsFileAsync($request)
+    {
+        return $this->calendarAsFileAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation calendarAsFileAsyncWithHttpInfo
+     *
+     * Converts calendar model to specified format and returns as file.
+     *
+     * @param Model\CalendarAsFileRequest $request Calendar model and format to convert.
+     *
+     * @throws InvalidArgumentException
+     * @return PromiseInterface
+     */
+    public function calendarAsFileAsyncWithHttpInfo($request)
+    {
+        $returnType = '\SplFileObject';
+        $request = $this->calendarAsFileRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return $this->processResponse($response, $returnType);
+                },
+                function ($exception) {
+                    $this->handleClientException($exception);
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'calendarAsFile'
+     *
+     * @param Model\CalendarAsFileRequest $request Calendar model and format to convert.
+     *
+     * @throws InvalidArgumentException
+     * @return Request
+     */
+    protected function calendarAsFileRequest($request)
+    {
+        // verify the required parameter '$request' is set
+        if ($request === null) {
+            throw new InvalidArgumentException(
+                'Missing the required parameter $request when calling calendarAsFile'
+            );
+        }
+
+        // body params
+        if (is_string($request)) {
+            $httpBody = "\"" . $request . "\"";
+        } else {
+            $httpBody = $request;
+        }
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['multipart/form-data'],
+            ['application/json']
+        );
+        $path = '/email/Calendar/as-file';
+        return $this->toClientRequest('PUT', $httpBody, $path, [], [], [], false, $headers, []);
+    }
+            
+    /**
+     * Operation calendarAsMapi
+     *
+     * Converts CalendarDto to MapiCalendarDto.
+     *
+     * @param Model\CalendarDto $calendar_dto iCalendar model calendar representation.
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     * @return Model\MapiCalendarDto
+     */
+    public function calendarAsMapi($calendar_dto)
+    {
+        try {
+             list($response) = $this->calendarAsMapiWithHttpInfo($calendar_dto);
+             return $response;
+        } catch (RepeatRequestException $e) {
+             list($response) = $this->calendarAsMapiWithHttpInfo($calendar_dto);
+             return $response;
+        }
+    }
+
+    /**
+     * Operation calendarAsMapiWithHttpInfo
+     *
+     * Converts CalendarDto to MapiCalendarDto.
+     *
+     * @param Model\CalendarDto $calendar_dto iCalendar model calendar representation.
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     * @throws RepeatRequestException when request token is expired
+     * @return array of \Aspose\Email\Model\MapiCalendarDto, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function calendarAsMapiWithHttpInfo($calendar_dto)
+    {
+        $returnType = '\Aspose\Email\Model\MapiCalendarDto';
+        $request = $this->calendarAsMapiRequest($calendar_dto);
+    
+        $response = $this->callClient($request);
+        return $this->processResponse($response, $returnType);
+    }
+
+    /**
+     * Operation calendarAsMapiAsync
+     *
+     * Converts CalendarDto to MapiCalendarDto.
+     *
+     * @param Model\CalendarDto $calendar_dto iCalendar model calendar representation.
+     *
+     * @throws InvalidArgumentException
+     * @return PromiseInterface
+     */
+    public function calendarAsMapiAsync($calendar_dto)
+    {
+        return $this->calendarAsMapiAsyncWithHttpInfo($calendar_dto)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation calendarAsMapiAsyncWithHttpInfo
+     *
+     * Converts CalendarDto to MapiCalendarDto.
+     *
+     * @param Model\CalendarDto $calendar_dto iCalendar model calendar representation.
+     *
+     * @throws InvalidArgumentException
+     * @return PromiseInterface
+     */
+    public function calendarAsMapiAsyncWithHttpInfo($calendar_dto)
+    {
+        $returnType = '\Aspose\Email\Model\MapiCalendarDto';
+        $request = $this->calendarAsMapiRequest($calendar_dto);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return $this->processResponse($response, $returnType);
+                },
+                function ($exception) {
+                    $this->handleClientException($exception);
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'calendarAsMapi'
+     *
+     * @param Model\CalendarDto $calendar_dto iCalendar model calendar representation.
+     *
+     * @throws InvalidArgumentException
+     * @return Request
+     */
+    protected function calendarAsMapiRequest($calendar_dto)
+    {
+        // verify the required parameter '$calendar_dto' is set
+        if ($calendar_dto === null) {
+            throw new InvalidArgumentException(
+                'Missing the required parameter $calendar_dto when calling calendarAsMapi'
+            );
+        }
+
+        // body params
+        if (is_string($calendar_dto)) {
+            $httpBody = "\"" . $calendar_dto . "\"";
+        } else {
+            $httpBody = $calendar_dto;
+        }
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json'],
+            ['application/json']
+        );
+        $path = '/email/Calendar/as-mapi';
+        return $this->toClientRequest('PUT', $httpBody, $path, [], [], [], false, $headers, []);
+    }
+            
+    /**
      * Operation calendarConvert
      *
      * Converts calendar document to specified format and returns as file.
@@ -92,23 +458,9 @@ class CalendarApi extends ApiBase
     {
         $returnType = '\SplFileObject';
         $request = $this->calendarConvertRequest($request);
-
-        try {
-            $response = $this->callClient($request);
-            return $this->processResponse($response, $returnType);
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\SplFileObject',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
+    
+        $response = $this->callClient($request);
+        return $this->processResponse($response, $returnType);
     }
 
     /**
@@ -186,17 +538,14 @@ class CalendarApi extends ApiBase
         $queryParams = [];
         $headerParams = [];
         $multipart = false;
-    
 
         // query params
         $paramValue = $request->format;
         $paramBaseName = 'format';
         $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
-    
 
-        $resourcePath = $this->parseURL($resourcePath, $queryParams);
-        $formFiles = [];
         // form params
+        $formFiles = [];
         if ($request->file !== null) {
             $multipart = true;
             $filename = ObjectSerializer::toFormValue($request->file);
@@ -206,8 +555,6 @@ class CalendarApi extends ApiBase
             $formParams['file'] = $contents;
             $formFiles['file'] = basename($filename);
         }
-        // body params
-        $_tempBody = null;
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -219,20 +566,17 @@ class CalendarApi extends ApiBase
                 ['multipart/form-data']
             );
         }
-        $headers = $this->mergeAllHeaders($headerParams, $headers);
-        $httpBody = $this->prepareRequestBody($headers, $_tempBody, $multipart, $formParams, $formFiles);
-
-        $req = new Request(
+        return $this->toClientRequest(
             'PUT',
-            $this->config->getHost() . $resourcePath,
+            null,
+            $resourcePath,
+            $queryParams,
+            $formParams,
+            $formFiles,
+            $multipart,
             $headers,
-            $httpBody
+            $headerParams
         );
-        if ($this->config->getDebug()) {
-            $this->writeRequestLog('PUT', $this->config->getHost() . $resourcePath, $headers, $httpBody);
-        }
-
-        return $req;
     }
             
     /**
@@ -273,23 +617,9 @@ class CalendarApi extends ApiBase
     {
         $returnType = '\Aspose\Email\Model\CalendarDto';
         $request = $this->calendarFromFileRequest($request);
-
-        try {
-            $response = $this->callClient($request);
-            return $this->processResponse($response, $returnType);
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Aspose\Email\Model\CalendarDto',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
+    
+        $response = $this->callClient($request);
+        return $this->processResponse($response, $returnType);
     }
 
     /**
@@ -361,14 +691,9 @@ class CalendarApi extends ApiBase
         $queryParams = [];
         $headerParams = [];
         $multipart = false;
-    
 
-        
-    
-
-        $resourcePath = $this->parseURL($resourcePath, $queryParams);
-        $formFiles = [];
         // form params
+        $formFiles = [];
         if ($request->file !== null) {
             $multipart = true;
             $filename = ObjectSerializer::toFormValue($request->file);
@@ -378,8 +703,6 @@ class CalendarApi extends ApiBase
             $formParams['file'] = $contents;
             $formFiles['file'] = basename($filename);
         }
-        // body params
-        $_tempBody = null;
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -391,20 +714,17 @@ class CalendarApi extends ApiBase
                 ['multipart/form-data']
             );
         }
-        $headers = $this->mergeAllHeaders($headerParams, $headers);
-        $httpBody = $this->prepareRequestBody($headers, $_tempBody, $multipart, $formParams, $formFiles);
-
-        $req = new Request(
+        return $this->toClientRequest(
             'PUT',
-            $this->config->getHost() . $resourcePath,
+            null,
+            $resourcePath,
+            $queryParams,
+            $formParams,
+            $formFiles,
+            $multipart,
             $headers,
-            $httpBody
+            $headerParams
         );
-        if ($this->config->getDebug()) {
-            $this->writeRequestLog('PUT', $this->config->getHost() . $resourcePath, $headers, $httpBody);
-        }
-
-        return $req;
     }
             
     /**
@@ -445,23 +765,9 @@ class CalendarApi extends ApiBase
     {
         $returnType = '\Aspose\Email\Model\CalendarDto';
         $request = $this->calendarGetRequest($request);
-
-        try {
-            $response = $this->callClient($request);
-            return $this->processResponse($response, $returnType);
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Aspose\Email\Model\CalendarDto',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
+    
+        $response = $this->callClient($request);
+        return $this->processResponse($response, $returnType);
     }
 
     /**
@@ -533,7 +839,6 @@ class CalendarApi extends ApiBase
         $queryParams = [];
         $headerParams = [];
         $multipart = false;
-    
 
         // query params
         $paramValue = $request->file_name;
@@ -545,12 +850,6 @@ class CalendarApi extends ApiBase
         $paramValue = $request->storage;
         $paramBaseName = 'storage';
         $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
-    
-
-        $resourcePath = $this->parseURL($resourcePath, $queryParams);
-        $formFiles = [];
-        // body params
-        $_tempBody = null;
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -562,20 +861,17 @@ class CalendarApi extends ApiBase
                 ['application/json']
             );
         }
-        $headers = $this->mergeAllHeaders($headerParams, $headers);
-        $httpBody = $this->prepareRequestBody($headers, $_tempBody, $multipart, $formParams, $formFiles);
-
-        $req = new Request(
+        return $this->toClientRequest(
             'GET',
-            $this->config->getHost() . $resourcePath,
+            null,
+            $resourcePath,
+            $queryParams,
+            $formParams,
+            [],
+            $multipart,
             $headers,
-            $httpBody
+            $headerParams
         );
-        if ($this->config->getDebug()) {
-            $this->writeRequestLog('GET', $this->config->getHost() . $resourcePath, $headers, $httpBody);
-        }
-
-        return $req;
     }
             
     /**
@@ -616,23 +912,9 @@ class CalendarApi extends ApiBase
     {
         $returnType = '\Aspose\Email\Model\AlternateView';
         $request = $this->calendarGetAsAlternateRequest($request);
-
-        try {
-            $response = $this->callClient($request);
-            return $this->processResponse($response, $returnType);
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Aspose\Email\Model\AlternateView',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
+    
+        $response = $this->callClient($request);
+        return $this->processResponse($response, $returnType);
     }
 
     /**
@@ -710,7 +992,6 @@ class CalendarApi extends ApiBase
         $queryParams = [];
         $headerParams = [];
         $multipart = false;
-    
 
         // query params
         $paramValue = $request->file_name;
@@ -728,12 +1009,6 @@ class CalendarApi extends ApiBase
         $paramValue = $request->storage;
         $paramBaseName = 'storage';
         $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
-    
-
-        $resourcePath = $this->parseURL($resourcePath, $queryParams);
-        $formFiles = [];
-        // body params
-        $_tempBody = null;
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -745,20 +1020,17 @@ class CalendarApi extends ApiBase
                 ['application/json']
             );
         }
-        $headers = $this->mergeAllHeaders($headerParams, $headers);
-        $httpBody = $this->prepareRequestBody($headers, $_tempBody, $multipart, $formParams, $formFiles);
-
-        $req = new Request(
+        return $this->toClientRequest(
             'GET',
-            $this->config->getHost() . $resourcePath,
+            null,
+            $resourcePath,
+            $queryParams,
+            $formParams,
+            [],
+            $multipart,
             $headers,
-            $httpBody
+            $headerParams
         );
-        if ($this->config->getDebug()) {
-            $this->writeRequestLog('GET', $this->config->getHost() . $resourcePath, $headers, $httpBody);
-        }
-
-        return $req;
     }
             
     /**
@@ -799,23 +1071,9 @@ class CalendarApi extends ApiBase
     {
         $returnType = '\SplFileObject';
         $request = $this->calendarGetAsFileRequest($request);
-
-        try {
-            $response = $this->callClient($request);
-            return $this->processResponse($response, $returnType);
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\SplFileObject',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
+    
+        $response = $this->callClient($request);
+        return $this->processResponse($response, $returnType);
     }
 
     /**
@@ -893,7 +1151,6 @@ class CalendarApi extends ApiBase
         $queryParams = [];
         $headerParams = [];
         $multipart = false;
-    
 
         // query params
         $paramValue = $request->file_name;
@@ -908,12 +1165,6 @@ class CalendarApi extends ApiBase
         $paramValue = $request->folder;
         $paramBaseName = 'folder';
         $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
-    
-
-        $resourcePath = $this->parseURL($resourcePath, $queryParams);
-        $formFiles = [];
-        // body params
-        $_tempBody = null;
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -925,20 +1176,17 @@ class CalendarApi extends ApiBase
                 ['application/json']
             );
         }
-        $headers = $this->mergeAllHeaders($headerParams, $headers);
-        $httpBody = $this->prepareRequestBody($headers, $_tempBody, $multipart, $formParams, $formFiles);
-
-        $req = new Request(
+        return $this->toClientRequest(
             'GET',
-            $this->config->getHost() . $resourcePath,
+            null,
+            $resourcePath,
+            $queryParams,
+            $formParams,
+            [],
+            $multipart,
             $headers,
-            $httpBody
+            $headerParams
         );
-        if ($this->config->getDebug()) {
-            $this->writeRequestLog('GET', $this->config->getHost() . $resourcePath, $headers, $httpBody);
-        }
-
-        return $req;
     }
             
     /**
@@ -979,23 +1227,9 @@ class CalendarApi extends ApiBase
     {
         $returnType = '\Aspose\Email\Model\CalendarStorageList';
         $request = $this->calendarGetListRequest($request);
-
-        try {
-            $response = $this->callClient($request);
-            return $this->processResponse($response, $returnType);
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Aspose\Email\Model\CalendarStorageList',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
+    
+        $response = $this->callClient($request);
+        return $this->processResponse($response, $returnType);
     }
 
     /**
@@ -1067,7 +1301,6 @@ class CalendarApi extends ApiBase
         $queryParams = [];
         $headerParams = [];
         $multipart = false;
-    
 
         // query params
         $paramValue = $request->folder;
@@ -1082,12 +1315,6 @@ class CalendarApi extends ApiBase
         $paramValue = $request->storage;
         $paramBaseName = 'storage';
         $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
-    
-
-        $resourcePath = $this->parseURL($resourcePath, $queryParams);
-        $formFiles = [];
-        // body params
-        $_tempBody = null;
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -1099,19 +1326,134 @@ class CalendarApi extends ApiBase
                 ['application/json']
             );
         }
-        $headers = $this->mergeAllHeaders($headerParams, $headers);
-        $httpBody = $this->prepareRequestBody($headers, $_tempBody, $multipart, $formParams, $formFiles);
-
-        $req = new Request(
+        return $this->toClientRequest(
             'GET',
-            $this->config->getHost() . $resourcePath,
+            null,
+            $resourcePath,
+            $queryParams,
+            $formParams,
+            [],
+            $multipart,
             $headers,
-            $httpBody
+            $headerParams
         );
-        if ($this->config->getDebug()) {
-            $this->writeRequestLog('GET', $this->config->getHost() . $resourcePath, $headers, $httpBody);
+    }
+            
+    /**
+     * Operation calendarSave
+     *
+     * Save iCalendar
+     *
+     * @param Model\CalendarSaveRequest $request iCalendar create/update request
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     * @return void
+     */
+    public function calendarSave($request)
+    {
+        try {
+             $this->calendarSaveWithHttpInfo($request);
+        } catch (RepeatRequestException $e) {
+             $this->calendarSaveWithHttpInfo($request);
+        }
+    }
+
+    /**
+     * Operation calendarSaveWithHttpInfo
+     *
+     * Save iCalendar
+     *
+     * @param Model\CalendarSaveRequest $request iCalendar create/update request
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     * @throws RepeatRequestException when request token is expired
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function calendarSaveWithHttpInfo($request)
+    {
+        $request = $this->calendarSaveRequest($request);
+    
+        $response = $this->callClient($request);
+        return [null, $response->getStatusCode(), $response->getHeaders()];
+    }
+
+    /**
+     * Operation calendarSaveAsync
+     *
+     * Save iCalendar
+     *
+     * @param Model\CalendarSaveRequest $request iCalendar create/update request
+     *
+     * @throws InvalidArgumentException
+     * @return PromiseInterface
+     */
+    public function calendarSaveAsync($request)
+    {
+        return $this->calendarSaveAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation calendarSaveAsyncWithHttpInfo
+     *
+     * Save iCalendar
+     *
+     * @param Model\CalendarSaveRequest $request iCalendar create/update request
+     *
+     * @throws InvalidArgumentException
+     * @return PromiseInterface
+     */
+    public function calendarSaveAsyncWithHttpInfo($request)
+    {
+        $request = $this->calendarSaveRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $this->handleClientException($exception);
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'calendarSave'
+     *
+     * @param Model\CalendarSaveRequest $request iCalendar create/update request
+     *
+     * @throws InvalidArgumentException
+     * @return Request
+     */
+    protected function calendarSaveRequest($request)
+    {
+        // verify the required parameter '$request' is set
+        if ($request === null) {
+            throw new InvalidArgumentException(
+                'Missing the required parameter $request when calling calendarSave'
+            );
         }
 
-        return $req;
+        // body params
+        if (is_string($request)) {
+            $httpBody = "\"" . $request . "\"";
+        } else {
+            $httpBody = $request;
+        }
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json'],
+            ['application/json']
+        );
+        $path = '/email/Calendar';
+        return $this->toClientRequest('PUT', $httpBody, $path, [], [], [], false, $headers, []);
     }
 }
