@@ -72,7 +72,7 @@ class MapiContactElectronicAddressDto implements ArrayAccess
     protected static $swaggerFormats = [
         'address_type' => null,
         'display_name' => null,
-        'email_address' => null,
+        'email_address' => 'email',
         'fax_number' => null,
         'is_empty' => null,
         'original_display_name' => null

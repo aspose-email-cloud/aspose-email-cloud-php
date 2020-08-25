@@ -69,7 +69,7 @@ class MailAddress implements ArrayAccess
      */
     protected static $swaggerFormats = [
         'display_name' => null,
-        'address' => null,
+        'address' => 'email',
         'participation_status' => null,
         'original_address_string' => null
     ];

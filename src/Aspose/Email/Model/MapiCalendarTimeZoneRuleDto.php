@@ -271,6 +271,14 @@ class MapiCalendarTimeZoneRuleDto implements ArrayAccess
         if ($this->container['month'] === null) {
             $invalidProperties[] = "'month' can't be null";
         }
+        if (($this->container['month'] > 12)) {
+            $invalidProperties[] = "invalid value for 'month', must be smaller than or equal to 12.";
+        }
+
+        if (($this->container['month'] < 0)) {
+            $invalidProperties[] = "invalid value for 'month', must be bigger than or equal to 0.";
+        }
+
         if ($this->container['position'] === null) {
             $invalidProperties[] = "'position' can't be null";
         }
@@ -308,6 +316,12 @@ class MapiCalendarTimeZoneRuleDto implements ArrayAccess
             return false;
         }
         if ($this->container['month'] === null) {
+            return false;
+        }
+        if ($this->container['month'] > 12) {
+            return false;
+        }
+        if ($this->container['month'] < 0) {
             return false;
         }
         if ($this->container['position'] === null) {
@@ -462,6 +476,14 @@ class MapiCalendarTimeZoneRuleDto implements ArrayAccess
      */
     public function setMonth($month)
     {
+
+        if (($month > 12)) {
+            throw new \InvalidArgumentException('invalid value for $month when calling MapiCalendarTimeZoneRuleDto., must be smaller than or equal to 12.');
+        }
+        if (($month < 0)) {
+            throw new \InvalidArgumentException('invalid value for $month when calling MapiCalendarTimeZoneRuleDto., must be bigger than or equal to 0.');
+        }
+
         $this->container['month'] = $month;
 
         return $this;

@@ -37,6 +37,7 @@ use \Aspose\Email\ObjectSerializer;
 /**
  * Error
  *
+ * @description Error
  */
 class Error implements ArrayAccess
 {
@@ -185,10 +186,10 @@ class Error implements ArrayAccess
     /**
      * Initializes a new instance of the Error class.
      *  
-     * @param string $code 
-     * @param string $message 
-     * @param string $description 
-     * @param \Aspose\Email\Model\ErrorDetails $inner_error 
+     * @param string $code Code
+     * @param string $message Message
+     * @param string $description Description
+     * @param \Aspose\Email\Model\ErrorDetails $inner_error Inner Error
      */
     public function __construct($code = null, $message = null, $description = null, $inner_error = null)
     {
@@ -241,7 +242,7 @@ class Error implements ArrayAccess
     /**
      * Sets code
      *
-     * @param string $code code
+     * @param string $code Code
      *
      * @return $this
      */
@@ -265,7 +266,7 @@ class Error implements ArrayAccess
     /**
      * Sets message
      *
-     * @param string $message message
+     * @param string $message Message
      *
      * @return $this
      */
@@ -289,7 +290,7 @@ class Error implements ArrayAccess
     /**
      * Sets description
      *
-     * @param string $description description
+     * @param string $description Description
      *
      * @return $this
      */
@@ -313,7 +314,7 @@ class Error implements ArrayAccess
     /**
      * Sets inner_error
      *
-     * @param \Aspose\Email\Model\ErrorDetails $inner_error inner_error
+     * @param \Aspose\Email\Model\ErrorDetails $inner_error Inner Error
      *
      * @return $this
      */

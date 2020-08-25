@@ -68,7 +68,7 @@ class MapiRecipientDto implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'email_address' => null,
+        'email_address' => 'email',
         'address_type' => null,
         'display_name' => null,
         'recipient_type' => null

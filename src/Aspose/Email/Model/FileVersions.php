@@ -37,6 +37,7 @@ use \Aspose\Email\ObjectSerializer;
 /**
  * FileVersions
  *
+ * @description File versions FileVersion.
  */
 class FileVersions implements ArrayAccess
 {
@@ -170,7 +171,7 @@ class FileVersions implements ArrayAccess
     /**
      * Initializes a new instance of the FileVersions class.
      *  
-     * @param \Aspose\Email\Model\FileVersion[] $value 
+     * @param \Aspose\Email\Model\FileVersion[] $value File versions FileVersion.
      */
     public function __construct($value = null)
     {
@@ -217,7 +218,7 @@ class FileVersions implements ArrayAccess
     /**
      * Sets value
      *
-     * @param \Aspose\Email\Model\FileVersion[] $value value
+     * @param \Aspose\Email\Model\FileVersion[] $value File versions FileVersion.
      *
      * @return $this
      */

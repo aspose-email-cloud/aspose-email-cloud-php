@@ -212,6 +212,13 @@ class ContactPhoto implements ArrayAccess
         if ($this->container['photo_image_format'] === null) {
             $invalidProperties[] = "'photo_image_format' can't be null";
         }
+        if ($this->container['base64_data'] === null) {
+            $invalidProperties[] = "'base64_data' can't be null";
+        }
+        if ((strlen($this->container['base64_data']) < 1)) {
+            $invalidProperties[] = "invalid value for 'base64_data', the character length must be bigger than or equal to 1.";
+        }
+
         if ($this->container['discriminator'] === null) {
             $invalidProperties[] = "'discriminator' can't be null";
         }
@@ -228,6 +235,12 @@ class ContactPhoto implements ArrayAccess
     {
 
         if ($this->container['photo_image_format'] === null) {
+            return false;
+        }
+        if ($this->container['base64_data'] === null) {
+            return false;
+        }
+        if (strlen($this->container['base64_data']) < 1) {
             return false;
         }
         if ($this->container['discriminator'] === null) {
@@ -280,6 +293,11 @@ class ContactPhoto implements ArrayAccess
      */
     public function setBase64Data($base64_data)
     {
+
+        if ((strlen($base64_data) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $base64_data when calling ContactPhoto., must be bigger than or equal to 1.');
+        }
+
         $this->container['base64_data'] = $base64_data;
 
         return $this;

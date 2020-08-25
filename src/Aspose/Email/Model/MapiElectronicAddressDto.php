@@ -70,7 +70,7 @@ class MapiElectronicAddressDto implements ArrayAccess
      */
     protected static $swaggerFormats = [
         'address_type' => null,
-        'email_address' => null,
+        'email_address' => 'email',
         'display_name' => null,
         'fax_number' => null,
         'original_display_name' => null

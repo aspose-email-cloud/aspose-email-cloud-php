@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**used_size** | **int** |  | 
-**total_size** | **int** |  | 
+**used_size** | **int** | Application used disc space. | 
+**total_size** | **int** | Total disc space. | 
 
 
 

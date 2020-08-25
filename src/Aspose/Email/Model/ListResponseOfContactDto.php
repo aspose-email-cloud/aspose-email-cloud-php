@@ -40,7 +40,7 @@ use \Aspose\Email\ObjectSerializer;
  */
 class ListResponseOfContactDto implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    const DISCRIMINATOR = 'Type';
 
     /**
      * The original name of the model.
@@ -177,6 +177,10 @@ class ListResponseOfContactDto implements ArrayAccess
         $this->container['value'] = null;
 
         if ($value != null) $this->setValue($value);
+
+        // Initialize discriminator property with the model name.
+        $discriminator = array_search('Type', self::$attributeMap);
+        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /**

@@ -74,7 +74,7 @@ class EmailAddress implements ArrayAccess
         'display_name' => null,
         'preferred' => null,
         'routing_type' => null,
-        'address' => null,
+        'address' => 'email',
         'original_address_string' => null
     ];
 
@@ -232,6 +232,13 @@ class EmailAddress implements ArrayAccess
         if ($this->container['preferred'] === null) {
             $invalidProperties[] = "'preferred' can't be null";
         }
+        if ($this->container['address'] === null) {
+            $invalidProperties[] = "'address' can't be null";
+        }
+        if ((strlen($this->container['address']) < 1)) {
+            $invalidProperties[] = "invalid value for 'address', the character length must be bigger than or equal to 1.";
+        }
+
         return $invalidProperties;
     }
 
@@ -245,6 +252,12 @@ class EmailAddress implements ArrayAccess
     {
 
         if ($this->container['preferred'] === null) {
+            return false;
+        }
+        if ($this->container['address'] === null) {
+            return false;
+        }
+        if (strlen($this->container['address']) < 1) {
             return false;
         }
         return true;
@@ -366,6 +379,11 @@ class EmailAddress implements ArrayAccess
      */
     public function setAddress($address)
     {
+
+        if ((strlen($address) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $address when calling EmailAddress., must be bigger than or equal to 1.');
+        }
+
         $this->container['address'] = $address;
 
         return $this;

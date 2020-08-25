@@ -184,6 +184,13 @@ class MapiKnownPropertyDescriptor extends MapiPropertyDescriptor
     {
         $invalidProperties = parent::listInvalidProperties();
 
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
+        }
+        if ((strlen($this->container['name']) < 1)) {
+            $invalidProperties[] = "invalid value for 'name', the character length must be bigger than or equal to 1.";
+        }
+
         return $invalidProperties;
     }
 
@@ -199,6 +206,12 @@ class MapiKnownPropertyDescriptor extends MapiPropertyDescriptor
             return false;
         }
 
+        if ($this->container['name'] === null) {
+            return false;
+        }
+        if (strlen($this->container['name']) < 1) {
+            return false;
+        }
         return true;
     }
 
@@ -222,6 +235,11 @@ class MapiKnownPropertyDescriptor extends MapiPropertyDescriptor
      */
     public function setName($name)
     {
+
+        if ((strlen($name) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $name when calling MapiKnownPropertyDescriptor., must be bigger than or equal to 1.');
+        }
+
         $this->container['name'] = $name;
 
         return $this;
