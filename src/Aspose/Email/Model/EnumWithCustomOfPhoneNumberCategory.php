@@ -348,5 +348,3 @@ class EnumWithCustomOfPhoneNumberCategory implements ArrayAccess
     }
 }
 
-
-?>

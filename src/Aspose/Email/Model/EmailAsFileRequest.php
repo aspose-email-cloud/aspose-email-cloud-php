@@ -343,5 +343,3 @@ class EmailAsFileRequest implements ArrayAccess
     }
 }
 
-
-?>

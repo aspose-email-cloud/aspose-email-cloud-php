@@ -270,5 +270,3 @@ class StorageFileLocationList extends ListResponseOfStorageFileLocation
     }
 }
 
-
-?>

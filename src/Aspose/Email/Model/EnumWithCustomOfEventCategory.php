@@ -348,5 +348,3 @@ class EnumWithCustomOfEventCategory implements ArrayAccess
     }
 }
 
-
-?>

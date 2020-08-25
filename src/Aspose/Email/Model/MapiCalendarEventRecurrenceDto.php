@@ -477,5 +477,3 @@ class MapiCalendarEventRecurrenceDto implements ArrayAccess
     }
 }
 
-
-?>

@@ -305,5 +305,3 @@ class MapiDateTimePropertyDto extends MapiPropertyDto
     }
 }
 
-
-?>

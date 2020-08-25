@@ -55,4 +55,3 @@ class CalendarConvertRequest
      */
     public $file;
 }
-?>

@@ -780,5 +780,3 @@ class MapiCalendarRecurrencePatternDto implements ArrayAccess
     }
 }
 
-
-?>

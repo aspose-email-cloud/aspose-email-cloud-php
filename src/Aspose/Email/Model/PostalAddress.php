@@ -631,5 +631,3 @@ class PostalAddress implements ArrayAccess
     }
 }
 
-
-?>

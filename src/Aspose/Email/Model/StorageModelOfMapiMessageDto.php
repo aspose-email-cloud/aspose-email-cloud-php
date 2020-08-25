@@ -346,5 +346,3 @@ class StorageModelOfMapiMessageDto implements ArrayAccess
     }
 }
 
-
-?>

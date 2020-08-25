@@ -299,5 +299,3 @@ class MapiBinaryPropertyDto extends MapiPropertyDto
     }
 }
 
-
-?>

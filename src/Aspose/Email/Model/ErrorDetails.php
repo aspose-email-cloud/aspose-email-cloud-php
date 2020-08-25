@@ -337,5 +337,3 @@ class ErrorDetails implements ArrayAccess
     }
 }
 
-
-?>

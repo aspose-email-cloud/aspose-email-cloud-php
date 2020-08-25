@@ -270,5 +270,3 @@ class EmailList extends ListResponseOfEmailDto
     }
 }
 
-
-?>

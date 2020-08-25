@@ -62,4 +62,3 @@ class DeleteFolderRequest
      */
     public $recursive;
 }
-?>

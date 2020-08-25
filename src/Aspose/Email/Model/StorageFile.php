@@ -443,5 +443,3 @@ class StorageFile implements ArrayAccess
     }
 }
 
-
-?>

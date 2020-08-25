@@ -69,4 +69,3 @@ class CopyFolderRequest
      */
     public $dest_storage_name;
 }
-?>

@@ -270,5 +270,3 @@ class ContactStorageList extends ListResponseOfStorageModelOfContactDto
     }
 }
 
-
-?>

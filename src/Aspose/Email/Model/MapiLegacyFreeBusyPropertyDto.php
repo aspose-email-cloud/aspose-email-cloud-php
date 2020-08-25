@@ -305,5 +305,3 @@ class MapiLegacyFreeBusyPropertyDto extends MapiPropertyDto
     }
 }
 
-
-?>

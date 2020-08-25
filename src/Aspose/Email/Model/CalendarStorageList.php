@@ -270,5 +270,3 @@ class CalendarStorageList extends ListResponseOfStorageModelOfCalendarDto
     }
 }
 
-
-?>

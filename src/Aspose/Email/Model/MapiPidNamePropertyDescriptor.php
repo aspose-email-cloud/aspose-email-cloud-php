@@ -311,5 +311,3 @@ class MapiPidNamePropertyDescriptor extends MapiPidPropertyDescriptor
     }
 }
 
-
-?>

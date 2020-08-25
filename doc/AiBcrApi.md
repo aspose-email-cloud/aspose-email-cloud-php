@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 # **aiBcrParse**
 ```php
-function \Aspose\Email\Model\ContactList aiBcrParse(Requests\AiBcrParseRequest $request)
+function \Aspose\Email\Model\ContactList aiBcrParse(AiBcrParseRequest $request)
 ```
 Parse images to vCard document models
 
@@ -20,7 +20,7 @@ Parse images to vCard document models
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\AiBcrParseRequest(
+new Aspose\Email\Model\AiBcrParseRequest(
     $file,
     $countries,
     $languages,
@@ -39,7 +39,7 @@ Name | Type | Description  | Notes
 
 # **aiBcrParseStorage**
 ```php
-function \Aspose\Email\Model\StorageFileLocationList aiBcrParseStorage(Requests\AiBcrParseStorageRequest $request)
+function \Aspose\Email\Model\StorageFileLocationList aiBcrParseStorage(AiBcrParseStorageRequest $request)
 ```
 Parse images from storage to vCard files
 
@@ -49,7 +49,7 @@ Parse images from storage to vCard files
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\AiBcrParseStorageRequest(
+new Aspose\Email\Model\AiBcrParseStorageRequest(
     $request)
 ```
 

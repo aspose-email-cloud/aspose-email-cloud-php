@@ -69,4 +69,3 @@ class AiBcrParseRequest
      */
     public $is_single;
 }
-?>

@@ -55,4 +55,3 @@ class GetFilesListRequest
      */
     public $storage_name;
 }
-?>

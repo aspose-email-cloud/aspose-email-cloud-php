@@ -391,5 +391,3 @@ class DiscoverEmailConfigRequest implements ArrayAccess
     }
 }
 
-
-?>

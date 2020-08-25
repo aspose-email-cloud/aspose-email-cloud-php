@@ -346,5 +346,3 @@ class StorageModelOfCalendarDto implements ArrayAccess
     }
 }
 
-
-?>

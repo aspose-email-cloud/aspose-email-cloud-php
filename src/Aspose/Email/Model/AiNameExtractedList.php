@@ -270,5 +270,3 @@ class AiNameExtractedList extends ListResponseOfAiNameExtracted
     }
 }
 
-
-?>

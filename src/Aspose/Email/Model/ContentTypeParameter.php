@@ -331,5 +331,3 @@ class ContentTypeParameter implements ArrayAccess
     }
 }
 
-
-?>

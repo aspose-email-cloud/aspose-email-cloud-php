@@ -828,5 +828,3 @@ class MapiMessageItemBaseDto implements ArrayAccess
     }
 }
 
-
-?>

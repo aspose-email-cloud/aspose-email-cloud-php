@@ -83,4 +83,3 @@ class ClientMessageFetchFileRequest
      */
     public $format;
 }
-?>

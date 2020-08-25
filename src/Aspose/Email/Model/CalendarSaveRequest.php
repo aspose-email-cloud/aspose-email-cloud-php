@@ -305,5 +305,3 @@ class CalendarSaveRequest extends StorageModelOfCalendarDto
     }
 }
 
-
-?>

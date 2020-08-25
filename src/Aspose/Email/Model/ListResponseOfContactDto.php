@@ -302,5 +302,3 @@ class ListResponseOfContactDto implements ArrayAccess
     }
 }
 
-
-?>

@@ -62,4 +62,3 @@ class CalendarGetRequest
      */
     public $storage;
 }
-?>

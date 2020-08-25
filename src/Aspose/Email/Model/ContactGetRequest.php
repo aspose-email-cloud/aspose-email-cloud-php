@@ -69,4 +69,3 @@ class ContactGetRequest
      */
     public $storage;
 }
-?>

@@ -331,5 +331,3 @@ class AiNameWeightedVariants implements ArrayAccess
     }
 }
 
-
-?>

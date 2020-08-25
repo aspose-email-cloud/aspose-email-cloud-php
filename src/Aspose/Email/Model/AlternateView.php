@@ -335,5 +335,3 @@ class AlternateView extends AttachmentBase
     }
 }
 
-
-?>

@@ -346,5 +346,3 @@ class StorageModelOfEmailDto implements ArrayAccess
     }
 }
 
-
-?>

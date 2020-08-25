@@ -76,4 +76,3 @@ class ClientThreadGetMessagesRequest
      */
     public $account_storage_folder;
 }
-?>

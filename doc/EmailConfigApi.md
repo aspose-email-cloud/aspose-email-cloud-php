@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 # **emailConfigDiscover**
 ```php
-function \Aspose\Email\Model\EmailAccountConfigList emailConfigDiscover(Requests\EmailConfigDiscoverRequest $request)
+function \Aspose\Email\Model\EmailAccountConfigList emailConfigDiscover(EmailConfigDiscoverRequest $request)
 ```
 Discover email accounts by email address. Does not validate discovered accounts.
 
@@ -21,7 +21,7 @@ Discover email accounts by email address. Does not validate discovered accounts.
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\EmailConfigDiscoverRequest(
+new Aspose\Email\Model\EmailConfigDiscoverRequest(
     $address,
     $fast_processing)
 ```
@@ -36,7 +36,7 @@ Name | Type | Description  | Notes
 
 # **emailConfigDiscoverOauth**
 ```php
-function \Aspose\Email\Model\EmailAccountConfigList emailConfigDiscoverOauth(Requests\EmailConfigDiscoverOauthRequest $request)
+function \Aspose\Email\Model\EmailAccountConfigList emailConfigDiscoverOauth(EmailConfigDiscoverOauthRequest $request)
 ```
 Discover email accounts by email address. Validates discovered accounts using OAuth 2.0.
 
@@ -46,7 +46,7 @@ Discover email accounts by email address. Validates discovered accounts using OA
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\EmailConfigDiscoverOauthRequest(
+new Aspose\Email\Model\EmailConfigDiscoverOauthRequest(
     $request)
 ```
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 # **emailConfigDiscoverPassword**
 ```php
-function \Aspose\Email\Model\EmailAccountConfigList emailConfigDiscoverPassword(Requests\EmailConfigDiscoverPasswordRequest $request)
+function \Aspose\Email\Model\EmailAccountConfigList emailConfigDiscoverPassword(EmailConfigDiscoverPasswordRequest $request)
 ```
 Discover email accounts by email address. Validates discovered accounts using login and password.
 
@@ -69,7 +69,7 @@ Discover email accounts by email address. Validates discovered accounts using lo
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\EmailConfigDiscoverPasswordRequest(
+new Aspose\Email\Model\EmailConfigDiscoverPasswordRequest(
     $request)
 ```
 

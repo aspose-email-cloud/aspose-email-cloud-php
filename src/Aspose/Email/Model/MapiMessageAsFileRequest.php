@@ -343,5 +343,3 @@ class MapiMessageAsFileRequest implements ArrayAccess
     }
 }
 
-
-?>

@@ -348,5 +348,3 @@ class EnumWithCustomOfAssociatedPersonCategory implements ArrayAccess
     }
 }
 
-
-?>

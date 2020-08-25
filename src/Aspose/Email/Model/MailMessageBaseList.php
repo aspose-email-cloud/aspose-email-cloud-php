@@ -270,5 +270,3 @@ class MailMessageBaseList extends ListResponseOfMailMessageBase
     }
 }
 
-
-?>

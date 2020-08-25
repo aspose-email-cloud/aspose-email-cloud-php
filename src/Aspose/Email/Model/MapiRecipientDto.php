@@ -401,5 +401,3 @@ class MapiRecipientDto implements ArrayAccess
     }
 }
 
-
-?>

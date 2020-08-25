@@ -83,4 +83,3 @@ class AiNameGenderizeRequest
      */
     public $style;
 }
-?>

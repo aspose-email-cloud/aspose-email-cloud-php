@@ -387,5 +387,3 @@ class CalendarAsAlternateRequest implements ArrayAccess
     }
 }
 
-
-?>

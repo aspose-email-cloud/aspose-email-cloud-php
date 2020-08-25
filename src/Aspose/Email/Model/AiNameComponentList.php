@@ -270,5 +270,3 @@ class AiNameComponentList extends ListResponseOfAiNameComponent
     }
 }
 
-
-?>

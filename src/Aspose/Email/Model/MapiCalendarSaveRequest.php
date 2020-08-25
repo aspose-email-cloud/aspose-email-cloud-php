@@ -305,5 +305,3 @@ class MapiCalendarSaveRequest extends StorageModelOfMapiCalendarDto
     }
 }
 
-
-?>

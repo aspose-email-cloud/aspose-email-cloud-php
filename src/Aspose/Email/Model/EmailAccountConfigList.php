@@ -270,5 +270,3 @@ class EmailAccountConfigList extends ListResponseOfEmailAccountConfig
     }
 }
 
-
-?>

@@ -349,5 +349,3 @@ class ClientMessageMoveRequest extends ClientMessageBaseRequest
     }
 }
 
-
-?>

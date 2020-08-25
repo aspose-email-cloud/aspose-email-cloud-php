@@ -335,5 +335,3 @@ class StorageFolderLocation implements ArrayAccess
     }
 }
 
-
-?>

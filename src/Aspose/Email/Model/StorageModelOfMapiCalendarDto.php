@@ -346,5 +346,3 @@ class StorageModelOfMapiCalendarDto implements ArrayAccess
     }
 }
 
-
-?>

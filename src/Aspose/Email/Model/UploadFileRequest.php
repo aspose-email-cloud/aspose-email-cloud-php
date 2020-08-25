@@ -62,4 +62,3 @@ class UploadFileRequest
      */
     public $storage_name;
 }
-?>

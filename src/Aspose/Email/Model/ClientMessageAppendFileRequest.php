@@ -90,4 +90,3 @@ class ClientMessageAppendFileRequest
      */
     public $mark_as_sent;
 }
-?>

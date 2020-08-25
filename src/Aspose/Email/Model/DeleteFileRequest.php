@@ -62,4 +62,3 @@ class DeleteFileRequest
      */
     public $version_id;
 }
-?>

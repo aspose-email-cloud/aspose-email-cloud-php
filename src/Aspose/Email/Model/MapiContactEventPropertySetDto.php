@@ -343,5 +343,3 @@ class MapiContactEventPropertySetDto implements ArrayAccess
     }
 }
 
-
-?>

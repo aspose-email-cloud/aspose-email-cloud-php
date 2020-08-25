@@ -69,4 +69,3 @@ class CalendarGetAsFileRequest
      */
     public $folder;
 }
-?>

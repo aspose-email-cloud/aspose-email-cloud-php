@@ -369,5 +369,3 @@ class InstantMessengerAddress implements ArrayAccess
     }
 }
 
-
-?>

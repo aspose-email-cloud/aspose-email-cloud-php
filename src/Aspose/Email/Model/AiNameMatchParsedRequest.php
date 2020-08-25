@@ -307,5 +307,3 @@ class AiNameMatchParsedRequest extends AiNameParsedRequest
     }
 }
 
-
-?>

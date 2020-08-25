@@ -302,5 +302,3 @@ class ListResponseOfAiNameExtracted implements ArrayAccess
     }
 }
 
-
-?>

@@ -304,5 +304,3 @@ class MapiPropertyDescriptor implements ArrayAccess
     }
 }
 
-
-?>

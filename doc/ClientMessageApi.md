@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 # **clientMessageAppend**
 ```php
-function \Aspose\Email\Model\ValueTOfString clientMessageAppend(Requests\ClientMessageAppendRequest $request)
+function \Aspose\Email\Model\ValueTOfString clientMessageAppend(ClientMessageAppendRequest $request)
 ```
 Add email message to specified folder in email account.
 
@@ -28,7 +28,7 @@ Add email message to specified folder in email account.
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\ClientMessageAppendRequest(
+new Aspose\Email\Model\ClientMessageAppendRequest(
     $request)
 ```
 
@@ -41,7 +41,7 @@ Name | Type | Description  | Notes
 
 # **clientMessageAppendFile**
 ```php
-function \Aspose\Email\Model\ValueTOfString clientMessageAppendFile(Requests\ClientMessageAppendFileRequest $request)
+function \Aspose\Email\Model\ValueTOfString clientMessageAppendFile(ClientMessageAppendFileRequest $request)
 ```
 Add email message from file to specified folder in email account.
 
@@ -51,7 +51,7 @@ Add email message from file to specified folder in email account.
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\ClientMessageAppendFileRequest(
+new Aspose\Email\Model\ClientMessageAppendFileRequest(
     $account,
     $file,
     $storage,
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 
 # **clientMessageDelete**
 ```php
-function clientMessageDelete(Requests\ClientMessageDeleteRequest $request)
+function clientMessageDelete(ClientMessageDeleteRequest $request)
 ```
 Delete message.
 
@@ -86,7 +86,7 @@ void (empty response body)
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\ClientMessageDeleteRequest(
+new Aspose\Email\Model\ClientMessageDeleteRequest(
     $request)
 ```
 
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 # **clientMessageFetch**
 ```php
-function \Aspose\Email\Model\MailMessageBase clientMessageFetch(Requests\ClientMessageFetchRequest $request)
+function \Aspose\Email\Model\MailMessageBase clientMessageFetch(ClientMessageFetchRequest $request)
 ```
 Fetch message from email account
 
@@ -109,7 +109,7 @@ Fetch message from email account
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\ClientMessageFetchRequest(
+new Aspose\Email\Model\ClientMessageFetchRequest(
     $message_id,
     $account,
     $folder,
@@ -134,7 +134,7 @@ Name | Type | Description  | Notes
 
 # **clientMessageFetchFile**
 ```php
-function \SplFileObject clientMessageFetchFile(Requests\ClientMessageFetchFileRequest $request)
+function \SplFileObject clientMessageFetchFile(ClientMessageFetchFileRequest $request)
 ```
 Fetch message as file from email account
 
@@ -144,7 +144,7 @@ Fetch message as file from email account
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\ClientMessageFetchFileRequest(
+new Aspose\Email\Model\ClientMessageFetchFileRequest(
     $message_id,
     $account,
     $folder,
@@ -167,7 +167,7 @@ Name | Type | Description  | Notes
 
 # **clientMessageList**
 ```php
-function \Aspose\Email\Model\MailMessageBaseList clientMessageList(Requests\ClientMessageListRequest $request)
+function \Aspose\Email\Model\MailMessageBaseList clientMessageList(ClientMessageListRequest $request)
 ```
 Get messages from folder, filtered by query
 
@@ -179,7 +179,7 @@ The query string should have the following view.      The example of a simple ex
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\ClientMessageListRequest(
+new Aspose\Email\Model\ClientMessageListRequest(
     $folder,
     $account,
     $query_string,
@@ -206,7 +206,7 @@ Name | Type | Description  | Notes
 
 # **clientMessageMove**
 ```php
-function clientMessageMove(Requests\ClientMessageMoveRequest $request)
+function clientMessageMove(ClientMessageMoveRequest $request)
 ```
 Move message to another folder.
 
@@ -216,7 +216,7 @@ void (empty response body)
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\ClientMessageMoveRequest(
+new Aspose\Email\Model\ClientMessageMoveRequest(
     $request)
 ```
 
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 
 # **clientMessageSend**
 ```php
-function clientMessageSend(Requests\ClientMessageSendRequest $request)
+function clientMessageSend(ClientMessageSendRequest $request)
 ```
 Send an email specified by model in request.
 
@@ -239,7 +239,7 @@ void (empty response body)
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\ClientMessageSendRequest(
+new Aspose\Email\Model\ClientMessageSendRequest(
     $request)
 ```
 
@@ -252,7 +252,7 @@ Name | Type | Description  | Notes
 
 # **clientMessageSendFile**
 ```php
-function clientMessageSendFile(Requests\ClientMessageSendFileRequest $request)
+function clientMessageSendFile(ClientMessageSendFileRequest $request)
 ```
 Send an email file.
 
@@ -262,7 +262,7 @@ void (empty response body)
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\ClientMessageSendFileRequest(
+new Aspose\Email\Model\ClientMessageSendFileRequest(
     $account,
     $file,
     $storage,
@@ -283,7 +283,7 @@ Name | Type | Description  | Notes
 
 # **clientMessageSetIsRead**
 ```php
-function clientMessageSetIsRead(Requests\ClientMessageSetIsReadRequest $request)
+function clientMessageSetIsRead(ClientMessageSetIsReadRequest $request)
 ```
 Mark message as read or unread.
 
@@ -293,7 +293,7 @@ void (empty response body)
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\ClientMessageSetIsReadRequest(
+new Aspose\Email\Model\ClientMessageSetIsReadRequest(
     $request)
 ```
 

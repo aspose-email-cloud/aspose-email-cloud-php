@@ -303,5 +303,3 @@ class LinkedResource extends AttachmentBase
     }
 }
 
-
-?>

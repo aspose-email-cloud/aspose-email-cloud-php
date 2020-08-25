@@ -69,4 +69,3 @@ class ClientFolderGetListRequest
      */
     public $parent_folder;
 }
-?>

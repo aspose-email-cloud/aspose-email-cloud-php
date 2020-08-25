@@ -305,5 +305,3 @@ class MapiResponseTypePropertyDto extends MapiPropertyDto
     }
 }
 
-
-?>

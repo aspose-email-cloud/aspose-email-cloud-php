@@ -1121,5 +1121,3 @@ class MapiMessageDto extends MapiMessageItemBaseDto
     }
 }
 
-
-?>

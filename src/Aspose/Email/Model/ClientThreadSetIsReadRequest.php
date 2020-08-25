@@ -337,5 +337,3 @@ class ClientThreadSetIsReadRequest extends ClientThreadBaseRequest
     }
 }
 
-
-?>

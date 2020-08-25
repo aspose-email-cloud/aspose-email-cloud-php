@@ -305,5 +305,3 @@ class ContactSaveRequest extends StorageModelOfContactDto
     }
 }
 
-
-?>

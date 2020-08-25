@@ -69,4 +69,3 @@ class EmailGetRequest
      */
     public $storage;
 }
-?>

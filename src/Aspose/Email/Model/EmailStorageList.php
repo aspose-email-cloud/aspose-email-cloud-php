@@ -270,5 +270,3 @@ class EmailStorageList extends ListResponseOfStorageModelOfEmailDto
     }
 }
 
-
-?>

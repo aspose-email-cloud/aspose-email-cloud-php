@@ -387,5 +387,3 @@ class MonthlyRecurrencePatternDto extends RecurrencePatternDto
     }
 }
 
-
-?>

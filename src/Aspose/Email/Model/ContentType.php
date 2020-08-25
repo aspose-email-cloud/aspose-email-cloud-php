@@ -427,5 +427,3 @@ class ContentType implements ArrayAccess
     }
 }
 
-
-?>

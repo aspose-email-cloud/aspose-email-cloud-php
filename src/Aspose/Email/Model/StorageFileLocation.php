@@ -317,5 +317,3 @@ class StorageFileLocation extends StorageFolderLocation
     }
 }
 
-
-?>

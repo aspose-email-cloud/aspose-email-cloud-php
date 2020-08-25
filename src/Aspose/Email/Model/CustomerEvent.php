@@ -337,5 +337,3 @@ class CustomerEvent implements ArrayAccess
     }
 }
 
-
-?>

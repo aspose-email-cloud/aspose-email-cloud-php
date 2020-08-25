@@ -305,5 +305,3 @@ class ClientMessageSetIsReadRequest extends ClientMessageBaseRequest
     }
 }
 
-
-?>

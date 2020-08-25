@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 # **emailAsFile**
 ```php
-function \SplFileObject emailAsFile(Requests\EmailAsFileRequest $request)
+function \SplFileObject emailAsFile(EmailAsFileRequest $request)
 ```
 Converts Email model to specified format and returns as file.
 
@@ -26,7 +26,7 @@ Converts Email model to specified format and returns as file.
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\EmailAsFileRequest(
+new Aspose\Email\Model\EmailAsFileRequest(
     $request)
 ```
 
@@ -39,7 +39,7 @@ Name | Type | Description  | Notes
 
 # **emailAsMapi**
 ```php
-function \Aspose\Email\Model\MapiMessageDto emailAsMapi(Requests\EmailAsMapiRequest $request)
+function \Aspose\Email\Model\MapiMessageDto emailAsMapi(EmailAsMapiRequest $request)
 ```
 Converts EmailDto to MapiMessageDto.
 
@@ -49,7 +49,7 @@ Converts EmailDto to MapiMessageDto.
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\EmailAsMapiRequest(
+new Aspose\Email\Model\EmailAsMapiRequest(
     $email_dto)
 ```
 
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 
 # **emailConvert**
 ```php
-function \SplFileObject emailConvert(Requests\EmailConvertRequest $request)
+function \SplFileObject emailConvert(EmailConvertRequest $request)
 ```
 Converts email document to specified format and returns as file
 
@@ -72,7 +72,7 @@ Converts email document to specified format and returns as file
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\EmailConvertRequest(
+new Aspose\Email\Model\EmailConvertRequest(
     $format,
     $file)
 ```
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 
 # **emailFromFile**
 ```php
-function \Aspose\Email\Model\EmailDto emailFromFile(Requests\EmailFromFileRequest $request)
+function \Aspose\Email\Model\EmailDto emailFromFile(EmailFromFileRequest $request)
 ```
 Converts email document to a model representation
 
@@ -97,7 +97,7 @@ Converts email document to a model representation
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\EmailFromFileRequest(
+new Aspose\Email\Model\EmailFromFileRequest(
     $format,
     $file)
 ```
@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 
 # **emailGet**
 ```php
-function \Aspose\Email\Model\EmailDto emailGet(Requests\EmailGetRequest $request)
+function \Aspose\Email\Model\EmailDto emailGet(EmailGetRequest $request)
 ```
 Get email document from storage.
 
@@ -122,7 +122,7 @@ Get email document from storage.
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\EmailGetRequest(
+new Aspose\Email\Model\EmailGetRequest(
     $format,
     $file_name,
     $folder,
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 
 # **emailGetAsFile**
 ```php
-function \SplFileObject emailGetAsFile(Requests\EmailGetAsFileRequest $request)
+function \SplFileObject emailGetAsFile(EmailGetAsFileRequest $request)
 ```
 Converts email document from storage to specified format and returns as file
 
@@ -151,7 +151,7 @@ Converts email document from storage to specified format and returns as file
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\EmailGetAsFileRequest(
+new Aspose\Email\Model\EmailGetAsFileRequest(
     $file_name,
     $format,
     $storage,
@@ -170,7 +170,7 @@ Name | Type | Description  | Notes
 
 # **emailGetList**
 ```php
-function \Aspose\Email\Model\EmailStorageList emailGetList(Requests\EmailGetListRequest $request)
+function \Aspose\Email\Model\EmailStorageList emailGetList(EmailGetListRequest $request)
 ```
 Get email list from storage folder.
 
@@ -180,7 +180,7 @@ Get email list from storage folder.
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\EmailGetListRequest(
+new Aspose\Email\Model\EmailGetListRequest(
     $format,
     $folder,
     $storage,
@@ -201,7 +201,7 @@ Name | Type | Description  | Notes
 
 # **emailSave**
 ```php
-function emailSave(Requests\EmailSaveRequest $request)
+function emailSave(EmailSaveRequest $request)
 ```
 Save email document to storage.
 
@@ -211,7 +211,7 @@ void (empty response body)
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\EmailSaveRequest(
+new Aspose\Email\Model\EmailSaveRequest(
     $request)
 ```
 

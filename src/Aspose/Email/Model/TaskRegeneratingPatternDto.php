@@ -311,5 +311,3 @@ class TaskRegeneratingPatternDto extends RecurrencePatternDto
     }
 }
 
-
-?>

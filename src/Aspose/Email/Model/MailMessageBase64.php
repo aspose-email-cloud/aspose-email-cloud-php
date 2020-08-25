@@ -353,5 +353,3 @@ class MailMessageBase64 extends MailMessageBase
     }
 }
 
-
-?>

@@ -347,5 +347,3 @@ class ClientFolderCreateRequest extends ClientAccountBaseRequest
     }
 }
 
-
-?>

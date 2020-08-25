@@ -299,5 +299,3 @@ class FilesList implements ArrayAccess
     }
 }
 
-
-?>

@@ -299,5 +299,3 @@ class MapiStringPropertyDto extends MapiPropertyDto
     }
 }
 
-
-?>

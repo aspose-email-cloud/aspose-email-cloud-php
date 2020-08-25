@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 # **mapiCalendarAsCalendarDto**
 ```php
-function \Aspose\Email\Model\CalendarDto mapiCalendarAsCalendarDto(Requests\MapiCalendarAsCalendarDtoRequest $request)
+function \Aspose\Email\Model\CalendarDto mapiCalendarAsCalendarDto(MapiCalendarAsCalendarDtoRequest $request)
 ```
 Converts MAPI calendar model to CalendarDto model.
 
@@ -23,7 +23,7 @@ Converts MAPI calendar model to CalendarDto model.
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\MapiCalendarAsCalendarDtoRequest(
+new Aspose\Email\Model\MapiCalendarAsCalendarDtoRequest(
     $mapi_calendar_dto)
 ```
 
@@ -36,7 +36,7 @@ Name | Type | Description  | Notes
 
 # **mapiCalendarAsFile**
 ```php
-function \SplFileObject mapiCalendarAsFile(Requests\MapiCalendarAsFileRequest $request)
+function \SplFileObject mapiCalendarAsFile(MapiCalendarAsFileRequest $request)
 ```
 Converts MAPI calendar model to specified format and returns as file.
 
@@ -46,7 +46,7 @@ Converts MAPI calendar model to specified format and returns as file.
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\MapiCalendarAsFileRequest(
+new Aspose\Email\Model\MapiCalendarAsFileRequest(
     $request)
 ```
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 # **mapiCalendarFromFile**
 ```php
-function \Aspose\Email\Model\MapiCalendarDto mapiCalendarFromFile(Requests\MapiCalendarFromFileRequest $request)
+function \Aspose\Email\Model\MapiCalendarDto mapiCalendarFromFile(MapiCalendarFromFileRequest $request)
 ```
 Converts calendar file to a MAPI model representation.
 
@@ -69,7 +69,7 @@ Converts calendar file to a MAPI model representation.
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\MapiCalendarFromFileRequest(
+new Aspose\Email\Model\MapiCalendarFromFileRequest(
     $file)
 ```
 
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 # **mapiCalendarGet**
 ```php
-function \Aspose\Email\Model\MapiCalendarDto mapiCalendarGet(Requests\MapiCalendarGetRequest $request)
+function \Aspose\Email\Model\MapiCalendarDto mapiCalendarGet(MapiCalendarGetRequest $request)
 ```
 Get MAPI calendar document.
 
@@ -92,7 +92,7 @@ Get MAPI calendar document.
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\MapiCalendarGetRequest(
+new Aspose\Email\Model\MapiCalendarGetRequest(
     $file_name,
     $folder,
     $storage)
@@ -109,7 +109,7 @@ Name | Type | Description  | Notes
 
 # **mapiCalendarSave**
 ```php
-function mapiCalendarSave(Requests\MapiCalendarSaveRequest $request)
+function mapiCalendarSave(MapiCalendarSaveRequest $request)
 ```
 Save MAPI Calendar to storage.
 
@@ -119,7 +119,7 @@ void (empty response body)
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\MapiCalendarSaveRequest(
+new Aspose\Email\Model\MapiCalendarSaveRequest(
     $request)
 ```
 

@@ -274,5 +274,3 @@ class MapiContactPhotoDto extends ContactPhoto
     }
 }
 
-
-?>

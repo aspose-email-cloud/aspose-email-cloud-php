@@ -62,4 +62,3 @@ class ClientAccountGetRequest
      */
     public $storage;
 }
-?>

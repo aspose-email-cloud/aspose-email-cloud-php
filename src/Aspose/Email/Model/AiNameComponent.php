@@ -413,5 +413,3 @@ class AiNameComponent implements ArrayAccess
     }
 }
 
-
-?>

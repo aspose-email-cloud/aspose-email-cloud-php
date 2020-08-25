@@ -303,5 +303,3 @@ class MailMessageDto extends MailMessageBase
     }
 }
 
-
-?>

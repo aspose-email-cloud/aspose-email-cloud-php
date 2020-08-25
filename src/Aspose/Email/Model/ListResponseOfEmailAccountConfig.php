@@ -302,5 +302,3 @@ class ListResponseOfEmailAccountConfig implements ArrayAccess
     }
 }
 
-
-?>

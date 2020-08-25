@@ -55,4 +55,3 @@ class EmailFromFileRequest
      */
     public $file;
 }
-?>

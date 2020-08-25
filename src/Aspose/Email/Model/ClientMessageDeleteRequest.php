@@ -299,5 +299,3 @@ class ClientMessageDeleteRequest extends ClientMessageBaseRequest
     }
 }
 
-
-?>

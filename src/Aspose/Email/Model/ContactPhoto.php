@@ -392,5 +392,3 @@ class ContactPhoto implements ArrayAccess
     }
 }
 
-
-?>

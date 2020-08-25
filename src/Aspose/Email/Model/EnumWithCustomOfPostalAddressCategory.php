@@ -348,5 +348,3 @@ class EnumWithCustomOfPostalAddressCategory implements ArrayAccess
     }
 }
 
-
-?>

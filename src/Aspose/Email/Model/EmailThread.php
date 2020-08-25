@@ -395,5 +395,3 @@ class EmailThread implements ArrayAccess
     }
 }
 
-
-?>

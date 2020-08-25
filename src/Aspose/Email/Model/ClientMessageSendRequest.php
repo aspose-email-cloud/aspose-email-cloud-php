@@ -303,5 +303,3 @@ class ClientMessageSendRequest extends ClientAccountBaseRequest
     }
 }
 
-
-?>

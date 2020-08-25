@@ -69,4 +69,3 @@ class CalendarGetListRequest
      */
     public $storage;
 }
-?>

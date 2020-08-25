@@ -483,5 +483,3 @@ class EmailAddress implements ArrayAccess
     }
 }
 
-
-?>

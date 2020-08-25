@@ -270,5 +270,3 @@ class EmailThreadList extends ListResponseOfEmailThread
     }
 }
 
-
-?>

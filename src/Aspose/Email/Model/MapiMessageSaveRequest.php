@@ -305,5 +305,3 @@ class MapiMessageSaveRequest extends StorageModelOfMapiMessageDto
     }
 }
 
-
-?>

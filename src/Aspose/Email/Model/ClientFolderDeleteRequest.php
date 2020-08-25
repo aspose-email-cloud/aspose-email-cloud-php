@@ -315,5 +315,3 @@ class ClientFolderDeleteRequest extends ClientAccountBaseRequest
     }
 }
 
-
-?>

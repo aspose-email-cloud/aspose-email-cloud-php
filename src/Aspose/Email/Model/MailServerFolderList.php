@@ -270,5 +270,3 @@ class MailServerFolderList extends ListResponseOfMailServerFolder
     }
 }
 
-
-?>

@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 # **mapiMessageAsEmailDto**
 ```php
-function \Aspose\Email\Model\EmailDto mapiMessageAsEmailDto(Requests\MapiMessageAsEmailDtoRequest $request)
+function \Aspose\Email\Model\EmailDto mapiMessageAsEmailDto(MapiMessageAsEmailDtoRequest $request)
 ```
 Converts MAPI message model to EmailDto model
 
@@ -23,7 +23,7 @@ Converts MAPI message model to EmailDto model
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\MapiMessageAsEmailDtoRequest(
+new Aspose\Email\Model\MapiMessageAsEmailDtoRequest(
     $mapi_message)
 ```
 
@@ -36,7 +36,7 @@ Name | Type | Description  | Notes
 
 # **mapiMessageAsFile**
 ```php
-function \SplFileObject mapiMessageAsFile(Requests\MapiMessageAsFileRequest $request)
+function \SplFileObject mapiMessageAsFile(MapiMessageAsFileRequest $request)
 ```
 Converts MAPI message model to specified format and returns as file.
 
@@ -46,7 +46,7 @@ Converts MAPI message model to specified format and returns as file.
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\MapiMessageAsFileRequest(
+new Aspose\Email\Model\MapiMessageAsFileRequest(
     $request)
 ```
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 # **mapiMessageFromFile**
 ```php
-function \Aspose\Email\Model\MapiMessageDto mapiMessageFromFile(Requests\MapiMessageFromFileRequest $request)
+function \Aspose\Email\Model\MapiMessageDto mapiMessageFromFile(MapiMessageFromFileRequest $request)
 ```
 Converts email file to a MAPI model representation
 
@@ -69,7 +69,7 @@ Converts email file to a MAPI model representation
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\MapiMessageFromFileRequest(
+new Aspose\Email\Model\MapiMessageFromFileRequest(
     $format,
     $file)
 ```
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 
 # **mapiMessageGet**
 ```php
-function \Aspose\Email\Model\MapiMessageDto mapiMessageGet(Requests\MapiMessageGetRequest $request)
+function \Aspose\Email\Model\MapiMessageDto mapiMessageGet(MapiMessageGetRequest $request)
 ```
 Get MAPI message document.
 
@@ -94,7 +94,7 @@ Get MAPI message document.
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\MapiMessageGetRequest(
+new Aspose\Email\Model\MapiMessageGetRequest(
     $format,
     $file_name,
     $folder,
@@ -113,7 +113,7 @@ Name | Type | Description  | Notes
 
 # **mapiMessageSave**
 ```php
-function mapiMessageSave(Requests\MapiMessageSaveRequest $request)
+function mapiMessageSave(MapiMessageSaveRequest $request)
 ```
 Save MAPI message to storage.
 
@@ -123,7 +123,7 @@ void (empty response body)
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\MapiMessageSaveRequest(
+new Aspose\Email\Model\MapiMessageSaveRequest(
     $request)
 ```
 

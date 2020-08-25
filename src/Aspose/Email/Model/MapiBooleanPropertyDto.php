@@ -305,5 +305,3 @@ class MapiBooleanPropertyDto extends MapiPropertyDto
     }
 }
 
-
-?>

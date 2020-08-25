@@ -76,4 +76,3 @@ class CopyFileRequest
      */
     public $version_id;
 }
-?>

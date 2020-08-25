@@ -769,5 +769,3 @@ class MapiCalendarExceptionInfoDto implements ArrayAccess
     }
 }
 
-
-?>

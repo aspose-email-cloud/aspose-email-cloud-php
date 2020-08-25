@@ -491,5 +491,3 @@ class MapiContactProfessionalPropertySetDto implements ArrayAccess
     }
 }
 
-
-?>

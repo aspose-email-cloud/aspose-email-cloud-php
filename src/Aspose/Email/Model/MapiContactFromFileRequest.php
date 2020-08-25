@@ -55,4 +55,3 @@ class MapiContactFromFileRequest
      */
     public $file;
 }
-?>

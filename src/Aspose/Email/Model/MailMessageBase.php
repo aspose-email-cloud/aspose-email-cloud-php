@@ -304,5 +304,3 @@ class MailMessageBase implements ArrayAccess
     }
 }
 
-
-?>

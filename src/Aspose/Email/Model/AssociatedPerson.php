@@ -369,5 +369,3 @@ class AssociatedPerson implements ArrayAccess
     }
 }
 
-
-?>

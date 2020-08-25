@@ -348,5 +348,3 @@ class EnumWithCustomOfUrlCategory implements ArrayAccess
     }
 }
 
-
-?>

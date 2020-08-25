@@ -456,5 +456,3 @@ class RecurrencePatternDto implements ArrayAccess
     }
 }
 
-
-?>

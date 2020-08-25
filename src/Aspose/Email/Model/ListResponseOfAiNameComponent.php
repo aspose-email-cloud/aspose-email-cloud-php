@@ -302,5 +302,3 @@ class ListResponseOfAiNameComponent implements ArrayAccess
     }
 }
 
-
-?>

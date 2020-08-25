@@ -278,5 +278,3 @@ class DailyRecurrencePatternDto extends RecurrencePatternDto
     }
 }
 
-
-?>

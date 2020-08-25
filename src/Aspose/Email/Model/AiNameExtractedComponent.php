@@ -337,5 +337,3 @@ class AiNameExtractedComponent implements ArrayAccess
     }
 }
 
-
-?>

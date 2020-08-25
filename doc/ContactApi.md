@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 # **contactAsFile**
 ```php
-function \SplFileObject contactAsFile(Requests\ContactAsFileRequest $request)
+function \SplFileObject contactAsFile(ContactAsFileRequest $request)
 ```
 Converts contact model to specified format and returns as file
 
@@ -26,7 +26,7 @@ Converts contact model to specified format and returns as file
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\ContactAsFileRequest(
+new Aspose\Email\Model\ContactAsFileRequest(
     $request)
 ```
 
@@ -39,7 +39,7 @@ Name | Type | Description  | Notes
 
 # **contactAsMapi**
 ```php
-function \Aspose\Email\Model\MapiContactDto contactAsMapi(Requests\ContactAsMapiRequest $request)
+function \Aspose\Email\Model\MapiContactDto contactAsMapi(ContactAsMapiRequest $request)
 ```
 Converts ContactDto to MapiContactDto.
 
@@ -49,7 +49,7 @@ Converts ContactDto to MapiContactDto.
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\ContactAsMapiRequest(
+new Aspose\Email\Model\ContactAsMapiRequest(
     $contact_dto)
 ```
 
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 
 # **contactConvert**
 ```php
-function \SplFileObject contactConvert(Requests\ContactConvertRequest $request)
+function \SplFileObject contactConvert(ContactConvertRequest $request)
 ```
 Converts contact document to specified format and returns as file
 
@@ -72,7 +72,7 @@ Converts contact document to specified format and returns as file
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\ContactConvertRequest(
+new Aspose\Email\Model\ContactConvertRequest(
     $to_format,
     $from_format,
     $file)
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 
 # **contactFromFile**
 ```php
-function \Aspose\Email\Model\ContactDto contactFromFile(Requests\ContactFromFileRequest $request)
+function \Aspose\Email\Model\ContactDto contactFromFile(ContactFromFileRequest $request)
 ```
 Converts contact document to a model representation
 
@@ -99,7 +99,7 @@ Converts contact document to a model representation
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\ContactFromFileRequest(
+new Aspose\Email\Model\ContactFromFileRequest(
     $format,
     $file)
 ```
@@ -114,7 +114,7 @@ Name | Type | Description  | Notes
 
 # **contactGet**
 ```php
-function \Aspose\Email\Model\ContactDto contactGet(Requests\ContactGetRequest $request)
+function \Aspose\Email\Model\ContactDto contactGet(ContactGetRequest $request)
 ```
 Get contact document from storage.
 
@@ -124,7 +124,7 @@ Get contact document from storage.
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\ContactGetRequest(
+new Aspose\Email\Model\ContactGetRequest(
     $format,
     $file_name,
     $folder,
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 
 # **contactGetAsFile**
 ```php
-function \SplFileObject contactGetAsFile(Requests\ContactGetAsFileRequest $request)
+function \SplFileObject contactGetAsFile(ContactGetAsFileRequest $request)
 ```
 Converts contact document from storage to specified format and returns as file
 
@@ -153,7 +153,7 @@ Converts contact document from storage to specified format and returns as file
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\ContactGetAsFileRequest(
+new Aspose\Email\Model\ContactGetAsFileRequest(
     $file_name,
     $to_format,
     $from_format,
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 
 # **contactGetList**
 ```php
-function \Aspose\Email\Model\ContactStorageList contactGetList(Requests\ContactGetListRequest $request)
+function \Aspose\Email\Model\ContactStorageList contactGetList(ContactGetListRequest $request)
 ```
 Get contact list from storage folder.
 
@@ -184,7 +184,7 @@ Get contact list from storage folder.
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\ContactGetListRequest(
+new Aspose\Email\Model\ContactGetListRequest(
     $format,
     $folder,
     $storage,
@@ -205,7 +205,7 @@ Name | Type | Description  | Notes
 
 # **contactSave**
 ```php
-function contactSave(Requests\ContactSaveRequest $request)
+function contactSave(ContactSaveRequest $request)
 ```
 Save contact to storage.
 
@@ -215,7 +215,7 @@ void (empty response body)
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\ContactSaveRequest(
+new Aspose\Email\Model\ContactSaveRequest(
     $request)
 ```
 

@@ -1345,5 +1345,3 @@ class EmailDto implements ArrayAccess
     }
 }
 
-
-?>

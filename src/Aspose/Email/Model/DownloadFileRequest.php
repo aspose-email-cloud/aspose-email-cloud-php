@@ -62,4 +62,3 @@ class DownloadFileRequest
      */
     public $version_id;
 }
-?>

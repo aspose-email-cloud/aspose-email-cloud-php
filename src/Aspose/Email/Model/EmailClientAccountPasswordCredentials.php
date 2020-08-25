@@ -317,5 +317,3 @@ class EmailClientAccountPasswordCredentials extends EmailClientAccountCredential
     }
 }
 
-
-?>

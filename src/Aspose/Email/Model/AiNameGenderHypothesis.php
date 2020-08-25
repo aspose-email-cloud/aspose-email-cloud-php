@@ -343,5 +343,3 @@ class AiNameGenderHypothesis implements ArrayAccess
     }
 }
 
-
-?>

@@ -304,5 +304,3 @@ class ValueTOfBoolean implements ArrayAccess
     }
 }
 
-
-?>

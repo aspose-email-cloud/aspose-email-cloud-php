@@ -305,5 +305,3 @@ class MapiIntPropertyDto extends MapiPropertyDto
     }
 }
 
-
-?>

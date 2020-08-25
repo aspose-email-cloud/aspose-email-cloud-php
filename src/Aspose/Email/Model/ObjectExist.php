@@ -343,5 +343,3 @@ class ObjectExist implements ArrayAccess
     }
 }
 
-
-?>

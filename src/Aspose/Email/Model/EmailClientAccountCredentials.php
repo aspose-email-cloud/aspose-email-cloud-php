@@ -354,5 +354,3 @@ class EmailClientAccountCredentials implements ArrayAccess
     }
 }
 
-
-?>

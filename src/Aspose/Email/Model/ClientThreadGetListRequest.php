@@ -83,4 +83,3 @@ class ClientThreadGetListRequest
      */
     public $messages_cache_limit;
 }
-?>

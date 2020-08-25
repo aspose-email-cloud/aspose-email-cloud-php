@@ -1049,5 +1049,3 @@ class CalendarDto implements ArrayAccess
     }
 }
 
-
-?>

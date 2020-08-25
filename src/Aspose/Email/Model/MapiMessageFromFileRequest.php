@@ -55,4 +55,3 @@ class MapiMessageFromFileRequest
      */
     public $file;
 }
-?>

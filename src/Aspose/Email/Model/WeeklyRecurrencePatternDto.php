@@ -305,5 +305,3 @@ class WeeklyRecurrencePatternDto extends RecurrencePatternDto
     }
 }
 
-
-?>

@@ -69,4 +69,3 @@ class MapiContactGetRequest
      */
     public $storage;
 }
-?>

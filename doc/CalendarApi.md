@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 # **calendarAsAlternate**
 ```php
-function \Aspose\Email\Model\AlternateView calendarAsAlternate(Requests\CalendarAsAlternateRequest $request)
+function \Aspose\Email\Model\AlternateView calendarAsAlternate(CalendarAsAlternateRequest $request)
 ```
 Convert iCalendar to AlternateView
 
@@ -28,7 +28,7 @@ Convert iCalendar to AlternateView
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\CalendarAsAlternateRequest(
+new Aspose\Email\Model\CalendarAsAlternateRequest(
     $request)
 ```
 
@@ -41,7 +41,7 @@ Name | Type | Description  | Notes
 
 # **calendarAsFile**
 ```php
-function \SplFileObject calendarAsFile(Requests\CalendarAsFileRequest $request)
+function \SplFileObject calendarAsFile(CalendarAsFileRequest $request)
 ```
 Converts calendar model to specified format and returns as file.
 
@@ -51,7 +51,7 @@ Converts calendar model to specified format and returns as file.
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\CalendarAsFileRequest(
+new Aspose\Email\Model\CalendarAsFileRequest(
     $request)
 ```
 
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 # **calendarAsMapi**
 ```php
-function \Aspose\Email\Model\MapiCalendarDto calendarAsMapi(Requests\CalendarAsMapiRequest $request)
+function \Aspose\Email\Model\MapiCalendarDto calendarAsMapi(CalendarAsMapiRequest $request)
 ```
 Converts CalendarDto to MapiCalendarDto.
 
@@ -74,7 +74,7 @@ Converts CalendarDto to MapiCalendarDto.
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\CalendarAsMapiRequest(
+new Aspose\Email\Model\CalendarAsMapiRequest(
     $calendar_dto)
 ```
 
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 
 # **calendarConvert**
 ```php
-function \SplFileObject calendarConvert(Requests\CalendarConvertRequest $request)
+function \SplFileObject calendarConvert(CalendarConvertRequest $request)
 ```
 Converts calendar document to specified format and returns as file.
 
@@ -97,7 +97,7 @@ Converts calendar document to specified format and returns as file.
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\CalendarConvertRequest(
+new Aspose\Email\Model\CalendarConvertRequest(
     $format,
     $file)
 ```
@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 
 # **calendarFromFile**
 ```php
-function \Aspose\Email\Model\CalendarDto calendarFromFile(Requests\CalendarFromFileRequest $request)
+function \Aspose\Email\Model\CalendarDto calendarFromFile(CalendarFromFileRequest $request)
 ```
 Converts calendar document to a model representation.
 
@@ -122,7 +122,7 @@ Converts calendar document to a model representation.
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\CalendarFromFileRequest(
+new Aspose\Email\Model\CalendarFromFileRequest(
     $file)
 ```
 
@@ -135,7 +135,7 @@ Name | Type | Description  | Notes
 
 # **calendarGet**
 ```php
-function \Aspose\Email\Model\CalendarDto calendarGet(Requests\CalendarGetRequest $request)
+function \Aspose\Email\Model\CalendarDto calendarGet(CalendarGetRequest $request)
 ```
 Get calendar file from storage.
 
@@ -145,7 +145,7 @@ Get calendar file from storage.
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\CalendarGetRequest(
+new Aspose\Email\Model\CalendarGetRequest(
     $file_name,
     $folder,
     $storage)
@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
 
 # **calendarGetAsAlternate**
 ```php
-function \Aspose\Email\Model\AlternateView calendarGetAsAlternate(Requests\CalendarGetAsAlternateRequest $request)
+function \Aspose\Email\Model\AlternateView calendarGetAsAlternate(CalendarGetAsAlternateRequest $request)
 ```
 Get iCalendar from storage as AlternateView
 
@@ -172,7 +172,7 @@ Get iCalendar from storage as AlternateView
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\CalendarGetAsAlternateRequest(
+new Aspose\Email\Model\CalendarGetAsAlternateRequest(
     $file_name,
     $calendar_action,
     $sequence_id,
@@ -193,7 +193,7 @@ Name | Type | Description  | Notes
 
 # **calendarGetAsFile**
 ```php
-function \SplFileObject calendarGetAsFile(Requests\CalendarGetAsFileRequest $request)
+function \SplFileObject calendarGetAsFile(CalendarGetAsFileRequest $request)
 ```
 Converts calendar document from storage to specified format and returns as file.
 
@@ -203,7 +203,7 @@ Converts calendar document from storage to specified format and returns as file.
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\CalendarGetAsFileRequest(
+new Aspose\Email\Model\CalendarGetAsFileRequest(
     $file_name,
     $format,
     $storage,
@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 
 # **calendarGetList**
 ```php
-function \Aspose\Email\Model\CalendarStorageList calendarGetList(Requests\CalendarGetListRequest $request)
+function \Aspose\Email\Model\CalendarStorageList calendarGetList(CalendarGetListRequest $request)
 ```
 Get iCalendar list from storage folder.
 
@@ -232,7 +232,7 @@ Get iCalendar list from storage folder.
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\CalendarGetListRequest(
+new Aspose\Email\Model\CalendarGetListRequest(
     $folder,
     $items_per_page,
     $page_number,
@@ -251,7 +251,7 @@ Name | Type | Description  | Notes
 
 # **calendarSave**
 ```php
-function calendarSave(Requests\CalendarSaveRequest $request)
+function calendarSave(CalendarSaveRequest $request)
 ```
 Save iCalendar
 
@@ -261,7 +261,7 @@ void (empty response body)
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\CalendarSaveRequest(
+new Aspose\Email\Model\CalendarSaveRequest(
     $request)
 ```
 

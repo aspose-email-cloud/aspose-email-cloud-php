@@ -302,5 +302,3 @@ class ListResponseOfEmailThread implements ArrayAccess
     }
 }
 
-
-?>

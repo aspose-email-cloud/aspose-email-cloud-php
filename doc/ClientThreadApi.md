@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 # **clientThreadDelete**
 ```php
-function clientThreadDelete(Requests\ClientThreadDeleteRequest $request)
+function clientThreadDelete(ClientThreadDeleteRequest $request)
 ```
 Delete thread by id. All messages from thread will also be deleted.
 
@@ -23,7 +23,7 @@ void (empty response body)
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\ClientThreadDeleteRequest(
+new Aspose\Email\Model\ClientThreadDeleteRequest(
     $request)
 ```
 
@@ -36,7 +36,7 @@ Name | Type | Description  | Notes
 
 # **clientThreadGetList**
 ```php
-function \Aspose\Email\Model\EmailThreadList clientThreadGetList(Requests\ClientThreadGetListRequest $request)
+function \Aspose\Email\Model\EmailThreadList clientThreadGetList(ClientThreadGetListRequest $request)
 ```
 Get message threads from folder. All messages are partly fetched (without email body and some other fields).
 
@@ -46,7 +46,7 @@ Get message threads from folder. All messages are partly fetched (without email 
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\ClientThreadGetListRequest(
+new Aspose\Email\Model\ClientThreadGetListRequest(
     $folder,
     $account,
     $storage,
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 # **clientThreadGetMessages**
 ```php
-function \Aspose\Email\Model\EmailList clientThreadGetMessages(Requests\ClientThreadGetMessagesRequest $request)
+function \Aspose\Email\Model\EmailList clientThreadGetMessages(ClientThreadGetMessagesRequest $request)
 ```
 Get messages from thread by id. All messages are fully fetched. For accounts with CacheFile only cached messages will be returned.
 
@@ -79,7 +79,7 @@ Get messages from thread by id. All messages are fully fetched. For accounts wit
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\ClientThreadGetMessagesRequest(
+new Aspose\Email\Model\ClientThreadGetMessagesRequest(
     $thread_id,
     $account,
     $folder,
@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 
 # **clientThreadMove**
 ```php
-function clientThreadMove(Requests\ClientThreadMoveRequest $request)
+function clientThreadMove(ClientThreadMoveRequest $request)
 ```
 Move thread to another folder.
 
@@ -110,7 +110,7 @@ void (empty response body)
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\ClientThreadMoveRequest(
+new Aspose\Email\Model\ClientThreadMoveRequest(
     $request)
 ```
 
@@ -123,7 +123,7 @@ Name | Type | Description  | Notes
 
 # **clientThreadSetIsRead**
 ```php
-function clientThreadSetIsRead(Requests\ClientThreadSetIsReadRequest $request)
+function clientThreadSetIsRead(ClientThreadSetIsReadRequest $request)
 ```
 Mark all messages in thread as read or unread.
 
@@ -133,7 +133,7 @@ void (empty response body)
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\ClientThreadSetIsReadRequest(
+new Aspose\Email\Model\ClientThreadSetIsReadRequest(
     $request)
 ```
 

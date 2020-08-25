@@ -299,5 +299,3 @@ class ClientThreadDeleteRequest extends ClientThreadBaseRequest
     }
 }
 
-
-?>

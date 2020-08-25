@@ -303,5 +303,3 @@ class MailMessageMapi extends MailMessageBase
     }
 }
 
-
-?>

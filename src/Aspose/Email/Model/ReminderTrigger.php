@@ -375,5 +375,3 @@ class ReminderTrigger implements ArrayAccess
     }
 }
 
-
-?>

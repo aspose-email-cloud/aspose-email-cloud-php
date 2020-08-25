@@ -331,5 +331,3 @@ class NameValuePair implements ArrayAccess
     }
 }
 
-
-?>

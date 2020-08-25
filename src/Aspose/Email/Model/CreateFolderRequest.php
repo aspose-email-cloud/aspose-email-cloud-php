@@ -55,4 +55,3 @@ class CreateFolderRequest
      */
     public $storage_name;
 }
-?>

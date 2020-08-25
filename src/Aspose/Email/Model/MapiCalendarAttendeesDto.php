@@ -407,5 +407,3 @@ class MapiCalendarAttendeesDto implements ArrayAccess
     }
 }
 
-
-?>

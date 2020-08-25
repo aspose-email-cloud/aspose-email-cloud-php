@@ -270,5 +270,3 @@ class AiNameGenderHypothesisList extends ListResponseOfAiNameGenderHypothesis
     }
 }
 
-
-?>

@@ -270,5 +270,3 @@ class ContactList extends ListResponseOfContactDto
     }
 }
 
-
-?>

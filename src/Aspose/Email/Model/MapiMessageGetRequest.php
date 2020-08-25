@@ -69,4 +69,3 @@ class MapiMessageGetRequest
      */
     public $storage;
 }
-?>

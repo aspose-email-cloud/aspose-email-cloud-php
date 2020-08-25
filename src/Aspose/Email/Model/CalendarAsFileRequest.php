@@ -343,5 +343,3 @@ class CalendarAsFileRequest implements ArrayAccess
     }
 }
 
-
-?>

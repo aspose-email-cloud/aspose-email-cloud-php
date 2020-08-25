@@ -401,5 +401,3 @@ class MailAddress implements ArrayAccess
     }
 }
 
-
-?>

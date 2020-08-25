@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 # **getDiscUsage**
 ```php
-function \Aspose\Email\Model\DiscUsage getDiscUsage(Requests\GetDiscUsageRequest $request)
+function \Aspose\Email\Model\DiscUsage getDiscUsage(GetDiscUsageRequest $request)
 ```
 Get disc usage
 
@@ -22,7 +22,7 @@ Get disc usage
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\GetDiscUsageRequest(
+new Aspose\Email\Model\GetDiscUsageRequest(
     $storage_name)
 ```
 
@@ -35,7 +35,7 @@ Name | Type | Description  | Notes
 
 # **getFileVersions**
 ```php
-function \Aspose\Email\Model\FileVersions getFileVersions(Requests\GetFileVersionsRequest $request)
+function \Aspose\Email\Model\FileVersions getFileVersions(GetFileVersionsRequest $request)
 ```
 Get file versions
 
@@ -45,7 +45,7 @@ Get file versions
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\GetFileVersionsRequest(
+new Aspose\Email\Model\GetFileVersionsRequest(
     $path,
     $storage_name)
 ```
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 
 # **objectExists**
 ```php
-function \Aspose\Email\Model\ObjectExist objectExists(Requests\ObjectExistsRequest $request)
+function \Aspose\Email\Model\ObjectExist objectExists(ObjectExistsRequest $request)
 ```
 Check if file or folder exists
 
@@ -70,7 +70,7 @@ Check if file or folder exists
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\ObjectExistsRequest(
+new Aspose\Email\Model\ObjectExistsRequest(
     $path,
     $storage_name,
     $version_id)
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 
 # **storageExists**
 ```php
-function \Aspose\Email\Model\StorageExist storageExists(Requests\StorageExistsRequest $request)
+function \Aspose\Email\Model\StorageExist storageExists(StorageExistsRequest $request)
 ```
 Check if storage exists
 
@@ -97,7 +97,7 @@ Check if storage exists
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\StorageExistsRequest(
+new Aspose\Email\Model\StorageExistsRequest(
     $storage_name)
 ```
 

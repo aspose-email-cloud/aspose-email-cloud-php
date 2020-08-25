@@ -69,4 +69,3 @@ class MoveFolderRequest
      */
     public $dest_storage_name;
 }
-?>

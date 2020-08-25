@@ -90,4 +90,3 @@ class AiNameMatchRequest
      */
     public $style;
 }
-?>

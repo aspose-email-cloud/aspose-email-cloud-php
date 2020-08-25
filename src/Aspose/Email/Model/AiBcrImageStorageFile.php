@@ -303,5 +303,3 @@ class AiBcrImageStorageFile extends AiBcrImage
     }
 }
 
-
-?>

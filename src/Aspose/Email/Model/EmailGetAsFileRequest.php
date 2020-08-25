@@ -69,4 +69,3 @@ class EmailGetAsFileRequest
      */
     public $folder;
 }
-?>

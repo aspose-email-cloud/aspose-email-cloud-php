@@ -437,5 +437,3 @@ class Attachment extends AttachmentBase
     }
 }
 
-
-?>

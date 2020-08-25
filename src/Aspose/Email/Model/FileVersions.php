@@ -299,5 +299,3 @@ class FileVersions implements ArrayAccess
     }
 }
 
-
-?>

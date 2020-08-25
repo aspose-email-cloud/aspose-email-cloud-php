@@ -887,5 +887,3 @@ class MapiContactTelephonePropertySetDto implements ArrayAccess
     }
 }
 
-
-?>

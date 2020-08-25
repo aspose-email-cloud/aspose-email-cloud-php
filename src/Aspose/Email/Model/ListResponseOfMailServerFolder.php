@@ -302,5 +302,3 @@ class ListResponseOfMailServerFolder implements ArrayAccess
     }
 }
 
-
-?>

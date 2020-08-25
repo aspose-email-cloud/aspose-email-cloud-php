@@ -449,5 +449,3 @@ class EmailClientAccountOauthCredentials extends EmailClientAccountCredentials
     }
 }
 
-
-?>

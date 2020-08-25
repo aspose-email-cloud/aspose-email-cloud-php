@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 # **copyFolder**
 ```php
-function copyFolder(Requests\CopyFolderRequest $request)
+function copyFolder(CopyFolderRequest $request)
 ```
 Copy folder
 
@@ -23,7 +23,7 @@ void (empty response body)
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\CopyFolderRequest(
+new Aspose\Email\Model\CopyFolderRequest(
     $src_path,
     $dest_path,
     $src_storage_name,
@@ -42,7 +42,7 @@ Name | Type | Description  | Notes
 
 # **createFolder**
 ```php
-function createFolder(Requests\CreateFolderRequest $request)
+function createFolder(CreateFolderRequest $request)
 ```
 Create the folder
 
@@ -52,7 +52,7 @@ void (empty response body)
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\CreateFolderRequest(
+new Aspose\Email\Model\CreateFolderRequest(
     $path,
     $storage_name)
 ```
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 
 # **deleteFolder**
 ```php
-function deleteFolder(Requests\DeleteFolderRequest $request)
+function deleteFolder(DeleteFolderRequest $request)
 ```
 Delete folder
 
@@ -77,7 +77,7 @@ void (empty response body)
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\DeleteFolderRequest(
+new Aspose\Email\Model\DeleteFolderRequest(
     $path,
     $storage_name,
     $recursive)
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 # **getFilesList**
 ```php
-function \Aspose\Email\Model\FilesList getFilesList(Requests\GetFilesListRequest $request)
+function \Aspose\Email\Model\FilesList getFilesList(GetFilesListRequest $request)
 ```
 Get all files and folders within a folder
 
@@ -104,7 +104,7 @@ Get all files and folders within a folder
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\GetFilesListRequest(
+new Aspose\Email\Model\GetFilesListRequest(
     $path,
     $storage_name)
 ```
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 
 # **moveFolder**
 ```php
-function moveFolder(Requests\MoveFolderRequest $request)
+function moveFolder(MoveFolderRequest $request)
 ```
 Move folder
 
@@ -129,7 +129,7 @@ void (empty response body)
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\MoveFolderRequest(
+new Aspose\Email\Model\MoveFolderRequest(
     $src_path,
     $dest_path,
     $src_storage_name,

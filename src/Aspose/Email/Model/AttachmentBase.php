@@ -399,5 +399,3 @@ class AttachmentBase implements ArrayAccess
     }
 }
 
-
-?>

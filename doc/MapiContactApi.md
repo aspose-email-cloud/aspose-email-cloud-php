@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 # **mapiContactAsContactDto**
 ```php
-function \Aspose\Email\Model\ContactDto mapiContactAsContactDto(Requests\MapiContactAsContactDtoRequest $request)
+function \Aspose\Email\Model\ContactDto mapiContactAsContactDto(MapiContactAsContactDtoRequest $request)
 ```
 Converts MAPI contact model to ContactDto model.
 
@@ -23,7 +23,7 @@ Converts MAPI contact model to ContactDto model.
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\MapiContactAsContactDtoRequest(
+new Aspose\Email\Model\MapiContactAsContactDtoRequest(
     $mapi_contact_dto)
 ```
 
@@ -36,7 +36,7 @@ Name | Type | Description  | Notes
 
 # **mapiContactAsFile**
 ```php
-function \SplFileObject mapiContactAsFile(Requests\MapiContactAsFileRequest $request)
+function \SplFileObject mapiContactAsFile(MapiContactAsFileRequest $request)
 ```
 Converts MAPI contact model to specified format and returns as file.
 
@@ -46,7 +46,7 @@ Converts MAPI contact model to specified format and returns as file.
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\MapiContactAsFileRequest(
+new Aspose\Email\Model\MapiContactAsFileRequest(
     $request)
 ```
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 # **mapiContactFromFile**
 ```php
-function \Aspose\Email\Model\MapiContactDto mapiContactFromFile(Requests\MapiContactFromFileRequest $request)
+function \Aspose\Email\Model\MapiContactDto mapiContactFromFile(MapiContactFromFileRequest $request)
 ```
 Converts contact file to a MAPI model representation.
 
@@ -69,7 +69,7 @@ Converts contact file to a MAPI model representation.
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\MapiContactFromFileRequest(
+new Aspose\Email\Model\MapiContactFromFileRequest(
     $format,
     $file)
 ```
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 
 # **mapiContactGet**
 ```php
-function \Aspose\Email\Model\MapiContactDto mapiContactGet(Requests\MapiContactGetRequest $request)
+function \Aspose\Email\Model\MapiContactDto mapiContactGet(MapiContactGetRequest $request)
 ```
 Get MAPI contact document.
 
@@ -94,7 +94,7 @@ Get MAPI contact document.
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\MapiContactGetRequest(
+new Aspose\Email\Model\MapiContactGetRequest(
     $format,
     $file_name,
     $folder,
@@ -113,7 +113,7 @@ Name | Type | Description  | Notes
 
 # **mapiContactSave**
 ```php
-function mapiContactSave(Requests\MapiContactSaveRequest $request)
+function mapiContactSave(MapiContactSaveRequest $request)
 ```
 Save MAPI Contact to storage.
 
@@ -123,7 +123,7 @@ void (empty response body)
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\MapiContactSaveRequest(
+new Aspose\Email\Model\MapiContactSaveRequest(
     $request)
 ```
 

@@ -48,4 +48,3 @@ class GetDiscUsageRequest
      */
     public $storage_name;
 }
-?>

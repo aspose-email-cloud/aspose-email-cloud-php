@@ -515,5 +515,3 @@ class MapiCalendarTimeZoneInfoDto implements ArrayAccess
     }
 }
 
-
-?>

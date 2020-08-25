@@ -346,5 +346,3 @@ class StorageModelOfContactDto implements ArrayAccess
     }
 }
 
-
-?>

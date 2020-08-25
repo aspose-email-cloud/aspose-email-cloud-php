@@ -346,5 +346,3 @@ class StorageModelOfEmailClientAccount implements ArrayAccess
     }
 }
 
-
-?>

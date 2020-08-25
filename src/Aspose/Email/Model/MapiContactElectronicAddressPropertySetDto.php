@@ -567,5 +567,3 @@ class MapiContactElectronicAddressPropertySetDto implements ArrayAccess
     }
 }
 
-
-?>

@@ -309,5 +309,3 @@ class AiBcrImage implements ArrayAccess
     }
 }
 
-
-?>

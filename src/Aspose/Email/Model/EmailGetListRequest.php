@@ -76,4 +76,3 @@ class EmailGetListRequest
      */
     public $page_number;
 }
-?>

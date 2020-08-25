@@ -881,5 +881,3 @@ class MapiContactPersonalInfoPropertySetDto implements ArrayAccess
     }
 }
 
-
-?>

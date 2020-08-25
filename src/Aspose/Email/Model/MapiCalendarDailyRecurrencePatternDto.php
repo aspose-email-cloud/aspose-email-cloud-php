@@ -323,5 +323,3 @@ class MapiCalendarDailyRecurrencePatternDto extends MapiCalendarRecurrencePatter
     }
 }
 
-
-?>

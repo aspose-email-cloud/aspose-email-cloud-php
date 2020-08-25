@@ -272,5 +272,3 @@ class ClientAccountSaveMultiRequest extends StorageModelOfEmailClientMultiAccoun
     }
 }
 
-
-?>

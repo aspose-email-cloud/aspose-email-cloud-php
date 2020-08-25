@@ -343,5 +343,3 @@ class FileVersion extends StorageFile
     }
 }
 
-
-?>

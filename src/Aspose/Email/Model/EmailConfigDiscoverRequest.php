@@ -55,4 +55,3 @@ class EmailConfigDiscoverRequest
      */
     public $fast_processing;
 }
-?>

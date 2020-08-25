@@ -346,5 +346,3 @@ class StorageModelOfMapiContactDto implements ArrayAccess
     }
 }
 
-
-?>

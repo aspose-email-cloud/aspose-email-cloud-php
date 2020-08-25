@@ -76,4 +76,3 @@ class ContactGetListRequest
      */
     public $page_number;
 }
-?>

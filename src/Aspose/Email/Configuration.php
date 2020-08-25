@@ -551,4 +551,3 @@ class Configuration
         return $keyWithPrefix;
     }
 }
-?>

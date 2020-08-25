@@ -83,4 +83,3 @@ class AiNameCompleteRequest
      */
     public $style;
 }
-?>

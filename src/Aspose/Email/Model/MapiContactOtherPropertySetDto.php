@@ -541,5 +541,3 @@ class MapiContactOtherPropertySetDto implements ArrayAccess
     }
 }
 
-
-?>

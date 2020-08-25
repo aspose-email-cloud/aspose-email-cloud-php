@@ -48,4 +48,3 @@ class StorageExistsRequest
      */
     public $storage_name;
 }
-?>

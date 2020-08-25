@@ -343,5 +343,3 @@ class MapiCalendarAsFileRequest implements ArrayAccess
     }
 }
 
-
-?>

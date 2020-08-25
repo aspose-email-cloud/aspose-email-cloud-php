@@ -373,5 +373,3 @@ class ClientMessageAppendRequest extends ClientAccountBaseRequest
     }
 }
 
-
-?>

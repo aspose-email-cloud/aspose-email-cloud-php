@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 # **copyFile**
 ```php
-function copyFile(Requests\CopyFileRequest $request)
+function copyFile(CopyFileRequest $request)
 ```
 Copy file
 
@@ -23,7 +23,7 @@ void (empty response body)
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\CopyFileRequest(
+new Aspose\Email\Model\CopyFileRequest(
     $src_path,
     $dest_path,
     $src_storage_name,
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 
 # **deleteFile**
 ```php
-function deleteFile(Requests\DeleteFileRequest $request)
+function deleteFile(DeleteFileRequest $request)
 ```
 Delete file
 
@@ -54,7 +54,7 @@ void (empty response body)
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\DeleteFileRequest(
+new Aspose\Email\Model\DeleteFileRequest(
     $path,
     $storage_name,
     $version_id)
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 
 # **downloadFile**
 ```php
-function \SplFileObject downloadFile(Requests\DownloadFileRequest $request)
+function \SplFileObject downloadFile(DownloadFileRequest $request)
 ```
 Download file
 
@@ -81,7 +81,7 @@ Download file
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\DownloadFileRequest(
+new Aspose\Email\Model\DownloadFileRequest(
     $path,
     $storage_name,
     $version_id)
@@ -98,7 +98,7 @@ Name | Type | Description  | Notes
 
 # **moveFile**
 ```php
-function moveFile(Requests\MoveFileRequest $request)
+function moveFile(MoveFileRequest $request)
 ```
 Move file
 
@@ -108,7 +108,7 @@ void (empty response body)
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\MoveFileRequest(
+new Aspose\Email\Model\MoveFileRequest(
     $src_path,
     $dest_path,
     $src_storage_name,
@@ -129,7 +129,7 @@ Name | Type | Description  | Notes
 
 # **uploadFile**
 ```php
-function \Aspose\Email\Model\FilesUploadResult uploadFile(Requests\UploadFileRequest $request)
+function \Aspose\Email\Model\FilesUploadResult uploadFile(UploadFileRequest $request)
 ```
 Upload file
 
@@ -139,7 +139,7 @@ Upload file
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\UploadFileRequest(
+new Aspose\Email\Model\UploadFileRequest(
     $path,
     $file,
     $storage_name)

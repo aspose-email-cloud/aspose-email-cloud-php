@@ -337,5 +337,3 @@ class AiNameMatchResult implements ArrayAccess
     }
 }
 
-
-?>

@@ -450,5 +450,3 @@ class EmailConfigDiscoverOauthRequest extends DiscoverEmailConfigRequest
     }
 }
 
-
-?>

@@ -541,5 +541,3 @@ class EmailAccountConfig implements ArrayAccess
     }
 }
 
-
-?>

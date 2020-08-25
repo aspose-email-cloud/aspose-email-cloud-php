@@ -302,5 +302,3 @@ class ListResponseOfStorageModelOfContactDto implements ArrayAccess
     }
 }
 
-
-?>

@@ -305,5 +305,3 @@ class EmailSaveRequest extends StorageModelOfEmailDto
     }
 }
 
-
-?>

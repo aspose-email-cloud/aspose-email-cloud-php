@@ -302,5 +302,3 @@ class ListResponseOfEmailDto implements ArrayAccess
     }
 }
 
-
-?>

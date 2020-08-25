@@ -349,5 +349,3 @@ class MapiPidTagPropertyDescriptor extends MapiPidPropertyDescriptor
     }
 }
 
-
-?>

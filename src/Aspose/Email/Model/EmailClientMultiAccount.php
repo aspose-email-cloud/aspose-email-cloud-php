@@ -337,5 +337,3 @@ class EmailClientMultiAccount implements ArrayAccess
     }
 }
 
-
-?>

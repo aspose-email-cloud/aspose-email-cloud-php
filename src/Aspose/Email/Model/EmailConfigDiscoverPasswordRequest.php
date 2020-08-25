@@ -318,5 +318,3 @@ class EmailConfigDiscoverPasswordRequest extends DiscoverEmailConfigRequest
     }
 }
 
-
-?>

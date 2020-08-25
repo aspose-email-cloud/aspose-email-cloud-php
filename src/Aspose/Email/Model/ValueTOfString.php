@@ -316,5 +316,3 @@ class ValueTOfString implements ArrayAccess
     }
 }
 
-
-?>

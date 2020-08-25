@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 # **clientFolderCreate**
 ```php
-function clientFolderCreate(Requests\ClientFolderCreateRequest $request)
+function clientFolderCreate(ClientFolderCreateRequest $request)
 ```
 Create new folder in email account
 
@@ -21,7 +21,7 @@ void (empty response body)
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\ClientFolderCreateRequest(
+new Aspose\Email\Model\ClientFolderCreateRequest(
     $request)
 ```
 
@@ -34,7 +34,7 @@ Name | Type | Description  | Notes
 
 # **clientFolderDelete**
 ```php
-function clientFolderDelete(Requests\ClientFolderDeleteRequest $request)
+function clientFolderDelete(ClientFolderDeleteRequest $request)
 ```
 Delete a folder in email account
 
@@ -44,7 +44,7 @@ void (empty response body)
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\ClientFolderDeleteRequest(
+new Aspose\Email\Model\ClientFolderDeleteRequest(
     $request)
 ```
 
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 
 # **clientFolderGetList**
 ```php
-function \Aspose\Email\Model\MailServerFolderList clientFolderGetList(Requests\ClientFolderGetListRequest $request)
+function \Aspose\Email\Model\MailServerFolderList clientFolderGetList(ClientFolderGetListRequest $request)
 ```
 Get folders list in email account
 
@@ -67,7 +67,7 @@ Get folders list in email account
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\ClientFolderGetListRequest(
+new Aspose\Email\Model\ClientFolderGetListRequest(
     $account,
     $storage,
     $account_storage_folder,

@@ -369,5 +369,3 @@ class Url implements ArrayAccess
     }
 }
 
-
-?>

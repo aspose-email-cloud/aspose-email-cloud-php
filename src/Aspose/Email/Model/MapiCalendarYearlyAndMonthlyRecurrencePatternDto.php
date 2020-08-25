@@ -399,5 +399,3 @@ class MapiCalendarYearlyAndMonthlyRecurrencePatternDto extends MapiCalendarRecur
     }
 }
 
-
-?>

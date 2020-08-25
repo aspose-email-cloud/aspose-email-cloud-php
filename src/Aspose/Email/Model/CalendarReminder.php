@@ -535,5 +535,3 @@ class CalendarReminder implements ArrayAccess
     }
 }
 
-
-?>

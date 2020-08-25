@@ -1437,5 +1437,3 @@ class ContactDto implements ArrayAccess
     }
 }
 
-
-?>

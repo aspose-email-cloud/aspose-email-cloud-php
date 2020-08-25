@@ -317,5 +317,3 @@ class ClientThreadMoveRequest extends ClientThreadBaseRequest
     }
 }
 
-
-?>

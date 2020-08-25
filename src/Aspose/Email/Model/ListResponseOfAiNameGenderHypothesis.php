@@ -302,5 +302,3 @@ class ListResponseOfAiNameGenderHypothesis implements ArrayAccess
     }
 }
 
-
-?>

@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 # **disposableEmailIsDisposable**
 ```php
-function \Aspose\Email\Model\ValueTOfBoolean disposableEmailIsDisposable(Requests\DisposableEmailIsDisposableRequest $request)
+function \Aspose\Email\Model\ValueTOfBoolean disposableEmailIsDisposable(DisposableEmailIsDisposableRequest $request)
 ```
 Check email address is disposable
 
@@ -19,7 +19,7 @@ Check email address is disposable
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\DisposableEmailIsDisposableRequest(
+new Aspose\Email\Model\DisposableEmailIsDisposableRequest(
     $address)
 ```
 

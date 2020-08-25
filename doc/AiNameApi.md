@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 # **aiNameComplete**
 ```php
-function \Aspose\Email\Model\AiNameWeightedVariants aiNameComplete(Requests\AiNameCompleteRequest $request)
+function \Aspose\Email\Model\AiNameWeightedVariants aiNameComplete(AiNameCompleteRequest $request)
 ```
 The call proposes k most probable names for given starting characters.
 
@@ -29,7 +29,7 @@ The call proposes k most probable names for given starting characters.
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\AiNameCompleteRequest(
+new Aspose\Email\Model\AiNameCompleteRequest(
     $name,
     $language,
     $location,
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 # **aiNameExpand**
 ```php
-function \Aspose\Email\Model\AiNameWeightedVariants aiNameExpand(Requests\AiNameExpandRequest $request)
+function \Aspose\Email\Model\AiNameWeightedVariants aiNameExpand(AiNameExpandRequest $request)
 ```
 Expands a person's name into a list of possible alternatives using options for expanding instructions.
 
@@ -62,7 +62,7 @@ Expands a person's name into a list of possible alternatives using options for e
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\AiNameExpandRequest(
+new Aspose\Email\Model\AiNameExpandRequest(
     $name,
     $language,
     $location,
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 
 # **aiNameExpandParsed**
 ```php
-function \Aspose\Email\Model\AiNameWeightedVariants aiNameExpandParsed(Requests\AiNameExpandParsedRequest $request)
+function \Aspose\Email\Model\AiNameWeightedVariants aiNameExpandParsed(AiNameExpandParsedRequest $request)
 ```
 Expands a person's parsed name into a list of possible alternatives using options for expanding instructions.
 
@@ -95,7 +95,7 @@ Expands a person's parsed name into a list of possible alternatives using option
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\AiNameExpandParsedRequest(
+new Aspose\Email\Model\AiNameExpandParsedRequest(
     $request)
 ```
 
@@ -108,7 +108,7 @@ Name | Type | Description  | Notes
 
 # **aiNameFormat**
 ```php
-function \Aspose\Email\Model\AiNameFormatted aiNameFormat(Requests\AiNameFormatRequest $request)
+function \Aspose\Email\Model\AiNameFormatted aiNameFormat(AiNameFormatRequest $request)
 ```
 Formats a person's name in correct case and name order using options for formatting instructions.
 
@@ -118,7 +118,7 @@ Formats a person's name in correct case and name order using options for formatt
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\AiNameFormatRequest(
+new Aspose\Email\Model\AiNameFormatRequest(
     $name,
     $language,
     $location,
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 
 # **aiNameFormatParsed**
 ```php
-function \Aspose\Email\Model\AiNameFormatted aiNameFormatParsed(Requests\AiNameFormatParsedRequest $request)
+function \Aspose\Email\Model\AiNameFormatted aiNameFormatParsed(AiNameFormatParsedRequest $request)
 ```
 Formats a person's parsed name in correct case and name order using options for formatting instructions.
 
@@ -153,7 +153,7 @@ Formats a person's parsed name in correct case and name order using options for 
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\AiNameFormatParsedRequest(
+new Aspose\Email\Model\AiNameFormatParsedRequest(
     $request)
 ```
 
@@ -166,7 +166,7 @@ Name | Type | Description  | Notes
 
 # **aiNameGenderize**
 ```php
-function \Aspose\Email\Model\AiNameGenderHypothesisList aiNameGenderize(Requests\AiNameGenderizeRequest $request)
+function \Aspose\Email\Model\AiNameGenderHypothesisList aiNameGenderize(AiNameGenderizeRequest $request)
 ```
 Detect person's gender from name string.
 
@@ -176,7 +176,7 @@ Detect person's gender from name string.
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\AiNameGenderizeRequest(
+new Aspose\Email\Model\AiNameGenderizeRequest(
     $name,
     $language,
     $location,
@@ -199,7 +199,7 @@ Name | Type | Description  | Notes
 
 # **aiNameGenderizeParsed**
 ```php
-function \Aspose\Email\Model\AiNameGenderHypothesisList aiNameGenderizeParsed(Requests\AiNameGenderizeParsedRequest $request)
+function \Aspose\Email\Model\AiNameGenderHypothesisList aiNameGenderizeParsed(AiNameGenderizeParsedRequest $request)
 ```
 Detect person's gender from parsed name.
 
@@ -209,7 +209,7 @@ Detect person's gender from parsed name.
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\AiNameGenderizeParsedRequest(
+new Aspose\Email\Model\AiNameGenderizeParsedRequest(
     $request)
 ```
 
@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 
 # **aiNameMatch**
 ```php
-function \Aspose\Email\Model\AiNameMatchResult aiNameMatch(Requests\AiNameMatchRequest $request)
+function \Aspose\Email\Model\AiNameMatchResult aiNameMatch(AiNameMatchRequest $request)
 ```
 Compare people's names. Uses options for comparing instructions.
 
@@ -232,7 +232,7 @@ Compare people's names. Uses options for comparing instructions.
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\AiNameMatchRequest(
+new Aspose\Email\Model\AiNameMatchRequest(
     $name,
     $other_name,
     $language,
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 
 # **aiNameMatchParsed**
 ```php
-function \Aspose\Email\Model\AiNameMatchResult aiNameMatchParsed(Requests\AiNameMatchParsedRequest $request)
+function \Aspose\Email\Model\AiNameMatchResult aiNameMatchParsed(AiNameMatchParsedRequest $request)
 ```
 Compare people's parsed names and attributes. Uses options for comparing instructions.
 
@@ -267,7 +267,7 @@ Compare people's parsed names and attributes. Uses options for comparing instruc
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\AiNameMatchParsedRequest(
+new Aspose\Email\Model\AiNameMatchParsedRequest(
     $request)
 ```
 
@@ -280,7 +280,7 @@ Name | Type | Description  | Notes
 
 # **aiNameParse**
 ```php
-function \Aspose\Email\Model\AiNameComponentList aiNameParse(Requests\AiNameParseRequest $request)
+function \Aspose\Email\Model\AiNameComponentList aiNameParse(AiNameParseRequest $request)
 ```
 Parse name to components.
 
@@ -290,7 +290,7 @@ Parse name to components.
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\AiNameParseRequest(
+new Aspose\Email\Model\AiNameParseRequest(
     $name,
     $language,
     $location,
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 
 # **aiNameParseEmailAddress**
 ```php
-function \Aspose\Email\Model\AiNameExtractedList aiNameParseEmailAddress(Requests\AiNameParseEmailAddressRequest $request)
+function \Aspose\Email\Model\AiNameExtractedList aiNameParseEmailAddress(AiNameParseEmailAddressRequest $request)
 ```
 Parse person's name out of an email address.
 
@@ -323,7 +323,7 @@ Parse person's name out of an email address.
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\AiNameParseEmailAddressRequest(
+new Aspose\Email\Model\AiNameParseEmailAddressRequest(
     $email_address,
     $language,
     $location,

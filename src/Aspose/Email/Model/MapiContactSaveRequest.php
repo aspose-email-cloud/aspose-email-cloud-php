@@ -305,5 +305,3 @@ class MapiContactSaveRequest extends StorageModelOfMapiContactDto
     }
 }
 
-
-?>

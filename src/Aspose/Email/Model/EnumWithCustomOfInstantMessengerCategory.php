@@ -348,5 +348,3 @@ class EnumWithCustomOfInstantMessengerCategory implements ArrayAccess
     }
 }
 
-
-?>

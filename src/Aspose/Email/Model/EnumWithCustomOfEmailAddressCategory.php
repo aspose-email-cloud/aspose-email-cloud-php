@@ -348,5 +348,3 @@ class EnumWithCustomOfEmailAddressCategory implements ArrayAccess
     }
 }
 
-
-?>

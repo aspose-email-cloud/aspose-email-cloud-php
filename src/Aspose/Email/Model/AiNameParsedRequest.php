@@ -373,5 +373,3 @@ class AiNameParsedRequest implements ArrayAccess
     }
 }
 
-
-?>

@@ -97,4 +97,3 @@ class ClientMessageListRequest
      */
     public $format;
 }
-?>

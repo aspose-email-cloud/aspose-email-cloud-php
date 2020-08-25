@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 # **clientAccountGet**
 ```php
-function \Aspose\Email\Model\EmailClientAccount clientAccountGet(Requests\ClientAccountGetRequest $request)
+function \Aspose\Email\Model\EmailClientAccount clientAccountGet(ClientAccountGetRequest $request)
 ```
 Get email client account from storage.
 
@@ -22,7 +22,7 @@ Get email client account from storage.
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\ClientAccountGetRequest(
+new Aspose\Email\Model\ClientAccountGetRequest(
     $file_name,
     $folder,
     $storage)
@@ -39,7 +39,7 @@ Name | Type | Description  | Notes
 
 # **clientAccountGetMulti**
 ```php
-function \Aspose\Email\Model\EmailClientMultiAccount clientAccountGetMulti(Requests\ClientAccountGetMultiRequest $request)
+function \Aspose\Email\Model\EmailClientMultiAccount clientAccountGetMulti(ClientAccountGetMultiRequest $request)
 ```
 Get email client multi account file (*.multi.account). Will respond error if file extension is not \".multi.account\".
 
@@ -49,7 +49,7 @@ Get email client multi account file (*.multi.account). Will respond error if fil
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\ClientAccountGetMultiRequest(
+new Aspose\Email\Model\ClientAccountGetMultiRequest(
     $file_name,
     $folder,
     $storage)
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 # **clientAccountSave**
 ```php
-function clientAccountSave(Requests\ClientAccountSaveRequest $request)
+function clientAccountSave(ClientAccountSaveRequest $request)
 ```
 Create/update email client account file (*.account) with credentials
 
@@ -76,7 +76,7 @@ void (empty response body)
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\ClientAccountSaveRequest(
+new Aspose\Email\Model\ClientAccountSaveRequest(
     $request)
 ```
 
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 
 # **clientAccountSaveMulti**
 ```php
-function clientAccountSaveMulti(Requests\ClientAccountSaveMultiRequest $request)
+function clientAccountSaveMulti(ClientAccountSaveMultiRequest $request)
 ```
 Create email client multi account file (*.multi.account). Will respond error if file extension is not \".multi.account\".
 
@@ -99,7 +99,7 @@ void (empty response body)
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\Requests\ClientAccountSaveMultiRequest(
+new Aspose\Email\Model\ClientAccountSaveMultiRequest(
     $request)
 ```
 
