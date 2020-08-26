@@ -41,21 +41,21 @@ class EmailApi extends ApiBase
 {
     /**
      * Initialize a new instance of EmailApi
-     * @param ClientInterface|null   $client client for calling api
-     * @param Configuration|null   $config configuration info
-     * @param HeaderSelector|null   $selector class for header selection
+     * @param ClientInterface   $client client for calling api
+     * @param Configuration   $config configuration info
+     * @param HeaderSelector   $selector class for header selection
      */
     public function __construct(
-        ClientInterface $client = null,
-        Configuration $config = null,
-        HeaderSelector $selector = null
+        ClientInterface $client,
+        Configuration $config,
+        HeaderSelector $selector
     ) {
         parent::__construct($client, $config, $selector);
     }
 
             
     /**
-     * Operation emailAsFile
+     * Operation asFile
      *
      * Converts Email model to specified format and returns as file.
      *
@@ -65,19 +65,19 @@ class EmailApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\\SplFileObject
      */
-    public function emailAsFile($request)
+    public function asFile($request)
     {
         try {
-             list($response) = $this->emailAsFileWithHttpInfo($request);
+             list($response) = $this->asFileWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->emailAsFileWithHttpInfo($request);
+             list($response) = $this->asFileWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation emailAsFileWithHttpInfo
+     * Operation asFileWithHttpInfo
      *
      * Converts Email model to specified format and returns as file.
      *
@@ -88,17 +88,17 @@ class EmailApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function emailAsFileWithHttpInfo($request)
+    public function asFileWithHttpInfo($request)
     {
         $returnType = '\SplFileObject';
-        $request = $this->emailAsFileRequest($request);
+        $request = $this->asFileRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation emailAsFileAsync
+     * Operation asFileAsync
      *
      * Converts Email model to specified format and returns as file.
      *
@@ -107,9 +107,9 @@ class EmailApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function emailAsFileAsync($request)
+    public function asFileAsync($request)
     {
-        return $this->emailAsFileAsyncWithHttpInfo($request)
+        return $this->asFileAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -118,7 +118,7 @@ class EmailApi extends ApiBase
     }
 
     /**
-     * Operation emailAsFileAsyncWithHttpInfo
+     * Operation asFileAsyncWithHttpInfo
      *
      * Converts Email model to specified format and returns as file.
      *
@@ -127,10 +127,10 @@ class EmailApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function emailAsFileAsyncWithHttpInfo($request)
+    public function asFileAsyncWithHttpInfo($request)
     {
         $returnType = '\SplFileObject';
-        $request = $this->emailAsFileRequest($request);
+        $request = $this->asFileRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -145,19 +145,19 @@ class EmailApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'emailAsFile'
+     * Create request for operation 'asFile'
      *
      * @param Model\EmailAsFileRequest $request Email model and format to convert.
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function emailAsFileRequest($request)
+    protected function asFileRequest($request)
     {
         // verify the required parameter '$request' is set
         if ($request === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $request when calling emailAsFile'
+                'Missing the required parameter $request when calling asFile'
             );
         }
 
@@ -177,7 +177,7 @@ class EmailApi extends ApiBase
     }
             
     /**
-     * Operation emailAsMapi
+     * Operation asMapi
      *
      * Converts EmailDto to MapiMessageDto.
      *
@@ -187,19 +187,19 @@ class EmailApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\MapiMessageDto
      */
-    public function emailAsMapi($email_dto)
+    public function asMapi($email_dto)
     {
         try {
-             list($response) = $this->emailAsMapiWithHttpInfo($email_dto);
+             list($response) = $this->asMapiWithHttpInfo($email_dto);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->emailAsMapiWithHttpInfo($email_dto);
+             list($response) = $this->asMapiWithHttpInfo($email_dto);
              return $response;
         }
     }
 
     /**
-     * Operation emailAsMapiWithHttpInfo
+     * Operation asMapiWithHttpInfo
      *
      * Converts EmailDto to MapiMessageDto.
      *
@@ -210,17 +210,17 @@ class EmailApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \Aspose\Email\Model\MapiMessageDto, HTTP status code, HTTP response headers (array of strings)
      */
-    public function emailAsMapiWithHttpInfo($email_dto)
+    public function asMapiWithHttpInfo($email_dto)
     {
         $returnType = '\Aspose\Email\Model\MapiMessageDto';
-        $request = $this->emailAsMapiRequest($email_dto);
+        $request = $this->asMapiRequest($email_dto);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation emailAsMapiAsync
+     * Operation asMapiAsync
      *
      * Converts EmailDto to MapiMessageDto.
      *
@@ -229,9 +229,9 @@ class EmailApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function emailAsMapiAsync($email_dto)
+    public function asMapiAsync($email_dto)
     {
-        return $this->emailAsMapiAsyncWithHttpInfo($email_dto)
+        return $this->asMapiAsyncWithHttpInfo($email_dto)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -240,7 +240,7 @@ class EmailApi extends ApiBase
     }
 
     /**
-     * Operation emailAsMapiAsyncWithHttpInfo
+     * Operation asMapiAsyncWithHttpInfo
      *
      * Converts EmailDto to MapiMessageDto.
      *
@@ -249,10 +249,10 @@ class EmailApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function emailAsMapiAsyncWithHttpInfo($email_dto)
+    public function asMapiAsyncWithHttpInfo($email_dto)
     {
         $returnType = '\Aspose\Email\Model\MapiMessageDto';
-        $request = $this->emailAsMapiRequest($email_dto);
+        $request = $this->asMapiRequest($email_dto);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -267,19 +267,19 @@ class EmailApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'emailAsMapi'
+     * Create request for operation 'asMapi'
      *
      * @param Model\EmailDto $email_dto Email model to convert
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function emailAsMapiRequest($email_dto)
+    protected function asMapiRequest($email_dto)
     {
         // verify the required parameter '$email_dto' is set
         if ($email_dto === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $email_dto when calling emailAsMapi'
+                'Missing the required parameter $email_dto when calling asMapi'
             );
         }
 
@@ -299,7 +299,7 @@ class EmailApi extends ApiBase
     }
             
     /**
-     * Operation emailConvert
+     * Operation convert
      *
      * Converts email document to specified format and returns as file
      *
@@ -309,19 +309,19 @@ class EmailApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\\SplFileObject
      */
-    public function emailConvert(Model\EmailConvertRequest $request)
+    public function convert(Model\EmailConvertRequest $request)
     {
         try {
-             list($response) = $this->emailConvertWithHttpInfo($request);
+             list($response) = $this->convertWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->emailConvertWithHttpInfo($request);
+             list($response) = $this->convertWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation emailConvertWithHttpInfo
+     * Operation convertWithHttpInfo
      *
      * Converts email document to specified format and returns as file
      *
@@ -332,17 +332,17 @@ class EmailApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function emailConvertWithHttpInfo(Model\EmailConvertRequest $request)
+    public function convertWithHttpInfo(Model\EmailConvertRequest $request)
     {
         $returnType = '\SplFileObject';
-        $request = $this->emailConvertRequest($request);
+        $request = $this->convertRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation emailConvertAsync
+     * Operation convertAsync
      *
      * Converts email document to specified format and returns as file
      *
@@ -351,9 +351,9 @@ class EmailApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function emailConvertAsync(Model\EmailConvertRequest $request)
+    public function convertAsync(Model\EmailConvertRequest $request)
     {
-        return $this->emailConvertAsyncWithHttpInfo($request)
+        return $this->convertAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -362,7 +362,7 @@ class EmailApi extends ApiBase
     }
 
     /**
-     * Operation emailConvertAsyncWithHttpInfo
+     * Operation convertAsyncWithHttpInfo
      *
      * Converts email document to specified format and returns as file
      *
@@ -371,10 +371,10 @@ class EmailApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function emailConvertAsyncWithHttpInfo(Model\EmailConvertRequest $request)
+    public function convertAsyncWithHttpInfo(Model\EmailConvertRequest $request)
     {
         $returnType = '\SplFileObject';
-        $request = $this->emailConvertRequest($request);
+        $request = $this->convertRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -389,25 +389,25 @@ class EmailApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'emailConvert'
+     * Create request for operation 'convert'
      *
      * @param Model\EmailConvertRequest $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function emailConvertRequest(Model\EmailConvertRequest $request)
+    protected function convertRequest(Model\EmailConvertRequest $request)
     {
         // verify the required parameter 'format' is set
         if ($request->format === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $format when calling emailConvert'
+                'Missing the required parameter $format when calling convert'
             );
         }
         // verify the required parameter 'file' is set
         if ($request->file === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $file when calling emailConvert'
+                'Missing the required parameter $file when calling convert'
             );
         }
 
@@ -420,7 +420,7 @@ class EmailApi extends ApiBase
         // query params
         $paramValue = $request->format;
         $paramBaseName = 'format';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         // form params
         $formFiles = [];
@@ -458,7 +458,7 @@ class EmailApi extends ApiBase
     }
             
     /**
-     * Operation emailFromFile
+     * Operation fromFile
      *
      * Converts email document to a model representation
      *
@@ -468,19 +468,19 @@ class EmailApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\EmailDto
      */
-    public function emailFromFile(Model\EmailFromFileRequest $request)
+    public function fromFile(Model\EmailFromFileRequest $request)
     {
         try {
-             list($response) = $this->emailFromFileWithHttpInfo($request);
+             list($response) = $this->fromFileWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->emailFromFileWithHttpInfo($request);
+             list($response) = $this->fromFileWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation emailFromFileWithHttpInfo
+     * Operation fromFileWithHttpInfo
      *
      * Converts email document to a model representation
      *
@@ -491,17 +491,17 @@ class EmailApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \Aspose\Email\Model\EmailDto, HTTP status code, HTTP response headers (array of strings)
      */
-    public function emailFromFileWithHttpInfo(Model\EmailFromFileRequest $request)
+    public function fromFileWithHttpInfo(Model\EmailFromFileRequest $request)
     {
         $returnType = '\Aspose\Email\Model\EmailDto';
-        $request = $this->emailFromFileRequest($request);
+        $request = $this->fromFileRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation emailFromFileAsync
+     * Operation fromFileAsync
      *
      * Converts email document to a model representation
      *
@@ -510,9 +510,9 @@ class EmailApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function emailFromFileAsync(Model\EmailFromFileRequest $request)
+    public function fromFileAsync(Model\EmailFromFileRequest $request)
     {
-        return $this->emailFromFileAsyncWithHttpInfo($request)
+        return $this->fromFileAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -521,7 +521,7 @@ class EmailApi extends ApiBase
     }
 
     /**
-     * Operation emailFromFileAsyncWithHttpInfo
+     * Operation fromFileAsyncWithHttpInfo
      *
      * Converts email document to a model representation
      *
@@ -530,10 +530,10 @@ class EmailApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function emailFromFileAsyncWithHttpInfo(Model\EmailFromFileRequest $request)
+    public function fromFileAsyncWithHttpInfo(Model\EmailFromFileRequest $request)
     {
         $returnType = '\Aspose\Email\Model\EmailDto';
-        $request = $this->emailFromFileRequest($request);
+        $request = $this->fromFileRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -548,25 +548,25 @@ class EmailApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'emailFromFile'
+     * Create request for operation 'fromFile'
      *
      * @param Model\EmailFromFileRequest $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function emailFromFileRequest(Model\EmailFromFileRequest $request)
+    protected function fromFileRequest(Model\EmailFromFileRequest $request)
     {
         // verify the required parameter 'format' is set
         if ($request->format === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $format when calling emailFromFile'
+                'Missing the required parameter $format when calling fromFile'
             );
         }
         // verify the required parameter 'file' is set
         if ($request->file === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $file when calling emailFromFile'
+                'Missing the required parameter $file when calling fromFile'
             );
         }
 
@@ -579,7 +579,7 @@ class EmailApi extends ApiBase
         // query params
         $paramValue = $request->format;
         $paramBaseName = 'format';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         // form params
         $formFiles = [];
@@ -617,7 +617,7 @@ class EmailApi extends ApiBase
     }
             
     /**
-     * Operation emailGet
+     * Operation get
      *
      * Get email document from storage.
      *
@@ -627,19 +627,19 @@ class EmailApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\EmailDto
      */
-    public function emailGet(Model\EmailGetRequest $request)
+    public function get(Model\EmailGetRequest $request)
     {
         try {
-             list($response) = $this->emailGetWithHttpInfo($request);
+             list($response) = $this->getWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->emailGetWithHttpInfo($request);
+             list($response) = $this->getWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation emailGetWithHttpInfo
+     * Operation getWithHttpInfo
      *
      * Get email document from storage.
      *
@@ -650,17 +650,17 @@ class EmailApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \Aspose\Email\Model\EmailDto, HTTP status code, HTTP response headers (array of strings)
      */
-    public function emailGetWithHttpInfo(Model\EmailGetRequest $request)
+    public function getWithHttpInfo(Model\EmailGetRequest $request)
     {
         $returnType = '\Aspose\Email\Model\EmailDto';
-        $request = $this->emailGetRequest($request);
+        $request = $this->getRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation emailGetAsync
+     * Operation getAsync
      *
      * Get email document from storage.
      *
@@ -669,9 +669,9 @@ class EmailApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function emailGetAsync(Model\EmailGetRequest $request)
+    public function getAsync(Model\EmailGetRequest $request)
     {
-        return $this->emailGetAsyncWithHttpInfo($request)
+        return $this->getAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -680,7 +680,7 @@ class EmailApi extends ApiBase
     }
 
     /**
-     * Operation emailGetAsyncWithHttpInfo
+     * Operation getAsyncWithHttpInfo
      *
      * Get email document from storage.
      *
@@ -689,10 +689,10 @@ class EmailApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function emailGetAsyncWithHttpInfo(Model\EmailGetRequest $request)
+    public function getAsyncWithHttpInfo(Model\EmailGetRequest $request)
     {
         $returnType = '\Aspose\Email\Model\EmailDto';
-        $request = $this->emailGetRequest($request);
+        $request = $this->getRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -707,25 +707,25 @@ class EmailApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'emailGet'
+     * Create request for operation 'get'
      *
      * @param Model\EmailGetRequest $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function emailGetRequest(Model\EmailGetRequest $request)
+    protected function getRequest(Model\EmailGetRequest $request)
     {
         // verify the required parameter 'format' is set
         if ($request->format === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $format when calling emailGet'
+                'Missing the required parameter $format when calling get'
             );
         }
         // verify the required parameter 'file_name' is set
         if ($request->file_name === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $file_name when calling emailGet'
+                'Missing the required parameter $file_name when calling get'
             );
         }
 
@@ -738,16 +738,16 @@ class EmailApi extends ApiBase
         // query params
         $paramValue = $request->format;
         $paramBaseName = 'format';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->file_name;
         $paramBaseName = 'fileName';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->folder;
         $paramBaseName = 'folder';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->storage;
         $paramBaseName = 'storage';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -773,7 +773,7 @@ class EmailApi extends ApiBase
     }
             
     /**
-     * Operation emailGetAsFile
+     * Operation getAsFile
      *
      * Converts email document from storage to specified format and returns as file
      *
@@ -783,19 +783,19 @@ class EmailApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\\SplFileObject
      */
-    public function emailGetAsFile(Model\EmailGetAsFileRequest $request)
+    public function getAsFile(Model\EmailGetAsFileRequest $request)
     {
         try {
-             list($response) = $this->emailGetAsFileWithHttpInfo($request);
+             list($response) = $this->getAsFileWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->emailGetAsFileWithHttpInfo($request);
+             list($response) = $this->getAsFileWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation emailGetAsFileWithHttpInfo
+     * Operation getAsFileWithHttpInfo
      *
      * Converts email document from storage to specified format and returns as file
      *
@@ -806,17 +806,17 @@ class EmailApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function emailGetAsFileWithHttpInfo(Model\EmailGetAsFileRequest $request)
+    public function getAsFileWithHttpInfo(Model\EmailGetAsFileRequest $request)
     {
         $returnType = '\SplFileObject';
-        $request = $this->emailGetAsFileRequest($request);
+        $request = $this->getAsFileRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation emailGetAsFileAsync
+     * Operation getAsFileAsync
      *
      * Converts email document from storage to specified format and returns as file
      *
@@ -825,9 +825,9 @@ class EmailApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function emailGetAsFileAsync(Model\EmailGetAsFileRequest $request)
+    public function getAsFileAsync(Model\EmailGetAsFileRequest $request)
     {
-        return $this->emailGetAsFileAsyncWithHttpInfo($request)
+        return $this->getAsFileAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -836,7 +836,7 @@ class EmailApi extends ApiBase
     }
 
     /**
-     * Operation emailGetAsFileAsyncWithHttpInfo
+     * Operation getAsFileAsyncWithHttpInfo
      *
      * Converts email document from storage to specified format and returns as file
      *
@@ -845,10 +845,10 @@ class EmailApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function emailGetAsFileAsyncWithHttpInfo(Model\EmailGetAsFileRequest $request)
+    public function getAsFileAsyncWithHttpInfo(Model\EmailGetAsFileRequest $request)
     {
         $returnType = '\SplFileObject';
-        $request = $this->emailGetAsFileRequest($request);
+        $request = $this->getAsFileRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -863,25 +863,25 @@ class EmailApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'emailGetAsFile'
+     * Create request for operation 'getAsFile'
      *
      * @param Model\EmailGetAsFileRequest $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function emailGetAsFileRequest(Model\EmailGetAsFileRequest $request)
+    protected function getAsFileRequest(Model\EmailGetAsFileRequest $request)
     {
         // verify the required parameter 'file_name' is set
         if ($request->file_name === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $file_name when calling emailGetAsFile'
+                'Missing the required parameter $file_name when calling getAsFile'
             );
         }
         // verify the required parameter 'format' is set
         if ($request->format === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $format when calling emailGetAsFile'
+                'Missing the required parameter $format when calling getAsFile'
             );
         }
 
@@ -894,16 +894,16 @@ class EmailApi extends ApiBase
         // query params
         $paramValue = $request->file_name;
         $paramBaseName = 'fileName';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->format;
         $paramBaseName = 'format';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->storage;
         $paramBaseName = 'storage';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->folder;
         $paramBaseName = 'folder';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -929,7 +929,7 @@ class EmailApi extends ApiBase
     }
             
     /**
-     * Operation emailGetList
+     * Operation getList
      *
      * Get email list from storage folder.
      *
@@ -939,19 +939,19 @@ class EmailApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\EmailStorageList
      */
-    public function emailGetList(Model\EmailGetListRequest $request)
+    public function getList(Model\EmailGetListRequest $request)
     {
         try {
-             list($response) = $this->emailGetListWithHttpInfo($request);
+             list($response) = $this->getListWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->emailGetListWithHttpInfo($request);
+             list($response) = $this->getListWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation emailGetListWithHttpInfo
+     * Operation getListWithHttpInfo
      *
      * Get email list from storage folder.
      *
@@ -962,17 +962,17 @@ class EmailApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \Aspose\Email\Model\EmailStorageList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function emailGetListWithHttpInfo(Model\EmailGetListRequest $request)
+    public function getListWithHttpInfo(Model\EmailGetListRequest $request)
     {
         $returnType = '\Aspose\Email\Model\EmailStorageList';
-        $request = $this->emailGetListRequest($request);
+        $request = $this->getListRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation emailGetListAsync
+     * Operation getListAsync
      *
      * Get email list from storage folder.
      *
@@ -981,9 +981,9 @@ class EmailApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function emailGetListAsync(Model\EmailGetListRequest $request)
+    public function getListAsync(Model\EmailGetListRequest $request)
     {
-        return $this->emailGetListAsyncWithHttpInfo($request)
+        return $this->getListAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -992,7 +992,7 @@ class EmailApi extends ApiBase
     }
 
     /**
-     * Operation emailGetListAsyncWithHttpInfo
+     * Operation getListAsyncWithHttpInfo
      *
      * Get email list from storage folder.
      *
@@ -1001,10 +1001,10 @@ class EmailApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function emailGetListAsyncWithHttpInfo(Model\EmailGetListRequest $request)
+    public function getListAsyncWithHttpInfo(Model\EmailGetListRequest $request)
     {
         $returnType = '\Aspose\Email\Model\EmailStorageList';
-        $request = $this->emailGetListRequest($request);
+        $request = $this->getListRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1019,19 +1019,19 @@ class EmailApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'emailGetList'
+     * Create request for operation 'getList'
      *
      * @param Model\EmailGetListRequest $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function emailGetListRequest(Model\EmailGetListRequest $request)
+    protected function getListRequest(Model\EmailGetListRequest $request)
     {
         // verify the required parameter 'format' is set
         if ($request->format === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $format when calling emailGetList'
+                'Missing the required parameter $format when calling getList'
             );
         }
 
@@ -1044,19 +1044,19 @@ class EmailApi extends ApiBase
         // query params
         $paramValue = $request->format;
         $paramBaseName = 'format';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->folder;
         $paramBaseName = 'folder';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->storage;
         $paramBaseName = 'storage';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->items_per_page;
         $paramBaseName = 'itemsPerPage';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->page_number;
         $paramBaseName = 'pageNumber';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -1082,7 +1082,7 @@ class EmailApi extends ApiBase
     }
             
     /**
-     * Operation emailSave
+     * Operation save
      *
      * Save email document to storage.
      *
@@ -1092,17 +1092,17 @@ class EmailApi extends ApiBase
      * @throws InvalidArgumentException
      * @return void
      */
-    public function emailSave($request)
+    public function save($request)
     {
         try {
-             $this->emailSaveWithHttpInfo($request);
+             $this->saveWithHttpInfo($request);
         } catch (RepeatRequestException $e) {
-             $this->emailSaveWithHttpInfo($request);
+             $this->saveWithHttpInfo($request);
         }
     }
 
     /**
-     * Operation emailSaveWithHttpInfo
+     * Operation saveWithHttpInfo
      *
      * Save email document to storage.
      *
@@ -1113,16 +1113,16 @@ class EmailApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function emailSaveWithHttpInfo($request)
+    public function saveWithHttpInfo($request)
     {
-        $request = $this->emailSaveRequest($request);
+        $request = $this->saveRequest($request);
     
         $response = $this->callClient($request);
         return [null, $response->getStatusCode(), $response->getHeaders()];
     }
 
     /**
-     * Operation emailSaveAsync
+     * Operation saveAsync
      *
      * Save email document to storage.
      *
@@ -1131,9 +1131,9 @@ class EmailApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function emailSaveAsync($request)
+    public function saveAsync($request)
     {
-        return $this->emailSaveAsyncWithHttpInfo($request)
+        return $this->saveAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1142,7 +1142,7 @@ class EmailApi extends ApiBase
     }
 
     /**
-     * Operation emailSaveAsyncWithHttpInfo
+     * Operation saveAsyncWithHttpInfo
      *
      * Save email document to storage.
      *
@@ -1151,9 +1151,9 @@ class EmailApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function emailSaveAsyncWithHttpInfo($request)
+    public function saveAsyncWithHttpInfo($request)
     {
-        $request = $this->emailSaveRequest($request);
+        $request = $this->saveRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1168,19 +1168,19 @@ class EmailApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'emailSave'
+     * Create request for operation 'save'
      *
      * @param Model\EmailSaveRequest $request Email document create/update request.
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function emailSaveRequest($request)
+    protected function saveRequest($request)
     {
         // verify the required parameter '$request' is set
         if ($request === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $request when calling emailSave'
+                'Missing the required parameter $request when calling save'
             );
         }
 

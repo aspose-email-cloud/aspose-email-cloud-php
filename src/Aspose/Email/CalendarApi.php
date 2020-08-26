@@ -40,22 +40,22 @@ use Aspose\Email\Model;
 class CalendarApi extends ApiBase
 {
     /**
-     * Initialize a new instance of EmailApi
-     * @param ClientInterface|null   $client client for calling api
-     * @param Configuration|null   $config configuration info
-     * @param HeaderSelector|null   $selector class for header selection
+     * Initialize a new instance of CalendarApi
+     * @param ClientInterface   $client client for calling api
+     * @param Configuration   $config configuration info
+     * @param HeaderSelector   $selector class for header selection
      */
     public function __construct(
-        ClientInterface $client = null,
-        Configuration $config = null,
-        HeaderSelector $selector = null
+        ClientInterface $client,
+        Configuration $config,
+        HeaderSelector $selector
     ) {
         parent::__construct($client, $config, $selector);
     }
 
             
     /**
-     * Operation calendarAsAlternate
+     * Operation asAlternate
      *
      * Convert iCalendar to AlternateView
      *
@@ -65,19 +65,19 @@ class CalendarApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\AlternateView
      */
-    public function calendarAsAlternate($request)
+    public function asAlternate($request)
     {
         try {
-             list($response) = $this->calendarAsAlternateWithHttpInfo($request);
+             list($response) = $this->asAlternateWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->calendarAsAlternateWithHttpInfo($request);
+             list($response) = $this->asAlternateWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation calendarAsAlternateWithHttpInfo
+     * Operation asAlternateWithHttpInfo
      *
      * Convert iCalendar to AlternateView
      *
@@ -88,17 +88,17 @@ class CalendarApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \Aspose\Email\Model\AlternateView, HTTP status code, HTTP response headers (array of strings)
      */
-    public function calendarAsAlternateWithHttpInfo($request)
+    public function asAlternateWithHttpInfo($request)
     {
         $returnType = '\Aspose\Email\Model\AlternateView';
-        $request = $this->calendarAsAlternateRequest($request);
+        $request = $this->asAlternateRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation calendarAsAlternateAsync
+     * Operation asAlternateAsync
      *
      * Convert iCalendar to AlternateView
      *
@@ -107,9 +107,9 @@ class CalendarApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function calendarAsAlternateAsync($request)
+    public function asAlternateAsync($request)
     {
-        return $this->calendarAsAlternateAsyncWithHttpInfo($request)
+        return $this->asAlternateAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -118,7 +118,7 @@ class CalendarApi extends ApiBase
     }
 
     /**
-     * Operation calendarAsAlternateAsyncWithHttpInfo
+     * Operation asAlternateAsyncWithHttpInfo
      *
      * Convert iCalendar to AlternateView
      *
@@ -127,10 +127,10 @@ class CalendarApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function calendarAsAlternateAsyncWithHttpInfo($request)
+    public function asAlternateAsyncWithHttpInfo($request)
     {
         $returnType = '\Aspose\Email\Model\AlternateView';
-        $request = $this->calendarAsAlternateRequest($request);
+        $request = $this->asAlternateRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -145,19 +145,19 @@ class CalendarApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'calendarAsAlternate'
+     * Create request for operation 'asAlternate'
      *
      * @param Model\CalendarAsAlternateRequest $request iCalendar to AlternateView request
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function calendarAsAlternateRequest($request)
+    protected function asAlternateRequest($request)
     {
         // verify the required parameter '$request' is set
         if ($request === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $request when calling calendarAsAlternate'
+                'Missing the required parameter $request when calling asAlternate'
             );
         }
 
@@ -177,7 +177,7 @@ class CalendarApi extends ApiBase
     }
             
     /**
-     * Operation calendarAsFile
+     * Operation asFile
      *
      * Converts calendar model to specified format and returns as file.
      *
@@ -187,19 +187,19 @@ class CalendarApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\\SplFileObject
      */
-    public function calendarAsFile($request)
+    public function asFile($request)
     {
         try {
-             list($response) = $this->calendarAsFileWithHttpInfo($request);
+             list($response) = $this->asFileWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->calendarAsFileWithHttpInfo($request);
+             list($response) = $this->asFileWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation calendarAsFileWithHttpInfo
+     * Operation asFileWithHttpInfo
      *
      * Converts calendar model to specified format and returns as file.
      *
@@ -210,17 +210,17 @@ class CalendarApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function calendarAsFileWithHttpInfo($request)
+    public function asFileWithHttpInfo($request)
     {
         $returnType = '\SplFileObject';
-        $request = $this->calendarAsFileRequest($request);
+        $request = $this->asFileRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation calendarAsFileAsync
+     * Operation asFileAsync
      *
      * Converts calendar model to specified format and returns as file.
      *
@@ -229,9 +229,9 @@ class CalendarApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function calendarAsFileAsync($request)
+    public function asFileAsync($request)
     {
-        return $this->calendarAsFileAsyncWithHttpInfo($request)
+        return $this->asFileAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -240,7 +240,7 @@ class CalendarApi extends ApiBase
     }
 
     /**
-     * Operation calendarAsFileAsyncWithHttpInfo
+     * Operation asFileAsyncWithHttpInfo
      *
      * Converts calendar model to specified format and returns as file.
      *
@@ -249,10 +249,10 @@ class CalendarApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function calendarAsFileAsyncWithHttpInfo($request)
+    public function asFileAsyncWithHttpInfo($request)
     {
         $returnType = '\SplFileObject';
-        $request = $this->calendarAsFileRequest($request);
+        $request = $this->asFileRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -267,19 +267,19 @@ class CalendarApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'calendarAsFile'
+     * Create request for operation 'asFile'
      *
      * @param Model\CalendarAsFileRequest $request Calendar model and format to convert.
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function calendarAsFileRequest($request)
+    protected function asFileRequest($request)
     {
         // verify the required parameter '$request' is set
         if ($request === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $request when calling calendarAsFile'
+                'Missing the required parameter $request when calling asFile'
             );
         }
 
@@ -299,7 +299,7 @@ class CalendarApi extends ApiBase
     }
             
     /**
-     * Operation calendarAsMapi
+     * Operation asMapi
      *
      * Converts CalendarDto to MapiCalendarDto.
      *
@@ -309,19 +309,19 @@ class CalendarApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\MapiCalendarDto
      */
-    public function calendarAsMapi($calendar_dto)
+    public function asMapi($calendar_dto)
     {
         try {
-             list($response) = $this->calendarAsMapiWithHttpInfo($calendar_dto);
+             list($response) = $this->asMapiWithHttpInfo($calendar_dto);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->calendarAsMapiWithHttpInfo($calendar_dto);
+             list($response) = $this->asMapiWithHttpInfo($calendar_dto);
              return $response;
         }
     }
 
     /**
-     * Operation calendarAsMapiWithHttpInfo
+     * Operation asMapiWithHttpInfo
      *
      * Converts CalendarDto to MapiCalendarDto.
      *
@@ -332,17 +332,17 @@ class CalendarApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \Aspose\Email\Model\MapiCalendarDto, HTTP status code, HTTP response headers (array of strings)
      */
-    public function calendarAsMapiWithHttpInfo($calendar_dto)
+    public function asMapiWithHttpInfo($calendar_dto)
     {
         $returnType = '\Aspose\Email\Model\MapiCalendarDto';
-        $request = $this->calendarAsMapiRequest($calendar_dto);
+        $request = $this->asMapiRequest($calendar_dto);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation calendarAsMapiAsync
+     * Operation asMapiAsync
      *
      * Converts CalendarDto to MapiCalendarDto.
      *
@@ -351,9 +351,9 @@ class CalendarApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function calendarAsMapiAsync($calendar_dto)
+    public function asMapiAsync($calendar_dto)
     {
-        return $this->calendarAsMapiAsyncWithHttpInfo($calendar_dto)
+        return $this->asMapiAsyncWithHttpInfo($calendar_dto)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -362,7 +362,7 @@ class CalendarApi extends ApiBase
     }
 
     /**
-     * Operation calendarAsMapiAsyncWithHttpInfo
+     * Operation asMapiAsyncWithHttpInfo
      *
      * Converts CalendarDto to MapiCalendarDto.
      *
@@ -371,10 +371,10 @@ class CalendarApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function calendarAsMapiAsyncWithHttpInfo($calendar_dto)
+    public function asMapiAsyncWithHttpInfo($calendar_dto)
     {
         $returnType = '\Aspose\Email\Model\MapiCalendarDto';
-        $request = $this->calendarAsMapiRequest($calendar_dto);
+        $request = $this->asMapiRequest($calendar_dto);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -389,19 +389,19 @@ class CalendarApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'calendarAsMapi'
+     * Create request for operation 'asMapi'
      *
      * @param Model\CalendarDto $calendar_dto iCalendar model calendar representation.
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function calendarAsMapiRequest($calendar_dto)
+    protected function asMapiRequest($calendar_dto)
     {
         // verify the required parameter '$calendar_dto' is set
         if ($calendar_dto === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $calendar_dto when calling calendarAsMapi'
+                'Missing the required parameter $calendar_dto when calling asMapi'
             );
         }
 
@@ -421,7 +421,7 @@ class CalendarApi extends ApiBase
     }
             
     /**
-     * Operation calendarConvert
+     * Operation convert
      *
      * Converts calendar document to specified format and returns as file.
      *
@@ -431,19 +431,19 @@ class CalendarApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\\SplFileObject
      */
-    public function calendarConvert(Model\CalendarConvertRequest $request)
+    public function convert(Model\CalendarConvertRequest $request)
     {
         try {
-             list($response) = $this->calendarConvertWithHttpInfo($request);
+             list($response) = $this->convertWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->calendarConvertWithHttpInfo($request);
+             list($response) = $this->convertWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation calendarConvertWithHttpInfo
+     * Operation convertWithHttpInfo
      *
      * Converts calendar document to specified format and returns as file.
      *
@@ -454,17 +454,17 @@ class CalendarApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function calendarConvertWithHttpInfo(Model\CalendarConvertRequest $request)
+    public function convertWithHttpInfo(Model\CalendarConvertRequest $request)
     {
         $returnType = '\SplFileObject';
-        $request = $this->calendarConvertRequest($request);
+        $request = $this->convertRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation calendarConvertAsync
+     * Operation convertAsync
      *
      * Converts calendar document to specified format and returns as file.
      *
@@ -473,9 +473,9 @@ class CalendarApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function calendarConvertAsync(Model\CalendarConvertRequest $request)
+    public function convertAsync(Model\CalendarConvertRequest $request)
     {
-        return $this->calendarConvertAsyncWithHttpInfo($request)
+        return $this->convertAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -484,7 +484,7 @@ class CalendarApi extends ApiBase
     }
 
     /**
-     * Operation calendarConvertAsyncWithHttpInfo
+     * Operation convertAsyncWithHttpInfo
      *
      * Converts calendar document to specified format and returns as file.
      *
@@ -493,10 +493,10 @@ class CalendarApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function calendarConvertAsyncWithHttpInfo(Model\CalendarConvertRequest $request)
+    public function convertAsyncWithHttpInfo(Model\CalendarConvertRequest $request)
     {
         $returnType = '\SplFileObject';
-        $request = $this->calendarConvertRequest($request);
+        $request = $this->convertRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -511,25 +511,25 @@ class CalendarApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'calendarConvert'
+     * Create request for operation 'convert'
      *
      * @param Model\CalendarConvertRequest $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function calendarConvertRequest(Model\CalendarConvertRequest $request)
+    protected function convertRequest(Model\CalendarConvertRequest $request)
     {
         // verify the required parameter 'format' is set
         if ($request->format === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $format when calling calendarConvert'
+                'Missing the required parameter $format when calling convert'
             );
         }
         // verify the required parameter 'file' is set
         if ($request->file === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $file when calling calendarConvert'
+                'Missing the required parameter $file when calling convert'
             );
         }
 
@@ -542,7 +542,7 @@ class CalendarApi extends ApiBase
         // query params
         $paramValue = $request->format;
         $paramBaseName = 'format';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         // form params
         $formFiles = [];
@@ -580,7 +580,7 @@ class CalendarApi extends ApiBase
     }
             
     /**
-     * Operation calendarFromFile
+     * Operation fromFile
      *
      * Converts calendar document to a model representation.
      *
@@ -590,19 +590,19 @@ class CalendarApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\CalendarDto
      */
-    public function calendarFromFile(Model\CalendarFromFileRequest $request)
+    public function fromFile(Model\CalendarFromFileRequest $request)
     {
         try {
-             list($response) = $this->calendarFromFileWithHttpInfo($request);
+             list($response) = $this->fromFileWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->calendarFromFileWithHttpInfo($request);
+             list($response) = $this->fromFileWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation calendarFromFileWithHttpInfo
+     * Operation fromFileWithHttpInfo
      *
      * Converts calendar document to a model representation.
      *
@@ -613,17 +613,17 @@ class CalendarApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \Aspose\Email\Model\CalendarDto, HTTP status code, HTTP response headers (array of strings)
      */
-    public function calendarFromFileWithHttpInfo(Model\CalendarFromFileRequest $request)
+    public function fromFileWithHttpInfo(Model\CalendarFromFileRequest $request)
     {
         $returnType = '\Aspose\Email\Model\CalendarDto';
-        $request = $this->calendarFromFileRequest($request);
+        $request = $this->fromFileRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation calendarFromFileAsync
+     * Operation fromFileAsync
      *
      * Converts calendar document to a model representation.
      *
@@ -632,9 +632,9 @@ class CalendarApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function calendarFromFileAsync(Model\CalendarFromFileRequest $request)
+    public function fromFileAsync(Model\CalendarFromFileRequest $request)
     {
-        return $this->calendarFromFileAsyncWithHttpInfo($request)
+        return $this->fromFileAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -643,7 +643,7 @@ class CalendarApi extends ApiBase
     }
 
     /**
-     * Operation calendarFromFileAsyncWithHttpInfo
+     * Operation fromFileAsyncWithHttpInfo
      *
      * Converts calendar document to a model representation.
      *
@@ -652,10 +652,10 @@ class CalendarApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function calendarFromFileAsyncWithHttpInfo(Model\CalendarFromFileRequest $request)
+    public function fromFileAsyncWithHttpInfo(Model\CalendarFromFileRequest $request)
     {
         $returnType = '\Aspose\Email\Model\CalendarDto';
-        $request = $this->calendarFromFileRequest($request);
+        $request = $this->fromFileRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -670,19 +670,19 @@ class CalendarApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'calendarFromFile'
+     * Create request for operation 'fromFile'
      *
      * @param Model\CalendarFromFileRequest $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function calendarFromFileRequest(Model\CalendarFromFileRequest $request)
+    protected function fromFileRequest(Model\CalendarFromFileRequest $request)
     {
         // verify the required parameter 'file' is set
         if ($request->file === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $file when calling calendarFromFile'
+                'Missing the required parameter $file when calling fromFile'
             );
         }
 
@@ -728,7 +728,7 @@ class CalendarApi extends ApiBase
     }
             
     /**
-     * Operation calendarGet
+     * Operation get
      *
      * Get calendar file from storage.
      *
@@ -738,19 +738,19 @@ class CalendarApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\CalendarDto
      */
-    public function calendarGet(Model\CalendarGetRequest $request)
+    public function get(Model\CalendarGetRequest $request)
     {
         try {
-             list($response) = $this->calendarGetWithHttpInfo($request);
+             list($response) = $this->getWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->calendarGetWithHttpInfo($request);
+             list($response) = $this->getWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation calendarGetWithHttpInfo
+     * Operation getWithHttpInfo
      *
      * Get calendar file from storage.
      *
@@ -761,17 +761,17 @@ class CalendarApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \Aspose\Email\Model\CalendarDto, HTTP status code, HTTP response headers (array of strings)
      */
-    public function calendarGetWithHttpInfo(Model\CalendarGetRequest $request)
+    public function getWithHttpInfo(Model\CalendarGetRequest $request)
     {
         $returnType = '\Aspose\Email\Model\CalendarDto';
-        $request = $this->calendarGetRequest($request);
+        $request = $this->getRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation calendarGetAsync
+     * Operation getAsync
      *
      * Get calendar file from storage.
      *
@@ -780,9 +780,9 @@ class CalendarApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function calendarGetAsync(Model\CalendarGetRequest $request)
+    public function getAsync(Model\CalendarGetRequest $request)
     {
-        return $this->calendarGetAsyncWithHttpInfo($request)
+        return $this->getAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -791,7 +791,7 @@ class CalendarApi extends ApiBase
     }
 
     /**
-     * Operation calendarGetAsyncWithHttpInfo
+     * Operation getAsyncWithHttpInfo
      *
      * Get calendar file from storage.
      *
@@ -800,10 +800,10 @@ class CalendarApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function calendarGetAsyncWithHttpInfo(Model\CalendarGetRequest $request)
+    public function getAsyncWithHttpInfo(Model\CalendarGetRequest $request)
     {
         $returnType = '\Aspose\Email\Model\CalendarDto';
-        $request = $this->calendarGetRequest($request);
+        $request = $this->getRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -818,19 +818,19 @@ class CalendarApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'calendarGet'
+     * Create request for operation 'get'
      *
      * @param Model\CalendarGetRequest $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function calendarGetRequest(Model\CalendarGetRequest $request)
+    protected function getRequest(Model\CalendarGetRequest $request)
     {
         // verify the required parameter 'file_name' is set
         if ($request->file_name === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $file_name when calling calendarGet'
+                'Missing the required parameter $file_name when calling get'
             );
         }
 
@@ -843,13 +843,13 @@ class CalendarApi extends ApiBase
         // query params
         $paramValue = $request->file_name;
         $paramBaseName = 'fileName';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->folder;
         $paramBaseName = 'folder';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->storage;
         $paramBaseName = 'storage';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -875,7 +875,7 @@ class CalendarApi extends ApiBase
     }
             
     /**
-     * Operation calendarGetAsAlternate
+     * Operation getAsAlternate
      *
      * Get iCalendar from storage as AlternateView
      *
@@ -885,19 +885,19 @@ class CalendarApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\AlternateView
      */
-    public function calendarGetAsAlternate(Model\CalendarGetAsAlternateRequest $request)
+    public function getAsAlternate(Model\CalendarGetAsAlternateRequest $request)
     {
         try {
-             list($response) = $this->calendarGetAsAlternateWithHttpInfo($request);
+             list($response) = $this->getAsAlternateWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->calendarGetAsAlternateWithHttpInfo($request);
+             list($response) = $this->getAsAlternateWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation calendarGetAsAlternateWithHttpInfo
+     * Operation getAsAlternateWithHttpInfo
      *
      * Get iCalendar from storage as AlternateView
      *
@@ -908,17 +908,17 @@ class CalendarApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \Aspose\Email\Model\AlternateView, HTTP status code, HTTP response headers (array of strings)
      */
-    public function calendarGetAsAlternateWithHttpInfo(Model\CalendarGetAsAlternateRequest $request)
+    public function getAsAlternateWithHttpInfo(Model\CalendarGetAsAlternateRequest $request)
     {
         $returnType = '\Aspose\Email\Model\AlternateView';
-        $request = $this->calendarGetAsAlternateRequest($request);
+        $request = $this->getAsAlternateRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation calendarGetAsAlternateAsync
+     * Operation getAsAlternateAsync
      *
      * Get iCalendar from storage as AlternateView
      *
@@ -927,9 +927,9 @@ class CalendarApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function calendarGetAsAlternateAsync(Model\CalendarGetAsAlternateRequest $request)
+    public function getAsAlternateAsync(Model\CalendarGetAsAlternateRequest $request)
     {
-        return $this->calendarGetAsAlternateAsyncWithHttpInfo($request)
+        return $this->getAsAlternateAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -938,7 +938,7 @@ class CalendarApi extends ApiBase
     }
 
     /**
-     * Operation calendarGetAsAlternateAsyncWithHttpInfo
+     * Operation getAsAlternateAsyncWithHttpInfo
      *
      * Get iCalendar from storage as AlternateView
      *
@@ -947,10 +947,10 @@ class CalendarApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function calendarGetAsAlternateAsyncWithHttpInfo(Model\CalendarGetAsAlternateRequest $request)
+    public function getAsAlternateAsyncWithHttpInfo(Model\CalendarGetAsAlternateRequest $request)
     {
         $returnType = '\Aspose\Email\Model\AlternateView';
-        $request = $this->calendarGetAsAlternateRequest($request);
+        $request = $this->getAsAlternateRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -965,25 +965,25 @@ class CalendarApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'calendarGetAsAlternate'
+     * Create request for operation 'getAsAlternate'
      *
      * @param Model\CalendarGetAsAlternateRequest $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function calendarGetAsAlternateRequest(Model\CalendarGetAsAlternateRequest $request)
+    protected function getAsAlternateRequest(Model\CalendarGetAsAlternateRequest $request)
     {
         // verify the required parameter 'file_name' is set
         if ($request->file_name === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $file_name when calling calendarGetAsAlternate'
+                'Missing the required parameter $file_name when calling getAsAlternate'
             );
         }
         // verify the required parameter 'calendar_action' is set
         if ($request->calendar_action === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $calendar_action when calling calendarGetAsAlternate'
+                'Missing the required parameter $calendar_action when calling getAsAlternate'
             );
         }
 
@@ -996,19 +996,19 @@ class CalendarApi extends ApiBase
         // query params
         $paramValue = $request->file_name;
         $paramBaseName = 'fileName';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->calendar_action;
         $paramBaseName = 'calendarAction';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->sequence_id;
         $paramBaseName = 'sequenceId';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->folder;
         $paramBaseName = 'folder';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->storage;
         $paramBaseName = 'storage';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -1034,7 +1034,7 @@ class CalendarApi extends ApiBase
     }
             
     /**
-     * Operation calendarGetAsFile
+     * Operation getAsFile
      *
      * Converts calendar document from storage to specified format and returns as file.
      *
@@ -1044,19 +1044,19 @@ class CalendarApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\\SplFileObject
      */
-    public function calendarGetAsFile(Model\CalendarGetAsFileRequest $request)
+    public function getAsFile(Model\CalendarGetAsFileRequest $request)
     {
         try {
-             list($response) = $this->calendarGetAsFileWithHttpInfo($request);
+             list($response) = $this->getAsFileWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->calendarGetAsFileWithHttpInfo($request);
+             list($response) = $this->getAsFileWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation calendarGetAsFileWithHttpInfo
+     * Operation getAsFileWithHttpInfo
      *
      * Converts calendar document from storage to specified format and returns as file.
      *
@@ -1067,17 +1067,17 @@ class CalendarApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function calendarGetAsFileWithHttpInfo(Model\CalendarGetAsFileRequest $request)
+    public function getAsFileWithHttpInfo(Model\CalendarGetAsFileRequest $request)
     {
         $returnType = '\SplFileObject';
-        $request = $this->calendarGetAsFileRequest($request);
+        $request = $this->getAsFileRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation calendarGetAsFileAsync
+     * Operation getAsFileAsync
      *
      * Converts calendar document from storage to specified format and returns as file.
      *
@@ -1086,9 +1086,9 @@ class CalendarApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function calendarGetAsFileAsync(Model\CalendarGetAsFileRequest $request)
+    public function getAsFileAsync(Model\CalendarGetAsFileRequest $request)
     {
-        return $this->calendarGetAsFileAsyncWithHttpInfo($request)
+        return $this->getAsFileAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1097,7 +1097,7 @@ class CalendarApi extends ApiBase
     }
 
     /**
-     * Operation calendarGetAsFileAsyncWithHttpInfo
+     * Operation getAsFileAsyncWithHttpInfo
      *
      * Converts calendar document from storage to specified format and returns as file.
      *
@@ -1106,10 +1106,10 @@ class CalendarApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function calendarGetAsFileAsyncWithHttpInfo(Model\CalendarGetAsFileRequest $request)
+    public function getAsFileAsyncWithHttpInfo(Model\CalendarGetAsFileRequest $request)
     {
         $returnType = '\SplFileObject';
-        $request = $this->calendarGetAsFileRequest($request);
+        $request = $this->getAsFileRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1124,25 +1124,25 @@ class CalendarApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'calendarGetAsFile'
+     * Create request for operation 'getAsFile'
      *
      * @param Model\CalendarGetAsFileRequest $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function calendarGetAsFileRequest(Model\CalendarGetAsFileRequest $request)
+    protected function getAsFileRequest(Model\CalendarGetAsFileRequest $request)
     {
         // verify the required parameter 'file_name' is set
         if ($request->file_name === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $file_name when calling calendarGetAsFile'
+                'Missing the required parameter $file_name when calling getAsFile'
             );
         }
         // verify the required parameter 'format' is set
         if ($request->format === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $format when calling calendarGetAsFile'
+                'Missing the required parameter $format when calling getAsFile'
             );
         }
 
@@ -1155,16 +1155,16 @@ class CalendarApi extends ApiBase
         // query params
         $paramValue = $request->file_name;
         $paramBaseName = 'fileName';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->format;
         $paramBaseName = 'format';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->storage;
         $paramBaseName = 'storage';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->folder;
         $paramBaseName = 'folder';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -1190,7 +1190,7 @@ class CalendarApi extends ApiBase
     }
             
     /**
-     * Operation calendarGetList
+     * Operation getList
      *
      * Get iCalendar list from storage folder.
      *
@@ -1200,19 +1200,19 @@ class CalendarApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\CalendarStorageList
      */
-    public function calendarGetList(Model\CalendarGetListRequest $request)
+    public function getList(Model\CalendarGetListRequest $request)
     {
         try {
-             list($response) = $this->calendarGetListWithHttpInfo($request);
+             list($response) = $this->getListWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->calendarGetListWithHttpInfo($request);
+             list($response) = $this->getListWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation calendarGetListWithHttpInfo
+     * Operation getListWithHttpInfo
      *
      * Get iCalendar list from storage folder.
      *
@@ -1223,17 +1223,17 @@ class CalendarApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \Aspose\Email\Model\CalendarStorageList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function calendarGetListWithHttpInfo(Model\CalendarGetListRequest $request)
+    public function getListWithHttpInfo(Model\CalendarGetListRequest $request)
     {
         $returnType = '\Aspose\Email\Model\CalendarStorageList';
-        $request = $this->calendarGetListRequest($request);
+        $request = $this->getListRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation calendarGetListAsync
+     * Operation getListAsync
      *
      * Get iCalendar list from storage folder.
      *
@@ -1242,9 +1242,9 @@ class CalendarApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function calendarGetListAsync(Model\CalendarGetListRequest $request)
+    public function getListAsync(Model\CalendarGetListRequest $request)
     {
-        return $this->calendarGetListAsyncWithHttpInfo($request)
+        return $this->getListAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1253,7 +1253,7 @@ class CalendarApi extends ApiBase
     }
 
     /**
-     * Operation calendarGetListAsyncWithHttpInfo
+     * Operation getListAsyncWithHttpInfo
      *
      * Get iCalendar list from storage folder.
      *
@@ -1262,10 +1262,10 @@ class CalendarApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function calendarGetListAsyncWithHttpInfo(Model\CalendarGetListRequest $request)
+    public function getListAsyncWithHttpInfo(Model\CalendarGetListRequest $request)
     {
         $returnType = '\Aspose\Email\Model\CalendarStorageList';
-        $request = $this->calendarGetListRequest($request);
+        $request = $this->getListRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1280,19 +1280,19 @@ class CalendarApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'calendarGetList'
+     * Create request for operation 'getList'
      *
      * @param Model\CalendarGetListRequest $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function calendarGetListRequest(Model\CalendarGetListRequest $request)
+    protected function getListRequest(Model\CalendarGetListRequest $request)
     {
         // verify the required parameter 'folder' is set
         if ($request->folder === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $folder when calling calendarGetList'
+                'Missing the required parameter $folder when calling getList'
             );
         }
 
@@ -1305,16 +1305,16 @@ class CalendarApi extends ApiBase
         // query params
         $paramValue = $request->folder;
         $paramBaseName = 'folder';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->items_per_page;
         $paramBaseName = 'itemsPerPage';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->page_number;
         $paramBaseName = 'pageNumber';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->storage;
         $paramBaseName = 'storage';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -1340,7 +1340,7 @@ class CalendarApi extends ApiBase
     }
             
     /**
-     * Operation calendarSave
+     * Operation save
      *
      * Save iCalendar
      *
@@ -1350,17 +1350,17 @@ class CalendarApi extends ApiBase
      * @throws InvalidArgumentException
      * @return void
      */
-    public function calendarSave($request)
+    public function save($request)
     {
         try {
-             $this->calendarSaveWithHttpInfo($request);
+             $this->saveWithHttpInfo($request);
         } catch (RepeatRequestException $e) {
-             $this->calendarSaveWithHttpInfo($request);
+             $this->saveWithHttpInfo($request);
         }
     }
 
     /**
-     * Operation calendarSaveWithHttpInfo
+     * Operation saveWithHttpInfo
      *
      * Save iCalendar
      *
@@ -1371,16 +1371,16 @@ class CalendarApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function calendarSaveWithHttpInfo($request)
+    public function saveWithHttpInfo($request)
     {
-        $request = $this->calendarSaveRequest($request);
+        $request = $this->saveRequest($request);
     
         $response = $this->callClient($request);
         return [null, $response->getStatusCode(), $response->getHeaders()];
     }
 
     /**
-     * Operation calendarSaveAsync
+     * Operation saveAsync
      *
      * Save iCalendar
      *
@@ -1389,9 +1389,9 @@ class CalendarApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function calendarSaveAsync($request)
+    public function saveAsync($request)
     {
-        return $this->calendarSaveAsyncWithHttpInfo($request)
+        return $this->saveAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1400,7 +1400,7 @@ class CalendarApi extends ApiBase
     }
 
     /**
-     * Operation calendarSaveAsyncWithHttpInfo
+     * Operation saveAsyncWithHttpInfo
      *
      * Save iCalendar
      *
@@ -1409,9 +1409,9 @@ class CalendarApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function calendarSaveAsyncWithHttpInfo($request)
+    public function saveAsyncWithHttpInfo($request)
     {
-        $request = $this->calendarSaveRequest($request);
+        $request = $this->saveRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1426,19 +1426,19 @@ class CalendarApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'calendarSave'
+     * Create request for operation 'save'
      *
      * @param Model\CalendarSaveRequest $request iCalendar create/update request
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function calendarSaveRequest($request)
+    protected function saveRequest($request)
     {
         // verify the required parameter '$request' is set
         if ($request === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $request when calling calendarSave'
+                'Missing the required parameter $request when calling save'
             );
         }
 

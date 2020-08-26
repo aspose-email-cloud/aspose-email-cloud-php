@@ -40,22 +40,22 @@ use Aspose\Email\Model;
 class ClientAccountApi extends ApiBase
 {
     /**
-     * Initialize a new instance of EmailApi
-     * @param ClientInterface|null   $client client for calling api
-     * @param Configuration|null   $config configuration info
-     * @param HeaderSelector|null   $selector class for header selection
+     * Initialize a new instance of ClientAccountApi
+     * @param ClientInterface   $client client for calling api
+     * @param Configuration   $config configuration info
+     * @param HeaderSelector   $selector class for header selection
      */
     public function __construct(
-        ClientInterface $client = null,
-        Configuration $config = null,
-        HeaderSelector $selector = null
+        ClientInterface $client,
+        Configuration $config,
+        HeaderSelector $selector
     ) {
         parent::__construct($client, $config, $selector);
     }
 
             
     /**
-     * Operation clientAccountGet
+     * Operation get
      *
      * Get email client account from storage.
      *
@@ -65,19 +65,19 @@ class ClientAccountApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\EmailClientAccount
      */
-    public function clientAccountGet(Model\ClientAccountGetRequest $request)
+    public function get(Model\ClientAccountGetRequest $request)
     {
         try {
-             list($response) = $this->clientAccountGetWithHttpInfo($request);
+             list($response) = $this->getWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->clientAccountGetWithHttpInfo($request);
+             list($response) = $this->getWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation clientAccountGetWithHttpInfo
+     * Operation getWithHttpInfo
      *
      * Get email client account from storage.
      *
@@ -88,17 +88,17 @@ class ClientAccountApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \Aspose\Email\Model\EmailClientAccount, HTTP status code, HTTP response headers (array of strings)
      */
-    public function clientAccountGetWithHttpInfo(Model\ClientAccountGetRequest $request)
+    public function getWithHttpInfo(Model\ClientAccountGetRequest $request)
     {
         $returnType = '\Aspose\Email\Model\EmailClientAccount';
-        $request = $this->clientAccountGetRequest($request);
+        $request = $this->getRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation clientAccountGetAsync
+     * Operation getAsync
      *
      * Get email client account from storage.
      *
@@ -107,9 +107,9 @@ class ClientAccountApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function clientAccountGetAsync(Model\ClientAccountGetRequest $request)
+    public function getAsync(Model\ClientAccountGetRequest $request)
     {
-        return $this->clientAccountGetAsyncWithHttpInfo($request)
+        return $this->getAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -118,7 +118,7 @@ class ClientAccountApi extends ApiBase
     }
 
     /**
-     * Operation clientAccountGetAsyncWithHttpInfo
+     * Operation getAsyncWithHttpInfo
      *
      * Get email client account from storage.
      *
@@ -127,10 +127,10 @@ class ClientAccountApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function clientAccountGetAsyncWithHttpInfo(Model\ClientAccountGetRequest $request)
+    public function getAsyncWithHttpInfo(Model\ClientAccountGetRequest $request)
     {
         $returnType = '\Aspose\Email\Model\EmailClientAccount';
-        $request = $this->clientAccountGetRequest($request);
+        $request = $this->getRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -145,19 +145,19 @@ class ClientAccountApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'clientAccountGet'
+     * Create request for operation 'get'
      *
      * @param Model\ClientAccountGetRequest $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function clientAccountGetRequest(Model\ClientAccountGetRequest $request)
+    protected function getRequest(Model\ClientAccountGetRequest $request)
     {
         // verify the required parameter 'file_name' is set
         if ($request->file_name === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $file_name when calling clientAccountGet'
+                'Missing the required parameter $file_name when calling get'
             );
         }
 
@@ -170,13 +170,13 @@ class ClientAccountApi extends ApiBase
         // query params
         $paramValue = $request->file_name;
         $paramBaseName = 'fileName';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->folder;
         $paramBaseName = 'folder';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->storage;
         $paramBaseName = 'storage';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -202,7 +202,7 @@ class ClientAccountApi extends ApiBase
     }
             
     /**
-     * Operation clientAccountGetMulti
+     * Operation getMulti
      *
      * Get email client multi account file (*.multi.account). Will respond error if file extension is not \".multi.account\".
      *
@@ -212,19 +212,19 @@ class ClientAccountApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\EmailClientMultiAccount
      */
-    public function clientAccountGetMulti(Model\ClientAccountGetMultiRequest $request)
+    public function getMulti(Model\ClientAccountGetMultiRequest $request)
     {
         try {
-             list($response) = $this->clientAccountGetMultiWithHttpInfo($request);
+             list($response) = $this->getMultiWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->clientAccountGetMultiWithHttpInfo($request);
+             list($response) = $this->getMultiWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation clientAccountGetMultiWithHttpInfo
+     * Operation getMultiWithHttpInfo
      *
      * Get email client multi account file (*.multi.account). Will respond error if file extension is not \".multi.account\".
      *
@@ -235,17 +235,17 @@ class ClientAccountApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \Aspose\Email\Model\EmailClientMultiAccount, HTTP status code, HTTP response headers (array of strings)
      */
-    public function clientAccountGetMultiWithHttpInfo(Model\ClientAccountGetMultiRequest $request)
+    public function getMultiWithHttpInfo(Model\ClientAccountGetMultiRequest $request)
     {
         $returnType = '\Aspose\Email\Model\EmailClientMultiAccount';
-        $request = $this->clientAccountGetMultiRequest($request);
+        $request = $this->getMultiRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation clientAccountGetMultiAsync
+     * Operation getMultiAsync
      *
      * Get email client multi account file (*.multi.account). Will respond error if file extension is not \".multi.account\".
      *
@@ -254,9 +254,9 @@ class ClientAccountApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function clientAccountGetMultiAsync(Model\ClientAccountGetMultiRequest $request)
+    public function getMultiAsync(Model\ClientAccountGetMultiRequest $request)
     {
-        return $this->clientAccountGetMultiAsyncWithHttpInfo($request)
+        return $this->getMultiAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -265,7 +265,7 @@ class ClientAccountApi extends ApiBase
     }
 
     /**
-     * Operation clientAccountGetMultiAsyncWithHttpInfo
+     * Operation getMultiAsyncWithHttpInfo
      *
      * Get email client multi account file (*.multi.account). Will respond error if file extension is not \".multi.account\".
      *
@@ -274,10 +274,10 @@ class ClientAccountApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function clientAccountGetMultiAsyncWithHttpInfo(Model\ClientAccountGetMultiRequest $request)
+    public function getMultiAsyncWithHttpInfo(Model\ClientAccountGetMultiRequest $request)
     {
         $returnType = '\Aspose\Email\Model\EmailClientMultiAccount';
-        $request = $this->clientAccountGetMultiRequest($request);
+        $request = $this->getMultiRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -292,19 +292,19 @@ class ClientAccountApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'clientAccountGetMulti'
+     * Create request for operation 'getMulti'
      *
      * @param Model\ClientAccountGetMultiRequest $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function clientAccountGetMultiRequest(Model\ClientAccountGetMultiRequest $request)
+    protected function getMultiRequest(Model\ClientAccountGetMultiRequest $request)
     {
         // verify the required parameter 'file_name' is set
         if ($request->file_name === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $file_name when calling clientAccountGetMulti'
+                'Missing the required parameter $file_name when calling getMulti'
             );
         }
 
@@ -317,13 +317,13 @@ class ClientAccountApi extends ApiBase
         // query params
         $paramValue = $request->file_name;
         $paramBaseName = 'fileName';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->folder;
         $paramBaseName = 'folder';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->storage;
         $paramBaseName = 'storage';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -349,7 +349,7 @@ class ClientAccountApi extends ApiBase
     }
             
     /**
-     * Operation clientAccountSave
+     * Operation save
      *
      * Create/update email client account file (*.account) with credentials
      *
@@ -359,17 +359,17 @@ class ClientAccountApi extends ApiBase
      * @throws InvalidArgumentException
      * @return void
      */
-    public function clientAccountSave($request)
+    public function save($request)
     {
         try {
-             $this->clientAccountSaveWithHttpInfo($request);
+             $this->saveWithHttpInfo($request);
         } catch (RepeatRequestException $e) {
-             $this->clientAccountSaveWithHttpInfo($request);
+             $this->saveWithHttpInfo($request);
         }
     }
 
     /**
-     * Operation clientAccountSaveWithHttpInfo
+     * Operation saveWithHttpInfo
      *
      * Create/update email client account file (*.account) with credentials
      *
@@ -380,16 +380,16 @@ class ClientAccountApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function clientAccountSaveWithHttpInfo($request)
+    public function saveWithHttpInfo($request)
     {
-        $request = $this->clientAccountSaveRequest($request);
+        $request = $this->saveRequest($request);
     
         $response = $this->callClient($request);
         return [null, $response->getStatusCode(), $response->getHeaders()];
     }
 
     /**
-     * Operation clientAccountSaveAsync
+     * Operation saveAsync
      *
      * Create/update email client account file (*.account) with credentials
      *
@@ -398,9 +398,9 @@ class ClientAccountApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function clientAccountSaveAsync($request)
+    public function saveAsync($request)
     {
-        return $this->clientAccountSaveAsyncWithHttpInfo($request)
+        return $this->saveAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -409,7 +409,7 @@ class ClientAccountApi extends ApiBase
     }
 
     /**
-     * Operation clientAccountSaveAsyncWithHttpInfo
+     * Operation saveAsyncWithHttpInfo
      *
      * Create/update email client account file (*.account) with credentials
      *
@@ -418,9 +418,9 @@ class ClientAccountApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function clientAccountSaveAsyncWithHttpInfo($request)
+    public function saveAsyncWithHttpInfo($request)
     {
-        $request = $this->clientAccountSaveRequest($request);
+        $request = $this->saveRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -435,19 +435,19 @@ class ClientAccountApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'clientAccountSave'
+     * Create request for operation 'save'
      *
      * @param Model\ClientAccountSaveRequest $request Email account information
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function clientAccountSaveRequest($request)
+    protected function saveRequest($request)
     {
         // verify the required parameter '$request' is set
         if ($request === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $request when calling clientAccountSave'
+                'Missing the required parameter $request when calling save'
             );
         }
 
@@ -467,7 +467,7 @@ class ClientAccountApi extends ApiBase
     }
             
     /**
-     * Operation clientAccountSaveMulti
+     * Operation saveMulti
      *
      * Create email client multi account file (*.multi.account). Will respond error if file extension is not \".multi.account\".
      *
@@ -477,17 +477,17 @@ class ClientAccountApi extends ApiBase
      * @throws InvalidArgumentException
      * @return void
      */
-    public function clientAccountSaveMulti($request)
+    public function saveMulti($request)
     {
         try {
-             $this->clientAccountSaveMultiWithHttpInfo($request);
+             $this->saveMultiWithHttpInfo($request);
         } catch (RepeatRequestException $e) {
-             $this->clientAccountSaveMultiWithHttpInfo($request);
+             $this->saveMultiWithHttpInfo($request);
         }
     }
 
     /**
-     * Operation clientAccountSaveMultiWithHttpInfo
+     * Operation saveMultiWithHttpInfo
      *
      * Create email client multi account file (*.multi.account). Will respond error if file extension is not \".multi.account\".
      *
@@ -498,16 +498,16 @@ class ClientAccountApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function clientAccountSaveMultiWithHttpInfo($request)
+    public function saveMultiWithHttpInfo($request)
     {
-        $request = $this->clientAccountSaveMultiRequest($request);
+        $request = $this->saveMultiRequest($request);
     
         $response = $this->callClient($request);
         return [null, $response->getStatusCode(), $response->getHeaders()];
     }
 
     /**
-     * Operation clientAccountSaveMultiAsync
+     * Operation saveMultiAsync
      *
      * Create email client multi account file (*.multi.account). Will respond error if file extension is not \".multi.account\".
      *
@@ -516,9 +516,9 @@ class ClientAccountApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function clientAccountSaveMultiAsync($request)
+    public function saveMultiAsync($request)
     {
-        return $this->clientAccountSaveMultiAsyncWithHttpInfo($request)
+        return $this->saveMultiAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -527,7 +527,7 @@ class ClientAccountApi extends ApiBase
     }
 
     /**
-     * Operation clientAccountSaveMultiAsyncWithHttpInfo
+     * Operation saveMultiAsyncWithHttpInfo
      *
      * Create email client multi account file (*.multi.account). Will respond error if file extension is not \".multi.account\".
      *
@@ -536,9 +536,9 @@ class ClientAccountApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function clientAccountSaveMultiAsyncWithHttpInfo($request)
+    public function saveMultiAsyncWithHttpInfo($request)
     {
-        $request = $this->clientAccountSaveMultiRequest($request);
+        $request = $this->saveMultiRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -553,19 +553,19 @@ class ClientAccountApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'clientAccountSaveMulti'
+     * Create request for operation 'saveMulti'
      *
      * @param Model\ClientAccountSaveMultiRequest $request Email accounts information.
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function clientAccountSaveMultiRequest($request)
+    protected function saveMultiRequest($request)
     {
         // verify the required parameter '$request' is set
         if ($request === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $request when calling clientAccountSaveMulti'
+                'Missing the required parameter $request when calling saveMulti'
             );
         }
 

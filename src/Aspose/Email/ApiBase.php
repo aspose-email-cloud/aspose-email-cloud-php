@@ -28,8 +28,6 @@
 
 namespace Aspose\Email;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
@@ -39,38 +37,17 @@ use stdClass;
 
 class ApiBase
 {
-    /**
-     * Stores client instance
-     * @var ClientInterface client for calling api
-     */
     protected $client;
 
-    /**
-     * Stores configuration
-     * @var Configuration configuration info
-     */
     protected $config;
   
-    /**
-     * Stores header selector
-     * HeaderSelector class for header selection
-     */
     protected $headerSelector;
 
-    /**
-     * Initialize a new instance of EmailApi
-     * @param ClientInterface|null   $client client for calling api
-     * @param Configuration|null   $config configuration info
-     * @param HeaderSelector|null   $selector class for header selection
-     */
-    protected function __construct(
-        ClientInterface $client = null,
-        Configuration $config = null,
-        HeaderSelector $selector = null
-    ) {
-        $this->client = $client ?: new Client(['verify' => false]);
-        $this->config = $config ?: new Configuration();
-        $this->headerSelector = $selector ?: new HeaderSelector();
+    protected function __construct($client, $config, $selector)
+    {
+        $this->client = $client;
+        $this->config = $config;
+        $this->headerSelector = $selector;
     }
 
     /**
@@ -328,6 +305,7 @@ class ApiBase
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
         }
+        return $resourcePath;
     }
 
     protected function toClientRequest(
@@ -339,8 +317,8 @@ class ApiBase
         $formFiles,
         $multipart,
         $headers,
-        $headerParams)
-    {
+        $headerParams
+    ) {
         $resourcePath = $this->parseURL($resourcePath, $queryParams);
         $headers = $this->mergeAllHeaders($headerParams, $headers);
         $httpBody = $this->prepareRequestBody($headers, $bodyParam, $multipart, $formParams, $formFiles);

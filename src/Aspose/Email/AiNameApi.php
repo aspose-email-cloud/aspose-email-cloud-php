@@ -40,22 +40,22 @@ use Aspose\Email\Model;
 class AiNameApi extends ApiBase
 {
     /**
-     * Initialize a new instance of EmailApi
-     * @param ClientInterface|null   $client client for calling api
-     * @param Configuration|null   $config configuration info
-     * @param HeaderSelector|null   $selector class for header selection
+     * Initialize a new instance of AiNameApi
+     * @param ClientInterface   $client client for calling api
+     * @param Configuration   $config configuration info
+     * @param HeaderSelector   $selector class for header selection
      */
     public function __construct(
-        ClientInterface $client = null,
-        Configuration $config = null,
-        HeaderSelector $selector = null
+        ClientInterface $client,
+        Configuration $config,
+        HeaderSelector $selector
     ) {
         parent::__construct($client, $config, $selector);
     }
 
             
     /**
-     * Operation aiNameComplete
+     * Operation complete
      *
      * The call proposes k most probable names for given starting characters.
      *
@@ -65,19 +65,19 @@ class AiNameApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\AiNameWeightedVariants
      */
-    public function aiNameComplete(Model\AiNameCompleteRequest $request)
+    public function complete(Model\AiNameCompleteRequest $request)
     {
         try {
-             list($response) = $this->aiNameCompleteWithHttpInfo($request);
+             list($response) = $this->completeWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->aiNameCompleteWithHttpInfo($request);
+             list($response) = $this->completeWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation aiNameCompleteWithHttpInfo
+     * Operation completeWithHttpInfo
      *
      * The call proposes k most probable names for given starting characters.
      *
@@ -88,17 +88,17 @@ class AiNameApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \Aspose\Email\Model\AiNameWeightedVariants, HTTP status code, HTTP response headers (array of strings)
      */
-    public function aiNameCompleteWithHttpInfo(Model\AiNameCompleteRequest $request)
+    public function completeWithHttpInfo(Model\AiNameCompleteRequest $request)
     {
         $returnType = '\Aspose\Email\Model\AiNameWeightedVariants';
-        $request = $this->aiNameCompleteRequest($request);
+        $request = $this->completeRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation aiNameCompleteAsync
+     * Operation completeAsync
      *
      * The call proposes k most probable names for given starting characters.
      *
@@ -107,9 +107,9 @@ class AiNameApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function aiNameCompleteAsync(Model\AiNameCompleteRequest $request)
+    public function completeAsync(Model\AiNameCompleteRequest $request)
     {
-        return $this->aiNameCompleteAsyncWithHttpInfo($request)
+        return $this->completeAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -118,7 +118,7 @@ class AiNameApi extends ApiBase
     }
 
     /**
-     * Operation aiNameCompleteAsyncWithHttpInfo
+     * Operation completeAsyncWithHttpInfo
      *
      * The call proposes k most probable names for given starting characters.
      *
@@ -127,10 +127,10 @@ class AiNameApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function aiNameCompleteAsyncWithHttpInfo(Model\AiNameCompleteRequest $request)
+    public function completeAsyncWithHttpInfo(Model\AiNameCompleteRequest $request)
     {
         $returnType = '\Aspose\Email\Model\AiNameWeightedVariants';
-        $request = $this->aiNameCompleteRequest($request);
+        $request = $this->completeRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -145,19 +145,19 @@ class AiNameApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'aiNameComplete'
+     * Create request for operation 'complete'
      *
      * @param Model\AiNameCompleteRequest $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function aiNameCompleteRequest(Model\AiNameCompleteRequest $request)
+    protected function completeRequest(Model\AiNameCompleteRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $name when calling aiNameComplete'
+                'Missing the required parameter $name when calling complete'
             );
         }
 
@@ -170,22 +170,22 @@ class AiNameApi extends ApiBase
         // query params
         $paramValue = $request->name;
         $paramBaseName = 'name';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->language;
         $paramBaseName = 'language';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->location;
         $paramBaseName = 'location';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->encoding;
         $paramBaseName = 'encoding';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->script;
         $paramBaseName = 'script';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->style;
         $paramBaseName = 'style';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -211,7 +211,7 @@ class AiNameApi extends ApiBase
     }
             
     /**
-     * Operation aiNameExpand
+     * Operation expand
      *
      * Expands a person's name into a list of possible alternatives using options for expanding instructions.
      *
@@ -221,19 +221,19 @@ class AiNameApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\AiNameWeightedVariants
      */
-    public function aiNameExpand(Model\AiNameExpandRequest $request)
+    public function expand(Model\AiNameExpandRequest $request)
     {
         try {
-             list($response) = $this->aiNameExpandWithHttpInfo($request);
+             list($response) = $this->expandWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->aiNameExpandWithHttpInfo($request);
+             list($response) = $this->expandWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation aiNameExpandWithHttpInfo
+     * Operation expandWithHttpInfo
      *
      * Expands a person's name into a list of possible alternatives using options for expanding instructions.
      *
@@ -244,17 +244,17 @@ class AiNameApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \Aspose\Email\Model\AiNameWeightedVariants, HTTP status code, HTTP response headers (array of strings)
      */
-    public function aiNameExpandWithHttpInfo(Model\AiNameExpandRequest $request)
+    public function expandWithHttpInfo(Model\AiNameExpandRequest $request)
     {
         $returnType = '\Aspose\Email\Model\AiNameWeightedVariants';
-        $request = $this->aiNameExpandRequest($request);
+        $request = $this->expandRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation aiNameExpandAsync
+     * Operation expandAsync
      *
      * Expands a person's name into a list of possible alternatives using options for expanding instructions.
      *
@@ -263,9 +263,9 @@ class AiNameApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function aiNameExpandAsync(Model\AiNameExpandRequest $request)
+    public function expandAsync(Model\AiNameExpandRequest $request)
     {
-        return $this->aiNameExpandAsyncWithHttpInfo($request)
+        return $this->expandAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -274,7 +274,7 @@ class AiNameApi extends ApiBase
     }
 
     /**
-     * Operation aiNameExpandAsyncWithHttpInfo
+     * Operation expandAsyncWithHttpInfo
      *
      * Expands a person's name into a list of possible alternatives using options for expanding instructions.
      *
@@ -283,10 +283,10 @@ class AiNameApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function aiNameExpandAsyncWithHttpInfo(Model\AiNameExpandRequest $request)
+    public function expandAsyncWithHttpInfo(Model\AiNameExpandRequest $request)
     {
         $returnType = '\Aspose\Email\Model\AiNameWeightedVariants';
-        $request = $this->aiNameExpandRequest($request);
+        $request = $this->expandRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -301,19 +301,19 @@ class AiNameApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'aiNameExpand'
+     * Create request for operation 'expand'
      *
      * @param Model\AiNameExpandRequest $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function aiNameExpandRequest(Model\AiNameExpandRequest $request)
+    protected function expandRequest(Model\AiNameExpandRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $name when calling aiNameExpand'
+                'Missing the required parameter $name when calling expand'
             );
         }
 
@@ -326,22 +326,22 @@ class AiNameApi extends ApiBase
         // query params
         $paramValue = $request->name;
         $paramBaseName = 'name';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->language;
         $paramBaseName = 'language';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->location;
         $paramBaseName = 'location';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->encoding;
         $paramBaseName = 'encoding';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->script;
         $paramBaseName = 'script';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->style;
         $paramBaseName = 'style';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -367,7 +367,7 @@ class AiNameApi extends ApiBase
     }
             
     /**
-     * Operation aiNameExpandParsed
+     * Operation expandParsed
      *
      * Expands a person's parsed name into a list of possible alternatives using options for expanding instructions.
      *
@@ -377,19 +377,19 @@ class AiNameApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\AiNameWeightedVariants
      */
-    public function aiNameExpandParsed($request)
+    public function expandParsed($request)
     {
         try {
-             list($response) = $this->aiNameExpandParsedWithHttpInfo($request);
+             list($response) = $this->expandParsedWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->aiNameExpandParsedWithHttpInfo($request);
+             list($response) = $this->expandParsedWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation aiNameExpandParsedWithHttpInfo
+     * Operation expandParsedWithHttpInfo
      *
      * Expands a person's parsed name into a list of possible alternatives using options for expanding instructions.
      *
@@ -400,17 +400,17 @@ class AiNameApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \Aspose\Email\Model\AiNameWeightedVariants, HTTP status code, HTTP response headers (array of strings)
      */
-    public function aiNameExpandParsedWithHttpInfo($request)
+    public function expandParsedWithHttpInfo($request)
     {
         $returnType = '\Aspose\Email\Model\AiNameWeightedVariants';
-        $request = $this->aiNameExpandParsedRequest($request);
+        $request = $this->expandParsedRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation aiNameExpandParsedAsync
+     * Operation expandParsedAsync
      *
      * Expands a person's parsed name into a list of possible alternatives using options for expanding instructions.
      *
@@ -419,9 +419,9 @@ class AiNameApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function aiNameExpandParsedAsync($request)
+    public function expandParsedAsync($request)
     {
-        return $this->aiNameExpandParsedAsyncWithHttpInfo($request)
+        return $this->expandParsedAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -430,7 +430,7 @@ class AiNameApi extends ApiBase
     }
 
     /**
-     * Operation aiNameExpandParsedAsyncWithHttpInfo
+     * Operation expandParsedAsyncWithHttpInfo
      *
      * Expands a person's parsed name into a list of possible alternatives using options for expanding instructions.
      *
@@ -439,10 +439,10 @@ class AiNameApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function aiNameExpandParsedAsyncWithHttpInfo($request)
+    public function expandParsedAsyncWithHttpInfo($request)
     {
         $returnType = '\Aspose\Email\Model\AiNameWeightedVariants';
-        $request = $this->aiNameExpandParsedRequest($request);
+        $request = $this->expandParsedRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -457,19 +457,19 @@ class AiNameApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'aiNameExpandParsed'
+     * Create request for operation 'expandParsed'
      *
      * @param Model\AiNameParsedRequest $request Parsed name with options.
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function aiNameExpandParsedRequest($request)
+    protected function expandParsedRequest($request)
     {
         // verify the required parameter '$request' is set
         if ($request === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $request when calling aiNameExpandParsed'
+                'Missing the required parameter $request when calling expandParsed'
             );
         }
 
@@ -489,7 +489,7 @@ class AiNameApi extends ApiBase
     }
             
     /**
-     * Operation aiNameFormat
+     * Operation format
      *
      * Formats a person's name in correct case and name order using options for formatting instructions.
      *
@@ -499,19 +499,19 @@ class AiNameApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\AiNameFormatted
      */
-    public function aiNameFormat(Model\AiNameFormatRequest $request)
+    public function format(Model\AiNameFormatRequest $request)
     {
         try {
-             list($response) = $this->aiNameFormatWithHttpInfo($request);
+             list($response) = $this->formatWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->aiNameFormatWithHttpInfo($request);
+             list($response) = $this->formatWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation aiNameFormatWithHttpInfo
+     * Operation formatWithHttpInfo
      *
      * Formats a person's name in correct case and name order using options for formatting instructions.
      *
@@ -522,17 +522,17 @@ class AiNameApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \Aspose\Email\Model\AiNameFormatted, HTTP status code, HTTP response headers (array of strings)
      */
-    public function aiNameFormatWithHttpInfo(Model\AiNameFormatRequest $request)
+    public function formatWithHttpInfo(Model\AiNameFormatRequest $request)
     {
         $returnType = '\Aspose\Email\Model\AiNameFormatted';
-        $request = $this->aiNameFormatRequest($request);
+        $request = $this->formatRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation aiNameFormatAsync
+     * Operation formatAsync
      *
      * Formats a person's name in correct case and name order using options for formatting instructions.
      *
@@ -541,9 +541,9 @@ class AiNameApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function aiNameFormatAsync(Model\AiNameFormatRequest $request)
+    public function formatAsync(Model\AiNameFormatRequest $request)
     {
-        return $this->aiNameFormatAsyncWithHttpInfo($request)
+        return $this->formatAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -552,7 +552,7 @@ class AiNameApi extends ApiBase
     }
 
     /**
-     * Operation aiNameFormatAsyncWithHttpInfo
+     * Operation formatAsyncWithHttpInfo
      *
      * Formats a person's name in correct case and name order using options for formatting instructions.
      *
@@ -561,10 +561,10 @@ class AiNameApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function aiNameFormatAsyncWithHttpInfo(Model\AiNameFormatRequest $request)
+    public function formatAsyncWithHttpInfo(Model\AiNameFormatRequest $request)
     {
         $returnType = '\Aspose\Email\Model\AiNameFormatted';
-        $request = $this->aiNameFormatRequest($request);
+        $request = $this->formatRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -579,19 +579,19 @@ class AiNameApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'aiNameFormat'
+     * Create request for operation 'format'
      *
      * @param Model\AiNameFormatRequest $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function aiNameFormatRequest(Model\AiNameFormatRequest $request)
+    protected function formatRequest(Model\AiNameFormatRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $name when calling aiNameFormat'
+                'Missing the required parameter $name when calling format'
             );
         }
 
@@ -604,25 +604,25 @@ class AiNameApi extends ApiBase
         // query params
         $paramValue = $request->name;
         $paramBaseName = 'name';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->language;
         $paramBaseName = 'language';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->location;
         $paramBaseName = 'location';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->encoding;
         $paramBaseName = 'encoding';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->script;
         $paramBaseName = 'script';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->format;
         $paramBaseName = 'format';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->style;
         $paramBaseName = 'style';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -648,7 +648,7 @@ class AiNameApi extends ApiBase
     }
             
     /**
-     * Operation aiNameFormatParsed
+     * Operation formatParsed
      *
      * Formats a person's parsed name in correct case and name order using options for formatting instructions.
      *
@@ -658,19 +658,19 @@ class AiNameApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\AiNameFormatted
      */
-    public function aiNameFormatParsed($request)
+    public function formatParsed($request)
     {
         try {
-             list($response) = $this->aiNameFormatParsedWithHttpInfo($request);
+             list($response) = $this->formatParsedWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->aiNameFormatParsedWithHttpInfo($request);
+             list($response) = $this->formatParsedWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation aiNameFormatParsedWithHttpInfo
+     * Operation formatParsedWithHttpInfo
      *
      * Formats a person's parsed name in correct case and name order using options for formatting instructions.
      *
@@ -681,17 +681,17 @@ class AiNameApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \Aspose\Email\Model\AiNameFormatted, HTTP status code, HTTP response headers (array of strings)
      */
-    public function aiNameFormatParsedWithHttpInfo($request)
+    public function formatParsedWithHttpInfo($request)
     {
         $returnType = '\Aspose\Email\Model\AiNameFormatted';
-        $request = $this->aiNameFormatParsedRequest($request);
+        $request = $this->formatParsedRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation aiNameFormatParsedAsync
+     * Operation formatParsedAsync
      *
      * Formats a person's parsed name in correct case and name order using options for formatting instructions.
      *
@@ -700,9 +700,9 @@ class AiNameApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function aiNameFormatParsedAsync($request)
+    public function formatParsedAsync($request)
     {
-        return $this->aiNameFormatParsedAsyncWithHttpInfo($request)
+        return $this->formatParsedAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -711,7 +711,7 @@ class AiNameApi extends ApiBase
     }
 
     /**
-     * Operation aiNameFormatParsedAsyncWithHttpInfo
+     * Operation formatParsedAsyncWithHttpInfo
      *
      * Formats a person's parsed name in correct case and name order using options for formatting instructions.
      *
@@ -720,10 +720,10 @@ class AiNameApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function aiNameFormatParsedAsyncWithHttpInfo($request)
+    public function formatParsedAsyncWithHttpInfo($request)
     {
         $returnType = '\Aspose\Email\Model\AiNameFormatted';
-        $request = $this->aiNameFormatParsedRequest($request);
+        $request = $this->formatParsedRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -738,19 +738,19 @@ class AiNameApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'aiNameFormatParsed'
+     * Create request for operation 'formatParsed'
      *
      * @param Model\AiNameParsedRequest $request Parsed name with options.
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function aiNameFormatParsedRequest($request)
+    protected function formatParsedRequest($request)
     {
         // verify the required parameter '$request' is set
         if ($request === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $request when calling aiNameFormatParsed'
+                'Missing the required parameter $request when calling formatParsed'
             );
         }
 
@@ -770,7 +770,7 @@ class AiNameApi extends ApiBase
     }
             
     /**
-     * Operation aiNameGenderize
+     * Operation genderize
      *
      * Detect person's gender from name string.
      *
@@ -780,19 +780,19 @@ class AiNameApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\AiNameGenderHypothesisList
      */
-    public function aiNameGenderize(Model\AiNameGenderizeRequest $request)
+    public function genderize(Model\AiNameGenderizeRequest $request)
     {
         try {
-             list($response) = $this->aiNameGenderizeWithHttpInfo($request);
+             list($response) = $this->genderizeWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->aiNameGenderizeWithHttpInfo($request);
+             list($response) = $this->genderizeWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation aiNameGenderizeWithHttpInfo
+     * Operation genderizeWithHttpInfo
      *
      * Detect person's gender from name string.
      *
@@ -803,17 +803,17 @@ class AiNameApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \Aspose\Email\Model\AiNameGenderHypothesisList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function aiNameGenderizeWithHttpInfo(Model\AiNameGenderizeRequest $request)
+    public function genderizeWithHttpInfo(Model\AiNameGenderizeRequest $request)
     {
         $returnType = '\Aspose\Email\Model\AiNameGenderHypothesisList';
-        $request = $this->aiNameGenderizeRequest($request);
+        $request = $this->genderizeRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation aiNameGenderizeAsync
+     * Operation genderizeAsync
      *
      * Detect person's gender from name string.
      *
@@ -822,9 +822,9 @@ class AiNameApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function aiNameGenderizeAsync(Model\AiNameGenderizeRequest $request)
+    public function genderizeAsync(Model\AiNameGenderizeRequest $request)
     {
-        return $this->aiNameGenderizeAsyncWithHttpInfo($request)
+        return $this->genderizeAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -833,7 +833,7 @@ class AiNameApi extends ApiBase
     }
 
     /**
-     * Operation aiNameGenderizeAsyncWithHttpInfo
+     * Operation genderizeAsyncWithHttpInfo
      *
      * Detect person's gender from name string.
      *
@@ -842,10 +842,10 @@ class AiNameApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function aiNameGenderizeAsyncWithHttpInfo(Model\AiNameGenderizeRequest $request)
+    public function genderizeAsyncWithHttpInfo(Model\AiNameGenderizeRequest $request)
     {
         $returnType = '\Aspose\Email\Model\AiNameGenderHypothesisList';
-        $request = $this->aiNameGenderizeRequest($request);
+        $request = $this->genderizeRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -860,19 +860,19 @@ class AiNameApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'aiNameGenderize'
+     * Create request for operation 'genderize'
      *
      * @param Model\AiNameGenderizeRequest $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function aiNameGenderizeRequest(Model\AiNameGenderizeRequest $request)
+    protected function genderizeRequest(Model\AiNameGenderizeRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $name when calling aiNameGenderize'
+                'Missing the required parameter $name when calling genderize'
             );
         }
 
@@ -885,22 +885,22 @@ class AiNameApi extends ApiBase
         // query params
         $paramValue = $request->name;
         $paramBaseName = 'name';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->language;
         $paramBaseName = 'language';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->location;
         $paramBaseName = 'location';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->encoding;
         $paramBaseName = 'encoding';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->script;
         $paramBaseName = 'script';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->style;
         $paramBaseName = 'style';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -926,7 +926,7 @@ class AiNameApi extends ApiBase
     }
             
     /**
-     * Operation aiNameGenderizeParsed
+     * Operation genderizeParsed
      *
      * Detect person's gender from parsed name.
      *
@@ -936,19 +936,19 @@ class AiNameApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\AiNameGenderHypothesisList
      */
-    public function aiNameGenderizeParsed($request)
+    public function genderizeParsed($request)
     {
         try {
-             list($response) = $this->aiNameGenderizeParsedWithHttpInfo($request);
+             list($response) = $this->genderizeParsedWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->aiNameGenderizeParsedWithHttpInfo($request);
+             list($response) = $this->genderizeParsedWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation aiNameGenderizeParsedWithHttpInfo
+     * Operation genderizeParsedWithHttpInfo
      *
      * Detect person's gender from parsed name.
      *
@@ -959,17 +959,17 @@ class AiNameApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \Aspose\Email\Model\AiNameGenderHypothesisList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function aiNameGenderizeParsedWithHttpInfo($request)
+    public function genderizeParsedWithHttpInfo($request)
     {
         $returnType = '\Aspose\Email\Model\AiNameGenderHypothesisList';
-        $request = $this->aiNameGenderizeParsedRequest($request);
+        $request = $this->genderizeParsedRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation aiNameGenderizeParsedAsync
+     * Operation genderizeParsedAsync
      *
      * Detect person's gender from parsed name.
      *
@@ -978,9 +978,9 @@ class AiNameApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function aiNameGenderizeParsedAsync($request)
+    public function genderizeParsedAsync($request)
     {
-        return $this->aiNameGenderizeParsedAsyncWithHttpInfo($request)
+        return $this->genderizeParsedAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -989,7 +989,7 @@ class AiNameApi extends ApiBase
     }
 
     /**
-     * Operation aiNameGenderizeParsedAsyncWithHttpInfo
+     * Operation genderizeParsedAsyncWithHttpInfo
      *
      * Detect person's gender from parsed name.
      *
@@ -998,10 +998,10 @@ class AiNameApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function aiNameGenderizeParsedAsyncWithHttpInfo($request)
+    public function genderizeParsedAsyncWithHttpInfo($request)
     {
         $returnType = '\Aspose\Email\Model\AiNameGenderHypothesisList';
-        $request = $this->aiNameGenderizeParsedRequest($request);
+        $request = $this->genderizeParsedRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1016,19 +1016,19 @@ class AiNameApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'aiNameGenderizeParsed'
+     * Create request for operation 'genderizeParsed'
      *
      * @param Model\AiNameParsedRequest $request Gender detection request data.
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function aiNameGenderizeParsedRequest($request)
+    protected function genderizeParsedRequest($request)
     {
         // verify the required parameter '$request' is set
         if ($request === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $request when calling aiNameGenderizeParsed'
+                'Missing the required parameter $request when calling genderizeParsed'
             );
         }
 
@@ -1048,7 +1048,7 @@ class AiNameApi extends ApiBase
     }
             
     /**
-     * Operation aiNameMatch
+     * Operation match
      *
      * Compare people's names. Uses options for comparing instructions.
      *
@@ -1058,19 +1058,19 @@ class AiNameApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\AiNameMatchResult
      */
-    public function aiNameMatch(Model\AiNameMatchRequest $request)
+    public function match(Model\AiNameMatchRequest $request)
     {
         try {
-             list($response) = $this->aiNameMatchWithHttpInfo($request);
+             list($response) = $this->matchWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->aiNameMatchWithHttpInfo($request);
+             list($response) = $this->matchWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation aiNameMatchWithHttpInfo
+     * Operation matchWithHttpInfo
      *
      * Compare people's names. Uses options for comparing instructions.
      *
@@ -1081,17 +1081,17 @@ class AiNameApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \Aspose\Email\Model\AiNameMatchResult, HTTP status code, HTTP response headers (array of strings)
      */
-    public function aiNameMatchWithHttpInfo(Model\AiNameMatchRequest $request)
+    public function matchWithHttpInfo(Model\AiNameMatchRequest $request)
     {
         $returnType = '\Aspose\Email\Model\AiNameMatchResult';
-        $request = $this->aiNameMatchRequest($request);
+        $request = $this->matchRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation aiNameMatchAsync
+     * Operation matchAsync
      *
      * Compare people's names. Uses options for comparing instructions.
      *
@@ -1100,9 +1100,9 @@ class AiNameApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function aiNameMatchAsync(Model\AiNameMatchRequest $request)
+    public function matchAsync(Model\AiNameMatchRequest $request)
     {
-        return $this->aiNameMatchAsyncWithHttpInfo($request)
+        return $this->matchAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1111,7 +1111,7 @@ class AiNameApi extends ApiBase
     }
 
     /**
-     * Operation aiNameMatchAsyncWithHttpInfo
+     * Operation matchAsyncWithHttpInfo
      *
      * Compare people's names. Uses options for comparing instructions.
      *
@@ -1120,10 +1120,10 @@ class AiNameApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function aiNameMatchAsyncWithHttpInfo(Model\AiNameMatchRequest $request)
+    public function matchAsyncWithHttpInfo(Model\AiNameMatchRequest $request)
     {
         $returnType = '\Aspose\Email\Model\AiNameMatchResult';
-        $request = $this->aiNameMatchRequest($request);
+        $request = $this->matchRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1138,25 +1138,25 @@ class AiNameApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'aiNameMatch'
+     * Create request for operation 'match'
      *
      * @param Model\AiNameMatchRequest $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function aiNameMatchRequest(Model\AiNameMatchRequest $request)
+    protected function matchRequest(Model\AiNameMatchRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $name when calling aiNameMatch'
+                'Missing the required parameter $name when calling match'
             );
         }
         // verify the required parameter 'other_name' is set
         if ($request->other_name === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $other_name when calling aiNameMatch'
+                'Missing the required parameter $other_name when calling match'
             );
         }
 
@@ -1169,25 +1169,25 @@ class AiNameApi extends ApiBase
         // query params
         $paramValue = $request->name;
         $paramBaseName = 'name';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->other_name;
         $paramBaseName = 'otherName';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->language;
         $paramBaseName = 'language';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->location;
         $paramBaseName = 'location';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->encoding;
         $paramBaseName = 'encoding';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->script;
         $paramBaseName = 'script';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->style;
         $paramBaseName = 'style';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -1213,7 +1213,7 @@ class AiNameApi extends ApiBase
     }
             
     /**
-     * Operation aiNameMatchParsed
+     * Operation matchParsed
      *
      * Compare people's parsed names and attributes. Uses options for comparing instructions.
      *
@@ -1223,19 +1223,19 @@ class AiNameApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\AiNameMatchResult
      */
-    public function aiNameMatchParsed($request)
+    public function matchParsed($request)
     {
         try {
-             list($response) = $this->aiNameMatchParsedWithHttpInfo($request);
+             list($response) = $this->matchParsedWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->aiNameMatchParsedWithHttpInfo($request);
+             list($response) = $this->matchParsedWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation aiNameMatchParsedWithHttpInfo
+     * Operation matchParsedWithHttpInfo
      *
      * Compare people's parsed names and attributes. Uses options for comparing instructions.
      *
@@ -1246,17 +1246,17 @@ class AiNameApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \Aspose\Email\Model\AiNameMatchResult, HTTP status code, HTTP response headers (array of strings)
      */
-    public function aiNameMatchParsedWithHttpInfo($request)
+    public function matchParsedWithHttpInfo($request)
     {
         $returnType = '\Aspose\Email\Model\AiNameMatchResult';
-        $request = $this->aiNameMatchParsedRequest($request);
+        $request = $this->matchParsedRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation aiNameMatchParsedAsync
+     * Operation matchParsedAsync
      *
      * Compare people's parsed names and attributes. Uses options for comparing instructions.
      *
@@ -1265,9 +1265,9 @@ class AiNameApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function aiNameMatchParsedAsync($request)
+    public function matchParsedAsync($request)
     {
-        return $this->aiNameMatchParsedAsyncWithHttpInfo($request)
+        return $this->matchParsedAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1276,7 +1276,7 @@ class AiNameApi extends ApiBase
     }
 
     /**
-     * Operation aiNameMatchParsedAsyncWithHttpInfo
+     * Operation matchParsedAsyncWithHttpInfo
      *
      * Compare people's parsed names and attributes. Uses options for comparing instructions.
      *
@@ -1285,10 +1285,10 @@ class AiNameApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function aiNameMatchParsedAsyncWithHttpInfo($request)
+    public function matchParsedAsyncWithHttpInfo($request)
     {
         $returnType = '\Aspose\Email\Model\AiNameMatchResult';
-        $request = $this->aiNameMatchParsedRequest($request);
+        $request = $this->matchParsedRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1303,19 +1303,19 @@ class AiNameApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'aiNameMatchParsed'
+     * Create request for operation 'matchParsed'
      *
      * @param Model\AiNameMatchParsedRequest $request Parsed names to match.
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function aiNameMatchParsedRequest($request)
+    protected function matchParsedRequest($request)
     {
         // verify the required parameter '$request' is set
         if ($request === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $request when calling aiNameMatchParsed'
+                'Missing the required parameter $request when calling matchParsed'
             );
         }
 
@@ -1335,7 +1335,7 @@ class AiNameApi extends ApiBase
     }
             
     /**
-     * Operation aiNameParse
+     * Operation parse
      *
      * Parse name to components.
      *
@@ -1345,19 +1345,19 @@ class AiNameApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\AiNameComponentList
      */
-    public function aiNameParse(Model\AiNameParseRequest $request)
+    public function parse(Model\AiNameParseRequest $request)
     {
         try {
-             list($response) = $this->aiNameParseWithHttpInfo($request);
+             list($response) = $this->parseWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->aiNameParseWithHttpInfo($request);
+             list($response) = $this->parseWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation aiNameParseWithHttpInfo
+     * Operation parseWithHttpInfo
      *
      * Parse name to components.
      *
@@ -1368,17 +1368,17 @@ class AiNameApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \Aspose\Email\Model\AiNameComponentList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function aiNameParseWithHttpInfo(Model\AiNameParseRequest $request)
+    public function parseWithHttpInfo(Model\AiNameParseRequest $request)
     {
         $returnType = '\Aspose\Email\Model\AiNameComponentList';
-        $request = $this->aiNameParseRequest($request);
+        $request = $this->parseRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation aiNameParseAsync
+     * Operation parseAsync
      *
      * Parse name to components.
      *
@@ -1387,9 +1387,9 @@ class AiNameApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function aiNameParseAsync(Model\AiNameParseRequest $request)
+    public function parseAsync(Model\AiNameParseRequest $request)
     {
-        return $this->aiNameParseAsyncWithHttpInfo($request)
+        return $this->parseAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1398,7 +1398,7 @@ class AiNameApi extends ApiBase
     }
 
     /**
-     * Operation aiNameParseAsyncWithHttpInfo
+     * Operation parseAsyncWithHttpInfo
      *
      * Parse name to components.
      *
@@ -1407,10 +1407,10 @@ class AiNameApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function aiNameParseAsyncWithHttpInfo(Model\AiNameParseRequest $request)
+    public function parseAsyncWithHttpInfo(Model\AiNameParseRequest $request)
     {
         $returnType = '\Aspose\Email\Model\AiNameComponentList';
-        $request = $this->aiNameParseRequest($request);
+        $request = $this->parseRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1425,19 +1425,19 @@ class AiNameApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'aiNameParse'
+     * Create request for operation 'parse'
      *
      * @param Model\AiNameParseRequest $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function aiNameParseRequest(Model\AiNameParseRequest $request)
+    protected function parseRequest(Model\AiNameParseRequest $request)
     {
         // verify the required parameter 'name' is set
         if ($request->name === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $name when calling aiNameParse'
+                'Missing the required parameter $name when calling parse'
             );
         }
 
@@ -1450,22 +1450,22 @@ class AiNameApi extends ApiBase
         // query params
         $paramValue = $request->name;
         $paramBaseName = 'name';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->language;
         $paramBaseName = 'language';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->location;
         $paramBaseName = 'location';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->encoding;
         $paramBaseName = 'encoding';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->script;
         $paramBaseName = 'script';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->style;
         $paramBaseName = 'style';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -1491,7 +1491,7 @@ class AiNameApi extends ApiBase
     }
             
     /**
-     * Operation aiNameParseEmailAddress
+     * Operation parseEmailAddress
      *
      * Parse person's name out of an email address.
      *
@@ -1501,19 +1501,19 @@ class AiNameApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\AiNameExtractedList
      */
-    public function aiNameParseEmailAddress(Model\AiNameParseEmailAddressRequest $request)
+    public function parseEmailAddress(Model\AiNameParseEmailAddressRequest $request)
     {
         try {
-             list($response) = $this->aiNameParseEmailAddressWithHttpInfo($request);
+             list($response) = $this->parseEmailAddressWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->aiNameParseEmailAddressWithHttpInfo($request);
+             list($response) = $this->parseEmailAddressWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation aiNameParseEmailAddressWithHttpInfo
+     * Operation parseEmailAddressWithHttpInfo
      *
      * Parse person's name out of an email address.
      *
@@ -1524,17 +1524,17 @@ class AiNameApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \Aspose\Email\Model\AiNameExtractedList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function aiNameParseEmailAddressWithHttpInfo(Model\AiNameParseEmailAddressRequest $request)
+    public function parseEmailAddressWithHttpInfo(Model\AiNameParseEmailAddressRequest $request)
     {
         $returnType = '\Aspose\Email\Model\AiNameExtractedList';
-        $request = $this->aiNameParseEmailAddressRequest($request);
+        $request = $this->parseEmailAddressRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation aiNameParseEmailAddressAsync
+     * Operation parseEmailAddressAsync
      *
      * Parse person's name out of an email address.
      *
@@ -1543,9 +1543,9 @@ class AiNameApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function aiNameParseEmailAddressAsync(Model\AiNameParseEmailAddressRequest $request)
+    public function parseEmailAddressAsync(Model\AiNameParseEmailAddressRequest $request)
     {
-        return $this->aiNameParseEmailAddressAsyncWithHttpInfo($request)
+        return $this->parseEmailAddressAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1554,7 +1554,7 @@ class AiNameApi extends ApiBase
     }
 
     /**
-     * Operation aiNameParseEmailAddressAsyncWithHttpInfo
+     * Operation parseEmailAddressAsyncWithHttpInfo
      *
      * Parse person's name out of an email address.
      *
@@ -1563,10 +1563,10 @@ class AiNameApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function aiNameParseEmailAddressAsyncWithHttpInfo(Model\AiNameParseEmailAddressRequest $request)
+    public function parseEmailAddressAsyncWithHttpInfo(Model\AiNameParseEmailAddressRequest $request)
     {
         $returnType = '\Aspose\Email\Model\AiNameExtractedList';
-        $request = $this->aiNameParseEmailAddressRequest($request);
+        $request = $this->parseEmailAddressRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1581,19 +1581,19 @@ class AiNameApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'aiNameParseEmailAddress'
+     * Create request for operation 'parseEmailAddress'
      *
      * @param Model\AiNameParseEmailAddressRequest $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function aiNameParseEmailAddressRequest(Model\AiNameParseEmailAddressRequest $request)
+    protected function parseEmailAddressRequest(Model\AiNameParseEmailAddressRequest $request)
     {
         // verify the required parameter 'email_address' is set
         if ($request->email_address === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $email_address when calling aiNameParseEmailAddress'
+                'Missing the required parameter $email_address when calling parseEmailAddress'
             );
         }
 
@@ -1606,22 +1606,22 @@ class AiNameApi extends ApiBase
         // query params
         $paramValue = $request->email_address;
         $paramBaseName = 'emailAddress';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->language;
         $paramBaseName = 'language';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->location;
         $paramBaseName = 'location';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->encoding;
         $paramBaseName = 'encoding';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->script;
         $paramBaseName = 'script';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->style;
         $paramBaseName = 'style';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(

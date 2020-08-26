@@ -40,22 +40,22 @@ use Aspose\Email\Model;
 class MapiContactApi extends ApiBase
 {
     /**
-     * Initialize a new instance of EmailApi
-     * @param ClientInterface|null   $client client for calling api
-     * @param Configuration|null   $config configuration info
-     * @param HeaderSelector|null   $selector class for header selection
+     * Initialize a new instance of MapiContactApi
+     * @param ClientInterface   $client client for calling api
+     * @param Configuration   $config configuration info
+     * @param HeaderSelector   $selector class for header selection
      */
     public function __construct(
-        ClientInterface $client = null,
-        Configuration $config = null,
-        HeaderSelector $selector = null
+        ClientInterface $client,
+        Configuration $config,
+        HeaderSelector $selector
     ) {
         parent::__construct($client, $config, $selector);
     }
 
             
     /**
-     * Operation mapiContactAsContactDto
+     * Operation asContactDto
      *
      * Converts MAPI contact model to ContactDto model.
      *
@@ -65,19 +65,19 @@ class MapiContactApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\ContactDto
      */
-    public function mapiContactAsContactDto($mapi_contact_dto)
+    public function asContactDto($mapi_contact_dto)
     {
         try {
-             list($response) = $this->mapiContactAsContactDtoWithHttpInfo($mapi_contact_dto);
+             list($response) = $this->asContactDtoWithHttpInfo($mapi_contact_dto);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->mapiContactAsContactDtoWithHttpInfo($mapi_contact_dto);
+             list($response) = $this->asContactDtoWithHttpInfo($mapi_contact_dto);
              return $response;
         }
     }
 
     /**
-     * Operation mapiContactAsContactDtoWithHttpInfo
+     * Operation asContactDtoWithHttpInfo
      *
      * Converts MAPI contact model to ContactDto model.
      *
@@ -88,17 +88,17 @@ class MapiContactApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \Aspose\Email\Model\ContactDto, HTTP status code, HTTP response headers (array of strings)
      */
-    public function mapiContactAsContactDtoWithHttpInfo($mapi_contact_dto)
+    public function asContactDtoWithHttpInfo($mapi_contact_dto)
     {
         $returnType = '\Aspose\Email\Model\ContactDto';
-        $request = $this->mapiContactAsContactDtoRequest($mapi_contact_dto);
+        $request = $this->asContactDtoRequest($mapi_contact_dto);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation mapiContactAsContactDtoAsync
+     * Operation asContactDtoAsync
      *
      * Converts MAPI contact model to ContactDto model.
      *
@@ -107,9 +107,9 @@ class MapiContactApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function mapiContactAsContactDtoAsync($mapi_contact_dto)
+    public function asContactDtoAsync($mapi_contact_dto)
     {
-        return $this->mapiContactAsContactDtoAsyncWithHttpInfo($mapi_contact_dto)
+        return $this->asContactDtoAsyncWithHttpInfo($mapi_contact_dto)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -118,7 +118,7 @@ class MapiContactApi extends ApiBase
     }
 
     /**
-     * Operation mapiContactAsContactDtoAsyncWithHttpInfo
+     * Operation asContactDtoAsyncWithHttpInfo
      *
      * Converts MAPI contact model to ContactDto model.
      *
@@ -127,10 +127,10 @@ class MapiContactApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function mapiContactAsContactDtoAsyncWithHttpInfo($mapi_contact_dto)
+    public function asContactDtoAsyncWithHttpInfo($mapi_contact_dto)
     {
         $returnType = '\Aspose\Email\Model\ContactDto';
-        $request = $this->mapiContactAsContactDtoRequest($mapi_contact_dto);
+        $request = $this->asContactDtoRequest($mapi_contact_dto);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -145,19 +145,19 @@ class MapiContactApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'mapiContactAsContactDto'
+     * Create request for operation 'asContactDto'
      *
      * @param Model\MapiContactDto $mapi_contact_dto MAPI contact model to convert.
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function mapiContactAsContactDtoRequest($mapi_contact_dto)
+    protected function asContactDtoRequest($mapi_contact_dto)
     {
         // verify the required parameter '$mapi_contact_dto' is set
         if ($mapi_contact_dto === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $mapi_contact_dto when calling mapiContactAsContactDto'
+                'Missing the required parameter $mapi_contact_dto when calling asContactDto'
             );
         }
 
@@ -177,7 +177,7 @@ class MapiContactApi extends ApiBase
     }
             
     /**
-     * Operation mapiContactAsFile
+     * Operation asFile
      *
      * Converts MAPI contact model to specified format and returns as file.
      *
@@ -187,19 +187,19 @@ class MapiContactApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\\SplFileObject
      */
-    public function mapiContactAsFile($request)
+    public function asFile($request)
     {
         try {
-             list($response) = $this->mapiContactAsFileWithHttpInfo($request);
+             list($response) = $this->asFileWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->mapiContactAsFileWithHttpInfo($request);
+             list($response) = $this->asFileWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation mapiContactAsFileWithHttpInfo
+     * Operation asFileWithHttpInfo
      *
      * Converts MAPI contact model to specified format and returns as file.
      *
@@ -210,17 +210,17 @@ class MapiContactApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function mapiContactAsFileWithHttpInfo($request)
+    public function asFileWithHttpInfo($request)
     {
         $returnType = '\SplFileObject';
-        $request = $this->mapiContactAsFileRequest($request);
+        $request = $this->asFileRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation mapiContactAsFileAsync
+     * Operation asFileAsync
      *
      * Converts MAPI contact model to specified format and returns as file.
      *
@@ -229,9 +229,9 @@ class MapiContactApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function mapiContactAsFileAsync($request)
+    public function asFileAsync($request)
     {
-        return $this->mapiContactAsFileAsyncWithHttpInfo($request)
+        return $this->asFileAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -240,7 +240,7 @@ class MapiContactApi extends ApiBase
     }
 
     /**
-     * Operation mapiContactAsFileAsyncWithHttpInfo
+     * Operation asFileAsyncWithHttpInfo
      *
      * Converts MAPI contact model to specified format and returns as file.
      *
@@ -249,10 +249,10 @@ class MapiContactApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function mapiContactAsFileAsyncWithHttpInfo($request)
+    public function asFileAsyncWithHttpInfo($request)
     {
         $returnType = '\SplFileObject';
-        $request = $this->mapiContactAsFileRequest($request);
+        $request = $this->asFileRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -267,19 +267,19 @@ class MapiContactApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'mapiContactAsFile'
+     * Create request for operation 'asFile'
      *
      * @param Model\MapiContactAsFileRequest $request MAPI contact model to convert.
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function mapiContactAsFileRequest($request)
+    protected function asFileRequest($request)
     {
         // verify the required parameter '$request' is set
         if ($request === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $request when calling mapiContactAsFile'
+                'Missing the required parameter $request when calling asFile'
             );
         }
 
@@ -299,7 +299,7 @@ class MapiContactApi extends ApiBase
     }
             
     /**
-     * Operation mapiContactFromFile
+     * Operation fromFile
      *
      * Converts contact file to a MAPI model representation.
      *
@@ -309,19 +309,19 @@ class MapiContactApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\MapiContactDto
      */
-    public function mapiContactFromFile(Model\MapiContactFromFileRequest $request)
+    public function fromFile(Model\MapiContactFromFileRequest $request)
     {
         try {
-             list($response) = $this->mapiContactFromFileWithHttpInfo($request);
+             list($response) = $this->fromFileWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->mapiContactFromFileWithHttpInfo($request);
+             list($response) = $this->fromFileWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation mapiContactFromFileWithHttpInfo
+     * Operation fromFileWithHttpInfo
      *
      * Converts contact file to a MAPI model representation.
      *
@@ -332,17 +332,17 @@ class MapiContactApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \Aspose\Email\Model\MapiContactDto, HTTP status code, HTTP response headers (array of strings)
      */
-    public function mapiContactFromFileWithHttpInfo(Model\MapiContactFromFileRequest $request)
+    public function fromFileWithHttpInfo(Model\MapiContactFromFileRequest $request)
     {
         $returnType = '\Aspose\Email\Model\MapiContactDto';
-        $request = $this->mapiContactFromFileRequest($request);
+        $request = $this->fromFileRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation mapiContactFromFileAsync
+     * Operation fromFileAsync
      *
      * Converts contact file to a MAPI model representation.
      *
@@ -351,9 +351,9 @@ class MapiContactApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function mapiContactFromFileAsync(Model\MapiContactFromFileRequest $request)
+    public function fromFileAsync(Model\MapiContactFromFileRequest $request)
     {
-        return $this->mapiContactFromFileAsyncWithHttpInfo($request)
+        return $this->fromFileAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -362,7 +362,7 @@ class MapiContactApi extends ApiBase
     }
 
     /**
-     * Operation mapiContactFromFileAsyncWithHttpInfo
+     * Operation fromFileAsyncWithHttpInfo
      *
      * Converts contact file to a MAPI model representation.
      *
@@ -371,10 +371,10 @@ class MapiContactApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function mapiContactFromFileAsyncWithHttpInfo(Model\MapiContactFromFileRequest $request)
+    public function fromFileAsyncWithHttpInfo(Model\MapiContactFromFileRequest $request)
     {
         $returnType = '\Aspose\Email\Model\MapiContactDto';
-        $request = $this->mapiContactFromFileRequest($request);
+        $request = $this->fromFileRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -389,25 +389,25 @@ class MapiContactApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'mapiContactFromFile'
+     * Create request for operation 'fromFile'
      *
      * @param Model\MapiContactFromFileRequest $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function mapiContactFromFileRequest(Model\MapiContactFromFileRequest $request)
+    protected function fromFileRequest(Model\MapiContactFromFileRequest $request)
     {
         // verify the required parameter 'format' is set
         if ($request->format === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $format when calling mapiContactFromFile'
+                'Missing the required parameter $format when calling fromFile'
             );
         }
         // verify the required parameter 'file' is set
         if ($request->file === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $file when calling mapiContactFromFile'
+                'Missing the required parameter $file when calling fromFile'
             );
         }
 
@@ -420,7 +420,7 @@ class MapiContactApi extends ApiBase
         // query params
         $paramValue = $request->format;
         $paramBaseName = 'format';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         // form params
         $formFiles = [];
@@ -458,7 +458,7 @@ class MapiContactApi extends ApiBase
     }
             
     /**
-     * Operation mapiContactGet
+     * Operation get
      *
      * Get MAPI contact document.
      *
@@ -468,19 +468,19 @@ class MapiContactApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\MapiContactDto
      */
-    public function mapiContactGet(Model\MapiContactGetRequest $request)
+    public function get(Model\MapiContactGetRequest $request)
     {
         try {
-             list($response) = $this->mapiContactGetWithHttpInfo($request);
+             list($response) = $this->getWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->mapiContactGetWithHttpInfo($request);
+             list($response) = $this->getWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation mapiContactGetWithHttpInfo
+     * Operation getWithHttpInfo
      *
      * Get MAPI contact document.
      *
@@ -491,17 +491,17 @@ class MapiContactApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \Aspose\Email\Model\MapiContactDto, HTTP status code, HTTP response headers (array of strings)
      */
-    public function mapiContactGetWithHttpInfo(Model\MapiContactGetRequest $request)
+    public function getWithHttpInfo(Model\MapiContactGetRequest $request)
     {
         $returnType = '\Aspose\Email\Model\MapiContactDto';
-        $request = $this->mapiContactGetRequest($request);
+        $request = $this->getRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation mapiContactGetAsync
+     * Operation getAsync
      *
      * Get MAPI contact document.
      *
@@ -510,9 +510,9 @@ class MapiContactApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function mapiContactGetAsync(Model\MapiContactGetRequest $request)
+    public function getAsync(Model\MapiContactGetRequest $request)
     {
-        return $this->mapiContactGetAsyncWithHttpInfo($request)
+        return $this->getAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -521,7 +521,7 @@ class MapiContactApi extends ApiBase
     }
 
     /**
-     * Operation mapiContactGetAsyncWithHttpInfo
+     * Operation getAsyncWithHttpInfo
      *
      * Get MAPI contact document.
      *
@@ -530,10 +530,10 @@ class MapiContactApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function mapiContactGetAsyncWithHttpInfo(Model\MapiContactGetRequest $request)
+    public function getAsyncWithHttpInfo(Model\MapiContactGetRequest $request)
     {
         $returnType = '\Aspose\Email\Model\MapiContactDto';
-        $request = $this->mapiContactGetRequest($request);
+        $request = $this->getRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -548,25 +548,25 @@ class MapiContactApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'mapiContactGet'
+     * Create request for operation 'get'
      *
      * @param Model\MapiContactGetRequest $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function mapiContactGetRequest(Model\MapiContactGetRequest $request)
+    protected function getRequest(Model\MapiContactGetRequest $request)
     {
         // verify the required parameter 'format' is set
         if ($request->format === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $format when calling mapiContactGet'
+                'Missing the required parameter $format when calling get'
             );
         }
         // verify the required parameter 'file_name' is set
         if ($request->file_name === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $file_name when calling mapiContactGet'
+                'Missing the required parameter $file_name when calling get'
             );
         }
 
@@ -579,16 +579,16 @@ class MapiContactApi extends ApiBase
         // query params
         $paramValue = $request->format;
         $paramBaseName = 'format';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->file_name;
         $paramBaseName = 'fileName';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->folder;
         $paramBaseName = 'folder';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->storage;
         $paramBaseName = 'storage';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -614,7 +614,7 @@ class MapiContactApi extends ApiBase
     }
             
     /**
-     * Operation mapiContactSave
+     * Operation save
      *
      * Save MAPI Contact to storage.
      *
@@ -624,17 +624,17 @@ class MapiContactApi extends ApiBase
      * @throws InvalidArgumentException
      * @return void
      */
-    public function mapiContactSave($request)
+    public function save($request)
     {
         try {
-             $this->mapiContactSaveWithHttpInfo($request);
+             $this->saveWithHttpInfo($request);
         } catch (RepeatRequestException $e) {
-             $this->mapiContactSaveWithHttpInfo($request);
+             $this->saveWithHttpInfo($request);
         }
     }
 
     /**
-     * Operation mapiContactSaveWithHttpInfo
+     * Operation saveWithHttpInfo
      *
      * Save MAPI Contact to storage.
      *
@@ -645,16 +645,16 @@ class MapiContactApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function mapiContactSaveWithHttpInfo($request)
+    public function saveWithHttpInfo($request)
     {
-        $request = $this->mapiContactSaveRequest($request);
+        $request = $this->saveRequest($request);
     
         $response = $this->callClient($request);
         return [null, $response->getStatusCode(), $response->getHeaders()];
     }
 
     /**
-     * Operation mapiContactSaveAsync
+     * Operation saveAsync
      *
      * Save MAPI Contact to storage.
      *
@@ -663,9 +663,9 @@ class MapiContactApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function mapiContactSaveAsync($request)
+    public function saveAsync($request)
     {
-        return $this->mapiContactSaveAsyncWithHttpInfo($request)
+        return $this->saveAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -674,7 +674,7 @@ class MapiContactApi extends ApiBase
     }
 
     /**
-     * Operation mapiContactSaveAsyncWithHttpInfo
+     * Operation saveAsyncWithHttpInfo
      *
      * Save MAPI Contact to storage.
      *
@@ -683,9 +683,9 @@ class MapiContactApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function mapiContactSaveAsyncWithHttpInfo($request)
+    public function saveAsyncWithHttpInfo($request)
     {
-        $request = $this->mapiContactSaveRequest($request);
+        $request = $this->saveRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -700,19 +700,19 @@ class MapiContactApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'mapiContactSave'
+     * Create request for operation 'save'
      *
      * @param Model\MapiContactSaveRequest $request Create/Update contact request.
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function mapiContactSaveRequest($request)
+    protected function saveRequest($request)
     {
         // verify the required parameter '$request' is set
         if ($request === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $request when calling mapiContactSave'
+                'Missing the required parameter $request when calling save'
             );
         }
 

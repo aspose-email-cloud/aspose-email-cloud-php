@@ -40,22 +40,22 @@ use Aspose\Email\Model;
 class MapiMessageApi extends ApiBase
 {
     /**
-     * Initialize a new instance of EmailApi
-     * @param ClientInterface|null   $client client for calling api
-     * @param Configuration|null   $config configuration info
-     * @param HeaderSelector|null   $selector class for header selection
+     * Initialize a new instance of MapiMessageApi
+     * @param ClientInterface   $client client for calling api
+     * @param Configuration   $config configuration info
+     * @param HeaderSelector   $selector class for header selection
      */
     public function __construct(
-        ClientInterface $client = null,
-        Configuration $config = null,
-        HeaderSelector $selector = null
+        ClientInterface $client,
+        Configuration $config,
+        HeaderSelector $selector
     ) {
         parent::__construct($client, $config, $selector);
     }
 
             
     /**
-     * Operation mapiMessageAsEmailDto
+     * Operation asEmailDto
      *
      * Converts MAPI message model to EmailDto model
      *
@@ -65,19 +65,19 @@ class MapiMessageApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\EmailDto
      */
-    public function mapiMessageAsEmailDto($mapi_message)
+    public function asEmailDto($mapi_message)
     {
         try {
-             list($response) = $this->mapiMessageAsEmailDtoWithHttpInfo($mapi_message);
+             list($response) = $this->asEmailDtoWithHttpInfo($mapi_message);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->mapiMessageAsEmailDtoWithHttpInfo($mapi_message);
+             list($response) = $this->asEmailDtoWithHttpInfo($mapi_message);
              return $response;
         }
     }
 
     /**
-     * Operation mapiMessageAsEmailDtoWithHttpInfo
+     * Operation asEmailDtoWithHttpInfo
      *
      * Converts MAPI message model to EmailDto model
      *
@@ -88,17 +88,17 @@ class MapiMessageApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \Aspose\Email\Model\EmailDto, HTTP status code, HTTP response headers (array of strings)
      */
-    public function mapiMessageAsEmailDtoWithHttpInfo($mapi_message)
+    public function asEmailDtoWithHttpInfo($mapi_message)
     {
         $returnType = '\Aspose\Email\Model\EmailDto';
-        $request = $this->mapiMessageAsEmailDtoRequest($mapi_message);
+        $request = $this->asEmailDtoRequest($mapi_message);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation mapiMessageAsEmailDtoAsync
+     * Operation asEmailDtoAsync
      *
      * Converts MAPI message model to EmailDto model
      *
@@ -107,9 +107,9 @@ class MapiMessageApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function mapiMessageAsEmailDtoAsync($mapi_message)
+    public function asEmailDtoAsync($mapi_message)
     {
-        return $this->mapiMessageAsEmailDtoAsyncWithHttpInfo($mapi_message)
+        return $this->asEmailDtoAsyncWithHttpInfo($mapi_message)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -118,7 +118,7 @@ class MapiMessageApi extends ApiBase
     }
 
     /**
-     * Operation mapiMessageAsEmailDtoAsyncWithHttpInfo
+     * Operation asEmailDtoAsyncWithHttpInfo
      *
      * Converts MAPI message model to EmailDto model
      *
@@ -127,10 +127,10 @@ class MapiMessageApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function mapiMessageAsEmailDtoAsyncWithHttpInfo($mapi_message)
+    public function asEmailDtoAsyncWithHttpInfo($mapi_message)
     {
         $returnType = '\Aspose\Email\Model\EmailDto';
-        $request = $this->mapiMessageAsEmailDtoRequest($mapi_message);
+        $request = $this->asEmailDtoRequest($mapi_message);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -145,19 +145,19 @@ class MapiMessageApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'mapiMessageAsEmailDto'
+     * Create request for operation 'asEmailDto'
      *
      * @param Model\MapiMessageDto $mapi_message MAPI message model to convert
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function mapiMessageAsEmailDtoRequest($mapi_message)
+    protected function asEmailDtoRequest($mapi_message)
     {
         // verify the required parameter '$mapi_message' is set
         if ($mapi_message === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $mapi_message when calling mapiMessageAsEmailDto'
+                'Missing the required parameter $mapi_message when calling asEmailDto'
             );
         }
 
@@ -177,7 +177,7 @@ class MapiMessageApi extends ApiBase
     }
             
     /**
-     * Operation mapiMessageAsFile
+     * Operation asFile
      *
      * Converts MAPI message model to specified format and returns as file.
      *
@@ -187,19 +187,19 @@ class MapiMessageApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\\SplFileObject
      */
-    public function mapiMessageAsFile($request)
+    public function asFile($request)
     {
         try {
-             list($response) = $this->mapiMessageAsFileWithHttpInfo($request);
+             list($response) = $this->asFileWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->mapiMessageAsFileWithHttpInfo($request);
+             list($response) = $this->asFileWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation mapiMessageAsFileWithHttpInfo
+     * Operation asFileWithHttpInfo
      *
      * Converts MAPI message model to specified format and returns as file.
      *
@@ -210,17 +210,17 @@ class MapiMessageApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function mapiMessageAsFileWithHttpInfo($request)
+    public function asFileWithHttpInfo($request)
     {
         $returnType = '\SplFileObject';
-        $request = $this->mapiMessageAsFileRequest($request);
+        $request = $this->asFileRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation mapiMessageAsFileAsync
+     * Operation asFileAsync
      *
      * Converts MAPI message model to specified format and returns as file.
      *
@@ -229,9 +229,9 @@ class MapiMessageApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function mapiMessageAsFileAsync($request)
+    public function asFileAsync($request)
     {
-        return $this->mapiMessageAsFileAsyncWithHttpInfo($request)
+        return $this->asFileAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -240,7 +240,7 @@ class MapiMessageApi extends ApiBase
     }
 
     /**
-     * Operation mapiMessageAsFileAsyncWithHttpInfo
+     * Operation asFileAsyncWithHttpInfo
      *
      * Converts MAPI message model to specified format and returns as file.
      *
@@ -249,10 +249,10 @@ class MapiMessageApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function mapiMessageAsFileAsyncWithHttpInfo($request)
+    public function asFileAsyncWithHttpInfo($request)
     {
         $returnType = '\SplFileObject';
-        $request = $this->mapiMessageAsFileRequest($request);
+        $request = $this->asFileRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -267,19 +267,19 @@ class MapiMessageApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'mapiMessageAsFile'
+     * Create request for operation 'asFile'
      *
      * @param Model\MapiMessageAsFileRequest $request MAPI message model to convert.
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function mapiMessageAsFileRequest($request)
+    protected function asFileRequest($request)
     {
         // verify the required parameter '$request' is set
         if ($request === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $request when calling mapiMessageAsFile'
+                'Missing the required parameter $request when calling asFile'
             );
         }
 
@@ -299,7 +299,7 @@ class MapiMessageApi extends ApiBase
     }
             
     /**
-     * Operation mapiMessageFromFile
+     * Operation fromFile
      *
      * Converts email file to a MAPI model representation
      *
@@ -309,19 +309,19 @@ class MapiMessageApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\MapiMessageDto
      */
-    public function mapiMessageFromFile(Model\MapiMessageFromFileRequest $request)
+    public function fromFile(Model\MapiMessageFromFileRequest $request)
     {
         try {
-             list($response) = $this->mapiMessageFromFileWithHttpInfo($request);
+             list($response) = $this->fromFileWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->mapiMessageFromFileWithHttpInfo($request);
+             list($response) = $this->fromFileWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation mapiMessageFromFileWithHttpInfo
+     * Operation fromFileWithHttpInfo
      *
      * Converts email file to a MAPI model representation
      *
@@ -332,17 +332,17 @@ class MapiMessageApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \Aspose\Email\Model\MapiMessageDto, HTTP status code, HTTP response headers (array of strings)
      */
-    public function mapiMessageFromFileWithHttpInfo(Model\MapiMessageFromFileRequest $request)
+    public function fromFileWithHttpInfo(Model\MapiMessageFromFileRequest $request)
     {
         $returnType = '\Aspose\Email\Model\MapiMessageDto';
-        $request = $this->mapiMessageFromFileRequest($request);
+        $request = $this->fromFileRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation mapiMessageFromFileAsync
+     * Operation fromFileAsync
      *
      * Converts email file to a MAPI model representation
      *
@@ -351,9 +351,9 @@ class MapiMessageApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function mapiMessageFromFileAsync(Model\MapiMessageFromFileRequest $request)
+    public function fromFileAsync(Model\MapiMessageFromFileRequest $request)
     {
-        return $this->mapiMessageFromFileAsyncWithHttpInfo($request)
+        return $this->fromFileAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -362,7 +362,7 @@ class MapiMessageApi extends ApiBase
     }
 
     /**
-     * Operation mapiMessageFromFileAsyncWithHttpInfo
+     * Operation fromFileAsyncWithHttpInfo
      *
      * Converts email file to a MAPI model representation
      *
@@ -371,10 +371,10 @@ class MapiMessageApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function mapiMessageFromFileAsyncWithHttpInfo(Model\MapiMessageFromFileRequest $request)
+    public function fromFileAsyncWithHttpInfo(Model\MapiMessageFromFileRequest $request)
     {
         $returnType = '\Aspose\Email\Model\MapiMessageDto';
-        $request = $this->mapiMessageFromFileRequest($request);
+        $request = $this->fromFileRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -389,25 +389,25 @@ class MapiMessageApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'mapiMessageFromFile'
+     * Create request for operation 'fromFile'
      *
      * @param Model\MapiMessageFromFileRequest $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function mapiMessageFromFileRequest(Model\MapiMessageFromFileRequest $request)
+    protected function fromFileRequest(Model\MapiMessageFromFileRequest $request)
     {
         // verify the required parameter 'format' is set
         if ($request->format === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $format when calling mapiMessageFromFile'
+                'Missing the required parameter $format when calling fromFile'
             );
         }
         // verify the required parameter 'file' is set
         if ($request->file === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $file when calling mapiMessageFromFile'
+                'Missing the required parameter $file when calling fromFile'
             );
         }
 
@@ -420,7 +420,7 @@ class MapiMessageApi extends ApiBase
         // query params
         $paramValue = $request->format;
         $paramBaseName = 'format';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         // form params
         $formFiles = [];
@@ -458,7 +458,7 @@ class MapiMessageApi extends ApiBase
     }
             
     /**
-     * Operation mapiMessageGet
+     * Operation get
      *
      * Get MAPI message document.
      *
@@ -468,19 +468,19 @@ class MapiMessageApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\MapiMessageDto
      */
-    public function mapiMessageGet(Model\MapiMessageGetRequest $request)
+    public function get(Model\MapiMessageGetRequest $request)
     {
         try {
-             list($response) = $this->mapiMessageGetWithHttpInfo($request);
+             list($response) = $this->getWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->mapiMessageGetWithHttpInfo($request);
+             list($response) = $this->getWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation mapiMessageGetWithHttpInfo
+     * Operation getWithHttpInfo
      *
      * Get MAPI message document.
      *
@@ -491,17 +491,17 @@ class MapiMessageApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \Aspose\Email\Model\MapiMessageDto, HTTP status code, HTTP response headers (array of strings)
      */
-    public function mapiMessageGetWithHttpInfo(Model\MapiMessageGetRequest $request)
+    public function getWithHttpInfo(Model\MapiMessageGetRequest $request)
     {
         $returnType = '\Aspose\Email\Model\MapiMessageDto';
-        $request = $this->mapiMessageGetRequest($request);
+        $request = $this->getRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation mapiMessageGetAsync
+     * Operation getAsync
      *
      * Get MAPI message document.
      *
@@ -510,9 +510,9 @@ class MapiMessageApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function mapiMessageGetAsync(Model\MapiMessageGetRequest $request)
+    public function getAsync(Model\MapiMessageGetRequest $request)
     {
-        return $this->mapiMessageGetAsyncWithHttpInfo($request)
+        return $this->getAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -521,7 +521,7 @@ class MapiMessageApi extends ApiBase
     }
 
     /**
-     * Operation mapiMessageGetAsyncWithHttpInfo
+     * Operation getAsyncWithHttpInfo
      *
      * Get MAPI message document.
      *
@@ -530,10 +530,10 @@ class MapiMessageApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function mapiMessageGetAsyncWithHttpInfo(Model\MapiMessageGetRequest $request)
+    public function getAsyncWithHttpInfo(Model\MapiMessageGetRequest $request)
     {
         $returnType = '\Aspose\Email\Model\MapiMessageDto';
-        $request = $this->mapiMessageGetRequest($request);
+        $request = $this->getRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -548,25 +548,25 @@ class MapiMessageApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'mapiMessageGet'
+     * Create request for operation 'get'
      *
      * @param Model\MapiMessageGetRequest $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function mapiMessageGetRequest(Model\MapiMessageGetRequest $request)
+    protected function getRequest(Model\MapiMessageGetRequest $request)
     {
         // verify the required parameter 'format' is set
         if ($request->format === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $format when calling mapiMessageGet'
+                'Missing the required parameter $format when calling get'
             );
         }
         // verify the required parameter 'file_name' is set
         if ($request->file_name === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $file_name when calling mapiMessageGet'
+                'Missing the required parameter $file_name when calling get'
             );
         }
 
@@ -579,16 +579,16 @@ class MapiMessageApi extends ApiBase
         // query params
         $paramValue = $request->format;
         $paramBaseName = 'format';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->file_name;
         $paramBaseName = 'fileName';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->folder;
         $paramBaseName = 'folder';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->storage;
         $paramBaseName = 'storage';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -614,7 +614,7 @@ class MapiMessageApi extends ApiBase
     }
             
     /**
-     * Operation mapiMessageSave
+     * Operation save
      *
      * Save MAPI message to storage.
      *
@@ -624,17 +624,17 @@ class MapiMessageApi extends ApiBase
      * @throws InvalidArgumentException
      * @return void
      */
-    public function mapiMessageSave($request)
+    public function save($request)
     {
         try {
-             $this->mapiMessageSaveWithHttpInfo($request);
+             $this->saveWithHttpInfo($request);
         } catch (RepeatRequestException $e) {
-             $this->mapiMessageSaveWithHttpInfo($request);
+             $this->saveWithHttpInfo($request);
         }
     }
 
     /**
-     * Operation mapiMessageSaveWithHttpInfo
+     * Operation saveWithHttpInfo
      *
      * Save MAPI message to storage.
      *
@@ -645,16 +645,16 @@ class MapiMessageApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function mapiMessageSaveWithHttpInfo($request)
+    public function saveWithHttpInfo($request)
     {
-        $request = $this->mapiMessageSaveRequest($request);
+        $request = $this->saveRequest($request);
     
         $response = $this->callClient($request);
         return [null, $response->getStatusCode(), $response->getHeaders()];
     }
 
     /**
-     * Operation mapiMessageSaveAsync
+     * Operation saveAsync
      *
      * Save MAPI message to storage.
      *
@@ -663,9 +663,9 @@ class MapiMessageApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function mapiMessageSaveAsync($request)
+    public function saveAsync($request)
     {
-        return $this->mapiMessageSaveAsyncWithHttpInfo($request)
+        return $this->saveAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -674,7 +674,7 @@ class MapiMessageApi extends ApiBase
     }
 
     /**
-     * Operation mapiMessageSaveAsyncWithHttpInfo
+     * Operation saveAsyncWithHttpInfo
      *
      * Save MAPI message to storage.
      *
@@ -683,9 +683,9 @@ class MapiMessageApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function mapiMessageSaveAsyncWithHttpInfo($request)
+    public function saveAsyncWithHttpInfo($request)
     {
-        $request = $this->mapiMessageSaveRequest($request);
+        $request = $this->saveRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -700,19 +700,19 @@ class MapiMessageApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'mapiMessageSave'
+     * Create request for operation 'save'
      *
      * @param Model\MapiMessageSaveRequest $request Message create/update request.
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function mapiMessageSaveRequest($request)
+    protected function saveRequest($request)
     {
         // verify the required parameter '$request' is set
         if ($request === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $request when calling mapiMessageSave'
+                'Missing the required parameter $request when calling save'
             );
         }
 

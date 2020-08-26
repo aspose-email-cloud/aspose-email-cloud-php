@@ -40,22 +40,22 @@ use Aspose\Email\Model;
 class AiBcrApi extends ApiBase
 {
     /**
-     * Initialize a new instance of EmailApi
-     * @param ClientInterface|null   $client client for calling api
-     * @param Configuration|null   $config configuration info
-     * @param HeaderSelector|null   $selector class for header selection
+     * Initialize a new instance of AiBcrApi
+     * @param ClientInterface   $client client for calling api
+     * @param Configuration   $config configuration info
+     * @param HeaderSelector   $selector class for header selection
      */
     public function __construct(
-        ClientInterface $client = null,
-        Configuration $config = null,
-        HeaderSelector $selector = null
+        ClientInterface $client,
+        Configuration $config,
+        HeaderSelector $selector
     ) {
         parent::__construct($client, $config, $selector);
     }
 
             
     /**
-     * Operation aiBcrParse
+     * Operation parse
      *
      * Parse images to vCard document models
      *
@@ -65,19 +65,19 @@ class AiBcrApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\ContactList
      */
-    public function aiBcrParse(Model\AiBcrParseRequest $request)
+    public function parse(Model\AiBcrParseRequest $request)
     {
         try {
-             list($response) = $this->aiBcrParseWithHttpInfo($request);
+             list($response) = $this->parseWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->aiBcrParseWithHttpInfo($request);
+             list($response) = $this->parseWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation aiBcrParseWithHttpInfo
+     * Operation parseWithHttpInfo
      *
      * Parse images to vCard document models
      *
@@ -88,17 +88,17 @@ class AiBcrApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \Aspose\Email\Model\ContactList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function aiBcrParseWithHttpInfo(Model\AiBcrParseRequest $request)
+    public function parseWithHttpInfo(Model\AiBcrParseRequest $request)
     {
         $returnType = '\Aspose\Email\Model\ContactList';
-        $request = $this->aiBcrParseRequest($request);
+        $request = $this->parseRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation aiBcrParseAsync
+     * Operation parseAsync
      *
      * Parse images to vCard document models
      *
@@ -107,9 +107,9 @@ class AiBcrApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function aiBcrParseAsync(Model\AiBcrParseRequest $request)
+    public function parseAsync(Model\AiBcrParseRequest $request)
     {
-        return $this->aiBcrParseAsyncWithHttpInfo($request)
+        return $this->parseAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -118,7 +118,7 @@ class AiBcrApi extends ApiBase
     }
 
     /**
-     * Operation aiBcrParseAsyncWithHttpInfo
+     * Operation parseAsyncWithHttpInfo
      *
      * Parse images to vCard document models
      *
@@ -127,10 +127,10 @@ class AiBcrApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function aiBcrParseAsyncWithHttpInfo(Model\AiBcrParseRequest $request)
+    public function parseAsyncWithHttpInfo(Model\AiBcrParseRequest $request)
     {
         $returnType = '\Aspose\Email\Model\ContactList';
-        $request = $this->aiBcrParseRequest($request);
+        $request = $this->parseRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -145,19 +145,19 @@ class AiBcrApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'aiBcrParse'
+     * Create request for operation 'parse'
      *
      * @param Model\AiBcrParseRequest $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function aiBcrParseRequest(Model\AiBcrParseRequest $request)
+    protected function parseRequest(Model\AiBcrParseRequest $request)
     {
         // verify the required parameter 'file' is set
         if ($request->file === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $file when calling aiBcrParse'
+                'Missing the required parameter $file when calling parse'
             );
         }
 
@@ -170,13 +170,13 @@ class AiBcrApi extends ApiBase
         // query params
         $paramValue = $request->countries;
         $paramBaseName = 'countries';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->languages;
         $paramBaseName = 'languages';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->is_single;
         $paramBaseName = 'isSingle';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         // form params
         $formFiles = [];
@@ -214,7 +214,7 @@ class AiBcrApi extends ApiBase
     }
             
     /**
-     * Operation aiBcrParseStorage
+     * Operation parseStorage
      *
      * Parse images from storage to vCard files
      *
@@ -224,19 +224,19 @@ class AiBcrApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\StorageFileLocationList
      */
-    public function aiBcrParseStorage($request)
+    public function parseStorage($request)
     {
         try {
-             list($response) = $this->aiBcrParseStorageWithHttpInfo($request);
+             list($response) = $this->parseStorageWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->aiBcrParseStorageWithHttpInfo($request);
+             list($response) = $this->parseStorageWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation aiBcrParseStorageWithHttpInfo
+     * Operation parseStorageWithHttpInfo
      *
      * Parse images from storage to vCard files
      *
@@ -247,17 +247,17 @@ class AiBcrApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \Aspose\Email\Model\StorageFileLocationList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function aiBcrParseStorageWithHttpInfo($request)
+    public function parseStorageWithHttpInfo($request)
     {
         $returnType = '\Aspose\Email\Model\StorageFileLocationList';
-        $request = $this->aiBcrParseStorageRequest($request);
+        $request = $this->parseStorageRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation aiBcrParseStorageAsync
+     * Operation parseStorageAsync
      *
      * Parse images from storage to vCard files
      *
@@ -266,9 +266,9 @@ class AiBcrApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function aiBcrParseStorageAsync($request)
+    public function parseStorageAsync($request)
     {
-        return $this->aiBcrParseStorageAsyncWithHttpInfo($request)
+        return $this->parseStorageAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -277,7 +277,7 @@ class AiBcrApi extends ApiBase
     }
 
     /**
-     * Operation aiBcrParseStorageAsyncWithHttpInfo
+     * Operation parseStorageAsyncWithHttpInfo
      *
      * Parse images from storage to vCard files
      *
@@ -286,10 +286,10 @@ class AiBcrApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function aiBcrParseStorageAsyncWithHttpInfo($request)
+    public function parseStorageAsyncWithHttpInfo($request)
     {
         $returnType = '\Aspose\Email\Model\StorageFileLocationList';
-        $request = $this->aiBcrParseStorageRequest($request);
+        $request = $this->parseStorageRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -304,19 +304,19 @@ class AiBcrApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'aiBcrParseStorage'
+     * Create request for operation 'parseStorage'
      *
      * @param Model\AiBcrParseStorageRequest $request Request with images located on storage
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function aiBcrParseStorageRequest($request)
+    protected function parseStorageRequest($request)
     {
         // verify the required parameter '$request' is set
         if ($request === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $request when calling aiBcrParseStorage'
+                'Missing the required parameter $request when calling parseStorage'
             );
         }
 

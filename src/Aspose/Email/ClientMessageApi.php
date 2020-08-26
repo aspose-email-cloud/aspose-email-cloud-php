@@ -40,22 +40,22 @@ use Aspose\Email\Model;
 class ClientMessageApi extends ApiBase
 {
     /**
-     * Initialize a new instance of EmailApi
-     * @param ClientInterface|null   $client client for calling api
-     * @param Configuration|null   $config configuration info
-     * @param HeaderSelector|null   $selector class for header selection
+     * Initialize a new instance of ClientMessageApi
+     * @param ClientInterface   $client client for calling api
+     * @param Configuration   $config configuration info
+     * @param HeaderSelector   $selector class for header selection
      */
     public function __construct(
-        ClientInterface $client = null,
-        Configuration $config = null,
-        HeaderSelector $selector = null
+        ClientInterface $client,
+        Configuration $config,
+        HeaderSelector $selector
     ) {
         parent::__construct($client, $config, $selector);
     }
 
             
     /**
-     * Operation clientMessageAppend
+     * Operation append
      *
      * Add email message to specified folder in email account.
      *
@@ -65,19 +65,19 @@ class ClientMessageApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\ValueTOfString
      */
-    public function clientMessageAppend($request)
+    public function append($request)
     {
         try {
-             list($response) = $this->clientMessageAppendWithHttpInfo($request);
+             list($response) = $this->appendWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->clientMessageAppendWithHttpInfo($request);
+             list($response) = $this->appendWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation clientMessageAppendWithHttpInfo
+     * Operation appendWithHttpInfo
      *
      * Add email message to specified folder in email account.
      *
@@ -88,17 +88,17 @@ class ClientMessageApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \Aspose\Email\Model\ValueTOfString, HTTP status code, HTTP response headers (array of strings)
      */
-    public function clientMessageAppendWithHttpInfo($request)
+    public function appendWithHttpInfo($request)
     {
         $returnType = '\Aspose\Email\Model\ValueTOfString';
-        $request = $this->clientMessageAppendRequest($request);
+        $request = $this->appendRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation clientMessageAppendAsync
+     * Operation appendAsync
      *
      * Add email message to specified folder in email account.
      *
@@ -107,9 +107,9 @@ class ClientMessageApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function clientMessageAppendAsync($request)
+    public function appendAsync($request)
     {
-        return $this->clientMessageAppendAsyncWithHttpInfo($request)
+        return $this->appendAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -118,7 +118,7 @@ class ClientMessageApi extends ApiBase
     }
 
     /**
-     * Operation clientMessageAppendAsyncWithHttpInfo
+     * Operation appendAsyncWithHttpInfo
      *
      * Add email message to specified folder in email account.
      *
@@ -127,10 +127,10 @@ class ClientMessageApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function clientMessageAppendAsyncWithHttpInfo($request)
+    public function appendAsyncWithHttpInfo($request)
     {
         $returnType = '\Aspose\Email\Model\ValueTOfString';
-        $request = $this->clientMessageAppendRequest($request);
+        $request = $this->appendRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -145,19 +145,19 @@ class ClientMessageApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'clientMessageAppend'
+     * Create request for operation 'append'
      *
      * @param Model\ClientMessageAppendRequest $request Append email request.
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function clientMessageAppendRequest($request)
+    protected function appendRequest($request)
     {
         // verify the required parameter '$request' is set
         if ($request === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $request when calling clientMessageAppend'
+                'Missing the required parameter $request when calling append'
             );
         }
 
@@ -177,7 +177,7 @@ class ClientMessageApi extends ApiBase
     }
             
     /**
-     * Operation clientMessageAppendFile
+     * Operation appendFile
      *
      * Add email message from file to specified folder in email account.
      *
@@ -187,19 +187,19 @@ class ClientMessageApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\ValueTOfString
      */
-    public function clientMessageAppendFile(Model\ClientMessageAppendFileRequest $request)
+    public function appendFile(Model\ClientMessageAppendFileRequest $request)
     {
         try {
-             list($response) = $this->clientMessageAppendFileWithHttpInfo($request);
+             list($response) = $this->appendFileWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->clientMessageAppendFileWithHttpInfo($request);
+             list($response) = $this->appendFileWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation clientMessageAppendFileWithHttpInfo
+     * Operation appendFileWithHttpInfo
      *
      * Add email message from file to specified folder in email account.
      *
@@ -210,17 +210,17 @@ class ClientMessageApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \Aspose\Email\Model\ValueTOfString, HTTP status code, HTTP response headers (array of strings)
      */
-    public function clientMessageAppendFileWithHttpInfo(Model\ClientMessageAppendFileRequest $request)
+    public function appendFileWithHttpInfo(Model\ClientMessageAppendFileRequest $request)
     {
         $returnType = '\Aspose\Email\Model\ValueTOfString';
-        $request = $this->clientMessageAppendFileRequest($request);
+        $request = $this->appendFileRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation clientMessageAppendFileAsync
+     * Operation appendFileAsync
      *
      * Add email message from file to specified folder in email account.
      *
@@ -229,9 +229,9 @@ class ClientMessageApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function clientMessageAppendFileAsync(Model\ClientMessageAppendFileRequest $request)
+    public function appendFileAsync(Model\ClientMessageAppendFileRequest $request)
     {
-        return $this->clientMessageAppendFileAsyncWithHttpInfo($request)
+        return $this->appendFileAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -240,7 +240,7 @@ class ClientMessageApi extends ApiBase
     }
 
     /**
-     * Operation clientMessageAppendFileAsyncWithHttpInfo
+     * Operation appendFileAsyncWithHttpInfo
      *
      * Add email message from file to specified folder in email account.
      *
@@ -249,10 +249,10 @@ class ClientMessageApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function clientMessageAppendFileAsyncWithHttpInfo(Model\ClientMessageAppendFileRequest $request)
+    public function appendFileAsyncWithHttpInfo(Model\ClientMessageAppendFileRequest $request)
     {
         $returnType = '\Aspose\Email\Model\ValueTOfString';
-        $request = $this->clientMessageAppendFileRequest($request);
+        $request = $this->appendFileRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -267,25 +267,25 @@ class ClientMessageApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'clientMessageAppendFile'
+     * Create request for operation 'appendFile'
      *
      * @param Model\ClientMessageAppendFileRequest $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function clientMessageAppendFileRequest(Model\ClientMessageAppendFileRequest $request)
+    protected function appendFileRequest(Model\ClientMessageAppendFileRequest $request)
     {
         // verify the required parameter 'account' is set
         if ($request->account === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $account when calling clientMessageAppendFile'
+                'Missing the required parameter $account when calling appendFile'
             );
         }
         // verify the required parameter 'file' is set
         if ($request->file === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $file when calling clientMessageAppendFile'
+                'Missing the required parameter $file when calling appendFile'
             );
         }
 
@@ -298,22 +298,22 @@ class ClientMessageApi extends ApiBase
         // query params
         $paramValue = $request->account;
         $paramBaseName = 'account';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->storage;
         $paramBaseName = 'storage';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->account_storage_folder;
         $paramBaseName = 'accountStorageFolder';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->format;
         $paramBaseName = 'format';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->folder;
         $paramBaseName = 'folder';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->mark_as_sent;
         $paramBaseName = 'markAsSent';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         // form params
         $formFiles = [];
@@ -351,7 +351,7 @@ class ClientMessageApi extends ApiBase
     }
             
     /**
-     * Operation clientMessageDelete
+     * Operation delete
      *
      * Delete message.
      *
@@ -361,17 +361,17 @@ class ClientMessageApi extends ApiBase
      * @throws InvalidArgumentException
      * @return void
      */
-    public function clientMessageDelete($request)
+    public function delete($request)
     {
         try {
-             $this->clientMessageDeleteWithHttpInfo($request);
+             $this->deleteWithHttpInfo($request);
         } catch (RepeatRequestException $e) {
-             $this->clientMessageDeleteWithHttpInfo($request);
+             $this->deleteWithHttpInfo($request);
         }
     }
 
     /**
-     * Operation clientMessageDeleteWithHttpInfo
+     * Operation deleteWithHttpInfo
      *
      * Delete message.
      *
@@ -382,16 +382,16 @@ class ClientMessageApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function clientMessageDeleteWithHttpInfo($request)
+    public function deleteWithHttpInfo($request)
     {
-        $request = $this->clientMessageDeleteRequest($request);
+        $request = $this->deleteRequest($request);
     
         $response = $this->callClient($request);
         return [null, $response->getStatusCode(), $response->getHeaders()];
     }
 
     /**
-     * Operation clientMessageDeleteAsync
+     * Operation deleteAsync
      *
      * Delete message.
      *
@@ -400,9 +400,9 @@ class ClientMessageApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function clientMessageDeleteAsync($request)
+    public function deleteAsync($request)
     {
-        return $this->clientMessageDeleteAsyncWithHttpInfo($request)
+        return $this->deleteAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -411,7 +411,7 @@ class ClientMessageApi extends ApiBase
     }
 
     /**
-     * Operation clientMessageDeleteAsyncWithHttpInfo
+     * Operation deleteAsyncWithHttpInfo
      *
      * Delete message.
      *
@@ -420,9 +420,9 @@ class ClientMessageApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function clientMessageDeleteAsyncWithHttpInfo($request)
+    public function deleteAsyncWithHttpInfo($request)
     {
-        $request = $this->clientMessageDeleteRequest($request);
+        $request = $this->deleteRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -437,19 +437,19 @@ class ClientMessageApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'clientMessageDelete'
+     * Create request for operation 'delete'
      *
      * @param Model\ClientMessageDeleteRequest $request Delete message request.
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function clientMessageDeleteRequest($request)
+    protected function deleteRequest($request)
     {
         // verify the required parameter '$request' is set
         if ($request === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $request when calling clientMessageDelete'
+                'Missing the required parameter $request when calling delete'
             );
         }
 
@@ -469,7 +469,7 @@ class ClientMessageApi extends ApiBase
     }
             
     /**
-     * Operation clientMessageFetch
+     * Operation fetch
      *
      * Fetch message from email account
      *
@@ -479,19 +479,19 @@ class ClientMessageApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\MailMessageBase
      */
-    public function clientMessageFetch(Model\ClientMessageFetchRequest $request)
+    public function fetch(Model\ClientMessageFetchRequest $request)
     {
         try {
-             list($response) = $this->clientMessageFetchWithHttpInfo($request);
+             list($response) = $this->fetchWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->clientMessageFetchWithHttpInfo($request);
+             list($response) = $this->fetchWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation clientMessageFetchWithHttpInfo
+     * Operation fetchWithHttpInfo
      *
      * Fetch message from email account
      *
@@ -502,17 +502,17 @@ class ClientMessageApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \Aspose\Email\Model\MailMessageBase, HTTP status code, HTTP response headers (array of strings)
      */
-    public function clientMessageFetchWithHttpInfo(Model\ClientMessageFetchRequest $request)
+    public function fetchWithHttpInfo(Model\ClientMessageFetchRequest $request)
     {
         $returnType = '\Aspose\Email\Model\MailMessageBase';
-        $request = $this->clientMessageFetchRequest($request);
+        $request = $this->fetchRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation clientMessageFetchAsync
+     * Operation fetchAsync
      *
      * Fetch message from email account
      *
@@ -521,9 +521,9 @@ class ClientMessageApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function clientMessageFetchAsync(Model\ClientMessageFetchRequest $request)
+    public function fetchAsync(Model\ClientMessageFetchRequest $request)
     {
-        return $this->clientMessageFetchAsyncWithHttpInfo($request)
+        return $this->fetchAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -532,7 +532,7 @@ class ClientMessageApi extends ApiBase
     }
 
     /**
-     * Operation clientMessageFetchAsyncWithHttpInfo
+     * Operation fetchAsyncWithHttpInfo
      *
      * Fetch message from email account
      *
@@ -541,10 +541,10 @@ class ClientMessageApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function clientMessageFetchAsyncWithHttpInfo(Model\ClientMessageFetchRequest $request)
+    public function fetchAsyncWithHttpInfo(Model\ClientMessageFetchRequest $request)
     {
         $returnType = '\Aspose\Email\Model\MailMessageBase';
-        $request = $this->clientMessageFetchRequest($request);
+        $request = $this->fetchRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -559,25 +559,25 @@ class ClientMessageApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'clientMessageFetch'
+     * Create request for operation 'fetch'
      *
      * @param Model\ClientMessageFetchRequest $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function clientMessageFetchRequest(Model\ClientMessageFetchRequest $request)
+    protected function fetchRequest(Model\ClientMessageFetchRequest $request)
     {
         // verify the required parameter 'message_id' is set
         if ($request->message_id === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $message_id when calling clientMessageFetch'
+                'Missing the required parameter $message_id when calling fetch'
             );
         }
         // verify the required parameter 'account' is set
         if ($request->account === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $account when calling clientMessageFetch'
+                'Missing the required parameter $account when calling fetch'
             );
         }
 
@@ -590,25 +590,25 @@ class ClientMessageApi extends ApiBase
         // query params
         $paramValue = $request->message_id;
         $paramBaseName = 'messageId';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->account;
         $paramBaseName = 'account';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->folder;
         $paramBaseName = 'folder';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->storage;
         $paramBaseName = 'storage';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->account_storage_folder;
         $paramBaseName = 'accountStorageFolder';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->type;
         $paramBaseName = 'type';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->format;
         $paramBaseName = 'format';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -634,7 +634,7 @@ class ClientMessageApi extends ApiBase
     }
             
     /**
-     * Operation clientMessageFetchFile
+     * Operation fetchFile
      *
      * Fetch message as file from email account
      *
@@ -644,19 +644,19 @@ class ClientMessageApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\\SplFileObject
      */
-    public function clientMessageFetchFile(Model\ClientMessageFetchFileRequest $request)
+    public function fetchFile(Model\ClientMessageFetchFileRequest $request)
     {
         try {
-             list($response) = $this->clientMessageFetchFileWithHttpInfo($request);
+             list($response) = $this->fetchFileWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->clientMessageFetchFileWithHttpInfo($request);
+             list($response) = $this->fetchFileWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation clientMessageFetchFileWithHttpInfo
+     * Operation fetchFileWithHttpInfo
      *
      * Fetch message as file from email account
      *
@@ -667,17 +667,17 @@ class ClientMessageApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function clientMessageFetchFileWithHttpInfo(Model\ClientMessageFetchFileRequest $request)
+    public function fetchFileWithHttpInfo(Model\ClientMessageFetchFileRequest $request)
     {
         $returnType = '\SplFileObject';
-        $request = $this->clientMessageFetchFileRequest($request);
+        $request = $this->fetchFileRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation clientMessageFetchFileAsync
+     * Operation fetchFileAsync
      *
      * Fetch message as file from email account
      *
@@ -686,9 +686,9 @@ class ClientMessageApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function clientMessageFetchFileAsync(Model\ClientMessageFetchFileRequest $request)
+    public function fetchFileAsync(Model\ClientMessageFetchFileRequest $request)
     {
-        return $this->clientMessageFetchFileAsyncWithHttpInfo($request)
+        return $this->fetchFileAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -697,7 +697,7 @@ class ClientMessageApi extends ApiBase
     }
 
     /**
-     * Operation clientMessageFetchFileAsyncWithHttpInfo
+     * Operation fetchFileAsyncWithHttpInfo
      *
      * Fetch message as file from email account
      *
@@ -706,10 +706,10 @@ class ClientMessageApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function clientMessageFetchFileAsyncWithHttpInfo(Model\ClientMessageFetchFileRequest $request)
+    public function fetchFileAsyncWithHttpInfo(Model\ClientMessageFetchFileRequest $request)
     {
         $returnType = '\SplFileObject';
-        $request = $this->clientMessageFetchFileRequest($request);
+        $request = $this->fetchFileRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -724,25 +724,25 @@ class ClientMessageApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'clientMessageFetchFile'
+     * Create request for operation 'fetchFile'
      *
      * @param Model\ClientMessageFetchFileRequest $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function clientMessageFetchFileRequest(Model\ClientMessageFetchFileRequest $request)
+    protected function fetchFileRequest(Model\ClientMessageFetchFileRequest $request)
     {
         // verify the required parameter 'message_id' is set
         if ($request->message_id === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $message_id when calling clientMessageFetchFile'
+                'Missing the required parameter $message_id when calling fetchFile'
             );
         }
         // verify the required parameter 'account' is set
         if ($request->account === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $account when calling clientMessageFetchFile'
+                'Missing the required parameter $account when calling fetchFile'
             );
         }
 
@@ -755,22 +755,22 @@ class ClientMessageApi extends ApiBase
         // query params
         $paramValue = $request->message_id;
         $paramBaseName = 'messageId';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->account;
         $paramBaseName = 'account';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->folder;
         $paramBaseName = 'folder';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->storage;
         $paramBaseName = 'storage';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->account_storage_folder;
         $paramBaseName = 'accountStorageFolder';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->format;
         $paramBaseName = 'format';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -796,7 +796,7 @@ class ClientMessageApi extends ApiBase
     }
             
     /**
-     * Operation clientMessageList
+     * Operation list
      *
      * Get messages from folder, filtered by query
      *
@@ -806,19 +806,19 @@ class ClientMessageApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\MailMessageBaseList
      */
-    public function clientMessageList(Model\ClientMessageListRequest $request)
+    public function list(Model\ClientMessageListRequest $request)
     {
         try {
-             list($response) = $this->clientMessageListWithHttpInfo($request);
+             list($response) = $this->listWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->clientMessageListWithHttpInfo($request);
+             list($response) = $this->listWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation clientMessageListWithHttpInfo
+     * Operation listWithHttpInfo
      *
      * Get messages from folder, filtered by query
      *
@@ -829,17 +829,17 @@ class ClientMessageApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \Aspose\Email\Model\MailMessageBaseList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function clientMessageListWithHttpInfo(Model\ClientMessageListRequest $request)
+    public function listWithHttpInfo(Model\ClientMessageListRequest $request)
     {
         $returnType = '\Aspose\Email\Model\MailMessageBaseList';
-        $request = $this->clientMessageListRequest($request);
+        $request = $this->listRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation clientMessageListAsync
+     * Operation listAsync
      *
      * Get messages from folder, filtered by query
      *
@@ -848,9 +848,9 @@ class ClientMessageApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function clientMessageListAsync(Model\ClientMessageListRequest $request)
+    public function listAsync(Model\ClientMessageListRequest $request)
     {
-        return $this->clientMessageListAsyncWithHttpInfo($request)
+        return $this->listAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -859,7 +859,7 @@ class ClientMessageApi extends ApiBase
     }
 
     /**
-     * Operation clientMessageListAsyncWithHttpInfo
+     * Operation listAsyncWithHttpInfo
      *
      * Get messages from folder, filtered by query
      *
@@ -868,10 +868,10 @@ class ClientMessageApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function clientMessageListAsyncWithHttpInfo(Model\ClientMessageListRequest $request)
+    public function listAsyncWithHttpInfo(Model\ClientMessageListRequest $request)
     {
         $returnType = '\Aspose\Email\Model\MailMessageBaseList';
-        $request = $this->clientMessageListRequest($request);
+        $request = $this->listRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -886,25 +886,25 @@ class ClientMessageApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'clientMessageList'
+     * Create request for operation 'list'
      *
      * @param Model\ClientMessageListRequest $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function clientMessageListRequest(Model\ClientMessageListRequest $request)
+    protected function listRequest(Model\ClientMessageListRequest $request)
     {
         // verify the required parameter 'folder' is set
         if ($request->folder === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $folder when calling clientMessageList'
+                'Missing the required parameter $folder when calling list'
             );
         }
         // verify the required parameter 'account' is set
         if ($request->account === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $account when calling clientMessageList'
+                'Missing the required parameter $account when calling list'
             );
         }
 
@@ -917,28 +917,28 @@ class ClientMessageApi extends ApiBase
         // query params
         $paramValue = $request->folder;
         $paramBaseName = 'folder';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->account;
         $paramBaseName = 'account';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->query_string;
         $paramBaseName = 'queryString';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->storage;
         $paramBaseName = 'storage';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->account_storage_folder;
         $paramBaseName = 'accountStorageFolder';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->recursive;
         $paramBaseName = 'recursive';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->type;
         $paramBaseName = 'type';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->format;
         $paramBaseName = 'format';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -964,7 +964,7 @@ class ClientMessageApi extends ApiBase
     }
             
     /**
-     * Operation clientMessageMove
+     * Operation move
      *
      * Move message to another folder.
      *
@@ -974,17 +974,17 @@ class ClientMessageApi extends ApiBase
      * @throws InvalidArgumentException
      * @return void
      */
-    public function clientMessageMove($request)
+    public function move($request)
     {
         try {
-             $this->clientMessageMoveWithHttpInfo($request);
+             $this->moveWithHttpInfo($request);
         } catch (RepeatRequestException $e) {
-             $this->clientMessageMoveWithHttpInfo($request);
+             $this->moveWithHttpInfo($request);
         }
     }
 
     /**
-     * Operation clientMessageMoveWithHttpInfo
+     * Operation moveWithHttpInfo
      *
      * Move message to another folder.
      *
@@ -995,16 +995,16 @@ class ClientMessageApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function clientMessageMoveWithHttpInfo($request)
+    public function moveWithHttpInfo($request)
     {
-        $request = $this->clientMessageMoveRequest($request);
+        $request = $this->moveRequest($request);
     
         $response = $this->callClient($request);
         return [null, $response->getStatusCode(), $response->getHeaders()];
     }
 
     /**
-     * Operation clientMessageMoveAsync
+     * Operation moveAsync
      *
      * Move message to another folder.
      *
@@ -1013,9 +1013,9 @@ class ClientMessageApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function clientMessageMoveAsync($request)
+    public function moveAsync($request)
     {
-        return $this->clientMessageMoveAsyncWithHttpInfo($request)
+        return $this->moveAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1024,7 +1024,7 @@ class ClientMessageApi extends ApiBase
     }
 
     /**
-     * Operation clientMessageMoveAsyncWithHttpInfo
+     * Operation moveAsyncWithHttpInfo
      *
      * Move message to another folder.
      *
@@ -1033,9 +1033,9 @@ class ClientMessageApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function clientMessageMoveAsyncWithHttpInfo($request)
+    public function moveAsyncWithHttpInfo($request)
     {
-        $request = $this->clientMessageMoveRequest($request);
+        $request = $this->moveRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1050,19 +1050,19 @@ class ClientMessageApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'clientMessageMove'
+     * Create request for operation 'move'
      *
      * @param Model\ClientMessageMoveRequest $request Move message request.
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function clientMessageMoveRequest($request)
+    protected function moveRequest($request)
     {
         // verify the required parameter '$request' is set
         if ($request === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $request when calling clientMessageMove'
+                'Missing the required parameter $request when calling move'
             );
         }
 
@@ -1082,7 +1082,7 @@ class ClientMessageApi extends ApiBase
     }
             
     /**
-     * Operation clientMessageSend
+     * Operation send
      *
      * Send an email specified by model in request.
      *
@@ -1092,17 +1092,17 @@ class ClientMessageApi extends ApiBase
      * @throws InvalidArgumentException
      * @return void
      */
-    public function clientMessageSend($request)
+    public function send($request)
     {
         try {
-             $this->clientMessageSendWithHttpInfo($request);
+             $this->sendWithHttpInfo($request);
         } catch (RepeatRequestException $e) {
-             $this->clientMessageSendWithHttpInfo($request);
+             $this->sendWithHttpInfo($request);
         }
     }
 
     /**
-     * Operation clientMessageSendWithHttpInfo
+     * Operation sendWithHttpInfo
      *
      * Send an email specified by model in request.
      *
@@ -1113,16 +1113,16 @@ class ClientMessageApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function clientMessageSendWithHttpInfo($request)
+    public function sendWithHttpInfo($request)
     {
-        $request = $this->clientMessageSendRequest($request);
+        $request = $this->sendRequest($request);
     
         $response = $this->callClient($request);
         return [null, $response->getStatusCode(), $response->getHeaders()];
     }
 
     /**
-     * Operation clientMessageSendAsync
+     * Operation sendAsync
      *
      * Send an email specified by model in request.
      *
@@ -1131,9 +1131,9 @@ class ClientMessageApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function clientMessageSendAsync($request)
+    public function sendAsync($request)
     {
-        return $this->clientMessageSendAsyncWithHttpInfo($request)
+        return $this->sendAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1142,7 +1142,7 @@ class ClientMessageApi extends ApiBase
     }
 
     /**
-     * Operation clientMessageSendAsyncWithHttpInfo
+     * Operation sendAsyncWithHttpInfo
      *
      * Send an email specified by model in request.
      *
@@ -1151,9 +1151,9 @@ class ClientMessageApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function clientMessageSendAsyncWithHttpInfo($request)
+    public function sendAsyncWithHttpInfo($request)
     {
-        $request = $this->clientMessageSendRequest($request);
+        $request = $this->sendRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1168,19 +1168,19 @@ class ClientMessageApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'clientMessageSend'
+     * Create request for operation 'send'
      *
      * @param Model\ClientMessageSendRequest $request Send email request.
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function clientMessageSendRequest($request)
+    protected function sendRequest($request)
     {
         // verify the required parameter '$request' is set
         if ($request === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $request when calling clientMessageSend'
+                'Missing the required parameter $request when calling send'
             );
         }
 
@@ -1200,7 +1200,7 @@ class ClientMessageApi extends ApiBase
     }
             
     /**
-     * Operation clientMessageSendFile
+     * Operation sendFile
      *
      * Send an email file.
      *
@@ -1210,17 +1210,17 @@ class ClientMessageApi extends ApiBase
      * @throws InvalidArgumentException
      * @return void
      */
-    public function clientMessageSendFile(Model\ClientMessageSendFileRequest $request)
+    public function sendFile(Model\ClientMessageSendFileRequest $request)
     {
         try {
-             $this->clientMessageSendFileWithHttpInfo($request);
+             $this->sendFileWithHttpInfo($request);
         } catch (RepeatRequestException $e) {
-             $this->clientMessageSendFileWithHttpInfo($request);
+             $this->sendFileWithHttpInfo($request);
         }
     }
 
     /**
-     * Operation clientMessageSendFileWithHttpInfo
+     * Operation sendFileWithHttpInfo
      *
      * Send an email file.
      *
@@ -1231,16 +1231,16 @@ class ClientMessageApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function clientMessageSendFileWithHttpInfo(Model\ClientMessageSendFileRequest $request)
+    public function sendFileWithHttpInfo(Model\ClientMessageSendFileRequest $request)
     {
-        $request = $this->clientMessageSendFileRequest($request);
+        $request = $this->sendFileRequest($request);
     
         $response = $this->callClient($request);
         return [null, $response->getStatusCode(), $response->getHeaders()];
     }
 
     /**
-     * Operation clientMessageSendFileAsync
+     * Operation sendFileAsync
      *
      * Send an email file.
      *
@@ -1249,9 +1249,9 @@ class ClientMessageApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function clientMessageSendFileAsync(Model\ClientMessageSendFileRequest $request)
+    public function sendFileAsync(Model\ClientMessageSendFileRequest $request)
     {
-        return $this->clientMessageSendFileAsyncWithHttpInfo($request)
+        return $this->sendFileAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1260,7 +1260,7 @@ class ClientMessageApi extends ApiBase
     }
 
     /**
-     * Operation clientMessageSendFileAsyncWithHttpInfo
+     * Operation sendFileAsyncWithHttpInfo
      *
      * Send an email file.
      *
@@ -1269,9 +1269,9 @@ class ClientMessageApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function clientMessageSendFileAsyncWithHttpInfo(Model\ClientMessageSendFileRequest $request)
+    public function sendFileAsyncWithHttpInfo(Model\ClientMessageSendFileRequest $request)
     {
-        $request = $this->clientMessageSendFileRequest($request);
+        $request = $this->sendFileRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1286,25 +1286,25 @@ class ClientMessageApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'clientMessageSendFile'
+     * Create request for operation 'sendFile'
      *
      * @param Model\ClientMessageSendFileRequest $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function clientMessageSendFileRequest(Model\ClientMessageSendFileRequest $request)
+    protected function sendFileRequest(Model\ClientMessageSendFileRequest $request)
     {
         // verify the required parameter 'account' is set
         if ($request->account === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $account when calling clientMessageSendFile'
+                'Missing the required parameter $account when calling sendFile'
             );
         }
         // verify the required parameter 'file' is set
         if ($request->file === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $file when calling clientMessageSendFile'
+                'Missing the required parameter $file when calling sendFile'
             );
         }
 
@@ -1317,16 +1317,16 @@ class ClientMessageApi extends ApiBase
         // query params
         $paramValue = $request->account;
         $paramBaseName = 'account';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->storage;
         $paramBaseName = 'storage';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->account_storage_folder;
         $paramBaseName = 'accountStorageFolder';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->format;
         $paramBaseName = 'format';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         // form params
         $formFiles = [];
@@ -1364,7 +1364,7 @@ class ClientMessageApi extends ApiBase
     }
             
     /**
-     * Operation clientMessageSetIsRead
+     * Operation setIsRead
      *
      * Mark message as read or unread.
      *
@@ -1374,17 +1374,17 @@ class ClientMessageApi extends ApiBase
      * @throws InvalidArgumentException
      * @return void
      */
-    public function clientMessageSetIsRead($request)
+    public function setIsRead($request)
     {
         try {
-             $this->clientMessageSetIsReadWithHttpInfo($request);
+             $this->setIsReadWithHttpInfo($request);
         } catch (RepeatRequestException $e) {
-             $this->clientMessageSetIsReadWithHttpInfo($request);
+             $this->setIsReadWithHttpInfo($request);
         }
     }
 
     /**
-     * Operation clientMessageSetIsReadWithHttpInfo
+     * Operation setIsReadWithHttpInfo
      *
      * Mark message as read or unread.
      *
@@ -1395,16 +1395,16 @@ class ClientMessageApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function clientMessageSetIsReadWithHttpInfo($request)
+    public function setIsReadWithHttpInfo($request)
     {
-        $request = $this->clientMessageSetIsReadRequest($request);
+        $request = $this->setIsReadRequest($request);
     
         $response = $this->callClient($request);
         return [null, $response->getStatusCode(), $response->getHeaders()];
     }
 
     /**
-     * Operation clientMessageSetIsReadAsync
+     * Operation setIsReadAsync
      *
      * Mark message as read or unread.
      *
@@ -1413,9 +1413,9 @@ class ClientMessageApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function clientMessageSetIsReadAsync($request)
+    public function setIsReadAsync($request)
     {
-        return $this->clientMessageSetIsReadAsyncWithHttpInfo($request)
+        return $this->setIsReadAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1424,7 +1424,7 @@ class ClientMessageApi extends ApiBase
     }
 
     /**
-     * Operation clientMessageSetIsReadAsyncWithHttpInfo
+     * Operation setIsReadAsyncWithHttpInfo
      *
      * Mark message as read or unread.
      *
@@ -1433,9 +1433,9 @@ class ClientMessageApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function clientMessageSetIsReadAsyncWithHttpInfo($request)
+    public function setIsReadAsyncWithHttpInfo($request)
     {
-        $request = $this->clientMessageSetIsReadRequest($request);
+        $request = $this->setIsReadRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1450,19 +1450,19 @@ class ClientMessageApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'clientMessageSetIsRead'
+     * Create request for operation 'setIsRead'
      *
      * @param Model\ClientMessageSetIsReadRequest $request Delete message request.
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function clientMessageSetIsReadRequest($request)
+    protected function setIsReadRequest($request)
     {
         // verify the required parameter '$request' is set
         if ($request === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $request when calling clientMessageSetIsRead'
+                'Missing the required parameter $request when calling setIsRead'
             );
         }
 

@@ -40,22 +40,22 @@ use Aspose\Email\Model;
 class EmailConfigApi extends ApiBase
 {
     /**
-     * Initialize a new instance of EmailApi
-     * @param ClientInterface|null   $client client for calling api
-     * @param Configuration|null   $config configuration info
-     * @param HeaderSelector|null   $selector class for header selection
+     * Initialize a new instance of EmailConfigApi
+     * @param ClientInterface   $client client for calling api
+     * @param Configuration   $config configuration info
+     * @param HeaderSelector   $selector class for header selection
      */
     public function __construct(
-        ClientInterface $client = null,
-        Configuration $config = null,
-        HeaderSelector $selector = null
+        ClientInterface $client,
+        Configuration $config,
+        HeaderSelector $selector
     ) {
         parent::__construct($client, $config, $selector);
     }
 
             
     /**
-     * Operation emailConfigDiscover
+     * Operation discover
      *
      * Discover email accounts by email address. Does not validate discovered accounts.
      *
@@ -65,19 +65,19 @@ class EmailConfigApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\EmailAccountConfigList
      */
-    public function emailConfigDiscover(Model\EmailConfigDiscoverRequest $request)
+    public function discover(Model\EmailConfigDiscoverRequest $request)
     {
         try {
-             list($response) = $this->emailConfigDiscoverWithHttpInfo($request);
+             list($response) = $this->discoverWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->emailConfigDiscoverWithHttpInfo($request);
+             list($response) = $this->discoverWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation emailConfigDiscoverWithHttpInfo
+     * Operation discoverWithHttpInfo
      *
      * Discover email accounts by email address. Does not validate discovered accounts.
      *
@@ -88,17 +88,17 @@ class EmailConfigApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \Aspose\Email\Model\EmailAccountConfigList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function emailConfigDiscoverWithHttpInfo(Model\EmailConfigDiscoverRequest $request)
+    public function discoverWithHttpInfo(Model\EmailConfigDiscoverRequest $request)
     {
         $returnType = '\Aspose\Email\Model\EmailAccountConfigList';
-        $request = $this->emailConfigDiscoverRequest($request);
+        $request = $this->discoverRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation emailConfigDiscoverAsync
+     * Operation discoverAsync
      *
      * Discover email accounts by email address. Does not validate discovered accounts.
      *
@@ -107,9 +107,9 @@ class EmailConfigApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function emailConfigDiscoverAsync(Model\EmailConfigDiscoverRequest $request)
+    public function discoverAsync(Model\EmailConfigDiscoverRequest $request)
     {
-        return $this->emailConfigDiscoverAsyncWithHttpInfo($request)
+        return $this->discoverAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -118,7 +118,7 @@ class EmailConfigApi extends ApiBase
     }
 
     /**
-     * Operation emailConfigDiscoverAsyncWithHttpInfo
+     * Operation discoverAsyncWithHttpInfo
      *
      * Discover email accounts by email address. Does not validate discovered accounts.
      *
@@ -127,10 +127,10 @@ class EmailConfigApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function emailConfigDiscoverAsyncWithHttpInfo(Model\EmailConfigDiscoverRequest $request)
+    public function discoverAsyncWithHttpInfo(Model\EmailConfigDiscoverRequest $request)
     {
         $returnType = '\Aspose\Email\Model\EmailAccountConfigList';
-        $request = $this->emailConfigDiscoverRequest($request);
+        $request = $this->discoverRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -145,19 +145,19 @@ class EmailConfigApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'emailConfigDiscover'
+     * Create request for operation 'discover'
      *
      * @param Model\EmailConfigDiscoverRequest $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function emailConfigDiscoverRequest(Model\EmailConfigDiscoverRequest $request)
+    protected function discoverRequest(Model\EmailConfigDiscoverRequest $request)
     {
         // verify the required parameter 'address' is set
         if ($request->address === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $address when calling emailConfigDiscover'
+                'Missing the required parameter $address when calling discover'
             );
         }
 
@@ -170,10 +170,10 @@ class EmailConfigApi extends ApiBase
         // query params
         $paramValue = $request->address;
         $paramBaseName = 'address';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->fast_processing;
         $paramBaseName = 'fastProcessing';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -199,7 +199,7 @@ class EmailConfigApi extends ApiBase
     }
             
     /**
-     * Operation emailConfigDiscoverOauth
+     * Operation discoverOauth
      *
      * Discover email accounts by email address. Validates discovered accounts using OAuth 2.0.
      *
@@ -209,19 +209,19 @@ class EmailConfigApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\EmailAccountConfigList
      */
-    public function emailConfigDiscoverOauth($request)
+    public function discoverOauth($request)
     {
         try {
-             list($response) = $this->emailConfigDiscoverOauthWithHttpInfo($request);
+             list($response) = $this->discoverOauthWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->emailConfigDiscoverOauthWithHttpInfo($request);
+             list($response) = $this->discoverOauthWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation emailConfigDiscoverOauthWithHttpInfo
+     * Operation discoverOauthWithHttpInfo
      *
      * Discover email accounts by email address. Validates discovered accounts using OAuth 2.0.
      *
@@ -232,17 +232,17 @@ class EmailConfigApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \Aspose\Email\Model\EmailAccountConfigList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function emailConfigDiscoverOauthWithHttpInfo($request)
+    public function discoverOauthWithHttpInfo($request)
     {
         $returnType = '\Aspose\Email\Model\EmailAccountConfigList';
-        $request = $this->emailConfigDiscoverOauthRequest($request);
+        $request = $this->discoverOauthRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation emailConfigDiscoverOauthAsync
+     * Operation discoverOauthAsync
      *
      * Discover email accounts by email address. Validates discovered accounts using OAuth 2.0.
      *
@@ -251,9 +251,9 @@ class EmailConfigApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function emailConfigDiscoverOauthAsync($request)
+    public function discoverOauthAsync($request)
     {
-        return $this->emailConfigDiscoverOauthAsyncWithHttpInfo($request)
+        return $this->discoverOauthAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -262,7 +262,7 @@ class EmailConfigApi extends ApiBase
     }
 
     /**
-     * Operation emailConfigDiscoverOauthAsyncWithHttpInfo
+     * Operation discoverOauthAsyncWithHttpInfo
      *
      * Discover email accounts by email address. Validates discovered accounts using OAuth 2.0.
      *
@@ -271,10 +271,10 @@ class EmailConfigApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function emailConfigDiscoverOauthAsyncWithHttpInfo($request)
+    public function discoverOauthAsyncWithHttpInfo($request)
     {
         $returnType = '\Aspose\Email\Model\EmailAccountConfigList';
-        $request = $this->emailConfigDiscoverOauthRequest($request);
+        $request = $this->discoverOauthRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -289,19 +289,19 @@ class EmailConfigApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'emailConfigDiscoverOauth'
+     * Create request for operation 'discoverOauth'
      *
      * @param Model\EmailConfigDiscoverOauthRequest $request Discover email configuration request.
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function emailConfigDiscoverOauthRequest($request)
+    protected function discoverOauthRequest($request)
     {
         // verify the required parameter '$request' is set
         if ($request === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $request when calling emailConfigDiscoverOauth'
+                'Missing the required parameter $request when calling discoverOauth'
             );
         }
 
@@ -321,7 +321,7 @@ class EmailConfigApi extends ApiBase
     }
             
     /**
-     * Operation emailConfigDiscoverPassword
+     * Operation discoverPassword
      *
      * Discover email accounts by email address. Validates discovered accounts using login and password.
      *
@@ -331,19 +331,19 @@ class EmailConfigApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\EmailAccountConfigList
      */
-    public function emailConfigDiscoverPassword($request)
+    public function discoverPassword($request)
     {
         try {
-             list($response) = $this->emailConfigDiscoverPasswordWithHttpInfo($request);
+             list($response) = $this->discoverPasswordWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->emailConfigDiscoverPasswordWithHttpInfo($request);
+             list($response) = $this->discoverPasswordWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation emailConfigDiscoverPasswordWithHttpInfo
+     * Operation discoverPasswordWithHttpInfo
      *
      * Discover email accounts by email address. Validates discovered accounts using login and password.
      *
@@ -354,17 +354,17 @@ class EmailConfigApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \Aspose\Email\Model\EmailAccountConfigList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function emailConfigDiscoverPasswordWithHttpInfo($request)
+    public function discoverPasswordWithHttpInfo($request)
     {
         $returnType = '\Aspose\Email\Model\EmailAccountConfigList';
-        $request = $this->emailConfigDiscoverPasswordRequest($request);
+        $request = $this->discoverPasswordRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation emailConfigDiscoverPasswordAsync
+     * Operation discoverPasswordAsync
      *
      * Discover email accounts by email address. Validates discovered accounts using login and password.
      *
@@ -373,9 +373,9 @@ class EmailConfigApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function emailConfigDiscoverPasswordAsync($request)
+    public function discoverPasswordAsync($request)
     {
-        return $this->emailConfigDiscoverPasswordAsyncWithHttpInfo($request)
+        return $this->discoverPasswordAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -384,7 +384,7 @@ class EmailConfigApi extends ApiBase
     }
 
     /**
-     * Operation emailConfigDiscoverPasswordAsyncWithHttpInfo
+     * Operation discoverPasswordAsyncWithHttpInfo
      *
      * Discover email accounts by email address. Validates discovered accounts using login and password.
      *
@@ -393,10 +393,10 @@ class EmailConfigApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function emailConfigDiscoverPasswordAsyncWithHttpInfo($request)
+    public function discoverPasswordAsyncWithHttpInfo($request)
     {
         $returnType = '\Aspose\Email\Model\EmailAccountConfigList';
-        $request = $this->emailConfigDiscoverPasswordRequest($request);
+        $request = $this->discoverPasswordRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -411,19 +411,19 @@ class EmailConfigApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'emailConfigDiscoverPassword'
+     * Create request for operation 'discoverPassword'
      *
      * @param Model\EmailConfigDiscoverPasswordRequest $request Discover email configuration request.
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function emailConfigDiscoverPasswordRequest($request)
+    protected function discoverPasswordRequest($request)
     {
         // verify the required parameter '$request' is set
         if ($request === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $request when calling emailConfigDiscoverPassword'
+                'Missing the required parameter $request when calling discoverPassword'
             );
         }
 

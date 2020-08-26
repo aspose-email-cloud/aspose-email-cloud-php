@@ -40,15 +40,15 @@ use Aspose\Email\Model;
 class StorageApi extends ApiBase
 {
     /**
-     * Initialize a new instance of EmailApi
-     * @param ClientInterface|null   $client client for calling api
-     * @param Configuration|null   $config configuration info
-     * @param HeaderSelector|null   $selector class for header selection
+     * Initialize a new instance of StorageApi
+     * @param ClientInterface   $client client for calling api
+     * @param Configuration   $config configuration info
+     * @param HeaderSelector   $selector class for header selection
      */
     public function __construct(
-        ClientInterface $client = null,
-        Configuration $config = null,
-        HeaderSelector $selector = null
+        ClientInterface $client,
+        Configuration $config,
+        HeaderSelector $selector
     ) {
         parent::__construct($client, $config, $selector);
     }
@@ -164,7 +164,7 @@ class StorageApi extends ApiBase
         // query params
         $paramValue = $request->storage_name;
         $paramBaseName = 'storageName';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -311,7 +311,7 @@ class StorageApi extends ApiBase
         // query params
         $paramValue = $request->storage_name;
         $paramBaseName = 'storageName';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -458,10 +458,10 @@ class StorageApi extends ApiBase
         // query params
         $paramValue = $request->storage_name;
         $paramBaseName = 'storageName';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->version_id;
         $paramBaseName = 'versionId';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -487,7 +487,7 @@ class StorageApi extends ApiBase
     }
             
     /**
-     * Operation storageExists
+     * Operation exists
      *
      * Check if storage exists
      *
@@ -497,19 +497,19 @@ class StorageApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\StorageExist
      */
-    public function storageExists(Model\StorageExistsRequest $request)
+    public function exists(Model\StorageExistsRequest $request)
     {
         try {
-             list($response) = $this->storageExistsWithHttpInfo($request);
+             list($response) = $this->existsWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->storageExistsWithHttpInfo($request);
+             list($response) = $this->existsWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation storageExistsWithHttpInfo
+     * Operation existsWithHttpInfo
      *
      * Check if storage exists
      *
@@ -520,17 +520,17 @@ class StorageApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \Aspose\Email\Model\StorageExist, HTTP status code, HTTP response headers (array of strings)
      */
-    public function storageExistsWithHttpInfo(Model\StorageExistsRequest $request)
+    public function existsWithHttpInfo(Model\StorageExistsRequest $request)
     {
         $returnType = '\Aspose\Email\Model\StorageExist';
-        $request = $this->storageExistsRequest($request);
+        $request = $this->existsRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation storageExistsAsync
+     * Operation existsAsync
      *
      * Check if storage exists
      *
@@ -539,9 +539,9 @@ class StorageApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function storageExistsAsync(Model\StorageExistsRequest $request)
+    public function existsAsync(Model\StorageExistsRequest $request)
     {
-        return $this->storageExistsAsyncWithHttpInfo($request)
+        return $this->existsAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -550,7 +550,7 @@ class StorageApi extends ApiBase
     }
 
     /**
-     * Operation storageExistsAsyncWithHttpInfo
+     * Operation existsAsyncWithHttpInfo
      *
      * Check if storage exists
      *
@@ -559,10 +559,10 @@ class StorageApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function storageExistsAsyncWithHttpInfo(Model\StorageExistsRequest $request)
+    public function existsAsyncWithHttpInfo(Model\StorageExistsRequest $request)
     {
         $returnType = '\Aspose\Email\Model\StorageExist';
-        $request = $this->storageExistsRequest($request);
+        $request = $this->existsRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -577,19 +577,19 @@ class StorageApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'storageExists'
+     * Create request for operation 'exists'
      *
      * @param Model\StorageExistsRequest $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function storageExistsRequest(Model\StorageExistsRequest $request)
+    protected function existsRequest(Model\StorageExistsRequest $request)
     {
         // verify the required parameter 'storage_name' is set
         if ($request->storage_name === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $storage_name when calling storageExists'
+                'Missing the required parameter $storage_name when calling exists'
             );
         }
 

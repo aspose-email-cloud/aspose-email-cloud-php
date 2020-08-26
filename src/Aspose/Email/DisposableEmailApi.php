@@ -40,22 +40,22 @@ use Aspose\Email\Model;
 class DisposableEmailApi extends ApiBase
 {
     /**
-     * Initialize a new instance of EmailApi
-     * @param ClientInterface|null   $client client for calling api
-     * @param Configuration|null   $config configuration info
-     * @param HeaderSelector|null   $selector class for header selection
+     * Initialize a new instance of DisposableEmailApi
+     * @param ClientInterface   $client client for calling api
+     * @param Configuration   $config configuration info
+     * @param HeaderSelector   $selector class for header selection
      */
     public function __construct(
-        ClientInterface $client = null,
-        Configuration $config = null,
-        HeaderSelector $selector = null
+        ClientInterface $client,
+        Configuration $config,
+        HeaderSelector $selector
     ) {
         parent::__construct($client, $config, $selector);
     }
 
             
     /**
-     * Operation disposableEmailIsDisposable
+     * Operation isDisposable
      *
      * Check email address is disposable
      *
@@ -65,19 +65,19 @@ class DisposableEmailApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\ValueTOfBoolean
      */
-    public function disposableEmailIsDisposable(Model\DisposableEmailIsDisposableRequest $request)
+    public function isDisposable(Model\DisposableEmailIsDisposableRequest $request)
     {
         try {
-             list($response) = $this->disposableEmailIsDisposableWithHttpInfo($request);
+             list($response) = $this->isDisposableWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->disposableEmailIsDisposableWithHttpInfo($request);
+             list($response) = $this->isDisposableWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation disposableEmailIsDisposableWithHttpInfo
+     * Operation isDisposableWithHttpInfo
      *
      * Check email address is disposable
      *
@@ -88,17 +88,17 @@ class DisposableEmailApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \Aspose\Email\Model\ValueTOfBoolean, HTTP status code, HTTP response headers (array of strings)
      */
-    public function disposableEmailIsDisposableWithHttpInfo(Model\DisposableEmailIsDisposableRequest $request)
+    public function isDisposableWithHttpInfo(Model\DisposableEmailIsDisposableRequest $request)
     {
         $returnType = '\Aspose\Email\Model\ValueTOfBoolean';
-        $request = $this->disposableEmailIsDisposableRequest($request);
+        $request = $this->isDisposableRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation disposableEmailIsDisposableAsync
+     * Operation isDisposableAsync
      *
      * Check email address is disposable
      *
@@ -107,9 +107,9 @@ class DisposableEmailApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function disposableEmailIsDisposableAsync(Model\DisposableEmailIsDisposableRequest $request)
+    public function isDisposableAsync(Model\DisposableEmailIsDisposableRequest $request)
     {
-        return $this->disposableEmailIsDisposableAsyncWithHttpInfo($request)
+        return $this->isDisposableAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -118,7 +118,7 @@ class DisposableEmailApi extends ApiBase
     }
 
     /**
-     * Operation disposableEmailIsDisposableAsyncWithHttpInfo
+     * Operation isDisposableAsyncWithHttpInfo
      *
      * Check email address is disposable
      *
@@ -127,10 +127,10 @@ class DisposableEmailApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function disposableEmailIsDisposableAsyncWithHttpInfo(Model\DisposableEmailIsDisposableRequest $request)
+    public function isDisposableAsyncWithHttpInfo(Model\DisposableEmailIsDisposableRequest $request)
     {
         $returnType = '\Aspose\Email\Model\ValueTOfBoolean';
-        $request = $this->disposableEmailIsDisposableRequest($request);
+        $request = $this->isDisposableRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -145,19 +145,19 @@ class DisposableEmailApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'disposableEmailIsDisposable'
+     * Create request for operation 'isDisposable'
      *
      * @param Model\DisposableEmailIsDisposableRequest $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function disposableEmailIsDisposableRequest(Model\DisposableEmailIsDisposableRequest $request)
+    protected function isDisposableRequest(Model\DisposableEmailIsDisposableRequest $request)
     {
         // verify the required parameter 'address' is set
         if ($request->address === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $address when calling disposableEmailIsDisposable'
+                'Missing the required parameter $address when calling isDisposable'
             );
         }
 
@@ -170,7 +170,7 @@ class DisposableEmailApi extends ApiBase
         // query params
         $paramValue = $request->address;
         $paramBaseName = 'address';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(

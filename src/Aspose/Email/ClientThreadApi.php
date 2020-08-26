@@ -40,22 +40,22 @@ use Aspose\Email\Model;
 class ClientThreadApi extends ApiBase
 {
     /**
-     * Initialize a new instance of EmailApi
-     * @param ClientInterface|null   $client client for calling api
-     * @param Configuration|null   $config configuration info
-     * @param HeaderSelector|null   $selector class for header selection
+     * Initialize a new instance of ClientThreadApi
+     * @param ClientInterface   $client client for calling api
+     * @param Configuration   $config configuration info
+     * @param HeaderSelector   $selector class for header selection
      */
     public function __construct(
-        ClientInterface $client = null,
-        Configuration $config = null,
-        HeaderSelector $selector = null
+        ClientInterface $client,
+        Configuration $config,
+        HeaderSelector $selector
     ) {
         parent::__construct($client, $config, $selector);
     }
 
             
     /**
-     * Operation clientThreadDelete
+     * Operation delete
      *
      * Delete thread by id. All messages from thread will also be deleted.
      *
@@ -65,17 +65,17 @@ class ClientThreadApi extends ApiBase
      * @throws InvalidArgumentException
      * @return void
      */
-    public function clientThreadDelete($request)
+    public function delete($request)
     {
         try {
-             $this->clientThreadDeleteWithHttpInfo($request);
+             $this->deleteWithHttpInfo($request);
         } catch (RepeatRequestException $e) {
-             $this->clientThreadDeleteWithHttpInfo($request);
+             $this->deleteWithHttpInfo($request);
         }
     }
 
     /**
-     * Operation clientThreadDeleteWithHttpInfo
+     * Operation deleteWithHttpInfo
      *
      * Delete thread by id. All messages from thread will also be deleted.
      *
@@ -86,16 +86,16 @@ class ClientThreadApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function clientThreadDeleteWithHttpInfo($request)
+    public function deleteWithHttpInfo($request)
     {
-        $request = $this->clientThreadDeleteRequest($request);
+        $request = $this->deleteRequest($request);
     
         $response = $this->callClient($request);
         return [null, $response->getStatusCode(), $response->getHeaders()];
     }
 
     /**
-     * Operation clientThreadDeleteAsync
+     * Operation deleteAsync
      *
      * Delete thread by id. All messages from thread will also be deleted.
      *
@@ -104,9 +104,9 @@ class ClientThreadApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function clientThreadDeleteAsync($request)
+    public function deleteAsync($request)
     {
-        return $this->clientThreadDeleteAsyncWithHttpInfo($request)
+        return $this->deleteAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -115,7 +115,7 @@ class ClientThreadApi extends ApiBase
     }
 
     /**
-     * Operation clientThreadDeleteAsyncWithHttpInfo
+     * Operation deleteAsyncWithHttpInfo
      *
      * Delete thread by id. All messages from thread will also be deleted.
      *
@@ -124,9 +124,9 @@ class ClientThreadApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function clientThreadDeleteAsyncWithHttpInfo($request)
+    public function deleteAsyncWithHttpInfo($request)
     {
-        $request = $this->clientThreadDeleteRequest($request);
+        $request = $this->deleteRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -141,19 +141,19 @@ class ClientThreadApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'clientThreadDelete'
+     * Create request for operation 'delete'
      *
      * @param Model\ClientThreadDeleteRequest $request Delete email thread request.
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function clientThreadDeleteRequest($request)
+    protected function deleteRequest($request)
     {
         // verify the required parameter '$request' is set
         if ($request === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $request when calling clientThreadDelete'
+                'Missing the required parameter $request when calling delete'
             );
         }
 
@@ -173,7 +173,7 @@ class ClientThreadApi extends ApiBase
     }
             
     /**
-     * Operation clientThreadGetList
+     * Operation getList
      *
      * Get message threads from folder. All messages are partly fetched (without email body and some other fields).
      *
@@ -183,19 +183,19 @@ class ClientThreadApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\EmailThreadList
      */
-    public function clientThreadGetList(Model\ClientThreadGetListRequest $request)
+    public function getList(Model\ClientThreadGetListRequest $request)
     {
         try {
-             list($response) = $this->clientThreadGetListWithHttpInfo($request);
+             list($response) = $this->getListWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->clientThreadGetListWithHttpInfo($request);
+             list($response) = $this->getListWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation clientThreadGetListWithHttpInfo
+     * Operation getListWithHttpInfo
      *
      * Get message threads from folder. All messages are partly fetched (without email body and some other fields).
      *
@@ -206,17 +206,17 @@ class ClientThreadApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \Aspose\Email\Model\EmailThreadList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function clientThreadGetListWithHttpInfo(Model\ClientThreadGetListRequest $request)
+    public function getListWithHttpInfo(Model\ClientThreadGetListRequest $request)
     {
         $returnType = '\Aspose\Email\Model\EmailThreadList';
-        $request = $this->clientThreadGetListRequest($request);
+        $request = $this->getListRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation clientThreadGetListAsync
+     * Operation getListAsync
      *
      * Get message threads from folder. All messages are partly fetched (without email body and some other fields).
      *
@@ -225,9 +225,9 @@ class ClientThreadApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function clientThreadGetListAsync(Model\ClientThreadGetListRequest $request)
+    public function getListAsync(Model\ClientThreadGetListRequest $request)
     {
-        return $this->clientThreadGetListAsyncWithHttpInfo($request)
+        return $this->getListAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -236,7 +236,7 @@ class ClientThreadApi extends ApiBase
     }
 
     /**
-     * Operation clientThreadGetListAsyncWithHttpInfo
+     * Operation getListAsyncWithHttpInfo
      *
      * Get message threads from folder. All messages are partly fetched (without email body and some other fields).
      *
@@ -245,10 +245,10 @@ class ClientThreadApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function clientThreadGetListAsyncWithHttpInfo(Model\ClientThreadGetListRequest $request)
+    public function getListAsyncWithHttpInfo(Model\ClientThreadGetListRequest $request)
     {
         $returnType = '\Aspose\Email\Model\EmailThreadList';
-        $request = $this->clientThreadGetListRequest($request);
+        $request = $this->getListRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -263,25 +263,25 @@ class ClientThreadApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'clientThreadGetList'
+     * Create request for operation 'getList'
      *
      * @param Model\ClientThreadGetListRequest $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function clientThreadGetListRequest(Model\ClientThreadGetListRequest $request)
+    protected function getListRequest(Model\ClientThreadGetListRequest $request)
     {
         // verify the required parameter 'folder' is set
         if ($request->folder === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $folder when calling clientThreadGetList'
+                'Missing the required parameter $folder when calling getList'
             );
         }
         // verify the required parameter 'account' is set
         if ($request->account === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $account when calling clientThreadGetList'
+                'Missing the required parameter $account when calling getList'
             );
         }
 
@@ -294,22 +294,22 @@ class ClientThreadApi extends ApiBase
         // query params
         $paramValue = $request->folder;
         $paramBaseName = 'folder';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->account;
         $paramBaseName = 'account';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->storage;
         $paramBaseName = 'storage';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->account_storage_folder;
         $paramBaseName = 'accountStorageFolder';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->update_folder_cache;
         $paramBaseName = 'updateFolderCache';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->messages_cache_limit;
         $paramBaseName = 'messagesCacheLimit';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -335,7 +335,7 @@ class ClientThreadApi extends ApiBase
     }
             
     /**
-     * Operation clientThreadGetMessages
+     * Operation getMessages
      *
      * Get messages from thread by id. All messages are fully fetched. For accounts with CacheFile only cached messages will be returned.
      *
@@ -345,19 +345,19 @@ class ClientThreadApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\EmailList
      */
-    public function clientThreadGetMessages(Model\ClientThreadGetMessagesRequest $request)
+    public function getMessages(Model\ClientThreadGetMessagesRequest $request)
     {
         try {
-             list($response) = $this->clientThreadGetMessagesWithHttpInfo($request);
+             list($response) = $this->getMessagesWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->clientThreadGetMessagesWithHttpInfo($request);
+             list($response) = $this->getMessagesWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation clientThreadGetMessagesWithHttpInfo
+     * Operation getMessagesWithHttpInfo
      *
      * Get messages from thread by id. All messages are fully fetched. For accounts with CacheFile only cached messages will be returned.
      *
@@ -368,17 +368,17 @@ class ClientThreadApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \Aspose\Email\Model\EmailList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function clientThreadGetMessagesWithHttpInfo(Model\ClientThreadGetMessagesRequest $request)
+    public function getMessagesWithHttpInfo(Model\ClientThreadGetMessagesRequest $request)
     {
         $returnType = '\Aspose\Email\Model\EmailList';
-        $request = $this->clientThreadGetMessagesRequest($request);
+        $request = $this->getMessagesRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation clientThreadGetMessagesAsync
+     * Operation getMessagesAsync
      *
      * Get messages from thread by id. All messages are fully fetched. For accounts with CacheFile only cached messages will be returned.
      *
@@ -387,9 +387,9 @@ class ClientThreadApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function clientThreadGetMessagesAsync(Model\ClientThreadGetMessagesRequest $request)
+    public function getMessagesAsync(Model\ClientThreadGetMessagesRequest $request)
     {
-        return $this->clientThreadGetMessagesAsyncWithHttpInfo($request)
+        return $this->getMessagesAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -398,7 +398,7 @@ class ClientThreadApi extends ApiBase
     }
 
     /**
-     * Operation clientThreadGetMessagesAsyncWithHttpInfo
+     * Operation getMessagesAsyncWithHttpInfo
      *
      * Get messages from thread by id. All messages are fully fetched. For accounts with CacheFile only cached messages will be returned.
      *
@@ -407,10 +407,10 @@ class ClientThreadApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function clientThreadGetMessagesAsyncWithHttpInfo(Model\ClientThreadGetMessagesRequest $request)
+    public function getMessagesAsyncWithHttpInfo(Model\ClientThreadGetMessagesRequest $request)
     {
         $returnType = '\Aspose\Email\Model\EmailList';
-        $request = $this->clientThreadGetMessagesRequest($request);
+        $request = $this->getMessagesRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -425,25 +425,25 @@ class ClientThreadApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'clientThreadGetMessages'
+     * Create request for operation 'getMessages'
      *
      * @param Model\ClientThreadGetMessagesRequest $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function clientThreadGetMessagesRequest(Model\ClientThreadGetMessagesRequest $request)
+    protected function getMessagesRequest(Model\ClientThreadGetMessagesRequest $request)
     {
         // verify the required parameter 'thread_id' is set
         if ($request->thread_id === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $thread_id when calling clientThreadGetMessages'
+                'Missing the required parameter $thread_id when calling getMessages'
             );
         }
         // verify the required parameter 'account' is set
         if ($request->account === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $account when calling clientThreadGetMessages'
+                'Missing the required parameter $account when calling getMessages'
             );
         }
 
@@ -456,19 +456,19 @@ class ClientThreadApi extends ApiBase
         // query params
         $paramValue = $request->thread_id;
         $paramBaseName = 'threadId';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->account;
         $paramBaseName = 'account';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->folder;
         $paramBaseName = 'folder';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->storage;
         $paramBaseName = 'storage';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->account_storage_folder;
         $paramBaseName = 'accountStorageFolder';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -494,7 +494,7 @@ class ClientThreadApi extends ApiBase
     }
             
     /**
-     * Operation clientThreadMove
+     * Operation move
      *
      * Move thread to another folder.
      *
@@ -504,17 +504,17 @@ class ClientThreadApi extends ApiBase
      * @throws InvalidArgumentException
      * @return void
      */
-    public function clientThreadMove($request)
+    public function move($request)
     {
         try {
-             $this->clientThreadMoveWithHttpInfo($request);
+             $this->moveWithHttpInfo($request);
         } catch (RepeatRequestException $e) {
-             $this->clientThreadMoveWithHttpInfo($request);
+             $this->moveWithHttpInfo($request);
         }
     }
 
     /**
-     * Operation clientThreadMoveWithHttpInfo
+     * Operation moveWithHttpInfo
      *
      * Move thread to another folder.
      *
@@ -525,16 +525,16 @@ class ClientThreadApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function clientThreadMoveWithHttpInfo($request)
+    public function moveWithHttpInfo($request)
     {
-        $request = $this->clientThreadMoveRequest($request);
+        $request = $this->moveRequest($request);
     
         $response = $this->callClient($request);
         return [null, $response->getStatusCode(), $response->getHeaders()];
     }
 
     /**
-     * Operation clientThreadMoveAsync
+     * Operation moveAsync
      *
      * Move thread to another folder.
      *
@@ -543,9 +543,9 @@ class ClientThreadApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function clientThreadMoveAsync($request)
+    public function moveAsync($request)
     {
-        return $this->clientThreadMoveAsyncWithHttpInfo($request)
+        return $this->moveAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -554,7 +554,7 @@ class ClientThreadApi extends ApiBase
     }
 
     /**
-     * Operation clientThreadMoveAsyncWithHttpInfo
+     * Operation moveAsyncWithHttpInfo
      *
      * Move thread to another folder.
      *
@@ -563,9 +563,9 @@ class ClientThreadApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function clientThreadMoveAsyncWithHttpInfo($request)
+    public function moveAsyncWithHttpInfo($request)
     {
-        $request = $this->clientThreadMoveRequest($request);
+        $request = $this->moveRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -580,19 +580,19 @@ class ClientThreadApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'clientThreadMove'
+     * Create request for operation 'move'
      *
      * @param Model\ClientThreadMoveRequest $request Move thread request.
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function clientThreadMoveRequest($request)
+    protected function moveRequest($request)
     {
         // verify the required parameter '$request' is set
         if ($request === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $request when calling clientThreadMove'
+                'Missing the required parameter $request when calling move'
             );
         }
 
@@ -612,7 +612,7 @@ class ClientThreadApi extends ApiBase
     }
             
     /**
-     * Operation clientThreadSetIsRead
+     * Operation setIsRead
      *
      * Mark all messages in thread as read or unread.
      *
@@ -622,17 +622,17 @@ class ClientThreadApi extends ApiBase
      * @throws InvalidArgumentException
      * @return void
      */
-    public function clientThreadSetIsRead($request)
+    public function setIsRead($request)
     {
         try {
-             $this->clientThreadSetIsReadWithHttpInfo($request);
+             $this->setIsReadWithHttpInfo($request);
         } catch (RepeatRequestException $e) {
-             $this->clientThreadSetIsReadWithHttpInfo($request);
+             $this->setIsReadWithHttpInfo($request);
         }
     }
 
     /**
-     * Operation clientThreadSetIsReadWithHttpInfo
+     * Operation setIsReadWithHttpInfo
      *
      * Mark all messages in thread as read or unread.
      *
@@ -643,16 +643,16 @@ class ClientThreadApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function clientThreadSetIsReadWithHttpInfo($request)
+    public function setIsReadWithHttpInfo($request)
     {
-        $request = $this->clientThreadSetIsReadRequest($request);
+        $request = $this->setIsReadRequest($request);
     
         $response = $this->callClient($request);
         return [null, $response->getStatusCode(), $response->getHeaders()];
     }
 
     /**
-     * Operation clientThreadSetIsReadAsync
+     * Operation setIsReadAsync
      *
      * Mark all messages in thread as read or unread.
      *
@@ -661,9 +661,9 @@ class ClientThreadApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function clientThreadSetIsReadAsync($request)
+    public function setIsReadAsync($request)
     {
-        return $this->clientThreadSetIsReadAsyncWithHttpInfo($request)
+        return $this->setIsReadAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -672,7 +672,7 @@ class ClientThreadApi extends ApiBase
     }
 
     /**
-     * Operation clientThreadSetIsReadAsyncWithHttpInfo
+     * Operation setIsReadAsyncWithHttpInfo
      *
      * Mark all messages in thread as read or unread.
      *
@@ -681,9 +681,9 @@ class ClientThreadApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function clientThreadSetIsReadAsyncWithHttpInfo($request)
+    public function setIsReadAsyncWithHttpInfo($request)
     {
-        $request = $this->clientThreadSetIsReadRequest($request);
+        $request = $this->setIsReadRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -698,19 +698,19 @@ class ClientThreadApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'clientThreadSetIsRead'
+     * Create request for operation 'setIsRead'
      *
      * @param Model\ClientThreadSetIsReadRequest $request Email account specifier and IsRead flag.
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function clientThreadSetIsReadRequest($request)
+    protected function setIsReadRequest($request)
     {
         // verify the required parameter '$request' is set
         if ($request === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $request when calling clientThreadSetIsRead'
+                'Missing the required parameter $request when calling setIsRead'
             );
         }
 

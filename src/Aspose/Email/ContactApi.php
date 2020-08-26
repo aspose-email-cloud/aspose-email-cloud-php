@@ -40,22 +40,22 @@ use Aspose\Email\Model;
 class ContactApi extends ApiBase
 {
     /**
-     * Initialize a new instance of EmailApi
-     * @param ClientInterface|null   $client client for calling api
-     * @param Configuration|null   $config configuration info
-     * @param HeaderSelector|null   $selector class for header selection
+     * Initialize a new instance of ContactApi
+     * @param ClientInterface   $client client for calling api
+     * @param Configuration   $config configuration info
+     * @param HeaderSelector   $selector class for header selection
      */
     public function __construct(
-        ClientInterface $client = null,
-        Configuration $config = null,
-        HeaderSelector $selector = null
+        ClientInterface $client,
+        Configuration $config,
+        HeaderSelector $selector
     ) {
         parent::__construct($client, $config, $selector);
     }
 
             
     /**
-     * Operation contactAsFile
+     * Operation asFile
      *
      * Converts contact model to specified format and returns as file
      *
@@ -65,19 +65,19 @@ class ContactApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\\SplFileObject
      */
-    public function contactAsFile($request)
+    public function asFile($request)
     {
         try {
-             list($response) = $this->contactAsFileWithHttpInfo($request);
+             list($response) = $this->asFileWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->contactAsFileWithHttpInfo($request);
+             list($response) = $this->asFileWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation contactAsFileWithHttpInfo
+     * Operation asFileWithHttpInfo
      *
      * Converts contact model to specified format and returns as file
      *
@@ -88,17 +88,17 @@ class ContactApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function contactAsFileWithHttpInfo($request)
+    public function asFileWithHttpInfo($request)
     {
         $returnType = '\SplFileObject';
-        $request = $this->contactAsFileRequest($request);
+        $request = $this->asFileRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation contactAsFileAsync
+     * Operation asFileAsync
      *
      * Converts contact model to specified format and returns as file
      *
@@ -107,9 +107,9 @@ class ContactApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function contactAsFileAsync($request)
+    public function asFileAsync($request)
     {
-        return $this->contactAsFileAsyncWithHttpInfo($request)
+        return $this->asFileAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -118,7 +118,7 @@ class ContactApi extends ApiBase
     }
 
     /**
-     * Operation contactAsFileAsyncWithHttpInfo
+     * Operation asFileAsyncWithHttpInfo
      *
      * Converts contact model to specified format and returns as file
      *
@@ -127,10 +127,10 @@ class ContactApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function contactAsFileAsyncWithHttpInfo($request)
+    public function asFileAsyncWithHttpInfo($request)
     {
         $returnType = '\SplFileObject';
-        $request = $this->contactAsFileRequest($request);
+        $request = $this->asFileRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -145,19 +145,19 @@ class ContactApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'contactAsFile'
+     * Create request for operation 'asFile'
      *
      * @param Model\ContactAsFileRequest $request Contact model and format to convert
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function contactAsFileRequest($request)
+    protected function asFileRequest($request)
     {
         // verify the required parameter '$request' is set
         if ($request === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $request when calling contactAsFile'
+                'Missing the required parameter $request when calling asFile'
             );
         }
 
@@ -177,7 +177,7 @@ class ContactApi extends ApiBase
     }
             
     /**
-     * Operation contactAsMapi
+     * Operation asMapi
      *
      * Converts ContactDto to MapiContactDto.
      *
@@ -187,19 +187,19 @@ class ContactApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\MapiContactDto
      */
-    public function contactAsMapi($contact_dto)
+    public function asMapi($contact_dto)
     {
         try {
-             list($response) = $this->contactAsMapiWithHttpInfo($contact_dto);
+             list($response) = $this->asMapiWithHttpInfo($contact_dto);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->contactAsMapiWithHttpInfo($contact_dto);
+             list($response) = $this->asMapiWithHttpInfo($contact_dto);
              return $response;
         }
     }
 
     /**
-     * Operation contactAsMapiWithHttpInfo
+     * Operation asMapiWithHttpInfo
      *
      * Converts ContactDto to MapiContactDto.
      *
@@ -210,17 +210,17 @@ class ContactApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \Aspose\Email\Model\MapiContactDto, HTTP status code, HTTP response headers (array of strings)
      */
-    public function contactAsMapiWithHttpInfo($contact_dto)
+    public function asMapiWithHttpInfo($contact_dto)
     {
         $returnType = '\Aspose\Email\Model\MapiContactDto';
-        $request = $this->contactAsMapiRequest($contact_dto);
+        $request = $this->asMapiRequest($contact_dto);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation contactAsMapiAsync
+     * Operation asMapiAsync
      *
      * Converts ContactDto to MapiContactDto.
      *
@@ -229,9 +229,9 @@ class ContactApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function contactAsMapiAsync($contact_dto)
+    public function asMapiAsync($contact_dto)
     {
-        return $this->contactAsMapiAsyncWithHttpInfo($contact_dto)
+        return $this->asMapiAsyncWithHttpInfo($contact_dto)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -240,7 +240,7 @@ class ContactApi extends ApiBase
     }
 
     /**
-     * Operation contactAsMapiAsyncWithHttpInfo
+     * Operation asMapiAsyncWithHttpInfo
      *
      * Converts ContactDto to MapiContactDto.
      *
@@ -249,10 +249,10 @@ class ContactApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function contactAsMapiAsyncWithHttpInfo($contact_dto)
+    public function asMapiAsyncWithHttpInfo($contact_dto)
     {
         $returnType = '\Aspose\Email\Model\MapiContactDto';
-        $request = $this->contactAsMapiRequest($contact_dto);
+        $request = $this->asMapiRequest($contact_dto);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -267,19 +267,19 @@ class ContactApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'contactAsMapi'
+     * Create request for operation 'asMapi'
      *
      * @param Model\ContactDto $contact_dto Contact model to convert
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function contactAsMapiRequest($contact_dto)
+    protected function asMapiRequest($contact_dto)
     {
         // verify the required parameter '$contact_dto' is set
         if ($contact_dto === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $contact_dto when calling contactAsMapi'
+                'Missing the required parameter $contact_dto when calling asMapi'
             );
         }
 
@@ -299,7 +299,7 @@ class ContactApi extends ApiBase
     }
             
     /**
-     * Operation contactConvert
+     * Operation convert
      *
      * Converts contact document to specified format and returns as file
      *
@@ -309,19 +309,19 @@ class ContactApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\\SplFileObject
      */
-    public function contactConvert(Model\ContactConvertRequest $request)
+    public function convert(Model\ContactConvertRequest $request)
     {
         try {
-             list($response) = $this->contactConvertWithHttpInfo($request);
+             list($response) = $this->convertWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->contactConvertWithHttpInfo($request);
+             list($response) = $this->convertWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation contactConvertWithHttpInfo
+     * Operation convertWithHttpInfo
      *
      * Converts contact document to specified format and returns as file
      *
@@ -332,17 +332,17 @@ class ContactApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function contactConvertWithHttpInfo(Model\ContactConvertRequest $request)
+    public function convertWithHttpInfo(Model\ContactConvertRequest $request)
     {
         $returnType = '\SplFileObject';
-        $request = $this->contactConvertRequest($request);
+        $request = $this->convertRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation contactConvertAsync
+     * Operation convertAsync
      *
      * Converts contact document to specified format and returns as file
      *
@@ -351,9 +351,9 @@ class ContactApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function contactConvertAsync(Model\ContactConvertRequest $request)
+    public function convertAsync(Model\ContactConvertRequest $request)
     {
-        return $this->contactConvertAsyncWithHttpInfo($request)
+        return $this->convertAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -362,7 +362,7 @@ class ContactApi extends ApiBase
     }
 
     /**
-     * Operation contactConvertAsyncWithHttpInfo
+     * Operation convertAsyncWithHttpInfo
      *
      * Converts contact document to specified format and returns as file
      *
@@ -371,10 +371,10 @@ class ContactApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function contactConvertAsyncWithHttpInfo(Model\ContactConvertRequest $request)
+    public function convertAsyncWithHttpInfo(Model\ContactConvertRequest $request)
     {
         $returnType = '\SplFileObject';
-        $request = $this->contactConvertRequest($request);
+        $request = $this->convertRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -389,31 +389,31 @@ class ContactApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'contactConvert'
+     * Create request for operation 'convert'
      *
      * @param Model\ContactConvertRequest $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function contactConvertRequest(Model\ContactConvertRequest $request)
+    protected function convertRequest(Model\ContactConvertRequest $request)
     {
         // verify the required parameter 'to_format' is set
         if ($request->to_format === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $to_format when calling contactConvert'
+                'Missing the required parameter $to_format when calling convert'
             );
         }
         // verify the required parameter 'from_format' is set
         if ($request->from_format === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $from_format when calling contactConvert'
+                'Missing the required parameter $from_format when calling convert'
             );
         }
         // verify the required parameter 'file' is set
         if ($request->file === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $file when calling contactConvert'
+                'Missing the required parameter $file when calling convert'
             );
         }
 
@@ -426,10 +426,10 @@ class ContactApi extends ApiBase
         // query params
         $paramValue = $request->to_format;
         $paramBaseName = 'toFormat';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->from_format;
         $paramBaseName = 'fromFormat';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         // form params
         $formFiles = [];
@@ -467,7 +467,7 @@ class ContactApi extends ApiBase
     }
             
     /**
-     * Operation contactFromFile
+     * Operation fromFile
      *
      * Converts contact document to a model representation
      *
@@ -477,19 +477,19 @@ class ContactApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\ContactDto
      */
-    public function contactFromFile(Model\ContactFromFileRequest $request)
+    public function fromFile(Model\ContactFromFileRequest $request)
     {
         try {
-             list($response) = $this->contactFromFileWithHttpInfo($request);
+             list($response) = $this->fromFileWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->contactFromFileWithHttpInfo($request);
+             list($response) = $this->fromFileWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation contactFromFileWithHttpInfo
+     * Operation fromFileWithHttpInfo
      *
      * Converts contact document to a model representation
      *
@@ -500,17 +500,17 @@ class ContactApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \Aspose\Email\Model\ContactDto, HTTP status code, HTTP response headers (array of strings)
      */
-    public function contactFromFileWithHttpInfo(Model\ContactFromFileRequest $request)
+    public function fromFileWithHttpInfo(Model\ContactFromFileRequest $request)
     {
         $returnType = '\Aspose\Email\Model\ContactDto';
-        $request = $this->contactFromFileRequest($request);
+        $request = $this->fromFileRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation contactFromFileAsync
+     * Operation fromFileAsync
      *
      * Converts contact document to a model representation
      *
@@ -519,9 +519,9 @@ class ContactApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function contactFromFileAsync(Model\ContactFromFileRequest $request)
+    public function fromFileAsync(Model\ContactFromFileRequest $request)
     {
-        return $this->contactFromFileAsyncWithHttpInfo($request)
+        return $this->fromFileAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -530,7 +530,7 @@ class ContactApi extends ApiBase
     }
 
     /**
-     * Operation contactFromFileAsyncWithHttpInfo
+     * Operation fromFileAsyncWithHttpInfo
      *
      * Converts contact document to a model representation
      *
@@ -539,10 +539,10 @@ class ContactApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function contactFromFileAsyncWithHttpInfo(Model\ContactFromFileRequest $request)
+    public function fromFileAsyncWithHttpInfo(Model\ContactFromFileRequest $request)
     {
         $returnType = '\Aspose\Email\Model\ContactDto';
-        $request = $this->contactFromFileRequest($request);
+        $request = $this->fromFileRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -557,25 +557,25 @@ class ContactApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'contactFromFile'
+     * Create request for operation 'fromFile'
      *
      * @param Model\ContactFromFileRequest $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function contactFromFileRequest(Model\ContactFromFileRequest $request)
+    protected function fromFileRequest(Model\ContactFromFileRequest $request)
     {
         // verify the required parameter 'format' is set
         if ($request->format === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $format when calling contactFromFile'
+                'Missing the required parameter $format when calling fromFile'
             );
         }
         // verify the required parameter 'file' is set
         if ($request->file === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $file when calling contactFromFile'
+                'Missing the required parameter $file when calling fromFile'
             );
         }
 
@@ -588,7 +588,7 @@ class ContactApi extends ApiBase
         // query params
         $paramValue = $request->format;
         $paramBaseName = 'format';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         // form params
         $formFiles = [];
@@ -626,7 +626,7 @@ class ContactApi extends ApiBase
     }
             
     /**
-     * Operation contactGet
+     * Operation get
      *
      * Get contact document from storage.
      *
@@ -636,19 +636,19 @@ class ContactApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\ContactDto
      */
-    public function contactGet(Model\ContactGetRequest $request)
+    public function get(Model\ContactGetRequest $request)
     {
         try {
-             list($response) = $this->contactGetWithHttpInfo($request);
+             list($response) = $this->getWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->contactGetWithHttpInfo($request);
+             list($response) = $this->getWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation contactGetWithHttpInfo
+     * Operation getWithHttpInfo
      *
      * Get contact document from storage.
      *
@@ -659,17 +659,17 @@ class ContactApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \Aspose\Email\Model\ContactDto, HTTP status code, HTTP response headers (array of strings)
      */
-    public function contactGetWithHttpInfo(Model\ContactGetRequest $request)
+    public function getWithHttpInfo(Model\ContactGetRequest $request)
     {
         $returnType = '\Aspose\Email\Model\ContactDto';
-        $request = $this->contactGetRequest($request);
+        $request = $this->getRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation contactGetAsync
+     * Operation getAsync
      *
      * Get contact document from storage.
      *
@@ -678,9 +678,9 @@ class ContactApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function contactGetAsync(Model\ContactGetRequest $request)
+    public function getAsync(Model\ContactGetRequest $request)
     {
-        return $this->contactGetAsyncWithHttpInfo($request)
+        return $this->getAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -689,7 +689,7 @@ class ContactApi extends ApiBase
     }
 
     /**
-     * Operation contactGetAsyncWithHttpInfo
+     * Operation getAsyncWithHttpInfo
      *
      * Get contact document from storage.
      *
@@ -698,10 +698,10 @@ class ContactApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function contactGetAsyncWithHttpInfo(Model\ContactGetRequest $request)
+    public function getAsyncWithHttpInfo(Model\ContactGetRequest $request)
     {
         $returnType = '\Aspose\Email\Model\ContactDto';
-        $request = $this->contactGetRequest($request);
+        $request = $this->getRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -716,25 +716,25 @@ class ContactApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'contactGet'
+     * Create request for operation 'get'
      *
      * @param Model\ContactGetRequest $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function contactGetRequest(Model\ContactGetRequest $request)
+    protected function getRequest(Model\ContactGetRequest $request)
     {
         // verify the required parameter 'format' is set
         if ($request->format === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $format when calling contactGet'
+                'Missing the required parameter $format when calling get'
             );
         }
         // verify the required parameter 'file_name' is set
         if ($request->file_name === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $file_name when calling contactGet'
+                'Missing the required parameter $file_name when calling get'
             );
         }
 
@@ -747,16 +747,16 @@ class ContactApi extends ApiBase
         // query params
         $paramValue = $request->format;
         $paramBaseName = 'format';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->file_name;
         $paramBaseName = 'fileName';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->folder;
         $paramBaseName = 'folder';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->storage;
         $paramBaseName = 'storage';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -782,7 +782,7 @@ class ContactApi extends ApiBase
     }
             
     /**
-     * Operation contactGetAsFile
+     * Operation getAsFile
      *
      * Converts contact document from storage to specified format and returns as file
      *
@@ -792,19 +792,19 @@ class ContactApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\\SplFileObject
      */
-    public function contactGetAsFile(Model\ContactGetAsFileRequest $request)
+    public function getAsFile(Model\ContactGetAsFileRequest $request)
     {
         try {
-             list($response) = $this->contactGetAsFileWithHttpInfo($request);
+             list($response) = $this->getAsFileWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->contactGetAsFileWithHttpInfo($request);
+             list($response) = $this->getAsFileWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation contactGetAsFileWithHttpInfo
+     * Operation getAsFileWithHttpInfo
      *
      * Converts contact document from storage to specified format and returns as file
      *
@@ -815,17 +815,17 @@ class ContactApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function contactGetAsFileWithHttpInfo(Model\ContactGetAsFileRequest $request)
+    public function getAsFileWithHttpInfo(Model\ContactGetAsFileRequest $request)
     {
         $returnType = '\SplFileObject';
-        $request = $this->contactGetAsFileRequest($request);
+        $request = $this->getAsFileRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation contactGetAsFileAsync
+     * Operation getAsFileAsync
      *
      * Converts contact document from storage to specified format and returns as file
      *
@@ -834,9 +834,9 @@ class ContactApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function contactGetAsFileAsync(Model\ContactGetAsFileRequest $request)
+    public function getAsFileAsync(Model\ContactGetAsFileRequest $request)
     {
-        return $this->contactGetAsFileAsyncWithHttpInfo($request)
+        return $this->getAsFileAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -845,7 +845,7 @@ class ContactApi extends ApiBase
     }
 
     /**
-     * Operation contactGetAsFileAsyncWithHttpInfo
+     * Operation getAsFileAsyncWithHttpInfo
      *
      * Converts contact document from storage to specified format and returns as file
      *
@@ -854,10 +854,10 @@ class ContactApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function contactGetAsFileAsyncWithHttpInfo(Model\ContactGetAsFileRequest $request)
+    public function getAsFileAsyncWithHttpInfo(Model\ContactGetAsFileRequest $request)
     {
         $returnType = '\SplFileObject';
-        $request = $this->contactGetAsFileRequest($request);
+        $request = $this->getAsFileRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -872,31 +872,31 @@ class ContactApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'contactGetAsFile'
+     * Create request for operation 'getAsFile'
      *
      * @param Model\ContactGetAsFileRequest $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function contactGetAsFileRequest(Model\ContactGetAsFileRequest $request)
+    protected function getAsFileRequest(Model\ContactGetAsFileRequest $request)
     {
         // verify the required parameter 'file_name' is set
         if ($request->file_name === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $file_name when calling contactGetAsFile'
+                'Missing the required parameter $file_name when calling getAsFile'
             );
         }
         // verify the required parameter 'to_format' is set
         if ($request->to_format === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $to_format when calling contactGetAsFile'
+                'Missing the required parameter $to_format when calling getAsFile'
             );
         }
         // verify the required parameter 'from_format' is set
         if ($request->from_format === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $from_format when calling contactGetAsFile'
+                'Missing the required parameter $from_format when calling getAsFile'
             );
         }
 
@@ -909,19 +909,19 @@ class ContactApi extends ApiBase
         // query params
         $paramValue = $request->file_name;
         $paramBaseName = 'fileName';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->to_format;
         $paramBaseName = 'toFormat';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->from_format;
         $paramBaseName = 'fromFormat';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->storage;
         $paramBaseName = 'storage';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->folder;
         $paramBaseName = 'folder';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -947,7 +947,7 @@ class ContactApi extends ApiBase
     }
             
     /**
-     * Operation contactGetList
+     * Operation getList
      *
      * Get contact list from storage folder.
      *
@@ -957,19 +957,19 @@ class ContactApi extends ApiBase
      * @throws InvalidArgumentException
      * @return Model\ContactStorageList
      */
-    public function contactGetList(Model\ContactGetListRequest $request)
+    public function getList(Model\ContactGetListRequest $request)
     {
         try {
-             list($response) = $this->contactGetListWithHttpInfo($request);
+             list($response) = $this->getListWithHttpInfo($request);
              return $response;
         } catch (RepeatRequestException $e) {
-             list($response) = $this->contactGetListWithHttpInfo($request);
+             list($response) = $this->getListWithHttpInfo($request);
              return $response;
         }
     }
 
     /**
-     * Operation contactGetListWithHttpInfo
+     * Operation getListWithHttpInfo
      *
      * Get contact list from storage folder.
      *
@@ -980,17 +980,17 @@ class ContactApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of \Aspose\Email\Model\ContactStorageList, HTTP status code, HTTP response headers (array of strings)
      */
-    public function contactGetListWithHttpInfo(Model\ContactGetListRequest $request)
+    public function getListWithHttpInfo(Model\ContactGetListRequest $request)
     {
         $returnType = '\Aspose\Email\Model\ContactStorageList';
-        $request = $this->contactGetListRequest($request);
+        $request = $this->getListRequest($request);
     
         $response = $this->callClient($request);
         return $this->processResponse($response, $returnType);
     }
 
     /**
-     * Operation contactGetListAsync
+     * Operation getListAsync
      *
      * Get contact list from storage folder.
      *
@@ -999,9 +999,9 @@ class ContactApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function contactGetListAsync(Model\ContactGetListRequest $request)
+    public function getListAsync(Model\ContactGetListRequest $request)
     {
-        return $this->contactGetListAsyncWithHttpInfo($request)
+        return $this->getListAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1010,7 +1010,7 @@ class ContactApi extends ApiBase
     }
 
     /**
-     * Operation contactGetListAsyncWithHttpInfo
+     * Operation getListAsyncWithHttpInfo
      *
      * Get contact list from storage folder.
      *
@@ -1019,10 +1019,10 @@ class ContactApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function contactGetListAsyncWithHttpInfo(Model\ContactGetListRequest $request)
+    public function getListAsyncWithHttpInfo(Model\ContactGetListRequest $request)
     {
         $returnType = '\Aspose\Email\Model\ContactStorageList';
-        $request = $this->contactGetListRequest($request);
+        $request = $this->getListRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1037,19 +1037,19 @@ class ContactApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'contactGetList'
+     * Create request for operation 'getList'
      *
      * @param Model\ContactGetListRequest $request is a request object for operation
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function contactGetListRequest(Model\ContactGetListRequest $request)
+    protected function getListRequest(Model\ContactGetListRequest $request)
     {
         // verify the required parameter 'format' is set
         if ($request->format === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $format when calling contactGetList'
+                'Missing the required parameter $format when calling getList'
             );
         }
 
@@ -1062,19 +1062,19 @@ class ContactApi extends ApiBase
         // query params
         $paramValue = $request->format;
         $paramBaseName = 'format';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->folder;
         $paramBaseName = 'folder';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->storage;
         $paramBaseName = 'storage';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->items_per_page;
         $paramBaseName = 'itemsPerPage';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->page_number;
         $paramBaseName = 'pageNumber';
-        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -1100,7 +1100,7 @@ class ContactApi extends ApiBase
     }
             
     /**
-     * Operation contactSave
+     * Operation save
      *
      * Save contact to storage.
      *
@@ -1110,17 +1110,17 @@ class ContactApi extends ApiBase
      * @throws InvalidArgumentException
      * @return void
      */
-    public function contactSave($request)
+    public function save($request)
     {
         try {
-             $this->contactSaveWithHttpInfo($request);
+             $this->saveWithHttpInfo($request);
         } catch (RepeatRequestException $e) {
-             $this->contactSaveWithHttpInfo($request);
+             $this->saveWithHttpInfo($request);
         }
     }
 
     /**
-     * Operation contactSaveWithHttpInfo
+     * Operation saveWithHttpInfo
      *
      * Save contact to storage.
      *
@@ -1131,16 +1131,16 @@ class ContactApi extends ApiBase
      * @throws RepeatRequestException when request token is expired
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function contactSaveWithHttpInfo($request)
+    public function saveWithHttpInfo($request)
     {
-        $request = $this->contactSaveRequest($request);
+        $request = $this->saveRequest($request);
     
         $response = $this->callClient($request);
         return [null, $response->getStatusCode(), $response->getHeaders()];
     }
 
     /**
-     * Operation contactSaveAsync
+     * Operation saveAsync
      *
      * Save contact to storage.
      *
@@ -1149,9 +1149,9 @@ class ContactApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function contactSaveAsync($request)
+    public function saveAsync($request)
     {
-        return $this->contactSaveAsyncWithHttpInfo($request)
+        return $this->saveAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1160,7 +1160,7 @@ class ContactApi extends ApiBase
     }
 
     /**
-     * Operation contactSaveAsyncWithHttpInfo
+     * Operation saveAsyncWithHttpInfo
      *
      * Save contact to storage.
      *
@@ -1169,9 +1169,9 @@ class ContactApi extends ApiBase
      * @throws InvalidArgumentException
      * @return PromiseInterface
      */
-    public function contactSaveAsyncWithHttpInfo($request)
+    public function saveAsyncWithHttpInfo($request)
     {
-        $request = $this->contactSaveRequest($request);
+        $request = $this->saveRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1186,19 +1186,19 @@ class ContactApi extends ApiBase
     }
 
     /**
-     * Create request for operation 'contactSave'
+     * Create request for operation 'save'
      *
      * @param Model\ContactSaveRequest $request Create/Update contact request.
      *
      * @throws InvalidArgumentException
      * @return Request
      */
-    protected function contactSaveRequest($request)
+    protected function saveRequest($request)
     {
         // verify the required parameter '$request' is set
         if ($request === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $request when calling contactSave'
+                'Missing the required parameter $request when calling save'
             );
         }
 
