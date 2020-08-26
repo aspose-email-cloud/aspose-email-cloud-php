@@ -50,7 +50,7 @@ class MapiGroup
      *
      * @return MapiCalendarApi
      */
-    public function calendar()
+    public function calendar(): MapiCalendarApi
     {
         return $this->calendar;
     }
@@ -60,7 +60,7 @@ class MapiGroup
      *
      * @return MapiContactApi
      */
-    public function contact()
+    public function contact(): MapiContactApi
     {
         return $this->contact;
     }
@@ -70,7 +70,7 @@ class MapiGroup
      *
      * @return MapiMessageApi
      */
-    public function message()
+    public function message(): MapiMessageApi
     {
         return $this->message;
     }

@@ -25,7 +25,7 @@ class MapiContactTest extends TestBase
      */
     public function testModelToContactDto(): void
     {
-        $api = self::getApi();
+        $api = self::api();
         $mapiContact = self::getMapiContactDto();
         $contactDto = $api->convertMapiContactModelToContactModel(
             new ConvertMapiContactModelToContactModelRequest(
@@ -44,7 +44,7 @@ class MapiContactTest extends TestBase
      */
     public function testModelToFile(): void
     {
-        $api = self::getApi();
+        $api = self::api();
         $mapiContact = self::getMapiContactDto();
         $vcardFile = $api->convertMapiContactModelToFile(
             new ConvertMapiContactModelToFileRequest(
@@ -66,7 +66,7 @@ class MapiContactTest extends TestBase
      */
     public function testStorage(): void
     {
-        $api = self::getApi();
+        $api = self::api();
         $mapiContact = self::getMapiContactDto();
         $fileName = uniqid() . ".msg";
         $api->saveMapiContactModel(

@@ -18,7 +18,7 @@ class EmailModelTest extends TestBase
      */
     public function testEmailConverter(): void
     {
-        $api = self::getApi();
+        $api = self::api();
         $emailDto = $this->getEmailDto();
         $mapi = $api->convertEmailModelToFile(new ConvertEmailModelToFileRequest(
             'Msg',
@@ -36,7 +36,7 @@ class EmailModelTest extends TestBase
      */
     public function testConvertModelToMapiModel()
     {
-        $api = self::getApi();
+        $api = self::api();
         $emailDto = self::getEmailDto();
         $mapiMessage = $api->convertEmailModelToMapiModel(
             new ConvertEmailModelToMapiModelRequest($emailDto)

@@ -52,7 +52,7 @@ class ClientGroup
      *
      * @return ClientAccountApi
      */
-    public function account()
+    public function account(): ClientAccountApi
     {
         return $this->account;
     }
@@ -62,7 +62,7 @@ class ClientGroup
      *
      * @return ClientFolderApi
      */
-    public function folder()
+    public function folder(): ClientFolderApi
     {
         return $this->folder;
     }
@@ -72,7 +72,7 @@ class ClientGroup
      *
      * @return ClientMessageApi
      */
-    public function message()
+    public function message(): ClientMessageApi
     {
         return $this->message;
     }
@@ -82,7 +82,7 @@ class ClientGroup
      *
      * @return ClientThreadApi
      */
-    public function thread()
+    public function thread(): ClientThreadApi
     {
         return $this->thread;
     }

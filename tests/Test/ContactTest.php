@@ -27,7 +27,7 @@ class ContactTest extends TestBase
         foreach (array("vcard", "msg") as $format) {
             $extension = $format == "vcard" ? ".vcf" : ".msg";
             $file = uniqid() . $extension;
-            self::getApi()->createContact(new CreateContactRequest(
+            self::api()->createContact(new CreateContactRequest(
                 $format,
                 $file,
                 new HierarchicalObjectRequest(
@@ -36,7 +36,7 @@ class ContactTest extends TestBase
                 )
             ));
             $exist =
-                self::getApi()->objectExists(new ObjectExistsRequest(
+                self::api()->objectExists(new ObjectExistsRequest(
                     self::$folder . "/" . $file,
                     self::$storage
                 ));
@@ -49,7 +49,7 @@ class ContactTest extends TestBase
      */
     public function testContactConverter(): void
     {
-        $api = self::getApi();
+        $api = self::api();
         $contactDto = $this->getContactDto();
         $mapi = $api->convertContactModelToFile(new ConvertContactModelToFileRequest(
             'Msg',
@@ -67,7 +67,7 @@ class ContactTest extends TestBase
      */
     public function testConvertModelToMapiModel()
     {
-        $api = self::getApi();
+        $api = self::api();
         $contactDto = self::getContactDto();
         $mapiContact = $api->convertContactModelToMapiModel(
             new ConvertContactModelToMapiModelRequest($contactDto)

@@ -23,7 +23,7 @@ class MapiMessageTest extends TestBase
      */
     public function testModelToEmailDto(): void
     {
-        $api = self::getApi();
+        $api = self::api();
         $mapiMessage = self::getMapiMessageDto();
         $emailDto = $api->convertMapiMessageModelToEmailModel(
             new ConvertMapiMessageModelToEmailModelRequest(
@@ -39,7 +39,7 @@ class MapiMessageTest extends TestBase
      */
     public function testModelToFile(): void
     {
-        $api = self::getApi();
+        $api = self::api();
         $mapiMessage = self::getMapiMessageDto();
         $emlFile = $api->convertMapiMessageModelToFile(
             new ConvertMapiMessageModelToFileRequest(
@@ -76,7 +76,7 @@ class MapiMessageTest extends TestBase
      */
     public function testStorage(): void
     {
-        $api = self::getApi();
+        $api = self::api();
         $mapiMessage = self::getMapiMessageDto();
         $fileName = uniqid() . ".msg";
         $api->saveMapiMessageModel(

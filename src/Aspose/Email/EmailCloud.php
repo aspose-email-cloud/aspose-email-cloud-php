@@ -68,7 +68,7 @@ class EmailCloud
      *
      * @return CalendarApi
      */
-    public function calendar()
+    public function calendar(): CalendarApi
     {
         return $this->calendar;
     }
@@ -78,7 +78,7 @@ class EmailCloud
      *
      * @return ContactApi
      */
-    public function contact()
+    public function contact(): ContactApi
     {
         return $this->contact;
     }
@@ -88,7 +88,7 @@ class EmailCloud
      *
      * @return EmailApi
      */
-    public function email()
+    public function email(): EmailApi
     {
         return $this->email;
     }
@@ -98,7 +98,7 @@ class EmailCloud
      *
      * @return DisposableEmailApi
      */
-    public function disposableEmail()
+    public function disposableEmail(): DisposableEmailApi
     {
         return $this->disposableEmail;
     }
@@ -108,7 +108,7 @@ class EmailCloud
      *
      * @return EmailConfigApi
      */
-    public function emailConfig()
+    public function emailConfig(): EmailConfigApi
     {
         return $this->emailConfig;
     }
@@ -120,7 +120,7 @@ class EmailCloud
      *
      * @return MapiGroup
      */
-    public function mapi()
+    public function mapi(): MapiGroup
     {
         return $this->mapi;
     }
@@ -130,7 +130,7 @@ class EmailCloud
      *
      * @return ClientGroup
      */
-    public function client()
+    public function client(): ClientGroup
     {
         return $this->client;
     }
@@ -140,7 +140,7 @@ class EmailCloud
      *
      * @return AiGroup
      */
-    public function ai()
+    public function ai(): AiGroup
     {
         return $this->ai;
     }
@@ -150,7 +150,7 @@ class EmailCloud
      *
      * @return CloudStorageGroup
      */
-    public function cloudStorage()
+    public function cloudStorage(): CloudStorageGroup
     {
         return $this->cloudStorage;
     }

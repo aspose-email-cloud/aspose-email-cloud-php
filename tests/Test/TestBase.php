@@ -3,21 +3,21 @@
 namespace Test;
 
 use Aspose\Email\Configuration;
-use Aspose\Email\EmailApi;
-use Aspose\Email\Model\Requests\createFolderRequest;
-use Aspose\Email\Model\Requests\deleteFolderRequest;
+use Aspose\Email\EmailCloud;
+use Aspose\Email\Model\CreateFolderRequest;
+use Aspose\Email\Model\DeleteFolderRequest;
 use PHPUnit\Framework\TestCase;
 
 class TestBase extends TestCase
 {
     /**
-     * @var EmailApi
+     * @var EmailCloud
      */
     private static $api;
     protected static $folder;
     protected static $storage = "First Storage";
 
-    protected static function getApi(): EmailApi
+    protected static function api(): EmailCloud
     {
         return self::$api;
     }
@@ -33,13 +33,15 @@ class TestBase extends TestCase
         if (array_key_exists("authUrl", $_ENV)) {
             $configuration->setAuthUrl($_ENV["authUrl"]);
         }
-        self::$api = new EmailApi(null, $configuration);
-        self::$api->createFolder(new CreateFolderRequest(self::$folder, self::$storage));
+        self::$api = new EmailCloud(null, $configuration);
+        self::api()->cloudStorage()->folder()->createFolder(new CreateFolderRequest(self::$folder, self::$storage));
     }
 
     public static function tearDownAfterClass(): void
     {
-        self::getApi()->deleteFolder(new DeleteFolderRequest(self::$folder, self::$storage, true));
+        self::api()->cloudStorage()->folder()->deleteFolder(
+            new DeleteFolderRequest(self::$folder, self::$storage, true)
+        );
     }
 
     public static function getTestDataPath($fileName): string

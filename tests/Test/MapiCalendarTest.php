@@ -25,7 +25,7 @@ class MapiCalendarTest extends TestBase
      */
     public function testModelToCalendarDto(): void
     {
-        $api = self::getApi();
+        $api = self::api();
         $mapiCalendar = self::getMapiCalendarDto();
         $calendarDto = $api->convertMapiCalendarModelToCalendarModel(
             new ConvertMapiCalendarModelToCalendarModelRequest(
@@ -41,7 +41,7 @@ class MapiCalendarTest extends TestBase
      */
     public function testModelToFile(): void
     {
-        $api = self::getApi();
+        $api = self::api();
         $mapiCalendar = self::getMapiCalendarDto();
         $ics = $api->convertMapiCalendarModelToFile(
             new ConvertMapiCalendarModelToFileRequest(
@@ -63,7 +63,7 @@ class MapiCalendarTest extends TestBase
      */
     public function testStorage(): void
     {
-        $api = self::getApi();
+        $api = self::api();
         $mapiCalendar = self::getMapiCalendarDto();
         $fileName = uniqid() . ".msg";
         $api->saveMapiCalendarModel(

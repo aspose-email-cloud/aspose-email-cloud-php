@@ -44,7 +44,7 @@ class CalendarTest extends TestBase
     public function testHierarchical(): void
     {
         $calendarFile = $this->createCalendar();
-        $calendar = self::getApi()->getCalendar(new GetCalendarRequest(
+        $calendar = self::api()->getCalendar(new GetCalendarRequest(
             $calendarFile,
             self::$folder,
             self::$storage
@@ -65,7 +65,7 @@ class CalendarTest extends TestBase
     {
         $calendarFile = $this->createCalendar();
         $promise =
-            self::getApi()->getCalendarAsync(new GetCalendarRequest(
+            self::api()->getCalendarAsync(new GetCalendarRequest(
                 $calendarFile,
                 self::$folder,
                 self::$storage
@@ -82,7 +82,7 @@ class CalendarTest extends TestBase
         $startDate = new DateTime();
         $calendarFile = $this->createCalendar($startDate);
         $calendarData =
-            self::getApi()->getCalendar(new GetCalendarRequest(
+            self::api()->getCalendar(new GetCalendarRequest(
                 $calendarFile,
                 self::$folder,
                 self::$storage
@@ -104,19 +104,19 @@ class CalendarTest extends TestBase
         $calendar = $this->getCalendarDto();
         $folderLocation = new StorageFolderLocation(self::$storage, self::$folder);
         $calendarFile = uniqid() . ".ics";
-        self::getApi()->saveCalendarModel(
+        self::api()->saveCalendarModel(
             new SaveCalendarModelRequest(
                 $calendarFile,
                 new StorageModelRqOfCalendarDto($calendar, $folderLocation)
             )
         );
 
-        $exist = self::getApi()->objectExists(
+        $exist = self::api()->objectExists(
             new ObjectExistsRequest(self::$folder . "/" . $calendarFile, self::$storage)
         );
         $this->assertTrue($exist->getExists());
 
-        $alternate = self::getApi()->convertCalendarModelToAlternate(
+        $alternate = self::api()->convertCalendarModelToAlternate(
             new ConvertCalendarModelToAlternateRequest(
                 new CalendarDtoAlternateRq($calendar, "Create")
             )
@@ -128,14 +128,14 @@ class CalendarTest extends TestBase
             ->setSubject("Some subject")
             ->setBody("Some body");
         $emailFile = uniqid() . ".eml";
-        self::getApi()->saveEmailModel(
+        self::api()->saveEmailModel(
             new SaveEmailModelRequest(
                 "Eml",
                 $emailFile,
                 new StorageModelRqOfEmailDto($email, $folderLocation)
             )
         );
-        $downloaded = self::getApi()->downloadFile(
+        $downloaded = self::api()->downloadFile(
             new DownloadFileRequest(self::$folder . "/" . $emailFile, self::$storage)
         );
         $downloadedContent = $downloaded->fread($downloaded->getSize());
@@ -164,7 +164,7 @@ class CalendarTest extends TestBase
                 true
             )));
         $contactFile = uniqid() . ".vcf";
-        self::getApi()->saveContactModel(
+        self::api()->saveContactModel(
             new SaveContactModelRequest(
                 "VCard",
                 $contactFile,
@@ -174,7 +174,7 @@ class CalendarTest extends TestBase
                 )
             )
         );
-        $exist = self::getApi()->objectExists(
+        $exist = self::api()->objectExists(
             new ObjectExistsRequest(self::$folder . "/" . $contactFile, self::$storage)
         );
         $this->assertTrue($exist->getExists());
@@ -185,7 +185,7 @@ class CalendarTest extends TestBase
      */
     public function testCalendarConverter(): void
     {
-        $api = self::getApi();
+        $api = self::api();
         //Create DTO with specified location:
         $calendarDto = $this->getCalendarDto();
         //We can convert this DTO to a MAPI or ICS file:
@@ -209,7 +209,7 @@ class CalendarTest extends TestBase
      */
     public function testConvertModelToMapiModel()
     {
-        $api = self::getApi();
+        $api = self::api();
         $calendar = self::getCalendarDto();
         $mapiCalendar = $api->convertCalendarModelToMapiModel(
             new ConvertCalendarModelToMapiModelRequest($calendar)
@@ -226,7 +226,7 @@ class CalendarTest extends TestBase
         $startDate = $startDate == null ? new DateTime() : $startDate;
         $endDate = $startDate->add(new DateInterval("PT1H"));
         $fileName = uniqid() . ".ics";
-        self::getApi()->createCalendar(new CreateCalendarRequest(
+        self::api()->createCalendar(new CreateCalendarRequest(
             $fileName,
             new HierarchicalObjectRequest(
                 new HierarchicalObject("CALENDAR", null, array(

@@ -30,18 +30,18 @@ class OtherTest extends TestBase
     {
         $path = self::getTestDataPath("sample.ics");
         $storagePath = self::$folder . "/" . uniqid() . ".ics";
-        self::getApi()->uploadFile(new UploadFileRequest(
+        self::api()->uploadFile(new UploadFileRequest(
             $storagePath,
             new SplFileObject($path),
             self::$storage
         ));
-        $exists = self::getApi()
+        $exists = self::api()
             ->objectExists(new ObjectExistsRequest($storagePath, self::$storage));
         $this->assertTrue(
             $exists->getExists()
         );
         $calendarTempFile =
-            self::getApi()->downloadFile(new DownloadFileRequest($storagePath, self::$storage));
+            self::api()->downloadFile(new DownloadFileRequest($storagePath, self::$storage));
         $fileContent = $calendarTempFile->fread($calendarTempFile->getSize());
         $this->assertRegExp("/Access-A-Ride/", $fileContent);
     }
@@ -51,7 +51,7 @@ class OtherTest extends TestBase
      */
     public function testDiscoverEmailConfig(): void
     {
-        $configs = self::getApi()->discoverEmailConfig(new DiscoverEmailConfigRequest(
+        $configs = self::api()->discoverEmailConfig(new DiscoverEmailConfigRequest(
             "example@gmail.com",
             true
         ));
@@ -67,11 +67,11 @@ class OtherTest extends TestBase
      */
     public function testIsDisposableEmail(): void
     {
-        $disposable = self::getApi()->isEmailAddressDisposable(
+        $disposable = self::api()->isEmailAddressDisposable(
             new IsEmailAddressDisposableRequest("example@mailcatch.com")
         );
         $this->assertTrue($disposable->getValue());
-        $regular = self::getApi()->isEmailAddressDisposable(
+        $regular = self::api()->isEmailAddressDisposable(
             new IsEmailAddressDisposableRequest("example@gmail.com")
         );
         $this->assertFalse($regular->getValue());
@@ -94,13 +94,13 @@ class OtherTest extends TestBase
             )
         );
         $fileName = uniqid() . ".account";
-        self::getApi()->saveEmailClientAccount(new SaveEmailClientAccountRequest(
+        self::api()->saveEmailClientAccount(new SaveEmailClientAccountRequest(
             new StorageFileRqOfEmailClientAccount(
                 $account,
                 new StorageFileLocation(self::$storage, self::$folder, $fileName)
             )
         ));
-        $result = self::getApi()->getEmailClientAccount(new GetEmailClientAccountRequest(
+        $result = self::api()->getEmailClientAccount(new GetEmailClientAccountRequest(
             $fileName,
             self::$folder,
             self::$storage
@@ -160,7 +160,7 @@ class OtherTest extends TestBase
                 )
             )
         );
-        $api = self::getApi();
+        $api = self::api();
         $folder = self::$folder;
         $storage = self::$storage;
         $fileName = uniqid() . ".multi.account";

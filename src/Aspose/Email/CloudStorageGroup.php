@@ -50,7 +50,7 @@ class CloudStorageGroup
      *
      * @return FileApi
      */
-    public function file()
+    public function file(): FileApi
     {
         return $this->file;
     }
@@ -60,7 +60,7 @@ class CloudStorageGroup
      *
      * @return FolderApi
      */
-    public function folder()
+    public function folder(): FolderApi
     {
         return $this->folder;
     }
@@ -70,7 +70,7 @@ class CloudStorageGroup
      *
      * @return StorageApi
      */
-    public function storage()
+    public function storage(): StorageApi
     {
         return $this->storage;
     }

@@ -48,7 +48,7 @@ class AiGroup
      *
      * @return AiBcrApi
      */
-    public function bcr()
+    public function bcr(): AiBcrApi
     {
         return $this->bcr;
     }
@@ -58,7 +58,7 @@ class AiGroup
      *
      * @return AiNameApi
      */
-    public function name()
+    public function name(): AiNameApi
     {
         return $this->name;
     }
