@@ -36,8 +36,8 @@ class GetFilesListRequest
     /**
      * Initializes a new instance of the GetFilesListRequest class.
      *  
-     * @param string $path Folder path e.g. '/folder'
-     * @param string $storage_name Storage name
+     * @param string $path 
+     * @param string $storage_name 
      */
     public function __construct($path, $storage_name = null)             
     {
@@ -46,12 +46,12 @@ class GetFilesListRequest
     }
 
     /**
-     * Folder path e.g. '/folder'
+     * Gets or sets path
      */
     public $path;
 
     /**
-     * Storage name
+     * Gets or sets storage_name
      */
     public $storage_name;
 }

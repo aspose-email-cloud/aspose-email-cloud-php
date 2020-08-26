@@ -36,10 +36,10 @@ class MoveFolderRequest
     /**
      * Initializes a new instance of the MoveFolderRequest class.
      *  
-     * @param string $src_path Folder path to move e.g. '/folder'
-     * @param string $dest_path Destination folder path to move to e.g '/dst'
-     * @param string $src_storage_name Source storage name
-     * @param string $dest_storage_name Destination storage name
+     * @param string $src_path 
+     * @param string $dest_path 
+     * @param string $src_storage_name 
+     * @param string $dest_storage_name 
      */
     public function __construct($src_path, $dest_path, $src_storage_name = null, $dest_storage_name = null)             
     {
@@ -50,22 +50,22 @@ class MoveFolderRequest
     }
 
     /**
-     * Folder path to move e.g. '/folder'
+     * Gets or sets src_path
      */
     public $src_path;
 
     /**
-     * Destination folder path to move to e.g '/dst'
+     * Gets or sets dest_path
      */
     public $dest_path;
 
     /**
-     * Source storage name
+     * Gets or sets src_storage_name
      */
     public $src_storage_name;
 
     /**
-     * Destination storage name
+     * Gets or sets dest_storage_name
      */
     public $dest_storage_name;
 }

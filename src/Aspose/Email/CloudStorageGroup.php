@@ -46,7 +46,7 @@ class CloudStorageGroup
 
     
     /**
-     * File operations controller
+     * 
      *
      * @return FileApi
      */
@@ -56,7 +56,7 @@ class CloudStorageGroup
     }
     
     /**
-     * Folder operations controller
+     * 
      *
      * @return FolderApi
      */
@@ -66,7 +66,7 @@ class CloudStorageGroup
     }
     
     /**
-     * Storage operations controller
+     * 
      *
      * @return StorageApi
      */

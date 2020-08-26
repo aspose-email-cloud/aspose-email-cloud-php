@@ -69,16 +69,16 @@ Class | Method | HTTP request | Description
 *EmailConfigApi* | [**emailConfigDiscover**](EmailConfigApi.md#emailconfigdiscover) | **GET** /email/config/discover | Discover email accounts by email address. Does not validate discovered accounts.
 *EmailConfigApi* | [**emailConfigDiscoverOauth**](EmailConfigApi.md#emailconfigdiscoveroauth) | **PUT** /email/config/discover/oauth | Discover email accounts by email address. Validates discovered accounts using OAuth 2.0.
 *EmailConfigApi* | [**emailConfigDiscoverPassword**](EmailConfigApi.md#emailconfigdiscoverpassword) | **PUT** /email/config/discover/password | Discover email accounts by email address. Validates discovered accounts using login and password.
-*FileApi* | [**copyFile**](FileApi.md#copyfile) | **PUT** /email/storage/file/copy/{srcPath} | Copy file
-*FileApi* | [**deleteFile**](FileApi.md#deletefile) | **DELETE** /email/storage/file/{path} | Delete file
-*FileApi* | [**downloadFile**](FileApi.md#downloadfile) | **GET** /email/storage/file/{path} | Download file
-*FileApi* | [**moveFile**](FileApi.md#movefile) | **PUT** /email/storage/file/move/{srcPath} | Move file
-*FileApi* | [**uploadFile**](FileApi.md#uploadfile) | **PUT** /email/storage/file/{path} | Upload file
-*FolderApi* | [**copyFolder**](FolderApi.md#copyfolder) | **PUT** /email/storage/folder/copy/{srcPath} | Copy folder
-*FolderApi* | [**createFolder**](FolderApi.md#createfolder) | **PUT** /email/storage/folder/{path} | Create the folder
-*FolderApi* | [**deleteFolder**](FolderApi.md#deletefolder) | **DELETE** /email/storage/folder/{path} | Delete folder
-*FolderApi* | [**getFilesList**](FolderApi.md#getfileslist) | **GET** /email/storage/folder/{path} | Get all files and folders within a folder
-*FolderApi* | [**moveFolder**](FolderApi.md#movefolder) | **PUT** /email/storage/folder/move/{srcPath} | Move folder
+*FileApi* | [**copyFile**](FileApi.md#copyfile) | **PUT** /email/storage/file/copy/{srcPath} | 
+*FileApi* | [**deleteFile**](FileApi.md#deletefile) | **DELETE** /email/storage/file/{path} | 
+*FileApi* | [**downloadFile**](FileApi.md#downloadfile) | **GET** /email/storage/file/{path} | 
+*FileApi* | [**moveFile**](FileApi.md#movefile) | **PUT** /email/storage/file/move/{srcPath} | 
+*FileApi* | [**uploadFile**](FileApi.md#uploadfile) | **PUT** /email/storage/file/{path} | 
+*FolderApi* | [**copyFolder**](FolderApi.md#copyfolder) | **PUT** /email/storage/folder/copy/{srcPath} | 
+*FolderApi* | [**createFolder**](FolderApi.md#createfolder) | **PUT** /email/storage/folder/{path} | 
+*FolderApi* | [**deleteFolder**](FolderApi.md#deletefolder) | **DELETE** /email/storage/folder/{path} | 
+*FolderApi* | [**getFilesList**](FolderApi.md#getfileslist) | **GET** /email/storage/folder/{path} | 
+*FolderApi* | [**moveFolder**](FolderApi.md#movefolder) | **PUT** /email/storage/folder/move/{srcPath} | 
 *MapiCalendarApi* | [**mapiCalendarAsCalendarDto**](MapiCalendarApi.md#mapicalendarascalendardto) | **PUT** /email/MapiCalendar/as-calendar-dto | Converts MAPI calendar model to CalendarDto model.
 *MapiCalendarApi* | [**mapiCalendarAsFile**](MapiCalendarApi.md#mapicalendarasfile) | **PUT** /email/MapiCalendar/as-file | Converts MAPI calendar model to specified format and returns as file.
 *MapiCalendarApi* | [**mapiCalendarFromFile**](MapiCalendarApi.md#mapicalendarfromfile) | **PUT** /email/MapiCalendar/from-file | Converts calendar file to a MAPI model representation.
@@ -94,10 +94,10 @@ Class | Method | HTTP request | Description
 *MapiMessageApi* | [**mapiMessageFromFile**](MapiMessageApi.md#mapimessagefromfile) | **PUT** /email/MapiMessage/from-file | Converts email file to a MAPI model representation
 *MapiMessageApi* | [**mapiMessageGet**](MapiMessageApi.md#mapimessageget) | **GET** /email/MapiMessage | Get MAPI message document.
 *MapiMessageApi* | [**mapiMessageSave**](MapiMessageApi.md#mapimessagesave) | **PUT** /email/MapiMessage | Save MAPI message to storage.
-*StorageApi* | [**getDiscUsage**](StorageApi.md#getdiscusage) | **GET** /email/storage/disc | Get disc usage
-*StorageApi* | [**getFileVersions**](StorageApi.md#getfileversions) | **GET** /email/storage/version/{path} | Get file versions
-*StorageApi* | [**objectExists**](StorageApi.md#objectexists) | **GET** /email/storage/exist/{path} | Check if file or folder exists
-*StorageApi* | [**storageExists**](StorageApi.md#storageexists) | **GET** /email/storage/{storageName}/exist | Check if storage exists
+*StorageApi* | [**getDiscUsage**](StorageApi.md#getdiscusage) | **GET** /email/storage/disc | 
+*StorageApi* | [**getFileVersions**](StorageApi.md#getfileversions) | **GET** /email/storage/version/{path} | 
+*StorageApi* | [**objectExists**](StorageApi.md#objectexists) | **GET** /email/storage/exist/{path} | 
+*StorageApi* | [**storageExists**](StorageApi.md#storageexists) | **GET** /email/storage/{storageName}/exist | 
 
 
 ## Documentation For Models

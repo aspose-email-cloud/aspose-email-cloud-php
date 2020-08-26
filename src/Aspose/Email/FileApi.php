@@ -57,8 +57,6 @@ class FileApi extends ApiBase
     /**
      * Operation copyFile
      *
-     * Copy file
-     *
      * @param Model\CopyFileRequest $request is a request object for operation
      *
      * @throws ApiException on non-2xx response
@@ -76,8 +74,6 @@ class FileApi extends ApiBase
 
     /**
      * Operation copyFileWithHttpInfo
-     *
-     * Copy file
      *
      * @param Model\CopyFileRequest $request is a request object for operation
      *
@@ -97,7 +93,7 @@ class FileApi extends ApiBase
     /**
      * Operation copyFileAsync
      *
-     * Copy file
+     * 
      *
      * @param Model\CopyFileRequest $request is a request object for operation
      *
@@ -117,7 +113,7 @@ class FileApi extends ApiBase
     /**
      * Operation copyFileAsyncWithHttpInfo
      *
-     * Copy file
+     * 
      *
      * @param Model\CopyFileRequest $request is a request object for operation
      *
@@ -215,8 +211,6 @@ class FileApi extends ApiBase
     /**
      * Operation deleteFile
      *
-     * Delete file
-     *
      * @param Model\DeleteFileRequest $request is a request object for operation
      *
      * @throws ApiException on non-2xx response
@@ -234,8 +228,6 @@ class FileApi extends ApiBase
 
     /**
      * Operation deleteFileWithHttpInfo
-     *
-     * Delete file
      *
      * @param Model\DeleteFileRequest $request is a request object for operation
      *
@@ -255,7 +247,7 @@ class FileApi extends ApiBase
     /**
      * Operation deleteFileAsync
      *
-     * Delete file
+     * 
      *
      * @param Model\DeleteFileRequest $request is a request object for operation
      *
@@ -275,7 +267,7 @@ class FileApi extends ApiBase
     /**
      * Operation deleteFileAsyncWithHttpInfo
      *
-     * Delete file
+     * 
      *
      * @param Model\DeleteFileRequest $request is a request object for operation
      *
@@ -361,8 +353,6 @@ class FileApi extends ApiBase
     /**
      * Operation downloadFile
      *
-     * Download file
-     *
      * @param Model\DownloadFileRequest $request is a request object for operation
      *
      * @throws ApiException on non-2xx response
@@ -383,8 +373,6 @@ class FileApi extends ApiBase
     /**
      * Operation downloadFileWithHttpInfo
      *
-     * Download file
-     *
      * @param Model\DownloadFileRequest $request is a request object for operation
      *
      * @throws ApiException on non-2xx response
@@ -404,7 +392,7 @@ class FileApi extends ApiBase
     /**
      * Operation downloadFileAsync
      *
-     * Download file
+     * 
      *
      * @param Model\DownloadFileRequest $request is a request object for operation
      *
@@ -424,7 +412,7 @@ class FileApi extends ApiBase
     /**
      * Operation downloadFileAsyncWithHttpInfo
      *
-     * Download file
+     * 
      *
      * @param Model\DownloadFileRequest $request is a request object for operation
      *
@@ -511,8 +499,6 @@ class FileApi extends ApiBase
     /**
      * Operation moveFile
      *
-     * Move file
-     *
      * @param Model\MoveFileRequest $request is a request object for operation
      *
      * @throws ApiException on non-2xx response
@@ -530,8 +516,6 @@ class FileApi extends ApiBase
 
     /**
      * Operation moveFileWithHttpInfo
-     *
-     * Move file
      *
      * @param Model\MoveFileRequest $request is a request object for operation
      *
@@ -551,7 +535,7 @@ class FileApi extends ApiBase
     /**
      * Operation moveFileAsync
      *
-     * Move file
+     * 
      *
      * @param Model\MoveFileRequest $request is a request object for operation
      *
@@ -571,7 +555,7 @@ class FileApi extends ApiBase
     /**
      * Operation moveFileAsyncWithHttpInfo
      *
-     * Move file
+     * 
      *
      * @param Model\MoveFileRequest $request is a request object for operation
      *
@@ -669,8 +653,6 @@ class FileApi extends ApiBase
     /**
      * Operation uploadFile
      *
-     * Upload file
-     *
      * @param Model\UploadFileRequest $request is a request object for operation
      *
      * @throws ApiException on non-2xx response
@@ -691,8 +673,6 @@ class FileApi extends ApiBase
     /**
      * Operation uploadFileWithHttpInfo
      *
-     * Upload file
-     *
      * @param Model\UploadFileRequest $request is a request object for operation
      *
      * @throws ApiException on non-2xx response
@@ -712,7 +692,7 @@ class FileApi extends ApiBase
     /**
      * Operation uploadFileAsync
      *
-     * Upload file
+     * 
      *
      * @param Model\UploadFileRequest $request is a request object for operation
      *
@@ -732,7 +712,7 @@ class FileApi extends ApiBase
     /**
      * Operation uploadFileAsyncWithHttpInfo
      *
-     * Upload file
+     * 
      *
      * @param Model\UploadFileRequest $request is a request object for operation
      *

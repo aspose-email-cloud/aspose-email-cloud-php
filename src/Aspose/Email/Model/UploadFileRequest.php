@@ -36,9 +36,9 @@ class UploadFileRequest
     /**
      * Initializes a new instance of the UploadFileRequest class.
      *  
-     * @param string $path Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header.
+     * @param string $path 
      * @param \SplFileObject $file File to upload
-     * @param string $storage_name Storage name
+     * @param string $storage_name 
      */
     public function __construct($path, $file, $storage_name = null)             
     {
@@ -48,7 +48,7 @@ class UploadFileRequest
     }
 
     /**
-     * Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header.
+     * Gets or sets path
      */
     public $path;
 
@@ -58,7 +58,7 @@ class UploadFileRequest
     public $file;
 
     /**
-     * Storage name
+     * Gets or sets storage_name
      */
     public $storage_name;
 }

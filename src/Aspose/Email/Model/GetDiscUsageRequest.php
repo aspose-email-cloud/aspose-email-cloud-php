@@ -36,7 +36,7 @@ class GetDiscUsageRequest
     /**
      * Initializes a new instance of the GetDiscUsageRequest class.
      *  
-     * @param string $storage_name Storage name
+     * @param string $storage_name 
      */
     public function __construct($storage_name = null)             
     {
@@ -44,7 +44,7 @@ class GetDiscUsageRequest
     }
 
     /**
-     * Storage name
+     * Gets or sets storage_name
      */
     public $storage_name;
 }

@@ -36,9 +36,9 @@ class DeleteFileRequest
     /**
      * Initializes a new instance of the DeleteFileRequest class.
      *  
-     * @param string $path File path e.g. '/folder/file.ext'
-     * @param string $storage_name Storage name
-     * @param string $version_id File version ID to delete
+     * @param string $path 
+     * @param string $storage_name 
+     * @param string $version_id 
      */
     public function __construct($path, $storage_name = null, $version_id = null)             
     {
@@ -48,17 +48,17 @@ class DeleteFileRequest
     }
 
     /**
-     * File path e.g. '/folder/file.ext'
+     * Gets or sets path
      */
     public $path;
 
     /**
-     * Storage name
+     * Gets or sets storage_name
      */
     public $storage_name;
 
     /**
-     * File version ID to delete
+     * Gets or sets version_id
      */
     public $version_id;
 }

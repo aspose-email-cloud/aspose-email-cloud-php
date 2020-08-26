@@ -57,8 +57,6 @@ class StorageApi extends ApiBase
     /**
      * Operation getDiscUsage
      *
-     * Get disc usage
-     *
      * @param Model\GetDiscUsageRequest $request is a request object for operation
      *
      * @throws ApiException on non-2xx response
@@ -79,8 +77,6 @@ class StorageApi extends ApiBase
     /**
      * Operation getDiscUsageWithHttpInfo
      *
-     * Get disc usage
-     *
      * @param Model\GetDiscUsageRequest $request is a request object for operation
      *
      * @throws ApiException on non-2xx response
@@ -100,7 +96,7 @@ class StorageApi extends ApiBase
     /**
      * Operation getDiscUsageAsync
      *
-     * Get disc usage
+     * 
      *
      * @param Model\GetDiscUsageRequest $request is a request object for operation
      *
@@ -120,7 +116,7 @@ class StorageApi extends ApiBase
     /**
      * Operation getDiscUsageAsyncWithHttpInfo
      *
-     * Get disc usage
+     * 
      *
      * @param Model\GetDiscUsageRequest $request is a request object for operation
      *
@@ -192,8 +188,6 @@ class StorageApi extends ApiBase
     /**
      * Operation getFileVersions
      *
-     * Get file versions
-     *
      * @param Model\GetFileVersionsRequest $request is a request object for operation
      *
      * @throws ApiException on non-2xx response
@@ -214,8 +208,6 @@ class StorageApi extends ApiBase
     /**
      * Operation getFileVersionsWithHttpInfo
      *
-     * Get file versions
-     *
      * @param Model\GetFileVersionsRequest $request is a request object for operation
      *
      * @throws ApiException on non-2xx response
@@ -235,7 +227,7 @@ class StorageApi extends ApiBase
     /**
      * Operation getFileVersionsAsync
      *
-     * Get file versions
+     * 
      *
      * @param Model\GetFileVersionsRequest $request is a request object for operation
      *
@@ -255,7 +247,7 @@ class StorageApi extends ApiBase
     /**
      * Operation getFileVersionsAsyncWithHttpInfo
      *
-     * Get file versions
+     * 
      *
      * @param Model\GetFileVersionsRequest $request is a request object for operation
      *
@@ -339,8 +331,6 @@ class StorageApi extends ApiBase
     /**
      * Operation objectExists
      *
-     * Check if file or folder exists
-     *
      * @param Model\ObjectExistsRequest $request is a request object for operation
      *
      * @throws ApiException on non-2xx response
@@ -361,8 +351,6 @@ class StorageApi extends ApiBase
     /**
      * Operation objectExistsWithHttpInfo
      *
-     * Check if file or folder exists
-     *
      * @param Model\ObjectExistsRequest $request is a request object for operation
      *
      * @throws ApiException on non-2xx response
@@ -382,7 +370,7 @@ class StorageApi extends ApiBase
     /**
      * Operation objectExistsAsync
      *
-     * Check if file or folder exists
+     * 
      *
      * @param Model\ObjectExistsRequest $request is a request object for operation
      *
@@ -402,7 +390,7 @@ class StorageApi extends ApiBase
     /**
      * Operation objectExistsAsyncWithHttpInfo
      *
-     * Check if file or folder exists
+     * 
      *
      * @param Model\ObjectExistsRequest $request is a request object for operation
      *
@@ -489,8 +477,6 @@ class StorageApi extends ApiBase
     /**
      * Operation exists
      *
-     * Check if storage exists
-     *
      * @param Model\StorageExistsRequest $request is a request object for operation
      *
      * @throws ApiException on non-2xx response
@@ -511,8 +497,6 @@ class StorageApi extends ApiBase
     /**
      * Operation existsWithHttpInfo
      *
-     * Check if storage exists
-     *
      * @param Model\StorageExistsRequest $request is a request object for operation
      *
      * @throws ApiException on non-2xx response
@@ -532,7 +516,7 @@ class StorageApi extends ApiBase
     /**
      * Operation existsAsync
      *
-     * Check if storage exists
+     * 
      *
      * @param Model\StorageExistsRequest $request is a request object for operation
      *
@@ -552,7 +536,7 @@ class StorageApi extends ApiBase
     /**
      * Operation existsAsyncWithHttpInfo
      *
-     * Check if storage exists
+     * 
      *
      * @param Model\StorageExistsRequest $request is a request object for operation
      *

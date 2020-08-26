@@ -37,7 +37,6 @@ use \Aspose\Email\ObjectSerializer;
 /**
  * FilesUploadResult
  *
- * @description File upload result
  */
 class FilesUploadResult implements ArrayAccess
 {
@@ -176,8 +175,8 @@ class FilesUploadResult implements ArrayAccess
     /**
      * Initializes a new instance of the FilesUploadResult class.
      *  
-     * @param string[] $uploaded List of uploaded file names
-     * @param \Aspose\Email\Model\Error[] $errors List of errors.
+     * @param string[] $uploaded 
+     * @param \Aspose\Email\Model\Error[] $errors 
      */
     public function __construct($uploaded = null, $errors = null)
     {
@@ -226,7 +225,7 @@ class FilesUploadResult implements ArrayAccess
     /**
      * Sets uploaded
      *
-     * @param string[] $uploaded List of uploaded file names
+     * @param string[] $uploaded uploaded
      *
      * @return $this
      */
@@ -250,7 +249,7 @@ class FilesUploadResult implements ArrayAccess
     /**
      * Sets errors
      *
-     * @param \Aspose\Email\Model\Error[] $errors List of errors.
+     * @param \Aspose\Email\Model\Error[] $errors errors
      *
      * @return $this
      */

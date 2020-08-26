@@ -37,7 +37,6 @@ use \Aspose\Email\ObjectSerializer;
 /**
  * ErrorDetails
  *
- * @description The error details
  */
 class ErrorDetails implements ArrayAccess
 {
@@ -176,8 +175,8 @@ class ErrorDetails implements ArrayAccess
     /**
      * Initializes a new instance of the ErrorDetails class.
      *  
-     * @param string $request_id The request id
-     * @param \DateTime $date Date
+     * @param string $request_id 
+     * @param \DateTime $date 
      */
     public function __construct($request_id = null, $date = null)
     {
@@ -232,7 +231,7 @@ class ErrorDetails implements ArrayAccess
     /**
      * Sets request_id
      *
-     * @param string $request_id The request id
+     * @param string $request_id request_id
      *
      * @return $this
      */
@@ -256,7 +255,7 @@ class ErrorDetails implements ArrayAccess
     /**
      * Sets date
      *
-     * @param \DateTime $date Date
+     * @param \DateTime $date date
      *
      * @return $this
      */

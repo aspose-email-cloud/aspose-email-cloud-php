@@ -35,7 +35,6 @@ use \Aspose\Email\ObjectSerializer;
 /**
  * FileVersion
  *
- * @description File Version
  */
 class FileVersion extends StorageFile 
 {
@@ -168,13 +167,13 @@ class FileVersion extends StorageFile
     /**
      * Initializes a new instance of the FileVersion class.
      *  
-     * @param string $name File or folder name.
-     * @param bool $is_folder True if it is a folder.
-     * @param \DateTime $modified_date File or folder last modified DateTime.
-     * @param int $size File or folder size.
-     * @param string $path File or folder path.
-     * @param string $version_id File Version ID.
-     * @param bool $is_latest Specifies whether the file is (true) or is not (false) the latest version of an file.
+     * @param string $name 
+     * @param bool $is_folder 
+     * @param \DateTime $modified_date 
+     * @param int $size 
+     * @param string $path 
+     * @param string $version_id 
+     * @param bool $is_latest 
      */
     public function __construct($name = null, $is_folder = null, $modified_date = null, $size = null, $path = null, $version_id = null, $is_latest = null)
     {
@@ -238,7 +237,7 @@ class FileVersion extends StorageFile
     /**
      * Sets version_id
      *
-     * @param string $version_id File Version ID.
+     * @param string $version_id version_id
      *
      * @return $this
      */
@@ -262,7 +261,7 @@ class FileVersion extends StorageFile
     /**
      * Sets is_latest
      *
-     * @param bool $is_latest Specifies whether the file is (true) or is not (false) the latest version of an file.
+     * @param bool $is_latest is_latest
      *
      * @return $this
      */
