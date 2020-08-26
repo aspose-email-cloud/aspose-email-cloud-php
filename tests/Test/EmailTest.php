@@ -3,15 +3,14 @@
 
 namespace Test;
 
+use Aspose\Email\Model\EmailAsFileRequest;
+use Aspose\Email\Model\EmailConvertRequest;
 use Aspose\Email\Model\EmailDto;
+use Aspose\Email\Model\EmailFromFileRequest;
 use Aspose\Email\Model\MailAddress;
-use Aspose\Email\Model\Requests\convertEmailModelToFileRequest;
-use Aspose\Email\Model\Requests\convertEmailModelToMapiModelRequest;
-use Aspose\Email\Model\Requests\convertEmailRequest;
-use Aspose\Email\Model\Requests\getEmailFileAsModelRequest;
 use DateTime;
 
-class EmailModelTest extends TestBase
+class EmailTest extends TestBase
 {
     /**
      * @group pipeline
@@ -20,14 +19,11 @@ class EmailModelTest extends TestBase
     {
         $api = self::api();
         $emailDto = $this->getEmailDto();
-        $mapi = $api->convertEmailModelToFile(new ConvertEmailModelToFileRequest(
-            'Msg',
-            $emailDto
-        ));
-        $eml = $api->convertEmail(new ConvertEmailRequest('Eml', $mapi));
+        $mapi = $api->email()->asFile(new EmailAsFileRequest('Msg', $emailDto));
+        $eml = $api->email()->convert(new EmailConvertRequest('Eml', $mapi));
         $fileContent = $eml->fread($eml->getSize());
         $this->assertRegExp("/" . $emailDto->getFrom()->getAddress() . "/", $fileContent);
-        $dto = $api->getEmailFileAsModel(new GetEmailFileAsModelRequest($eml));
+        $dto = $api->email()->fromFile(new EmailFromFileRequest('Eml', $eml));
         $this->assertEquals($emailDto->getFrom()->getAddress(), $dto->getFrom()->getAddress());
     }
 
@@ -38,9 +34,7 @@ class EmailModelTest extends TestBase
     {
         $api = self::api();
         $emailDto = self::getEmailDto();
-        $mapiMessage = $api->convertEmailModelToMapiModel(
-            new ConvertEmailModelToMapiModelRequest($emailDto)
-        );
+        $mapiMessage = $api->email()->asMapi($emailDto);
         $this->assertEquals($emailDto->getSubject(), $mapiMessage->getSubject());
     }
 
