@@ -178,13 +178,13 @@ class FolderApi extends ApiBase
         // query params
         $paramValue = $request->dest_path;
         $paramBaseName = 'destPath';
-        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->src_storage_name;
         $paramBaseName = 'srcStorageName';
-        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->dest_storage_name;
         $paramBaseName = 'destStorageName';
-        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -327,7 +327,7 @@ class FolderApi extends ApiBase
         // query params
         $paramValue = $request->storage_name;
         $paramBaseName = 'storageName';
-        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -470,10 +470,10 @@ class FolderApi extends ApiBase
         // query params
         $paramValue = $request->storage_name;
         $paramBaseName = 'storageName';
-        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->recursive;
         $paramBaseName = 'recursive';
-        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -620,7 +620,7 @@ class FolderApi extends ApiBase
         // query params
         $paramValue = $request->storage_name;
         $paramBaseName = 'storageName';
-        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -769,13 +769,13 @@ class FolderApi extends ApiBase
         // query params
         $paramValue = $request->dest_path;
         $paramBaseName = 'destPath';
-        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->src_storage_name;
         $paramBaseName = 'srcStorageName';
-        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->dest_storage_name;
         $paramBaseName = 'destStorageName';
-        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(

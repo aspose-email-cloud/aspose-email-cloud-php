@@ -170,13 +170,13 @@ class AiBcrApi extends ApiBase
         // query params
         $paramValue = $request->countries;
         $paramBaseName = 'countries';
-        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->languages;
         $paramBaseName = 'languages';
-        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->is_single;
         $paramBaseName = 'isSingle';
-        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         // form params
         $formFiles = [];

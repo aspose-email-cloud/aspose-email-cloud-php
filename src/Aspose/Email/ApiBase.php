@@ -248,7 +248,7 @@ class ApiBase
     }
 
     protected function prepareRequestBody(
-        $headers,
+        &$headers,
         $bodyParam,
         $multipart,
         $formParams,
@@ -288,7 +288,7 @@ class ApiBase
         return $httpBody;
     }
 
-    protected function processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath)
+    protected function processQueryParameter($paramValue, $paramBaseName, &$queryParams, &$resourcePath)
     {
         if ($paramValue !== null) {
             $localName = lcfirst($paramBaseName);
@@ -305,18 +305,17 @@ class ApiBase
                 $queryParams[$localName] = ObjectSerializer::toQueryValue($localValue);
             }
         }
-        return $resourcePath;
     }
 
     protected function toClientRequest(
         $httpMethod,
         $bodyParam,
-        $resourcePath,
+        &$resourcePath,
         $queryParams,
         $formParams,
         $formFiles,
         $multipart,
-        $headers,
+        &$headers,
         $headerParams
     ) {
         $resourcePath = $this->parseURL($resourcePath, $queryParams);

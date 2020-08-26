@@ -406,16 +406,16 @@ class ClientFolderApi extends ApiBase
         // query params
         $paramValue = $request->account;
         $paramBaseName = 'account';
-        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->storage;
         $paramBaseName = 'storage';
-        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->account_storage_folder;
         $paramBaseName = 'accountStorageFolder';
-        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->parent_folder;
         $paramBaseName = 'parentFolder';
-        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(

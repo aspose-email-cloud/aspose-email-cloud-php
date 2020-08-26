@@ -170,7 +170,7 @@ class DisposableEmailApi extends ApiBase
         // query params
         $paramValue = $request->address;
         $paramBaseName = 'address';
-        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(

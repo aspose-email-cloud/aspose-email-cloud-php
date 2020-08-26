@@ -426,10 +426,10 @@ class ContactApi extends ApiBase
         // query params
         $paramValue = $request->to_format;
         $paramBaseName = 'toFormat';
-        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->from_format;
         $paramBaseName = 'fromFormat';
-        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         // form params
         $formFiles = [];
@@ -588,7 +588,7 @@ class ContactApi extends ApiBase
         // query params
         $paramValue = $request->format;
         $paramBaseName = 'format';
-        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         // form params
         $formFiles = [];
@@ -747,16 +747,16 @@ class ContactApi extends ApiBase
         // query params
         $paramValue = $request->format;
         $paramBaseName = 'format';
-        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->file_name;
         $paramBaseName = 'fileName';
-        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->folder;
         $paramBaseName = 'folder';
-        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->storage;
         $paramBaseName = 'storage';
-        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -909,19 +909,19 @@ class ContactApi extends ApiBase
         // query params
         $paramValue = $request->file_name;
         $paramBaseName = 'fileName';
-        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->to_format;
         $paramBaseName = 'toFormat';
-        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->from_format;
         $paramBaseName = 'fromFormat';
-        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->storage;
         $paramBaseName = 'storage';
-        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->folder;
         $paramBaseName = 'folder';
-        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
@@ -1062,19 +1062,19 @@ class ContactApi extends ApiBase
         // query params
         $paramValue = $request->format;
         $paramBaseName = 'format';
-        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->folder;
         $paramBaseName = 'folder';
-        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->storage;
         $paramBaseName = 'storage';
-        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->items_per_page;
         $paramBaseName = 'itemsPerPage';
-        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
         $paramValue = $request->page_number;
         $paramBaseName = 'pageNumber';
-        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         if ($multipart) {
             $headers= $this->headerSelector->selectHeadersForMultipart(
