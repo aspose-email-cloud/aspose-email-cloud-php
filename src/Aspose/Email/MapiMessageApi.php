@@ -185,7 +185,7 @@ class MapiMessageApi extends ApiBase
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     * @return Model\\SplFileObject
+     * @return \SplFileObject
      */
     public function asFile($request)
     {
