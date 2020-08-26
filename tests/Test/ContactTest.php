@@ -6,6 +6,8 @@ namespace Test;
 
 use Aspose\Email\Model\ContactDto;
 use Aspose\Email\Model\EmailAddress;
+use Aspose\Email\Model\EnumWithCustomOfEmailAddressCategory;
+use Aspose\Email\Model\EnumWithCustomOfPhoneNumberCategory;
 use Aspose\Email\Model\HierarchicalObject;
 use Aspose\Email\Model\HierarchicalObjectRequest;
 use Aspose\Email\Model\PhoneNumber;
@@ -19,6 +21,45 @@ use Aspose\Email\Model\StorageFolderLocation;
 
 class ContactTest extends TestBase
 {
+    /**
+     * @group pipeline
+     */
+    public function testCreateContactModel(): void
+    {
+        $contact = (new ContactDto())
+            ->setGender("Male")
+            ->setSurname("Thomas")
+            ->setGivenName("Alex")
+            ->setEmailAddresses(array(new EmailAddress(
+                new EnumWithCustomOfEmailAddressCategory("Work"),
+                "Alex Thomas",
+                true,
+                null,
+                "alex.thomas@work.com"
+            )))
+            ->setPhoneNumbers(array(new PhoneNumber(
+                new EnumWithCustomOfPhoneNumberCategory("Work"),
+                "+49211424721",
+                true
+            )));
+        $contactFile = uniqid() . ".vcf";
+        self::api()->saveContactModel(
+            new SaveContactModelRequest(
+                "VCard",
+                $contactFile,
+                new StorageModelRqOfContactDto(
+                    $contact,
+                    new StorageFolderLocation(self::$storage, self::$folder)
+                )
+            )
+        );
+        $exist = self::api()->objectExists(
+            new \Aspose\Email\Model\ObjectExistsRequest(self::$folder . "/" . $contactFile, self::$storage)
+        );
+        $this->assertTrue($exist->getExists());
+    }
+
+
     /**
      * @group pipeline
      */

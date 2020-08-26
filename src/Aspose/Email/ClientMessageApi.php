@@ -642,7 +642,7 @@ class ClientMessageApi extends ApiBase
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     * @return Model\\SplFileObject
+     * @return \SplFileObject
      */
     public function fetchFile(Model\ClientMessageFetchFileRequest $request)
     {

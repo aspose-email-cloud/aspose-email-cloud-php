@@ -185,7 +185,7 @@ class CalendarApi extends ApiBase
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     * @return Model\\SplFileObject
+     * @return \SplFileObject
      */
     public function asFile($request)
     {
@@ -429,7 +429,7 @@ class CalendarApi extends ApiBase
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     * @return Model\\SplFileObject
+     * @return \SplFileObject
      */
     public function convert(Model\CalendarConvertRequest $request)
     {
@@ -1042,7 +1042,7 @@ class CalendarApi extends ApiBase
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     * @return Model\\SplFileObject
+     * @return \SplFileObject
      */
     public function getAsFile(Model\CalendarGetAsFileRequest $request)
     {

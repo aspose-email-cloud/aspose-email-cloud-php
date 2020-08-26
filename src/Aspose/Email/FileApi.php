@@ -367,7 +367,7 @@ class FileApi extends ApiBase
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     * @return Model\\SplFileObject
+     * @return \SplFileObject
      */
     public function downloadFile(Model\DownloadFileRequest $request)
     {

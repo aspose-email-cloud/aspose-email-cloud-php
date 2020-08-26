@@ -307,7 +307,7 @@ class ContactApi extends ApiBase
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     * @return Model\\SplFileObject
+     * @return \SplFileObject
      */
     public function convert(Model\ContactConvertRequest $request)
     {
@@ -790,7 +790,7 @@ class ContactApi extends ApiBase
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     * @return Model\\SplFileObject
+     * @return \SplFileObject
      */
     public function getAsFile(Model\ContactGetAsFileRequest $request)
     {

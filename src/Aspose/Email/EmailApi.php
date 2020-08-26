@@ -307,7 +307,7 @@ class EmailApi extends ApiBase
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     * @return Model\\SplFileObject
+     * @return \SplFileObject
      */
     public function convert(Model\EmailConvertRequest $request)
     {
@@ -781,7 +781,7 @@ class EmailApi extends ApiBase
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     * @return Model\\SplFileObject
+     * @return \SplFileObject
      */
     public function getAsFile(Model\EmailGetAsFileRequest $request)
     {
