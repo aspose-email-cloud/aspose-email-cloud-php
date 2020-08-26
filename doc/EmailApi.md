@@ -73,14 +73,16 @@ Converts email document to specified format and returns as file
 ### Request parameters
 ```php
 new Aspose\Email\Model\EmailConvertRequest(
-    $format,
+    $from_format,
+    $to_format,
     $file)
 ```
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **format** | **string**| File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef |
+ **from_format** | **string**| File format to convert to Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef |
+ **to_format** | **string**| File format to convert from Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef |
  **file** | **\SplFileObject**| File to convert |
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)

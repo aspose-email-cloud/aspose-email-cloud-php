@@ -4,15 +4,13 @@
 namespace Test;
 
 use Aspose\Email\Model\MapiAttachmentDto;
+use Aspose\Email\Model\MapiMessageAsFileRequest;
 use Aspose\Email\Model\MapiMessageDto;
+use Aspose\Email\Model\MapiMessageFromFileRequest;
+use Aspose\Email\Model\MapiMessageGetRequest;
+use Aspose\Email\Model\MapiMessageSaveRequest;
 use Aspose\Email\Model\MapiRecipientDto;
-use Aspose\Email\Model\Requests\convertMapiMessageModelToEmailModelRequest;
-use Aspose\Email\Model\Requests\convertMapiMessageModelToFileRequest;
-use Aspose\Email\Model\Requests\getEmailFileAsMapiModelRequest;
-use Aspose\Email\Model\Requests\getMapiMessageModelRequest;
-use Aspose\Email\Model\Requests\saveMapiMessageModelRequest;
-use Aspose\Email\Model\StorageFolderLocation;
-use Aspose\Email\Model\StorageModelRqOfMapiMessageDto;
+use Aspose\Email\Model\StorageFileLocation;
 use DateTime;
 
 class MapiMessageTest extends TestBase
@@ -25,11 +23,7 @@ class MapiMessageTest extends TestBase
     {
         $api = self::api();
         $mapiMessage = self::getMapiMessageDto();
-        $emailDto = $api->convertMapiMessageModelToEmailModel(
-            new ConvertMapiMessageModelToEmailModelRequest(
-                $mapiMessage
-            )
-        );
+        $emailDto = $api->mapi()->message()->asEmailDto($mapiMessage);
         $this->assertEquals($mapiMessage->getSubject(), $emailDto->getSubject());
         $this->assertEquals($mapiMessage->getBody(), $emailDto->getBody());
     }
@@ -41,18 +35,14 @@ class MapiMessageTest extends TestBase
     {
         $api = self::api();
         $mapiMessage = self::getMapiMessageDto();
-        $emlFile = $api->convertMapiMessageModelToFile(
-            new ConvertMapiMessageModelToFileRequest(
-                "Eml",
-                $mapiMessage
-            )
-        );
+        $emlFile = $api->mapi()->message()->asFile(new MapiMessageAsFileRequest(
+            "Eml",
+            $mapiMessage
+        ));
         $fileContent = $emlFile->fread($emlFile->getSize());
         $this->assertRegExp("/" . $mapiMessage->getSubject() . "/", $fileContent);
 
-        $mapiMessageConverted = $api->getEmailFileAsMapiModel(
-            new GetEmailFileAsMapiModelRequest("Eml", $emlFile)
-        );
+        $mapiMessageConverted = $api->mapi()->message()->fromFile(new MapiMessageFromFileRequest("Eml", $emlFile));
         $this->assertEquals($mapiMessage->getSubject(), $mapiMessageConverted->getSubject());
         //Subject is also available as MapiPropertyDto:
         //There are different Property descriptors supported.
@@ -79,24 +69,17 @@ class MapiMessageTest extends TestBase
         $api = self::api();
         $mapiMessage = self::getMapiMessageDto();
         $fileName = uniqid() . ".msg";
-        $api->saveMapiMessageModel(
-            new SaveMapiMessageModelRequest(
-                "Msg",
-                $fileName,
-                new StorageModelRqOfMapiMessageDto(
-                    $mapiMessage,
-                    new StorageFolderLocation(self::$storage, self::$folder)
-                )
-            )
-        );
-        $mapiMessageFromStorage = $api->getMapiMessageModel(
-            new GetMapiMessageModelRequest(
-                "Msg",
-                $fileName,
-                self::$folder,
-                self::$storage
-            )
-        );
+        $api->mapi()->message()->save(new MapiMessageSaveRequest(
+            new StorageFileLocation(self::$storage, self::$folder, $fileName),
+            $mapiMessage,
+            "Msg"
+        ));
+        $mapiMessageFromStorage = $api->mapi()->message()->get(new MapiMessageGetRequest(
+            "Msg",
+            $fileName,
+            self::$folder,
+            self::$storage
+        ));
         $this->assertEquals($mapiMessage->getSubject(), $mapiMessageFromStorage->getSubject());
     }
 

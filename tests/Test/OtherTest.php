@@ -2,23 +2,21 @@
 
 namespace Test;
 
+use Aspose\Email\Model\ClientAccountGetMultiRequest;
+use Aspose\Email\Model\ClientAccountGetRequest;
+use Aspose\Email\Model\ClientAccountSaveMultiRequest;
+use Aspose\Email\Model\ClientAccountSaveRequest;
+use Aspose\Email\Model\DisposableEmailIsDisposableRequest;
+use Aspose\Email\Model\DownloadFileRequest;
 use Aspose\Email\Model\EmailAccountConfig;
 use Aspose\Email\Model\EmailClientAccount;
 use Aspose\Email\Model\EmailClientAccountOauthCredentials;
 use Aspose\Email\Model\EmailClientAccountPasswordCredentials;
 use Aspose\Email\Model\EmailClientMultiAccount;
-use Aspose\Email\Model\Requests\discoverEmailConfigRequest;
-use Aspose\Email\Model\Requests\downloadFileRequest;
-use Aspose\Email\Model\Requests\getEmailClientAccountRequest;
-use Aspose\Email\Model\Requests\getEmailClientMultiAccountRequest;
-use Aspose\Email\Model\Requests\isEmailAddressDisposableRequest;
-use Aspose\Email\Model\Requests\objectExistsRequest;
-use Aspose\Email\Model\Requests\saveEmailClientAccountRequest;
-use Aspose\Email\Model\Requests\saveEmailClientMultiAccountRequest;
-use Aspose\Email\Model\Requests\uploadFileRequest;
+use Aspose\Email\Model\EmailConfigDiscoverRequest;
+use Aspose\Email\Model\ObjectExistsRequest;
 use Aspose\Email\Model\StorageFileLocation;
-use Aspose\Email\Model\StorageFileRqOfEmailClientAccount;
-use Aspose\Email\Model\StorageFileRqOfEmailClientMultiAccount;
+use Aspose\Email\Model\UploadFileRequest;
 use SplFileObject;
 
 class OtherTest extends TestBase
@@ -30,18 +28,18 @@ class OtherTest extends TestBase
     {
         $path = self::getTestDataPath("sample.ics");
         $storagePath = self::$folder . "/" . uniqid() . ".ics";
-        self::api()->uploadFile(new UploadFileRequest(
+        self::api()->cloudStorage()->file()->uploadFile(new UploadFileRequest(
             $storagePath,
             new SplFileObject($path),
             self::$storage
         ));
-        $exists = self::api()
+        $exists = self::api()->cloudStorage()->storage()
             ->objectExists(new ObjectExistsRequest($storagePath, self::$storage));
         $this->assertTrue(
             $exists->getExists()
         );
         $calendarTempFile =
-            self::api()->downloadFile(new DownloadFileRequest($storagePath, self::$storage));
+            self::api()->cloudStorage()->file()->downloadFile(new DownloadFileRequest($storagePath, self::$storage));
         $fileContent = $calendarTempFile->fread($calendarTempFile->getSize());
         $this->assertRegExp("/Access-A-Ride/", $fileContent);
     }
@@ -51,7 +49,7 @@ class OtherTest extends TestBase
      */
     public function testDiscoverEmailConfig(): void
     {
-        $configs = self::api()->discoverEmailConfig(new DiscoverEmailConfigRequest(
+        $configs = self::api()->emailConfig()->discover(new EmailConfigDiscoverRequest(
             "example@gmail.com",
             true
         ));
@@ -67,12 +65,12 @@ class OtherTest extends TestBase
      */
     public function testIsDisposableEmail(): void
     {
-        $disposable = self::api()->isEmailAddressDisposable(
-            new IsEmailAddressDisposableRequest("example@mailcatch.com")
+        $disposable = self::api()->disposableEmail()->isDisposable(
+            new DisposableEmailIsDisposableRequest("example@mailcatch.com")
         );
         $this->assertTrue($disposable->getValue());
-        $regular = self::api()->isEmailAddressDisposable(
-            new IsEmailAddressDisposableRequest("example@gmail.com")
+        $regular = self::api()->disposableEmail()->isDisposable(
+            new DisposableEmailIsDisposableRequest("example@gmail.com")
         );
         $this->assertFalse($regular->getValue());
     }
@@ -94,13 +92,11 @@ class OtherTest extends TestBase
             )
         );
         $fileName = uniqid() . ".account";
-        self::api()->saveEmailClientAccount(new SaveEmailClientAccountRequest(
-            new StorageFileRqOfEmailClientAccount(
-                $account,
-                new StorageFileLocation(self::$storage, self::$folder, $fileName)
-            )
+        self::api()->client()->account()->save(new ClientAccountSaveRequest(
+            new StorageFileLocation(self::$storage, self::$folder, $fileName),
+            $account
         ));
-        $result = self::api()->getEmailClientAccount(new GetEmailClientAccountRequest(
+        $result = self::api()->client()->account()->get(new ClientAccountGetRequest(
             $fileName,
             self::$folder,
             self::$storage
@@ -165,16 +161,16 @@ class OtherTest extends TestBase
         $storage = self::$storage;
         $fileName = uniqid() . ".multi.account";
         // Save multi account
-        $api->saveEmailClientMultiAccount(new SaveEmailClientMultiAccountRequest(
-            new StorageFileRqOfEmailClientMultiAccount(
-                $multiAccount,
-                new StorageFileLocation($storage, $folder, $fileName)
-            )
+        $api->client()->account()->saveMulti(new ClientAccountSaveMultiRequest(
+            new StorageFileLocation($storage, $folder, $fileName),
+            $multiAccount
         ));
         // Get multi account object from storage
-        $multiAccountFromStorage = $api->getEmailClientMultiAccount(
-            new GetEmailClientMultiAccountRequest($fileName, $folder, $storage)
-        );
+        $multiAccountFromStorage = $api->client()->account()->getMulti(new ClientAccountGetMultiRequest(
+            $fileName,
+            $folder,
+            $storage
+        ));
 
         $this->assertEquals(2, count($multiAccountFromStorage->getReceiveAccounts()));
         $this->assertEquals(

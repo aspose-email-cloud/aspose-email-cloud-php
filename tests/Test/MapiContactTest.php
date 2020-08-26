@@ -3,20 +3,18 @@
 
 namespace Test;
 
+use Aspose\Email\Model\MapiContactAsFileRequest;
 use Aspose\Email\Model\MapiContactDto;
 use Aspose\Email\Model\MapiContactElectronicAddressDto;
 use Aspose\Email\Model\MapiContactElectronicAddressPropertySetDto;
+use Aspose\Email\Model\MapiContactFromFileRequest;
+use Aspose\Email\Model\MapiContactGetRequest;
 use Aspose\Email\Model\MapiContactNamePropertySetDto;
 use Aspose\Email\Model\MapiContactPersonalInfoPropertySetDto;
 use Aspose\Email\Model\MapiContactProfessionalPropertySetDto;
+use Aspose\Email\Model\MapiContactSaveRequest;
 use Aspose\Email\Model\MapiContactTelephonePropertySetDto;
-use Aspose\Email\Model\Requests\convertMapiContactModelToContactModelRequest;
-use Aspose\Email\Model\Requests\convertMapiContactModelToFileRequest;
-use Aspose\Email\Model\Requests\getContactFileAsMapiModelRequest;
-use Aspose\Email\Model\Requests\getMapiContactModelRequest;
-use Aspose\Email\Model\Requests\saveMapiContactModelRequest;
-use Aspose\Email\Model\StorageFolderLocation;
-use Aspose\Email\Model\StorageModelRqOfMapiContactDto;
+use Aspose\Email\Model\StorageFileLocation;
 
 class MapiContactTest extends TestBase
 {
@@ -27,11 +25,7 @@ class MapiContactTest extends TestBase
     {
         $api = self::api();
         $mapiContact = self::getMapiContactDto();
-        $contactDto = $api->convertMapiContactModelToContactModel(
-            new ConvertMapiContactModelToContactModelRequest(
-                $mapiContact
-            )
-        );
+        $contactDto = $api->mapi()->contact()->asContactDto($mapiContact);
         $this->assertEquals(
             $mapiContact->getNameInfo()->getGivenName(),
             $contactDto->getGivenName()
@@ -46,17 +40,13 @@ class MapiContactTest extends TestBase
     {
         $api = self::api();
         $mapiContact = self::getMapiContactDto();
-        $vcardFile = $api->convertMapiContactModelToFile(
-            new ConvertMapiContactModelToFileRequest(
-                "VCard",
-                $mapiContact
-            )
-        );
+        $vcardFile = $api->mapi()->contact()->asFile(new MapiContactAsFileRequest(
+            "VCard",
+            $mapiContact
+        ));
         $fileContent = $vcardFile->fread($vcardFile->getSize());
         $this->assertRegExp("/" . $mapiContact->getNameInfo()->getGivenName() . "/", $fileContent);
-        $mapiContactConverted = $api->getContactFileAsMapiModel(
-            new GetContactFileAsMapiModelRequest("VCard", $vcardFile)
-        );
+        $mapiContactConverted = $api->mapi()->contact()->fromFile(new MapiContactFromFileRequest("VCard", $vcardFile));
         $this->assertEquals($mapiContact->getNameInfo()->getSurname(), $mapiContactConverted
             ->getNameInfo()->getSurname());
     }
@@ -69,24 +59,17 @@ class MapiContactTest extends TestBase
         $api = self::api();
         $mapiContact = self::getMapiContactDto();
         $fileName = uniqid() . ".msg";
-        $api->saveMapiContactModel(
-            new SaveMapiContactModelRequest(
-                "Msg",
-                $fileName,
-                new StorageModelRqOfMapiContactDto(
-                    $mapiContact,
-                    new StorageFolderLocation(self::$storage, self::$folder)
-                )
-            )
-        );
-        $mapiContactFromStorage = $api->getMapiContactModel(
-            new GetMapiContactModelRequest(
-                "Msg",
-                $fileName,
-                self::$folder,
-                self::$storage
-            )
-        );
+        $api->mapi()->contact()->save(new MapiContactSaveRequest(
+            new StorageFileLocation(self::$storage, self::$folder, $fileName),
+            $mapiContact,
+            "Msg"
+        ));
+        $mapiContactFromStorage = $api->mapi()->contact()->get(new MapiContactGetRequest(
+            "Msg",
+            $fileName,
+            self::$folder,
+            self::$storage
+        ));
         $this->assertEquals($mapiContact->getNameInfo()->getSurname(), $mapiContactFromStorage
             ->getNameInfo()->getSurname());
     }

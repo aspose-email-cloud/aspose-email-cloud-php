@@ -20,7 +20,7 @@ class EmailTest extends TestBase
         $api = self::api();
         $emailDto = $this->getEmailDto();
         $mapi = $api->email()->asFile(new EmailAsFileRequest('Msg', $emailDto));
-        $eml = $api->email()->convert(new EmailConvertRequest('Eml', $mapi));
+        $eml = $api->email()->convert(new EmailConvertRequest('Msg', 'Eml', $mapi));
         $fileContent = $eml->fread($eml->getSize());
         $this->assertRegExp("/" . $emailDto->getFrom()->getAddress() . "/", $fileContent);
         $dto = $api->email()->fromFile(new EmailFromFileRequest('Eml', $eml));

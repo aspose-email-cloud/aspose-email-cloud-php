@@ -398,10 +398,16 @@ class EmailApi extends ApiBase
      */
     protected function convertRequest(Model\EmailConvertRequest $request)
     {
-        // verify the required parameter 'format' is set
-        if ($request->format === null) {
+        // verify the required parameter 'from_format' is set
+        if ($request->from_format === null) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $format when calling convert'
+                'Missing the required parameter $from_format when calling convert'
+            );
+        }
+        // verify the required parameter 'to_format' is set
+        if ($request->to_format === null) {
+            throw new InvalidArgumentException(
+                'Missing the required parameter $to_format when calling convert'
             );
         }
         // verify the required parameter 'file' is set
@@ -418,8 +424,11 @@ class EmailApi extends ApiBase
         $multipart = false;
 
         // query params
-        $paramValue = $request->format;
-        $paramBaseName = 'format';
+        $paramValue = $request->from_format;
+        $paramBaseName = 'fromFormat';
+        $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
+        $paramValue = $request->to_format;
+        $paramBaseName = 'toFormat';
         $resourcePath = $this->processQueryParameter($paramValue, $paramBaseName, $queryParams, $resourcePath);
 
         // form params
