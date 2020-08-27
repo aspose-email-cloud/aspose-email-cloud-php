@@ -39,6 +39,8 @@ use \Aspose\Email\ObjectSerializer;
  */
 class EmailClientAccountOauthCredentials extends EmailClientAccountCredentials 
 {
+    const DISCRIMINATOR = null;
+
     /**
      * The original name of the model.
      *

@@ -39,6 +39,8 @@ use \Aspose\Email\ObjectSerializer;
  */
 class MapiMessageSaveRequest extends StorageModelOfMapiMessageDto 
 {
+    const DISCRIMINATOR = null;
+
     /**
      * The original name of the model.
      *

@@ -41,6 +41,8 @@ use \Aspose\Email\ObjectSerializer;
  */
 class EmailClientMultiAccount implements ArrayAccess
 {
+    const DISCRIMINATOR = null;
+
     /**
      * The original name of the model.
      *

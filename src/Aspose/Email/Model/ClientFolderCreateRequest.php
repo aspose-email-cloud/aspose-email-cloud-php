@@ -39,6 +39,8 @@ use \Aspose\Email\ObjectSerializer;
  */
 class ClientFolderCreateRequest extends ClientAccountBaseRequest 
 {
+    const DISCRIMINATOR = null;
+
     /**
      * The original name of the model.
      *

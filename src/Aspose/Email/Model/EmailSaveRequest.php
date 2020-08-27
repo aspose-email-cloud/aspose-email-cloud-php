@@ -39,6 +39,8 @@ use \Aspose\Email\ObjectSerializer;
  */
 class EmailSaveRequest extends StorageModelOfEmailDto 
 {
+    const DISCRIMINATOR = null;
+
     /**
      * The original name of the model.
      *

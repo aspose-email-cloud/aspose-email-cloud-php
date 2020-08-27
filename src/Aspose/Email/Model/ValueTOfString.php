@@ -40,6 +40,8 @@ use \Aspose\Email\ObjectSerializer;
  */
 class ValueTOfString implements ArrayAccess
 {
+    const DISCRIMINATOR = null;
+
     /**
      * The original name of the model.
      *

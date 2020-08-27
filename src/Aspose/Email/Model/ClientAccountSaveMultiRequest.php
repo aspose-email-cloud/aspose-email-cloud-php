@@ -39,6 +39,8 @@ use \Aspose\Email\ObjectSerializer;
  */
 class ClientAccountSaveMultiRequest extends StorageModelOfEmailClientMultiAccount 
 {
+    const DISCRIMINATOR = null;
+
     /**
      * The original name of the model.
      *

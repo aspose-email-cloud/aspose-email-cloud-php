@@ -39,6 +39,8 @@ use \Aspose\Email\ObjectSerializer;
  */
 class ClientThreadSetIsReadRequest extends ClientThreadBaseRequest 
 {
+    const DISCRIMINATOR = null;
+
     /**
      * The original name of the model.
      *

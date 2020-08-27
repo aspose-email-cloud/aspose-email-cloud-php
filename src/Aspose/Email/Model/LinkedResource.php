@@ -39,6 +39,8 @@ use \Aspose\Email\ObjectSerializer;
  */
 class LinkedResource extends AttachmentBase 
 {
+    const DISCRIMINATOR = null;
+
     /**
      * The original name of the model.
      *

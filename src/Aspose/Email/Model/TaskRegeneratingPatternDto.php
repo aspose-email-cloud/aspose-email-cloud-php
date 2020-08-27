@@ -39,6 +39,8 @@ use \Aspose\Email\ObjectSerializer;
  */
 class TaskRegeneratingPatternDto extends RecurrencePatternDto 
 {
+    const DISCRIMINATOR = null;
+
     /**
      * The original name of the model.
      *

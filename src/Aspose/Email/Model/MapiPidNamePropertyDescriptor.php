@@ -39,6 +39,8 @@ use \Aspose\Email\ObjectSerializer;
  */
 class MapiPidNamePropertyDescriptor extends MapiPidPropertyDescriptor 
 {
+    const DISCRIMINATOR = null;
+
     /**
      * The original name of the model.
      *

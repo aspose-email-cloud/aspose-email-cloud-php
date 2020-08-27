@@ -39,6 +39,8 @@ use \Aspose\Email\ObjectSerializer;
  */
 class StorageFileLocationList extends ListResponseOfStorageFileLocation 
 {
+    const DISCRIMINATOR = null;
+
     /**
      * The original name of the model.
      *

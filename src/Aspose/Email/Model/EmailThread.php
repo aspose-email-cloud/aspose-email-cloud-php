@@ -41,6 +41,8 @@ use \Aspose\Email\ObjectSerializer;
  */
 class EmailThread implements ArrayAccess
 {
+    const DISCRIMINATOR = null;
+
     /**
      * The original name of the model.
      *

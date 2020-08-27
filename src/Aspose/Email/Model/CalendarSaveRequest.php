@@ -39,6 +39,8 @@ use \Aspose\Email\ObjectSerializer;
  */
 class CalendarSaveRequest extends StorageModelOfCalendarDto 
 {
+    const DISCRIMINATOR = null;
+
     /**
      * The original name of the model.
      *

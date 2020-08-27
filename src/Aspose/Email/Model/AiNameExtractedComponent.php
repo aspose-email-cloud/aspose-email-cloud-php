@@ -41,6 +41,8 @@ use \Aspose\Email\ObjectSerializer;
  */
 class AiNameExtractedComponent implements ArrayAccess
 {
+    const DISCRIMINATOR = null;
+
     /**
      * The original name of the model.
      *

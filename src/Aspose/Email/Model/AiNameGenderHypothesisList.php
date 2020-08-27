@@ -39,6 +39,8 @@ use \Aspose\Email\ObjectSerializer;
  */
 class AiNameGenderHypothesisList extends ListResponseOfAiNameGenderHypothesis 
 {
+    const DISCRIMINATOR = null;
+
     /**
      * The original name of the model.
      *

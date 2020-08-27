@@ -38,6 +38,8 @@ use \Aspose\Email\ObjectSerializer;
  */
 class EmailConfigDiscoverPasswordRequest extends DiscoverEmailConfigRequest 
 {
+    const DISCRIMINATOR = null;
+
     /**
      * The original name of the model.
      *

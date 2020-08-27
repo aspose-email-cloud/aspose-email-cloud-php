@@ -39,6 +39,8 @@ use \Aspose\Email\ObjectSerializer;
  */
 class AiNameMatchParsedRequest extends AiNameParsedRequest 
 {
+    const DISCRIMINATOR = null;
+
     /**
      * The original name of the model.
      *

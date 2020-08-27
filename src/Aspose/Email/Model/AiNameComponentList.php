@@ -39,6 +39,8 @@ use \Aspose\Email\ObjectSerializer;
  */
 class AiNameComponentList extends ListResponseOfAiNameComponent 
 {
+    const DISCRIMINATOR = null;
+
     /**
      * The original name of the model.
      *

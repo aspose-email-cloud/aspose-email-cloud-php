@@ -39,6 +39,8 @@ use \Aspose\Email\ObjectSerializer;
  */
 class ClientMessageMoveRequest extends ClientMessageBaseRequest 
 {
+    const DISCRIMINATOR = null;
+
     /**
      * The original name of the model.
      *

@@ -39,6 +39,8 @@ use \Aspose\Email\ObjectSerializer;
  */
 class EmailThreadList extends ListResponseOfEmailThread 
 {
+    const DISCRIMINATOR = null;
+
     /**
      * The original name of the model.
      *

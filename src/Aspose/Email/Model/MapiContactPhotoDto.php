@@ -39,6 +39,8 @@ use \Aspose\Email\ObjectSerializer;
  */
 class MapiContactPhotoDto extends ContactPhoto 
 {
+    const DISCRIMINATOR = null;
+
     /**
      * The original name of the model.
      *

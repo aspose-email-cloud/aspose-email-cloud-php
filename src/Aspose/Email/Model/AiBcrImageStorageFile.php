@@ -39,6 +39,8 @@ use \Aspose\Email\ObjectSerializer;
  */
 class AiBcrImageStorageFile extends AiBcrImage 
 {
+    const DISCRIMINATOR = null;
+
     /**
      * The original name of the model.
      *

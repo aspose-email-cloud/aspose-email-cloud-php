@@ -39,6 +39,8 @@ use \Aspose\Email\ObjectSerializer;
  */
 class MapiCalendarDailyRecurrencePatternDto extends MapiCalendarRecurrencePatternDto 
 {
+    const DISCRIMINATOR = null;
+
     /**
      * The original name of the model.
      *

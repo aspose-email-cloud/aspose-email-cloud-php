@@ -39,6 +39,8 @@ use \Aspose\Email\ObjectSerializer;
  */
 class MapiCalendarSaveRequest extends StorageModelOfMapiCalendarDto 
 {
+    const DISCRIMINATOR = null;
+
     /**
      * The original name of the model.
      *

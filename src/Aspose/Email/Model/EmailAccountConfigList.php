@@ -39,6 +39,8 @@ use \Aspose\Email\ObjectSerializer;
  */
 class EmailAccountConfigList extends ListResponseOfEmailAccountConfig 
 {
+    const DISCRIMINATOR = null;
+
     /**
      * The original name of the model.
      *

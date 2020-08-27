@@ -39,6 +39,8 @@ use \Aspose\Email\ObjectSerializer;
  */
 class MailServerFolderList extends ListResponseOfMailServerFolder 
 {
+    const DISCRIMINATOR = null;
+
     /**
      * The original name of the model.
      *

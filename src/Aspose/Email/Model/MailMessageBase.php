@@ -41,6 +41,8 @@ use \Aspose\Email\ObjectSerializer;
  */
 class MailMessageBase implements ArrayAccess
 {
+    const DISCRIMINATOR = 'Type';
+
     /**
      * The original name of the model.
      *

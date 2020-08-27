@@ -40,6 +40,8 @@ use \Aspose\Email\ObjectSerializer;
  */
 class ListResponseOfStorageFileLocation implements ArrayAccess
 {
+    const DISCRIMINATOR = 'Type';
+
     /**
      * The original name of the model.
      *

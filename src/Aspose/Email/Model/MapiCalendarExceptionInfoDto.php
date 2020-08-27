@@ -41,6 +41,8 @@ use \Aspose\Email\ObjectSerializer;
  */
 class MapiCalendarExceptionInfoDto implements ArrayAccess
 {
+    const DISCRIMINATOR = null;
+
     /**
      * The original name of the model.
      *

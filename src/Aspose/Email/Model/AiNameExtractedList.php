@@ -39,6 +39,8 @@ use \Aspose\Email\ObjectSerializer;
  */
 class AiNameExtractedList extends ListResponseOfAiNameExtracted 
 {
+    const DISCRIMINATOR = null;
+
     /**
      * The original name of the model.
      *

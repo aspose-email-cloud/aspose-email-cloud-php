@@ -41,6 +41,8 @@ use \Aspose\Email\ObjectSerializer;
  */
 class DiscoverEmailConfigRequest implements ArrayAccess
 {
+    const DISCRIMINATOR = 'Type';
+
     /**
      * The original name of the model.
      *

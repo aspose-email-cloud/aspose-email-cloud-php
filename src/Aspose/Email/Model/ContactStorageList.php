@@ -39,6 +39,8 @@ use \Aspose\Email\ObjectSerializer;
  */
 class ContactStorageList extends ListResponseOfStorageModelOfContactDto 
 {
+    const DISCRIMINATOR = null;
+
     /**
      * The original name of the model.
      *

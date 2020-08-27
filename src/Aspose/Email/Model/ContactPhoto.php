@@ -41,6 +41,8 @@ use \Aspose\Email\ObjectSerializer;
  */
 class ContactPhoto implements ArrayAccess
 {
+    const DISCRIMINATOR = 'Type';
+
     /**
      * The original name of the model.
      *

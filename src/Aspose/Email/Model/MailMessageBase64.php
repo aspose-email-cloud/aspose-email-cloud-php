@@ -39,6 +39,8 @@ use \Aspose\Email\ObjectSerializer;
  */
 class MailMessageBase64 extends MailMessageBase 
 {
+    const DISCRIMINATOR = null;
+
     /**
      * The original name of the model.
      *

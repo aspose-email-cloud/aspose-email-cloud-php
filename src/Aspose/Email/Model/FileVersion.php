@@ -39,6 +39,8 @@ use \Aspose\Email\ObjectSerializer;
  */
 class FileVersion extends StorageFile 
 {
+    const DISCRIMINATOR = null;
+
     /**
      * The original name of the model.
      *

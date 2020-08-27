@@ -39,6 +39,8 @@ use \Aspose\Email\ObjectSerializer;
  */
 class MapiCalendarDto extends MapiMessageItemBaseDto 
 {
+    const DISCRIMINATOR = null;
+
     /**
      * The original name of the model.
      *

@@ -39,6 +39,8 @@ use \Aspose\Email\ObjectSerializer;
  */
 class MapiPhysicalAddressIndexPropertyDto extends MapiPropertyDto 
 {
+    const DISCRIMINATOR = null;
+
     /**
      * The original name of the model.
      *
