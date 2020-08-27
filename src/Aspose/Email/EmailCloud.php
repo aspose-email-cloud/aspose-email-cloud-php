@@ -159,13 +159,13 @@ class EmailCloud
 
     /**
      * Initializes a new instance of the EmailCloud class.
-     * @param ClientInterface|null   $httpClient client for calling api
      * @param Configuration|null   $config configuration info
+     * @param ClientInterface|null   $httpClient client for calling api
      * @param HeaderSelector|null   $selector class for header selection
      */
     public function __construct(
-        ClientInterface $httpClient = null,
         Configuration $config = null,
+        ClientInterface $httpClient = null,
         HeaderSelector $selector = null
     ) {
         $this->httpClient = $httpClient ?: new Client(['verify' => false]);

@@ -33,7 +33,7 @@ class TestBase extends TestCase
         if (array_key_exists("authUrl", $_ENV)) {
             $configuration->setAuthUrl($_ENV["authUrl"]);
         }
-        self::$api = new EmailCloud(null, $configuration);
+        self::$api = new EmailCloud($configuration);
         self::api()->cloudStorage()->folder()->createFolder(new CreateFolderRequest(self::$folder, self::$storage));
     }
 
