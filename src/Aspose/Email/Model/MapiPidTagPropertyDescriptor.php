@@ -39,8 +39,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class MapiPidTagPropertyDescriptor extends MapiPidPropertyDescriptor 
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -176,8 +174,15 @@ class MapiPidTagPropertyDescriptor extends MapiPidPropertyDescriptor
      * @param int $id An unsigned 16-bit quantity that identifies a tagged property. Property IDs are not necessarily unique. With the exception of property IDs in the range from 0x6800 to 0x7BFF, the combination of property ID and data type are unique. Property IDs in the range from 0x6800 to 0x7BFF are defined by the message class.
      * @param int $tag A property tag is a 32-bit number that contains a unique property identifier in bits 16 through 31 and a property type in bits 0 through 15.
      */
-    public function __construct($discriminator = null, $canonical_name = null, $data_type = null, $multiple_values_data_type = null, $name = null, $id = null, $tag = null)
-    {
+    public function __construct(
+        //,
+        $canonical_name = null,
+        $data_type = null,
+        $multiple_values_data_type = null,
+        $name = null,
+        $id = null,
+        $tag = null
+    ) {
         parent::__construct();
         $this->container['id'] = null;
         $this->container['tag'] = null;

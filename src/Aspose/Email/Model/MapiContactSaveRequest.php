@@ -39,8 +39,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class MapiContactSaveRequest extends StorageModelOfMapiContactDto 
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -167,8 +165,11 @@ class MapiContactSaveRequest extends StorageModelOfMapiContactDto
      * @param \Aspose\Email\Model\MapiContactDto $value 
      * @param string $format Enumerates contact formats. Enum, available values: VCard, WebDav, Msg
      */
-    public function __construct($storage_file = null, $value = null, $format = null)
-    {
+    public function __construct(
+        $storage_file = null,
+        $value = null,
+        $format = null
+    ) {
         parent::__construct();
         $this->container['format'] = null;
 

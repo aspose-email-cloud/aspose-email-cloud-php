@@ -39,8 +39,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class AlternateView extends AttachmentBase 
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -175,8 +173,14 @@ class AlternateView extends AttachmentBase
      * @param string $base_uri Base URI.
      * @param \Aspose\Email\Model\LinkedResource[] $linked_resources Embedded resources referred to by this alternate view.
      */
-    public function __construct($base64_data = null, $content_id = null, $content_type = null, $headers = null, $base_uri = null, $linked_resources = null)
-    {
+    public function __construct(
+        $base64_data = null,
+        $content_id = null,
+        $content_type = null,
+        $headers = null,
+        $base_uri = null,
+        $linked_resources = null
+    ) {
         parent::__construct();
         $this->container['base_uri'] = null;
         $this->container['linked_resources'] = null;

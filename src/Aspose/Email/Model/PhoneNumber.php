@@ -41,8 +41,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class PhoneNumber implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -185,8 +183,11 @@ class PhoneNumber implements ArrayAccess
      * @param string $number Phone number.
      * @param bool $preferred Defines whether phone number is preferred.
      */
-    public function __construct($category = null, $number = null, $preferred = null)
-    {
+    public function __construct(
+        $category = null,
+        $number = null,
+        $preferred = null
+    ) {
         $this->container['category'] = null;
         $this->container['number'] = null;
         $this->container['preferred'] = null;

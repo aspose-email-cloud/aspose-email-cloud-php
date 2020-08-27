@@ -41,8 +41,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class MapiCalendarExceptionInfoDto implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -251,8 +249,22 @@ class MapiCalendarExceptionInfoDto implements ArrayAccess
      * @param string $subject Subject.
      * @param int $sub_type SubType.
      */
-    public function __construct($attachments = null, $body = null, $busy_status = null, $end_date_time = null, $has_attachment = null, $location = null, $meeting_type = null, $original_start_date = null, $override_flags = null, $reminder_delta = null, $reminder_set = null, $start_date_time = null, $subject = null, $sub_type = null)
-    {
+    public function __construct(
+        $attachments = null,
+        $body = null,
+        $busy_status = null,
+        $end_date_time = null,
+        $has_attachment = null,
+        $location = null,
+        $meeting_type = null,
+        $original_start_date = null,
+        $override_flags = null,
+        $reminder_delta = null,
+        $reminder_set = null,
+        $start_date_time = null,
+        $subject = null,
+        $sub_type = null
+    ) {
         $this->container['attachments'] = null;
         $this->container['body'] = null;
         $this->container['busy_status'] = null;

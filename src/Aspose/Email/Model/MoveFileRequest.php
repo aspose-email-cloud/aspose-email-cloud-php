@@ -36,11 +36,11 @@ class MoveFileRequest
     /**
      * Initializes a new instance of the MoveFileRequest class.
      *  
-     * @param string $src_path 
-     * @param string $dest_path 
-     * @param string $src_storage_name 
-     * @param string $dest_storage_name 
-     * @param string $version_id 
+     * @param string $src_path Source file path e.g. '/src.ext'
+     * @param string $dest_path Destination file path e.g. '/dest.ext'
+     * @param string $src_storage_name Source storage name
+     * @param string $dest_storage_name Destination storage name
+     * @param string $version_id File version ID to move
      */
     public function __construct($src_path, $dest_path, $src_storage_name = null, $dest_storage_name = null, $version_id = null)             
     {
@@ -52,27 +52,27 @@ class MoveFileRequest
     }
 
     /**
-     * Gets or sets src_path
+     * Source file path e.g. '/src.ext'
      */
     public $src_path;
 
     /**
-     * Gets or sets dest_path
+     * Destination file path e.g. '/dest.ext'
      */
     public $dest_path;
 
     /**
-     * Gets or sets src_storage_name
+     * Source storage name
      */
     public $src_storage_name;
 
     /**
-     * Gets or sets dest_storage_name
+     * Destination storage name
      */
     public $dest_storage_name;
 
     /**
-     * Gets or sets version_id
+     * File version ID to move
      */
     public $version_id;
 }

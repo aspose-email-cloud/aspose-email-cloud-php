@@ -39,8 +39,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class StorageFileLocation extends StorageFolderLocation 
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -167,8 +165,11 @@ class StorageFileLocation extends StorageFolderLocation
      * @param string $folder_path A path to a folder in specified storage
      * @param string $file_name A file name in storage
      */
-    public function __construct($storage = null, $folder_path = null, $file_name = null)
-    {
+    public function __construct(
+        $storage = null,
+        $folder_path = null,
+        $file_name = null
+    ) {
         parent::__construct();
         $this->container['file_name'] = null;
 

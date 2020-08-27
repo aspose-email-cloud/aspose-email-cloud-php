@@ -37,11 +37,10 @@ use \Aspose\Email\ObjectSerializer;
 /**
  * ObjectExist
  *
+ * @description Object exists
  */
 class ObjectExist implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -175,11 +174,13 @@ class ObjectExist implements ArrayAccess
     /**
      * Initializes a new instance of the ObjectExist class.
      *  
-     * @param bool $exists 
-     * @param bool $is_folder 
+     * @param bool $exists Indicates that the file or folder exists.
+     * @param bool $is_folder True if it is a folder, false if it is a file.
      */
-    public function __construct($exists = null, $is_folder = null)
-    {
+    public function __construct(
+        $exists = null,
+        $is_folder = null
+    ) {
         $this->container['exists'] = null;
         $this->container['is_folder'] = null;
 
@@ -237,7 +238,7 @@ class ObjectExist implements ArrayAccess
     /**
      * Sets exists
      *
-     * @param bool $exists exists
+     * @param bool $exists Indicates that the file or folder exists.
      *
      * @return $this
      */
@@ -261,7 +262,7 @@ class ObjectExist implements ArrayAccess
     /**
      * Sets is_folder
      *
-     * @param bool $is_folder is_folder
+     * @param bool $is_folder True if it is a folder, false if it is a file.
      *
      * @return $this
      */

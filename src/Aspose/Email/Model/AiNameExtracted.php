@@ -41,8 +41,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class AiNameExtracted implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -179,8 +177,10 @@ class AiNameExtracted implements ArrayAccess
      * @param \Aspose\Email\Model\AiNameExtractedComponent[] $name Extracted name components
      * @param double $score Extracted name score
      */
-    public function __construct($name = null, $score = null)
-    {
+    public function __construct(
+        $name = null,
+        $score = null
+    ) {
         $this->container['name'] = null;
         $this->container['score'] = null;
 

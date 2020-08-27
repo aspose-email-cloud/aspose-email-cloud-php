@@ -40,8 +40,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class ValueTOfString implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -172,8 +170,9 @@ class ValueTOfString implements ArrayAccess
      *  
      * @param string $value 
      */
-    public function __construct($value = null)
-    {
+    public function __construct(
+        $value = null
+    ) {
         $this->container['value'] = null;
 
         if ($value != null) $this->setValue($value);

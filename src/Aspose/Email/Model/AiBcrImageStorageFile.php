@@ -39,8 +39,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class AiBcrImageStorageFile extends AiBcrImage 
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -166,8 +164,10 @@ class AiBcrImageStorageFile extends AiBcrImage
      * @param bool $is_single Determines that image contains single VCard or more.
      * @param \Aspose\Email\Model\StorageFileLocation $file Image location
      */
-    public function __construct($is_single = null, $file = null)
-    {
+    public function __construct(
+        $is_single = null,
+        $file = null
+    ) {
         parent::__construct();
         $this->container['file'] = null;
 

@@ -41,8 +41,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class AttachmentBase implements ArrayAccess
 {
-    const DISCRIMINATOR = 'Type';
-
     /**
      * The original name of the model.
      *
@@ -191,8 +189,12 @@ class AttachmentBase implements ArrayAccess
      * @param \Aspose\Email\Model\ContentType $content_type Content type
      * @param map[string,string] $headers Attachment headers.
      */
-    public function __construct($base64_data = null, $content_id = null, $content_type = null, $headers = null)
-    {
+    public function __construct(
+        $base64_data = null,
+        $content_id = null,
+        $content_type = null,
+        $headers = null
+    ) {
         $this->container['base64_data'] = null;
         $this->container['content_id'] = null;
         $this->container['content_type'] = null;
@@ -202,10 +204,6 @@ class AttachmentBase implements ArrayAccess
         if ($content_id != null) $this->setContentId($content_id);
         if ($content_type != null) $this->setContentType($content_type);
         if ($headers != null) $this->setHeaders($headers);
-
-        // Initialize discriminator property with the model name.
-        $discriminator = array_search('Type', self::$attributeMap);
-        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /**

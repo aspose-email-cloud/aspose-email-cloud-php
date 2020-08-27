@@ -41,8 +41,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class AiBcrParseStorageRequest implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -185,8 +183,11 @@ class AiBcrParseStorageRequest implements ArrayAccess
      * @param \Aspose\Email\Model\AiBcrImageStorageFile[] $images Images to parse.
      * @param \Aspose\Email\Model\AiBcrOptions $options Recognition options.
      */
-    public function __construct($out_folder = null, $images = null, $options = null)
-    {
+    public function __construct(
+        $out_folder = null,
+        $images = null,
+        $options = null
+    ) {
         $this->container['out_folder'] = null;
         $this->container['images'] = null;
         $this->container['options'] = null;

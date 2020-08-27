@@ -40,8 +40,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class EnumWithCustomOfEventCategory implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -178,8 +176,10 @@ class EnumWithCustomOfEventCategory implements ArrayAccess
      * @param string $value Event category. Enum, available values: Custom, Birthday, Anniversary
      * @param string $description 
      */
-    public function __construct($value = null, $description = null)
-    {
+    public function __construct(
+        $value = null,
+        $description = null
+    ) {
         $this->container['value'] = null;
         $this->container['description'] = null;
 

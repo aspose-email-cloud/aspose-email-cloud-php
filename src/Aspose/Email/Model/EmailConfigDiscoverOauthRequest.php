@@ -38,8 +38,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class EmailConfigDiscoverOauthRequest extends DiscoverEmailConfigRequest 
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -185,8 +183,15 @@ class EmailConfigDiscoverOauthRequest extends DiscoverEmailConfigRequest
      * @param string $refresh_token OAuth refresh token.
      * @param string $request_url The url to obtain access token. If not specified, will be discovered from email configuration.
      */
-    public function __construct($address = null, $fast_processing = null, $login = null, $client_id = null, $client_secret = null, $refresh_token = null, $request_url = null)
-    {
+    public function __construct(
+        $address = null,
+        $fast_processing = null,
+        $login = null,
+        $client_id = null,
+        $client_secret = null,
+        $refresh_token = null,
+        $request_url = null
+    ) {
         parent::__construct();
         $this->container['client_id'] = null;
         $this->container['client_secret'] = null;

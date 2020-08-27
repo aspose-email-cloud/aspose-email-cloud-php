@@ -41,8 +41,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class MapiCalendarTimeZoneRuleDto implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -221,8 +219,17 @@ class MapiCalendarTimeZoneRuleDto implements ArrayAccess
      * @param int $seconds Seconds.
      * @param int $year Year.
      */
-    public function __construct($date = null, $day_of_week = null, $hour = null, $milliseconds = null, $minute = null, $month = null, $position = null, $seconds = null, $year = null)
-    {
+    public function __construct(
+        $date = null,
+        $day_of_week = null,
+        $hour = null,
+        $milliseconds = null,
+        $minute = null,
+        $month = null,
+        $position = null,
+        $seconds = null,
+        $year = null
+    ) {
         $this->container['date'] = null;
         $this->container['day_of_week'] = null;
         $this->container['hour'] = null;

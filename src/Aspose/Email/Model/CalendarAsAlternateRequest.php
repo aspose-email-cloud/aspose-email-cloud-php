@@ -41,8 +41,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class CalendarAsAlternateRequest implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -185,8 +183,11 @@ class CalendarAsAlternateRequest implements ArrayAccess
      * @param string $action iCalendar actions. Enum, available values: Create, Update, Cancel
      * @param string $sequence_id iCalendar sequence id
      */
-    public function __construct($value = null, $action = null, $sequence_id = null)
-    {
+    public function __construct(
+        $value = null,
+        $action = null,
+        $sequence_id = null
+    ) {
         $this->container['value'] = null;
         $this->container['action'] = null;
         $this->container['sequence_id'] = null;

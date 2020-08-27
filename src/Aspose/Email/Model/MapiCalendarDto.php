@@ -39,8 +39,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class MapiCalendarDto extends MapiMessageItemBaseDto 
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -284,8 +282,43 @@ class MapiCalendarDto extends MapiMessageItemBaseDto
      * @param string $uid Unique identifier.
      * @param \Aspose\Email\Model\MapiElectronicAddressDto $organizer Organizer
      */
-    public function __construct($attachments = null, $billing = null, $body = null, $body_html = null, $body_rtf = null, $body_type = null, $categories = null, $companies = null, $item_id = null, $message_class = null, $mileage = null, $recipients = null, $sensitivity = null, $subject = null, $subject_prefix = null, $properties = null, $discriminator = null, $appointment_counter_proposal = null, $attendees = null, $busy_status = null, $client_intent = null, $end_date = null, $end_date_time_zone = null, $is_all_day = null, $key_words = null, $location = null, $recurrence = null, $reminder_delta = null, $reminder_file_parameter = null, $reminder_set = null, $sequence = null, $start_date = null, $start_date_time_zone = null, $uid = null, $organizer = null)
-    {
+    public function __construct(
+        $attachments = null,
+        $billing = null,
+        $body = null,
+        $body_html = null,
+        $body_rtf = null,
+        $body_type = null,
+        $categories = null,
+        $companies = null,
+        $item_id = null,
+        $message_class = null,
+        $mileage = null,
+        $recipients = null,
+        $sensitivity = null,
+        $subject = null,
+        $subject_prefix = null,
+        $properties = null
+        ,
+        $appointment_counter_proposal = null,
+        $attendees = null,
+        $busy_status = null,
+        $client_intent = null,
+        $end_date = null,
+        $end_date_time_zone = null,
+        $is_all_day = null,
+        $key_words = null,
+        $location = null,
+        $recurrence = null,
+        $reminder_delta = null,
+        $reminder_file_parameter = null,
+        $reminder_set = null,
+        $sequence = null,
+        $start_date = null,
+        $start_date_time_zone = null,
+        $uid = null,
+        $organizer = null
+    ) {
         parent::__construct();
         $this->container['appointment_counter_proposal'] = null;
         $this->container['attendees'] = null;

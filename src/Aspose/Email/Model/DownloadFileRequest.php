@@ -36,9 +36,9 @@ class DownloadFileRequest
     /**
      * Initializes a new instance of the DownloadFileRequest class.
      *  
-     * @param string $path 
-     * @param string $storage_name 
-     * @param string $version_id 
+     * @param string $path File path e.g. '/folder/file.ext'
+     * @param string $storage_name Storage name
+     * @param string $version_id File version ID to download
      */
     public function __construct($path, $storage_name = null, $version_id = null)             
     {
@@ -48,17 +48,17 @@ class DownloadFileRequest
     }
 
     /**
-     * Gets or sets path
+     * File path e.g. '/folder/file.ext'
      */
     public $path;
 
     /**
-     * Gets or sets storage_name
+     * Storage name
      */
     public $storage_name;
 
     /**
-     * Gets or sets version_id
+     * File version ID to download
      */
     public $version_id;
 }

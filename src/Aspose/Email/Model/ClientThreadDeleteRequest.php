@@ -39,8 +39,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class ClientThreadDeleteRequest extends ClientThreadBaseRequest 
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -167,8 +165,11 @@ class ClientThreadDeleteRequest extends ClientThreadBaseRequest
      * @param string $thread_id Thread identifier.
      * @param string $folder Folder on email server, where thread is stored.
      */
-    public function __construct($account_location = null, $thread_id = null, $folder = null)
-    {
+    public function __construct(
+        $account_location = null,
+        $thread_id = null,
+        $folder = null
+    ) {
         parent::__construct();
         $this->container['folder'] = null;
 

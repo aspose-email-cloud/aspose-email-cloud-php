@@ -41,8 +41,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class MapiMessageAsFileRequest implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -179,8 +177,10 @@ class MapiMessageAsFileRequest implements ArrayAccess
      * @param string $format Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
      * @param \Aspose\Email\Model\MapiMessageDto $value MAPI message model.
      */
-    public function __construct($format = null, $value = null)
-    {
+    public function __construct(
+        $format = null,
+        $value = null
+    ) {
         $this->container['format'] = null;
         $this->container['value'] = null;
 

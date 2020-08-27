@@ -37,11 +37,10 @@ use \Aspose\Email\ObjectSerializer;
 /**
  * FileVersions
  *
+ * @description File versions FileVersion.
  */
 class FileVersions implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -170,10 +169,11 @@ class FileVersions implements ArrayAccess
     /**
      * Initializes a new instance of the FileVersions class.
      *  
-     * @param \Aspose\Email\Model\FileVersion[] $value 
+     * @param \Aspose\Email\Model\FileVersion[] $value File versions FileVersion.
      */
-    public function __construct($value = null)
-    {
+    public function __construct(
+        $value = null
+    ) {
         $this->container['value'] = null;
 
         if ($value != null) $this->setValue($value);
@@ -217,7 +217,7 @@ class FileVersions implements ArrayAccess
     /**
      * Sets value
      *
-     * @param \Aspose\Email\Model\FileVersion[] $value value
+     * @param \Aspose\Email\Model\FileVersion[] $value File versions FileVersion.
      *
      * @return $this
      */

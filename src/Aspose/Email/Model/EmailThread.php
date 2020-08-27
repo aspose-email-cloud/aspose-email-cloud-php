@@ -41,8 +41,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class EmailThread implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -191,8 +189,12 @@ class EmailThread implements ArrayAccess
      * @param \Aspose\Email\Model\EmailDto[] $messages List of messages in thread
      * @param string $folder Thread folder location
      */
-    public function __construct($id = null, $subject = null, $messages = null, $folder = null)
-    {
+    public function __construct(
+        $id = null,
+        $subject = null,
+        $messages = null,
+        $folder = null
+    ) {
         $this->container['id'] = null;
         $this->container['subject'] = null;
         $this->container['messages'] = null;

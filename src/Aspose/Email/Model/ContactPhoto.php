@@ -41,8 +41,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class ContactPhoto implements ArrayAccess
 {
-    const DISCRIMINATOR = 'Type';
-
     /**
      * The original name of the model.
      *
@@ -185,19 +183,17 @@ class ContactPhoto implements ArrayAccess
      * @param string $base64_data Photo serialized as base64 string.
      * @param string $discriminator 
      */
-    public function __construct($photo_image_format = null, $base64_data = null, $discriminator = null)
-    {
+    public function __construct(
+        $photo_image_format = null,
+        $base64_data = null
+        
+    ) {
         $this->container['photo_image_format'] = null;
         $this->container['base64_data'] = null;
-        $this->container['discriminator'] = null;
 
         if ($photo_image_format != null) $this->setPhotoImageFormat($photo_image_format);
         if ($base64_data != null) $this->setBase64Data($base64_data);
         $this->container['discriminator'] = (new \ReflectionClass($this))->getShortName();
-
-        // Initialize discriminator property with the model name.
-        $discriminator = array_search('Type', self::$attributeMap);
-        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /**
@@ -320,7 +316,11 @@ class ContactPhoto implements ArrayAccess
      *
      * @return $this
      */
-    public function setDiscriminator($discriminator) { /* Does nothing */ }
+    public function setDiscriminator($discriminator)
+    {
+        /* do nothing */
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *

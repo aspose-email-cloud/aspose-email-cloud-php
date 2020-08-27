@@ -39,8 +39,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class ClientThreadSetIsReadRequest extends ClientThreadBaseRequest 
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -173,8 +171,12 @@ class ClientThreadSetIsReadRequest extends ClientThreadBaseRequest
      * @param bool $is_read Message is read flag.
      * @param string $folder Folder on email server, where thread is stored.
      */
-    public function __construct($account_location = null, $thread_id = null, $is_read = null, $folder = null)
-    {
+    public function __construct(
+        $account_location = null,
+        $thread_id = null,
+        $is_read = null,
+        $folder = null
+    ) {
         parent::__construct();
         $this->container['is_read'] = null;
         $this->container['folder'] = null;

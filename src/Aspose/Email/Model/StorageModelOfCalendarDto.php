@@ -40,8 +40,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class StorageModelOfCalendarDto implements ArrayAccess
 {
-    const DISCRIMINATOR = 'Type';
-
     /**
      * The original name of the model.
      *
@@ -178,17 +176,15 @@ class StorageModelOfCalendarDto implements ArrayAccess
      * @param \Aspose\Email\Model\StorageFileLocation $storage_file 
      * @param \Aspose\Email\Model\CalendarDto $value 
      */
-    public function __construct($storage_file = null, $value = null)
-    {
+    public function __construct(
+        $storage_file = null,
+        $value = null
+    ) {
         $this->container['storage_file'] = null;
         $this->container['value'] = null;
 
         if ($storage_file != null) $this->setStorageFile($storage_file);
         if ($value != null) $this->setValue($value);
-
-        // Initialize discriminator property with the model name.
-        $discriminator = array_search('Type', self::$attributeMap);
-        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /**

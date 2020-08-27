@@ -39,8 +39,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class EmailSaveRequest extends StorageModelOfEmailDto 
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -167,8 +165,11 @@ class EmailSaveRequest extends StorageModelOfEmailDto
      * @param \Aspose\Email\Model\EmailDto $value 
      * @param string $format Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
      */
-    public function __construct($storage_file = null, $value = null, $format = null)
-    {
+    public function __construct(
+        $storage_file = null,
+        $value = null,
+        $format = null
+    ) {
         parent::__construct();
         $this->container['format'] = null;
 

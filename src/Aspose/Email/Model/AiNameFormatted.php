@@ -41,8 +41,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class AiNameFormatted implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -179,8 +177,10 @@ class AiNameFormatted implements ArrayAccess
      * @param string $name Formatted name value
      * @param string $comments Usually empty; can contain extra message describing some issue occurred during the formatting
      */
-    public function __construct($name = null, $comments = null)
-    {
+    public function __construct(
+        $name = null,
+        $comments = null
+    ) {
         $this->container['name'] = null;
         $this->container['comments'] = null;
 

@@ -39,8 +39,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class ContactList extends ListResponseOfContactDto 
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -165,8 +163,9 @@ class ContactList extends ListResponseOfContactDto
      *  
      * @param \Aspose\Email\Model\ContactDto[] $value 
      */
-    public function __construct($value = null)
-    {
+    public function __construct(
+        $value = null
+    ) {
         parent::__construct();
 
         if ($value != null) $this->setValue($value);

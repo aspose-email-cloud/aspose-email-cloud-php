@@ -39,8 +39,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class MapiBooleanPropertyDto extends MapiPropertyDto 
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -167,8 +165,11 @@ class MapiBooleanPropertyDto extends MapiPropertyDto
      * @param string $discriminator 
      * @param bool $value Property value
      */
-    public function __construct($descriptor = null, $discriminator = null, $value = null)
-    {
+    public function __construct(
+        $descriptor = null
+        ,
+        $value = null
+    ) {
         parent::__construct();
         $this->container['value'] = null;
 

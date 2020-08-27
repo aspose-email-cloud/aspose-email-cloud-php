@@ -40,8 +40,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class EnumWithCustomOfInstantMessengerCategory implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -178,8 +176,10 @@ class EnumWithCustomOfInstantMessengerCategory implements ArrayAccess
      * @param string $value Instant messenger address category. Enum, available values: GoogleTalk, Aim, Yahoo, Skype, Qq, Msn, Icq, Jabber, Custom, ImAddress1, ImAddress2, ImAddress3
      * @param string $description 
      */
-    public function __construct($value = null, $description = null)
-    {
+    public function __construct(
+        $value = null,
+        $description = null
+    ) {
         $this->container['value'] = null;
         $this->container['description'] = null;
 

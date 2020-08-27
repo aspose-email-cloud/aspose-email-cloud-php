@@ -39,8 +39,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class MapiCalendarDailyRecurrencePatternDto extends MapiCalendarRecurrencePatternDto 
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -179,8 +177,23 @@ class MapiCalendarDailyRecurrencePatternDto extends MapiCalendarRecurrencePatter
      * @param string $discriminator 
      * @param string[] $day_of_week Days of week at which the event occurs. Items: Enumerates the days of week of the mapi calendar recurrence pattern Enum, available values: Saturday, Friday, Thursday, Wednesday, Tuesday, Monday, Sunday
      */
-    public function __construct($calendar_type = null, $deleted_instance_dates = null, $end_date = null, $end_type = null, $exceptions = null, $frequency = null, $modified_instance_dates = null, $occurrence_count = null, $pattern_type = null, $period = null, $sliding_flag = null, $start_date = null, $week_start_day = null, $discriminator = null, $day_of_week = null)
-    {
+    public function __construct(
+        $calendar_type = null,
+        $deleted_instance_dates = null,
+        $end_date = null,
+        $end_type = null,
+        $exceptions = null,
+        $frequency = null,
+        $modified_instance_dates = null,
+        $occurrence_count = null,
+        $pattern_type = null,
+        $period = null,
+        $sliding_flag = null,
+        $start_date = null,
+        $week_start_day = null
+        ,
+        $day_of_week = null
+    ) {
         parent::__construct();
         $this->container['day_of_week'] = null;
 

@@ -39,8 +39,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class ClientMessageSetIsReadRequest extends ClientMessageBaseRequest 
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -167,8 +165,11 @@ class ClientMessageSetIsReadRequest extends ClientMessageBaseRequest
      * @param string $message_id Message identifier.
      * @param bool $is_read Message is read flag.
      */
-    public function __construct($account_location = null, $message_id = null, $is_read = null)
-    {
+    public function __construct(
+        $account_location = null,
+        $message_id = null,
+        $is_read = null
+    ) {
         parent::__construct();
         $this->container['is_read'] = null;
 

@@ -39,8 +39,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class AiNameMatchParsedRequest extends AiNameParsedRequest 
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -168,8 +166,12 @@ class AiNameMatchParsedRequest extends AiNameParsedRequest
      * @param \Aspose\Email\Model\AiNameComponent[] $parsed_name Parsed name
      * @param \Aspose\Email\Model\AiNameComponent[] $other_parsed_name Other parsed name to match
      */
-    public function __construct($cultural_context = null, $format = null, $parsed_name = null, $other_parsed_name = null)
-    {
+    public function __construct(
+        $cultural_context = null,
+        $format = null,
+        $parsed_name = null,
+        $other_parsed_name = null
+    ) {
         parent::__construct();
         $this->container['other_parsed_name'] = null;
 

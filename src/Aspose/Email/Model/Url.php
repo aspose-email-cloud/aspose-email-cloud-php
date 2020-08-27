@@ -41,8 +41,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class Url implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -185,8 +183,11 @@ class Url implements ArrayAccess
      * @param bool $preferred Defines whether url is preferred.
      * @param string $href URL.
      */
-    public function __construct($category = null, $preferred = null, $href = null)
-    {
+    public function __construct(
+        $category = null,
+        $preferred = null,
+        $href = null
+    ) {
         $this->container['category'] = null;
         $this->container['preferred'] = null;
         $this->container['href'] = null;

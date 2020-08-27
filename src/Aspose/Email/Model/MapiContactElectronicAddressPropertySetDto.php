@@ -41,8 +41,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class MapiContactElectronicAddressPropertySetDto implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -221,8 +219,17 @@ class MapiContactElectronicAddressPropertySetDto implements ArrayAccess
      * @param \Aspose\Email\Model\MapiContactElectronicAddressDto $primary_fax Refers to the group of properties that define the primary fax address for a contact.
      * @param bool $use_autocomplete Indicates that one electronic address is completed automatically in case if user does not set any electronic address
      */
-    public function __construct($business_fax = null, $default_email_address = null, $email1 = null, $email2 = null, $email3 = null, $home_fax = null, $is_empty = null, $primary_fax = null, $use_autocomplete = null)
-    {
+    public function __construct(
+        $business_fax = null,
+        $default_email_address = null,
+        $email1 = null,
+        $email2 = null,
+        $email3 = null,
+        $home_fax = null,
+        $is_empty = null,
+        $primary_fax = null,
+        $use_autocomplete = null
+    ) {
         $this->container['business_fax'] = null;
         $this->container['default_email_address'] = null;
         $this->container['email1'] = null;

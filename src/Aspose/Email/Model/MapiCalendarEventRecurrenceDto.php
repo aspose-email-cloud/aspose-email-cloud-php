@@ -41,8 +41,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class MapiCalendarEventRecurrenceDto implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -203,8 +201,14 @@ class MapiCalendarEventRecurrenceDto implements ArrayAccess
      * @param \Aspose\Email\Model\MapiCalendarRecurrencePatternDto $recurrence_pattern Recurrence pattern.
      * @param \Aspose\Email\Model\MapiCalendarTimeZoneDto $time_zone_struct Time zone information for a recurring meeting.
      */
-    public function __construct($appointment_time_zone_definition_recur = null, $clip_end = null, $clip_start = null, $is_exception = null, $recurrence_pattern = null, $time_zone_struct = null)
-    {
+    public function __construct(
+        $appointment_time_zone_definition_recur = null,
+        $clip_end = null,
+        $clip_start = null,
+        $is_exception = null,
+        $recurrence_pattern = null,
+        $time_zone_struct = null
+    ) {
         $this->container['appointment_time_zone_definition_recur'] = null;
         $this->container['clip_end'] = null;
         $this->container['clip_start'] = null;

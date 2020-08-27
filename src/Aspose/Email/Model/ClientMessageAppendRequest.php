@@ -39,8 +39,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class ClientMessageAppendRequest extends ClientAccountBaseRequest 
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -178,8 +176,12 @@ class ClientMessageAppendRequest extends ClientAccountBaseRequest
      * @param \Aspose\Email\Model\MailMessageBase $message Message to append.
      * @param bool $mark_as_sent Determines that appended message should be market as sent or not.
      */
-    public function __construct($account_location = null, $folder = null, $message = null, $mark_as_sent = null)
-    {
+    public function __construct(
+        $account_location = null,
+        $folder = null,
+        $message = null,
+        $mark_as_sent = null
+    ) {
         parent::__construct();
         $this->container['folder'] = null;
         $this->container['message'] = null;

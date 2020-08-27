@@ -36,7 +36,7 @@ class StorageExistsRequest
     /**
      * Initializes a new instance of the StorageExistsRequest class.
      *  
-     * @param string $storage_name 
+     * @param string $storage_name Storage name
      */
     public function __construct($storage_name)             
     {
@@ -44,7 +44,7 @@ class StorageExistsRequest
     }
 
     /**
-     * Gets or sets storage_name
+     * Storage name
      */
     public $storage_name;
 }

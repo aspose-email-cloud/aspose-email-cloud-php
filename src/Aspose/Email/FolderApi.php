@@ -57,6 +57,8 @@ class FolderApi extends ApiBase
     /**
      * Operation copyFolder
      *
+     * Copy folder
+     *
      * @param Model\CopyFolderRequest $request is a request object for operation
      *
      * @throws ApiException on non-2xx response
@@ -74,6 +76,8 @@ class FolderApi extends ApiBase
 
     /**
      * Operation copyFolderWithHttpInfo
+     *
+     * Copy folder
      *
      * @param Model\CopyFolderRequest $request is a request object for operation
      *
@@ -93,7 +97,7 @@ class FolderApi extends ApiBase
     /**
      * Operation copyFolderAsync
      *
-     * 
+     * Copy folder
      *
      * @param Model\CopyFolderRequest $request is a request object for operation
      *
@@ -113,7 +117,7 @@ class FolderApi extends ApiBase
     /**
      * Operation copyFolderAsyncWithHttpInfo
      *
-     * 
+     * Copy folder
      *
      * @param Model\CopyFolderRequest $request is a request object for operation
      *
@@ -208,6 +212,8 @@ class FolderApi extends ApiBase
     /**
      * Operation createFolder
      *
+     * Create the folder
+     *
      * @param Model\CreateFolderRequest $request is a request object for operation
      *
      * @throws ApiException on non-2xx response
@@ -225,6 +231,8 @@ class FolderApi extends ApiBase
 
     /**
      * Operation createFolderWithHttpInfo
+     *
+     * Create the folder
      *
      * @param Model\CreateFolderRequest $request is a request object for operation
      *
@@ -244,7 +252,7 @@ class FolderApi extends ApiBase
     /**
      * Operation createFolderAsync
      *
-     * 
+     * Create the folder
      *
      * @param Model\CreateFolderRequest $request is a request object for operation
      *
@@ -264,7 +272,7 @@ class FolderApi extends ApiBase
     /**
      * Operation createFolderAsyncWithHttpInfo
      *
-     * 
+     * Create the folder
      *
      * @param Model\CreateFolderRequest $request is a request object for operation
      *
@@ -347,6 +355,8 @@ class FolderApi extends ApiBase
     /**
      * Operation deleteFolder
      *
+     * Delete folder
+     *
      * @param Model\DeleteFolderRequest $request is a request object for operation
      *
      * @throws ApiException on non-2xx response
@@ -364,6 +374,8 @@ class FolderApi extends ApiBase
 
     /**
      * Operation deleteFolderWithHttpInfo
+     *
+     * Delete folder
      *
      * @param Model\DeleteFolderRequest $request is a request object for operation
      *
@@ -383,7 +395,7 @@ class FolderApi extends ApiBase
     /**
      * Operation deleteFolderAsync
      *
-     * 
+     * Delete folder
      *
      * @param Model\DeleteFolderRequest $request is a request object for operation
      *
@@ -403,7 +415,7 @@ class FolderApi extends ApiBase
     /**
      * Operation deleteFolderAsyncWithHttpInfo
      *
-     * 
+     * Delete folder
      *
      * @param Model\DeleteFolderRequest $request is a request object for operation
      *
@@ -489,6 +501,8 @@ class FolderApi extends ApiBase
     /**
      * Operation getFilesList
      *
+     * Get all files and folders within a folder
+     *
      * @param Model\GetFilesListRequest $request is a request object for operation
      *
      * @throws ApiException on non-2xx response
@@ -509,6 +523,8 @@ class FolderApi extends ApiBase
     /**
      * Operation getFilesListWithHttpInfo
      *
+     * Get all files and folders within a folder
+     *
      * @param Model\GetFilesListRequest $request is a request object for operation
      *
      * @throws ApiException on non-2xx response
@@ -528,7 +544,7 @@ class FolderApi extends ApiBase
     /**
      * Operation getFilesListAsync
      *
-     * 
+     * Get all files and folders within a folder
      *
      * @param Model\GetFilesListRequest $request is a request object for operation
      *
@@ -548,7 +564,7 @@ class FolderApi extends ApiBase
     /**
      * Operation getFilesListAsyncWithHttpInfo
      *
-     * 
+     * Get all files and folders within a folder
      *
      * @param Model\GetFilesListRequest $request is a request object for operation
      *
@@ -632,6 +648,8 @@ class FolderApi extends ApiBase
     /**
      * Operation moveFolder
      *
+     * Move folder
+     *
      * @param Model\MoveFolderRequest $request is a request object for operation
      *
      * @throws ApiException on non-2xx response
@@ -649,6 +667,8 @@ class FolderApi extends ApiBase
 
     /**
      * Operation moveFolderWithHttpInfo
+     *
+     * Move folder
      *
      * @param Model\MoveFolderRequest $request is a request object for operation
      *
@@ -668,7 +688,7 @@ class FolderApi extends ApiBase
     /**
      * Operation moveFolderAsync
      *
-     * 
+     * Move folder
      *
      * @param Model\MoveFolderRequest $request is a request object for operation
      *
@@ -688,7 +708,7 @@ class FolderApi extends ApiBase
     /**
      * Operation moveFolderAsyncWithHttpInfo
      *
-     * 
+     * Move folder
      *
      * @param Model\MoveFolderRequest $request is a request object for operation
      *

@@ -41,8 +41,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class MapiContactProfessionalPropertySetDto implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -209,8 +207,15 @@ class MapiContactProfessionalPropertySetDto implements ArrayAccess
      * @param string $assistant Gets or sets the name of the contact's assistant
      * @param string $profession Gets or sets the profession of the contact
      */
-    public function __construct($title = null, $company_name = null, $department_name = null, $office_location = null, $manager_name = null, $assistant = null, $profession = null)
-    {
+    public function __construct(
+        $title = null,
+        $company_name = null,
+        $department_name = null,
+        $office_location = null,
+        $manager_name = null,
+        $assistant = null,
+        $profession = null
+    ) {
         $this->container['title'] = null;
         $this->container['company_name'] = null;
         $this->container['department_name'] = null;

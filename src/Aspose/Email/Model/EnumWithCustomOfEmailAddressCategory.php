@@ -40,8 +40,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class EnumWithCustomOfEmailAddressCategory implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -178,8 +176,10 @@ class EnumWithCustomOfEmailAddressCategory implements ArrayAccess
      * @param string $value Represents category for an email address. Enum, available values: Home, Work, Custom, Email1, Email2, Email3
      * @param string $description 
      */
-    public function __construct($value = null, $description = null)
-    {
+    public function __construct(
+        $value = null,
+        $description = null
+    ) {
         $this->container['value'] = null;
         $this->container['description'] = null;
 

@@ -41,8 +41,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class CalendarDto implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -299,8 +297,30 @@ class CalendarDto implements ArrayAccess
      * @param string $summary Summary.
      * @param string $transparency Specifies whether or not this appointment is intended to be visible in availability searches. Enum, available values: NotDefined, Transparent, Opaque
      */
-    public function __construct($attachments = null, $attendees = null, $description = null, $end_date = null, $end_time_zone = null, $flags = null, $is_description_html = null, $location = null, $method = null, $microsoft_busy_status = null, $microsoft_intended_status = null, $optional_attendees = null, $organizer = null, $recurrence_string = null, $recurrence = null, $reminders = null, $sequence_id = null, $start_date = null, $start_time_zone = null, $status = null, $summary = null, $transparency = null)
-    {
+    public function __construct(
+        $attachments = null,
+        $attendees = null,
+        $description = null,
+        $end_date = null,
+        $end_time_zone = null,
+        $flags = null,
+        $is_description_html = null,
+        $location = null,
+        $method = null,
+        $microsoft_busy_status = null,
+        $microsoft_intended_status = null,
+        $optional_attendees = null,
+        $organizer = null,
+        $recurrence_string = null,
+        $recurrence = null,
+        $reminders = null,
+        $sequence_id = null,
+        $start_date = null,
+        $start_time_zone = null,
+        $status = null,
+        $summary = null,
+        $transparency = null
+    ) {
         $this->container['attachments'] = null;
         $this->container['attendees'] = null;
         $this->container['description'] = null;

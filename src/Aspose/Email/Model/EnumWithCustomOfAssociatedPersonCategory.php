@@ -40,8 +40,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class EnumWithCustomOfAssociatedPersonCategory implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -178,8 +176,10 @@ class EnumWithCustomOfAssociatedPersonCategory implements ArrayAccess
      * @param string $value Associated person's category. Enum, available values: Spouse, Child, Mother, Father, Parent, Brother, Sister, Friend, Relative, Manager, Assistant, ReferredBy, Partner, DomesticPartner, Custom
      * @param string $description 
      */
-    public function __construct($value = null, $description = null)
-    {
+    public function __construct(
+        $value = null,
+        $description = null
+    ) {
         $this->container['value'] = null;
         $this->container['description'] = null;
 

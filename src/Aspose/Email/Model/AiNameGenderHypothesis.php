@@ -41,8 +41,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class AiNameGenderHypothesis implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -179,8 +177,10 @@ class AiNameGenderHypothesis implements ArrayAccess
      * @param string $gender Recognized name gender. Enum, available values: Male, Female, Unknown
      * @param double $score Hypothesis score
      */
-    public function __construct($gender = null, $score = null)
-    {
+    public function __construct(
+        $gender = null,
+        $score = null
+    ) {
         $this->container['gender'] = null;
         $this->container['score'] = null;
 

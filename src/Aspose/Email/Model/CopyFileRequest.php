@@ -36,11 +36,11 @@ class CopyFileRequest
     /**
      * Initializes a new instance of the CopyFileRequest class.
      *  
-     * @param string $src_path 
-     * @param string $dest_path 
-     * @param string $src_storage_name 
-     * @param string $dest_storage_name 
-     * @param string $version_id 
+     * @param string $src_path Source file path e.g. '/folder/file.ext'
+     * @param string $dest_path Destination file path
+     * @param string $src_storage_name Source storage name
+     * @param string $dest_storage_name Destination storage name
+     * @param string $version_id File version ID to copy
      */
     public function __construct($src_path, $dest_path, $src_storage_name = null, $dest_storage_name = null, $version_id = null)             
     {
@@ -52,27 +52,27 @@ class CopyFileRequest
     }
 
     /**
-     * Gets or sets src_path
+     * Source file path e.g. '/folder/file.ext'
      */
     public $src_path;
 
     /**
-     * Gets or sets dest_path
+     * Destination file path
      */
     public $dest_path;
 
     /**
-     * Gets or sets src_storage_name
+     * Source storage name
      */
     public $src_storage_name;
 
     /**
-     * Gets or sets dest_storage_name
+     * Destination storage name
      */
     public $dest_storage_name;
 
     /**
-     * Gets or sets version_id
+     * File version ID to copy
      */
     public $version_id;
 }

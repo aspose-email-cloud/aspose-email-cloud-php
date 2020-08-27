@@ -41,8 +41,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class AiNameWeighted implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -179,8 +177,10 @@ class AiNameWeighted implements ArrayAccess
      * @param string $name Name
      * @param double $score Score of name
      */
-    public function __construct($name = null, $score = null)
-    {
+    public function __construct(
+        $name = null,
+        $score = null
+    ) {
         $this->container['name'] = null;
         $this->container['score'] = null;
 

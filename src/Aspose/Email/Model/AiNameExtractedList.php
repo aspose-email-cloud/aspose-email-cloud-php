@@ -39,8 +39,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class AiNameExtractedList extends ListResponseOfAiNameExtracted 
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -165,8 +163,9 @@ class AiNameExtractedList extends ListResponseOfAiNameExtracted
      *  
      * @param \Aspose\Email\Model\AiNameExtracted[] $value 
      */
-    public function __construct($value = null)
-    {
+    public function __construct(
+        $value = null
+    ) {
         parent::__construct();
 
         if ($value != null) $this->setValue($value);

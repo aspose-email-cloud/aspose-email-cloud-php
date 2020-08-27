@@ -41,8 +41,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class ContentType implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -197,8 +195,13 @@ class ContentType implements ArrayAccess
      * @param string $name Name parameter.
      * @param \Aspose\Email\Model\ContentTypeParameter[] $parameters Full list of parameters
      */
-    public function __construct($boundary = null, $char_set = null, $media_type = null, $name = null, $parameters = null)
-    {
+    public function __construct(
+        $boundary = null,
+        $char_set = null,
+        $media_type = null,
+        $name = null,
+        $parameters = null
+    ) {
         $this->container['boundary'] = null;
         $this->container['char_set'] = null;
         $this->container['media_type'] = null;

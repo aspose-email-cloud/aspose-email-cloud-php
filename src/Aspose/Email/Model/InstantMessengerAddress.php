@@ -41,8 +41,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class InstantMessengerAddress implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -185,8 +183,11 @@ class InstantMessengerAddress implements ArrayAccess
      * @param string $address Address.
      * @param bool $preferred Determines whether this address is preferred.
      */
-    public function __construct($category = null, $address = null, $preferred = null)
-    {
+    public function __construct(
+        $category = null,
+        $address = null,
+        $preferred = null
+    ) {
         $this->container['category'] = null;
         $this->container['address'] = null;
         $this->container['preferred'] = null;

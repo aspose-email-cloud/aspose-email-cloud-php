@@ -41,8 +41,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class MapiRecipientDto implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -191,8 +189,12 @@ class MapiRecipientDto implements ArrayAccess
      * @param string $display_name Display name of the message recipient or sender.
      * @param string $recipient_type Represent the PR_RECIPIENT_TYPE property which contains the recipient type for a message recipient. Enum, available values: Unknown, MapiBcc, MapiCc, MapiP1, MapiSubmitted, MapiTo
      */
-    public function __construct($email_address = null, $address_type = null, $display_name = null, $recipient_type = null)
-    {
+    public function __construct(
+        $email_address = null,
+        $address_type = null,
+        $display_name = null,
+        $recipient_type = null
+    ) {
         $this->container['email_address'] = null;
         $this->container['address_type'] = null;
         $this->container['display_name'] = null;

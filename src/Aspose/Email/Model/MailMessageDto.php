@@ -39,8 +39,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class MailMessageDto extends MailMessageBase 
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -166,8 +164,10 @@ class MailMessageDto extends MailMessageBase
      * @param string $discriminator 
      * @param \Aspose\Email\Model\EmailDto $value Message document object.
      */
-    public function __construct($discriminator = null, $value = null)
-    {
+    public function __construct(
+        //,
+        $value = null
+    ) {
         parent::__construct();
         $this->container['value'] = null;
 

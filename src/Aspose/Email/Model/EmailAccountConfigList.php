@@ -39,8 +39,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class EmailAccountConfigList extends ListResponseOfEmailAccountConfig 
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -165,8 +163,9 @@ class EmailAccountConfigList extends ListResponseOfEmailAccountConfig
      *  
      * @param \Aspose\Email\Model\EmailAccountConfig[] $value 
      */
-    public function __construct($value = null)
-    {
+    public function __construct(
+        $value = null
+    ) {
         parent::__construct();
 
         if ($value != null) $this->setValue($value);

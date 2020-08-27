@@ -41,8 +41,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class CalendarReminder implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -215,8 +213,16 @@ class CalendarReminder implements ArrayAccess
      * @param string $summary Defines a short summary or subject for the alarm.
      * @param \Aspose\Email\Model\ReminderTrigger $trigger Specifies when an alarm will trigger.
      */
-    public function __construct($action = null, $attachments = null, $attendees = null, $description = null, $duration = null, $repeat = null, $summary = null, $trigger = null)
-    {
+    public function __construct(
+        $action = null,
+        $attachments = null,
+        $attendees = null,
+        $description = null,
+        $duration = null,
+        $repeat = null,
+        $summary = null,
+        $trigger = null
+    ) {
         $this->container['action'] = null;
         $this->container['attachments'] = null;
         $this->container['attendees'] = null;

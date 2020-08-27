@@ -41,8 +41,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class AiNameCulturalContext implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -197,8 +195,13 @@ class AiNameCulturalContext implements ArrayAccess
      * @param string $encoding A character encoding name
      * @param string $style Name writing style. Enum, available values: Formal, Informal, Legal, Academic
      */
-    public function __construct($language = null, $location = null, $script = null, $encoding = null, $style = null)
-    {
+    public function __construct(
+        $language = null,
+        $location = null,
+        $script = null,
+        $encoding = null,
+        $style = null
+    ) {
         $this->container['language'] = null;
         $this->container['location'] = null;
         $this->container['script'] = null;

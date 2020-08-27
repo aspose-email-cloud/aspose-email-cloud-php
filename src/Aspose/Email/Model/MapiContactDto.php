@@ -39,8 +39,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class MapiContactDto extends MapiMessageItemBaseDto 
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -230,8 +228,34 @@ class MapiContactDto extends MapiMessageItemBaseDto
      * @param \Aspose\Email\Model\MapiContactProfessionalPropertySetDto $professional_info Properties are used to store professional details for the person represented by the contact.
      * @param \Aspose\Email\Model\MapiContactTelephonePropertySetDto $telephones Specify telephone numbers for the contact.
      */
-    public function __construct($attachments = null, $billing = null, $body = null, $body_html = null, $body_rtf = null, $body_type = null, $categories = null, $companies = null, $item_id = null, $message_class = null, $mileage = null, $recipients = null, $sensitivity = null, $subject = null, $subject_prefix = null, $properties = null, $discriminator = null, $electronic_addresses = null, $events = null, $name_info = null, $other_fields = null, $personal_info = null, $photo = null, $physical_addresses = null, $professional_info = null, $telephones = null)
-    {
+    public function __construct(
+        $attachments = null,
+        $billing = null,
+        $body = null,
+        $body_html = null,
+        $body_rtf = null,
+        $body_type = null,
+        $categories = null,
+        $companies = null,
+        $item_id = null,
+        $message_class = null,
+        $mileage = null,
+        $recipients = null,
+        $sensitivity = null,
+        $subject = null,
+        $subject_prefix = null,
+        $properties = null
+        ,
+        $electronic_addresses = null,
+        $events = null,
+        $name_info = null,
+        $other_fields = null,
+        $personal_info = null,
+        $photo = null,
+        $physical_addresses = null,
+        $professional_info = null,
+        $telephones = null
+    ) {
         parent::__construct();
         $this->container['electronic_addresses'] = null;
         $this->container['events'] = null;

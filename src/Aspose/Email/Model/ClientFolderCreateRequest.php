@@ -39,8 +39,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class ClientFolderCreateRequest extends ClientAccountBaseRequest 
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -172,8 +170,11 @@ class ClientFolderCreateRequest extends ClientAccountBaseRequest
      * @param string $parent_folder Path to parent folder.
      * @param string $folder_name Folder name.
      */
-    public function __construct($account_location = null, $parent_folder = null, $folder_name = null)
-    {
+    public function __construct(
+        $account_location = null,
+        $parent_folder = null,
+        $folder_name = null
+    ) {
         parent::__construct();
         $this->container['parent_folder'] = null;
         $this->container['folder_name'] = null;

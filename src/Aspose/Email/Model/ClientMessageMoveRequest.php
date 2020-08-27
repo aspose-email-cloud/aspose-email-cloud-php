@@ -39,8 +39,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class ClientMessageMoveRequest extends ClientMessageBaseRequest 
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -173,8 +171,12 @@ class ClientMessageMoveRequest extends ClientMessageBaseRequest
      * @param string $source_folder Folder to move message from.
      * @param string $destination_folder Folder to move message to.
      */
-    public function __construct($account_location = null, $message_id = null, $source_folder = null, $destination_folder = null)
-    {
+    public function __construct(
+        $account_location = null,
+        $message_id = null,
+        $source_folder = null,
+        $destination_folder = null
+    ) {
         parent::__construct();
         $this->container['source_folder'] = null;
         $this->container['destination_folder'] = null;

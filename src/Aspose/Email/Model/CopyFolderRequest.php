@@ -36,10 +36,10 @@ class CopyFolderRequest
     /**
      * Initializes a new instance of the CopyFolderRequest class.
      *  
-     * @param string $src_path 
-     * @param string $dest_path 
-     * @param string $src_storage_name 
-     * @param string $dest_storage_name 
+     * @param string $src_path Source folder path e.g. '/src'
+     * @param string $dest_path Destination folder path e.g. '/dst'
+     * @param string $src_storage_name Source storage name
+     * @param string $dest_storage_name Destination storage name
      */
     public function __construct($src_path, $dest_path, $src_storage_name = null, $dest_storage_name = null)             
     {
@@ -50,22 +50,22 @@ class CopyFolderRequest
     }
 
     /**
-     * Gets or sets src_path
+     * Source folder path e.g. '/src'
      */
     public $src_path;
 
     /**
-     * Gets or sets dest_path
+     * Destination folder path e.g. '/dst'
      */
     public $dest_path;
 
     /**
-     * Gets or sets src_storage_name
+     * Source storage name
      */
     public $src_storage_name;
 
     /**
-     * Gets or sets dest_storage_name
+     * Destination storage name
      */
     public $dest_storage_name;
 }

@@ -39,8 +39,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class ClientThreadBaseRequest extends ClientAccountBaseRequest 
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -166,8 +164,10 @@ class ClientThreadBaseRequest extends ClientAccountBaseRequest
      * @param \Aspose\Email\Model\StorageFileLocation $account_location Email client account configuration location on storage.
      * @param string $thread_id Thread identifier.
      */
-    public function __construct($account_location = null, $thread_id = null)
-    {
+    public function __construct(
+        $account_location = null,
+        $thread_id = null
+    ) {
         parent::__construct();
         $this->container['thread_id'] = null;
 

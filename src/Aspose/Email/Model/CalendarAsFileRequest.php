@@ -41,8 +41,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class CalendarAsFileRequest implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -179,8 +177,10 @@ class CalendarAsFileRequest implements ArrayAccess
      * @param string $format Calendar file format Enum, available values: Ics, Msg
      * @param \Aspose\Email\Model\CalendarDto $value iCalendar model
      */
-    public function __construct($format = null, $value = null)
-    {
+    public function __construct(
+        $format = null,
+        $value = null
+    ) {
         $this->container['format'] = null;
         $this->container['value'] = null;
 

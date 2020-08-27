@@ -41,8 +41,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class ReminderAttendee implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -173,8 +171,9 @@ class ReminderAttendee implements ArrayAccess
      *  
      * @param string $address Contains the email address.
      */
-    public function __construct($address = null)
-    {
+    public function __construct(
+        $address = null
+    ) {
         $this->container['address'] = null;
 
         if ($address != null) $this->setAddress($address);

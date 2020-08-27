@@ -4,18 +4,18 @@ All URIs are relative to *https://api.aspose.cloud/v3.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**copyFolder**](FolderApi.md#copyFolder) | **PUT** /email/storage/folder/copy/{srcPath} | 
-[**createFolder**](FolderApi.md#createFolder) | **PUT** /email/storage/folder/{path} | 
-[**deleteFolder**](FolderApi.md#deleteFolder) | **DELETE** /email/storage/folder/{path} | 
-[**getFilesList**](FolderApi.md#getFilesList) | **GET** /email/storage/folder/{path} | 
-[**moveFolder**](FolderApi.md#moveFolder) | **PUT** /email/storage/folder/move/{srcPath} | 
+[**copyFolder**](FolderApi.md#copyFolder) | **PUT** /email/storage/folder/copy/{srcPath} | Copy folder
+[**createFolder**](FolderApi.md#createFolder) | **PUT** /email/storage/folder/{path} | Create the folder
+[**deleteFolder**](FolderApi.md#deleteFolder) | **DELETE** /email/storage/folder/{path} | Delete folder
+[**getFilesList**](FolderApi.md#getFilesList) | **GET** /email/storage/folder/{path} | Get all files and folders within a folder
+[**moveFolder**](FolderApi.md#moveFolder) | **PUT** /email/storage/folder/move/{srcPath} | Move folder
 
 
 # **copyFolder**
 ```php
 function copyFolder(CopyFolderRequest $request)
 ```
-
+Copy folder
 
 ### Return type
 
@@ -33,10 +33,10 @@ new Aspose\Email\Model\CopyFolderRequest(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **src_path** | **string**|  |
- **dest_path** | **string**|  |
- **src_storage_name** | **string**|  | [optional]
- **dest_storage_name** | **string**|  | [optional]
+ **src_path** | **string**| Source folder path e.g. &#39;/src&#39; |
+ **dest_path** | **string**| Destination folder path e.g. &#39;/dst&#39; |
+ **src_storage_name** | **string**| Source storage name | [optional]
+ **dest_storage_name** | **string**| Destination storage name | [optional]
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 ```php
 function createFolder(CreateFolderRequest $request)
 ```
-
+Create the folder
 
 ### Return type
 
@@ -60,8 +60,8 @@ new Aspose\Email\Model\CreateFolderRequest(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **path** | **string**|  |
- **storage_name** | **string**|  | [optional]
+ **path** | **string**| Folder path to create e.g. &#39;folder_1/folder_2/&#39; |
+ **storage_name** | **string**| Storage name | [optional]
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 ```php
 function deleteFolder(DeleteFolderRequest $request)
 ```
-
+Delete folder
 
 ### Return type
 
@@ -86,9 +86,9 @@ new Aspose\Email\Model\DeleteFolderRequest(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **path** | **string**|  |
- **storage_name** | **string**|  | [optional]
- **recursive** | **bool**|  | [optional] [default to false]
+ **path** | **string**| Folder path e.g. &#39;/folder&#39; |
+ **storage_name** | **string**| Storage name | [optional]
+ **recursive** | **bool**| Enable to delete folders, subfolders and files | [optional] [default to false]
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 ```php
 function \Aspose\Email\Model\FilesList getFilesList(GetFilesListRequest $request)
 ```
-
+Get all files and folders within a folder
 
 ### Return type
 
@@ -112,8 +112,8 @@ new Aspose\Email\Model\GetFilesListRequest(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **path** | **string**|  |
- **storage_name** | **string**|  | [optional]
+ **path** | **string**| Folder path e.g. &#39;/folder&#39; |
+ **storage_name** | **string**| Storage name | [optional]
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 
@@ -121,7 +121,7 @@ Name | Type | Description  | Notes
 ```php
 function moveFolder(MoveFolderRequest $request)
 ```
-
+Move folder
 
 ### Return type
 
@@ -139,10 +139,10 @@ new Aspose\Email\Model\MoveFolderRequest(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **src_path** | **string**|  |
- **dest_path** | **string**|  |
- **src_storage_name** | **string**|  | [optional]
- **dest_storage_name** | **string**|  | [optional]
+ **src_path** | **string**| Folder path to move e.g. &#39;/folder&#39; |
+ **dest_path** | **string**| Destination folder path to move to e.g &#39;/dst&#39; |
+ **src_storage_name** | **string**| Source storage name | [optional]
+ **dest_storage_name** | **string**| Destination storage name | [optional]
 
 [[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
 

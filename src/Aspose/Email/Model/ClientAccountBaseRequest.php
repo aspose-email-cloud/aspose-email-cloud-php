@@ -41,8 +41,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class ClientAccountBaseRequest implements ArrayAccess
 {
-    const DISCRIMINATOR = 'Type';
-
     /**
      * The original name of the model.
      *
@@ -173,15 +171,12 @@ class ClientAccountBaseRequest implements ArrayAccess
      *  
      * @param \Aspose\Email\Model\StorageFileLocation $account_location Email client account configuration location on storage.
      */
-    public function __construct($account_location = null)
-    {
+    public function __construct(
+        $account_location = null
+    ) {
         $this->container['account_location'] = null;
 
         if ($account_location != null) $this->setAccountLocation($account_location);
-
-        // Initialize discriminator property with the model name.
-        $discriminator = array_search('Type', self::$attributeMap);
-        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /**

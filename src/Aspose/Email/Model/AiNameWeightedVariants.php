@@ -41,8 +41,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class AiNameWeightedVariants implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -179,8 +177,10 @@ class AiNameWeightedVariants implements ArrayAccess
      * @param \Aspose\Email\Model\AiNameWeighted[] $names List of name variations
      * @param string $comments Usually empty; can contain extra message describing some issue occurred during processing
      */
-    public function __construct($names = null, $comments = null)
-    {
+    public function __construct(
+        $names = null,
+        $comments = null
+    ) {
         $this->container['names'] = null;
         $this->container['comments'] = null;
 

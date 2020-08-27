@@ -41,8 +41,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class AiBcrImage implements ArrayAccess
 {
-    const DISCRIMINATOR = 'Type';
-
     /**
      * The original name of the model.
      *
@@ -173,15 +171,12 @@ class AiBcrImage implements ArrayAccess
      *  
      * @param bool $is_single Determines that image contains single VCard or more.
      */
-    public function __construct($is_single = null)
-    {
+    public function __construct(
+        $is_single = null
+    ) {
         $this->container['is_single'] = null;
 
         if ($is_single != null) $this->setIsSingle($is_single);
-
-        // Initialize discriminator property with the model name.
-        $discriminator = array_search('Type', self::$attributeMap);
-        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /**

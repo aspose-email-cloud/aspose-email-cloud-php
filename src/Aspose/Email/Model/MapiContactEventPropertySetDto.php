@@ -41,8 +41,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class MapiContactEventPropertySetDto implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -179,8 +177,10 @@ class MapiContactEventPropertySetDto implements ArrayAccess
      * @param \DateTime $birthday Specifies the birthday of the contact.
      * @param \DateTime $wedding_anniversary Specifies the wedding anniversary of the contact.
      */
-    public function __construct($birthday = null, $wedding_anniversary = null)
-    {
+    public function __construct(
+        $birthday = null,
+        $wedding_anniversary = null
+    ) {
         $this->container['birthday'] = null;
         $this->container['wedding_anniversary'] = null;
 

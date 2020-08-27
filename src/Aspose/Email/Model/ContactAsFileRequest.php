@@ -41,8 +41,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class ContactAsFileRequest implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -179,8 +177,10 @@ class ContactAsFileRequest implements ArrayAccess
      * @param string $format Enumerates contact formats. Enum, available values: VCard, WebDav, Msg
      * @param \Aspose\Email\Model\ContactDto $value Contact model.
      */
-    public function __construct($format = null, $value = null)
-    {
+    public function __construct(
+        $format = null,
+        $value = null
+    ) {
         $this->container['format'] = null;
         $this->container['value'] = null;
 

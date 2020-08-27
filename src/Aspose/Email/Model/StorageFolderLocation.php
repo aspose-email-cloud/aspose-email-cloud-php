@@ -41,8 +41,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class StorageFolderLocation implements ArrayAccess
 {
-    const DISCRIMINATOR = 'Type';
-
     /**
      * The original name of the model.
      *
@@ -179,17 +177,15 @@ class StorageFolderLocation implements ArrayAccess
      * @param string $storage A storage name
      * @param string $folder_path A path to a folder in specified storage
      */
-    public function __construct($storage = null, $folder_path = null)
-    {
+    public function __construct(
+        $storage = null,
+        $folder_path = null
+    ) {
         $this->container['storage'] = null;
         $this->container['folder_path'] = null;
 
         if ($storage != null) $this->setStorage($storage);
         if ($folder_path != null) $this->setFolderPath($folder_path);
-
-        // Initialize discriminator property with the model name.
-        $discriminator = array_search('Type', self::$attributeMap);
-        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /**

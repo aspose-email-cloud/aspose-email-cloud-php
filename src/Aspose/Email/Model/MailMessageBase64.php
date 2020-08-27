@@ -39,8 +39,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class MailMessageBase64 extends MailMessageBase 
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -172,8 +170,11 @@ class MailMessageBase64 extends MailMessageBase
      * @param string $value_base64 Email message file data encoded to Base64 string.
      * @param string $format Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
      */
-    public function __construct($discriminator = null, $value_base64 = null, $format = null)
-    {
+    public function __construct(
+        //,
+        $value_base64 = null,
+        $format = null
+    ) {
         parent::__construct();
         $this->container['value_base64'] = null;
         $this->container['format'] = null;

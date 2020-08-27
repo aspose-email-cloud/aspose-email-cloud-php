@@ -36,8 +36,8 @@ class CreateFolderRequest
     /**
      * Initializes a new instance of the CreateFolderRequest class.
      *  
-     * @param string $path 
-     * @param string $storage_name 
+     * @param string $path Folder path to create e.g. 'folder_1/folder_2/'
+     * @param string $storage_name Storage name
      */
     public function __construct($path, $storage_name = null)             
     {
@@ -46,12 +46,12 @@ class CreateFolderRequest
     }
 
     /**
-     * Gets or sets path
+     * Folder path to create e.g. 'folder_1/folder_2/'
      */
     public $path;
 
     /**
-     * Gets or sets storage_name
+     * Storage name
      */
     public $storage_name;
 }

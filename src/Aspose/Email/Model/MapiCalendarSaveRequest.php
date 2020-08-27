@@ -39,8 +39,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class MapiCalendarSaveRequest extends StorageModelOfMapiCalendarDto 
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -167,8 +165,11 @@ class MapiCalendarSaveRequest extends StorageModelOfMapiCalendarDto
      * @param \Aspose\Email\Model\MapiCalendarDto $value 
      * @param string $format Calendar file format Enum, available values: Ics, Msg
      */
-    public function __construct($storage_file = null, $value = null, $format = null)
-    {
+    public function __construct(
+        $storage_file = null,
+        $value = null,
+        $format = null
+    ) {
         parent::__construct();
         $this->container['format'] = null;
 

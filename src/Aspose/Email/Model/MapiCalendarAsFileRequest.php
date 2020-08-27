@@ -41,8 +41,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class MapiCalendarAsFileRequest implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -179,8 +177,10 @@ class MapiCalendarAsFileRequest implements ArrayAccess
      * @param string $format Calendar file format Enum, available values: Ics, Msg
      * @param \Aspose\Email\Model\MapiCalendarDto $value MAPI calendar model.
      */
-    public function __construct($format = null, $value = null)
-    {
+    public function __construct(
+        $format = null,
+        $value = null
+    ) {
         $this->container['format'] = null;
         $this->container['value'] = null;
 

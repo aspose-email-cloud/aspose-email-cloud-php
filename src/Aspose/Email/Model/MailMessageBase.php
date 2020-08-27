@@ -41,8 +41,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class MailMessageBase implements ArrayAccess
 {
-    const DISCRIMINATOR = 'Type';
-
     /**
      * The original name of the model.
      *
@@ -173,15 +171,11 @@ class MailMessageBase implements ArrayAccess
      *  
      * @param string $discriminator 
      */
-    public function __construct($discriminator = null)
-    {
-        $this->container['discriminator'] = null;
+    public function __construct(
+        
+    ) {
 
         $this->container['discriminator'] = (new \ReflectionClass($this))->getShortName();
-
-        // Initialize discriminator property with the model name.
-        $discriminator = array_search('Type', self::$attributeMap);
-        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /**
@@ -232,7 +226,11 @@ class MailMessageBase implements ArrayAccess
      *
      * @return $this
      */
-    public function setDiscriminator($discriminator) { /* Does nothing */ }
+    public function setDiscriminator($discriminator)
+    {
+        /* do nothing */
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *

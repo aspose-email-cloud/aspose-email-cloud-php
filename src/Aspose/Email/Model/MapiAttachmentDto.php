@@ -41,8 +41,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class MapiAttachmentDto implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -179,8 +177,10 @@ class MapiAttachmentDto implements ArrayAccess
      * @param string $name Attachment's name
      * @param string $data_base64 Attachment data represented as Base64 string.
      */
-    public function __construct($name = null, $data_base64 = null)
-    {
+    public function __construct(
+        $name = null,
+        $data_base64 = null
+    ) {
         $this->container['name'] = null;
         $this->container['data_base64'] = null;
 

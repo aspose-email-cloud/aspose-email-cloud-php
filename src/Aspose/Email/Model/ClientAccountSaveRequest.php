@@ -39,8 +39,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class ClientAccountSaveRequest extends StorageModelOfEmailClientAccount 
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -166,8 +164,10 @@ class ClientAccountSaveRequest extends StorageModelOfEmailClientAccount
      * @param \Aspose\Email\Model\StorageFileLocation $storage_file 
      * @param \Aspose\Email\Model\EmailClientAccount $value 
      */
-    public function __construct($storage_file = null, $value = null)
-    {
+    public function __construct(
+        $storage_file = null,
+        $value = null
+    ) {
         parent::__construct();
 
         if ($storage_file != null) $this->setStorageFile($storage_file);

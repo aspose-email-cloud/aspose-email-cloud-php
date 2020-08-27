@@ -39,8 +39,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class TaskRegeneratingPatternDto extends RecurrencePatternDto 
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -170,8 +168,14 @@ class TaskRegeneratingPatternDto extends RecurrencePatternDto
      * @param string $discriminator 
      * @param string $regenerating_type Enumerates the types of regenerating pattern. Enum, available values: Daily, Weekly, Monthly, Yearly
      */
-    public function __construct($interval = null, $occurs = null, $end_date = null, $week_start = null, $discriminator = null, $regenerating_type = null)
-    {
+    public function __construct(
+        $interval = null,
+        $occurs = null,
+        $end_date = null,
+        $week_start = null
+        ,
+        $regenerating_type = null
+    ) {
         parent::__construct();
         $this->container['regenerating_type'] = null;
 

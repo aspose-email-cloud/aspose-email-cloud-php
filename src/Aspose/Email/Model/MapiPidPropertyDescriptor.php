@@ -39,8 +39,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class MapiPidPropertyDescriptor extends MapiPropertyDescriptor 
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -184,8 +182,13 @@ class MapiPidPropertyDescriptor extends MapiPropertyDescriptor
      * @param bool $multiple_values_data_type Indicates if data type contains of multiple values
      * @param string $name A string that identifies the property
      */
-    public function __construct($discriminator = null, $canonical_name = null, $data_type = null, $multiple_values_data_type = null, $name = null)
-    {
+    public function __construct(
+        //,
+        $canonical_name = null,
+        $data_type = null,
+        $multiple_values_data_type = null,
+        $name = null
+    ) {
         parent::__construct();
         $this->container['canonical_name'] = null;
         $this->container['data_type'] = null;

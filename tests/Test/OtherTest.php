@@ -87,7 +87,6 @@ class OtherTest extends TestBase
             "SMTP",
             new EmailClientAccountPasswordCredentials(
                 "login",
-                null,
                 "password"
             )
         );
@@ -127,7 +126,6 @@ class OtherTest extends TestBase
                     'IMAP',
                     new EmailClientAccountPasswordCredentials(
                         'example@gmail.com',
-                        null,
                         'password'
                     )
                 ),
@@ -151,7 +149,6 @@ class OtherTest extends TestBase
                 'SMTP',
                 new EmailClientAccountPasswordCredentials(
                     'example@gmail.com',
-                    null,
                     'password'
                 )
             )

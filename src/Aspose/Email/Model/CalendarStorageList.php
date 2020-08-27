@@ -39,8 +39,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class CalendarStorageList extends ListResponseOfStorageModelOfCalendarDto 
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -165,8 +163,9 @@ class CalendarStorageList extends ListResponseOfStorageModelOfCalendarDto
      *  
      * @param \Aspose\Email\Model\StorageModelOfCalendarDto[] $value 
      */
-    public function __construct($value = null)
-    {
+    public function __construct(
+        $value = null
+    ) {
         parent::__construct();
 
         if ($value != null) $this->setValue($value);

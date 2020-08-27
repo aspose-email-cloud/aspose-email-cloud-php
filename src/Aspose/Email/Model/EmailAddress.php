@@ -41,8 +41,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class EmailAddress implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -203,8 +201,14 @@ class EmailAddress implements ArrayAccess
      * @param string $address Email address.
      * @param string $original_address_string The original e-mail address string
      */
-    public function __construct($category = null, $display_name = null, $preferred = null, $routing_type = null, $address = null, $original_address_string = null)
-    {
+    public function __construct(
+        $category = null,
+        $display_name = null,
+        $preferred = null,
+        $routing_type = null,
+        $address = null,
+        $original_address_string = null
+    ) {
         $this->container['category'] = null;
         $this->container['display_name'] = null;
         $this->container['preferred'] = null;

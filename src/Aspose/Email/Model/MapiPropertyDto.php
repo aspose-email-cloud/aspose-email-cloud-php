@@ -41,8 +41,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class MapiPropertyDto implements ArrayAccess
 {
-    const DISCRIMINATOR = 'Type';
-
     /**
      * The original name of the model.
      *
@@ -179,17 +177,14 @@ class MapiPropertyDto implements ArrayAccess
      * @param \Aspose\Email\Model\MapiPropertyDescriptor $descriptor Property descriptor
      * @param string $discriminator 
      */
-    public function __construct($descriptor = null, $discriminator = null)
-    {
+    public function __construct(
+        $descriptor = null
+        
+    ) {
         $this->container['descriptor'] = null;
-        $this->container['discriminator'] = null;
 
         if ($descriptor != null) $this->setDescriptor($descriptor);
         $this->container['discriminator'] = (new \ReflectionClass($this))->getShortName();
-
-        // Initialize discriminator property with the model name.
-        $discriminator = array_search('Type', self::$attributeMap);
-        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /**
@@ -264,7 +259,11 @@ class MapiPropertyDto implements ArrayAccess
      *
      * @return $this
      */
-    public function setDiscriminator($discriminator) { /* Does nothing */ }
+    public function setDiscriminator($discriminator)
+    {
+        /* do nothing */
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *

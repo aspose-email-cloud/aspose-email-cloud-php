@@ -41,8 +41,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class MapiContactTelephonePropertySetDto implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -281,8 +279,27 @@ class MapiContactTelephonePropertySetDto implements ArrayAccess
      * @param string $isdn_number Gets or sets the integrated services digital network (ISDN) number
      * @param string $pager_telephone_number Gets or sets a pager telephone number
      */
-    public function __construct($is_empty = null, $default_telephone_number = null, $use_autocomplete = null, $callback_telephone_number = null, $business_telephone_number = null, $home_telephone_number = null, $primary_telephone_number = null, $business2_telephone_number = null, $mobile_telephone_number = null, $radio_telephone_number = null, $car_telephone_number = null, $other_telephone_number = null, $assistant_telephone_number = null, $home2_telephone_number = null, $tty_tdd_phone_number = null, $company_main_telephone_number = null, $telex_number = null, $isdn_number = null, $pager_telephone_number = null)
-    {
+    public function __construct(
+        $is_empty = null,
+        $default_telephone_number = null,
+        $use_autocomplete = null,
+        $callback_telephone_number = null,
+        $business_telephone_number = null,
+        $home_telephone_number = null,
+        $primary_telephone_number = null,
+        $business2_telephone_number = null,
+        $mobile_telephone_number = null,
+        $radio_telephone_number = null,
+        $car_telephone_number = null,
+        $other_telephone_number = null,
+        $assistant_telephone_number = null,
+        $home2_telephone_number = null,
+        $tty_tdd_phone_number = null,
+        $company_main_telephone_number = null,
+        $telex_number = null,
+        $isdn_number = null,
+        $pager_telephone_number = null
+    ) {
         $this->container['is_empty'] = null;
         $this->container['default_telephone_number'] = null;
         $this->container['use_autocomplete'] = null;

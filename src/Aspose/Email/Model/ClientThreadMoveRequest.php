@@ -39,8 +39,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class ClientThreadMoveRequest extends ClientThreadBaseRequest 
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -167,8 +165,11 @@ class ClientThreadMoveRequest extends ClientThreadBaseRequest
      * @param string $thread_id Thread identifier.
      * @param string $destination_folder Email account folder to move thread to.
      */
-    public function __construct($account_location = null, $thread_id = null, $destination_folder = null)
-    {
+    public function __construct(
+        $account_location = null,
+        $thread_id = null,
+        $destination_folder = null
+    ) {
         parent::__construct();
         $this->container['destination_folder'] = null;
 

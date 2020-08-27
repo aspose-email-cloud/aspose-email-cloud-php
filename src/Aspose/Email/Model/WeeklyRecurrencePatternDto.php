@@ -39,8 +39,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class WeeklyRecurrencePatternDto extends RecurrencePatternDto 
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -170,8 +168,14 @@ class WeeklyRecurrencePatternDto extends RecurrencePatternDto
      * @param string $discriminator 
      * @param string[] $start_days Start days Items: Represents the day of the week. Enum, available values: None, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, Day, WeekDay, WeekendDay
      */
-    public function __construct($interval = null, $occurs = null, $end_date = null, $week_start = null, $discriminator = null, $start_days = null)
-    {
+    public function __construct(
+        $interval = null,
+        $occurs = null,
+        $end_date = null,
+        $week_start = null
+        ,
+        $start_days = null
+    ) {
         parent::__construct();
         $this->container['start_days'] = null;
 

@@ -39,8 +39,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class MailServerFolderList extends ListResponseOfMailServerFolder 
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -165,8 +163,9 @@ class MailServerFolderList extends ListResponseOfMailServerFolder
      *  
      * @param \Aspose\Email\Model\MailServerFolder[] $value 
      */
-    public function __construct($value = null)
-    {
+    public function __construct(
+        $value = null
+    ) {
         parent::__construct();
 
         if ($value != null) $this->setValue($value);

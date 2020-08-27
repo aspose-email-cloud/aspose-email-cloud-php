@@ -41,8 +41,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class EmailClientAccountCredentials implements ArrayAccess
 {
-    const DISCRIMINATOR = 'Type';
-
     /**
      * The original name of the model.
      *
@@ -179,17 +177,14 @@ class EmailClientAccountCredentials implements ArrayAccess
      * @param string $login Email client account login
      * @param string $discriminator 
      */
-    public function __construct($login = null, $discriminator = null)
-    {
+    public function __construct(
+        $login = null
+        
+    ) {
         $this->container['login'] = null;
-        $this->container['discriminator'] = null;
 
         if ($login != null) $this->setLogin($login);
         $this->container['discriminator'] = (new \ReflectionClass($this))->getShortName();
-
-        // Initialize discriminator property with the model name.
-        $discriminator = array_search('Type', self::$attributeMap);
-        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /**
@@ -282,7 +277,11 @@ class EmailClientAccountCredentials implements ArrayAccess
      *
      * @return $this
      */
-    public function setDiscriminator($discriminator) { /* Does nothing */ }
+    public function setDiscriminator($discriminator)
+    {
+        /* do nothing */
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *

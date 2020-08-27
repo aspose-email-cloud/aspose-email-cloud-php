@@ -38,8 +38,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class EmailConfigDiscoverPasswordRequest extends DiscoverEmailConfigRequest 
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -167,8 +165,12 @@ class EmailConfigDiscoverPasswordRequest extends DiscoverEmailConfigRequest
      * @param string $login Email account login. If not specified, address used as a login.
      * @param string $password Email account password.
      */
-    public function __construct($address = null, $fast_processing = null, $login = null, $password = null)
-    {
+    public function __construct(
+        $address = null,
+        $fast_processing = null,
+        $login = null,
+        $password = null
+    ) {
         parent::__construct();
         $this->container['password'] = null;
 

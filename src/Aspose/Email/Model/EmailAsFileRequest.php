@@ -41,8 +41,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class EmailAsFileRequest implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -179,8 +177,10 @@ class EmailAsFileRequest implements ArrayAccess
      * @param string $format Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
      * @param \Aspose\Email\Model\EmailDto $value Email model.
      */
-    public function __construct($format = null, $value = null)
-    {
+    public function __construct(
+        $format = null,
+        $value = null
+    ) {
         $this->container['format'] = null;
         $this->container['value'] = null;
 

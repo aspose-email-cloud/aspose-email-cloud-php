@@ -39,8 +39,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class MailMessageBaseList extends ListResponseOfMailMessageBase 
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -165,8 +163,9 @@ class MailMessageBaseList extends ListResponseOfMailMessageBase
      *  
      * @param \Aspose\Email\Model\MailMessageBase[] $value 
      */
-    public function __construct($value = null)
-    {
+    public function __construct(
+        $value = null
+    ) {
         parent::__construct();
 
         if ($value != null) $this->setValue($value);

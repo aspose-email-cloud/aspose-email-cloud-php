@@ -39,8 +39,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class ClientFolderDeleteRequest extends ClientAccountBaseRequest 
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -166,8 +164,10 @@ class ClientFolderDeleteRequest extends ClientAccountBaseRequest
      * @param \Aspose\Email\Model\StorageFileLocation $account_location Email client account configuration location on storage.
      * @param string $folder Path to folder to delete.
      */
-    public function __construct($account_location = null, $folder = null)
-    {
+    public function __construct(
+        $account_location = null,
+        $folder = null
+    ) {
         parent::__construct();
         $this->container['folder'] = null;
 

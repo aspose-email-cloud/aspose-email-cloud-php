@@ -39,8 +39,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class ClientMessageDeleteRequest extends ClientMessageBaseRequest 
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -167,8 +165,11 @@ class ClientMessageDeleteRequest extends ClientMessageBaseRequest
      * @param string $message_id Message identifier.
      * @param string $folder Folder to delete message from.
      */
-    public function __construct($account_location = null, $message_id = null, $folder = null)
-    {
+    public function __construct(
+        $account_location = null,
+        $message_id = null,
+        $folder = null
+    ) {
         parent::__construct();
         $this->container['folder'] = null;
 

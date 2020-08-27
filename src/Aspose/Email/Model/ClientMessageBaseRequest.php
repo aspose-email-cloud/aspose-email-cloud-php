@@ -39,8 +39,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class ClientMessageBaseRequest extends ClientAccountBaseRequest 
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -166,8 +164,10 @@ class ClientMessageBaseRequest extends ClientAccountBaseRequest
      * @param \Aspose\Email\Model\StorageFileLocation $account_location Email client account configuration location on storage.
      * @param string $message_id Message identifier.
      */
-    public function __construct($account_location = null, $message_id = null)
-    {
+    public function __construct(
+        $account_location = null,
+        $message_id = null
+    ) {
         parent::__construct();
         $this->container['message_id'] = null;
 

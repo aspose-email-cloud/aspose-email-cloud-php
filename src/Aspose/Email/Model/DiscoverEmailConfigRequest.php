@@ -41,8 +41,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class DiscoverEmailConfigRequest implements ArrayAccess
 {
-    const DISCRIMINATOR = 'Type';
-
     /**
      * The original name of the model.
      *
@@ -185,8 +183,11 @@ class DiscoverEmailConfigRequest implements ArrayAccess
      * @param bool $fast_processing Turns on fast processing. All discover systems will run in parallel. First discovered result will be returned.
      * @param string $login Email account login. If not specified, address used as a login.
      */
-    public function __construct($address = null, $fast_processing = null, $login = null)
-    {
+    public function __construct(
+        $address = null,
+        $fast_processing = null,
+        $login = null
+    ) {
         $this->container['address'] = null;
         $this->container['fast_processing'] = null;
         $this->container['login'] = null;
@@ -194,10 +195,6 @@ class DiscoverEmailConfigRequest implements ArrayAccess
         if ($address != null) $this->setAddress($address);
         if ($fast_processing != null) $this->setFastProcessing($fast_processing);
         if ($login != null) $this->setLogin($login);
-
-        // Initialize discriminator property with the model name.
-        $discriminator = array_search('Type', self::$attributeMap);
-        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /**

@@ -39,8 +39,6 @@ use \Aspose\Email\ObjectSerializer;
  */
 class EmailClientAccountPasswordCredentials extends EmailClientAccountCredentials 
 {
-    const DISCRIMINATOR = null;
-
     /**
      * The original name of the model.
      *
@@ -167,8 +165,11 @@ class EmailClientAccountPasswordCredentials extends EmailClientAccountCredential
      * @param string $discriminator 
      * @param string $password Email client account password
      */
-    public function __construct($login = null, $discriminator = null, $password = null)
-    {
+    public function __construct(
+        $login = null
+        ,
+        $password = null
+    ) {
         parent::__construct();
         $this->container['password'] = null;
 
