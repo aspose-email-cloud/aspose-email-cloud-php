@@ -1,68 +1,51 @@
 # Aspose\Email\ContactApi
 
-All URIs are relative to *https://api.aspose.cloud/v3.0*
+            
+# asFile
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**contactAsFile**](ContactApi.md#contactAsFile) | **PUT** /email/Contact/as-file | Converts contact model to specified format and returns as file
-[**contactAsMapi**](ContactApi.md#contactAsMapi) | **PUT** /email/Contact/as-mapi | Converts ContactDto to MapiContactDto.
-[**contactConvert**](ContactApi.md#contactConvert) | **PUT** /email/Contact/convert | Converts contact document to specified format and returns as file
-[**contactFromFile**](ContactApi.md#contactFromFile) | **PUT** /email/Contact/from-file | Converts contact document to a model representation
-[**contactGet**](ContactApi.md#contactGet) | **GET** /email/Contact | Get contact document from storage.
-[**contactGetAsFile**](ContactApi.md#contactGetAsFile) | **GET** /email/Contact/as-file | Converts contact document from storage to specified format and returns as file
-[**contactGetList**](ContactApi.md#contactGetList) | **GET** /email/Contact/list | Get contact list from storage folder.
-[**contactSave**](ContactApi.md#contactSave) | **PUT** /email/Contact | Save contact to storage.
-
-
-# **contactAsFile**
 ```php
-function \SplFileObject contactAsFile(ContactAsFileRequest $request)
+function asFile(
+    ContactAsFileRequest $request
+): \SplFileObject 
 ```
+
 Converts contact model to specified format and returns as file
 
 ### Return type
 
 [**\SplFileObject**](\SplFileObject.md)
 
-### Request parameters
+### request Parameter
+
+See parameter model documentation at [ContactAsFileRequest](ContactAsFileRequest.md)
+
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
+# asMapi
+
 ```php
-new Aspose\Email\Model\ContactAsFileRequest(
-    $request)
+function asMapi(
+    ContactDto $contact_dto
+): MapiContactDto 
 ```
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **request** | [**\Aspose\Email\Model\ContactAsFileRequest**](ContactAsFileRequest.md)| Contact model and format to convert |
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
-# **contactAsMapi**
-```php
-function \Aspose\Email\Model\MapiContactDto contactAsMapi(ContactAsMapiRequest $request)
-```
 Converts ContactDto to MapiContactDto.
 
 ### Return type
 
-[**\Aspose\Email\Model\MapiContactDto**](MapiContactDto.md)
+[**MapiContactDto**](MapiContactDto.md)
 
-### Request parameters
+### contact_dto Parameter
+
+See parameter model documentation at [ContactDto](ContactDto.md)
+
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
+# **convert**
 ```php
-new Aspose\Email\Model\ContactAsMapiRequest(
-    $contact_dto)
-```
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **contact_dto** | [**\Aspose\Email\Model\ContactDto**](ContactDto.md)| Contact model to convert |
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
-# **contactConvert**
-```php
-function \SplFileObject contactConvert(ContactConvertRequest $request)
+function convert(
+    ContactConvertRequest $request
+): \SplFileObject 
 ```
 Converts contact document to specified format and returns as file
 
@@ -72,10 +55,11 @@ Converts contact document to specified format and returns as file
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\ContactConvertRequest(
+$request = new ContactConvertRequest(
     $to_format,
     $from_format,
-    $file)
+    $file
+);
 ```
 
 
@@ -85,23 +69,27 @@ Name | Type | Description  | Notes
  **from_format** | **string**| File format to convert from Enum, available values: VCard, WebDav, Msg |
  **file** | **\SplFileObject**| File to convert |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-# **contactFromFile**
+            
+# **fromFile**
 ```php
-function \Aspose\Email\Model\ContactDto contactFromFile(ContactFromFileRequest $request)
+function fromFile(
+    ContactFromFileRequest $request
+): ContactDto 
 ```
 Converts contact document to a model representation
 
 ### Return type
 
-[**\Aspose\Email\Model\ContactDto**](ContactDto.md)
+[**ContactDto**](ContactDto.md)
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\ContactFromFileRequest(
+$request = new ContactFromFileRequest(
     $format,
-    $file)
+    $file
+);
 ```
 
 
@@ -110,25 +98,29 @@ Name | Type | Description  | Notes
  **format** | **string**| File format Enum, available values: VCard, WebDav, Msg |
  **file** | **\SplFileObject**| File to convert |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-# **contactGet**
+            
+# **get**
 ```php
-function \Aspose\Email\Model\ContactDto contactGet(ContactGetRequest $request)
+function get(
+    ContactGetRequest $request
+): ContactDto 
 ```
 Get contact document from storage.
 
 ### Return type
 
-[**\Aspose\Email\Model\ContactDto**](ContactDto.md)
+[**ContactDto**](ContactDto.md)
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\ContactGetRequest(
+$request = new ContactGetRequest(
     $format,
     $file_name,
     $folder,
-    $storage)
+    $storage
+);
 ```
 
 
@@ -139,11 +131,14 @@ Name | Type | Description  | Notes
  **folder** | **string**| Path to folder in storage. | [optional]
  **storage** | **string**| Storage name. | [optional]
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-# **contactGetAsFile**
+            
+# **getAsFile**
 ```php
-function \SplFileObject contactGetAsFile(ContactGetAsFileRequest $request)
+function getAsFile(
+    ContactGetAsFileRequest $request
+): \SplFileObject 
 ```
 Converts contact document from storage to specified format and returns as file
 
@@ -153,12 +148,13 @@ Converts contact document from storage to specified format and returns as file
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\ContactGetAsFileRequest(
+$request = new ContactGetAsFileRequest(
     $file_name,
     $to_format,
     $from_format,
     $storage,
-    $folder)
+    $folder
+);
 ```
 
 
@@ -170,26 +166,30 @@ Name | Type | Description  | Notes
  **storage** | **string**| Storage name | [optional]
  **folder** | **string**| Path to folder in storage | [optional]
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-# **contactGetList**
+            
+# **getList**
 ```php
-function \Aspose\Email\Model\ContactStorageList contactGetList(ContactGetListRequest $request)
+function getList(
+    ContactGetListRequest $request
+): ContactStorageList 
 ```
 Get contact list from storage folder.
 
 ### Return type
 
-[**\Aspose\Email\Model\ContactStorageList**](ContactStorageList.md)
+[**ContactStorageList**](ContactStorageList.md)
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\ContactGetListRequest(
+$request = new ContactGetListRequest(
     $format,
     $folder,
     $storage,
     $items_per_page,
-    $page_number)
+    $page_number
+);
 ```
 
 
@@ -201,28 +201,25 @@ Name | Type | Description  | Notes
  **items_per_page** | **int**| Count of items on page. | [optional] [default to 10]
  **page_number** | **int**| Page number. | [optional] [default to 0]
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-# **contactSave**
+            
+# save
+
 ```php
-function contactSave(ContactSaveRequest $request)
+function save(
+    ContactSaveRequest $request
+): 
 ```
+
 Save contact to storage.
 
 ### Return type
 
 void (empty response body)
 
-### Request parameters
-```php
-new Aspose\Email\Model\ContactSaveRequest(
-    $request)
-```
+### request Parameter
 
+See parameter model documentation at [ContactSaveRequest](ContactSaveRequest.md)
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **request** | [**\Aspose\Email\Model\ContactSaveRequest**](ContactSaveRequest.md)| Create/Update contact request. |
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)

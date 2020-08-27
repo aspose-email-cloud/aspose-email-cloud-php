@@ -1,77 +1,64 @@
 # Aspose\Email\MapiMessageApi
 
-All URIs are relative to *https://api.aspose.cloud/v3.0*
+            
+# asEmailDto
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**mapiMessageAsEmailDto**](MapiMessageApi.md#mapiMessageAsEmailDto) | **PUT** /email/MapiMessage/as-email-dto | Converts MAPI message model to EmailDto model
-[**mapiMessageAsFile**](MapiMessageApi.md#mapiMessageAsFile) | **PUT** /email/MapiMessage/as-file | Converts MAPI message model to specified format and returns as file.
-[**mapiMessageFromFile**](MapiMessageApi.md#mapiMessageFromFile) | **PUT** /email/MapiMessage/from-file | Converts email file to a MAPI model representation
-[**mapiMessageGet**](MapiMessageApi.md#mapiMessageGet) | **GET** /email/MapiMessage | Get MAPI message document.
-[**mapiMessageSave**](MapiMessageApi.md#mapiMessageSave) | **PUT** /email/MapiMessage | Save MAPI message to storage.
-
-
-# **mapiMessageAsEmailDto**
 ```php
-function \Aspose\Email\Model\EmailDto mapiMessageAsEmailDto(MapiMessageAsEmailDtoRequest $request)
+function asEmailDto(
+    MapiMessageDto $mapi_message
+): EmailDto 
 ```
+
 Converts MAPI message model to EmailDto model
 
 ### Return type
 
-[**\Aspose\Email\Model\EmailDto**](EmailDto.md)
+[**EmailDto**](EmailDto.md)
 
-### Request parameters
+### mapi_message Parameter
+
+See parameter model documentation at [MapiMessageDto](MapiMessageDto.md)
+
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
+# asFile
+
 ```php
-new Aspose\Email\Model\MapiMessageAsEmailDtoRequest(
-    $mapi_message)
+function asFile(
+    MapiMessageAsFileRequest $request
+): \SplFileObject 
 ```
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **mapi_message** | [**\Aspose\Email\Model\MapiMessageDto**](MapiMessageDto.md)| MAPI message model to convert |
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
-# **mapiMessageAsFile**
-```php
-function \SplFileObject mapiMessageAsFile(MapiMessageAsFileRequest $request)
-```
 Converts MAPI message model to specified format and returns as file.
 
 ### Return type
 
 [**\SplFileObject**](\SplFileObject.md)
 
-### Request parameters
+### request Parameter
+
+See parameter model documentation at [MapiMessageAsFileRequest](MapiMessageAsFileRequest.md)
+
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
+# **fromFile**
 ```php
-new Aspose\Email\Model\MapiMessageAsFileRequest(
-    $request)
-```
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **request** | [**\Aspose\Email\Model\MapiMessageAsFileRequest**](MapiMessageAsFileRequest.md)| MAPI message model to convert. |
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
-# **mapiMessageFromFile**
-```php
-function \Aspose\Email\Model\MapiMessageDto mapiMessageFromFile(MapiMessageFromFileRequest $request)
+function fromFile(
+    MapiMessageFromFileRequest $request
+): MapiMessageDto 
 ```
 Converts email file to a MAPI model representation
 
 ### Return type
 
-[**\Aspose\Email\Model\MapiMessageDto**](MapiMessageDto.md)
+[**MapiMessageDto**](MapiMessageDto.md)
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\MapiMessageFromFileRequest(
+$request = new MapiMessageFromFileRequest(
     $format,
-    $file)
+    $file
+);
 ```
 
 
@@ -80,25 +67,29 @@ Name | Type | Description  | Notes
  **format** | **string**| File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef |
  **file** | **\SplFileObject**| File to convert |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-# **mapiMessageGet**
+            
+# **get**
 ```php
-function \Aspose\Email\Model\MapiMessageDto mapiMessageGet(MapiMessageGetRequest $request)
+function get(
+    MapiMessageGetRequest $request
+): MapiMessageDto 
 ```
 Get MAPI message document.
 
 ### Return type
 
-[**\Aspose\Email\Model\MapiMessageDto**](MapiMessageDto.md)
+[**MapiMessageDto**](MapiMessageDto.md)
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\MapiMessageGetRequest(
+$request = new MapiMessageGetRequest(
     $format,
     $file_name,
     $folder,
-    $storage)
+    $storage
+);
 ```
 
 
@@ -109,28 +100,25 @@ Name | Type | Description  | Notes
  **folder** | **string**| Path to folder in storage. | [optional]
  **storage** | **string**| Storage name. | [optional]
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-# **mapiMessageSave**
+            
+# save
+
 ```php
-function mapiMessageSave(MapiMessageSaveRequest $request)
+function save(
+    MapiMessageSaveRequest $request
+): 
 ```
+
 Save MAPI message to storage.
 
 ### Return type
 
 void (empty response body)
 
-### Request parameters
-```php
-new Aspose\Email\Model\MapiMessageSaveRequest(
-    $request)
-```
+### request Parameter
 
+See parameter model documentation at [MapiMessageSaveRequest](MapiMessageSaveRequest.md)
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **request** | [**\Aspose\Email\Model\MapiMessageSaveRequest**](MapiMessageSaveRequest.md)| Message create/update request. |
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)

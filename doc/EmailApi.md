@@ -1,68 +1,51 @@
 # Aspose\Email\EmailApi
 
-All URIs are relative to *https://api.aspose.cloud/v3.0*
+            
+# asFile
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**emailAsFile**](EmailApi.md#emailAsFile) | **PUT** /email/as-file | Converts Email model to specified format and returns as file.
-[**emailAsMapi**](EmailApi.md#emailAsMapi) | **PUT** /email/as-mapi | Converts EmailDto to MapiMessageDto.
-[**emailConvert**](EmailApi.md#emailConvert) | **PUT** /email/convert | Converts email document to specified format and returns as file
-[**emailFromFile**](EmailApi.md#emailFromFile) | **PUT** /email/from-file | Converts email document to a model representation
-[**emailGet**](EmailApi.md#emailGet) | **GET** /email | Get email document from storage.
-[**emailGetAsFile**](EmailApi.md#emailGetAsFile) | **GET** /email/as-file | Converts email document from storage to specified format and returns as file
-[**emailGetList**](EmailApi.md#emailGetList) | **GET** /email/list | Get email list from storage folder.
-[**emailSave**](EmailApi.md#emailSave) | **PUT** /email | Save email document to storage.
-
-
-# **emailAsFile**
 ```php
-function \SplFileObject emailAsFile(EmailAsFileRequest $request)
+function asFile(
+    EmailAsFileRequest $request
+): \SplFileObject 
 ```
+
 Converts Email model to specified format and returns as file.
 
 ### Return type
 
 [**\SplFileObject**](\SplFileObject.md)
 
-### Request parameters
+### request Parameter
+
+See parameter model documentation at [EmailAsFileRequest](EmailAsFileRequest.md)
+
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
+# asMapi
+
 ```php
-new Aspose\Email\Model\EmailAsFileRequest(
-    $request)
+function asMapi(
+    EmailDto $email_dto
+): MapiMessageDto 
 ```
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **request** | [**\Aspose\Email\Model\EmailAsFileRequest**](EmailAsFileRequest.md)| Email model and format to convert. |
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
-# **emailAsMapi**
-```php
-function \Aspose\Email\Model\MapiMessageDto emailAsMapi(EmailAsMapiRequest $request)
-```
 Converts EmailDto to MapiMessageDto.
 
 ### Return type
 
-[**\Aspose\Email\Model\MapiMessageDto**](MapiMessageDto.md)
+[**MapiMessageDto**](MapiMessageDto.md)
 
-### Request parameters
+### email_dto Parameter
+
+See parameter model documentation at [EmailDto](EmailDto.md)
+
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
+# **convert**
 ```php
-new Aspose\Email\Model\EmailAsMapiRequest(
-    $email_dto)
-```
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **email_dto** | [**\Aspose\Email\Model\EmailDto**](EmailDto.md)| Email model to convert |
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
-# **emailConvert**
-```php
-function \SplFileObject emailConvert(EmailConvertRequest $request)
+function convert(
+    EmailConvertRequest $request
+): \SplFileObject 
 ```
 Converts email document to specified format and returns as file
 
@@ -72,10 +55,11 @@ Converts email document to specified format and returns as file
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\EmailConvertRequest(
+$request = new EmailConvertRequest(
     $from_format,
     $to_format,
-    $file)
+    $file
+);
 ```
 
 
@@ -85,23 +69,27 @@ Name | Type | Description  | Notes
  **to_format** | **string**| File format to convert from Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef |
  **file** | **\SplFileObject**| File to convert |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-# **emailFromFile**
+            
+# **fromFile**
 ```php
-function \Aspose\Email\Model\EmailDto emailFromFile(EmailFromFileRequest $request)
+function fromFile(
+    EmailFromFileRequest $request
+): EmailDto 
 ```
 Converts email document to a model representation
 
 ### Return type
 
-[**\Aspose\Email\Model\EmailDto**](EmailDto.md)
+[**EmailDto**](EmailDto.md)
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\EmailFromFileRequest(
+$request = new EmailFromFileRequest(
     $format,
-    $file)
+    $file
+);
 ```
 
 
@@ -110,25 +98,29 @@ Name | Type | Description  | Notes
  **format** | **string**| Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef |
  **file** | **\SplFileObject**| File to convert |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-# **emailGet**
+            
+# **get**
 ```php
-function \Aspose\Email\Model\EmailDto emailGet(EmailGetRequest $request)
+function get(
+    EmailGetRequest $request
+): EmailDto 
 ```
 Get email document from storage.
 
 ### Return type
 
-[**\Aspose\Email\Model\EmailDto**](EmailDto.md)
+[**EmailDto**](EmailDto.md)
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\EmailGetRequest(
+$request = new EmailGetRequest(
     $format,
     $file_name,
     $folder,
-    $storage)
+    $storage
+);
 ```
 
 
@@ -139,11 +131,14 @@ Name | Type | Description  | Notes
  **folder** | **string**| Path to folder in storage. | [optional]
  **storage** | **string**| Storage name. | [optional]
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-# **emailGetAsFile**
+            
+# **getAsFile**
 ```php
-function \SplFileObject emailGetAsFile(EmailGetAsFileRequest $request)
+function getAsFile(
+    EmailGetAsFileRequest $request
+): \SplFileObject 
 ```
 Converts email document from storage to specified format and returns as file
 
@@ -153,11 +148,12 @@ Converts email document from storage to specified format and returns as file
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\EmailGetAsFileRequest(
+$request = new EmailGetAsFileRequest(
     $file_name,
     $format,
     $storage,
-    $folder)
+    $folder
+);
 ```
 
 
@@ -168,26 +164,30 @@ Name | Type | Description  | Notes
  **storage** | **string**| Storage name | [optional]
  **folder** | **string**| Path to folder in storage | [optional]
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-# **emailGetList**
+            
+# **getList**
 ```php
-function \Aspose\Email\Model\EmailStorageList emailGetList(EmailGetListRequest $request)
+function getList(
+    EmailGetListRequest $request
+): EmailStorageList 
 ```
 Get email list from storage folder.
 
 ### Return type
 
-[**\Aspose\Email\Model\EmailStorageList**](EmailStorageList.md)
+[**EmailStorageList**](EmailStorageList.md)
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\EmailGetListRequest(
+$request = new EmailGetListRequest(
     $format,
     $folder,
     $storage,
     $items_per_page,
-    $page_number)
+    $page_number
+);
 ```
 
 
@@ -199,28 +199,25 @@ Name | Type | Description  | Notes
  **items_per_page** | **int**| Count of items on page. | [optional] [default to 10]
  **page_number** | **int**| Page number. | [optional] [default to 0]
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-# **emailSave**
+            
+# save
+
 ```php
-function emailSave(EmailSaveRequest $request)
+function save(
+    EmailSaveRequest $request
+): 
 ```
+
 Save email document to storage.
 
 ### Return type
 
 void (empty response body)
 
-### Request parameters
-```php
-new Aspose\Email\Model\EmailSaveRequest(
-    $request)
-```
+### request Parameter
 
+See parameter model documentation at [EmailSaveRequest](EmailSaveRequest.md)
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **request** | [**\Aspose\Email\Model\EmailSaveRequest**](EmailSaveRequest.md)| Email document create/update request. |
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)

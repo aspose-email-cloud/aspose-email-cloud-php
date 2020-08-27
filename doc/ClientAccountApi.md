@@ -1,31 +1,25 @@
 # Aspose\Email\ClientAccountApi
 
-All URIs are relative to *https://api.aspose.cloud/v3.0*
-
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**clientAccountGet**](ClientAccountApi.md#clientAccountGet) | **GET** /email/client/account | Get email client account from storage.
-[**clientAccountGetMulti**](ClientAccountApi.md#clientAccountGetMulti) | **GET** /email/client/account/multi | Get email client multi account file (*.multi.account). Will respond error if file extension is not \&quot;.multi.account\&quot;.
-[**clientAccountSave**](ClientAccountApi.md#clientAccountSave) | **PUT** /email/client/account | Create/update email client account file (*.account) with credentials
-[**clientAccountSaveMulti**](ClientAccountApi.md#clientAccountSaveMulti) | **PUT** /email/client/account/multi | Create email client multi account file (*.multi.account). Will respond error if file extension is not \&quot;.multi.account\&quot;.
-
-
-# **clientAccountGet**
+            
+# **get**
 ```php
-function \Aspose\Email\Model\EmailClientAccount clientAccountGet(ClientAccountGetRequest $request)
+function get(
+    ClientAccountGetRequest $request
+): EmailClientAccount 
 ```
 Get email client account from storage.
 
 ### Return type
 
-[**\Aspose\Email\Model\EmailClientAccount**](EmailClientAccount.md)
+[**EmailClientAccount**](EmailClientAccount.md)
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\ClientAccountGetRequest(
+$request = new ClientAccountGetRequest(
     $file_name,
     $folder,
-    $storage)
+    $storage
+);
 ```
 
 
@@ -35,24 +29,28 @@ Name | Type | Description  | Notes
  **folder** | **string**| Folder on storage. | [optional]
  **storage** | **string**| Storage name. | [optional]
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-# **clientAccountGetMulti**
+            
+# **getMulti**
 ```php
-function \Aspose\Email\Model\EmailClientMultiAccount clientAccountGetMulti(ClientAccountGetMultiRequest $request)
+function getMulti(
+    ClientAccountGetMultiRequest $request
+): EmailClientMultiAccount 
 ```
 Get email client multi account file (*.multi.account). Will respond error if file extension is not \".multi.account\".
 
 ### Return type
 
-[**\Aspose\Email\Model\EmailClientMultiAccount**](EmailClientMultiAccount.md)
+[**EmailClientMultiAccount**](EmailClientMultiAccount.md)
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\ClientAccountGetMultiRequest(
+$request = new ClientAccountGetMultiRequest(
     $file_name,
     $folder,
-    $storage)
+    $storage
+);
 ```
 
 
@@ -62,51 +60,45 @@ Name | Type | Description  | Notes
  **folder** | **string**| Folder on storage | [optional]
  **storage** | **string**| Storage name | [optional]
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-# **clientAccountSave**
+            
+# save
+
 ```php
-function clientAccountSave(ClientAccountSaveRequest $request)
+function save(
+    ClientAccountSaveRequest $request
+): 
 ```
+
 Create/update email client account file (*.account) with credentials
 
 ### Return type
 
 void (empty response body)
 
-### Request parameters
+### request Parameter
+
+See parameter model documentation at [ClientAccountSaveRequest](ClientAccountSaveRequest.md)
+
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
+# saveMulti
+
 ```php
-new Aspose\Email\Model\ClientAccountSaveRequest(
-    $request)
+function saveMulti(
+    ClientAccountSaveMultiRequest $request
+): 
 ```
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **request** | [**\Aspose\Email\Model\ClientAccountSaveRequest**](ClientAccountSaveRequest.md)| Email account information |
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
-# **clientAccountSaveMulti**
-```php
-function clientAccountSaveMulti(ClientAccountSaveMultiRequest $request)
-```
 Create email client multi account file (*.multi.account). Will respond error if file extension is not \".multi.account\".
 
 ### Return type
 
 void (empty response body)
 
-### Request parameters
-```php
-new Aspose\Email\Model\ClientAccountSaveMultiRequest(
-    $request)
-```
+### request Parameter
 
+See parameter model documentation at [ClientAccountSaveMultiRequest](ClientAccountSaveMultiRequest.md)
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **request** | [**\Aspose\Email\Model\ClientAccountSaveMultiRequest**](ClientAccountSaveMultiRequest.md)| Email accounts information. |
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)

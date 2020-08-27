@@ -1,19 +1,11 @@
 # Aspose\Email\FileApi
 
-All URIs are relative to *https://api.aspose.cloud/v3.0*
-
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**copyFile**](FileApi.md#copyFile) | **PUT** /email/storage/file/copy/{srcPath} | Copy file
-[**deleteFile**](FileApi.md#deleteFile) | **DELETE** /email/storage/file/{path} | Delete file
-[**downloadFile**](FileApi.md#downloadFile) | **GET** /email/storage/file/{path} | Download file
-[**moveFile**](FileApi.md#moveFile) | **PUT** /email/storage/file/move/{srcPath} | Move file
-[**uploadFile**](FileApi.md#uploadFile) | **PUT** /email/storage/file/{path} | Upload file
-
-
+            
 # **copyFile**
 ```php
-function copyFile(CopyFileRequest $request)
+function copyFile(
+    CopyFileRequest $request
+): 
 ```
 Copy file
 
@@ -23,12 +15,13 @@ void (empty response body)
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\CopyFileRequest(
+$request = new CopyFileRequest(
     $src_path,
     $dest_path,
     $src_storage_name,
     $dest_storage_name,
-    $version_id)
+    $version_id
+);
 ```
 
 
@@ -40,11 +33,14 @@ Name | Type | Description  | Notes
  **dest_storage_name** | **string**| Destination storage name | [optional]
  **version_id** | **string**| File version ID to copy | [optional]
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
+            
 # **deleteFile**
 ```php
-function deleteFile(DeleteFileRequest $request)
+function deleteFile(
+    DeleteFileRequest $request
+): 
 ```
 Delete file
 
@@ -54,10 +50,11 @@ void (empty response body)
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\DeleteFileRequest(
+$request = new DeleteFileRequest(
     $path,
     $storage_name,
-    $version_id)
+    $version_id
+);
 ```
 
 
@@ -67,11 +64,14 @@ Name | Type | Description  | Notes
  **storage_name** | **string**| Storage name | [optional]
  **version_id** | **string**| File version ID to delete | [optional]
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
+            
 # **downloadFile**
 ```php
-function \SplFileObject downloadFile(DownloadFileRequest $request)
+function downloadFile(
+    DownloadFileRequest $request
+): \SplFileObject 
 ```
 Download file
 
@@ -81,10 +81,11 @@ Download file
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\DownloadFileRequest(
+$request = new DownloadFileRequest(
     $path,
     $storage_name,
-    $version_id)
+    $version_id
+);
 ```
 
 
@@ -94,11 +95,14 @@ Name | Type | Description  | Notes
  **storage_name** | **string**| Storage name | [optional]
  **version_id** | **string**| File version ID to download | [optional]
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
+            
 # **moveFile**
 ```php
-function moveFile(MoveFileRequest $request)
+function moveFile(
+    MoveFileRequest $request
+): 
 ```
 Move file
 
@@ -108,12 +112,13 @@ void (empty response body)
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\MoveFileRequest(
+$request = new MoveFileRequest(
     $src_path,
     $dest_path,
     $src_storage_name,
     $dest_storage_name,
-    $version_id)
+    $version_id
+);
 ```
 
 
@@ -125,24 +130,28 @@ Name | Type | Description  | Notes
  **dest_storage_name** | **string**| Destination storage name | [optional]
  **version_id** | **string**| File version ID to move | [optional]
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
+            
 # **uploadFile**
 ```php
-function \Aspose\Email\Model\FilesUploadResult uploadFile(UploadFileRequest $request)
+function uploadFile(
+    UploadFileRequest $request
+): FilesUploadResult 
 ```
 Upload file
 
 ### Return type
 
-[**\Aspose\Email\Model\FilesUploadResult**](FilesUploadResult.md)
+[**FilesUploadResult**](FilesUploadResult.md)
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\UploadFileRequest(
+$request = new UploadFileRequest(
     $path,
     $file,
-    $storage_name)
+    $storage_name
+);
 ```
 
 
@@ -152,5 +161,5 @@ Name | Type | Description  | Notes
  **file** | **\SplFileObject**| File to upload |
  **storage_name** | **string**| Storage name | [optional]
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 

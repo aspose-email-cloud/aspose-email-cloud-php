@@ -1,77 +1,64 @@
 # Aspose\Email\MapiContactApi
 
-All URIs are relative to *https://api.aspose.cloud/v3.0*
+            
+# asContactDto
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**mapiContactAsContactDto**](MapiContactApi.md#mapiContactAsContactDto) | **PUT** /email/MapiContact/as-contact-dto | Converts MAPI contact model to ContactDto model.
-[**mapiContactAsFile**](MapiContactApi.md#mapiContactAsFile) | **PUT** /email/MapiContact/as-file | Converts MAPI contact model to specified format and returns as file.
-[**mapiContactFromFile**](MapiContactApi.md#mapiContactFromFile) | **PUT** /email/MapiContact/from-file | Converts contact file to a MAPI model representation.
-[**mapiContactGet**](MapiContactApi.md#mapiContactGet) | **GET** /email/MapiContact | Get MAPI contact document.
-[**mapiContactSave**](MapiContactApi.md#mapiContactSave) | **PUT** /email/MapiContact | Save MAPI Contact to storage.
-
-
-# **mapiContactAsContactDto**
 ```php
-function \Aspose\Email\Model\ContactDto mapiContactAsContactDto(MapiContactAsContactDtoRequest $request)
+function asContactDto(
+    MapiContactDto $mapi_contact_dto
+): ContactDto 
 ```
+
 Converts MAPI contact model to ContactDto model.
 
 ### Return type
 
-[**\Aspose\Email\Model\ContactDto**](ContactDto.md)
+[**ContactDto**](ContactDto.md)
 
-### Request parameters
+### mapi_contact_dto Parameter
+
+See parameter model documentation at [MapiContactDto](MapiContactDto.md)
+
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
+# asFile
+
 ```php
-new Aspose\Email\Model\MapiContactAsContactDtoRequest(
-    $mapi_contact_dto)
+function asFile(
+    MapiContactAsFileRequest $request
+): \SplFileObject 
 ```
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **mapi_contact_dto** | [**\Aspose\Email\Model\MapiContactDto**](MapiContactDto.md)| MAPI contact model to convert. |
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
-# **mapiContactAsFile**
-```php
-function \SplFileObject mapiContactAsFile(MapiContactAsFileRequest $request)
-```
 Converts MAPI contact model to specified format and returns as file.
 
 ### Return type
 
 [**\SplFileObject**](\SplFileObject.md)
 
-### Request parameters
+### request Parameter
+
+See parameter model documentation at [MapiContactAsFileRequest](MapiContactAsFileRequest.md)
+
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
+# **fromFile**
 ```php
-new Aspose\Email\Model\MapiContactAsFileRequest(
-    $request)
-```
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **request** | [**\Aspose\Email\Model\MapiContactAsFileRequest**](MapiContactAsFileRequest.md)| MAPI contact model to convert. |
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
-# **mapiContactFromFile**
-```php
-function \Aspose\Email\Model\MapiContactDto mapiContactFromFile(MapiContactFromFileRequest $request)
+function fromFile(
+    MapiContactFromFileRequest $request
+): MapiContactDto 
 ```
 Converts contact file to a MAPI model representation.
 
 ### Return type
 
-[**\Aspose\Email\Model\MapiContactDto**](MapiContactDto.md)
+[**MapiContactDto**](MapiContactDto.md)
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\MapiContactFromFileRequest(
+$request = new MapiContactFromFileRequest(
     $format,
-    $file)
+    $file
+);
 ```
 
 
@@ -80,25 +67,29 @@ Name | Type | Description  | Notes
  **format** | **string**| File format Enum, available values: VCard, WebDav, Msg |
  **file** | **\SplFileObject**| File to convert |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-# **mapiContactGet**
+            
+# **get**
 ```php
-function \Aspose\Email\Model\MapiContactDto mapiContactGet(MapiContactGetRequest $request)
+function get(
+    MapiContactGetRequest $request
+): MapiContactDto 
 ```
 Get MAPI contact document.
 
 ### Return type
 
-[**\Aspose\Email\Model\MapiContactDto**](MapiContactDto.md)
+[**MapiContactDto**](MapiContactDto.md)
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\MapiContactGetRequest(
+$request = new MapiContactGetRequest(
     $format,
     $file_name,
     $folder,
-    $storage)
+    $storage
+);
 ```
 
 
@@ -109,28 +100,25 @@ Name | Type | Description  | Notes
  **folder** | **string**| Path to folder in storage. | [optional]
  **storage** | **string**| Storage name. | [optional]
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-# **mapiContactSave**
+            
+# save
+
 ```php
-function mapiContactSave(MapiContactSaveRequest $request)
+function save(
+    MapiContactSaveRequest $request
+): 
 ```
+
 Save MAPI Contact to storage.
 
 ### Return type
 
 void (empty response body)
 
-### Request parameters
-```php
-new Aspose\Email\Model\MapiContactSaveRequest(
-    $request)
-```
+### request Parameter
 
+See parameter model documentation at [MapiContactSaveRequest](MapiContactSaveRequest.md)
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **request** | [**\Aspose\Email\Model\MapiContactSaveRequest**](MapiContactSaveRequest.md)| Create/Update contact request. |
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)

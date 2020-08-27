@@ -1,93 +1,71 @@
 # Aspose\Email\CalendarApi
 
-All URIs are relative to *https://api.aspose.cloud/v3.0*
+            
+# asAlternate
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**calendarAsAlternate**](CalendarApi.md#calendarAsAlternate) | **PUT** /email/Calendar/as-alternate | Convert iCalendar to AlternateView
-[**calendarAsFile**](CalendarApi.md#calendarAsFile) | **PUT** /email/Calendar/as-file | Converts calendar model to specified format and returns as file.
-[**calendarAsMapi**](CalendarApi.md#calendarAsMapi) | **PUT** /email/Calendar/as-mapi | Converts CalendarDto to MapiCalendarDto.
-[**calendarConvert**](CalendarApi.md#calendarConvert) | **PUT** /email/Calendar/convert | Converts calendar document to specified format and returns as file.
-[**calendarFromFile**](CalendarApi.md#calendarFromFile) | **PUT** /email/Calendar/from-file | Converts calendar document to a model representation.
-[**calendarGet**](CalendarApi.md#calendarGet) | **GET** /email/Calendar | Get calendar file from storage.
-[**calendarGetAsAlternate**](CalendarApi.md#calendarGetAsAlternate) | **GET** /email/Calendar/as-alternate | Get iCalendar from storage as AlternateView
-[**calendarGetAsFile**](CalendarApi.md#calendarGetAsFile) | **GET** /email/Calendar/as-file | Converts calendar document from storage to specified format and returns as file.
-[**calendarGetList**](CalendarApi.md#calendarGetList) | **GET** /email/Calendar/list | Get iCalendar list from storage folder.
-[**calendarSave**](CalendarApi.md#calendarSave) | **PUT** /email/Calendar | Save iCalendar
-
-
-# **calendarAsAlternate**
 ```php
-function \Aspose\Email\Model\AlternateView calendarAsAlternate(CalendarAsAlternateRequest $request)
+function asAlternate(
+    CalendarAsAlternateRequest $request
+): AlternateView 
 ```
+
 Convert iCalendar to AlternateView
 
 ### Return type
 
-[**\Aspose\Email\Model\AlternateView**](AlternateView.md)
+[**AlternateView**](AlternateView.md)
 
-### Request parameters
+### request Parameter
+
+See parameter model documentation at [CalendarAsAlternateRequest](CalendarAsAlternateRequest.md)
+
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
+# asFile
+
 ```php
-new Aspose\Email\Model\CalendarAsAlternateRequest(
-    $request)
+function asFile(
+    CalendarAsFileRequest $request
+): \SplFileObject 
 ```
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **request** | [**\Aspose\Email\Model\CalendarAsAlternateRequest**](CalendarAsAlternateRequest.md)| iCalendar to AlternateView request |
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
-# **calendarAsFile**
-```php
-function \SplFileObject calendarAsFile(CalendarAsFileRequest $request)
-```
 Converts calendar model to specified format and returns as file.
 
 ### Return type
 
 [**\SplFileObject**](\SplFileObject.md)
 
-### Request parameters
+### request Parameter
+
+See parameter model documentation at [CalendarAsFileRequest](CalendarAsFileRequest.md)
+
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
+# asMapi
+
 ```php
-new Aspose\Email\Model\CalendarAsFileRequest(
-    $request)
+function asMapi(
+    CalendarDto $calendar_dto
+): MapiCalendarDto 
 ```
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **request** | [**\Aspose\Email\Model\CalendarAsFileRequest**](CalendarAsFileRequest.md)| Calendar model and format to convert. |
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
-# **calendarAsMapi**
-```php
-function \Aspose\Email\Model\MapiCalendarDto calendarAsMapi(CalendarAsMapiRequest $request)
-```
 Converts CalendarDto to MapiCalendarDto.
 
 ### Return type
 
-[**\Aspose\Email\Model\MapiCalendarDto**](MapiCalendarDto.md)
+[**MapiCalendarDto**](MapiCalendarDto.md)
 
-### Request parameters
+### calendar_dto Parameter
+
+See parameter model documentation at [CalendarDto](CalendarDto.md)
+
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
+# **convert**
 ```php
-new Aspose\Email\Model\CalendarAsMapiRequest(
-    $calendar_dto)
-```
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **calendar_dto** | [**\Aspose\Email\Model\CalendarDto**](CalendarDto.md)| iCalendar model calendar representation. |
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
-# **calendarConvert**
-```php
-function \SplFileObject calendarConvert(CalendarConvertRequest $request)
+function convert(
+    CalendarConvertRequest $request
+): \SplFileObject 
 ```
 Converts calendar document to specified format and returns as file.
 
@@ -97,9 +75,10 @@ Converts calendar document to specified format and returns as file.
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\CalendarConvertRequest(
+$request = new CalendarConvertRequest(
     $format,
-    $file)
+    $file
+);
 ```
 
 
@@ -108,22 +87,26 @@ Name | Type | Description  | Notes
  **format** | **string**| File format. Enum, available values: Ics, Msg |
  **file** | **\SplFileObject**| File to convert |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-# **calendarFromFile**
+            
+# **fromFile**
 ```php
-function \Aspose\Email\Model\CalendarDto calendarFromFile(CalendarFromFileRequest $request)
+function fromFile(
+    CalendarFromFileRequest $request
+): CalendarDto 
 ```
 Converts calendar document to a model representation.
 
 ### Return type
 
-[**\Aspose\Email\Model\CalendarDto**](CalendarDto.md)
+[**CalendarDto**](CalendarDto.md)
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\CalendarFromFileRequest(
-    $file)
+$request = new CalendarFromFileRequest(
+    $file
+);
 ```
 
 
@@ -131,24 +114,28 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **file** | **\SplFileObject**| File to convert |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-# **calendarGet**
+            
+# **get**
 ```php
-function \Aspose\Email\Model\CalendarDto calendarGet(CalendarGetRequest $request)
+function get(
+    CalendarGetRequest $request
+): CalendarDto 
 ```
 Get calendar file from storage.
 
 ### Return type
 
-[**\Aspose\Email\Model\CalendarDto**](CalendarDto.md)
+[**CalendarDto**](CalendarDto.md)
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\CalendarGetRequest(
+$request = new CalendarGetRequest(
     $file_name,
     $folder,
-    $storage)
+    $storage
+);
 ```
 
 
@@ -158,26 +145,30 @@ Name | Type | Description  | Notes
  **folder** | **string**| Path to folder in storage. | [optional]
  **storage** | **string**| Storage name. | [optional]
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-# **calendarGetAsAlternate**
+            
+# **getAsAlternate**
 ```php
-function \Aspose\Email\Model\AlternateView calendarGetAsAlternate(CalendarGetAsAlternateRequest $request)
+function getAsAlternate(
+    CalendarGetAsAlternateRequest $request
+): AlternateView 
 ```
 Get iCalendar from storage as AlternateView
 
 ### Return type
 
-[**\Aspose\Email\Model\AlternateView**](AlternateView.md)
+[**AlternateView**](AlternateView.md)
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\CalendarGetAsAlternateRequest(
+$request = new CalendarGetAsAlternateRequest(
     $file_name,
     $calendar_action,
     $sequence_id,
     $folder,
-    $storage)
+    $storage
+);
 ```
 
 
@@ -189,11 +180,14 @@ Name | Type | Description  | Notes
  **folder** | **string**| Path to folder in storage | [optional]
  **storage** | **string**| Storage name | [optional]
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-# **calendarGetAsFile**
+            
+# **getAsFile**
 ```php
-function \SplFileObject calendarGetAsFile(CalendarGetAsFileRequest $request)
+function getAsFile(
+    CalendarGetAsFileRequest $request
+): \SplFileObject 
 ```
 Converts calendar document from storage to specified format and returns as file.
 
@@ -203,11 +197,12 @@ Converts calendar document from storage to specified format and returns as file.
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\CalendarGetAsFileRequest(
+$request = new CalendarGetAsFileRequest(
     $file_name,
     $format,
     $storage,
-    $folder)
+    $folder
+);
 ```
 
 
@@ -218,25 +213,29 @@ Name | Type | Description  | Notes
  **storage** | **string**| Storage name. | [optional]
  **folder** | **string**| Path to folder in storage. | [optional]
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-# **calendarGetList**
+            
+# **getList**
 ```php
-function \Aspose\Email\Model\CalendarStorageList calendarGetList(CalendarGetListRequest $request)
+function getList(
+    CalendarGetListRequest $request
+): CalendarStorageList 
 ```
 Get iCalendar list from storage folder.
 
 ### Return type
 
-[**\Aspose\Email\Model\CalendarStorageList**](CalendarStorageList.md)
+[**CalendarStorageList**](CalendarStorageList.md)
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\CalendarGetListRequest(
+$request = new CalendarGetListRequest(
     $folder,
     $items_per_page,
     $page_number,
-    $storage)
+    $storage
+);
 ```
 
 
@@ -247,28 +246,25 @@ Name | Type | Description  | Notes
  **page_number** | **int**| Page number. | [optional] [default to 0]
  **storage** | **string**| Storage name. | [optional]
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-# **calendarSave**
+            
+# save
+
 ```php
-function calendarSave(CalendarSaveRequest $request)
+function save(
+    CalendarSaveRequest $request
+): 
 ```
+
 Save iCalendar
 
 ### Return type
 
 void (empty response body)
 
-### Request parameters
-```php
-new Aspose\Email\Model\CalendarSaveRequest(
-    $request)
-```
+### request Parameter
 
+See parameter model documentation at [CalendarSaveRequest](CalendarSaveRequest.md)
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **request** | [**\Aspose\Email\Model\CalendarSaveRequest**](CalendarSaveRequest.md)| iCalendar create/update request |
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)

@@ -1,30 +1,26 @@
 # Aspose\Email\AiBcrApi
 
-All URIs are relative to *https://api.aspose.cloud/v3.0*
-
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**aiBcrParse**](AiBcrApi.md#aiBcrParse) | **PUT** /email/AiBcr/parse | Parse images to vCard document models
-[**aiBcrParseStorage**](AiBcrApi.md#aiBcrParseStorage) | **PUT** /email/AiBcr/parse-storage | Parse images from storage to vCard files
-
-
-# **aiBcrParse**
+            
+# **parse**
 ```php
-function \Aspose\Email\Model\ContactList aiBcrParse(AiBcrParseRequest $request)
+function parse(
+    AiBcrParseRequest $request
+): ContactList 
 ```
 Parse images to vCard document models
 
 ### Return type
 
-[**\Aspose\Email\Model\ContactList**](ContactList.md)
+[**ContactList**](ContactList.md)
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\AiBcrParseRequest(
+$request = new AiBcrParseRequest(
     $file,
     $countries,
     $languages,
-    $is_single)
+    $is_single
+);
 ```
 
 
@@ -35,28 +31,25 @@ Name | Type | Description  | Notes
  **languages** | **string**| Comma-separated ISO-639 codes of languages (either 639-1 or 639-3; i.e. \&quot;it\&quot; or \&quot;ita\&quot; for Italian); it&#39;s \&quot;\&quot; by default. | [optional] [default to ]
  **is_single** | **bool**| Determines that image contains single VCard or more. | [optional] [default to true]
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-# **aiBcrParseStorage**
+            
+# parseStorage
+
 ```php
-function \Aspose\Email\Model\StorageFileLocationList aiBcrParseStorage(AiBcrParseStorageRequest $request)
+function parseStorage(
+    AiBcrParseStorageRequest $request
+): StorageFileLocationList 
 ```
+
 Parse images from storage to vCard files
 
 ### Return type
 
-[**\Aspose\Email\Model\StorageFileLocationList**](StorageFileLocationList.md)
+[**StorageFileLocationList**](StorageFileLocationList.md)
 
-### Request parameters
-```php
-new Aspose\Email\Model\AiBcrParseStorageRequest(
-    $request)
-```
+### request Parameter
 
+See parameter model documentation at [AiBcrParseStorageRequest](AiBcrParseStorageRequest.md)
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **request** | [**\Aspose\Email\Model\AiBcrParseStorageRequest**](AiBcrParseStorageRequest.md)| Request with images located on storage |
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)

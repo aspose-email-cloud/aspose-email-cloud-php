@@ -1,76 +1,63 @@
 # Aspose\Email\MapiCalendarApi
 
-All URIs are relative to *https://api.aspose.cloud/v3.0*
+            
+# asCalendarDto
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**mapiCalendarAsCalendarDto**](MapiCalendarApi.md#mapiCalendarAsCalendarDto) | **PUT** /email/MapiCalendar/as-calendar-dto | Converts MAPI calendar model to CalendarDto model.
-[**mapiCalendarAsFile**](MapiCalendarApi.md#mapiCalendarAsFile) | **PUT** /email/MapiCalendar/as-file | Converts MAPI calendar model to specified format and returns as file.
-[**mapiCalendarFromFile**](MapiCalendarApi.md#mapiCalendarFromFile) | **PUT** /email/MapiCalendar/from-file | Converts calendar file to a MAPI model representation.
-[**mapiCalendarGet**](MapiCalendarApi.md#mapiCalendarGet) | **GET** /email/MapiCalendar | Get MAPI calendar document.
-[**mapiCalendarSave**](MapiCalendarApi.md#mapiCalendarSave) | **PUT** /email/MapiCalendar | Save MAPI Calendar to storage.
-
-
-# **mapiCalendarAsCalendarDto**
 ```php
-function \Aspose\Email\Model\CalendarDto mapiCalendarAsCalendarDto(MapiCalendarAsCalendarDtoRequest $request)
+function asCalendarDto(
+    MapiCalendarDto $mapi_calendar_dto
+): CalendarDto 
 ```
+
 Converts MAPI calendar model to CalendarDto model.
 
 ### Return type
 
-[**\Aspose\Email\Model\CalendarDto**](CalendarDto.md)
+[**CalendarDto**](CalendarDto.md)
 
-### Request parameters
+### mapi_calendar_dto Parameter
+
+See parameter model documentation at [MapiCalendarDto](MapiCalendarDto.md)
+
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
+# asFile
+
 ```php
-new Aspose\Email\Model\MapiCalendarAsCalendarDtoRequest(
-    $mapi_calendar_dto)
+function asFile(
+    MapiCalendarAsFileRequest $request
+): \SplFileObject 
 ```
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **mapi_calendar_dto** | [**\Aspose\Email\Model\MapiCalendarDto**](MapiCalendarDto.md)| MAPI calendar model to convert. |
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
-# **mapiCalendarAsFile**
-```php
-function \SplFileObject mapiCalendarAsFile(MapiCalendarAsFileRequest $request)
-```
 Converts MAPI calendar model to specified format and returns as file.
 
 ### Return type
 
 [**\SplFileObject**](\SplFileObject.md)
 
-### Request parameters
+### request Parameter
+
+See parameter model documentation at [MapiCalendarAsFileRequest](MapiCalendarAsFileRequest.md)
+
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+            
+# **fromFile**
 ```php
-new Aspose\Email\Model\MapiCalendarAsFileRequest(
-    $request)
-```
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **request** | [**\Aspose\Email\Model\MapiCalendarAsFileRequest**](MapiCalendarAsFileRequest.md)| MAPI calendar model to convert. |
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
-# **mapiCalendarFromFile**
-```php
-function \Aspose\Email\Model\MapiCalendarDto mapiCalendarFromFile(MapiCalendarFromFileRequest $request)
+function fromFile(
+    MapiCalendarFromFileRequest $request
+): MapiCalendarDto 
 ```
 Converts calendar file to a MAPI model representation.
 
 ### Return type
 
-[**\Aspose\Email\Model\MapiCalendarDto**](MapiCalendarDto.md)
+[**MapiCalendarDto**](MapiCalendarDto.md)
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\MapiCalendarFromFileRequest(
-    $file)
+$request = new MapiCalendarFromFileRequest(
+    $file
+);
 ```
 
 
@@ -78,24 +65,28 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **file** | **\SplFileObject**| File to convert |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-# **mapiCalendarGet**
+            
+# **get**
 ```php
-function \Aspose\Email\Model\MapiCalendarDto mapiCalendarGet(MapiCalendarGetRequest $request)
+function get(
+    MapiCalendarGetRequest $request
+): MapiCalendarDto 
 ```
 Get MAPI calendar document.
 
 ### Return type
 
-[**\Aspose\Email\Model\MapiCalendarDto**](MapiCalendarDto.md)
+[**MapiCalendarDto**](MapiCalendarDto.md)
 
 ### Request parameters
 ```php
-new Aspose\Email\Model\MapiCalendarGetRequest(
+$request = new MapiCalendarGetRequest(
     $file_name,
     $folder,
-    $storage)
+    $storage
+);
 ```
 
 
@@ -105,28 +96,25 @@ Name | Type | Description  | Notes
  **folder** | **string**| Path to folder in storage. | [optional]
  **storage** | **string**| Storage name. | [optional]
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-# **mapiCalendarSave**
+            
+# save
+
 ```php
-function mapiCalendarSave(MapiCalendarSaveRequest $request)
+function save(
+    MapiCalendarSaveRequest $request
+): 
 ```
+
 Save MAPI Calendar to storage.
 
 ### Return type
 
 void (empty response body)
 
-### Request parameters
-```php
-new Aspose\Email\Model\MapiCalendarSaveRequest(
-    $request)
-```
+### request Parameter
 
+See parameter model documentation at [MapiCalendarSaveRequest](MapiCalendarSaveRequest.md)
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **request** | [**\Aspose\Email\Model\MapiCalendarSaveRequest**](MapiCalendarSaveRequest.md)| Calendar create/update request. |
-
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
-
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
