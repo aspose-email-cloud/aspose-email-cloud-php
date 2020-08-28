@@ -1,9 +1,9 @@
-﻿# Aspose.Email Cloud SDK for PHP
+# Aspose.Email Cloud SDK for PHP
 [![Packagist](https://img.shields.io/packagist/v/aspose/aspose-email-cloud)](https://packagist.org/packages/aspose/aspose-email-cloud) [![License](https://img.shields.io/github/license/aspose-email-cloud/aspose-email-cloud-php)](https://packagist.org/packages/aspose/aspose-email-cloud) [![PHP](https://img.shields.io/packagist/php-v/aspose/aspose-email-cloud)](https://packagist.org/packages/aspose/aspose-email-cloud) ![tests](https://github.com/aspose-email-cloud/aspose-email-cloud-php/workflows/tests/badge.svg)
 
 This repository contains Aspose.Email Cloud SDK for PHP source code. This SDK allows you to work with Aspose.Email Cloud REST APIs in your PHP applications quickly and easily, with zero initial cost.
 
-[Aspose.Email Cloud home](https://products.aspose.cloud/email/family "Aspose.Email Cloud")  
+[Aspose.Email Cloud home](https://products.aspose.cloud/email/family "Aspose.Email Cloud")
 [API Reference](https://apireference.aspose.cloud/email/)
 
 # Key features
@@ -11,23 +11,26 @@ Aspose.Email Cloud is a REST API for creating email applications that work with 
 - Lets developers manipulate different emails’ formats such as Outlook MSG, EML, VCard, and iCalendar files
 - Lets developers manipulate different emails' formats such as Outlook MSG, EML, VCard, and iCalendar files
 - Supports AI functions:
-    - The Business card recognition
-    - The Name API for parsing and handling personal names
+- The Business card recognition
+- The Name API for parsing and handling personal names
 - Has a built-in email client. This client provides:
-    - Unified REST API for different email protocols: IMAP, POP3, SMTP, EWS, WebDav
-    - Virtual multi-account
-    - Message threads (POP3 accounts are also supported)
+- Unified REST API for different email protocols: IMAP, POP3, SMTP, EWS, WebDav
+- Virtual multi-account
+- Message threads (POP3 accounts are also supported)
 - Email configuration discovery
 - Disposable email address detection
 
-## New features in version 20.7
-- New MAPI message files API with models:
-    - `MapiMessageDto` - represents the Microsoft Outlook message.
-    - `MapiCalendarDto` - represents the Microsoft Outlook calendar object.
-    - `MapiContactDto` - represents the Microsoft Outlook contact information. 
-- Improved Recurrence pattern support for CalendarDto.
+## New features in version 20.9
 
-See [Release notes](https://docs.aspose.cloud/display/emailcloud/Aspose.Email+Cloud+20.7+Release+Notes)
+Aspose.Email Cloud SDK 20.9.0 is based on a new v4.0 REST API.
+
+- All SDK functions are divided into groups (Email, Calendar, Contact, Client, Ai, Mapi, etc.).
+- Unified file API provided for supported file types (Save, Get, Convert, AsFile, FromFile, AsMapi/AsDto).
+- HierarchicalObject based API is removed.
+- All models are stored in one folder/namespace.
+- The request models are simplified.
+
+See [Release notes](https://docs.aspose.cloud/display/emailcloud/Aspose.Email+Cloud+20.9+Release+Notes).
 
 ## How to use the SDK?
 The complete source code is available in the GIT repository.
@@ -52,7 +55,7 @@ To use this SDK, you need an App SID and an App Key; they can be looked up at [A
 You can either directly use SDK in your project via source code or get [Packagegist distribution](https://packagist.org/packages/aspose/aspose-email-cloud).
 From the command line:
 
-    composer require aspose/aspose-email-cloud
+composer require aspose/aspose-email-cloud
 
 See more details about SDK installation in this tutorial: [SDK setup](https://docs.aspose.cloud/display/emailcloud/SDK+setup)
 
@@ -61,11 +64,11 @@ To use the API, you should create an EmailApi object:
 ```php
 $configuration = new Configuration(); // Aspose\Email\Configuration
 $configuration
-    ->setAppKey($_ENV["Your App Key"])
-    ->setAppSid($_ENV["Your App SID"]);
+->setAppKey($_ENV["Your App Key"])
+->setAppSid($_ENV["Your App SID"]);
 $api = new EmailApi(
-    null, //GuzzleHttp client, will be created automatically if parameter is null
-    $configuration);
+null, //GuzzleHttp client, will be created automatically if parameter is null
+$configuration);
 ```
 
 #### Business cards recognition API
@@ -76,7 +79,7 @@ Use `AiBcrParseModel` method to parse business card image to VCard DTO:
 $content = file_get_contents("/tmp/alex.png");
 $imageBase64 = base64_encode($content);
 $result = $api->aiBcrParseModel(new AiBcrParseModelRequest(
-    new AiBcrBase64Rq(null, array(new AiBcrBase64Image(true, $imageBase64)))));
+new AiBcrBase64Rq(null, array(new AiBcrBase64Image(true, $imageBase64)))));
 $contact = $result->getValue()[0];
 ```
 
