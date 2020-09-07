@@ -170,7 +170,7 @@ class MailMessageBase64 extends MailMessageBase
      *  
      * @param string $discriminator 
      * @param string $value_base64 Email message file data encoded to Base64 string.
-     * @param string $format Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
+     * @param string $format Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
      */
     public function __construct(
         //,
@@ -275,7 +275,7 @@ class MailMessageBase64 extends MailMessageBase
     /**
      * Sets format
      *
-     * @param string $format Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
+     * @param string $format Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
      *
      * @return $this
      */

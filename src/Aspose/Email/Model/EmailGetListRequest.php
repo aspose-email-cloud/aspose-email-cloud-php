@@ -36,7 +36,7 @@ class EmailGetListRequest
     /**
      * Initializes a new instance of the EmailGetListRequest class.
      *  
-     * @param string $format Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
+     * @param string $format Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
      * @param string $folder Path to folder in storage.
      * @param string $storage Storage name.
      * @param int $items_per_page Count of items on page.
@@ -52,7 +52,7 @@ class EmailGetListRequest
     }
 
     /**
-     * Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
+     * Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
      */
     public $format;
 

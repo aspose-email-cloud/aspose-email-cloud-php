@@ -36,7 +36,7 @@ class EmailFromFileRequest
     /**
      * Initializes a new instance of the EmailFromFileRequest class.
      *  
-     * @param string $format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
+     * @param string $format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
      * @param \SplFileObject $file File to convert
      */
     public function __construct($format, $file)             
@@ -46,7 +46,7 @@ class EmailFromFileRequest
     }
 
     /**
-     * Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
+     * Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
      */
     public $format;
 

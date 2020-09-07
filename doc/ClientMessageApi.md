@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
  **file** | **\SplFileObject**| Message file to append. |
  **storage** | **string**| Storage name where account file located. | [optional]
  **account_storage_folder** | **string**| Folder in storage where account file located. | [optional]
- **format** | **string**| Email file format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef | [optional] [default to 0]
+ **format** | **string**| Email file format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft | [optional] [default to 0]
  **folder** | **string**| Path to folder on email server to append message to. | [optional]
  **mark_as_sent** | **bool**| Determines that appended message should be market as sent or not. | [optional] [default to true]
 
@@ -114,7 +114,7 @@ Name | Type | Description  | Notes
  **storage** | **string**| Storage name where account file located. | [optional]
  **account_storage_folder** | **string**| Folder in storage where account file located. | [optional]
  **type** | **string**| MailMessageBase type. Using this property you can fetch message in different formats (as EmailDto, MapiMessageDto or a file represented as Base64 string).              Enum, available values: Dto, Mapi, Base64 | [optional] [default to 0]
- **format** | **string**| Base64 data format. Used only if type is set to Base64. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef | [optional] [default to 0]
+ **format** | **string**| Base64 data format. Used only if type is set to Base64. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft | [optional] [default to 0]
 
 [[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
  **folder** | **string**| Account folder to fetch from (should be specified for some protocols such as IMAP) | [optional]
  **storage** | **string**| Storage name where account file located. | [optional]
  **account_storage_folder** | **string**| Folder in storage where account file located. | [optional]
- **format** | **string**| Fetched message file format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef | [optional] [default to 0]
+ **format** | **string**| Fetched message file format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft | [optional] [default to 0]
 
 [[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
@@ -193,7 +193,7 @@ Name | Type | Description  | Notes
  **account_storage_folder** | **string**| Folder in storage where account file located | [optional]
  **recursive** | **bool**| Specifies that should message be searched in subfolders recursively | [optional] [default to false]
  **type** | **string**| MailMessageBase type. Using this property you can get messages in different formats (as EmailDto, MapiMessageDto or a file represented as Base64 string).              Enum, available values: Dto, Mapi, Base64 | [optional] [default to 0]
- **format** | **string**| Base64 data format. Used only if type is set to Base64. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef | [optional] [default to 0]
+ **format** | **string**| Base64 data format. Used only if type is set to Base64. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft | [optional] [default to 0]
 
 [[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
@@ -268,7 +268,7 @@ Name | Type | Description  | Notes
  **file** | **\SplFileObject**| File to send |
  **storage** | **string**| Storage name where account file located. | [optional]
  **account_storage_folder** | **string**| Folder in storage where account file located. | [optional]
- **format** | **string**| Email file format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef | [optional] [default to 0]
+ **format** | **string**| Email file format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft | [optional] [default to 0]
 
 [[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
