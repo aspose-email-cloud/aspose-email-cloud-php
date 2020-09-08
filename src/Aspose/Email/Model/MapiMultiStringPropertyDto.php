@@ -167,8 +167,11 @@ class MapiMultiStringPropertyDto extends MapiPropertyDto
      * @param string $discriminator 
      * @param string[] $values Property values
      */
-    public function __construct($descriptor = null, $discriminator = null, $values = null)
-    {
+    public function __construct(
+        $descriptor = null
+        ,
+        $values = null
+    ) {
         parent::__construct();
         $this->container['values'] = null;
 
@@ -299,5 +302,3 @@ class MapiMultiStringPropertyDto extends MapiPropertyDto
     }
 }
 
-
-?>

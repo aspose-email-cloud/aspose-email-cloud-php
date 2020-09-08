@@ -191,8 +191,12 @@ class AiNameComponent implements ArrayAccess
      * @param double $score Score from 0.0 to 1.0
      * @param int $position Component position from 0
      */
-    public function __construct($value = null, $category = null, $score = null, $position = null)
-    {
+    public function __construct(
+        $value = null,
+        $category = null,
+        $score = null,
+        $position = null
+    ) {
         $this->container['value'] = null;
         $this->container['category'] = null;
         $this->container['score'] = null;
@@ -413,5 +417,3 @@ class AiNameComponent implements ArrayAccess
     }
 }
 
-
-?>

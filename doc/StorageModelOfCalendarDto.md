@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**storage_file** | [**\Aspose\Email\Model\StorageFileLocation**](StorageFileLocation.md) |  | [optional] 
-**value** | [**\Aspose\Email\Model\CalendarDto**](CalendarDto.md) |  | [optional] 
+**storage_file** | [**\Aspose\Email\Model\StorageFileLocation**](StorageFileLocation.md) |  | 
+**value** | [**\Aspose\Email\Model\CalendarDto**](CalendarDto.md) |  | 
 
 
 

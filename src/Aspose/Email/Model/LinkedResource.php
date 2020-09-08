@@ -169,8 +169,13 @@ class LinkedResource extends AttachmentBase
      * @param map[string,string] $headers Attachment headers.
      * @param string $content_link URI that the resource must match.
      */
-    public function __construct($base64_data = null, $content_id = null, $content_type = null, $headers = null, $content_link = null)
-    {
+    public function __construct(
+        $base64_data = null,
+        $content_id = null,
+        $content_type = null,
+        $headers = null,
+        $content_link = null
+    ) {
         parent::__construct();
         $this->container['content_link'] = null;
 
@@ -303,5 +308,3 @@ class LinkedResource extends AttachmentBase
     }
 }
 
-
-?>

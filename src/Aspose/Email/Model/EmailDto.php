@@ -359,8 +359,40 @@ class EmailDto implements ArrayAccess
      * @param \Aspose\Email\Model\MailAddress[] $to The address collection that contains the recipients of message.
      * @param string $x_mailer The X-Mailer the software that created the e-mail message.
      */
-    public function __construct($alternate_views = null, $attachments = null, $bcc = null, $body = null, $body_encoding = null, $body_type = null, $cc = null, $date = null, $delivery_notification_options = null, $from = null, $headers = null, $html_body = null, $html_body_text = null, $is_body_html = null, $is_draft = null, $is_encrypted = null, $is_signed = null, $linked_resources = null, $message_id = null, $original_is_tnef = null, $preferred_text_encoding = null, $priority = null, $read_receipt_to = null, $reply_to_list = null, $reverse_path = null, $sender = null, $sensitivity = null, $subject = null, $subject_encoding = null, $time_zone_offset = null, $to = null, $x_mailer = null)
-    {
+    public function __construct(
+        $alternate_views = null,
+        $attachments = null,
+        $bcc = null,
+        $body = null,
+        $body_encoding = null,
+        $body_type = null,
+        $cc = null,
+        $date = null,
+        $delivery_notification_options = null,
+        $from = null,
+        $headers = null,
+        $html_body = null,
+        $html_body_text = null,
+        $is_body_html = null,
+        $is_draft = null,
+        $is_encrypted = null,
+        $is_signed = null,
+        $linked_resources = null,
+        $message_id = null,
+        $original_is_tnef = null,
+        $preferred_text_encoding = null,
+        $priority = null,
+        $read_receipt_to = null,
+        $reply_to_list = null,
+        $reverse_path = null,
+        $sender = null,
+        $sensitivity = null,
+        $subject = null,
+        $subject_encoding = null,
+        $time_zone_offset = null,
+        $to = null,
+        $x_mailer = null
+    ) {
         $this->container['alternate_views'] = null;
         $this->container['attachments'] = null;
         $this->container['bcc'] = null;
@@ -1345,5 +1377,3 @@ class EmailDto implements ArrayAccess
     }
 }
 
-
-?>

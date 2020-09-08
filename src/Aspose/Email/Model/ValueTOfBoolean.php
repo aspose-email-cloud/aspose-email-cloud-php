@@ -172,8 +172,9 @@ class ValueTOfBoolean implements ArrayAccess
      *  
      * @param bool $value 
      */
-    public function __construct($value = null)
-    {
+    public function __construct(
+        $value = null
+    ) {
         $this->container['value'] = null;
 
         if ($value != null) $this->setValue($value);
@@ -304,5 +305,3 @@ class ValueTOfBoolean implements ArrayAccess
     }
 }
 
-
-?>

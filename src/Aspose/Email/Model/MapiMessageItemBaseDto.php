@@ -269,8 +269,25 @@ class MapiMessageItemBaseDto implements ArrayAccess
      * @param \Aspose\Email\Model\MapiPropertyDto[] $properties List of MAPI properties
      * @param string $discriminator 
      */
-    public function __construct($attachments = null, $billing = null, $body = null, $body_html = null, $body_rtf = null, $body_type = null, $categories = null, $companies = null, $item_id = null, $message_class = null, $mileage = null, $recipients = null, $sensitivity = null, $subject = null, $subject_prefix = null, $properties = null, $discriminator = null)
-    {
+    public function __construct(
+        $attachments = null,
+        $billing = null,
+        $body = null,
+        $body_html = null,
+        $body_rtf = null,
+        $body_type = null,
+        $categories = null,
+        $companies = null,
+        $item_id = null,
+        $message_class = null,
+        $mileage = null,
+        $recipients = null,
+        $sensitivity = null,
+        $subject = null,
+        $subject_prefix = null,
+        $properties = null
+        
+    ) {
         $this->container['attachments'] = null;
         $this->container['billing'] = null;
         $this->container['body'] = null;
@@ -287,7 +304,6 @@ class MapiMessageItemBaseDto implements ArrayAccess
         $this->container['subject'] = null;
         $this->container['subject_prefix'] = null;
         $this->container['properties'] = null;
-        $this->container['discriminator'] = null;
 
         if ($attachments != null) $this->setAttachments($attachments);
         if ($billing != null) $this->setBilling($billing);
@@ -306,10 +322,6 @@ class MapiMessageItemBaseDto implements ArrayAccess
         if ($subject_prefix != null) $this->setSubjectPrefix($subject_prefix);
         if ($properties != null) $this->setProperties($properties);
         $this->container['discriminator'] = (new \ReflectionClass($this))->getShortName();
-
-        // Initialize discriminator property with the model name.
-        $discriminator = array_search('Type', self::$attributeMap);
-        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /**
@@ -756,7 +768,11 @@ class MapiMessageItemBaseDto implements ArrayAccess
      *
      * @return $this
      */
-    public function setDiscriminator($discriminator) { /* Does nothing */ }
+    public function setDiscriminator($discriminator)
+    {
+        /* do nothing */
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -828,5 +844,3 @@ class MapiMessageItemBaseDto implements ArrayAccess
     }
 }
 
-
-?>

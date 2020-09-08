@@ -167,8 +167,11 @@ class MapiImportancePropertyDto extends MapiPropertyDto
      * @param string $discriminator 
      * @param string $value Levels of importance for an item. Enum, available values: Low, Normal, High
      */
-    public function __construct($descriptor = null, $discriminator = null, $value = null)
-    {
+    public function __construct(
+        $descriptor = null
+        ,
+        $value = null
+    ) {
         parent::__construct();
         $this->container['value'] = null;
 
@@ -305,5 +308,3 @@ class MapiImportancePropertyDto extends MapiPropertyDto
     }
 }
 
-
-?>

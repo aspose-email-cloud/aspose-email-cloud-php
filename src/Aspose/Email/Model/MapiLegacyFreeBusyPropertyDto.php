@@ -167,8 +167,11 @@ class MapiLegacyFreeBusyPropertyDto extends MapiPropertyDto
      * @param string $discriminator 
      * @param string $value Represents the free/busy status for a calendar event. Enum, available values: Free, Tentative, Busy, Oof, WorkingElsewhere, NoData
      */
-    public function __construct($descriptor = null, $discriminator = null, $value = null)
-    {
+    public function __construct(
+        $descriptor = null
+        ,
+        $value = null
+    ) {
         parent::__construct();
         $this->container['value'] = null;
 
@@ -305,5 +308,3 @@ class MapiLegacyFreeBusyPropertyDto extends MapiPropertyDto
     }
 }
 
-
-?>

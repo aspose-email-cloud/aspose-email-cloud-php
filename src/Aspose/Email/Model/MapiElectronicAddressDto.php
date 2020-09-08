@@ -70,7 +70,7 @@ class MapiElectronicAddressDto implements ArrayAccess
      */
     protected static $swaggerFormats = [
         'address_type' => null,
-        'email_address' => null,
+        'email_address' => 'email',
         'display_name' => null,
         'fax_number' => null,
         'original_display_name' => null
@@ -197,8 +197,13 @@ class MapiElectronicAddressDto implements ArrayAccess
      * @param string $fax_number Telephone number of the mail user's primary fax machine.
      * @param string $original_display_name SMTP e-mail address that  corresponds to the e-mail address.
      */
-    public function __construct($address_type = null, $email_address = null, $display_name = null, $fax_number = null, $original_display_name = null)
-    {
+    public function __construct(
+        $address_type = null,
+        $email_address = null,
+        $display_name = null,
+        $fax_number = null,
+        $original_display_name = null
+    ) {
         $this->container['address_type'] = null;
         $this->container['email_address'] = null;
         $this->container['display_name'] = null;
@@ -427,5 +432,3 @@ class MapiElectronicAddressDto implements ArrayAccess
     }
 }
 
-
-?>

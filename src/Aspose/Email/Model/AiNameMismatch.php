@@ -185,8 +185,11 @@ class AiNameMismatch implements ArrayAccess
      * @param double $similarity Similarity score
      * @param string $explanation Explanation or mismatch subtype
      */
-    public function __construct($category = null, $similarity = null, $explanation = null)
-    {
+    public function __construct(
+        $category = null,
+        $similarity = null,
+        $explanation = null
+    ) {
         $this->container['category'] = null;
         $this->container['similarity'] = null;
         $this->container['explanation'] = null;
@@ -375,5 +378,3 @@ class AiNameMismatch implements ArrayAccess
     }
 }
 
-
-?>

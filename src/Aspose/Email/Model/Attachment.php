@@ -193,8 +193,17 @@ class Attachment extends AttachmentBase
      * @param string $name_encoding Encoding of attachment name.
      * @param string $preferred_text_encoding Preferred text encoding.
      */
-    public function __construct($base64_data = null, $content_id = null, $content_type = null, $headers = null, $content_disposition = null, $is_embedded_message = null, $name = null, $name_encoding = null, $preferred_text_encoding = null)
-    {
+    public function __construct(
+        $base64_data = null,
+        $content_id = null,
+        $content_type = null,
+        $headers = null,
+        $content_disposition = null,
+        $is_embedded_message = null,
+        $name = null,
+        $name_encoding = null,
+        $preferred_text_encoding = null
+    ) {
         parent::__construct();
         $this->container['content_disposition'] = null;
         $this->container['is_embedded_message'] = null;
@@ -437,5 +446,3 @@ class Attachment extends AttachmentBase
     }
 }
 
-
-?>

@@ -171,17 +171,14 @@ class AiBcrImage implements ArrayAccess
     /**
      * Initializes a new instance of the AiBcrImage class.
      *  
-     * @param bool $is_single Determines that image contains single VCard or more. Ignored in current version. Multiple cards on image support will be added soon
+     * @param bool $is_single Determines that image contains single VCard or more.
      */
-    public function __construct($is_single = null)
-    {
+    public function __construct(
+        $is_single = null
+    ) {
         $this->container['is_single'] = null;
 
         if ($is_single != null) $this->setIsSingle($is_single);
-
-        // Initialize discriminator property with the model name.
-        $discriminator = array_search('Type', self::$attributeMap);
-        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /**
@@ -228,7 +225,7 @@ class AiBcrImage implements ArrayAccess
     /**
      * Sets is_single
      *
-     * @param bool $is_single Determines that image contains single VCard or more. Ignored in current version. Multiple cards on image support will be added soon
+     * @param bool $is_single Determines that image contains single VCard or more.
      *
      * @return $this
      */
@@ -309,5 +306,3 @@ class AiBcrImage implements ArrayAccess
     }
 }
 
-
-?>

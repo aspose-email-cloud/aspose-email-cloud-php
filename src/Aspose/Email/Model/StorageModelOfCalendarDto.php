@@ -40,7 +40,7 @@ use \Aspose\Email\ObjectSerializer;
  */
 class StorageModelOfCalendarDto implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    const DISCRIMINATOR = 'Type';
 
     /**
      * The original name of the model.
@@ -178,8 +178,10 @@ class StorageModelOfCalendarDto implements ArrayAccess
      * @param \Aspose\Email\Model\StorageFileLocation $storage_file 
      * @param \Aspose\Email\Model\CalendarDto $value 
      */
-    public function __construct($storage_file = null, $value = null)
-    {
+    public function __construct(
+        $storage_file = null,
+        $value = null
+    ) {
         $this->container['storage_file'] = null;
         $this->container['value'] = null;
 
@@ -196,6 +198,12 @@ class StorageModelOfCalendarDto implements ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['storage_file'] === null) {
+            $invalidProperties[] = "'storage_file' can't be null";
+        }
+        if ($this->container['value'] === null) {
+            $invalidProperties[] = "'value' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -208,6 +216,12 @@ class StorageModelOfCalendarDto implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['storage_file'] === null) {
+            return false;
+        }
+        if ($this->container['value'] === null) {
+            return false;
+        }
         return true;
     }
 
@@ -330,5 +344,3 @@ class StorageModelOfCalendarDto implements ArrayAccess
     }
 }
 
-
-?>

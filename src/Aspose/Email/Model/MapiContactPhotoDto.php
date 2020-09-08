@@ -167,8 +167,11 @@ class MapiContactPhotoDto extends ContactPhoto
      * @param string $base64_data Photo serialized as base64 string.
      * @param string $discriminator 
      */
-    public function __construct($photo_image_format = null, $base64_data = null, $discriminator = null)
-    {
+    public function __construct(
+        $photo_image_format = null,
+        $base64_data = null
+        
+    ) {
         parent::__construct();
 
         if ($photo_image_format != null) $this->setPhotoImageFormat($photo_image_format);
@@ -274,5 +277,3 @@ class MapiContactPhotoDto extends ContactPhoto
     }
 }
 
-
-?>

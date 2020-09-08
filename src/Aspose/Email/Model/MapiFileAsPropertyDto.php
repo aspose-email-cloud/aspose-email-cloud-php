@@ -167,8 +167,11 @@ class MapiFileAsPropertyDto extends MapiPropertyDto
      * @param string $discriminator 
      * @param string $value Defines how to construct what is displayed for a contact in the FileAs property. Enum, available values: None, LastCommaFirst, FirstSpaceLast, Company, LastCommaFirstCompany, CompanyLastFirst, LastFirst, LastFirstCompany, CompanyLastCommaFirst, LastFirstSuffix, LastSpaceFirstCompany, CompanyLastSpaceFirst, LastSpaceFirst, DisplayName, FirstName, LastFirstMiddleSuffix, LastName, Empty
      */
-    public function __construct($descriptor = null, $discriminator = null, $value = null)
-    {
+    public function __construct(
+        $descriptor = null
+        ,
+        $value = null
+    ) {
         parent::__construct();
         $this->container['value'] = null;
 
@@ -305,5 +308,3 @@ class MapiFileAsPropertyDto extends MapiPropertyDto
     }
 }
 
-
-?>

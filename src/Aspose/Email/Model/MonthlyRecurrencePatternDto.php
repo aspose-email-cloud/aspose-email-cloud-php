@@ -182,8 +182,16 @@ class MonthlyRecurrencePatternDto extends RecurrencePatternDto
      * @param int $start_offset Start offset.
      * @param string $start_position Day positions, typically found in a month. Enum, available values: None, First, Second, Third, Fourth, Last
      */
-    public function __construct($interval = null, $occurs = null, $end_date = null, $week_start = null, $discriminator = null, $start_day = null, $start_offset = null, $start_position = null)
-    {
+    public function __construct(
+        $interval = null,
+        $occurs = null,
+        $end_date = null,
+        $week_start = null
+        ,
+        $start_day = null,
+        $start_offset = null,
+        $start_position = null
+    ) {
         parent::__construct();
         $this->container['start_day'] = null;
         $this->container['start_offset'] = null;
@@ -387,5 +395,3 @@ class MonthlyRecurrencePatternDto extends RecurrencePatternDto
     }
 }
 
-
-?>

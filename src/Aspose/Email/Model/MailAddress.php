@@ -69,7 +69,7 @@ class MailAddress implements ArrayAccess
      */
     protected static $swaggerFormats = [
         'display_name' => null,
-        'address' => null,
+        'address' => 'email',
         'participation_status' => null,
         'original_address_string' => null
     ];
@@ -191,8 +191,12 @@ class MailAddress implements ArrayAccess
      * @param string $participation_status Identifies the participation status for the calendar user. Enum, available values: NeedsAction, Accepted, Declined, Tentative, Delegated
      * @param string $original_address_string The original e-mail address string
      */
-    public function __construct($display_name = null, $address = null, $participation_status = null, $original_address_string = null)
-    {
+    public function __construct(
+        $display_name = null,
+        $address = null,
+        $participation_status = null,
+        $original_address_string = null
+    ) {
         $this->container['display_name'] = null;
         $this->container['address'] = null;
         $this->container['participation_status'] = null;
@@ -401,5 +405,3 @@ class MailAddress implements ArrayAccess
     }
 }
 
-
-?>

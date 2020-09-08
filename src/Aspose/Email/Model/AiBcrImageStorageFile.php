@@ -163,11 +163,13 @@ class AiBcrImageStorageFile extends AiBcrImage
     /**
      * Initializes a new instance of the AiBcrImageStorageFile class.
      *  
-     * @param bool $is_single Determines that image contains single VCard or more. Ignored in current version. Multiple cards on image support will be added soon
+     * @param bool $is_single Determines that image contains single VCard or more.
      * @param \Aspose\Email\Model\StorageFileLocation $file Image location
      */
-    public function __construct($is_single = null, $file = null)
-    {
+    public function __construct(
+        $is_single = null,
+        $file = null
+    ) {
         parent::__construct();
         $this->container['file'] = null;
 
@@ -184,6 +186,9 @@ class AiBcrImageStorageFile extends AiBcrImage
     {
         $invalidProperties = parent::listInvalidProperties();
 
+        if ($this->container['file'] === null) {
+            $invalidProperties[] = "'file' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -199,6 +204,9 @@ class AiBcrImageStorageFile extends AiBcrImage
             return false;
         }
 
+        if ($this->container['file'] === null) {
+            return false;
+        }
         return true;
     }
 
@@ -297,5 +305,3 @@ class AiBcrImageStorageFile extends AiBcrImage
     }
 }
 
-
-?>

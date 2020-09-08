@@ -383,8 +383,44 @@ class ContactDto implements ArrayAccess
      * @param string $surname Person's surname.
      * @param \Aspose\Email\Model\Url[] $urls Person's urls.
      */
-    public function __construct($associated_persons = null, $attachments = null, $company_name = null, $computer_network_name = null, $customer_id = null, $department_name = null, $display_name = null, $email_addresses = null, $events = null, $file_as = null, $file_as_mapping = null, $free_busy_location = null, $gender = null, $given_name = null, $government_id_number = null, $hobbies = null, $initials = null, $instant_messengers = null, $job_title = null, $language = null, $location = null, $middle_name = null, $nickname = null, $notes = null, $notes_format = null, $office_location = null, $organizational_id_number = null, $phone_numbers = null, $photo = null, $physical_addresses = null, $preferred_text_encoding = null, $prefix = null, $profession = null, $suffix = null, $surname = null, $urls = null)
-    {
+    public function __construct(
+        $associated_persons = null,
+        $attachments = null,
+        $company_name = null,
+        $computer_network_name = null,
+        $customer_id = null,
+        $department_name = null,
+        $display_name = null,
+        $email_addresses = null,
+        $events = null,
+        $file_as = null,
+        $file_as_mapping = null,
+        $free_busy_location = null,
+        $gender = null,
+        $given_name = null,
+        $government_id_number = null,
+        $hobbies = null,
+        $initials = null,
+        $instant_messengers = null,
+        $job_title = null,
+        $language = null,
+        $location = null,
+        $middle_name = null,
+        $nickname = null,
+        $notes = null,
+        $notes_format = null,
+        $office_location = null,
+        $organizational_id_number = null,
+        $phone_numbers = null,
+        $photo = null,
+        $physical_addresses = null,
+        $preferred_text_encoding = null,
+        $prefix = null,
+        $profession = null,
+        $suffix = null,
+        $surname = null,
+        $urls = null
+    ) {
         $this->container['associated_persons'] = null;
         $this->container['attachments'] = null;
         $this->container['company_name'] = null;
@@ -1437,5 +1473,3 @@ class ContactDto implements ArrayAccess
     }
 }
 
-
-?>

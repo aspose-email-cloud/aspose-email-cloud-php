@@ -209,8 +209,15 @@ class MapiCalendarTimeZoneInfoDto implements ArrayAccess
      * @param string[] $time_zone_flags Individual bit flags that specify information about this TimeZoneRule. Items: Enumerates the individual bit flags that specify information about TimeZoneRule Enum, available values: TzRuleFlagRecurCurrentTzReg, TzRuleFlagEffectiveTzReg
      * @param int $year Year in which this rule is scheduled to take effect.
      */
-    public function __construct($bias = null, $daylight_bias = null, $daylight_date = null, $standard_bias = null, $standard_date = null, $time_zone_flags = null, $year = null)
-    {
+    public function __construct(
+        $bias = null,
+        $daylight_bias = null,
+        $daylight_date = null,
+        $standard_bias = null,
+        $standard_date = null,
+        $time_zone_flags = null,
+        $year = null
+    ) {
         $this->container['bias'] = null;
         $this->container['daylight_bias'] = null;
         $this->container['daylight_date'] = null;
@@ -515,5 +522,3 @@ class MapiCalendarTimeZoneInfoDto implements ArrayAccess
     }
 }
 
-
-?>

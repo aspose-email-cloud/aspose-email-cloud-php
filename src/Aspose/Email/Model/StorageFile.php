@@ -37,6 +37,7 @@ use \Aspose\Email\ObjectSerializer;
 /**
  * StorageFile
  *
+ * @description File or folder information
  */
 class StorageFile implements ArrayAccess
 {
@@ -190,14 +191,19 @@ class StorageFile implements ArrayAccess
     /**
      * Initializes a new instance of the StorageFile class.
      *  
-     * @param string $name 
-     * @param bool $is_folder 
-     * @param \DateTime $modified_date 
-     * @param int $size 
-     * @param string $path 
+     * @param string $name File or folder name.
+     * @param bool $is_folder True if it is a folder.
+     * @param \DateTime $modified_date File or folder last modified DateTime.
+     * @param int $size File or folder size.
+     * @param string $path File or folder path.
      */
-    public function __construct($name = null, $is_folder = null, $modified_date = null, $size = null, $path = null)
-    {
+    public function __construct(
+        $name = null,
+        $is_folder = null,
+        $modified_date = null,
+        $size = null,
+        $path = null
+    ) {
         $this->container['name'] = null;
         $this->container['is_folder'] = null;
         $this->container['modified_date'] = null;
@@ -209,10 +215,6 @@ class StorageFile implements ArrayAccess
         if ($modified_date != null) $this->setModifiedDate($modified_date);
         if ($size != null) $this->setSize($size);
         if ($path != null) $this->setPath($path);
-
-        // Initialize discriminator property with the model name.
-        $discriminator = array_search('Type', self::$attributeMap);
-        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /**
@@ -265,7 +267,7 @@ class StorageFile implements ArrayAccess
     /**
      * Sets name
      *
-     * @param string $name name
+     * @param string $name File or folder name.
      *
      * @return $this
      */
@@ -289,7 +291,7 @@ class StorageFile implements ArrayAccess
     /**
      * Sets is_folder
      *
-     * @param bool $is_folder is_folder
+     * @param bool $is_folder True if it is a folder.
      *
      * @return $this
      */
@@ -313,7 +315,7 @@ class StorageFile implements ArrayAccess
     /**
      * Sets modified_date
      *
-     * @param \DateTime $modified_date modified_date
+     * @param \DateTime $modified_date File or folder last modified DateTime.
      *
      * @return $this
      */
@@ -337,7 +339,7 @@ class StorageFile implements ArrayAccess
     /**
      * Sets size
      *
-     * @param int $size size
+     * @param int $size File or folder size.
      *
      * @return $this
      */
@@ -361,7 +363,7 @@ class StorageFile implements ArrayAccess
     /**
      * Sets path
      *
-     * @param string $path path
+     * @param string $path File or folder path.
      *
      * @return $this
      */
@@ -442,5 +444,3 @@ class StorageFile implements ArrayAccess
     }
 }
 
-
-?>

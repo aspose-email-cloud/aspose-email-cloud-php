@@ -165,8 +165,9 @@ class EmailThreadList extends ListResponseOfEmailThread
      *  
      * @param \Aspose\Email\Model\EmailThread[] $value 
      */
-    public function __construct($value = null)
-    {
+    public function __construct(
+        $value = null
+    ) {
         parent::__construct();
 
         if ($value != null) $this->setValue($value);
@@ -270,5 +271,3 @@ class EmailThreadList extends ListResponseOfEmailThread
     }
 }
 
-
-?>

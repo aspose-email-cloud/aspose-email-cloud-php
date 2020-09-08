@@ -326,8 +326,50 @@ class MapiMessageDto extends MapiMessageItemBaseDto
      * @param string $sent_representing_smtp_address E-mail address for the messaging user represented by the sender.
      * @param string $transport_message_headers Transport-specific message envelope information.
      */
-    public function __construct($attachments = null, $billing = null, $body = null, $body_html = null, $body_rtf = null, $body_type = null, $categories = null, $companies = null, $item_id = null, $message_class = null, $mileage = null, $recipients = null, $sensitivity = null, $subject = null, $subject_prefix = null, $properties = null, $discriminator = null, $message_body = null, $client_submit_time = null, $conversation_topic = null, $delivery_time = null, $display_bcc = null, $display_cc = null, $display_name = null, $display_name_prefix = null, $display_to = null, $flags = null, $headers = null, $internet_message_id = null, $message_format = null, $normalized_subject = null, $read_receipt_requested = null, $reply_to = null, $sender_address_type = null, $sender_email_address = null, $sender_name = null, $sender_smtp_address = null, $sent_representing_address_type = null, $sent_representing_email_address = null, $sent_representing_name = null, $sent_representing_smtp_address = null, $transport_message_headers = null)
-    {
+    public function __construct(
+        $attachments = null,
+        $billing = null,
+        $body = null,
+        $body_html = null,
+        $body_rtf = null,
+        $body_type = null,
+        $categories = null,
+        $companies = null,
+        $item_id = null,
+        $message_class = null,
+        $mileage = null,
+        $recipients = null,
+        $sensitivity = null,
+        $subject = null,
+        $subject_prefix = null,
+        $properties = null
+        ,
+        $message_body = null,
+        $client_submit_time = null,
+        $conversation_topic = null,
+        $delivery_time = null,
+        $display_bcc = null,
+        $display_cc = null,
+        $display_name = null,
+        $display_name_prefix = null,
+        $display_to = null,
+        $flags = null,
+        $headers = null,
+        $internet_message_id = null,
+        $message_format = null,
+        $normalized_subject = null,
+        $read_receipt_requested = null,
+        $reply_to = null,
+        $sender_address_type = null,
+        $sender_email_address = null,
+        $sender_name = null,
+        $sender_smtp_address = null,
+        $sent_representing_address_type = null,
+        $sent_representing_email_address = null,
+        $sent_representing_name = null,
+        $sent_representing_smtp_address = null,
+        $transport_message_headers = null
+    ) {
         parent::__construct();
         $this->container['message_body'] = null;
         $this->container['client_submit_time'] = null;
@@ -1121,5 +1163,3 @@ class MapiMessageDto extends MapiMessageItemBaseDto
     }
 }
 
-
-?>

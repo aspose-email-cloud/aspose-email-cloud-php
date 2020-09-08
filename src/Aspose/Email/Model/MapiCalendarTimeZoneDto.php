@@ -179,8 +179,10 @@ class MapiCalendarTimeZoneDto implements ArrayAccess
      * @param string $key_name Human-readable description of the time zone.
      * @param \Aspose\Email\Model\MapiCalendarTimeZoneInfoDto[] $time_zone_rules Time zone rules
      */
-    public function __construct($key_name = null, $time_zone_rules = null)
-    {
+    public function __construct(
+        $key_name = null,
+        $time_zone_rules = null
+    ) {
         $this->container['key_name'] = null;
         $this->container['time_zone_rules'] = null;
 
@@ -331,5 +333,3 @@ class MapiCalendarTimeZoneDto implements ArrayAccess
     }
 }
 
-
-?>

@@ -179,8 +179,10 @@ class AiNameExtracted implements ArrayAccess
      * @param \Aspose\Email\Model\AiNameExtractedComponent[] $name Extracted name components
      * @param double $score Extracted name score
      */
-    public function __construct($name = null, $score = null)
-    {
+    public function __construct(
+        $name = null,
+        $score = null
+    ) {
         $this->container['name'] = null;
         $this->container['score'] = null;
 
@@ -337,5 +339,3 @@ class AiNameExtracted implements ArrayAccess
     }
 }
 
-
-?>

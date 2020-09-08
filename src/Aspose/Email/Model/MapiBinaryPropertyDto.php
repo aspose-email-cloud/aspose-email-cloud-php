@@ -167,8 +167,11 @@ class MapiBinaryPropertyDto extends MapiPropertyDto
      * @param string $discriminator 
      * @param string $value_base64 Property value converted to Base64
      */
-    public function __construct($descriptor = null, $discriminator = null, $value_base64 = null)
-    {
+    public function __construct(
+        $descriptor = null
+        ,
+        $value_base64 = null
+    ) {
         parent::__construct();
         $this->container['value_base64'] = null;
 
@@ -299,5 +302,3 @@ class MapiBinaryPropertyDto extends MapiPropertyDto
     }
 }
 
-
-?>

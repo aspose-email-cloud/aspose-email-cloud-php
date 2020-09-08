@@ -251,8 +251,22 @@ class MapiCalendarRecurrencePatternDto implements ArrayAccess
      * @param string $week_start_day Day of week. Enum, available values: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
      * @param string $discriminator 
      */
-    public function __construct($calendar_type = null, $deleted_instance_dates = null, $end_date = null, $end_type = null, $exceptions = null, $frequency = null, $modified_instance_dates = null, $occurrence_count = null, $pattern_type = null, $period = null, $sliding_flag = null, $start_date = null, $week_start_day = null, $discriminator = null)
-    {
+    public function __construct(
+        $calendar_type = null,
+        $deleted_instance_dates = null,
+        $end_date = null,
+        $end_type = null,
+        $exceptions = null,
+        $frequency = null,
+        $modified_instance_dates = null,
+        $occurrence_count = null,
+        $pattern_type = null,
+        $period = null,
+        $sliding_flag = null,
+        $start_date = null,
+        $week_start_day = null
+        
+    ) {
         $this->container['calendar_type'] = null;
         $this->container['deleted_instance_dates'] = null;
         $this->container['end_date'] = null;
@@ -266,7 +280,6 @@ class MapiCalendarRecurrencePatternDto implements ArrayAccess
         $this->container['sliding_flag'] = null;
         $this->container['start_date'] = null;
         $this->container['week_start_day'] = null;
-        $this->container['discriminator'] = null;
 
         if ($calendar_type != null) $this->setCalendarType($calendar_type);
         if ($deleted_instance_dates != null) $this->setDeletedInstanceDates($deleted_instance_dates);
@@ -282,10 +295,6 @@ class MapiCalendarRecurrencePatternDto implements ArrayAccess
         if ($start_date != null) $this->setStartDate($start_date);
         if ($week_start_day != null) $this->setWeekStartDay($week_start_day);
         $this->container['discriminator'] = (new \ReflectionClass($this))->getShortName();
-
-        // Initialize discriminator property with the model name.
-        $discriminator = array_search('Type', self::$attributeMap);
-        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /**
@@ -708,7 +717,11 @@ class MapiCalendarRecurrencePatternDto implements ArrayAccess
      *
      * @return $this
      */
-    public function setDiscriminator($discriminator) { /* Does nothing */ }
+    public function setDiscriminator($discriminator)
+    {
+        /* do nothing */
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -780,5 +793,3 @@ class MapiCalendarRecurrencePatternDto implements ArrayAccess
     }
 }
 
-
-?>

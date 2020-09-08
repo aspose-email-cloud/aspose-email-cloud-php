@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**file** | [**\Aspose\Email\Model\StorageFileLocation**](StorageFileLocation.md) | Image location | [optional] 
+**file** | [**\Aspose\Email\Model\StorageFileLocation**](StorageFileLocation.md) | Image location | 
 
  Parent class: [AiBcrImage](AiBcrImage.md)
 

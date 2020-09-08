@@ -185,8 +185,11 @@ class AssociatedPerson implements ArrayAccess
      * @param \Aspose\Email\Model\EnumWithCustomOfAssociatedPersonCategory $category Associated person's category.
      * @param bool $preferred Defines whether associated person is preferred.
      */
-    public function __construct($name = null, $category = null, $preferred = null)
-    {
+    public function __construct(
+        $name = null,
+        $category = null,
+        $preferred = null
+    ) {
         $this->container['name'] = null;
         $this->container['category'] = null;
         $this->container['preferred'] = null;
@@ -369,5 +372,3 @@ class AssociatedPerson implements ArrayAccess
     }
 }
 
-
-?>

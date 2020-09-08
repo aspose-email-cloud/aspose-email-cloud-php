@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**value** | [**\Aspose\Email\Model\StorageFile[]**](StorageFile.md) |  | [optional] 
+**value** | [**\Aspose\Email\Model\StorageFile[]**](StorageFile.md) | Files and folders contained by folder StorageFile. | [optional] 
 
 
 

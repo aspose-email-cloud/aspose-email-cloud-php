@@ -37,6 +37,7 @@ use \Aspose\Email\ObjectSerializer;
 /**
  * FilesList
  *
+ * @description Files list
  */
 class FilesList implements ArrayAccess
 {
@@ -170,10 +171,11 @@ class FilesList implements ArrayAccess
     /**
      * Initializes a new instance of the FilesList class.
      *  
-     * @param \Aspose\Email\Model\StorageFile[] $value 
+     * @param \Aspose\Email\Model\StorageFile[] $value Files and folders contained by folder StorageFile.
      */
-    public function __construct($value = null)
-    {
+    public function __construct(
+        $value = null
+    ) {
         $this->container['value'] = null;
 
         if ($value != null) $this->setValue($value);
@@ -217,7 +219,7 @@ class FilesList implements ArrayAccess
     /**
      * Sets value
      *
-     * @param \Aspose\Email\Model\StorageFile[] $value value
+     * @param \Aspose\Email\Model\StorageFile[] $value Files and folders contained by folder StorageFile.
      *
      * @return $this
      */
@@ -298,5 +300,3 @@ class FilesList implements ArrayAccess
     }
 }
 
-
-?>

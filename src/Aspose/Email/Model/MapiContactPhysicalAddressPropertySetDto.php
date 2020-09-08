@@ -185,8 +185,11 @@ class MapiContactPhysicalAddressPropertySetDto implements ArrayAccess
      * @param \Aspose\Email\Model\MapiContactPhysicalAddressDto $home_address Specifies the address of the contact's home
      * @param \Aspose\Email\Model\MapiContactPhysicalAddressDto $other_address Specifies the other contact's address
      */
-    public function __construct($work_address = null, $home_address = null, $other_address = null)
-    {
+    public function __construct(
+        $work_address = null,
+        $home_address = null,
+        $other_address = null
+    ) {
         $this->container['work_address'] = null;
         $this->container['home_address'] = null;
         $this->container['other_address'] = null;
@@ -363,5 +366,3 @@ class MapiContactPhysicalAddressPropertySetDto implements ArrayAccess
     }
 }
 
-
-?>

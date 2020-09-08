@@ -281,8 +281,27 @@ class MapiContactPersonalInfoPropertySetDto implements ArrayAccess
      * @param string $referred_by_name Specifies the name of the person who referred this contact to the user
      * @param string[] $children Contains a list of names of children.
      */
-    public function __construct($spouse_name = null, $personal_home_page = null, $language = null, $notes = null, $hobbies = null, $location = null, $instant_messaging_address = null, $organizational_id_number = null, $customer_id = null, $government_id_number = null, $free_busy_location = null, $account = null, $html = null, $business_home_page = null, $ftp_site = null, $computer_network_name = null, $gender = null, $referred_by_name = null, $children = null)
-    {
+    public function __construct(
+        $spouse_name = null,
+        $personal_home_page = null,
+        $language = null,
+        $notes = null,
+        $hobbies = null,
+        $location = null,
+        $instant_messaging_address = null,
+        $organizational_id_number = null,
+        $customer_id = null,
+        $government_id_number = null,
+        $free_busy_location = null,
+        $account = null,
+        $html = null,
+        $business_home_page = null,
+        $ftp_site = null,
+        $computer_network_name = null,
+        $gender = null,
+        $referred_by_name = null,
+        $children = null
+    ) {
         $this->container['spouse_name'] = null;
         $this->container['personal_home_page'] = null;
         $this->container['language'] = null;
@@ -881,5 +900,3 @@ class MapiContactPersonalInfoPropertySetDto implements ArrayAccess
     }
 }
 
-
-?>

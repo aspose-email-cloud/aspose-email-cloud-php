@@ -176,8 +176,15 @@ class MapiPidLidPropertyDescriptor extends MapiPidPropertyDescriptor
      * @param int $long_id An unsigned 32-bit quantity that, along with the property set, identifies a named property.
      * @param string $property_set A GUID that identifies a group of properties with a similar purpose.
      */
-    public function __construct($discriminator = null, $canonical_name = null, $data_type = null, $multiple_values_data_type = null, $name = null, $long_id = null, $property_set = null)
-    {
+    public function __construct(
+        //,
+        $canonical_name = null,
+        $data_type = null,
+        $multiple_values_data_type = null,
+        $name = null,
+        $long_id = null,
+        $property_set = null
+    ) {
         parent::__construct();
         $this->container['long_id'] = null;
         $this->container['property_set'] = null;
@@ -349,5 +356,3 @@ class MapiPidLidPropertyDescriptor extends MapiPidPropertyDescriptor
     }
 }
 
-
-?>

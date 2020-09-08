@@ -179,8 +179,10 @@ class MailServerFolder implements ArrayAccess
      * @param string $name Gets or sets mail folder name
      * @param string $id Gets or sets mail folder id
      */
-    public function __construct($name = null, $id = null)
-    {
+    public function __construct(
+        $name = null,
+        $id = null
+    ) {
         $this->container['name'] = null;
         $this->container['id'] = null;
 
@@ -331,5 +333,3 @@ class MailServerFolder implements ArrayAccess
     }
 }
 
-
-?>

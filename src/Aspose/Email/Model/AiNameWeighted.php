@@ -179,8 +179,10 @@ class AiNameWeighted implements ArrayAccess
      * @param string $name Name
      * @param double $score Score of name
      */
-    public function __construct($name = null, $score = null)
-    {
+    public function __construct(
+        $name = null,
+        $score = null
+    ) {
         $this->container['name'] = null;
         $this->container['score'] = null;
 
@@ -337,5 +339,3 @@ class AiNameWeighted implements ArrayAccess
     }
 }
 
-
-?>

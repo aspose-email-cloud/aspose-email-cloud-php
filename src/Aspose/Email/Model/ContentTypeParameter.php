@@ -179,8 +179,10 @@ class ContentTypeParameter implements ArrayAccess
      * @param string $name Parameter name
      * @param string $value Parameter value
      */
-    public function __construct($name = null, $value = null)
-    {
+    public function __construct(
+        $name = null,
+        $value = null
+    ) {
         $this->container['name'] = null;
         $this->container['value'] = null;
 
@@ -331,5 +333,3 @@ class ContentTypeParameter implements ArrayAccess
     }
 }
 
-
-?>

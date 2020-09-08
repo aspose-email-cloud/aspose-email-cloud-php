@@ -40,7 +40,7 @@ use \Aspose\Email\ObjectSerializer;
  */
 class ListResponseOfStorageFileLocation implements ArrayAccess
 {
-    const DISCRIMINATOR = null;
+    const DISCRIMINATOR = 'Type';
 
     /**
      * The original name of the model.
@@ -172,8 +172,9 @@ class ListResponseOfStorageFileLocation implements ArrayAccess
      *  
      * @param \Aspose\Email\Model\StorageFileLocation[] $value 
      */
-    public function __construct($value = null)
-    {
+    public function __construct(
+        $value = null
+    ) {
         $this->container['value'] = null;
 
         if ($value != null) $this->setValue($value);
@@ -298,5 +299,3 @@ class ListResponseOfStorageFileLocation implements ArrayAccess
     }
 }
 
-
-?>

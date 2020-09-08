@@ -185,8 +185,11 @@ class InstantMessengerAddress implements ArrayAccess
      * @param string $address Address.
      * @param bool $preferred Determines whether this address is preferred.
      */
-    public function __construct($category = null, $address = null, $preferred = null)
-    {
+    public function __construct(
+        $category = null,
+        $address = null,
+        $preferred = null
+    ) {
         $this->container['category'] = null;
         $this->container['address'] = null;
         $this->container['preferred'] = null;
@@ -369,5 +372,3 @@ class InstantMessengerAddress implements ArrayAccess
     }
 }
 
-
-?>

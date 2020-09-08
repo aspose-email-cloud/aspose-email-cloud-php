@@ -178,8 +178,10 @@ class EnumWithCustomOfEmailAddressCategory implements ArrayAccess
      * @param string $value Represents category for an email address. Enum, available values: Home, Work, Custom, Email1, Email2, Email3
      * @param string $description 
      */
-    public function __construct($value = null, $description = null)
-    {
+    public function __construct(
+        $value = null,
+        $description = null
+    ) {
         $this->container['value'] = null;
         $this->container['description'] = null;
 
@@ -199,6 +201,10 @@ class EnumWithCustomOfEmailAddressCategory implements ArrayAccess
         if ($this->container['value'] === null) {
             $invalidProperties[] = "'value' can't be null";
         }
+        if ((strlen($this->container['value']) < 1)) {
+            $invalidProperties[] = "invalid value for 'value', the character length must be bigger than or equal to 1.";
+        }
+
         return $invalidProperties;
     }
 
@@ -212,6 +218,9 @@ class EnumWithCustomOfEmailAddressCategory implements ArrayAccess
     {
 
         if ($this->container['value'] === null) {
+            return false;
+        }
+        if (strlen($this->container['value']) < 1) {
             return false;
         }
         return true;
@@ -237,6 +246,11 @@ class EnumWithCustomOfEmailAddressCategory implements ArrayAccess
      */
     public function setValue($value)
     {
+
+        if ((strlen($value) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $value when calling EnumWithCustomOfEmailAddressCategory., must be bigger than or equal to 1.');
+        }
+
         $this->container['value'] = $value;
 
         return $this;
@@ -336,5 +350,3 @@ class EnumWithCustomOfEmailAddressCategory implements ArrayAccess
     }
 }
 
-
-?>

@@ -179,8 +179,10 @@ class NameValuePair implements ArrayAccess
      * @param string $name Property name
      * @param string $value Property value
      */
-    public function __construct($name = null, $value = null)
-    {
+    public function __construct(
+        $name = null,
+        $value = null
+    ) {
         $this->container['name'] = null;
         $this->container['value'] = null;
 
@@ -331,5 +333,3 @@ class NameValuePair implements ArrayAccess
     }
 }
 
-
-?>

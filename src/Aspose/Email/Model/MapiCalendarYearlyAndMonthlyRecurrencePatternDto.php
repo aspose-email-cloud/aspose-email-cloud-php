@@ -191,8 +191,25 @@ class MapiCalendarYearlyAndMonthlyRecurrencePatternDto extends MapiCalendarRecur
      * @param string[] $day_of_week Days of week at which the event occurs. Items: Enumerates the days of week of the mapi calendar recurrence pattern Enum, available values: Saturday, Friday, Thursday, Wednesday, Tuesday, Monday, Sunday
      * @param string $position Day positions, typically found in a month. Enum, available values: None, First, Second, Third, Fourth, Last
      */
-    public function __construct($calendar_type = null, $deleted_instance_dates = null, $end_date = null, $end_type = null, $exceptions = null, $frequency = null, $modified_instance_dates = null, $occurrence_count = null, $pattern_type = null, $period = null, $sliding_flag = null, $start_date = null, $week_start_day = null, $discriminator = null, $day = null, $day_of_week = null, $position = null)
-    {
+    public function __construct(
+        $calendar_type = null,
+        $deleted_instance_dates = null,
+        $end_date = null,
+        $end_type = null,
+        $exceptions = null,
+        $frequency = null,
+        $modified_instance_dates = null,
+        $occurrence_count = null,
+        $pattern_type = null,
+        $period = null,
+        $sliding_flag = null,
+        $start_date = null,
+        $week_start_day = null
+        ,
+        $day = null,
+        $day_of_week = null,
+        $position = null
+    ) {
         parent::__construct();
         $this->container['day'] = null;
         $this->container['day_of_week'] = null;
@@ -399,5 +416,3 @@ class MapiCalendarYearlyAndMonthlyRecurrencePatternDto extends MapiCalendarRecur
     }
 }
 
-
-?>

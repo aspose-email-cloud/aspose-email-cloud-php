@@ -179,8 +179,10 @@ class EmailClientMultiAccount implements ArrayAccess
      * @param \Aspose\Email\Model\EmailClientAccount[] $receive_accounts Email client receive accounts
      * @param \Aspose\Email\Model\EmailClientAccount $send_account Email client send account
      */
-    public function __construct($receive_accounts = null, $send_account = null)
-    {
+    public function __construct(
+        $receive_accounts = null,
+        $send_account = null
+    ) {
         $this->container['receive_accounts'] = null;
         $this->container['send_account'] = null;
 
@@ -337,5 +339,3 @@ class EmailClientMultiAccount implements ArrayAccess
     }
 }
 
-
-?>

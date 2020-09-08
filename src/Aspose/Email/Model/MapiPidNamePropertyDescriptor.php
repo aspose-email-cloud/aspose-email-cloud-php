@@ -170,8 +170,14 @@ class MapiPidNamePropertyDescriptor extends MapiPidPropertyDescriptor
      * @param string $name A string that identifies the property
      * @param string $property_set A GUID that identifies a group of properties with a similar purpose.
      */
-    public function __construct($discriminator = null, $canonical_name = null, $data_type = null, $multiple_values_data_type = null, $name = null, $property_set = null)
-    {
+    public function __construct(
+        //,
+        $canonical_name = null,
+        $data_type = null,
+        $multiple_values_data_type = null,
+        $name = null,
+        $property_set = null
+    ) {
         parent::__construct();
         $this->container['property_set'] = null;
 
@@ -311,5 +317,3 @@ class MapiPidNamePropertyDescriptor extends MapiPidPropertyDescriptor
     }
 }
 
-
-?>

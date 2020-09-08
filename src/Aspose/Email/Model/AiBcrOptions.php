@@ -37,7 +37,7 @@ use \Aspose\Email\ObjectSerializer;
 /**
  * AiBcrOptions
  *
- * @description Recognition options
+ * @description Recognition options.
  */
 class AiBcrOptions implements ArrayAccess
 {
@@ -176,11 +176,13 @@ class AiBcrOptions implements ArrayAccess
     /**
      * Initializes a new instance of the AiBcrOptions class.
      *  
-     * @param string $languages Comma-separated ISO-639 codes of languages (either 639-1 or 639-3; i.e. \"it\" or \"ita\" for Italian); it's \"\" by default
-     * @param string $countries Comma-separated codes of countries
+     * @param string $languages Comma-separated ISO-639 codes of languages (either 639-1 or 639-3; i.e. \"it\" or \"ita\" for Italian); it's \"\" by default.
+     * @param string $countries Comma-separated codes of countries.
      */
-    public function __construct($languages = null, $countries = null)
-    {
+    public function __construct(
+        $languages = null,
+        $countries = null
+    ) {
         $this->container['languages'] = null;
         $this->container['countries'] = null;
 
@@ -226,7 +228,7 @@ class AiBcrOptions implements ArrayAccess
     /**
      * Sets languages
      *
-     * @param string $languages Comma-separated ISO-639 codes of languages (either 639-1 or 639-3; i.e. \"it\" or \"ita\" for Italian); it's \"\" by default
+     * @param string $languages Comma-separated ISO-639 codes of languages (either 639-1 or 639-3; i.e. \"it\" or \"ita\" for Italian); it's \"\" by default.
      *
      * @return $this
      */
@@ -250,7 +252,7 @@ class AiBcrOptions implements ArrayAccess
     /**
      * Sets countries
      *
-     * @param string $countries Comma-separated codes of countries
+     * @param string $countries Comma-separated codes of countries.
      *
      * @return $this
      */
@@ -331,5 +333,3 @@ class AiBcrOptions implements ArrayAccess
     }
 }
 
-
-?>

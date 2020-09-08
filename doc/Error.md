@@ -3,10 +3,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**code** | **string** |  | [optional] 
-**message** | **string** |  | [optional] 
-**description** | **string** |  | [optional] 
-**inner_error** | [**\Aspose\Email\Model\ErrorDetails**](ErrorDetails.md) |  | [optional] 
+**code** | **string** | Code | [optional] 
+**message** | **string** | Message | [optional] 
+**description** | **string** | Description | [optional] 
+**inner_error** | [**\Aspose\Email\Model\ErrorDetails**](ErrorDetails.md) | Inner Error | [optional] 
 
 
 

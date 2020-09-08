@@ -221,8 +221,17 @@ class MapiContactPhysicalAddressDto implements ArrayAccess
      * @param string $address Specifies the complete address of the contact's address
      * @param string $post_office_box Gets or sets the post office box
      */
-    public function __construct($is_mailing_address = null, $street = null, $city = null, $state_or_province = null, $postal_code = null, $country = null, $country_code = null, $address = null, $post_office_box = null)
-    {
+    public function __construct(
+        $is_mailing_address = null,
+        $street = null,
+        $city = null,
+        $state_or_province = null,
+        $postal_code = null,
+        $country = null,
+        $country_code = null,
+        $address = null,
+        $post_office_box = null
+    ) {
         $this->container['is_mailing_address'] = null;
         $this->container['street'] = null;
         $this->container['city'] = null;
@@ -561,5 +570,3 @@ class MapiContactPhysicalAddressDto implements ArrayAccess
     }
 }
 
-
-?>

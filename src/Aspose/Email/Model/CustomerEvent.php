@@ -179,8 +179,10 @@ class CustomerEvent implements ArrayAccess
      * @param \Aspose\Email\Model\EnumWithCustomOfEventCategory $category Event category.
      * @param \DateTime $date Event date.
      */
-    public function __construct($category = null, $date = null)
-    {
+    public function __construct(
+        $category = null,
+        $date = null
+    ) {
         $this->container['category'] = null;
         $this->container['date'] = null;
 
@@ -337,5 +339,3 @@ class CustomerEvent implements ArrayAccess
     }
 }
 
-
-?>

@@ -185,8 +185,11 @@ class ReminderTrigger implements ArrayAccess
      * @param int $duration Specifies a relative time in ticks for the trigger of the alarm.
      * @param string $related Specify the relationship of the alarm trigger with respect to the start or end of the event. Enum, available values: Start, End
      */
-    public function __construct($date_time = null, $duration = null, $related = null)
-    {
+    public function __construct(
+        $date_time = null,
+        $duration = null,
+        $related = null
+    ) {
         $this->container['date_time'] = null;
         $this->container['duration'] = null;
         $this->container['related'] = null;
@@ -375,5 +378,3 @@ class ReminderTrigger implements ArrayAccess
     }
 }
 
-
-?>

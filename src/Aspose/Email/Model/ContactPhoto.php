@@ -185,19 +185,17 @@ class ContactPhoto implements ArrayAccess
      * @param string $base64_data Photo serialized as base64 string.
      * @param string $discriminator 
      */
-    public function __construct($photo_image_format = null, $base64_data = null, $discriminator = null)
-    {
+    public function __construct(
+        $photo_image_format = null,
+        $base64_data = null
+        
+    ) {
         $this->container['photo_image_format'] = null;
         $this->container['base64_data'] = null;
-        $this->container['discriminator'] = null;
 
         if ($photo_image_format != null) $this->setPhotoImageFormat($photo_image_format);
         if ($base64_data != null) $this->setBase64Data($base64_data);
         $this->container['discriminator'] = (new \ReflectionClass($this))->getShortName();
-
-        // Initialize discriminator property with the model name.
-        $discriminator = array_search('Type', self::$attributeMap);
-        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /**
@@ -212,6 +210,13 @@ class ContactPhoto implements ArrayAccess
         if ($this->container['photo_image_format'] === null) {
             $invalidProperties[] = "'photo_image_format' can't be null";
         }
+        if ($this->container['base64_data'] === null) {
+            $invalidProperties[] = "'base64_data' can't be null";
+        }
+        if ((strlen($this->container['base64_data']) < 1)) {
+            $invalidProperties[] = "invalid value for 'base64_data', the character length must be bigger than or equal to 1.";
+        }
+
         if ($this->container['discriminator'] === null) {
             $invalidProperties[] = "'discriminator' can't be null";
         }
@@ -228,6 +233,12 @@ class ContactPhoto implements ArrayAccess
     {
 
         if ($this->container['photo_image_format'] === null) {
+            return false;
+        }
+        if ($this->container['base64_data'] === null) {
+            return false;
+        }
+        if (strlen($this->container['base64_data']) < 1) {
             return false;
         }
         if ($this->container['discriminator'] === null) {
@@ -280,6 +291,11 @@ class ContactPhoto implements ArrayAccess
      */
     public function setBase64Data($base64_data)
     {
+
+        if ((strlen($base64_data) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $base64_data when calling ContactPhoto., must be bigger than or equal to 1.');
+        }
+
         $this->container['base64_data'] = $base64_data;
 
         return $this;
@@ -302,7 +318,11 @@ class ContactPhoto implements ArrayAccess
      *
      * @return $this
      */
-    public function setDiscriminator($discriminator) { /* Does nothing */ }
+    public function setDiscriminator($discriminator)
+    {
+        /* do nothing */
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -374,5 +394,3 @@ class ContactPhoto implements ArrayAccess
     }
 }
 
-
-?>

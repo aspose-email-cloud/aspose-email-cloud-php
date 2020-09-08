@@ -167,8 +167,11 @@ class MapiPhysicalAddressIndexPropertyDto extends MapiPropertyDto
      * @param string $discriminator 
      * @param string $value Identifies the display types for physical addresses. Enum, available values: None, Home, Business, Other
      */
-    public function __construct($descriptor = null, $discriminator = null, $value = null)
-    {
+    public function __construct(
+        $descriptor = null
+        ,
+        $value = null
+    ) {
         parent::__construct();
         $this->container['value'] = null;
 
@@ -305,5 +308,3 @@ class MapiPhysicalAddressIndexPropertyDto extends MapiPropertyDto
     }
 }
 
-
-?>

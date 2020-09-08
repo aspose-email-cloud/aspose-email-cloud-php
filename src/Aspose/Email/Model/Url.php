@@ -185,8 +185,11 @@ class Url implements ArrayAccess
      * @param bool $preferred Defines whether url is preferred.
      * @param string $href URL.
      */
-    public function __construct($category = null, $preferred = null, $href = null)
-    {
+    public function __construct(
+        $category = null,
+        $preferred = null,
+        $href = null
+    ) {
         $this->container['category'] = null;
         $this->container['preferred'] = null;
         $this->container['href'] = null;
@@ -369,5 +372,3 @@ class Url implements ArrayAccess
     }
 }
 
-
-?>

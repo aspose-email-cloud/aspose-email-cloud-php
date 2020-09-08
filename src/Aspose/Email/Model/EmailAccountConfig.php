@@ -215,8 +215,16 @@ class EmailAccountConfig implements ArrayAccess
      * @param \Aspose\Email\Model\NameValuePair[] $extra_info Extra account information.
      * @param bool $is_validated Determines that configuration validated. Set to false if validation skipped.
      */
-    public function __construct($display_name = null, $protocol_type = null, $host = null, $port = null, $socket_type = null, $authentication_types = null, $extra_info = null, $is_validated = null)
-    {
+    public function __construct(
+        $display_name = null,
+        $protocol_type = null,
+        $host = null,
+        $port = null,
+        $socket_type = null,
+        $authentication_types = null,
+        $extra_info = null,
+        $is_validated = null
+    ) {
         $this->container['display_name'] = null;
         $this->container['protocol_type'] = null;
         $this->container['host'] = null;
@@ -541,5 +549,3 @@ class EmailAccountConfig implements ArrayAccess
     }
 }
 
-
-?>

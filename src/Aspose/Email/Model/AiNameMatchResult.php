@@ -179,8 +179,10 @@ class AiNameMatchResult implements ArrayAccess
      * @param double $similarity Similarity score
      * @param \Aspose\Email\Model\AiNameMismatch[] $mismatches Detailed description of mismatches
      */
-    public function __construct($similarity = null, $mismatches = null)
-    {
+    public function __construct(
+        $similarity = null,
+        $mismatches = null
+    ) {
         $this->container['similarity'] = null;
         $this->container['mismatches'] = null;
 
@@ -337,5 +339,3 @@ class AiNameMatchResult implements ArrayAccess
     }
 }
 
-
-?>

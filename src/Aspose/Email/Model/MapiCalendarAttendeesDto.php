@@ -191,8 +191,12 @@ class MapiCalendarAttendeesDto implements ArrayAccess
      * @param bool $not_allow_propose Value indicating whether attendees are not allowed to propose a new date and/or time for the meeting.
      * @param bool $response_requested Value indicating whether a response is requested to a Message object.
      */
-    public function __construct($appointment_recipients = null, $appointment_unsendable_recipients = null, $not_allow_propose = null, $response_requested = null)
-    {
+    public function __construct(
+        $appointment_recipients = null,
+        $appointment_unsendable_recipients = null,
+        $not_allow_propose = null,
+        $response_requested = null
+    ) {
         $this->container['appointment_recipients'] = null;
         $this->container['appointment_unsendable_recipients'] = null;
         $this->container['not_allow_propose'] = null;
@@ -407,5 +411,3 @@ class MapiCalendarAttendeesDto implements ArrayAccess
     }
 }
 
-
-?>

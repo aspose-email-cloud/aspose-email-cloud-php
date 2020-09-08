@@ -179,8 +179,10 @@ class AiNameExtractedComponent implements ArrayAccess
      * @param string $category Extracted from email address name component category. Enum, available values: Unknown, GivenName, Surname, SomeName, NoName, Initial
      * @param string $value Extracted value
      */
-    public function __construct($category = null, $value = null)
-    {
+    public function __construct(
+        $category = null,
+        $value = null
+    ) {
         $this->container['category'] = null;
         $this->container['value'] = null;
 
@@ -337,5 +339,3 @@ class AiNameExtractedComponent implements ArrayAccess
     }
 }
 
-
-?>

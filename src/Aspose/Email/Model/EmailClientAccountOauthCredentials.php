@@ -185,8 +185,14 @@ class EmailClientAccountOauthCredentials extends EmailClientAccountCredentials
      * @param string $refresh_token OAuth 2.0 refresh token
      * @param string $request_url The url to obtain access token. If not specified, will try to discover from email client account host.
      */
-    public function __construct($login = null, $discriminator = null, $client_id = null, $client_secret = null, $refresh_token = null, $request_url = null)
-    {
+    public function __construct(
+        $login = null
+        ,
+        $client_id = null,
+        $client_secret = null,
+        $refresh_token = null,
+        $request_url = null
+    ) {
         parent::__construct();
         $this->container['client_id'] = null;
         $this->container['client_secret'] = null;
@@ -449,5 +455,3 @@ class EmailClientAccountOauthCredentials extends EmailClientAccountCredentials
     }
 }
 
-
-?>

@@ -203,8 +203,14 @@ class EmailClientAccount implements ArrayAccess
      * @param \Aspose\Email\Model\EmailClientAccountCredentials $credentials Email client account credentials
      * @param \Aspose\Email\Model\StorageFileLocation $cache_file File with messages cache. Used to provide extra functions, which are not supported by account
      */
-    public function __construct($host = null, $port = null, $security_options = null, $protocol_type = null, $credentials = null, $cache_file = null)
-    {
+    public function __construct(
+        $host = null,
+        $port = null,
+        $security_options = null,
+        $protocol_type = null,
+        $credentials = null,
+        $cache_file = null
+    ) {
         $this->container['host'] = null;
         $this->container['port'] = null;
         $this->container['security_options'] = null;
@@ -523,5 +529,3 @@ class EmailClientAccount implements ArrayAccess
     }
 }
 
-
-?>

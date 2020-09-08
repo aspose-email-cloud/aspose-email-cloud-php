@@ -227,8 +227,18 @@ class MapiContactNamePropertySetDto implements ArrayAccess
      * @param string $nickname Nickname of the contact
      * @param string $surname Surname (family name) of the contact
      */
-    public function __construct($display_name = null, $display_name_prefix = null, $file_under = null, $file_under_id = null, $generation = null, $given_name = null, $initials = null, $middle_name = null, $nickname = null, $surname = null)
-    {
+    public function __construct(
+        $display_name = null,
+        $display_name_prefix = null,
+        $file_under = null,
+        $file_under_id = null,
+        $generation = null,
+        $given_name = null,
+        $initials = null,
+        $middle_name = null,
+        $nickname = null,
+        $surname = null
+    ) {
         $this->container['display_name'] = null;
         $this->container['display_name_prefix'] = null;
         $this->container['file_under'] = null;
@@ -593,5 +603,3 @@ class MapiContactNamePropertySetDto implements ArrayAccess
     }
 }
 
-
-?>

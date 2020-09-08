@@ -173,8 +173,9 @@ class ReminderAttendee implements ArrayAccess
      *  
      * @param string $address Contains the email address.
      */
-    public function __construct($address = null)
-    {
+    public function __construct(
+        $address = null
+    ) {
         $this->container['address'] = null;
 
         if ($address != null) $this->setAddress($address);
@@ -189,6 +190,13 @@ class ReminderAttendee implements ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['address'] === null) {
+            $invalidProperties[] = "'address' can't be null";
+        }
+        if ((strlen($this->container['address']) < 1)) {
+            $invalidProperties[] = "invalid value for 'address', the character length must be bigger than or equal to 1.";
+        }
+
         return $invalidProperties;
     }
 
@@ -201,6 +209,12 @@ class ReminderAttendee implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['address'] === null) {
+            return false;
+        }
+        if (strlen($this->container['address']) < 1) {
+            return false;
+        }
         return true;
     }
 
@@ -224,6 +238,11 @@ class ReminderAttendee implements ArrayAccess
      */
     public function setAddress($address)
     {
+
+        if ((strlen($address) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $address when calling ReminderAttendee., must be bigger than or equal to 1.');
+        }
+
         $this->container['address'] = $address;
 
         return $this;
@@ -299,5 +318,3 @@ class ReminderAttendee implements ArrayAccess
     }
 }
 
-
-?>

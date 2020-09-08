@@ -72,7 +72,7 @@ class MapiContactElectronicAddressDto implements ArrayAccess
     protected static $swaggerFormats = [
         'address_type' => null,
         'display_name' => null,
-        'email_address' => null,
+        'email_address' => 'email',
         'fax_number' => null,
         'is_empty' => null,
         'original_display_name' => null
@@ -203,8 +203,14 @@ class MapiContactElectronicAddressDto implements ArrayAccess
      * @param bool $is_empty Shows if MapiContactElectronicAddress is empty
      * @param string $original_display_name SMTP e-mail address that corresponds to the e-mail address for the Contact object.
      */
-    public function __construct($address_type = null, $display_name = null, $email_address = null, $fax_number = null, $is_empty = null, $original_display_name = null)
-    {
+    public function __construct(
+        $address_type = null,
+        $display_name = null,
+        $email_address = null,
+        $fax_number = null,
+        $is_empty = null,
+        $original_display_name = null
+    ) {
         $this->container['address_type'] = null;
         $this->container['display_name'] = null;
         $this->container['email_address'] = null;
@@ -465,5 +471,3 @@ class MapiContactElectronicAddressDto implements ArrayAccess
     }
 }
 
-
-?>

@@ -37,6 +37,7 @@ use \Aspose\Email\ObjectSerializer;
 /**
  * StorageExist
  *
+ * @description Storage exists
  */
 class StorageExist implements ArrayAccess
 {
@@ -170,10 +171,11 @@ class StorageExist implements ArrayAccess
     /**
      * Initializes a new instance of the StorageExist class.
      *  
-     * @param bool $exists 
+     * @param bool $exists Shows that the storage exists.
      */
-    public function __construct($exists = null)
-    {
+    public function __construct(
+        $exists = null
+    ) {
         $this->container['exists'] = null;
 
         if ($exists != null) $this->setExists($exists);
@@ -223,7 +225,7 @@ class StorageExist implements ArrayAccess
     /**
      * Sets exists
      *
-     * @param bool $exists exists
+     * @param bool $exists Shows that the storage exists.
      *
      * @return $this
      */
@@ -304,5 +306,3 @@ class StorageExist implements ArrayAccess
     }
 }
 
-
-?>

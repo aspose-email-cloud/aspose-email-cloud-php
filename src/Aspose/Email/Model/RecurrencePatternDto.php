@@ -197,23 +197,23 @@ class RecurrencePatternDto implements ArrayAccess
      * @param string $week_start Represents the day of the week. Enum, available values: None, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, Day, WeekDay, WeekendDay
      * @param string $discriminator 
      */
-    public function __construct($interval = null, $occurs = null, $end_date = null, $week_start = null, $discriminator = null)
-    {
+    public function __construct(
+        $interval = null,
+        $occurs = null,
+        $end_date = null,
+        $week_start = null
+        
+    ) {
         $this->container['interval'] = null;
         $this->container['occurs'] = null;
         $this->container['end_date'] = null;
         $this->container['week_start'] = null;
-        $this->container['discriminator'] = null;
 
         if ($interval != null) $this->setInterval($interval);
         if ($occurs != null) $this->setOccurs($occurs);
         if ($end_date != null) $this->setEndDate($end_date);
         if ($week_start != null) $this->setWeekStart($week_start);
         $this->container['discriminator'] = (new \ReflectionClass($this))->getShortName();
-
-        // Initialize discriminator property with the model name.
-        $discriminator = array_search('Type', self::$attributeMap);
-        $this->container[$discriminator] = static::$swaggerModelName;
     }
 
     /**
@@ -384,7 +384,11 @@ class RecurrencePatternDto implements ArrayAccess
      *
      * @return $this
      */
-    public function setDiscriminator($discriminator) { /* Does nothing */ }
+    public function setDiscriminator($discriminator)
+    {
+        /* do nothing */
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -456,5 +460,3 @@ class RecurrencePatternDto implements ArrayAccess
     }
 }
 
-
-?>

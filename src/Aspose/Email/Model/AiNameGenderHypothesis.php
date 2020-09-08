@@ -179,8 +179,10 @@ class AiNameGenderHypothesis implements ArrayAccess
      * @param string $gender Recognized name gender. Enum, available values: Male, Female, Unknown
      * @param double $score Hypothesis score
      */
-    public function __construct($gender = null, $score = null)
-    {
+    public function __construct(
+        $gender = null,
+        $score = null
+    ) {
         $this->container['gender'] = null;
         $this->container['score'] = null;
 
@@ -343,5 +345,3 @@ class AiNameGenderHypothesis implements ArrayAccess
     }
 }
 
-
-?>

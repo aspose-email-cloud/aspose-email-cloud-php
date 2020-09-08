@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**uploaded** | **string[]** |  | [optional] 
-**errors** | [**\Aspose\Email\Model\Error[]**](Error.md) |  | [optional] 
+**uploaded** | **string[]** | List of uploaded file names | [optional] 
+**errors** | [**\Aspose\Email\Model\Error[]**](Error.md) | List of errors. | [optional] 
 
 
 

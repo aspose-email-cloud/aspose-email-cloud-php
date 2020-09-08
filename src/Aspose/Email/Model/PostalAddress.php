@@ -233,8 +233,19 @@ class PostalAddress implements ArrayAccess
      * @param string $state_or_province Address's region.
      * @param string $street Address's street.
      */
-    public function __construct($address = null, $category = null, $city = null, $country = null, $country_code = null, $is_mailing_address = null, $postal_code = null, $post_office_box = null, $preferred = null, $state_or_province = null, $street = null)
-    {
+    public function __construct(
+        $address = null,
+        $category = null,
+        $city = null,
+        $country = null,
+        $country_code = null,
+        $is_mailing_address = null,
+        $postal_code = null,
+        $post_office_box = null,
+        $preferred = null,
+        $state_or_province = null,
+        $street = null
+    ) {
         $this->container['address'] = null;
         $this->container['category'] = null;
         $this->container['city'] = null;
@@ -631,5 +642,3 @@ class PostalAddress implements ArrayAccess
     }
 }
 
-
-?>

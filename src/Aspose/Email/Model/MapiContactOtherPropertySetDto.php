@@ -215,8 +215,16 @@ class MapiContactOtherPropertySetDto implements ArrayAccess
      * @param string $user_field3 Specifies the third field on the contact that is intended for miscellaneous use for the contact.
      * @param string $user_field4 Specifies the forth field on the contact that is intended for miscellaneous use for the contact.
      */
-    public function __construct($private = null, $journal = null, $reminder_time = null, $reminder_topic = null, $user_field1 = null, $user_field2 = null, $user_field3 = null, $user_field4 = null)
-    {
+    public function __construct(
+        $private = null,
+        $journal = null,
+        $reminder_time = null,
+        $reminder_topic = null,
+        $user_field1 = null,
+        $user_field2 = null,
+        $user_field3 = null,
+        $user_field4 = null
+    ) {
         $this->container['private'] = null;
         $this->container['journal'] = null;
         $this->container['reminder_time'] = null;
@@ -541,5 +549,3 @@ class MapiContactOtherPropertySetDto implements ArrayAccess
     }
 }
 
-
-?>
