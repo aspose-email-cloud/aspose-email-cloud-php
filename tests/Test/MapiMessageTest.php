@@ -7,7 +7,6 @@ use Aspose\Email\Model\MapiAttachmentDto;
 use Aspose\Email\Model\MapiMessageAsFileRequest;
 use Aspose\Email\Model\MapiMessageDto;
 use Aspose\Email\Model\MapiMessageFromFileRequest;
-use Aspose\Email\Model\MapiMessageGetRequest;
 use Aspose\Email\Model\MapiRecipientDto;
 use Aspose\Email\Model\Models;
 use DateTime;
@@ -77,12 +76,12 @@ class MapiMessageTest extends TestBase
             ->value($mapiMessage)
             ->format('Msg')
             ->build());
-        $mapiMessageFromStorage = $api->mapi()->message()->get(new MapiMessageGetRequest(
-            "Msg",
-            $fileName,
-            self::$folder,
-            self::$storage
-        ));
+        $mapiMessageFromStorage = $api->mapi()->message()->get(Models::mapiMessageGetRequest()
+            ->format('Msg')
+            ->storage(self::$storage)
+            ->folder(self::$folder)
+            ->file_name($fileName)
+            ->build());
         $this->assertEquals($mapiMessage->getSubject(), $mapiMessageFromStorage->getSubject());
     }
 
