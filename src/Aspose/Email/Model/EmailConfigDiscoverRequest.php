@@ -39,10 +39,14 @@ class EmailConfigDiscoverRequest
      * @param string $address Email address.
      * @param bool $fast_processing Turns on fast processing. All discover systems will run in parallel. First discovered result will be returned.
      */
-    public function __construct($address, $fast_processing = null)             
+    public function __construct($address = null, $fast_processing = null)             
     {
-        $this->address = $address;
-        $this->fast_processing = $fast_processing;
+        if ($address != null) {
+            $this->address = $address;
+        }
+        if ($fast_processing != null) {
+            $this->fast_processing = $fast_processing;
+        }
     }
 
     /**

@@ -42,13 +42,23 @@ class CalendarGetAsAlternateRequest
      * @param string $folder Path to folder in storage
      * @param string $storage Storage name
      */
-    public function __construct($file_name, $calendar_action, $sequence_id = null, $folder = null, $storage = null)             
+    public function __construct($file_name = null, $calendar_action = null, $sequence_id = null, $folder = null, $storage = null)             
     {
-        $this->file_name = $file_name;
-        $this->calendar_action = $calendar_action;
-        $this->sequence_id = $sequence_id;
-        $this->folder = $folder;
-        $this->storage = $storage;
+        if ($file_name != null) {
+            $this->file_name = $file_name;
+        }
+        if ($calendar_action != null) {
+            $this->calendar_action = $calendar_action;
+        }
+        if ($sequence_id != null) {
+            $this->sequence_id = $sequence_id;
+        }
+        if ($folder != null) {
+            $this->folder = $folder;
+        }
+        if ($storage != null) {
+            $this->storage = $storage;
+        }
     }
 
     /**

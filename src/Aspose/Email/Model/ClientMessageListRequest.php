@@ -45,16 +45,32 @@ class ClientMessageListRequest
      * @param string $type MailMessageBase type. Using this property you can get messages in different formats (as EmailDto, MapiMessageDto or a file represented as Base64 string).              Enum, available values: Dto, Mapi, Base64
      * @param string $format Base64 data format. Used only if type is set to Base64. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
      */
-    public function __construct($folder, $account, $query_string = null, $storage = null, $account_storage_folder = null, $recursive = null, $type = null, $format = null)             
+    public function __construct($folder = null, $account = null, $query_string = null, $storage = null, $account_storage_folder = null, $recursive = null, $type = null, $format = null)             
     {
-        $this->folder = $folder;
-        $this->account = $account;
-        $this->query_string = $query_string;
-        $this->storage = $storage;
-        $this->account_storage_folder = $account_storage_folder;
-        $this->recursive = $recursive;
-        $this->type = $type;
-        $this->format = $format;
+        if ($folder != null) {
+            $this->folder = $folder;
+        }
+        if ($account != null) {
+            $this->account = $account;
+        }
+        if ($query_string != null) {
+            $this->query_string = $query_string;
+        }
+        if ($storage != null) {
+            $this->storage = $storage;
+        }
+        if ($account_storage_folder != null) {
+            $this->account_storage_folder = $account_storage_folder;
+        }
+        if ($recursive != null) {
+            $this->recursive = $recursive;
+        }
+        if ($type != null) {
+            $this->type = $type;
+        }
+        if ($format != null) {
+            $this->format = $format;
+        }
     }
 
     /**

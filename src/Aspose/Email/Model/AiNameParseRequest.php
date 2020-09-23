@@ -43,14 +43,26 @@ class AiNameParseRequest
      * @param string $script A writing system code; starts with the ISO-15924 script name.
      * @param string $style Name writing style. Enum, available values: Formal, Informal, Legal, Academic
      */
-    public function __construct($name, $language = null, $location = null, $encoding = null, $script = null, $style = null)             
+    public function __construct($name = null, $language = null, $location = null, $encoding = null, $script = null, $style = null)             
     {
-        $this->name = $name;
-        $this->language = $language;
-        $this->location = $location;
-        $this->encoding = $encoding;
-        $this->script = $script;
-        $this->style = $style;
+        if ($name != null) {
+            $this->name = $name;
+        }
+        if ($language != null) {
+            $this->language = $language;
+        }
+        if ($location != null) {
+            $this->location = $location;
+        }
+        if ($encoding != null) {
+            $this->encoding = $encoding;
+        }
+        if ($script != null) {
+            $this->script = $script;
+        }
+        if ($style != null) {
+            $this->style = $style;
+        }
     }
 
     /**

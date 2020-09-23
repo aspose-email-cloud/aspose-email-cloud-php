@@ -41,12 +41,20 @@ class ClientFolderGetListRequest
      * @param string $account_storage_folder Folder in storage where account file located
      * @param string $parent_folder Folder in which subfolders should be listed
      */
-    public function __construct($account, $storage = null, $account_storage_folder = null, $parent_folder = null)             
+    public function __construct($account = null, $storage = null, $account_storage_folder = null, $parent_folder = null)             
     {
-        $this->account = $account;
-        $this->storage = $storage;
-        $this->account_storage_folder = $account_storage_folder;
-        $this->parent_folder = $parent_folder;
+        if ($account != null) {
+            $this->account = $account;
+        }
+        if ($storage != null) {
+            $this->storage = $storage;
+        }
+        if ($account_storage_folder != null) {
+            $this->account_storage_folder = $account_storage_folder;
+        }
+        if ($parent_folder != null) {
+            $this->parent_folder = $parent_folder;
+        }
     }
 
     /**

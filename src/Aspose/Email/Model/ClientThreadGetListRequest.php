@@ -43,14 +43,26 @@ class ClientThreadGetListRequest
      * @param bool $update_folder_cache This parameter is only used in accounts with CacheFile. If true - get new messages and update threads cache for given folder. If false, get only threads from cache without any calls to an email account
      * @param int $messages_cache_limit Limit messages cache size if CacheFile is used. Ignored in accounts without limits support
      */
-    public function __construct($folder, $account, $storage = null, $account_storage_folder = null, $update_folder_cache = null, $messages_cache_limit = null)             
+    public function __construct($folder = null, $account = null, $storage = null, $account_storage_folder = null, $update_folder_cache = null, $messages_cache_limit = null)             
     {
-        $this->folder = $folder;
-        $this->account = $account;
-        $this->storage = $storage;
-        $this->account_storage_folder = $account_storage_folder;
-        $this->update_folder_cache = $update_folder_cache;
-        $this->messages_cache_limit = $messages_cache_limit;
+        if ($folder != null) {
+            $this->folder = $folder;
+        }
+        if ($account != null) {
+            $this->account = $account;
+        }
+        if ($storage != null) {
+            $this->storage = $storage;
+        }
+        if ($account_storage_folder != null) {
+            $this->account_storage_folder = $account_storage_folder;
+        }
+        if ($update_folder_cache != null) {
+            $this->update_folder_cache = $update_folder_cache;
+        }
+        if ($messages_cache_limit != null) {
+            $this->messages_cache_limit = $messages_cache_limit;
+        }
     }
 
     /**

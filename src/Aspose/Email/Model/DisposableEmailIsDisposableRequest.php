@@ -38,9 +38,11 @@ class DisposableEmailIsDisposableRequest
      *  
      * @param string $address An email address to check
      */
-    public function __construct($address)             
+    public function __construct($address = null)             
     {
-        $this->address = $address;
+        if ($address != null) {
+            $this->address = $address;
+        }
     }
 
     /**

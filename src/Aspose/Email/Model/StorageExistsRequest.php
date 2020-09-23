@@ -38,9 +38,11 @@ class StorageExistsRequest
      *  
      * @param string $storage_name Storage name
      */
-    public function __construct($storage_name)             
+    public function __construct($storage_name = null)             
     {
-        $this->storage_name = $storage_name;
+        if ($storage_name != null) {
+            $this->storage_name = $storage_name;
+        }
     }
 
     /**

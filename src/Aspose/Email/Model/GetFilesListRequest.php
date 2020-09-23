@@ -39,10 +39,14 @@ class GetFilesListRequest
      * @param string $path Folder path e.g. '/folder'
      * @param string $storage_name Storage name
      */
-    public function __construct($path, $storage_name = null)             
+    public function __construct($path = null, $storage_name = null)             
     {
-        $this->path = $path;
-        $this->storage_name = $storage_name;
+        if ($path != null) {
+            $this->path = $path;
+        }
+        if ($storage_name != null) {
+            $this->storage_name = $storage_name;
+        }
     }
 
     /**

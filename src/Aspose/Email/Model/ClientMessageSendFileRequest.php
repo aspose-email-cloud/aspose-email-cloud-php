@@ -42,13 +42,23 @@ class ClientMessageSendFileRequest
      * @param string $account_storage_folder Folder in storage where account file located.
      * @param string $format Email file format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
      */
-    public function __construct($account, $file, $storage = null, $account_storage_folder = null, $format = null)             
+    public function __construct($account = null, $file = null, $storage = null, $account_storage_folder = null, $format = null)             
     {
-        $this->account = $account;
-        $this->file = $file;
-        $this->storage = $storage;
-        $this->account_storage_folder = $account_storage_folder;
-        $this->format = $format;
+        if ($account != null) {
+            $this->account = $account;
+        }
+        if ($file != null) {
+            $this->file = $file;
+        }
+        if ($storage != null) {
+            $this->storage = $storage;
+        }
+        if ($account_storage_folder != null) {
+            $this->account_storage_folder = $account_storage_folder;
+        }
+        if ($format != null) {
+            $this->format = $format;
+        }
     }
 
     /**

@@ -41,12 +41,20 @@ class AiBcrParseRequest
      * @param string $languages Comma-separated ISO-639 codes of languages (either 639-1 or 639-3; i.e. \"it\" or \"ita\" for Italian); it's \"\" by default.
      * @param bool $is_single Determines that image contains single VCard or more.
      */
-    public function __construct($file, $countries = null, $languages = null, $is_single = null)             
+    public function __construct($file = null, $countries = null, $languages = null, $is_single = null)             
     {
-        $this->file = $file;
-        $this->countries = $countries;
-        $this->languages = $languages;
-        $this->is_single = $is_single;
+        if ($file != null) {
+            $this->file = $file;
+        }
+        if ($countries != null) {
+            $this->countries = $countries;
+        }
+        if ($languages != null) {
+            $this->languages = $languages;
+        }
+        if ($is_single != null) {
+            $this->is_single = $is_single;
+        }
     }
 
     /**

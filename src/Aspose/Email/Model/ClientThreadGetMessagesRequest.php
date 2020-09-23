@@ -42,13 +42,23 @@ class ClientThreadGetMessagesRequest
      * @param string $storage Storage name where account file located
      * @param string $account_storage_folder Folder in storage where account file located
      */
-    public function __construct($thread_id, $account, $folder = null, $storage = null, $account_storage_folder = null)             
+    public function __construct($thread_id = null, $account = null, $folder = null, $storage = null, $account_storage_folder = null)             
     {
-        $this->thread_id = $thread_id;
-        $this->account = $account;
-        $this->folder = $folder;
-        $this->storage = $storage;
-        $this->account_storage_folder = $account_storage_folder;
+        if ($thread_id != null) {
+            $this->thread_id = $thread_id;
+        }
+        if ($account != null) {
+            $this->account = $account;
+        }
+        if ($folder != null) {
+            $this->folder = $folder;
+        }
+        if ($storage != null) {
+            $this->storage = $storage;
+        }
+        if ($account_storage_folder != null) {
+            $this->account_storage_folder = $account_storage_folder;
+        }
     }
 
     /**

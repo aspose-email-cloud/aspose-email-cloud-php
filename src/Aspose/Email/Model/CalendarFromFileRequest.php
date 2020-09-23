@@ -38,9 +38,11 @@ class CalendarFromFileRequest
      *  
      * @param \SplFileObject $file File to convert
      */
-    public function __construct($file)             
+    public function __construct($file = null)             
     {
-        $this->file = $file;
+        if ($file != null) {
+            $this->file = $file;
+        }
     }
 
     /**

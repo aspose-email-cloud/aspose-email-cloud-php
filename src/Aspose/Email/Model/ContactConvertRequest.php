@@ -40,11 +40,17 @@ class ContactConvertRequest
      * @param string $from_format File format to convert from Enum, available values: VCard, WebDav, Msg
      * @param \SplFileObject $file File to convert
      */
-    public function __construct($to_format, $from_format, $file)             
+    public function __construct($to_format = null, $from_format = null, $file = null)             
     {
-        $this->to_format = $to_format;
-        $this->from_format = $from_format;
-        $this->file = $file;
+        if ($to_format != null) {
+            $this->to_format = $to_format;
+        }
+        if ($from_format != null) {
+            $this->from_format = $from_format;
+        }
+        if ($file != null) {
+            $this->file = $file;
+        }
     }
 
     /**

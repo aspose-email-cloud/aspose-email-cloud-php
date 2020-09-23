@@ -42,13 +42,23 @@ class ContactGetAsFileRequest
      * @param string $storage Storage name
      * @param string $folder Path to folder in storage
      */
-    public function __construct($file_name, $to_format, $from_format, $storage = null, $folder = null)             
+    public function __construct($file_name = null, $to_format = null, $from_format = null, $storage = null, $folder = null)             
     {
-        $this->file_name = $file_name;
-        $this->to_format = $to_format;
-        $this->from_format = $from_format;
-        $this->storage = $storage;
-        $this->folder = $folder;
+        if ($file_name != null) {
+            $this->file_name = $file_name;
+        }
+        if ($to_format != null) {
+            $this->to_format = $to_format;
+        }
+        if ($from_format != null) {
+            $this->from_format = $from_format;
+        }
+        if ($storage != null) {
+            $this->storage = $storage;
+        }
+        if ($folder != null) {
+            $this->folder = $folder;
+        }
     }
 
     /**

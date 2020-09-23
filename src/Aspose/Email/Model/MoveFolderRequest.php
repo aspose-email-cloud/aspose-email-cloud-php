@@ -41,12 +41,20 @@ class MoveFolderRequest
      * @param string $src_storage_name Source storage name
      * @param string $dest_storage_name Destination storage name
      */
-    public function __construct($src_path, $dest_path, $src_storage_name = null, $dest_storage_name = null)             
+    public function __construct($src_path = null, $dest_path = null, $src_storage_name = null, $dest_storage_name = null)             
     {
-        $this->src_path = $src_path;
-        $this->dest_path = $dest_path;
-        $this->src_storage_name = $src_storage_name;
-        $this->dest_storage_name = $dest_storage_name;
+        if ($src_path != null) {
+            $this->src_path = $src_path;
+        }
+        if ($dest_path != null) {
+            $this->dest_path = $dest_path;
+        }
+        if ($src_storage_name != null) {
+            $this->src_storage_name = $src_storage_name;
+        }
+        if ($dest_storage_name != null) {
+            $this->dest_storage_name = $dest_storage_name;
+        }
     }
 
     /**
