@@ -86,7 +86,7 @@ class MapiMessageTest extends TestBase
 
     private static function getMapiMessageDto(): MapiMessageDto
     {
-        return Models::MapiMessageDto()
+        return Models::mapiMessageDto()
             ->messageBody('Some body')
             ->clientSubmitTime(new DateTime())
             ->deliveryTime(new DateTime())
@@ -101,14 +101,14 @@ class MapiMessageTest extends TestBase
             ->senderName('From Address')
             ->senderSmtpAddress('from@aspose.com')
             ->attachments(array(
-                Models::MapiAttachmentDto()
+                Models::mapiAttachmentDto()
                     ->name('some-file.txt')
                     ->dataBase64('U29tZSBmaWxlIHRleHQ=')
                     ->build()))
             ->body('Some body')
             ->messageClass('IPM.Note')
             ->recipients(array(
-                Models::MapiRecipientDto()
+                Models::mapiRecipientDto()
                     ->emailAddress('to@aspose.com')
                     ->addressType('SMTP')
                     ->displayName('To Address')
