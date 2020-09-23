@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for storageExists" operation.
+ * Request model for StorageApi::exists operation.
  */
 class StorageExistsRequest
 {
@@ -48,3 +48,4 @@ class StorageExistsRequest
      */
     public $storage_name;
 }
+

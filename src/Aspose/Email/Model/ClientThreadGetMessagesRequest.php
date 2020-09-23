@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for clientThreadGetMessages" operation.
+ * Request model for ClientThreadApi::getMessages operation.
  */
 class ClientThreadGetMessagesRequest
 {
@@ -76,3 +76,4 @@ class ClientThreadGetMessagesRequest
      */
     public $account_storage_folder;
 }
+

@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for moveFile" operation.
+ * Request model for FileApi::moveFile operation.
  */
 class MoveFileRequest
 {

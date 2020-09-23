@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for emailFromFile" operation.
+ * Request model for EmailApi::fromFile operation.
  */
 class EmailFromFileRequest
 {

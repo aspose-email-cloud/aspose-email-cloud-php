@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for createFolder" operation.
+ * Request model for FolderApi::createFolder operation.
  */
 class CreateFolderRequest
 {

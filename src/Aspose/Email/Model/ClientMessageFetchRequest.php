@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for clientMessageFetch" operation.
+ * Request model for ClientMessageApi::fetch operation.
  */
 class ClientMessageFetchRequest
 {

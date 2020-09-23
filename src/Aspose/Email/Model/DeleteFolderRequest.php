@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for deleteFolder" operation.
+ * Request model for FolderApi::deleteFolder operation.
  */
 class DeleteFolderRequest
 {

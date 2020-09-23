@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for mapiContactFromFile" operation.
+ * Request model for MapiContactApi::fromFile operation.
  */
 class MapiContactFromFileRequest
 {

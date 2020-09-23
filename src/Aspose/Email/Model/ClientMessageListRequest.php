@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for clientMessageList" operation.
+ * Request model for ClientMessageApi::list operation.
  */
 class ClientMessageListRequest
 {

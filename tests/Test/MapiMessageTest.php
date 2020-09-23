@@ -8,10 +8,8 @@ use Aspose\Email\Model\MapiMessageAsFileRequest;
 use Aspose\Email\Model\MapiMessageDto;
 use Aspose\Email\Model\MapiMessageFromFileRequest;
 use Aspose\Email\Model\MapiMessageGetRequest;
-use Aspose\Email\Model\MapiMessageSaveRequest;
 use Aspose\Email\Model\MapiRecipientDto;
 use Aspose\Email\Model\Models;
-use Aspose\Email\Model\StorageFileLocation;
 use DateTime;
 
 class MapiMessageTest extends TestBase

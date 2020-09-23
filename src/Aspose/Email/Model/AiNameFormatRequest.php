@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for aiNameFormat" operation.
+ * Request model for AiNameApi::format operation.
  */
 class AiNameFormatRequest
 {

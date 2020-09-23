@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for moveFolder" operation.
+ * Request model for FolderApi::moveFolder operation.
  */
 class MoveFolderRequest
 {
@@ -69,3 +69,4 @@ class MoveFolderRequest
      */
     public $dest_storage_name;
 }
+

@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for emailConfigDiscover" operation.
+ * Request model for EmailConfigApi::discover operation.
  */
 class EmailConfigDiscoverRequest
 {
@@ -55,3 +55,4 @@ class EmailConfigDiscoverRequest
      */
     public $fast_processing;
 }
+

@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for mapiContactGet" operation.
+ * Request model for MapiContactApi::get operation.
  */
 class MapiContactGetRequest
 {
@@ -69,3 +69,4 @@ class MapiContactGetRequest
      */
     public $storage;
 }
+

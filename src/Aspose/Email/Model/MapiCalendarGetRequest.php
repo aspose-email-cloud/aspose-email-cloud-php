@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for mapiCalendarGet" operation.
+ * Request model for MapiCalendarApi::get operation.
  */
 class MapiCalendarGetRequest
 {
@@ -62,3 +62,4 @@ class MapiCalendarGetRequest
      */
     public $storage;
 }
+

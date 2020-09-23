@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for mapiMessageGet" operation.
+ * Request model for MapiMessageApi::get operation.
  */
 class MapiMessageGetRequest
 {
@@ -69,3 +69,4 @@ class MapiMessageGetRequest
      */
     public $storage;
 }
+

@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for emailGetList" operation.
+ * Request model for EmailApi::getList operation.
  */
 class EmailGetListRequest
 {
@@ -76,3 +76,4 @@ class EmailGetListRequest
      */
     public $page_number;
 }
+

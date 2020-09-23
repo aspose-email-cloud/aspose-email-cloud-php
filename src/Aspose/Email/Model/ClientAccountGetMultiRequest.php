@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for clientAccountGetMulti" operation.
+ * Request model for ClientAccountApi::getMulti operation.
  */
 class ClientAccountGetMultiRequest
 {
@@ -62,3 +62,4 @@ class ClientAccountGetMultiRequest
      */
     public $storage;
 }
+

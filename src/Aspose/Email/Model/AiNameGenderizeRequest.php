@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for aiNameGenderize" operation.
+ * Request model for AiNameApi::genderize operation.
  */
 class AiNameGenderizeRequest
 {

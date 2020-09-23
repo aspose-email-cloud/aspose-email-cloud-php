@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for mapiMessageFromFile" operation.
+ * Request model for MapiMessageApi::fromFile operation.
  */
 class MapiMessageFromFileRequest
 {

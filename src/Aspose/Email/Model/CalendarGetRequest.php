@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for calendarGet" operation.
+ * Request model for CalendarApi::get operation.
  */
 class CalendarGetRequest
 {

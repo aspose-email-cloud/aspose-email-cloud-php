@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for aiBcrParse" operation.
+ * Request model for AiBcrApi::parse operation.
  */
 class AiBcrParseRequest
 {
@@ -69,3 +69,4 @@ class AiBcrParseRequest
      */
     public $is_single;
 }
+

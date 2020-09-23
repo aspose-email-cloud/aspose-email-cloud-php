@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for aiNameComplete" operation.
+ * Request model for AiNameApi::complete operation.
  */
 class AiNameCompleteRequest
 {

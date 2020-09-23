@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for contactConvert" operation.
+ * Request model for ContactApi::convert operation.
  */
 class ContactConvertRequest
 {

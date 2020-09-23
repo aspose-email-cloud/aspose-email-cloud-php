@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for calendarConvert" operation.
+ * Request model for CalendarApi::convert operation.
  */
 class CalendarConvertRequest
 {

@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for clientFolderGetList" operation.
+ * Request model for ClientFolderApi::getList operation.
  */
 class ClientFolderGetListRequest
 {
@@ -69,3 +69,4 @@ class ClientFolderGetListRequest
      */
     public $parent_folder;
 }
+

@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for clientThreadGetList" operation.
+ * Request model for ClientThreadApi::getList operation.
  */
 class ClientThreadGetListRequest
 {

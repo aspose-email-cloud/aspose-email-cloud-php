@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for aiNameMatch" operation.
+ * Request model for AiNameApi::match operation.
  */
 class AiNameMatchRequest
 {

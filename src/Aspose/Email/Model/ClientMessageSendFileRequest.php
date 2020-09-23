@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for clientMessageSendFile" operation.
+ * Request model for ClientMessageApi::sendFile operation.
  */
 class ClientMessageSendFileRequest
 {
@@ -76,3 +76,4 @@ class ClientMessageSendFileRequest
      */
     public $format;
 }
+

@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for emailGet" operation.
+ * Request model for EmailApi::get operation.
  */
 class EmailGetRequest
 {

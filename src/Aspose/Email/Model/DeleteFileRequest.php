@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for deleteFile" operation.
+ * Request model for FileApi::deleteFile operation.
  */
 class DeleteFileRequest
 {

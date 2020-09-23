@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for getDiscUsage" operation.
+ * Request model for StorageApi::getDiscUsage operation.
  */
 class GetDiscUsageRequest
 {

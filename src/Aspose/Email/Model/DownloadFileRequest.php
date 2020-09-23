@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for downloadFile" operation.
+ * Request model for FileApi::downloadFile operation.
  */
 class DownloadFileRequest
 {

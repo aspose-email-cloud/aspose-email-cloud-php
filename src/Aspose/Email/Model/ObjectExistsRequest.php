@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for objectExists" operation.
+ * Request model for StorageApi::objectExists operation.
  */
 class ObjectExistsRequest
 {

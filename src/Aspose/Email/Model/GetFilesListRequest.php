@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for getFilesList" operation.
+ * Request model for FolderApi::getFilesList operation.
  */
 class GetFilesListRequest
 {

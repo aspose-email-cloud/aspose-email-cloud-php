@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for clientMessageAppendFile" operation.
+ * Request model for ClientMessageApi::appendFile operation.
  */
 class ClientMessageAppendFileRequest
 {

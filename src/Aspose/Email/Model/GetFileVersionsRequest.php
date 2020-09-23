@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for getFileVersions" operation.
+ * Request model for StorageApi::getFileVersions operation.
  */
 class GetFileVersionsRequest
 {

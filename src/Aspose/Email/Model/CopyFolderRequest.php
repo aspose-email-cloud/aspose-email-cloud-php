@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for copyFolder" operation.
+ * Request model for FolderApi::copyFolder operation.
  */
 class CopyFolderRequest
 {

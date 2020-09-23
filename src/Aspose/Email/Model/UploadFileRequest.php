@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for uploadFile" operation.
+ * Request model for FileApi::uploadFile operation.
  */
 class UploadFileRequest
 {
@@ -62,3 +62,4 @@ class UploadFileRequest
      */
     public $storage_name;
 }
+
