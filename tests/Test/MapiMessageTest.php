@@ -3,11 +3,9 @@
 
 namespace Test;
 
-use Aspose\Email\Model\MapiAttachmentDto;
 use Aspose\Email\Model\MapiMessageAsFileRequest;
 use Aspose\Email\Model\MapiMessageDto;
 use Aspose\Email\Model\MapiMessageFromFileRequest;
-use Aspose\Email\Model\MapiRecipientDto;
 use Aspose\Email\Model\Models;
 use DateTime;
 
@@ -88,30 +86,36 @@ class MapiMessageTest extends TestBase
 
     private static function getMapiMessageDto(): MapiMessageDto
     {
-        return (new MapiMessageDto())
-            ->setClientSubmitTime(new DateTime())
-            ->setSenderAddressType("SMTP")
-            ->setSenderEmailAddress("from@aspose.com")
-            ->setSenderSmtpAddress("from@aspose.com")
-            ->setMessageFormat("Ascii")
-            ->setSenderName("From Address")
-            ->setMessageBody("Some body")
-            ->setDisplayTo("To Address")
-            ->setDeliveryTime(new DateTime())
-            ->setNormalizedSubject("Some subject")
-            ->setFlags(array("MsgFlagRead", "MsgFlagUnsent", "MsgFlagHasAttach"))
-            ->setRecipients(array((new MapiRecipientDto())
-                ->setAddressType("SMTP")
-                ->setDisplayName("To address")
-                ->setEmailAddress("to@aspose.com")
-                ->setRecipientType("MapiTo")))
-            ->setAttachments(array((new MapiAttachmentDto())
-                ->setDataBase64(base64_encode("Some file text"))
-                ->setName("some-file.txt")))
-            ->setSubjectPrefix("Re: ")
-            ->setMessageClass("IPM.Note")
-            ->setBody("Some body")
-            ->setSubject("Re: Some subject")
-            ->setBodyType("PlainText");
+        return Models::MapiMessageDto()
+            ->messageBody('Some body')
+            ->clientSubmitTime(new DateTime())
+            ->deliveryTime(new DateTime())
+            ->displayTo('To Address')
+            ->flags(array(
+                'MsgFlagRead',
+                'MsgFlagUnsent',
+                'MsgFlagHasAttach'))
+            ->normalizedSubject('Some subject')
+            ->senderAddressType('SMTP')
+            ->senderEmailAddress('from@aspose.com')
+            ->senderName('From Address')
+            ->senderSmtpAddress('from@aspose.com')
+            ->attachments(array(
+                Models::MapiAttachmentDto()
+                    ->name('some-file.txt')
+                    ->dataBase64('U29tZSBmaWxlIHRleHQ=')
+                    ->build()))
+            ->body('Some body')
+            ->messageClass('IPM.Note')
+            ->recipients(array(
+                Models::MapiRecipientDto()
+                    ->emailAddress('to@aspose.com')
+                    ->addressType('SMTP')
+                    ->displayName('To Address')
+                    ->recipientType('MapiTo')
+                    ->build()))
+            ->subject('Re: Some subject')
+            ->subjectPrefix('Re: ')
+            ->build();
     }
 }
