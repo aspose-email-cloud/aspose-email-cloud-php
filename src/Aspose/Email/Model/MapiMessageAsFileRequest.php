@@ -176,7 +176,7 @@ class MapiMessageAsFileRequest implements ArrayAccess
     /**
      * Initializes a new instance of the MapiMessageAsFileRequest class.
      *  
-     * @param string $format Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
+     * @param string $format Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
      * @param \Aspose\Email\Model\MapiMessageDto $value MAPI message model.
      */
     public function __construct(
@@ -240,7 +240,7 @@ class MapiMessageAsFileRequest implements ArrayAccess
     /**
      * Sets format
      *
-     * @param string $format Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
+     * @param string $format Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
      *
      * @return $this
      */

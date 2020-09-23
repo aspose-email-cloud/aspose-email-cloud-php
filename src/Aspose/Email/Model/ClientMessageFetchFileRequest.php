@@ -41,7 +41,7 @@ class ClientMessageFetchFileRequest
      * @param string $folder Account folder to fetch from (should be specified for some protocols such as IMAP)
      * @param string $storage Storage name where account file located.
      * @param string $account_storage_folder Folder in storage where account file located.
-     * @param string $format Fetched message file format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
+     * @param string $format Fetched message file format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
      */
     public function __construct($message_id, $account, $folder = null, $storage = null, $account_storage_folder = null, $format = null)             
     {
@@ -79,7 +79,7 @@ class ClientMessageFetchFileRequest
     public $account_storage_folder;
 
     /**
-     * Fetched message file format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
+     * Fetched message file format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
      */
     public $format;
 }

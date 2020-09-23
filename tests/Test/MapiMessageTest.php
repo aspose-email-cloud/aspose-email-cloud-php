@@ -10,6 +10,7 @@ use Aspose\Email\Model\MapiMessageFromFileRequest;
 use Aspose\Email\Model\MapiMessageGetRequest;
 use Aspose\Email\Model\MapiMessageSaveRequest;
 use Aspose\Email\Model\MapiRecipientDto;
+use Aspose\Email\Model\Models;
 use Aspose\Email\Model\StorageFileLocation;
 use DateTime;
 
@@ -69,11 +70,15 @@ class MapiMessageTest extends TestBase
         $api = self::api();
         $mapiMessage = self::getMapiMessageDto();
         $fileName = uniqid() . ".msg";
-        $api->mapi()->message()->save(new MapiMessageSaveRequest(
-            new StorageFileLocation(self::$storage, self::$folder, $fileName),
-            $mapiMessage,
-            "Msg"
-        ));
+        $api->mapi()->message()->save(Models::mapiMessageSaveRequest()
+            ->storageFile(Models::storageFileLocation()
+                ->storage(self::$storage)
+                ->folderPath(self::$folder)
+                ->fileName($fileName)
+                ->build())
+            ->value($mapiMessage)
+            ->format('Msg')
+            ->build());
         $mapiMessageFromStorage = $api->mapi()->message()->get(new MapiMessageGetRequest(
             "Msg",
             $fileName,

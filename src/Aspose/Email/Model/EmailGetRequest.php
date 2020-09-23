@@ -36,7 +36,7 @@ class EmailGetRequest
     /**
      * Initializes a new instance of the EmailGetRequest class.
      *  
-     * @param string $format Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
+     * @param string $format Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
      * @param string $file_name Email document file name.
      * @param string $folder Path to folder in storage.
      * @param string $storage Storage name.
@@ -50,7 +50,7 @@ class EmailGetRequest
     }
 
     /**
-     * Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
+     * Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
      */
     public $format;
 

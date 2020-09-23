@@ -237,11 +237,9 @@ class ClientFolderDeleteRequest extends ClientAccountBaseRequest
      */
     public function setFolder($folder)
     {
-
         if ((strlen($folder) < 1)) {
             throw new \InvalidArgumentException('invalid length for $folder when calling ClientFolderDeleteRequest., must be bigger than or equal to 1.');
         }
-
         $this->container['folder'] = $folder;
 
         return $this;

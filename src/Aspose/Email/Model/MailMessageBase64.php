@@ -170,7 +170,7 @@ class MailMessageBase64 extends MailMessageBase
      *  
      * @param string $discriminator 
      * @param string $value_base64 Email message file data encoded to Base64 string.
-     * @param string $format Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
+     * @param string $format Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
      */
     public function __construct(
         //,
@@ -252,11 +252,9 @@ class MailMessageBase64 extends MailMessageBase
      */
     public function setValueBase64($value_base64)
     {
-
         if ((strlen($value_base64) < 1)) {
             throw new \InvalidArgumentException('invalid length for $value_base64 when calling MailMessageBase64., must be bigger than or equal to 1.');
         }
-
         $this->container['value_base64'] = $value_base64;
 
         return $this;
@@ -275,7 +273,7 @@ class MailMessageBase64 extends MailMessageBase
     /**
      * Sets format
      *
-     * @param string $format Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
+     * @param string $format Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
      *
      * @return $this
      */

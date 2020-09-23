@@ -40,7 +40,7 @@ class ClientMessageAppendFileRequest
      * @param \SplFileObject $file Message file to append.
      * @param string $storage Storage name where account file located.
      * @param string $account_storage_folder Folder in storage where account file located.
-     * @param string $format Email file format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
+     * @param string $format Email file format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
      * @param string $folder Path to folder on email server to append message to.
      * @param bool $mark_as_sent Determines that appended message should be market as sent or not.
      */
@@ -76,7 +76,7 @@ class ClientMessageAppendFileRequest
     public $account_storage_folder;
 
     /**
-     * Email file format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef
+     * Email file format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
      */
     public $format;
 
