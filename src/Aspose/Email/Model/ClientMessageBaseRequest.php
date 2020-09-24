@@ -237,9 +237,11 @@ class ClientMessageBaseRequest extends ClientAccountBaseRequest
      */
     public function setMessageId($message_id)
     {
+
         if ((strlen($message_id) < 1)) {
             throw new \InvalidArgumentException('invalid length for $message_id when calling ClientMessageBaseRequest., must be bigger than or equal to 1.');
         }
+
         $this->container['message_id'] = $message_id;
 
         return $this;

@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for FolderApi::deleteFolder operation.
+ * Request model for deleteFolder" operation.
  */
 class DeleteFolderRequest
 {
@@ -40,17 +40,11 @@ class DeleteFolderRequest
      * @param string $storage_name Storage name
      * @param bool $recursive Enable to delete folders, subfolders and files
      */
-    public function __construct($path = null, $storage_name = null, $recursive = null)             
+    public function __construct($path, $storage_name = null, $recursive = null)             
     {
-        if ($path != null) {
-            $this->path = $path;
-        }
-        if ($storage_name != null) {
-            $this->storage_name = $storage_name;
-        }
-        if ($recursive != null) {
-            $this->recursive = $recursive;
-        }
+        $this->path = $path;
+        $this->storage_name = $storage_name;
+        $this->recursive = $recursive;
     }
 
     /**

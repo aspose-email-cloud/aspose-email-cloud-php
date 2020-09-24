@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for CalendarApi::fromFile operation.
+ * Request model for calendarFromFile" operation.
  */
 class CalendarFromFileRequest
 {
@@ -38,11 +38,9 @@ class CalendarFromFileRequest
      *  
      * @param \SplFileObject $file File to convert
      */
-    public function __construct($file = null)             
+    public function __construct($file)             
     {
-        if ($file != null) {
-            $this->file = $file;
-        }
+        $this->file = $file;
     }
 
     /**

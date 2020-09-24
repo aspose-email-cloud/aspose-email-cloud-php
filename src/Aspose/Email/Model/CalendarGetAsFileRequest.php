@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for CalendarApi::getAsFile operation.
+ * Request model for calendarGetAsFile" operation.
  */
 class CalendarGetAsFileRequest
 {
@@ -41,20 +41,12 @@ class CalendarGetAsFileRequest
      * @param string $storage Storage name.
      * @param string $folder Path to folder in storage.
      */
-    public function __construct($file_name = null, $format = null, $storage = null, $folder = null)             
+    public function __construct($file_name, $format, $storage = null, $folder = null)             
     {
-        if ($file_name != null) {
-            $this->file_name = $file_name;
-        }
-        if ($format != null) {
-            $this->format = $format;
-        }
-        if ($storage != null) {
-            $this->storage = $storage;
-        }
-        if ($folder != null) {
-            $this->folder = $folder;
-        }
+        $this->file_name = $file_name;
+        $this->format = $format;
+        $this->storage = $storage;
+        $this->folder = $folder;
     }
 
     /**

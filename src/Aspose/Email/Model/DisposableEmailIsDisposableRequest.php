@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for DisposableEmailApi::isDisposable operation.
+ * Request model for disposableEmailIsDisposable" operation.
  */
 class DisposableEmailIsDisposableRequest
 {
@@ -38,11 +38,9 @@ class DisposableEmailIsDisposableRequest
      *  
      * @param string $address An email address to check
      */
-    public function __construct($address = null)             
+    public function __construct($address)             
     {
-        if ($address != null) {
-            $this->address = $address;
-        }
+        $this->address = $address;
     }
 
     /**
@@ -50,4 +48,3 @@ class DisposableEmailIsDisposableRequest
      */
     public $address;
 }
-

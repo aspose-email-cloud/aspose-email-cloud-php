@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for ClientAccountApi::getMulti operation.
+ * Request model for clientAccountGetMulti" operation.
  */
 class ClientAccountGetMultiRequest
 {
@@ -40,17 +40,11 @@ class ClientAccountGetMultiRequest
      * @param string $folder Folder on storage
      * @param string $storage Storage name
      */
-    public function __construct($file_name = null, $folder = null, $storage = null)             
+    public function __construct($file_name, $folder = null, $storage = null)             
     {
-        if ($file_name != null) {
-            $this->file_name = $file_name;
-        }
-        if ($folder != null) {
-            $this->folder = $folder;
-        }
-        if ($storage != null) {
-            $this->storage = $storage;
-        }
+        $this->file_name = $file_name;
+        $this->folder = $folder;
+        $this->storage = $storage;
     }
 
     /**
@@ -68,4 +62,3 @@ class ClientAccountGetMultiRequest
      */
     public $storage;
 }
-

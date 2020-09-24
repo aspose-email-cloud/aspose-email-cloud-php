@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for CalendarApi::convert operation.
+ * Request model for calendarConvert" operation.
  */
 class CalendarConvertRequest
 {
@@ -39,14 +39,10 @@ class CalendarConvertRequest
      * @param string $format File format. Enum, available values: Ics, Msg
      * @param \SplFileObject $file File to convert
      */
-    public function __construct($format = null, $file = null)             
+    public function __construct($format, $file)             
     {
-        if ($format != null) {
-            $this->format = $format;
-        }
-        if ($file != null) {
-            $this->file = $file;
-        }
+        $this->format = $format;
+        $this->file = $file;
     }
 
     /**

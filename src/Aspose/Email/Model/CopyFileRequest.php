@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for FileApi::copyFile operation.
+ * Request model for copyFile" operation.
  */
 class CopyFileRequest
 {
@@ -42,23 +42,13 @@ class CopyFileRequest
      * @param string $dest_storage_name Destination storage name
      * @param string $version_id File version ID to copy
      */
-    public function __construct($src_path = null, $dest_path = null, $src_storage_name = null, $dest_storage_name = null, $version_id = null)             
+    public function __construct($src_path, $dest_path, $src_storage_name = null, $dest_storage_name = null, $version_id = null)             
     {
-        if ($src_path != null) {
-            $this->src_path = $src_path;
-        }
-        if ($dest_path != null) {
-            $this->dest_path = $dest_path;
-        }
-        if ($src_storage_name != null) {
-            $this->src_storage_name = $src_storage_name;
-        }
-        if ($dest_storage_name != null) {
-            $this->dest_storage_name = $dest_storage_name;
-        }
-        if ($version_id != null) {
-            $this->version_id = $version_id;
-        }
+        $this->src_path = $src_path;
+        $this->dest_path = $dest_path;
+        $this->src_storage_name = $src_storage_name;
+        $this->dest_storage_name = $dest_storage_name;
+        $this->version_id = $version_id;
     }
 
     /**
