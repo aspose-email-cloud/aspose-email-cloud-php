@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for clientMessageFetch" operation.
+ * Request model for ClientMessageApi::fetch operation.
  */
 class ClientMessageFetchRequest
 {
@@ -44,15 +44,29 @@ class ClientMessageFetchRequest
      * @param string $type MailMessageBase type. Using this property you can fetch message in different formats (as EmailDto, MapiMessageDto or a file represented as Base64 string).              Enum, available values: Dto, Mapi, Base64
      * @param string $format Base64 data format. Used only if type is set to Base64. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
      */
-    public function __construct($message_id, $account, $folder = null, $storage = null, $account_storage_folder = null, $type = null, $format = null)             
+    public function __construct($message_id = null, $account = null, $folder = null, $storage = null, $account_storage_folder = null, $type = null, $format = null)             
     {
-        $this->message_id = $message_id;
-        $this->account = $account;
-        $this->folder = $folder;
-        $this->storage = $storage;
-        $this->account_storage_folder = $account_storage_folder;
-        $this->type = $type;
-        $this->format = $format;
+        if ($message_id != null) {
+            $this->message_id = $message_id;
+        }
+        if ($account != null) {
+            $this->account = $account;
+        }
+        if ($folder != null) {
+            $this->folder = $folder;
+        }
+        if ($storage != null) {
+            $this->storage = $storage;
+        }
+        if ($account_storage_folder != null) {
+            $this->account_storage_folder = $account_storage_folder;
+        }
+        if ($type != null) {
+            $this->type = $type;
+        }
+        if ($format != null) {
+            $this->format = $format;
+        }
     }
 
     /**

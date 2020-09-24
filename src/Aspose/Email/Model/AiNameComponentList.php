@@ -54,7 +54,6 @@ class AiNameComponentList extends ListResponseOfAiNameComponent
      * @var string[]
      */
     protected static $swaggerTypes = [
-        
     ];
 
     /**
@@ -63,7 +62,6 @@ class AiNameComponentList extends ListResponseOfAiNameComponent
      * @var string[]
      */
     protected static $swaggerFormats = [
-        
     ];
 
     /**
@@ -93,7 +91,6 @@ class AiNameComponentList extends ListResponseOfAiNameComponent
      * @var string[]
      */
     protected static $attributeMap = [
-        
     ];
 
     /**
@@ -102,7 +99,6 @@ class AiNameComponentList extends ListResponseOfAiNameComponent
      * @var string[]
      */
     protected static $setters = [
-        
     ];
 
     /**
@@ -111,7 +107,6 @@ class AiNameComponentList extends ListResponseOfAiNameComponent
      * @var string[]
      */
     protected static $getters = [
-        
     ];
 
     /**

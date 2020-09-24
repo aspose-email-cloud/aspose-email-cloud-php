@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for mapiCalendarFromFile" operation.
+ * Request model for MapiCalendarApi::fromFile operation.
  */
 class MapiCalendarFromFileRequest
 {
@@ -38,9 +38,11 @@ class MapiCalendarFromFileRequest
      *  
      * @param \SplFileObject $file File to convert
      */
-    public function __construct($file)             
+    public function __construct($file = null)             
     {
-        $this->file = $file;
+        if ($file != null) {
+            $this->file = $file;
+        }
     }
 
     /**

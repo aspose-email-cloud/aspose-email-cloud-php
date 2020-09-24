@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for clientMessageFetchFile" operation.
+ * Request model for ClientMessageApi::fetchFile operation.
  */
 class ClientMessageFetchFileRequest
 {
@@ -43,14 +43,26 @@ class ClientMessageFetchFileRequest
      * @param string $account_storage_folder Folder in storage where account file located.
      * @param string $format Fetched message file format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
      */
-    public function __construct($message_id, $account, $folder = null, $storage = null, $account_storage_folder = null, $format = null)             
+    public function __construct($message_id = null, $account = null, $folder = null, $storage = null, $account_storage_folder = null, $format = null)             
     {
-        $this->message_id = $message_id;
-        $this->account = $account;
-        $this->folder = $folder;
-        $this->storage = $storage;
-        $this->account_storage_folder = $account_storage_folder;
-        $this->format = $format;
+        if ($message_id != null) {
+            $this->message_id = $message_id;
+        }
+        if ($account != null) {
+            $this->account = $account;
+        }
+        if ($folder != null) {
+            $this->folder = $folder;
+        }
+        if ($storage != null) {
+            $this->storage = $storage;
+        }
+        if ($account_storage_folder != null) {
+            $this->account_storage_folder = $account_storage_folder;
+        }
+        if ($format != null) {
+            $this->format = $format;
+        }
     }
 
     /**

@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for getFileVersions" operation.
+ * Request model for StorageApi::getFileVersions operation.
  */
 class GetFileVersionsRequest
 {
@@ -39,10 +39,14 @@ class GetFileVersionsRequest
      * @param string $path File path e.g. '/file.ext'
      * @param string $storage_name Storage name
      */
-    public function __construct($path, $storage_name = null)             
+    public function __construct($path = null, $storage_name = null)             
     {
-        $this->path = $path;
-        $this->storage_name = $storage_name;
+        if ($path != null) {
+            $this->path = $path;
+        }
+        if ($storage_name != null) {
+            $this->storage_name = $storage_name;
+        }
     }
 
     /**

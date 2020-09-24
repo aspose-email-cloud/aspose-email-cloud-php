@@ -240,11 +240,9 @@ class StorageFileLocation extends StorageFolderLocation
      */
     public function setFileName($file_name)
     {
-
         if ((strlen($file_name) < 1)) {
             throw new \InvalidArgumentException('invalid length for $file_name when calling StorageFileLocation., must be bigger than or equal to 1.');
         }
-
         $this->container['file_name'] = $file_name;
 
         return $this;

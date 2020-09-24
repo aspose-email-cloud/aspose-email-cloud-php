@@ -293,11 +293,9 @@ class EmailClientAccountOauthCredentials extends EmailClientAccountCredentials
      */
     public function setClientId($client_id)
     {
-
         if ((strlen($client_id) < 1)) {
             throw new \InvalidArgumentException('invalid length for $client_id when calling EmailClientAccountOauthCredentials., must be bigger than or equal to 1.');
         }
-
         $this->container['client_id'] = $client_id;
 
         return $this;
@@ -322,11 +320,9 @@ class EmailClientAccountOauthCredentials extends EmailClientAccountCredentials
      */
     public function setClientSecret($client_secret)
     {
-
         if ((strlen($client_secret) < 1)) {
             throw new \InvalidArgumentException('invalid length for $client_secret when calling EmailClientAccountOauthCredentials., must be bigger than or equal to 1.');
         }
-
         $this->container['client_secret'] = $client_secret;
 
         return $this;
@@ -351,11 +347,9 @@ class EmailClientAccountOauthCredentials extends EmailClientAccountCredentials
      */
     public function setRefreshToken($refresh_token)
     {
-
         if ((strlen($refresh_token) < 1)) {
             throw new \InvalidArgumentException('invalid length for $refresh_token when calling EmailClientAccountOauthCredentials., must be bigger than or equal to 1.');
         }
-
         $this->container['refresh_token'] = $refresh_token;
 
         return $this;

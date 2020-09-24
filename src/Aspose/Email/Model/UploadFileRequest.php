@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for uploadFile" operation.
+ * Request model for FileApi::uploadFile operation.
  */
 class UploadFileRequest
 {
@@ -40,11 +40,17 @@ class UploadFileRequest
      * @param \SplFileObject $file File to upload
      * @param string $storage_name Storage name
      */
-    public function __construct($path, $file, $storage_name = null)             
+    public function __construct($path = null, $file = null, $storage_name = null)             
     {
-        $this->path = $path;
-        $this->file = $file;
-        $this->storage_name = $storage_name;
+        if ($path != null) {
+            $this->path = $path;
+        }
+        if ($file != null) {
+            $this->file = $file;
+        }
+        if ($storage_name != null) {
+            $this->storage_name = $storage_name;
+        }
     }
 
     /**
@@ -62,3 +68,4 @@ class UploadFileRequest
      */
     public $storage_name;
 }
+
