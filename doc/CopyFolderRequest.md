@@ -6,8 +6,8 @@ Request model for FolderApi::copyFolder
 
 Name | Type | Description | Notes
 ---- | ---- | ----------- | -----
-**src_path** | **string**| Source folder path e.g. &#39;/src&#39; |
-**dest_path** | **string**| Destination folder path e.g. &#39;/dst&#39; |
+**src_path** | **string**| Source folder path e.g. '/src' |
+**dest_path** | **string**| Destination folder path e.g. '/dst' |
 **src_storage_name** | **string**| Source storage name | [optional]
 **dest_storage_name** | **string**| Destination storage name | [optional]
 

@@ -6,7 +6,7 @@ Request model for FolderApi::getFilesList
 
 Name | Type | Description | Notes
 ---- | ---- | ----------- | -----
-**path** | **string**| Folder path e.g. &#39;/folder&#39; |
+**path** | **string**| Folder path e.g. '/folder' |
 **storage_name** | **string**| Storage name | [optional]
 
 ## Example

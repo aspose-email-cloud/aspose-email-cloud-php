@@ -6,7 +6,7 @@ Request model for StorageApi::objectExists
 
 Name | Type | Description | Notes
 ---- | ---- | ----------- | -----
-**path** | **string**| File or folder path e.g. &#39;/file.ext&#39; or &#39;/folder&#39; |
+**path** | **string**| File or folder path e.g. '/file.ext' or '/folder' |
 **storage_name** | **string**| Storage name | [optional]
 **version_id** | **string**| File version ID | [optional]
 

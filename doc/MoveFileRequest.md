@@ -6,8 +6,8 @@ Request model for FileApi::moveFile
 
 Name | Type | Description | Notes
 ---- | ---- | ----------- | -----
-**src_path** | **string**| Source file path e.g. &#39;/src.ext&#39; |
-**dest_path** | **string**| Destination file path e.g. &#39;/dest.ext&#39; |
+**src_path** | **string**| Source file path e.g. '/src.ext' |
+**dest_path** | **string**| Destination file path e.g. '/dest.ext' |
 **src_storage_name** | **string**| Source storage name | [optional]
 **dest_storage_name** | **string**| Destination storage name | [optional]
 **version_id** | **string**| File version ID to move | [optional]

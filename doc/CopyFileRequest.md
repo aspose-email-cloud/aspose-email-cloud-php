@@ -6,7 +6,7 @@ Request model for FileApi::copyFile
 
 Name | Type | Description | Notes
 ---- | ---- | ----------- | -----
-**src_path** | **string**| Source file path e.g. &#39;/folder/file.ext&#39; |
+**src_path** | **string**| Source file path e.g. '/folder/file.ext' |
 **dest_path** | **string**| Destination file path |
 **src_storage_name** | **string**| Source storage name | [optional]
 **dest_storage_name** | **string**| Destination storage name | [optional]

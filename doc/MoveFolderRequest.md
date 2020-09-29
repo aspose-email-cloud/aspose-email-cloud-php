@@ -6,8 +6,8 @@ Request model for FolderApi::moveFolder
 
 Name | Type | Description | Notes
 ---- | ---- | ----------- | -----
-**src_path** | **string**| Folder path to move e.g. &#39;/folder&#39; |
-**dest_path** | **string**| Destination folder path to move to e.g &#39;/dst&#39; |
+**src_path** | **string**| Folder path to move e.g. '/folder' |
+**dest_path** | **string**| Destination folder path to move to e.g '/dst' |
 **src_storage_name** | **string**| Source storage name | [optional]
 **dest_storage_name** | **string**| Destination storage name | [optional]
 

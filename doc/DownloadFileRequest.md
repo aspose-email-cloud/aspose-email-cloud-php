@@ -6,7 +6,7 @@ Request model for FileApi::downloadFile
 
 Name | Type | Description | Notes
 ---- | ---- | ----------- | -----
-**path** | **string**| File path e.g. &#39;/folder/file.ext&#39; |
+**path** | **string**| File path e.g. '/folder/file.ext' |
 **storage_name** | **string**| Storage name | [optional]
 **version_id** | **string**| File version ID to download | [optional]
 

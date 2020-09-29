@@ -6,7 +6,7 @@ Request model for StorageApi::getFileVersions
 
 Name | Type | Description | Notes
 ---- | ---- | ----------- | -----
-**path** | **string**| File path e.g. &#39;/file.ext&#39; |
+**path** | **string**| File path e.g. '/file.ext' |
 **storage_name** | **string**| Storage name | [optional]
 
 ## Example

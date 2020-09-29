@@ -6,7 +6,7 @@ Request model for FolderApi::createFolder
 
 Name | Type | Description | Notes
 ---- | ---- | ----------- | -----
-**path** | **string**| Folder path to create e.g. &#39;folder_1/folder_2/&#39; |
+**path** | **string**| Folder path to create e.g. 'folder_1/folder_2/' |
 **storage_name** | **string**| Storage name | [optional]
 
 ## Example
