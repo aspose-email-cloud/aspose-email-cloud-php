@@ -1,4 +1,4 @@
-# AiBcrApi (EmailCloud.ai()->bcr())
+# AiBcrApi ($emailCloud->ai()->bcr())
 
 AI Business card recognition operations.
 

@@ -1,4 +1,4 @@
-# ClientFolderApi (EmailCloud.client()->folder())
+# ClientFolderApi ($emailCloud->client()->folder())
 
 Email client folder operations.
 

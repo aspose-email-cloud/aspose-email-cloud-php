@@ -1,4 +1,4 @@
-# CalendarApi (EmailCloud.calendar())
+# CalendarApi ($emailCloud->calendar())
 
 iCalendar document operations.
 

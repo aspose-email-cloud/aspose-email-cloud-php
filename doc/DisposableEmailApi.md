@@ -1,4 +1,4 @@
-# DisposableEmailApi (EmailCloud.disposableEmail())
+# DisposableEmailApi ($emailCloud->disposableEmail())
 
 Check email address is disposable operations
 

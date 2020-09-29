@@ -1,4 +1,4 @@
-# StorageApi (EmailCloud.cloudStorage()->storage())
+# StorageApi ($emailCloud->cloudStorage()->storage())
 
 Storage operations controller
 

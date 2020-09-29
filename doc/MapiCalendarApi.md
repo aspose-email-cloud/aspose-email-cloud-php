@@ -1,4 +1,4 @@
-# MapiCalendarApi (EmailCloud.mapi()->calendar())
+# MapiCalendarApi ($emailCloud->mapi()->calendar())
 
 MAPI calendar operations.
 

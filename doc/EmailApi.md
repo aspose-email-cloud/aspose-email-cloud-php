@@ -1,4 +1,4 @@
-# EmailApi (EmailCloud.email())
+# EmailApi ($emailCloud->email())
 
 Email document (*.eml) operations.
 

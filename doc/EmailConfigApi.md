@@ -1,4 +1,4 @@
-# EmailConfigApi (EmailCloud.emailConfig())
+# EmailConfigApi ($emailCloud->emailConfig())
 
 Email server configuration discovery.
 

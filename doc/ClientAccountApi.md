@@ -1,4 +1,4 @@
-# ClientAccountApi (EmailCloud.client()->account())
+# ClientAccountApi ($emailCloud->client()->account())
 
 Email server account for built-in client operations.
 

@@ -1,4 +1,4 @@
-# MapiMessageApi (EmailCloud.mapi()->message())
+# MapiMessageApi ($emailCloud->mapi()->message())
 
 MAPI message operations
 

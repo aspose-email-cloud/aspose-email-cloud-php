@@ -1,4 +1,4 @@
-# MapiContactApi (EmailCloud.mapi()->contact())
+# MapiContactApi ($emailCloud->mapi()->contact())
 
 MAPI contact operations
 

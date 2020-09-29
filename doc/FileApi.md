@@ -1,4 +1,4 @@
-# FileApi (EmailCloud.cloudStorage()->file())
+# FileApi ($emailCloud->cloudStorage()->file())
 
 File operations controller
 

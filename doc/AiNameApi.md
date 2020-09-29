@@ -1,4 +1,4 @@
-# AiNameApi (EmailCloud.ai()->name())
+# AiNameApi ($emailCloud->ai()->name())
 
 AI Name operations.
 

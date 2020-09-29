@@ -1,4 +1,4 @@
-# FolderApi (EmailCloud.cloudStorage()->folder())
+# FolderApi ($emailCloud->cloudStorage()->folder())
 
 Folder operations controller
 

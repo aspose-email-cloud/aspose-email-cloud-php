@@ -1,4 +1,4 @@
-# ClientThreadApi (EmailCloud.client()->thread())
+# ClientThreadApi ($emailCloud->client()->thread())
 
 Email client thread operations.
 

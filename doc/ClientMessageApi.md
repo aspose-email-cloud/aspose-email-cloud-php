@@ -1,4 +1,4 @@
-# ClientMessageApi (EmailCloud.client()->message())
+# ClientMessageApi ($emailCloud->client()->message())
 
 Email client message operations.
 

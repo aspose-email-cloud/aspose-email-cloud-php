@@ -1,4 +1,4 @@
-# ContactApi (EmailCloud.contact())
+# ContactApi ($emailCloud->contact())
 
 Contact document operations. Supported formats: VCard, MSG, WebDav
 
