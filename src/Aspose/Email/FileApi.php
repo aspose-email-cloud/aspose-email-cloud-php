@@ -53,7 +53,6 @@ class FileApi extends ApiBase
         parent::__construct($client, $config, $selector);
     }
 
-            
     /**
      * Operation copyFile
      *
@@ -211,7 +210,7 @@ class FileApi extends ApiBase
             $headerParams
         );
     }
-            
+
     /**
      * Operation deleteFile
      *
@@ -357,7 +356,7 @@ class FileApi extends ApiBase
             $headerParams
         );
     }
-            
+
     /**
      * Operation downloadFile
      *
@@ -507,7 +506,7 @@ class FileApi extends ApiBase
             $headerParams
         );
     }
-            
+
     /**
      * Operation moveFile
      *
@@ -665,7 +664,7 @@ class FileApi extends ApiBase
             $headerParams
         );
     }
-            
+
     /**
      * Operation uploadFile
      *

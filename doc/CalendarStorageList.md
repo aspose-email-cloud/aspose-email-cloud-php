@@ -1,11 +1,61 @@
 # CalendarStorageList
 
+iCalendar models list with corresponding storage locations.
+
 ## Properties
 Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+---- | ---- | ----------- | -----
 
  Parent class: [ListResponseOfStorageModelOfCalendarDto](ListResponseOfStorageModelOfCalendarDto.md)
 
-[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
+## Example
+```php
+$calendarStorageList = new CalendarStorageList
+{
+    Value = new List<StorageModel<CalendarDto>>
+    {
+        new StorageModel<CalendarDto>
+        {
+            StorageFile = new StorageFileLocation
+            {
+                FileName = "calendar.ics",
+                Storage = "First Storage",
+                FolderPath = "file/location/folder/on/storage"
+            },
+            Value = new CalendarDto
+            {
+                Attendees = new List<MailAddress>
+                {
+                    new MailAddress
+                    {
+                        DisplayName = "Attendee Name",
+                        Address = "attendee@aspose.com",
+                        ParticipationStatus = "Accepted"
+                    }
+                },
+                Description = "Some description",
+                EndDate = DateTime.Today,
+                Location = "Some location",
+                Organizer = new MailAddress
+                {
+                    DisplayName = "Organizer Name",
+                    Address = "organizer@aspose.com"
+                },
+                Recurrence = new DailyRecurrencePatternDto
+                {
+                    Interval = -1,
+                    Occurs = 10,
+                    WeekStart = "Monday"
+                },
+                StartDate = DateTime.Today,
+                Summary = "Some summary"
+            }
+        }
+    }
+};
+```
+
+
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 

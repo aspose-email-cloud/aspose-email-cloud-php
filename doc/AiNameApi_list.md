@@ -3,7 +3,7 @@
 All URIs are relative to *https://api.aspose.cloud/v4.0*
 
 Method | HTTP request | Description
-------------- | ------------- | -------------
+------ | ------------ | -----------
 [**complete**](AiNameApi.md#complete) | **GET** /email/AiName/complete | The call proposes k most probable names for given starting characters.
 [**expand**](AiNameApi.md#expand) | **GET** /email/AiName/expand | Expands a person&#39;s name into a list of possible alternatives using options for expanding instructions.
 [**expandParsed**](AiNameApi.md#expandParsed) | **PUT** /email/AiName/expand-parsed | Expands a person&#39;s parsed name into a list of possible alternatives using options for expanding instructions.
@@ -16,4 +16,3 @@ Method | HTTP request | Description
 [**parse**](AiNameApi.md#parse) | **GET** /email/AiName/parse | Parse name to components.
 [**parseEmailAddress**](AiNameApi.md#parseEmailAddress) | **GET** /email/AiName/parse-email-address | Parse person&#39;s name out of an email address.
 
-            

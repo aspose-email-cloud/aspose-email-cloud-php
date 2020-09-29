@@ -1,8 +1,10 @@
 # EmailDto
 
+Email message representation.
+
 ## Properties
 Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+---- | ---- | ----------- | -----
 **alternate_views** | [**\Aspose\Email\Model\AlternateView[]**](AlternateView.md) | Collection of alternate views of message. | [optional] 
 **attachments** | [**\Aspose\Email\Model\Attachment[]**](Attachment.md) | Email message attachments. | [optional] 
 **bcc** | [**\Aspose\Email\Model\MailAddress[]**](MailAddress.md) | BCC recipients. | [optional] 
@@ -38,6 +40,45 @@ Name | Type | Description | Notes
 
 
 
-[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
+## Example
+```php
+$emailDto = new EmailDto
+{
+    Attachments = new List<Attachment>
+    {
+        new Attachment
+        {
+            Name = "some-file.txt",
+            Base64Data = "U29tZSBmaWxlIGNvbnRlbnQ="
+        }
+    },
+    Body = "Some body",
+    BodyType = "Html",
+    DeliveryNotificationOptions = new List<EmailDeliveryNotificationOptions>
+    {
+        "OnSuccess",
+        "Delay"
+    },
+    From = new MailAddress
+    {
+        DisplayName = "From Address",
+        Address = "from@aspose.com"
+    },
+    HtmlBody = "<b>Some body</b>",
+    IsBodyHtml = true,
+    IsDraft = true,
+    Subject = "Re: Some subject",
+    To = new List<MailAddress>
+    {
+        new MailAddress
+        {
+            DisplayName = "To Address",
+            Address = "to@aspose.com"
+        }
+    }
+};
+```
 
+
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 

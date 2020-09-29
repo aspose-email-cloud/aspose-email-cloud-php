@@ -1,124 +1,301 @@
-# Aspose\Email\MapiMessageApi
+# MapiMessageApi (EmailCloud.mapi()->message())
 
-            
-# asEmailDto
+MAPI message operations
 
+## asEmailDto
+
+Description: Converts MAPI message model to EmailDto model
+
+Returns: EmailDto model
+
+Method call example:
 ```php
-function asEmailDto(
-    MapiMessageDto $mapi_message
-): EmailDto 
+$result = $api->mapi()->message()->asEmailDto($mapi_message);
 ```
 
-Converts MAPI message model to EmailDto model
+### Parameter: mapi_message
 
-### Return type
-
-[**EmailDto**](EmailDto.md)
-
-### mapi_message Parameter
+Description: MAPI message model to convert
 
 See parameter model documentation at [MapiMessageDto](MapiMessageDto.md)
 
-[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
-            
-# asFile
-
+<details>
+    <summary>Parameter initialization example:</summary>
+    
 ```php
-function asFile(
-    MapiMessageAsFileRequest $request
-): \SplFileObject 
+$mapi_message = ;
 ```
 
-Converts MAPI message model to specified format and returns as file.
+</details>
 
-### Return type
 
-[**\SplFileObject**](\SplFileObject.md)
+### Result
 
-### request Parameter
+Description: EmailDto model
+
+Return type: [**EmailDto**](EmailDto.md)
+
+<details>
+    <summary>Result example</summary>
+
+```php
+$result = ;
+```
+</details>
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```php
+$api = new EmailCloud(appKey, appSid);
+
+// Prepare parameters:
+$mapi_message = ;
+
+// Call method:
+$result = $api->mapi()->message().asEmailDto($mapi_message);
+
+// Result example:
+$result = ;
+```
+
+</details>
+
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+## asFile
+
+Description: Converts MAPI message model to specified format and returns as file.
+
+Returns: File stream in specified format.
+
+Method call example:
+```php
+$result = $api->mapi()->message()->asFile($request);
+```
+
+### Parameter: request
+
+Description: MAPI message model to convert.
 
 See parameter model documentation at [MapiMessageAsFileRequest](MapiMessageAsFileRequest.md)
 
+<details>
+    <summary>Parameter initialization example:</summary>
+    
+```php
+$request = ;
+```
+
+</details>
+
+
+### Result
+
+Description: File stream in specified format.
+
+Return type: [**\SplFileObject**](\SplFileObject.md)
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```php
+$api = new EmailCloud(appKey, appSid);
+
+// Prepare parameters:
+$request = ;
+
+// Call method:
+$result = $api->mapi()->message().asFile($request);
+```
+
+</details>
+
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
-            
-# **fromFile**
+## **fromFile**
+
+Description: Converts email file to a MAPI model representation
+
+Returns: MAPI model
+
+Method call example:
 ```php
-function fromFile(
-    MapiMessageFromFileRequest $request
-): MapiMessageDto 
-```
-Converts email file to a MAPI model representation
-
-### Return type
-
-[**MapiMessageDto**](MapiMessageDto.md)
-
-### Request parameters
-```php
-$request = new MapiMessageFromFileRequest(
-    $format,
-    $file
-);
+$result = $api->mapi()->message()->fromFile($request);
 ```
 
+### Parameter: request
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **format** | **string**| File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft |
- **file** | **\SplFileObject**| File to convert |
+Description: fromFile method request.
+
+See parameter model documentation at [MapiMessageFromFileRequest](MapiMessageFromFileRequest.md)
+
+<details>
+    <summary>Parameter initialization example:</summary>
+
+```php
+$request = Models::MapiMessageFromFileRequest()
+    ->format('Msg')
+    ->file(new SplFileObject('/path/to/message.msg'))
+    .build();
+```
+
+</details>
+
+### Result
+
+Description: MAPI model
+
+Return type: [**MapiMessageDto**](MapiMessageDto.md)
+
+<details>
+    <summary>Result example</summary>
+
+```php
+$result = ;
+```
+</details>
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```php
+$api = new EmailCloud(appKey, appSid);
+
+// Prepare parameters:
+$format = ;
+$file = ;
+
+// Call method:
+$result = $api->mapi()->message().fromFile($request);
+
+// Result example:
+$result = ;
+```
+
+</details>
 
 [[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-            
-# **get**
+## **get**
+
+Description: Get MAPI message document.
+
+Returns: MAPI message document.
+
+Method call example:
 ```php
-function get(
-    MapiMessageGetRequest $request
-): MapiMessageDto 
-```
-Get MAPI message document.
-
-### Return type
-
-[**MapiMessageDto**](MapiMessageDto.md)
-
-### Request parameters
-```php
-$request = new MapiMessageGetRequest(
-    $format,
-    $file_name,
-    $folder,
-    $storage
-);
+$result = $api->mapi()->message()->get($request);
 ```
 
+### Parameter: request
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **format** | **string**| Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft |
- **file_name** | **string**| Email document file name. |
- **folder** | **string**| Path to folder in storage. | [optional]
- **storage** | **string**| Storage name. | [optional]
+Description: get method request.
+
+See parameter model documentation at [MapiMessageGetRequest](MapiMessageGetRequest.md)
+
+<details>
+    <summary>Parameter initialization example:</summary>
+
+```php
+$request = Models::MapiMessageGetRequest()
+    ->format('Eml')
+    ->file_name('email.eml')
+    ->folder('folder/on/storage')
+    ->storage('First Storage')
+    .build();
+```
+
+</details>
+
+### Result
+
+Description: MAPI message document.
+
+Return type: [**MapiMessageDto**](MapiMessageDto.md)
+
+<details>
+    <summary>Result example</summary>
+
+```php
+$result = ;
+```
+</details>
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```php
+$api = new EmailCloud(appKey, appSid);
+
+// Prepare parameters:
+$format = ;
+$file_name = ;
+$folder = ;
+$storage = ;
+
+// Call method:
+$result = $api->mapi()->message().get($request);
+
+// Result example:
+$result = ;
+```
+
+</details>
 
 [[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-            
-# save
+## save
 
+Description: Save MAPI message to storage.
+
+
+Method call example:
 ```php
-function save(
-    MapiMessageSaveRequest $request
-): 
+$api->mapi()->message()->save($request);
 ```
 
-Save MAPI message to storage.
+### Parameter: request
 
-### Return type
-
-void (empty response body)
-
-### request Parameter
+Description: Message create/update request.
 
 See parameter model documentation at [MapiMessageSaveRequest](MapiMessageSaveRequest.md)
+
+<details>
+    <summary>Parameter initialization example:</summary>
+    
+```php
+$request = ;
+```
+
+</details>
+
+
+### Result
+
+Return type: void (empty response body)
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```php
+$api = new EmailCloud(appKey, appSid);
+
+// Prepare parameters:
+$request = ;
+
+// Call method:
+$api->mapi()->message().save($request);
+```
+
+</details>
 
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)

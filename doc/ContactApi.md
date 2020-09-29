@@ -1,225 +1,491 @@
-# Aspose\Email\ContactApi
+# ContactApi (EmailCloud.contact())
 
-            
-# asFile
+Contact document operations. Supported formats: VCard, MSG, WebDav
 
+## asFile
+
+Description: Converts contact model to specified format and returns as file
+
+Returns: File stream in specified format
+
+Method call example:
 ```php
-function asFile(
-    ContactAsFileRequest $request
-): \SplFileObject 
+$result = $api->contact()->asFile($request);
 ```
 
-Converts contact model to specified format and returns as file
+### Parameter: request
 
-### Return type
-
-[**\SplFileObject**](\SplFileObject.md)
-
-### request Parameter
+Description: Contact model and format to convert
 
 See parameter model documentation at [ContactAsFileRequest](ContactAsFileRequest.md)
 
-[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
-            
-# asMapi
-
+<details>
+    <summary>Parameter initialization example:</summary>
+    
 ```php
-function asMapi(
-    ContactDto $contact_dto
-): MapiContactDto 
+$request = ;
 ```
 
-Converts ContactDto to MapiContactDto.
+</details>
 
-### Return type
 
-[**MapiContactDto**](MapiContactDto.md)
+### Result
 
-### contact_dto Parameter
+Description: File stream in specified format
+
+Return type: [**\SplFileObject**](\SplFileObject.md)
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```php
+$api = new EmailCloud(appKey, appSid);
+
+// Prepare parameters:
+$request = ;
+
+// Call method:
+$result = $api->contact().asFile($request);
+```
+
+</details>
+
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+## asMapi
+
+Description: Converts ContactDto to MapiContactDto.
+
+Returns: MAPI model contact representation
+
+Method call example:
+```php
+$result = $api->contact()->asMapi($contact_dto);
+```
+
+### Parameter: contact_dto
+
+Description: Contact model to convert
 
 See parameter model documentation at [ContactDto](ContactDto.md)
 
+<details>
+    <summary>Parameter initialization example:</summary>
+    
+```php
+$contact_dto = ;
+```
+
+</details>
+
+
+### Result
+
+Description: MAPI model contact representation
+
+Return type: [**MapiContactDto**](MapiContactDto.md)
+
+<details>
+    <summary>Result example</summary>
+
+```php
+$result = ;
+```
+</details>
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```php
+$api = new EmailCloud(appKey, appSid);
+
+// Prepare parameters:
+$contact_dto = ;
+
+// Call method:
+$result = $api->contact().asMapi($contact_dto);
+
+// Result example:
+$result = ;
+```
+
+</details>
+
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
-            
-# **convert**
+## **convert**
+
+Description: Converts contact document to specified format and returns as file
+
+Returns: File stream in specified destination format
+
+Method call example:
 ```php
-function convert(
-    ContactConvertRequest $request
-): \SplFileObject 
-```
-Converts contact document to specified format and returns as file
-
-### Return type
-
-[**\SplFileObject**](\SplFileObject.md)
-
-### Request parameters
-```php
-$request = new ContactConvertRequest(
-    $to_format,
-    $from_format,
-    $file
-);
+$result = $api->contact()->convert($request);
 ```
 
+### Parameter: request
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **to_format** | **string**| File format to convert to Enum, available values: VCard, WebDav, Msg |
- **from_format** | **string**| File format to convert from Enum, available values: VCard, WebDav, Msg |
- **file** | **\SplFileObject**| File to convert |
+Description: convert method request.
+
+See parameter model documentation at [ContactConvertRequest](ContactConvertRequest.md)
+
+<details>
+    <summary>Parameter initialization example:</summary>
+
+```php
+$request = Models::ContactConvertRequest()
+    ->to_format('VCard')
+    ->from_format('Msg')
+    ->file(new SplFileObject('/path/to/contact.msg'))
+    .build();
+```
+
+</details>
+
+### Result
+
+Description: File stream in specified destination format
+
+Return type: [**\SplFileObject**](\SplFileObject.md)
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```php
+$api = new EmailCloud(appKey, appSid);
+
+// Prepare parameters:
+$to_format = ;
+$from_format = ;
+$file = ;
+
+// Call method:
+$result = $api->contact().convert($request);
+```
+
+</details>
 
 [[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-            
-# **fromFile**
+## **fromFile**
+
+Description: Converts contact document to a model representation
+
+Returns: Contact model
+
+Method call example:
 ```php
-function fromFile(
-    ContactFromFileRequest $request
-): ContactDto 
-```
-Converts contact document to a model representation
-
-### Return type
-
-[**ContactDto**](ContactDto.md)
-
-### Request parameters
-```php
-$request = new ContactFromFileRequest(
-    $format,
-    $file
-);
+$result = $api->contact()->fromFile($request);
 ```
 
+### Parameter: request
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **format** | **string**| File format Enum, available values: VCard, WebDav, Msg |
- **file** | **\SplFileObject**| File to convert |
+Description: fromFile method request.
+
+See parameter model documentation at [ContactFromFileRequest](ContactFromFileRequest.md)
+
+<details>
+    <summary>Parameter initialization example:</summary>
+
+```php
+$request = Models::ContactFromFileRequest()
+    ->format('Msg')
+    ->file(new SplFileObject('/path/to/contact.msg'))
+    .build();
+```
+
+</details>
+
+### Result
+
+Description: Contact model
+
+Return type: [**ContactDto**](ContactDto.md)
+
+<details>
+    <summary>Result example</summary>
+
+```php
+$result = ;
+```
+</details>
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```php
+$api = new EmailCloud(appKey, appSid);
+
+// Prepare parameters:
+$format = ;
+$file = ;
+
+// Call method:
+$result = $api->contact().fromFile($request);
+
+// Result example:
+$result = ;
+```
+
+</details>
 
 [[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-            
-# **get**
+## **get**
+
+Description: Get contact document from storage.
+
+Returns: Contact document.
+
+Method call example:
 ```php
-function get(
-    ContactGetRequest $request
-): ContactDto 
-```
-Get contact document from storage.
-
-### Return type
-
-[**ContactDto**](ContactDto.md)
-
-### Request parameters
-```php
-$request = new ContactGetRequest(
-    $format,
-    $file_name,
-    $folder,
-    $storage
-);
+$result = $api->contact()->get($request);
 ```
 
+### Parameter: request
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **format** | **string**| Contact document format. Enum, available values: VCard, WebDav, Msg |
- **file_name** | **string**| Contact document file name. |
- **folder** | **string**| Path to folder in storage. | [optional]
- **storage** | **string**| Storage name. | [optional]
+Description: get method request.
+
+See parameter model documentation at [ContactGetRequest](ContactGetRequest.md)
+
+<details>
+    <summary>Parameter initialization example:</summary>
+
+```php
+$request = Models::ContactGetRequest()
+    ->format('VCard')
+    ->file_name('contact.vcf')
+    ->folder('folder/on/storage')
+    ->storage('First Storage')
+    .build();
+```
+
+</details>
+
+### Result
+
+Description: Contact document.
+
+Return type: [**ContactDto**](ContactDto.md)
+
+<details>
+    <summary>Result example</summary>
+
+```php
+$result = ;
+```
+</details>
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```php
+$api = new EmailCloud(appKey, appSid);
+
+// Prepare parameters:
+$format = ;
+$file_name = ;
+$folder = ;
+$storage = ;
+
+// Call method:
+$result = $api->contact().get($request);
+
+// Result example:
+$result = ;
+```
+
+</details>
 
 [[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-            
-# **getAsFile**
+## **getAsFile**
+
+Description: Converts contact document from storage to specified format and returns as file
+
+Returns: File stream in specified format
+
+Method call example:
 ```php
-function getAsFile(
-    ContactGetAsFileRequest $request
-): \SplFileObject 
-```
-Converts contact document from storage to specified format and returns as file
-
-### Return type
-
-[**\SplFileObject**](\SplFileObject.md)
-
-### Request parameters
-```php
-$request = new ContactGetAsFileRequest(
-    $file_name,
-    $to_format,
-    $from_format,
-    $storage,
-    $folder
-);
+$result = $api->contact()->getAsFile($request);
 ```
 
+### Parameter: request
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **file_name** | **string**| Calendar document file name |
- **to_format** | **string**| File format Enum, available values: VCard, WebDav, Msg |
- **from_format** | **string**| File format to convert from Enum, available values: VCard, WebDav, Msg |
- **storage** | **string**| Storage name | [optional]
- **folder** | **string**| Path to folder in storage | [optional]
+Description: getAsFile method request.
+
+See parameter model documentation at [ContactGetAsFileRequest](ContactGetAsFileRequest.md)
+
+<details>
+    <summary>Parameter initialization example:</summary>
+
+```php
+$request = Models::ContactGetAsFileRequest()
+    ->file_name('contact.msg')
+    ->to_format('VCard')
+    ->from_format('Msg')
+    ->storage('First Storage')
+    ->folder('folder/on/storage')
+    .build();
+```
+
+</details>
+
+### Result
+
+Description: File stream in specified format
+
+Return type: [**\SplFileObject**](\SplFileObject.md)
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```php
+$api = new EmailCloud(appKey, appSid);
+
+// Prepare parameters:
+$file_name = ;
+$to_format = ;
+$from_format = ;
+$storage = ;
+$folder = ;
+
+// Call method:
+$result = $api->contact().getAsFile($request);
+```
+
+</details>
 
 [[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-            
-# **getList**
+## **getList**
+
+Description: Get contact list from storage folder.
+
+Returns: Contact list.
+
+Method call example:
 ```php
-function getList(
-    ContactGetListRequest $request
-): ContactStorageList 
-```
-Get contact list from storage folder.
-
-### Return type
-
-[**ContactStorageList**](ContactStorageList.md)
-
-### Request parameters
-```php
-$request = new ContactGetListRequest(
-    $format,
-    $folder,
-    $storage,
-    $items_per_page,
-    $page_number
-);
+$result = $api->contact()->getList($request);
 ```
 
+### Parameter: request
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **format** | **string**| Contact document format. Enum, available values: VCard, WebDav, Msg |
- **folder** | **string**| Path to folder in storage. | [optional]
- **storage** | **string**| Storage name. | [optional]
- **items_per_page** | **int**| Count of items on page. | [optional] [default to 10]
- **page_number** | **int**| Page number. | [optional] [default to 0]
+Description: getList method request.
+
+See parameter model documentation at [ContactGetListRequest](ContactGetListRequest.md)
+
+<details>
+    <summary>Parameter initialization example:</summary>
+
+```php
+$request = Models::ContactGetListRequest()
+    ->format('VCard')
+    ->folder('folder/on/storage')
+    ->storage('First Storage')
+    ->items_per_page(10)
+    ->page_number(0)
+    .build();
+```
+
+</details>
+
+### Result
+
+Description: Contact list.
+
+Return type: [**ContactStorageList**](ContactStorageList.md)
+
+<details>
+    <summary>Result example</summary>
+
+```php
+$result = ;
+```
+</details>
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```php
+$api = new EmailCloud(appKey, appSid);
+
+// Prepare parameters:
+$format = ;
+$folder = ;
+$storage = ;
+$items_per_page = ;
+$page_number = ;
+
+// Call method:
+$result = $api->contact().getList($request);
+
+// Result example:
+$result = ;
+```
+
+</details>
 
 [[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-            
-# save
+## save
 
+Description: Save contact to storage.
+
+
+Method call example:
 ```php
-function save(
-    ContactSaveRequest $request
-): 
+$api->contact()->save($request);
 ```
 
-Save contact to storage.
+### Parameter: request
 
-### Return type
-
-void (empty response body)
-
-### request Parameter
+Description: Create/Update contact request.
 
 See parameter model documentation at [ContactSaveRequest](ContactSaveRequest.md)
+
+<details>
+    <summary>Parameter initialization example:</summary>
+    
+```php
+$request = ;
+```
+
+</details>
+
+
+### Result
+
+Return type: void (empty response body)
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```php
+$api = new EmailCloud(appKey, appSid);
+
+// Prepare parameters:
+$request = ;
+
+// Call method:
+$api->contact().save($request);
+```
+
+</details>
 
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)

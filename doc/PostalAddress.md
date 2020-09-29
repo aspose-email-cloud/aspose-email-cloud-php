@@ -1,8 +1,10 @@
 # PostalAddress
 
+A postal address
+
 ## Properties
 Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+---- | ---- | ----------- | -----
 **address** | **string** | Address. | [optional] 
 **category** | [**\Aspose\Email\Model\EnumWithCustomOfPostalAddressCategory**](EnumWithCustomOfPostalAddressCategory.md) | Address category. | [optional] 
 **city** | **string** | Address's city. | [optional] 
@@ -17,6 +19,24 @@ Name | Type | Description | Notes
 
 
 
-[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
+## Example
+```php
+$postalAddress = new PostalAddress
+{
+    Address = "221b",
+    Category = new EnumWithCustom<PostalAddressCategory>
+    {
+        
+    },
+    City = "London",
+    Country = "United Kingdom",
+    IsMailingAddress = true,
+    PostalCode = "NW1 6XE",
+    Preferred = true,
+    Street = "Baker St"
+};
+```
 
+
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 

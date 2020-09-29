@@ -53,7 +53,6 @@ class AiBcrApi extends ApiBase
         parent::__construct($client, $config, $selector);
     }
 
-            
     /**
      * Operation parse
      *
@@ -212,7 +211,7 @@ class AiBcrApi extends ApiBase
             $headerParams
         );
     }
-            
+
     /**
      * Operation parseStorage
      *

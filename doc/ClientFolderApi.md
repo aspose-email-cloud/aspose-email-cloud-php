@@ -1,75 +1,170 @@
-# Aspose\Email\ClientFolderApi
+# ClientFolderApi (EmailCloud.client()->folder())
 
-            
-# create
+Email client folder operations.
 
+## create
+
+Description: Create new folder in email account
+
+
+Method call example:
 ```php
-function create(
-    ClientFolderCreateRequest $request
-): 
+$api->client()->folder()->create($request);
 ```
 
-Create new folder in email account
+### Parameter: request
 
-### Return type
-
-void (empty response body)
-
-### request Parameter
+Description: Create folder request
 
 See parameter model documentation at [ClientFolderCreateRequest](ClientFolderCreateRequest.md)
 
-[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
-            
-# delete
-
+<details>
+    <summary>Parameter initialization example:</summary>
+    
 ```php
-function delete(
-    ClientFolderDeleteRequest $request
-): 
+$request = ;
 ```
 
-Delete a folder in email account
+</details>
 
-### Return type
 
-void (empty response body)
+### Result
 
-### request Parameter
+Return type: void (empty response body)
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```php
+$api = new EmailCloud(appKey, appSid);
+
+// Prepare parameters:
+$request = ;
+
+// Call method:
+$api->client()->folder().create($request);
+```
+
+</details>
+
+[[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
+## delete
+
+Description: Delete a folder in email account
+
+
+Method call example:
+```php
+$api->client()->folder()->delete($request);
+```
+
+### Parameter: request
+
+Description: Delete folder request
 
 See parameter model documentation at [ClientFolderDeleteRequest](ClientFolderDeleteRequest.md)
 
+<details>
+    <summary>Parameter initialization example:</summary>
+    
+```php
+$request = ;
+```
+
+</details>
+
+
+### Result
+
+Return type: void (empty response body)
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```php
+$api = new EmailCloud(appKey, appSid);
+
+// Prepare parameters:
+$request = ;
+
+// Call method:
+$api->client()->folder().delete($request);
+```
+
+</details>
+
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
-            
-# **getList**
+## **getList**
+
+Description: Get folders list in email account
+
+Returns: Folders list
+
+Method call example:
 ```php
-function getList(
-    ClientFolderGetListRequest $request
-): MailServerFolderList 
-```
-Get folders list in email account
-
-### Return type
-
-[**MailServerFolderList**](MailServerFolderList.md)
-
-### Request parameters
-```php
-$request = new ClientFolderGetListRequest(
-    $account,
-    $storage,
-    $account_storage_folder,
-    $parent_folder
-);
+$result = $api->client()->folder()->getList($request);
 ```
 
+### Parameter: request
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **account** | **string**| Email account |
- **storage** | **string**| Storage name where account file located | [optional]
- **account_storage_folder** | **string**| Folder in storage where account file located | [optional]
- **parent_folder** | **string**| Folder in which subfolders should be listed | [optional]
+Description: getList method request.
+
+See parameter model documentation at [ClientFolderGetListRequest](ClientFolderGetListRequest.md)
+
+<details>
+    <summary>Parameter initialization example:</summary>
+
+```php
+$request = Models::ClientFolderGetListRequest()
+    ->account('email.multi.account')
+    ->storage('First Storage')
+    ->account_storage_folder('email/account/location/on/storage')
+    ->parent_folder('INBOX')
+    .build();
+```
+
+</details>
+
+### Result
+
+Description: Folders list
+
+Return type: [**MailServerFolderList**](MailServerFolderList.md)
+
+<details>
+    <summary>Result example</summary>
+
+```php
+$result = ;
+```
+</details>
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```php
+$api = new EmailCloud(appKey, appSid);
+
+// Prepare parameters:
+$account = ;
+$storage = ;
+$account_storage_folder = ;
+$parent_folder = ;
+
+// Call method:
+$result = $api->client()->folder().getList($request);
+
+// Result example:
+$result = ;
+```
+
+</details>
 
 [[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 

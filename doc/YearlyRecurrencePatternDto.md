@@ -1,8 +1,10 @@
 # YearlyRecurrencePatternDto
 
+Yearly recurrence pattern.
+
 ## Properties
 Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+---- | ---- | ----------- | -----
 **start_day** | **string** | Represents the day of the week. Enum, available values: None, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, Day, WeekDay, WeekendDay | 
 **start_month** | **string** | Represents a calendar month. Enum, available values: None, January, February, March, April, May, June, July, August, September, October, November, December | 
 **start_offset** | **int** | Start offset. | 
@@ -10,6 +12,18 @@ Name | Type | Description | Notes
 
  Parent class: [RecurrencePatternDto](RecurrencePatternDto.md)
 
-[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
+## Example
+```php
+$yearlyRecurrencePatternDto = new YearlyRecurrencePatternDto
+{
+    StartMonth = "January",
+    StartOffset = 30,
+    Interval = -1,
+    WeekStart = "Monday"
+};
+```
+
+
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 

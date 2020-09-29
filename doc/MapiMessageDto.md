@@ -1,8 +1,10 @@
 # MapiMessageDto
 
+Represents an Outlook Message format document.
+
 ## Properties
 Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+---- | ---- | ----------- | -----
 **message_body** | **string** | Message text | [optional] 
 **client_submit_time** | [**\DateTime**](\DateTime.md) | Date and time the message sender submitted a message. | 
 **conversation_topic** | **string** | Topic of the first message in a conversation thread. | [optional] 
@@ -31,6 +33,51 @@ Name | Type | Description | Notes
 
  Parent class: [MapiMessageItemBaseDto](MapiMessageItemBaseDto.md)
 
-[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
+## Example
+```php
+$mapiMessageDto = new MapiMessageDto
+{
+    MessageBody = "Some body",
+    ClientSubmitTime = DateTime.Today,
+    DeliveryTime = DateTime.Today,
+    DisplayTo = "To Address",
+    Flags = new List<MapiMessageFlag>
+    {
+        "MsgFlagRead",
+        "MsgFlagUnsent",
+        "MsgFlagHasAttach"
+    },
+    NormalizedSubject = "Some subject",
+    SenderAddressType = "SMTP",
+    SenderEmailAddress = "from@aspose.com",
+    SenderName = "From Address",
+    SenderSmtpAddress = "from@aspose.com",
+    Attachments = new List<MapiAttachmentDto>
+    {
+        new MapiAttachmentDto
+        {
+            Name = "some-file.txt",
+            DataBase64 = "U29tZSBmaWxlIHRleHQ="
+        }
+    },
+    Body = "Some body",
+    MessageClass = "IPM.Note",
+    Recipients = new List<MapiRecipientDto>
+    {
+        new MapiRecipientDto
+        {
+            EmailAddress = "to@aspose.com",
+            AddressType = "SMTP",
+            DisplayName = "To Address",
+            RecipientType = "MapiTo"
+        }
+    },
+    Subject = "Re: Some subject",
+    SubjectPrefix = "Re: "
+};
+```
+
+
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 

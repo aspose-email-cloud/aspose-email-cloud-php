@@ -1,8 +1,10 @@
 # MapiElectronicAddressDto
 
+Refers to the group of properties that define the e-mail address or fax address.
+
 ## Properties
 Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+---- | ---- | ----------- | -----
 **address_type** | **string** | Address type. | [optional] 
 **email_address** | **string** | Email address. | [optional] 
 **display_name** | **string** | User-readable display name for the e-mail address. | [optional] 
@@ -11,6 +13,6 @@ Name | Type | Description | Notes
 
 
 
-[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 

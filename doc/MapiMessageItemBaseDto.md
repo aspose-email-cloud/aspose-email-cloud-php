@@ -1,8 +1,10 @@
 # MapiMessageItemBaseDto
 
+Base Dto for MapiMessage, MapiCalendar or MapiContact
+
 ## Properties
 Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+---- | ---- | ----------- | -----
 **attachments** | [**\Aspose\Email\Model\MapiAttachmentDto[]**](MapiAttachmentDto.md) | Message item attachments. | [optional] 
 **billing** | **string** | Billing information associated with an item. | [optional] 
 **body** | **string** | Message text. | [optional] 
@@ -23,6 +25,6 @@ Name | Type | Description | Notes
 
 
 
-[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 

@@ -53,7 +53,6 @@ class MapiMessageApi extends ApiBase
         parent::__construct($client, $config, $selector);
     }
 
-            
     /**
      * Operation asEmailDto
      *
@@ -175,7 +174,7 @@ class MapiMessageApi extends ApiBase
         $path = '/email/MapiMessage/as-email-dto';
         return $this->toClientRequest('PUT', $httpBody, $path, [], [], [], false, $headers, []);
     }
-            
+
     /**
      * Operation asFile
      *
@@ -297,7 +296,7 @@ class MapiMessageApi extends ApiBase
         $path = '/email/MapiMessage/as-file';
         return $this->toClientRequest('PUT', $httpBody, $path, [], [], [], false, $headers, []);
     }
-            
+
     /**
      * Operation fromFile
      *
@@ -456,7 +455,7 @@ class MapiMessageApi extends ApiBase
             $headerParams
         );
     }
-            
+
     /**
      * Operation get
      *
@@ -612,7 +611,7 @@ class MapiMessageApi extends ApiBase
             $headerParams
         );
     }
-            
+
     /**
      * Operation save
      *

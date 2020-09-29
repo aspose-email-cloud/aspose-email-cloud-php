@@ -53,7 +53,6 @@ class CalendarApi extends ApiBase
         parent::__construct($client, $config, $selector);
     }
 
-            
     /**
      * Operation asAlternate
      *
@@ -175,7 +174,7 @@ class CalendarApi extends ApiBase
         $path = '/email/Calendar/as-alternate';
         return $this->toClientRequest('PUT', $httpBody, $path, [], [], [], false, $headers, []);
     }
-            
+
     /**
      * Operation asFile
      *
@@ -297,7 +296,7 @@ class CalendarApi extends ApiBase
         $path = '/email/Calendar/as-file';
         return $this->toClientRequest('PUT', $httpBody, $path, [], [], [], false, $headers, []);
     }
-            
+
     /**
      * Operation asMapi
      *
@@ -419,7 +418,7 @@ class CalendarApi extends ApiBase
         $path = '/email/Calendar/as-mapi';
         return $this->toClientRequest('PUT', $httpBody, $path, [], [], [], false, $headers, []);
     }
-            
+
     /**
      * Operation convert
      *
@@ -578,7 +577,7 @@ class CalendarApi extends ApiBase
             $headerParams
         );
     }
-            
+
     /**
      * Operation fromFile
      *
@@ -726,7 +725,7 @@ class CalendarApi extends ApiBase
             $headerParams
         );
     }
-            
+
     /**
      * Operation get
      *
@@ -873,7 +872,7 @@ class CalendarApi extends ApiBase
             $headerParams
         );
     }
-            
+
     /**
      * Operation getAsAlternate
      *
@@ -1032,7 +1031,7 @@ class CalendarApi extends ApiBase
             $headerParams
         );
     }
-            
+
     /**
      * Operation getAsFile
      *
@@ -1188,7 +1187,7 @@ class CalendarApi extends ApiBase
             $headerParams
         );
     }
-            
+
     /**
      * Operation getList
      *
@@ -1338,7 +1337,7 @@ class CalendarApi extends ApiBase
             $headerParams
         );
     }
-            
+
     /**
      * Operation save
      *

@@ -1,12 +1,26 @@
 # TaskRegeneratingPatternDto
 
+Represents the regenerating recurrence pattern that specifies how many days, weeks, months or years after the completion of the current task the next occurrence will be due.
+
 ## Properties
 Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+---- | ---- | ----------- | -----
 **regenerating_type** | **string** | Enumerates the types of regenerating pattern. Enum, available values: Daily, Weekly, Monthly, Yearly | 
 
  Parent class: [RecurrencePatternDto](RecurrencePatternDto.md)
 
-[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
+## Example
+```php
+$taskRegeneratingPatternDto = new TaskRegeneratingPatternDto
+{
+    Interval = 1,
+    Occurs = 2,
+    EndDate = DateTime.Today,
+    WeekStart = "Sunday"
+};
+```
+
+
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 

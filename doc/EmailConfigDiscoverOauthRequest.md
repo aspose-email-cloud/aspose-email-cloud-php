@@ -1,8 +1,9 @@
 # EmailConfigDiscoverOauthRequest
 
+
 ## Properties
 Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+---- | ---- | ----------- | -----
 **client_id** | **string** | OAuth client id. | 
 **client_secret** | **string** | OAuth client secret. | 
 **refresh_token** | **string** | OAuth refresh token. | 
@@ -10,6 +11,19 @@ Name | Type | Description | Notes
 
  Parent class: [DiscoverEmailConfigRequest](DiscoverEmailConfigRequest.md)
 
-[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
+## Example
+```php
+$emailConfigDiscoverOauthRequest = new EmailConfigDiscoverOauthRequest
+{
+    ClientId = "ClientId",
+    ClientSecret = "ClientSecret",
+    RefreshToken = "RefreshToken",
+    Address = "example@aspose.com",
+    FastProcessing = true
+};
+```
+
+
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 

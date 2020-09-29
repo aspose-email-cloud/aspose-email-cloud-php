@@ -1,8 +1,10 @@
 # MapiCalendarEventRecurrenceDto
 
+Recurrence properties of calendar object.
+
 ## Properties
 Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+---- | ---- | ----------- | -----
 **appointment_time_zone_definition_recur** | [**\Aspose\Email\Model\MapiCalendarTimeZoneDto**](MapiCalendarTimeZoneDto.md) | Time zone information that describes how to convert the meeting date and time on a recurring series to and from UTC. | [optional] 
 **clip_end** | [**\DateTime**](\DateTime.md) | Date of the last instance. | 
 **clip_start** | [**\DateTime**](\DateTime.md) | Date of the first instance. | 
@@ -12,6 +14,6 @@ Name | Type | Description | Notes
 
 
 
-[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
