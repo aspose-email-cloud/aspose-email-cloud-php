@@ -11,18 +11,14 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$storageFileLocationList = new StorageFileLocationList
-{
-    Value = new List<StorageFileLocation>
-    {
-        new StorageFileLocation
-        {
-            FileName = "fileOnStorage.txt",
-            Storage = "First Storage",
-            FolderPath = "file/location/folder/on/storage"
-        }
-    }
-};
+$storageFileLocationList = Models::storageFileLocationList()
+    ->value(array(
+        Models::storageFileLocation()
+            ->fileName('fileOnStorage.txt')
+            ->storage('First Storage')
+            ->folderPath('file/location/folder/on/storage')
+            ->build()))
+    ->build();
 ```
 
 

@@ -23,7 +23,33 @@ See parameter model documentation at [EmailAsFileRequest](EmailAsFileRequest.md)
     <summary>Parameter initialization example:</summary>
     
 ```php
-$request = ;
+$request = Models::emailAsFileRequest()
+    ->value(Models::emailDto()
+        ->attachments(array(
+            Models::attachment()
+                ->name('some-file.txt')
+                ->base64Data('U29tZSBmaWxlIGNvbnRlbnQ=')
+                ->build()))
+        ->body('Some body')
+        ->bodyType('Html')
+        ->deliveryNotificationOptions(array(
+            'OnSuccess',
+            'Delay'))
+        ->from(Models::mailAddress()
+            ->displayName('From Address')
+            ->address('from@aspose.com')
+            ->build())
+        ->htmlBody('<b>Some body</b>')
+        ->isBodyHtml(true)
+        ->isDraft(true)
+        ->subject('Re: Some subject')
+        ->to(array(
+            Models::mailAddress()
+                ->displayName('To Address')
+                ->address('to@aspose.com')
+                ->build()))
+        ->build())
+    ->build();
 ```
 
 </details>
@@ -44,7 +70,33 @@ Return type: [**\SplFileObject**](\SplFileObject.md)
 $api = new EmailCloud(appKey, appSid);
 
 // Prepare parameters:
-$request = ;
+$request = Models::emailAsFileRequest()
+    ->value(Models::emailDto()
+        ->attachments(array(
+            Models::attachment()
+                ->name('some-file.txt')
+                ->base64Data('U29tZSBmaWxlIGNvbnRlbnQ=')
+                ->build()))
+        ->body('Some body')
+        ->bodyType('Html')
+        ->deliveryNotificationOptions(array(
+            'OnSuccess',
+            'Delay'))
+        ->from(Models::mailAddress()
+            ->displayName('From Address')
+            ->address('from@aspose.com')
+            ->build())
+        ->htmlBody('<b>Some body</b>')
+        ->isBodyHtml(true)
+        ->isDraft(true)
+        ->subject('Re: Some subject')
+        ->to(array(
+            Models::mailAddress()
+                ->displayName('To Address')
+                ->address('to@aspose.com')
+                ->build()))
+        ->build())
+    ->build();
 
 // Call method:
 $result = $api->email().asFile($request);
@@ -74,7 +126,31 @@ See parameter model documentation at [EmailDto](EmailDto.md)
     <summary>Parameter initialization example:</summary>
     
 ```php
-$email_dto = ;
+$email_dto = Models::emailDto()
+    ->attachments(array(
+        Models::attachment()
+            ->name('some-file.txt')
+            ->base64Data('U29tZSBmaWxlIGNvbnRlbnQ=')
+            ->build()))
+    ->body('Some body')
+    ->bodyType('Html')
+    ->deliveryNotificationOptions(array(
+        'OnSuccess',
+        'Delay'))
+    ->from(Models::mailAddress()
+        ->displayName('From Address')
+        ->address('from@aspose.com')
+        ->build())
+    ->htmlBody('<b>Some body</b>')
+    ->isBodyHtml(true)
+    ->isDraft(true)
+    ->subject('Re: Some subject')
+    ->to(array(
+        Models::mailAddress()
+            ->displayName('To Address')
+            ->address('to@aspose.com')
+            ->build()))
+    ->build();
 ```
 
 </details>
@@ -90,7 +166,37 @@ Return type: [**MapiMessageDto**](MapiMessageDto.md)
     <summary>Result example</summary>
 
 ```php
-$result = ;
+$result = Models::mapiMessageDto()
+    ->messageBody('Some body')
+    ->clientSubmitTime(new DateTime())
+    ->deliveryTime(new DateTime())
+    ->displayTo('To Address')
+    ->flags(array(
+        'MsgFlagRead',
+        'MsgFlagUnsent',
+        'MsgFlagHasAttach'))
+    ->normalizedSubject('Some subject')
+    ->senderAddressType('SMTP')
+    ->senderEmailAddress('from@aspose.com')
+    ->senderName('From Address')
+    ->senderSmtpAddress('from@aspose.com')
+    ->attachments(array(
+        Models::mapiAttachmentDto()
+            ->name('some-file.txt')
+            ->dataBase64('U29tZSBmaWxlIHRleHQ=')
+            ->build()))
+    ->body('Some body')
+    ->messageClass('IPM.Note')
+    ->recipients(array(
+        Models::mapiRecipientDto()
+            ->emailAddress('to@aspose.com')
+            ->addressType('SMTP')
+            ->displayName('To Address')
+            ->recipientType('MapiTo')
+            ->build()))
+    ->subject('Re: Some subject')
+    ->subjectPrefix('Re: ')
+    ->build();
 ```
 </details>
 
@@ -103,13 +209,67 @@ $result = ;
 $api = new EmailCloud(appKey, appSid);
 
 // Prepare parameters:
-$email_dto = ;
+$email_dto = Models::emailDto()
+    ->attachments(array(
+        Models::attachment()
+            ->name('some-file.txt')
+            ->base64Data('U29tZSBmaWxlIGNvbnRlbnQ=')
+            ->build()))
+    ->body('Some body')
+    ->bodyType('Html')
+    ->deliveryNotificationOptions(array(
+        'OnSuccess',
+        'Delay'))
+    ->from(Models::mailAddress()
+        ->displayName('From Address')
+        ->address('from@aspose.com')
+        ->build())
+    ->htmlBody('<b>Some body</b>')
+    ->isBodyHtml(true)
+    ->isDraft(true)
+    ->subject('Re: Some subject')
+    ->to(array(
+        Models::mailAddress()
+            ->displayName('To Address')
+            ->address('to@aspose.com')
+            ->build()))
+    ->build();
 
 // Call method:
 $result = $api->email().asMapi($email_dto);
 
 // Result example:
-$result = ;
+$result = Models::mapiMessageDto()
+    ->messageBody('Some body')
+    ->clientSubmitTime(new DateTime())
+    ->deliveryTime(new DateTime())
+    ->displayTo('To Address')
+    ->flags(array(
+        'MsgFlagRead',
+        'MsgFlagUnsent',
+        'MsgFlagHasAttach'))
+    ->normalizedSubject('Some subject')
+    ->senderAddressType('SMTP')
+    ->senderEmailAddress('from@aspose.com')
+    ->senderName('From Address')
+    ->senderSmtpAddress('from@aspose.com')
+    ->attachments(array(
+        Models::mapiAttachmentDto()
+            ->name('some-file.txt')
+            ->dataBase64('U29tZSBmaWxlIHRleHQ=')
+            ->build()))
+    ->body('Some body')
+    ->messageClass('IPM.Note')
+    ->recipients(array(
+        Models::mapiRecipientDto()
+            ->emailAddress('to@aspose.com')
+            ->addressType('SMTP')
+            ->displayName('To Address')
+            ->recipientType('MapiTo')
+            ->build()))
+    ->subject('Re: Some subject')
+    ->subjectPrefix('Re: ')
+    ->build();
 ```
 
 </details>
@@ -140,7 +300,7 @@ $request = Models::EmailConvertRequest()
     ->from_format('Msg')
     ->to_format('Mhtml')
     ->file(new SplFileObject('/path/to/message.msg'))
-    .build();
+    ->build();
 ```
 
 </details>
@@ -196,7 +356,7 @@ See parameter model documentation at [EmailFromFileRequest](EmailFromFileRequest
 $request = Models::EmailFromFileRequest()
     ->format('Eml')
     ->file(new SplFileObject('/path/to/message.eml'))
-    .build();
+    ->build();
 ```
 
 </details>
@@ -211,7 +371,31 @@ Return type: [**EmailDto**](EmailDto.md)
     <summary>Result example</summary>
 
 ```php
-$result = ;
+$result = Models::emailDto()
+    ->attachments(array(
+        Models::attachment()
+            ->name('some-file.txt')
+            ->base64Data('U29tZSBmaWxlIGNvbnRlbnQ=')
+            ->build()))
+    ->body('Some body')
+    ->bodyType('Html')
+    ->deliveryNotificationOptions(array(
+        'OnSuccess',
+        'Delay'))
+    ->from(Models::mailAddress()
+        ->displayName('From Address')
+        ->address('from@aspose.com')
+        ->build())
+    ->htmlBody('<b>Some body</b>')
+    ->isBodyHtml(true)
+    ->isDraft(true)
+    ->subject('Re: Some subject')
+    ->to(array(
+        Models::mailAddress()
+            ->displayName('To Address')
+            ->address('to@aspose.com')
+            ->build()))
+    ->build();
 ```
 </details>
 
@@ -231,7 +415,31 @@ $file = ;
 $result = $api->email().fromFile($request);
 
 // Result example:
-$result = ;
+$result = Models::emailDto()
+    ->attachments(array(
+        Models::attachment()
+            ->name('some-file.txt')
+            ->base64Data('U29tZSBmaWxlIGNvbnRlbnQ=')
+            ->build()))
+    ->body('Some body')
+    ->bodyType('Html')
+    ->deliveryNotificationOptions(array(
+        'OnSuccess',
+        'Delay'))
+    ->from(Models::mailAddress()
+        ->displayName('From Address')
+        ->address('from@aspose.com')
+        ->build())
+    ->htmlBody('<b>Some body</b>')
+    ->isBodyHtml(true)
+    ->isDraft(true)
+    ->subject('Re: Some subject')
+    ->to(array(
+        Models::mailAddress()
+            ->displayName('To Address')
+            ->address('to@aspose.com')
+            ->build()))
+    ->build();
 ```
 
 </details>
@@ -264,7 +472,7 @@ $request = Models::EmailGetRequest()
     ->file_name('email.eml')
     ->folder('folder/on/storage')
     ->storage('First Storage')
-    .build();
+    ->build();
 ```
 
 </details>
@@ -279,7 +487,31 @@ Return type: [**EmailDto**](EmailDto.md)
     <summary>Result example</summary>
 
 ```php
-$result = ;
+$result = Models::emailDto()
+    ->attachments(array(
+        Models::attachment()
+            ->name('some-file.txt')
+            ->base64Data('U29tZSBmaWxlIGNvbnRlbnQ=')
+            ->build()))
+    ->body('Some body')
+    ->bodyType('Html')
+    ->deliveryNotificationOptions(array(
+        'OnSuccess',
+        'Delay'))
+    ->from(Models::mailAddress()
+        ->displayName('From Address')
+        ->address('from@aspose.com')
+        ->build())
+    ->htmlBody('<b>Some body</b>')
+    ->isBodyHtml(true)
+    ->isDraft(true)
+    ->subject('Re: Some subject')
+    ->to(array(
+        Models::mailAddress()
+            ->displayName('To Address')
+            ->address('to@aspose.com')
+            ->build()))
+    ->build();
 ```
 </details>
 
@@ -301,7 +533,31 @@ $storage = ;
 $result = $api->email().get($request);
 
 // Result example:
-$result = ;
+$result = Models::emailDto()
+    ->attachments(array(
+        Models::attachment()
+            ->name('some-file.txt')
+            ->base64Data('U29tZSBmaWxlIGNvbnRlbnQ=')
+            ->build()))
+    ->body('Some body')
+    ->bodyType('Html')
+    ->deliveryNotificationOptions(array(
+        'OnSuccess',
+        'Delay'))
+    ->from(Models::mailAddress()
+        ->displayName('From Address')
+        ->address('from@aspose.com')
+        ->build())
+    ->htmlBody('<b>Some body</b>')
+    ->isBodyHtml(true)
+    ->isDraft(true)
+    ->subject('Re: Some subject')
+    ->to(array(
+        Models::mailAddress()
+            ->displayName('To Address')
+            ->address('to@aspose.com')
+            ->build()))
+    ->build();
 ```
 
 </details>
@@ -334,7 +590,7 @@ $request = Models::EmailGetAsFileRequest()
     ->format('Mhtml')
     ->storage('First Storage')
     ->folder('folder/on/storage')
-    .build();
+    ->build();
 ```
 
 </details>
@@ -394,7 +650,7 @@ $request = Models::EmailGetListRequest()
     ->storage('First Storage')
     ->items_per_page(10)
     ->page_number(0)
-    .build();
+    ->build();
 ```
 
 </details>
@@ -409,7 +665,41 @@ Return type: [**EmailStorageList**](EmailStorageList.md)
     <summary>Result example</summary>
 
 ```php
-$result = ;
+$result = Models::emailStorageList()
+    ->value(array(
+        Models::emailSaveRequest()
+            ->storageFile(Models::storageFileLocation()
+                ->fileName('message.eml')
+                ->storage('First Storage')
+                ->folderPath('file/location/folder/on/storage')
+                ->build())
+            ->value(Models::emailDto()
+                ->attachments(array(
+                    Models::attachment()
+                        ->name('some-file.txt')
+                        ->base64Data('U29tZSBmaWxlIGNvbnRlbnQ=')
+                        ->build()))
+                ->body('Some body')
+                ->bodyType('Html')
+                ->deliveryNotificationOptions(array(
+                    'OnSuccess',
+                    'Delay'))
+                ->from(Models::mailAddress()
+                    ->displayName('From Address')
+                    ->address('from@aspose.com')
+                    ->build())
+                ->htmlBody('<b>Some body</b>')
+                ->isBodyHtml(true)
+                ->isDraft(true)
+                ->subject('Re: Some subject')
+                ->to(array(
+                    Models::mailAddress()
+                        ->displayName('To Address')
+                        ->address('to@aspose.com')
+                        ->build()))
+                ->build())
+            ->build()))
+    ->build();
 ```
 </details>
 
@@ -432,7 +722,41 @@ $page_number = ;
 $result = $api->email().getList($request);
 
 // Result example:
-$result = ;
+$result = Models::emailStorageList()
+    ->value(array(
+        Models::emailSaveRequest()
+            ->storageFile(Models::storageFileLocation()
+                ->fileName('message.eml')
+                ->storage('First Storage')
+                ->folderPath('file/location/folder/on/storage')
+                ->build())
+            ->value(Models::emailDto()
+                ->attachments(array(
+                    Models::attachment()
+                        ->name('some-file.txt')
+                        ->base64Data('U29tZSBmaWxlIGNvbnRlbnQ=')
+                        ->build()))
+                ->body('Some body')
+                ->bodyType('Html')
+                ->deliveryNotificationOptions(array(
+                    'OnSuccess',
+                    'Delay'))
+                ->from(Models::mailAddress()
+                    ->displayName('From Address')
+                    ->address('from@aspose.com')
+                    ->build())
+                ->htmlBody('<b>Some body</b>')
+                ->isBodyHtml(true)
+                ->isDraft(true)
+                ->subject('Re: Some subject')
+                ->to(array(
+                    Models::mailAddress()
+                        ->displayName('To Address')
+                        ->address('to@aspose.com')
+                        ->build()))
+                ->build())
+            ->build()))
+    ->build();
 ```
 
 </details>
@@ -459,7 +783,39 @@ See parameter model documentation at [EmailSaveRequest](EmailSaveRequest.md)
     <summary>Parameter initialization example:</summary>
     
 ```php
-$request = ;
+$request = Models::emailSaveRequest()
+    ->format('Msg')
+    ->storageFile(Models::storageFileLocation()
+        ->fileName('email.eml')
+        ->storage('First Storage')
+        ->folderPath('file/location/folder/on/storage')
+        ->build())
+    ->value(Models::emailDto()
+        ->attachments(array(
+            Models::attachment()
+                ->name('some-file.txt')
+                ->base64Data('U29tZSBmaWxlIGNvbnRlbnQ=')
+                ->build()))
+        ->body('Some body')
+        ->bodyType('Html')
+        ->deliveryNotificationOptions(array(
+            'OnSuccess',
+            'Delay'))
+        ->from(Models::mailAddress()
+            ->displayName('From Address')
+            ->address('from@aspose.com')
+            ->build())
+        ->htmlBody('<b>Some body</b>')
+        ->isBodyHtml(true)
+        ->isDraft(true)
+        ->subject('Re: Some subject')
+        ->to(array(
+            Models::mailAddress()
+                ->displayName('To Address')
+                ->address('to@aspose.com')
+                ->build()))
+        ->build())
+    ->build();
 ```
 
 </details>
@@ -478,7 +834,39 @@ Return type: void (empty response body)
 $api = new EmailCloud(appKey, appSid);
 
 // Prepare parameters:
-$request = ;
+$request = Models::emailSaveRequest()
+    ->format('Msg')
+    ->storageFile(Models::storageFileLocation()
+        ->fileName('email.eml')
+        ->storage('First Storage')
+        ->folderPath('file/location/folder/on/storage')
+        ->build())
+    ->value(Models::emailDto()
+        ->attachments(array(
+            Models::attachment()
+                ->name('some-file.txt')
+                ->base64Data('U29tZSBmaWxlIGNvbnRlbnQ=')
+                ->build()))
+        ->body('Some body')
+        ->bodyType('Html')
+        ->deliveryNotificationOptions(array(
+            'OnSuccess',
+            'Delay'))
+        ->from(Models::mailAddress()
+            ->displayName('From Address')
+            ->address('from@aspose.com')
+            ->build())
+        ->htmlBody('<b>Some body</b>')
+        ->isBodyHtml(true)
+        ->isDraft(true)
+        ->subject('Re: Some subject')
+        ->to(array(
+            Models::mailAddress()
+                ->displayName('To Address')
+                ->address('to@aspose.com')
+                ->build()))
+        ->build())
+    ->build();
 
 // Call method:
 $api->email().save($request);

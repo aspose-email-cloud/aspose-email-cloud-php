@@ -12,23 +12,18 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$aiNameExtracted = new AiNameExtracted
-{
-    Name = new List<AiNameExtractedComponent>
-    {
-        new AiNameExtractedComponent
-        {
-            Category = "Surname",
-            Value = "Cane"
-        },
-        new AiNameExtractedComponent
-        {
-            Category = "SomeName",
-            Value = "John"
-        }
-    },
-    Score = 0.5
-};
+$aiNameExtracted = Models::aiNameExtracted()
+    ->name(array(
+        Models::aiNameExtractedComponent()
+            ->category('Surname')
+            ->value('Cane')
+            ->build(),
+        Models::aiNameExtractedComponent()
+            ->category('SomeName')
+            ->value('John')
+            ->build()))
+    ->score(0.5)
+    ->build();
 ```
 
 

@@ -12,37 +12,29 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$mapiContactAsFileRequest = new MapiContactAsFileRequest
-{
-    Format = "Msg",
-    Value = new MapiContactDto
-    {
-        ElectronicAddresses = new MapiContactElectronicAddressPropertySetDto
-        {
-            DefaultEmailAddress = new MapiContactElectronicAddressDto
-            {
-                EmailAddress = "email@aspose.com"
-            }
-        },
-        NameInfo = new MapiContactNamePropertySetDto
-        {
-            GivenName = "Alex",
-            Surname = "Thomas"
-        },
-        PersonalInfo = new MapiContactPersonalInfoPropertySetDto
-        {
-            BusinessHomePage = "www.aspose.com"
-        },
-        ProfessionalInfo = new MapiContactProfessionalPropertySetDto
-        {
-            Profession = "GENERAL DIRECTOR"
-        },
-        Telephones = new MapiContactTelephonePropertySetDto
-        {
-            PrimaryTelephoneNumber = "+49 211 4247 21"
-        }
-    }
-};
+$mapiContactAsFileRequest = Models::mapiContactAsFileRequest()
+    ->format('Msg')
+    ->value(Models::mapiContactDto()
+        ->electronicAddresses(Models::mapiContactElectronicAddressPropertySetDto()
+            ->defaultEmailAddress(Models::mapiContactElectronicAddressDto()
+                ->emailAddress('email@aspose.com')
+                ->build())
+            ->build())
+        ->nameInfo(Models::mapiContactNamePropertySetDto()
+            ->givenName('Alex')
+            ->surname('Thomas')
+            ->build())
+        ->personalInfo(Models::mapiContactPersonalInfoPropertySetDto()
+            ->businessHomePage('www.aspose.com')
+            ->build())
+        ->professionalInfo(Models::mapiContactProfessionalPropertySetDto()
+            ->profession('GENERAL DIRECTOR')
+            ->build())
+        ->telephones(Models::mapiContactTelephonePropertySetDto()
+            ->primaryTelephoneNumber('+49 211 4247 21')
+            ->build())
+        ->build())
+    ->build();
 ```
 
 

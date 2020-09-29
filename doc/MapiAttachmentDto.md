@@ -12,11 +12,10 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$mapiAttachmentDto = new MapiAttachmentDto
-{
-    Name = "some-file.txt",
-    DataBase64 = "U29tZSBmaWxlIHRleHQ="
-};
+$mapiAttachmentDto = Models::mapiAttachmentDto()
+    ->name('some-file.txt')
+    ->dataBase64('U29tZSBmaWxlIHRleHQ=')
+    ->build();
 ```
 
 

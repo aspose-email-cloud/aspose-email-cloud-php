@@ -25,7 +25,7 @@ See parameter model documentation at [GetDiscUsageRequest](GetDiscUsageRequest.m
 ```php
 $request = Models::GetDiscUsageRequest()
     ->storage_name('First Storage')
-    .build();
+    ->build();
 ```
 
 </details>
@@ -40,7 +40,10 @@ Return type: [**DiscUsage**](DiscUsage.md)
     <summary>Result example</summary>
 
 ```php
-$result = ;
+$result = Models::discUsage()
+    ->usedSize(1048576)
+    ->totalSize(3145728)
+    ->build();
 ```
 </details>
 
@@ -59,7 +62,10 @@ $storage_name = ;
 $result = $api->cloudStorage()->storage().getDiscUsage($request);
 
 // Result example:
-$result = ;
+$result = Models::discUsage()
+    ->usedSize(1048576)
+    ->totalSize(3145728)
+    ->build();
 ```
 
 </details>
@@ -90,7 +96,7 @@ See parameter model documentation at [GetFileVersionsRequest](GetFileVersionsReq
 $request = Models::GetFileVersionsRequest()
     ->path('/storage/path/to/file.ext')
     ->storage_name('First Storage')
-    .build();
+    ->build();
 ```
 
 </details>
@@ -105,7 +111,17 @@ Return type: [**FileVersions**](FileVersions.md)
     <summary>Result example</summary>
 
 ```php
-$result = ;
+$result = Models::fileVersions()
+    ->value(array(
+        Models::fileVersion()
+            ->versionId('d5afd857-8797-4ca0-b806-a03fdfc3831f')
+            ->isLatest(true)
+            ->name('file.ext')
+            ->modifiedDate(new DateTime())
+            ->size(4096)
+            ->path('/storage/path/to')
+            ->build()))
+    ->build();
 ```
 </details>
 
@@ -125,7 +141,17 @@ $storage_name = ;
 $result = $api->cloudStorage()->storage().getFileVersions($request);
 
 // Result example:
-$result = ;
+$result = Models::fileVersions()
+    ->value(array(
+        Models::fileVersion()
+            ->versionId('d5afd857-8797-4ca0-b806-a03fdfc3831f')
+            ->isLatest(true)
+            ->name('file.ext')
+            ->modifiedDate(new DateTime())
+            ->size(4096)
+            ->path('/storage/path/to')
+            ->build()))
+    ->build();
 ```
 
 </details>
@@ -156,7 +182,7 @@ See parameter model documentation at [ObjectExistsRequest](ObjectExistsRequest.m
 $request = Models::ObjectExistsRequest()
     ->path('/storage/path/to/folder/or/file.ext')
     ->storage_name('First Storage')
-    .build();
+    ->build();
 ```
 
 </details>
@@ -171,7 +197,9 @@ Return type: [**ObjectExist**](ObjectExist.md)
     <summary>Result example</summary>
 
 ```php
-$result = ;
+$result = Models::objectExist()
+    ->exists(true)
+    ->build();
 ```
 </details>
 
@@ -192,7 +220,9 @@ $version_id = ;
 $result = $api->cloudStorage()->storage().objectExists($request);
 
 // Result example:
-$result = ;
+$result = Models::objectExist()
+    ->exists(true)
+    ->build();
 ```
 
 </details>
@@ -222,7 +252,7 @@ See parameter model documentation at [StorageExistsRequest](StorageExistsRequest
 ```php
 $request = Models::StorageExistsRequest()
     ->storage_name('First Storage')
-    .build();
+    ->build();
 ```
 
 </details>
@@ -237,7 +267,9 @@ Return type: [**StorageExist**](StorageExist.md)
     <summary>Result example</summary>
 
 ```php
-$result = ;
+$result = Models::storageExist()
+    ->exists(true)
+    ->build();
 ```
 </details>
 
@@ -256,7 +288,9 @@ $storage_name = ;
 $result = $api->cloudStorage()->storage().exists($request);
 
 // Result example:
-$result = ;
+$result = Models::storageExist()
+    ->exists(true)
+    ->build();
 ```
 
 </details>

@@ -12,17 +12,14 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$weeklyRecurrencePatternDto = new WeeklyRecurrencePatternDto
-{
-    StartDays = new List<CalendarDay>
-    {
-        "Tuesday",
-        "Thursday"
-    },
-    Interval = -1,
-    Occurs = 10,
-    WeekStart = "Sunday"
-};
+$weeklyRecurrencePatternDto = Models::weeklyRecurrencePatternDto()
+    ->startDays(array(
+        'Tuesday',
+        'Thursday'))
+    ->interval(-1)
+    ->occurs(10)
+    ->weekStart('Sunday')
+    ->build();
 ```
 
 

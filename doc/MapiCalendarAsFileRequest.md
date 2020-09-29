@@ -12,56 +12,44 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$mapiCalendarAsFileRequest = new MapiCalendarAsFileRequest
-{
-    Format = "Msg",
-    Value = new MapiCalendarDto
-    {
-        Attendees = new MapiCalendarAttendeesDto
-        {
-            AppointmentRecipients = new List<MapiRecipientDto>
-            {
-                new MapiRecipientDto
-                {
-                    EmailAddress = "organizer@aspose.com",
-                    AddressType = "SMTP",
-                    DisplayName = "Organizer Name",
-                    RecipientType = "MapiTo"
-                },
-                new MapiRecipientDto
-                {
-                    EmailAddress = "attendee@aspose.com",
-                    AddressType = "SMTP",
-                    DisplayName = "Attendee Name",
-                    RecipientType = "MapiTo"
-                }
-            }
-        },
-        BusyStatus = "Tentative",
-        ClientIntent = new List<MapiCalendarClientIntent>
-        {
-            "Manager"
-        },
-        EndDate = DateTime.Today,
-        Location = "Some location",
-        Recurrence = new MapiCalendarEventRecurrenceDto
-        {
-            RecurrencePattern = new MapiCalendarDailyRecurrencePatternDto
-            {
-                Frequency = "Daily",
-                OccurrenceCount = 10,
-                WeekStartDay = "Monday"
-            }
-        },
-        StartDate = DateTime.Today,
-        Organizer = new MapiElectronicAddressDto
-        {
-            EmailAddress = "organizer@aspose.com"
-        },
-        Body = "Some description",
-        Subject = "Some summary"
-    }
-};
+$mapiCalendarAsFileRequest = Models::mapiCalendarAsFileRequest()
+    ->format('Msg')
+    ->value(Models::mapiCalendarDto()
+        ->attendees(Models::mapiCalendarAttendeesDto()
+            ->appointmentRecipients(array(
+                Models::mapiRecipientDto()
+                    ->emailAddress('organizer@aspose.com')
+                    ->addressType('SMTP')
+                    ->displayName('Organizer Name')
+                    ->recipientType('MapiTo')
+                    ->build(),
+                Models::mapiRecipientDto()
+                    ->emailAddress('attendee@aspose.com')
+                    ->addressType('SMTP')
+                    ->displayName('Attendee Name')
+                    ->recipientType('MapiTo')
+                    ->build()))
+            ->build())
+        ->busyStatus('Tentative')
+        ->clientIntent(array(
+            'Manager'))
+        ->endDate(new DateTime())
+        ->location('Some location')
+        ->recurrence(Models::mapiCalendarEventRecurrenceDto()
+            ->recurrencePattern(Models::mapiCalendarDailyRecurrencePatternDto()
+                ->frequency('Daily')
+                ->occurrenceCount(10)
+                ->weekStartDay('Monday')
+                ->build())
+            ->build())
+        ->startDate(new DateTime())
+        ->organizer(Models::mapiElectronicAddressDto()
+            ->emailAddress('organizer@aspose.com')
+            ->build())
+        ->body('Some description')
+        ->subject('Some summary')
+        ->build())
+    ->build();
 ```
 
 

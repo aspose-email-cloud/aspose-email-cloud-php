@@ -13,38 +13,31 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$calendarAsAlternateRequest = new CalendarAsAlternateRequest
-{
-    Value = new CalendarDto
-    {
-        Attendees = new List<MailAddress>
-        {
-            new MailAddress
-            {
-                DisplayName = "Attendee Name",
-                Address = "attendee@aspose.com",
-                ParticipationStatus = "Accepted"
-            }
-        },
-        Description = "Some description",
-        EndDate = DateTime.Today,
-        Location = "Some location",
-        Organizer = new MailAddress
-        {
-            DisplayName = "Organizer Name",
-            Address = "organizer@aspose.com"
-        },
-        Recurrence = new DailyRecurrencePatternDto
-        {
-            Interval = -1,
-            Occurs = 10,
-            WeekStart = "Monday"
-        },
-        StartDate = DateTime.Today,
-        Summary = "Some summary"
-    },
-    SequenceId = "cf4ffb6c-895d-4e58-bdb4-0a3918e96a43"
-};
+$calendarAsAlternateRequest = Models::calendarAsAlternateRequest()
+    ->value(Models::calendarDto()
+        ->attendees(array(
+            Models::mailAddress()
+                ->displayName('Attendee Name')
+                ->address('attendee@aspose.com')
+                ->participationStatus('Accepted')
+                ->build()))
+        ->description('Some description')
+        ->endDate(new DateTime())
+        ->location('Some location')
+        ->organizer(Models::mailAddress()
+            ->displayName('Organizer Name')
+            ->address('organizer@aspose.com')
+            ->build())
+        ->recurrence(Models::dailyRecurrencePatternDto()
+            ->interval(-1)
+            ->occurs(10)
+            ->weekStart('Monday')
+            ->build())
+        ->startDate(new DateTime())
+        ->summary('Some summary')
+        ->build())
+    ->sequenceId('cf4ffb6c-895d-4e58-bdb4-0a3918e96a43')
+    ->build();
 ```
 
 

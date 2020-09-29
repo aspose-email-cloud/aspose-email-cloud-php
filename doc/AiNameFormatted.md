@@ -12,11 +12,10 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$aiNameFormatted = new AiNameFormatted
-{
-    Name = "Mr. Cane J. M.",
-    Comments = "format: %t%L%f%m; source: parsed format"
-};
+$aiNameFormatted = Models::aiNameFormatted()
+    ->name('Mr. Cane J. M.')
+    ->comments('format: %t%L%f%m; source: parsed format')
+    ->build();
 ```
 
 

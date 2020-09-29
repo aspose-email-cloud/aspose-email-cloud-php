@@ -11,54 +11,38 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$emailThreadList = new EmailThreadList
-{
-    Value = new List<EmailThread>
-    {
-        new EmailThread
-        {
-            Id = "123",
-            Subject = "Some email subject",
-            Messages = new List<EmailDto>
-            {
-                new EmailDto
-                {
-                    Date = DateTime.Today,
-                    From = new MailAddress
-                    {
-                        Address = "from@aspose.com"
-                    },
-                    MessageId = "1",
-                    Subject = "Some email subject",
-                    To = new List<MailAddress>
-                    {
-                        new MailAddress
-                        {
-                            Address = "to@aspose.com"
-                        }
-                    }
-                },
-                new EmailDto
-                {
-                    Date = DateTime.Today,
-                    From = new MailAddress
-                    {
-                        Address = "from@aspose.com"
-                    },
-                    MessageId = "3",
-                    Subject = "Re: Some email subject",
-                    To = new List<MailAddress>
-                    {
-                        new MailAddress
-                        {
-                            Address = "to@aspose.com"
-                        }
-                    }
-                }
-            }
-        }
-    }
-};
+$emailThreadList = Models::emailThreadList()
+    ->value(array(
+        Models::emailThread()
+            ->id('123')
+            ->subject('Some email subject')
+            ->messages(array(
+                Models::emailDto()
+                    ->date(new DateTime())
+                    ->from(Models::mailAddress()
+                        ->address('from@aspose.com')
+                        ->build())
+                    ->messageId('1')
+                    ->subject('Some email subject')
+                    ->to(array(
+                        Models::mailAddress()
+                            ->address('to@aspose.com')
+                            ->build()))
+                    ->build(),
+                Models::emailDto()
+                    ->date(new DateTime())
+                    ->from(Models::mailAddress()
+                        ->address('from@aspose.com')
+                        ->build())
+                    ->messageId('3')
+                    ->subject('Re: Some email subject')
+                    ->to(array(
+                        Models::mailAddress()
+                            ->address('to@aspose.com')
+                            ->build()))
+                    ->build()))
+            ->build()))
+    ->build();
 ```
 
 

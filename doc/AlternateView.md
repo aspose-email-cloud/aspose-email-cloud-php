@@ -13,35 +13,28 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$alternateView = new AlternateView
-{
-    Base64Data = "<File content represented as Base64 string>",
-    ContentId = "fa7a8948-4af1-432a-b4d9-ee0c28542e75",
-    ContentType = new ContentType
-    {
-        CharSet = "utf-8",
-        MediaType = "text/calendar",
-        Name = "meeting.ics",
-        Parameters = new List<ContentTypeParameter>
-        {
-            new ContentTypeParameter
-            {
-                Name = "Method",
-                Value = "REQUEST"
-            },
-            new ContentTypeParameter
-            {
-                Name = "Name",
-                Value = "meeting.ics"
-            },
-            new ContentTypeParameter
-            {
-                Name = "charset",
-                Value = "utf-8"
-            }
-        }
-    }
-};
+$alternateView = Models::alternateView()
+    ->base64Data('<File content represented as Base64 string>')
+    ->contentId('fa7a8948-4af1-432a-b4d9-ee0c28542e75')
+    ->contentType(Models::contentType()
+        ->charSet('utf-8')
+        ->mediaType('text/calendar')
+        ->name('meeting.ics')
+        ->parameters(array(
+            Models::contentTypeParameter()
+                ->name('Method')
+                ->value('REQUEST')
+                ->build(),
+            Models::contentTypeParameter()
+                ->name('Name')
+                ->value('meeting.ics')
+                ->build(),
+            Models::contentTypeParameter()
+                ->name('charset')
+                ->value('utf-8')
+                ->build()))
+        ->build())
+    ->build();
 ```
 
 

@@ -13,15 +13,13 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$phoneNumber = new PhoneNumber
-{
-    Category = new EnumWithCustom<PhoneNumberCategory>
-    {
-        Value = "Company"
-    },
-    Number = "+44 141 628 8900",
-    Preferred = true
-};
+$phoneNumber = Models::phoneNumber()
+    ->category(Models::enumWithCustom<PhoneNumberCategory>()
+        ->value('Company')
+        ->build())
+    ->number('+44 141 628 8900')
+    ->preferred(true)
+    ->build();
 ```
 
 

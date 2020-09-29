@@ -11,10 +11,9 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$mapiPropertyDescriptor = new MapiPropertyDescriptor
-{
+$mapiPropertyDescriptor = Models::mapiPropertyDescriptor()
     
-};
+    ->build();
 ```
 
 

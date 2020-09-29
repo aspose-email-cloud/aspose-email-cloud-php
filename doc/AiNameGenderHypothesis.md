@@ -12,10 +12,9 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$aiNameGenderHypothesis = new AiNameGenderHypothesis
-{
-    Score = 0.8
-};
+$aiNameGenderHypothesis = Models::aiNameGenderHypothesis()
+    ->score(0.8)
+    ->build();
 ```
 
 

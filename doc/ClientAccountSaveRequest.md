@@ -11,29 +11,25 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$clientAccountSaveRequest = new ClientAccountSaveRequest
-{
-    StorageFile = new StorageFileLocation
-    {
-        FileName = "email.account",
-        Storage = "First Storage",
-        FolderPath = "file/location/folder/on/storage"
-    },
-    Value = new EmailClientAccount
-    {
-        Host = "smtp.example.com",
-        Port = 465,
-        SecurityOptions = "SSLAuto",
-        ProtocolType = "SMTP",
-        Credentials = new EmailClientAccountOauthCredentials
-        {
-            ClientId = "clientId",
-            ClientSecret = "clientSecret",
-            RefreshToken = "refreshToken",
-            Login = "example@example.com"
-        }
-    }
-};
+$clientAccountSaveRequest = Models::clientAccountSaveRequest()
+    ->storageFile(Models::storageFileLocation()
+        ->fileName('email.account')
+        ->storage('First Storage')
+        ->folderPath('file/location/folder/on/storage')
+        ->build())
+    ->value(Models::emailClientAccount()
+        ->host('smtp.example.com')
+        ->port(465)
+        ->securityOptions('SSLAuto')
+        ->protocolType('SMTP')
+        ->credentials(Models::emailClientAccountOauthCredentials()
+            ->clientId('clientId')
+            ->clientSecret('clientSecret')
+            ->refreshToken('refreshToken')
+            ->login('example@example.com')
+            ->build())
+        ->build())
+    ->build();
 ```
 
 

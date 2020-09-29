@@ -11,10 +11,9 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$storageExist = new StorageExist
-{
-    Exists = true
-};
+$storageExist = Models::storageExist()
+    ->exists(true)
+    ->build();
 ```
 
 

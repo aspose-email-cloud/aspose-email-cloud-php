@@ -13,17 +13,15 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$clientFolderCreateRequest = new ClientFolderCreateRequest
-{
-    ParentFolder = "INBOX/SubFolder/ParentFolder",
-    FolderName = "NewFolder",
-    AccountLocation = new StorageFileLocation
-    {
-        FileName = "email.account",
-        Storage = "First Storage",
-        FolderPath = "file/location/folder/on/storage"
-    }
-};
+$clientFolderCreateRequest = Models::clientFolderCreateRequest()
+    ->parentFolder('INBOX/SubFolder/ParentFolder')
+    ->folderName('NewFolder')
+    ->accountLocation(Models::storageFileLocation()
+        ->fileName('email.account')
+        ->storage('First Storage')
+        ->folderPath('file/location/folder/on/storage')
+        ->build())
+    ->build();
 ```
 
 

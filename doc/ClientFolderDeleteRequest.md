@@ -12,16 +12,14 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$clientFolderDeleteRequest = new ClientFolderDeleteRequest
-{
-    Folder = "INBOX/SubFolder/FolderToDelete",
-    AccountLocation = new StorageFileLocation
-    {
-        FileName = "email.account",
-        Storage = "First Storage",
-        FolderPath = "file/location/folder/on/storage"
-    }
-};
+$clientFolderDeleteRequest = Models::clientFolderDeleteRequest()
+    ->folder('INBOX/SubFolder/FolderToDelete')
+    ->accountLocation(Models::storageFileLocation()
+        ->fileName('email.account')
+        ->storage('First Storage')
+        ->folderPath('file/location/folder/on/storage')
+        ->build())
+    ->build();
 ```
 
 

@@ -11,21 +11,17 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$fileVersions = new FileVersions
-{
-    Value = new List<FileVersion>
-    {
-        new FileVersion
-        {
-            VersionId = "d5afd857-8797-4ca0-b806-a03fdfc3831f",
-            IsLatest = true,
-            Name = "file.ext",
-            ModifiedDate = DateTime.Today,
-            Size = 4096,
-            Path = "/storage/path/to"
-        }
-    }
-};
+$fileVersions = Models::fileVersions()
+    ->value(array(
+        Models::fileVersion()
+            ->versionId('d5afd857-8797-4ca0-b806-a03fdfc3831f')
+            ->isLatest(true)
+            ->name('file.ext')
+            ->modifiedDate(new DateTime())
+            ->size(4096)
+            ->path('/storage/path/to')
+            ->build()))
+    ->build();
 ```
 
 

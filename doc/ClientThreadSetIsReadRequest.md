@@ -13,18 +13,16 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$clientThreadSetIsReadRequest = new ClientThreadSetIsReadRequest
-{
-    IsRead = true,
-    Folder = "INBOX",
-    ThreadId = "5",
-    AccountLocation = new StorageFileLocation
-    {
-        FileName = "email.account",
-        Storage = "First Storage",
-        FolderPath = "file/location/folder/on/storage"
-    }
-};
+$clientThreadSetIsReadRequest = Models::clientThreadSetIsReadRequest()
+    ->isRead(true)
+    ->folder('INBOX')
+    ->threadId('5')
+    ->accountLocation(Models::storageFileLocation()
+        ->fileName('email.account')
+        ->storage('First Storage')
+        ->folderPath('file/location/folder/on/storage')
+        ->build())
+    ->build();
 ```
 
 

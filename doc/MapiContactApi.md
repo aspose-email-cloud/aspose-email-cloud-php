@@ -23,7 +23,26 @@ See parameter model documentation at [MapiContactDto](MapiContactDto.md)
     <summary>Parameter initialization example:</summary>
     
 ```php
-$mapi_contact_dto = ;
+$mapi_contact_dto = Models::mapiContactDto()
+    ->electronicAddresses(Models::mapiContactElectronicAddressPropertySetDto()
+        ->defaultEmailAddress(Models::mapiContactElectronicAddressDto()
+            ->emailAddress('email@aspose.com')
+            ->build())
+        ->build())
+    ->nameInfo(Models::mapiContactNamePropertySetDto()
+        ->givenName('Alex')
+        ->surname('Thomas')
+        ->build())
+    ->personalInfo(Models::mapiContactPersonalInfoPropertySetDto()
+        ->businessHomePage('www.aspose.com')
+        ->build())
+    ->professionalInfo(Models::mapiContactProfessionalPropertySetDto()
+        ->profession('GENERAL DIRECTOR')
+        ->build())
+    ->telephones(Models::mapiContactTelephonePropertySetDto()
+        ->primaryTelephoneNumber('+49 211 4247 21')
+        ->build())
+    ->build();
 ```
 
 </details>
@@ -39,7 +58,44 @@ Return type: [**ContactDto**](ContactDto.md)
     <summary>Result example</summary>
 
 ```php
-$result = ;
+$result = Models::contactDto()
+    ->attachments(array(
+        Models::attachment()
+            ->name('attachment.txt')
+            ->base64Data('U29tZSBmaWxlIGNvbnRlbnQ=')
+            ->build()))
+    ->displayName('Alex Thomas')
+    ->emailAddresses(array(
+        Models::emailAddress()
+            ->category(Models::enumWithCustom<EmailAddressCategory>()
+                ->value('Custom')
+                ->description('Partners')
+                ->build())
+            ->displayName('Alex Thomas Partners')
+            ->preferred(true)
+            ->address('email@aspose.com')
+            ->build()))
+    ->gender('Male')
+    ->givenName('Alex')
+    ->phoneNumbers(array(
+        Models::phoneNumber()
+            ->category(Models::enumWithCustom<PhoneNumberCategory>()
+                ->value('Office')
+                ->build())
+            ->number('+49 211 4247 21')
+            ->preferred(true)
+            ->build()))
+    ->profession('GENERAL DIRECTOR')
+    ->surname('Thomas')
+    ->urls(array(
+        Models::url()
+            ->category(Models::enumWithCustom<UrlCategory>()
+                ->value('Work')
+                ->build())
+            ->preferred(true)
+            ->href('www.aspose.com')
+            ->build()))
+    ->build();
 ```
 </details>
 
@@ -52,13 +108,69 @@ $result = ;
 $api = new EmailCloud(appKey, appSid);
 
 // Prepare parameters:
-$mapi_contact_dto = ;
+$mapi_contact_dto = Models::mapiContactDto()
+    ->electronicAddresses(Models::mapiContactElectronicAddressPropertySetDto()
+        ->defaultEmailAddress(Models::mapiContactElectronicAddressDto()
+            ->emailAddress('email@aspose.com')
+            ->build())
+        ->build())
+    ->nameInfo(Models::mapiContactNamePropertySetDto()
+        ->givenName('Alex')
+        ->surname('Thomas')
+        ->build())
+    ->personalInfo(Models::mapiContactPersonalInfoPropertySetDto()
+        ->businessHomePage('www.aspose.com')
+        ->build())
+    ->professionalInfo(Models::mapiContactProfessionalPropertySetDto()
+        ->profession('GENERAL DIRECTOR')
+        ->build())
+    ->telephones(Models::mapiContactTelephonePropertySetDto()
+        ->primaryTelephoneNumber('+49 211 4247 21')
+        ->build())
+    ->build();
 
 // Call method:
 $result = $api->mapi()->contact().asContactDto($mapi_contact_dto);
 
 // Result example:
-$result = ;
+$result = Models::contactDto()
+    ->attachments(array(
+        Models::attachment()
+            ->name('attachment.txt')
+            ->base64Data('U29tZSBmaWxlIGNvbnRlbnQ=')
+            ->build()))
+    ->displayName('Alex Thomas')
+    ->emailAddresses(array(
+        Models::emailAddress()
+            ->category(Models::enumWithCustom<EmailAddressCategory>()
+                ->value('Custom')
+                ->description('Partners')
+                ->build())
+            ->displayName('Alex Thomas Partners')
+            ->preferred(true)
+            ->address('email@aspose.com')
+            ->build()))
+    ->gender('Male')
+    ->givenName('Alex')
+    ->phoneNumbers(array(
+        Models::phoneNumber()
+            ->category(Models::enumWithCustom<PhoneNumberCategory>()
+                ->value('Office')
+                ->build())
+            ->number('+49 211 4247 21')
+            ->preferred(true)
+            ->build()))
+    ->profession('GENERAL DIRECTOR')
+    ->surname('Thomas')
+    ->urls(array(
+        Models::url()
+            ->category(Models::enumWithCustom<UrlCategory>()
+                ->value('Work')
+                ->build())
+            ->preferred(true)
+            ->href('www.aspose.com')
+            ->build()))
+    ->build();
 ```
 
 </details>
@@ -85,7 +197,29 @@ See parameter model documentation at [MapiContactAsFileRequest](MapiContactAsFil
     <summary>Parameter initialization example:</summary>
     
 ```php
-$request = ;
+$request = Models::mapiContactAsFileRequest()
+    ->format('Msg')
+    ->value(Models::mapiContactDto()
+        ->electronicAddresses(Models::mapiContactElectronicAddressPropertySetDto()
+            ->defaultEmailAddress(Models::mapiContactElectronicAddressDto()
+                ->emailAddress('email@aspose.com')
+                ->build())
+            ->build())
+        ->nameInfo(Models::mapiContactNamePropertySetDto()
+            ->givenName('Alex')
+            ->surname('Thomas')
+            ->build())
+        ->personalInfo(Models::mapiContactPersonalInfoPropertySetDto()
+            ->businessHomePage('www.aspose.com')
+            ->build())
+        ->professionalInfo(Models::mapiContactProfessionalPropertySetDto()
+            ->profession('GENERAL DIRECTOR')
+            ->build())
+        ->telephones(Models::mapiContactTelephonePropertySetDto()
+            ->primaryTelephoneNumber('+49 211 4247 21')
+            ->build())
+        ->build())
+    ->build();
 ```
 
 </details>
@@ -106,7 +240,29 @@ Return type: [**\SplFileObject**](\SplFileObject.md)
 $api = new EmailCloud(appKey, appSid);
 
 // Prepare parameters:
-$request = ;
+$request = Models::mapiContactAsFileRequest()
+    ->format('Msg')
+    ->value(Models::mapiContactDto()
+        ->electronicAddresses(Models::mapiContactElectronicAddressPropertySetDto()
+            ->defaultEmailAddress(Models::mapiContactElectronicAddressDto()
+                ->emailAddress('email@aspose.com')
+                ->build())
+            ->build())
+        ->nameInfo(Models::mapiContactNamePropertySetDto()
+            ->givenName('Alex')
+            ->surname('Thomas')
+            ->build())
+        ->personalInfo(Models::mapiContactPersonalInfoPropertySetDto()
+            ->businessHomePage('www.aspose.com')
+            ->build())
+        ->professionalInfo(Models::mapiContactProfessionalPropertySetDto()
+            ->profession('GENERAL DIRECTOR')
+            ->build())
+        ->telephones(Models::mapiContactTelephonePropertySetDto()
+            ->primaryTelephoneNumber('+49 211 4247 21')
+            ->build())
+        ->build())
+    ->build();
 
 // Call method:
 $result = $api->mapi()->contact().asFile($request);
@@ -139,7 +295,7 @@ See parameter model documentation at [MapiContactFromFileRequest](MapiContactFro
 $request = Models::MapiContactFromFileRequest()
     ->format('Msg')
     ->file(new SplFileObject('/path/to/contact.msg'))
-    .build();
+    ->build();
 ```
 
 </details>
@@ -154,7 +310,26 @@ Return type: [**MapiContactDto**](MapiContactDto.md)
     <summary>Result example</summary>
 
 ```php
-$result = ;
+$result = Models::mapiContactDto()
+    ->electronicAddresses(Models::mapiContactElectronicAddressPropertySetDto()
+        ->defaultEmailAddress(Models::mapiContactElectronicAddressDto()
+            ->emailAddress('email@aspose.com')
+            ->build())
+        ->build())
+    ->nameInfo(Models::mapiContactNamePropertySetDto()
+        ->givenName('Alex')
+        ->surname('Thomas')
+        ->build())
+    ->personalInfo(Models::mapiContactPersonalInfoPropertySetDto()
+        ->businessHomePage('www.aspose.com')
+        ->build())
+    ->professionalInfo(Models::mapiContactProfessionalPropertySetDto()
+        ->profession('GENERAL DIRECTOR')
+        ->build())
+    ->telephones(Models::mapiContactTelephonePropertySetDto()
+        ->primaryTelephoneNumber('+49 211 4247 21')
+        ->build())
+    ->build();
 ```
 </details>
 
@@ -174,7 +349,26 @@ $file = ;
 $result = $api->mapi()->contact().fromFile($request);
 
 // Result example:
-$result = ;
+$result = Models::mapiContactDto()
+    ->electronicAddresses(Models::mapiContactElectronicAddressPropertySetDto()
+        ->defaultEmailAddress(Models::mapiContactElectronicAddressDto()
+            ->emailAddress('email@aspose.com')
+            ->build())
+        ->build())
+    ->nameInfo(Models::mapiContactNamePropertySetDto()
+        ->givenName('Alex')
+        ->surname('Thomas')
+        ->build())
+    ->personalInfo(Models::mapiContactPersonalInfoPropertySetDto()
+        ->businessHomePage('www.aspose.com')
+        ->build())
+    ->professionalInfo(Models::mapiContactProfessionalPropertySetDto()
+        ->profession('GENERAL DIRECTOR')
+        ->build())
+    ->telephones(Models::mapiContactTelephonePropertySetDto()
+        ->primaryTelephoneNumber('+49 211 4247 21')
+        ->build())
+    ->build();
 ```
 
 </details>
@@ -207,7 +401,7 @@ $request = Models::MapiContactGetRequest()
     ->file_name('contact.vcf')
     ->folder('folder/on/storage')
     ->storage('First Storage')
-    .build();
+    ->build();
 ```
 
 </details>
@@ -222,7 +416,26 @@ Return type: [**MapiContactDto**](MapiContactDto.md)
     <summary>Result example</summary>
 
 ```php
-$result = ;
+$result = Models::mapiContactDto()
+    ->electronicAddresses(Models::mapiContactElectronicAddressPropertySetDto()
+        ->defaultEmailAddress(Models::mapiContactElectronicAddressDto()
+            ->emailAddress('email@aspose.com')
+            ->build())
+        ->build())
+    ->nameInfo(Models::mapiContactNamePropertySetDto()
+        ->givenName('Alex')
+        ->surname('Thomas')
+        ->build())
+    ->personalInfo(Models::mapiContactPersonalInfoPropertySetDto()
+        ->businessHomePage('www.aspose.com')
+        ->build())
+    ->professionalInfo(Models::mapiContactProfessionalPropertySetDto()
+        ->profession('GENERAL DIRECTOR')
+        ->build())
+    ->telephones(Models::mapiContactTelephonePropertySetDto()
+        ->primaryTelephoneNumber('+49 211 4247 21')
+        ->build())
+    ->build();
 ```
 </details>
 
@@ -244,7 +457,26 @@ $storage = ;
 $result = $api->mapi()->contact().get($request);
 
 // Result example:
-$result = ;
+$result = Models::mapiContactDto()
+    ->electronicAddresses(Models::mapiContactElectronicAddressPropertySetDto()
+        ->defaultEmailAddress(Models::mapiContactElectronicAddressDto()
+            ->emailAddress('email@aspose.com')
+            ->build())
+        ->build())
+    ->nameInfo(Models::mapiContactNamePropertySetDto()
+        ->givenName('Alex')
+        ->surname('Thomas')
+        ->build())
+    ->personalInfo(Models::mapiContactPersonalInfoPropertySetDto()
+        ->businessHomePage('www.aspose.com')
+        ->build())
+    ->professionalInfo(Models::mapiContactProfessionalPropertySetDto()
+        ->profession('GENERAL DIRECTOR')
+        ->build())
+    ->telephones(Models::mapiContactTelephonePropertySetDto()
+        ->primaryTelephoneNumber('+49 211 4247 21')
+        ->build())
+    ->build();
 ```
 
 </details>
@@ -271,7 +503,34 @@ See parameter model documentation at [MapiContactSaveRequest](MapiContactSaveReq
     <summary>Parameter initialization example:</summary>
     
 ```php
-$request = ;
+$request = Models::mapiContactSaveRequest()
+    ->format('Msg')
+    ->storageFile(Models::storageFileLocation()
+        ->fileName('contact.msg')
+        ->storage('First Storage')
+        ->folderPath('file/location/folder/on/storage')
+        ->build())
+    ->value(Models::mapiContactDto()
+        ->electronicAddresses(Models::mapiContactElectronicAddressPropertySetDto()
+            ->defaultEmailAddress(Models::mapiContactElectronicAddressDto()
+                ->emailAddress('email@aspose.com')
+                ->build())
+            ->build())
+        ->nameInfo(Models::mapiContactNamePropertySetDto()
+            ->givenName('Alex')
+            ->surname('Thomas')
+            ->build())
+        ->personalInfo(Models::mapiContactPersonalInfoPropertySetDto()
+            ->businessHomePage('www.aspose.com')
+            ->build())
+        ->professionalInfo(Models::mapiContactProfessionalPropertySetDto()
+            ->profession('GENERAL DIRECTOR')
+            ->build())
+        ->telephones(Models::mapiContactTelephonePropertySetDto()
+            ->primaryTelephoneNumber('+49 211 4247 21')
+            ->build())
+        ->build())
+    ->build();
 ```
 
 </details>
@@ -290,7 +549,34 @@ Return type: void (empty response body)
 $api = new EmailCloud(appKey, appSid);
 
 // Prepare parameters:
-$request = ;
+$request = Models::mapiContactSaveRequest()
+    ->format('Msg')
+    ->storageFile(Models::storageFileLocation()
+        ->fileName('contact.msg')
+        ->storage('First Storage')
+        ->folderPath('file/location/folder/on/storage')
+        ->build())
+    ->value(Models::mapiContactDto()
+        ->electronicAddresses(Models::mapiContactElectronicAddressPropertySetDto()
+            ->defaultEmailAddress(Models::mapiContactElectronicAddressDto()
+                ->emailAddress('email@aspose.com')
+                ->build())
+            ->build())
+        ->nameInfo(Models::mapiContactNamePropertySetDto()
+            ->givenName('Alex')
+            ->surname('Thomas')
+            ->build())
+        ->personalInfo(Models::mapiContactPersonalInfoPropertySetDto()
+            ->businessHomePage('www.aspose.com')
+            ->build())
+        ->professionalInfo(Models::mapiContactProfessionalPropertySetDto()
+            ->profession('GENERAL DIRECTOR')
+            ->build())
+        ->telephones(Models::mapiContactTelephonePropertySetDto()
+            ->primaryTelephoneNumber('+49 211 4247 21')
+            ->build())
+        ->build())
+    ->build();
 
 // Call method:
 $api->mapi()->contact().save($request);

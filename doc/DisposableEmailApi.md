@@ -25,7 +25,7 @@ See parameter model documentation at [DisposableEmailIsDisposableRequest](Dispos
 ```php
 $request = Models::DisposableEmailIsDisposableRequest()
     ->address('example@mailcatch.com')
-    .build();
+    ->build();
 ```
 
 </details>

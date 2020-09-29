@@ -14,14 +14,13 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$emailConfigDiscoverOauthRequest = new EmailConfigDiscoverOauthRequest
-{
-    ClientId = "ClientId",
-    ClientSecret = "ClientSecret",
-    RefreshToken = "RefreshToken",
-    Address = "example@aspose.com",
-    FastProcessing = true
-};
+$emailConfigDiscoverOauthRequest = Models::emailConfigDiscoverOauthRequest()
+    ->clientId('ClientId')
+    ->clientSecret('ClientSecret')
+    ->refreshToken('RefreshToken')
+    ->address('example@aspose.com')
+    ->fastProcessing(true)
+    ->build();
 ```
 
 

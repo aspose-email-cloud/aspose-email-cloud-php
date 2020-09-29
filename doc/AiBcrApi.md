@@ -28,7 +28,7 @@ $request = Models::AiBcrParseRequest()
     ->countries('us')
     ->languages('en')
     ->is_single(true)
-    .build();
+    ->build();
 ```
 
 </details>
@@ -43,7 +43,47 @@ Return type: [**ContactList**](ContactList.md)
     <summary>Result example</summary>
 
 ```php
-$result = ;
+$result = Models::contactList()
+    ->value(array(
+        Models::contactDto()
+            ->attachments(array(
+                Models::attachment()
+                    ->name('attachment.txt')
+                    ->base64Data('U29tZSBmaWxlIGNvbnRlbnQ=')
+                    ->build()))
+            ->displayName('Alex Thomas')
+            ->emailAddresses(array(
+                Models::emailAddress()
+                    ->category(Models::enumWithCustom<EmailAddressCategory>()
+                        ->value('Custom')
+                        ->description('Partners')
+                        ->build())
+                    ->displayName('Alex Thomas Partners')
+                    ->preferred(true)
+                    ->address('email@aspose.com')
+                    ->build()))
+            ->gender('Male')
+            ->givenName('Alex')
+            ->phoneNumbers(array(
+                Models::phoneNumber()
+                    ->category(Models::enumWithCustom<PhoneNumberCategory>()
+                        ->value('Office')
+                        ->build())
+                    ->number('+49 211 4247 21')
+                    ->preferred(true)
+                    ->build()))
+            ->profession('GENERAL DIRECTOR')
+            ->surname('Thomas')
+            ->urls(array(
+                Models::url()
+                    ->category(Models::enumWithCustom<UrlCategory>()
+                        ->value('Work')
+                        ->build())
+                    ->preferred(true)
+                    ->href('www.aspose.com')
+                    ->build()))
+            ->build()))
+    ->build();
 ```
 </details>
 
@@ -65,7 +105,47 @@ $is_single = ;
 $result = $api->ai()->bcr().parse($request);
 
 // Result example:
-$result = ;
+$result = Models::contactList()
+    ->value(array(
+        Models::contactDto()
+            ->attachments(array(
+                Models::attachment()
+                    ->name('attachment.txt')
+                    ->base64Data('U29tZSBmaWxlIGNvbnRlbnQ=')
+                    ->build()))
+            ->displayName('Alex Thomas')
+            ->emailAddresses(array(
+                Models::emailAddress()
+                    ->category(Models::enumWithCustom<EmailAddressCategory>()
+                        ->value('Custom')
+                        ->description('Partners')
+                        ->build())
+                    ->displayName('Alex Thomas Partners')
+                    ->preferred(true)
+                    ->address('email@aspose.com')
+                    ->build()))
+            ->gender('Male')
+            ->givenName('Alex')
+            ->phoneNumbers(array(
+                Models::phoneNumber()
+                    ->category(Models::enumWithCustom<PhoneNumberCategory>()
+                        ->value('Office')
+                        ->build())
+                    ->number('+49 211 4247 21')
+                    ->preferred(true)
+                    ->build()))
+            ->profession('GENERAL DIRECTOR')
+            ->surname('Thomas')
+            ->urls(array(
+                Models::url()
+                    ->category(Models::enumWithCustom<UrlCategory>()
+                        ->value('Work')
+                        ->build())
+                    ->preferred(true)
+                    ->href('www.aspose.com')
+                    ->build()))
+            ->build()))
+    ->build();
 ```
 
 </details>
@@ -93,7 +173,21 @@ See parameter model documentation at [AiBcrParseStorageRequest](AiBcrParseStorag
     <summary>Parameter initialization example:</summary>
     
 ```php
-$request = ;
+$request = Models::aiBcrParseStorageRequest()
+    ->outFolder(Models::storageFolderLocation()
+        ->storage('First Storage')
+        ->folderPath('VCard/files/produced/by/parser/will/be/placed/here')
+        ->build())
+    ->images(array(
+        Models::aiBcrImageStorageFile()
+            ->file(Models::storageFileLocation()
+                ->fileName('VCardScanImage.jpg')
+                ->storage('First Storage')
+                ->folderPath('image/location/on/storage')
+                ->build())
+            ->isSingle(true)
+            ->build()))
+    ->build();
 ```
 
 </details>
@@ -109,7 +203,14 @@ Return type: [**StorageFileLocationList**](StorageFileLocationList.md)
     <summary>Result example</summary>
 
 ```php
-$result = ;
+$result = Models::storageFileLocationList()
+    ->value(array(
+        Models::storageFileLocation()
+            ->fileName('fileOnStorage.txt')
+            ->storage('First Storage')
+            ->folderPath('file/location/folder/on/storage')
+            ->build()))
+    ->build();
 ```
 </details>
 
@@ -122,13 +223,34 @@ $result = ;
 $api = new EmailCloud(appKey, appSid);
 
 // Prepare parameters:
-$request = ;
+$request = Models::aiBcrParseStorageRequest()
+    ->outFolder(Models::storageFolderLocation()
+        ->storage('First Storage')
+        ->folderPath('VCard/files/produced/by/parser/will/be/placed/here')
+        ->build())
+    ->images(array(
+        Models::aiBcrImageStorageFile()
+            ->file(Models::storageFileLocation()
+                ->fileName('VCardScanImage.jpg')
+                ->storage('First Storage')
+                ->folderPath('image/location/on/storage')
+                ->build())
+            ->isSingle(true)
+            ->build()))
+    ->build();
 
 // Call method:
 $result = $api->ai()->bcr().parseStorage($request);
 
 // Result example:
-$result = ;
+$result = Models::storageFileLocationList()
+    ->value(array(
+        Models::storageFileLocation()
+            ->fileName('fileOnStorage.txt')
+            ->storage('First Storage')
+            ->folderPath('file/location/folder/on/storage')
+            ->build()))
+    ->build();
 ```
 
 </details>

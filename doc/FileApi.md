@@ -27,7 +27,7 @@ $request = Models::CopyFileRequest()
     ->dest_path('/storage/path/to/destination/file.ext')
     ->src_storage_name('First Storage')
     ->dest_storage_name('Other Storage')
-    .build();
+    ->build();
 ```
 
 </details>
@@ -82,7 +82,7 @@ See parameter model documentation at [DeleteFileRequest](DeleteFileRequest.md)
 $request = Models::DeleteFileRequest()
     ->path('/storage/path/to/file.ext')
     ->storage_name('First Storage')
-    .build();
+    ->build();
 ```
 
 </details>
@@ -136,7 +136,7 @@ See parameter model documentation at [DownloadFileRequest](DownloadFileRequest.m
 $request = Models::DownloadFileRequest()
     ->path('/storage/path/to/file.ext')
     ->storage_name('First Storage')
-    .build();
+    ->build();
 ```
 
 </details>
@@ -193,7 +193,7 @@ $request = Models::MoveFileRequest()
     ->dest_path('/storage/path/to/destination/file.ext')
     ->src_storage_name('First Storage')
     ->dest_storage_name('Other Storage')
-    .build();
+    ->build();
 ```
 
 </details>
@@ -250,7 +250,7 @@ $request = Models::UploadFileRequest()
     ->path('/storage/path/to/file.ext')
     ->file(new SplFileObject('/local/file/system/path/to/file.ext'))
     ->storage_name('First Storage')
-    .build();
+    ->build();
 ```
 
 </details>

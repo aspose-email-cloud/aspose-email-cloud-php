@@ -12,17 +12,15 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$clientThreadDeleteRequest = new ClientThreadDeleteRequest
-{
-    Folder = "INBOX/SubFolder",
-    ThreadId = "5",
-    AccountLocation = new StorageFileLocation
-    {
-        FileName = "email.account",
-        Storage = "First Storage",
-        FolderPath = "file/location/folder/on/storage"
-    }
-};
+$clientThreadDeleteRequest = Models::clientThreadDeleteRequest()
+    ->folder('INBOX/SubFolder')
+    ->threadId('5')
+    ->accountLocation(Models::storageFileLocation()
+        ->fileName('email.account')
+        ->storage('First Storage')
+        ->folderPath('file/location/folder/on/storage')
+        ->build())
+    ->build();
 ```
 
 

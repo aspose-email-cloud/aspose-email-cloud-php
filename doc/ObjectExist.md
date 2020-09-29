@@ -12,10 +12,9 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$objectExist = new ObjectExist
-{
-    Exists = true
-};
+$objectExist = Models::objectExist()
+    ->exists(true)
+    ->build();
 ```
 
 

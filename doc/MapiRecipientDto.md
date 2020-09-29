@@ -14,13 +14,12 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$mapiRecipientDto = new MapiRecipientDto
-{
-    EmailAddress = "to@aspose.com",
-    AddressType = "SMTP",
-    DisplayName = "To Address",
-    RecipientType = "MapiTo"
-};
+$mapiRecipientDto = Models::mapiRecipientDto()
+    ->emailAddress('to@aspose.com')
+    ->addressType('SMTP')
+    ->displayName('To Address')
+    ->recipientType('MapiTo')
+    ->build();
 ```
 
 

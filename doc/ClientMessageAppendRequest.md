@@ -14,55 +14,42 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$clientMessageAppendRequest = new ClientMessageAppendRequest
-{
-    Folder = "INBOX/SubFolder",
-    Message = new MailMessageDto
-    {
-        Value = new EmailDto
-        {
-            Attachments = new List<Attachment>
-            {
-                new Attachment
-                {
-                    Name = "some-file.txt",
-                    Base64Data = "U29tZSBmaWxlIGNvbnRlbnQ="
-                }
-            },
-            Body = "Some body",
-            BodyType = "Html",
-            DeliveryNotificationOptions = new List<EmailDeliveryNotificationOptions>
-            {
-                "OnSuccess",
-                "Delay"
-            },
-            From = new MailAddress
-            {
-                DisplayName = "From Address",
-                Address = "from@aspose.com"
-            },
-            HtmlBody = "<b>Some body</b>",
-            IsBodyHtml = true,
-            IsDraft = true,
-            Subject = "Re: Some subject",
-            To = new List<MailAddress>
-            {
-                new MailAddress
-                {
-                    DisplayName = "To Address",
-                    Address = "to@aspose.com"
-                }
-            }
-        }
-    },
-    MarkAsSent = true,
-    AccountLocation = new StorageFileLocation
-    {
-        FileName = "email.account",
-        Storage = "First Storage",
-        FolderPath = "file/location/folder/on/storage"
-    }
-};
+$clientMessageAppendRequest = Models::clientMessageAppendRequest()
+    ->folder('INBOX/SubFolder')
+    ->message(Models::mailMessageDto()
+        ->value(Models::emailDto()
+            ->attachments(array(
+                Models::attachment()
+                    ->name('some-file.txt')
+                    ->base64Data('U29tZSBmaWxlIGNvbnRlbnQ=')
+                    ->build()))
+            ->body('Some body')
+            ->bodyType('Html')
+            ->deliveryNotificationOptions(array(
+                'OnSuccess',
+                'Delay'))
+            ->from(Models::mailAddress()
+                ->displayName('From Address')
+                ->address('from@aspose.com')
+                ->build())
+            ->htmlBody('<b>Some body</b>')
+            ->isBodyHtml(true)
+            ->isDraft(true)
+            ->subject('Re: Some subject')
+            ->to(array(
+                Models::mailAddress()
+                    ->displayName('To Address')
+                    ->address('to@aspose.com')
+                    ->build()))
+            ->build())
+        ->build())
+    ->markAsSent(true)
+    ->accountLocation(Models::storageFileLocation()
+        ->fileName('email.account')
+        ->storage('First Storage')
+        ->folderPath('file/location/folder/on/storage')
+        ->build())
+    ->build();
 ```
 
 

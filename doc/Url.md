@@ -13,15 +13,13 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$url = new Url
-{
-    Category = new EnumWithCustom<UrlCategory>
-    {
-        Value = "Work"
-    },
-    Preferred = true,
-    Href = "https://products.aspose.cloud/email"
-};
+$url = Models::url()
+    ->category(Models::enumWithCustom<UrlCategory>()
+        ->value('Work')
+        ->build())
+    ->preferred(true)
+    ->href('https://products.aspose.cloud/email')
+    ->build();
 ```
 
 

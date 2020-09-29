@@ -27,7 +27,7 @@ $request = Models::CopyFolderRequest()
     ->dest_path('/storage/path/to/destination/folder')
     ->src_storage_name('First Storage')
     ->dest_storage_name('Other Storage')
-    .build();
+    ->build();
 ```
 
 </details>
@@ -81,7 +81,7 @@ See parameter model documentation at [CreateFolderRequest](CreateFolderRequest.m
 $request = Models::CreateFolderRequest()
     ->path('/storage/path/to/new/folder')
     ->storage_name('First Storage')
-    .build();
+    ->build();
 ```
 
 </details>
@@ -134,7 +134,7 @@ $request = Models::DeleteFolderRequest()
     ->path('/storage/path/to/folder')
     ->storage_name('First Storage')
     ->recursive(true)
-    .build();
+    ->build();
 ```
 
 </details>
@@ -188,7 +188,7 @@ See parameter model documentation at [GetFilesListRequest](GetFilesListRequest.m
 $request = Models::GetFilesListRequest()
     ->path('/storage/path/to/folder')
     ->storage_name('First Storage')
-    .build();
+    ->build();
 ```
 
 </details>
@@ -203,7 +203,15 @@ Return type: [**FilesList**](FilesList.md)
     <summary>Result example</summary>
 
 ```php
-$result = ;
+$result = Models::filesList()
+    ->value(array(
+        Models::storageFile()
+            ->name('file.ext')
+            ->modifiedDate(new DateTime())
+            ->size(1024)
+            ->path('/path/to/file/on/storage')
+            ->build()))
+    ->build();
 ```
 </details>
 
@@ -223,7 +231,15 @@ $storage_name = ;
 $result = $api->cloudStorage()->folder().getFilesList($request);
 
 // Result example:
-$result = ;
+$result = Models::filesList()
+    ->value(array(
+        Models::storageFile()
+            ->name('file.ext')
+            ->modifiedDate(new DateTime())
+            ->size(1024)
+            ->path('/path/to/file/on/storage')
+            ->build()))
+    ->build();
 ```
 
 </details>
@@ -255,7 +271,7 @@ $request = Models::MoveFolderRequest()
     ->dest_path('/storage/path/to/destination/folder')
     ->src_storage_name('First Storage')
     ->dest_storage_name('Other Storage')
-    .build();
+    ->build();
 ```
 
 </details>

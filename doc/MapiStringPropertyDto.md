@@ -12,14 +12,12 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$mapiStringPropertyDto = new MapiStringPropertyDto
-{
-    Value = "SomeName",
-    Descriptor = new MapiKnownPropertyDescriptor
-    {
-        Name = "DisplayName"
-    }
-};
+$mapiStringPropertyDto = Models::mapiStringPropertyDto()
+    ->value('SomeName')
+    ->descriptor(Models::mapiKnownPropertyDescriptor()
+        ->name('DisplayName')
+        ->build())
+    ->build();
 ```
 
 

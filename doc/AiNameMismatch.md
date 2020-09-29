@@ -13,11 +13,10 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$aiNameMismatch = new AiNameMismatch
-{
-    Category = "Gender",
-    Explanation = "no_match"
-};
+$aiNameMismatch = Models::aiNameMismatch()
+    ->category('Gender')
+    ->explanation('no_match')
+    ->build();
 ```
 
 

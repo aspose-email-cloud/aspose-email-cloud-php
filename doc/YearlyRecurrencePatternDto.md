@@ -15,13 +15,12 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$yearlyRecurrencePatternDto = new YearlyRecurrencePatternDto
-{
-    StartMonth = "January",
-    StartOffset = 30,
-    Interval = -1,
-    WeekStart = "Monday"
-};
+$yearlyRecurrencePatternDto = Models::yearlyRecurrencePatternDto()
+    ->startMonth('January')
+    ->startOffset(30)
+    ->interval(-1)
+    ->weekStart('Monday')
+    ->build();
 ```
 
 

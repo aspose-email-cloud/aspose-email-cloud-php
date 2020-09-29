@@ -13,10 +13,9 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$mailMessageBase64 = new MailMessageBase64
-{
-    ValueBase64 = "RnJvbTogZkBmLnVzClRvOiB0QHQudXMKU3ViamVjdDogUwoKQm9keQ=="
-};
+$mailMessageBase64 = Models::mailMessageBase64()
+    ->valueBase64('RnJvbTogZkBmLnVzClRvOiB0QHQudXMKU3ViamVjdDogUwoKQm9keQ==')
+    ->build();
 ```
 
 

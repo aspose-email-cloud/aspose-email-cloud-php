@@ -12,22 +12,17 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$aiNameWeightedVariants = new AiNameWeightedVariants
-{
-    Names = new List<AiNameWeighted>
-    {
-        new AiNameWeighted
-        {
-            Name = "J. Cane",
-            Score = 1
-        },
-        new AiNameWeighted
-        {
-            Name = "Mr. Cane",
-            Score = 0.75
-        }
-    }
-};
+$aiNameWeightedVariants = Models::aiNameWeightedVariants()
+    ->names(array(
+        Models::aiNameWeighted()
+            ->name('J. Cane')
+            ->score(1)
+            ->build(),
+        Models::aiNameWeighted()
+            ->name('Mr. Cane')
+            ->score(0.75)
+            ->build()))
+    ->build();
 ```
 
 

@@ -12,17 +12,15 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$clientThreadMoveRequest = new ClientThreadMoveRequest
-{
-    DestinationFolder = "INBOX/SubFolder",
-    ThreadId = "5",
-    AccountLocation = new StorageFileLocation
-    {
-        FileName = "email.account",
-        Storage = "First Storage",
-        FolderPath = "file/location/folder/on/storage"
-    }
-};
+$clientThreadMoveRequest = Models::clientThreadMoveRequest()
+    ->destinationFolder('INBOX/SubFolder')
+    ->threadId('5')
+    ->accountLocation(Models::storageFileLocation()
+        ->fileName('email.account')
+        ->storage('First Storage')
+        ->folderPath('file/location/folder/on/storage')
+        ->build())
+    ->build();
 ```
 
 

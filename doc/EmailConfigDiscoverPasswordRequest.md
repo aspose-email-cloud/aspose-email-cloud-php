@@ -11,12 +11,11 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$emailConfigDiscoverPasswordRequest = new EmailConfigDiscoverPasswordRequest
-{
-    Password = "password",
-    Address = "example@aspose.com",
-    FastProcessing = true
-};
+$emailConfigDiscoverPasswordRequest = Models::emailConfigDiscoverPasswordRequest()
+    ->password('password')
+    ->address('example@aspose.com')
+    ->fastProcessing(true)
+    ->build();
 ```
 
 

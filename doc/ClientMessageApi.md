@@ -23,7 +23,42 @@ See parameter model documentation at [ClientMessageAppendRequest](ClientMessageA
     <summary>Parameter initialization example:</summary>
     
 ```php
-$request = ;
+$request = Models::clientMessageAppendRequest()
+    ->folder('INBOX/SubFolder')
+    ->message(Models::mailMessageDto()
+        ->value(Models::emailDto()
+            ->attachments(array(
+                Models::attachment()
+                    ->name('some-file.txt')
+                    ->base64Data('U29tZSBmaWxlIGNvbnRlbnQ=')
+                    ->build()))
+            ->body('Some body')
+            ->bodyType('Html')
+            ->deliveryNotificationOptions(array(
+                'OnSuccess',
+                'Delay'))
+            ->from(Models::mailAddress()
+                ->displayName('From Address')
+                ->address('from@aspose.com')
+                ->build())
+            ->htmlBody('<b>Some body</b>')
+            ->isBodyHtml(true)
+            ->isDraft(true)
+            ->subject('Re: Some subject')
+            ->to(array(
+                Models::mailAddress()
+                    ->displayName('To Address')
+                    ->address('to@aspose.com')
+                    ->build()))
+            ->build())
+        ->build())
+    ->markAsSent(true)
+    ->accountLocation(Models::storageFileLocation()
+        ->fileName('email.account')
+        ->storage('First Storage')
+        ->folderPath('file/location/folder/on/storage')
+        ->build())
+    ->build();
 ```
 
 </details>
@@ -52,7 +87,42 @@ $result = ;
 $api = new EmailCloud(appKey, appSid);
 
 // Prepare parameters:
-$request = ;
+$request = Models::clientMessageAppendRequest()
+    ->folder('INBOX/SubFolder')
+    ->message(Models::mailMessageDto()
+        ->value(Models::emailDto()
+            ->attachments(array(
+                Models::attachment()
+                    ->name('some-file.txt')
+                    ->base64Data('U29tZSBmaWxlIGNvbnRlbnQ=')
+                    ->build()))
+            ->body('Some body')
+            ->bodyType('Html')
+            ->deliveryNotificationOptions(array(
+                'OnSuccess',
+                'Delay'))
+            ->from(Models::mailAddress()
+                ->displayName('From Address')
+                ->address('from@aspose.com')
+                ->build())
+            ->htmlBody('<b>Some body</b>')
+            ->isBodyHtml(true)
+            ->isDraft(true)
+            ->subject('Re: Some subject')
+            ->to(array(
+                Models::mailAddress()
+                    ->displayName('To Address')
+                    ->address('to@aspose.com')
+                    ->build()))
+            ->build())
+        ->build())
+    ->markAsSent(true)
+    ->accountLocation(Models::storageFileLocation()
+        ->fileName('email.account')
+        ->storage('First Storage')
+        ->folderPath('file/location/folder/on/storage')
+        ->build())
+    ->build();
 
 // Call method:
 $result = $api->client()->message().append($request);
@@ -92,7 +162,7 @@ $request = Models::ClientMessageAppendFileRequest()
     ->account_storage_folder('email/account/location/on/storage')
     ->format('Eml')
     ->folder('INBOX')
-    .build();
+    ->build();
 ```
 
 </details>
@@ -159,7 +229,15 @@ See parameter model documentation at [ClientMessageDeleteRequest](ClientMessageD
     <summary>Parameter initialization example:</summary>
     
 ```php
-$request = ;
+$request = Models::clientMessageDeleteRequest()
+    ->folder('INBOX')
+    ->messageId('5')
+    ->accountLocation(Models::storageFileLocation()
+        ->fileName('email.account')
+        ->storage('First Storage')
+        ->folderPath('file/location/folder/on/storage')
+        ->build())
+    ->build();
 ```
 
 </details>
@@ -178,7 +256,15 @@ Return type: void (empty response body)
 $api = new EmailCloud(appKey, appSid);
 
 // Prepare parameters:
-$request = ;
+$request = Models::clientMessageDeleteRequest()
+    ->folder('INBOX')
+    ->messageId('5')
+    ->accountLocation(Models::storageFileLocation()
+        ->fileName('email.account')
+        ->storage('First Storage')
+        ->folderPath('file/location/folder/on/storage')
+        ->build())
+    ->build();
 
 // Call method:
 $api->client()->message().delete($request);
@@ -216,7 +302,7 @@ $request = Models::ClientMessageFetchRequest()
     ->account_storage_folder('email/account/location/on/storage')
     ->type('Dto')
     ->format('Eml')
-    .build();
+    ->build();
 ```
 
 </details>
@@ -231,7 +317,9 @@ Return type: [**MailMessageBase**](MailMessageBase.md)
     <summary>Result example</summary>
 
 ```php
-$result = ;
+$result = Models::mailMessageBase()
+    
+    ->build();
 ```
 </details>
 
@@ -256,7 +344,9 @@ $format = ;
 $result = $api->client()->message().fetch($request);
 
 // Result example:
-$result = ;
+$result = Models::mailMessageBase()
+    
+    ->build();
 ```
 
 </details>
@@ -291,7 +381,7 @@ $request = Models::ClientMessageFetchFileRequest()
     ->storage('First Storage')
     ->account_storage_folder('email/account/location/on/storage')
     ->format('Eml')
-    .build();
+    ->build();
 ```
 
 </details>
@@ -358,7 +448,7 @@ $request = Models::ClientMessageListRequest()
     ->recursive(true)
     ->type('Dto')
     ->format('Eml')
-    .build();
+    ->build();
 ```
 
 </details>
@@ -426,7 +516,16 @@ See parameter model documentation at [ClientMessageMoveRequest](ClientMessageMov
     <summary>Parameter initialization example:</summary>
     
 ```php
-$request = ;
+$request = Models::clientMessageMoveRequest()
+    ->sourceFolder('INBOX')
+    ->destinationFolder('INBOX/SubFolder')
+    ->messageId('5')
+    ->accountLocation(Models::storageFileLocation()
+        ->fileName('email.account')
+        ->storage('First Storage')
+        ->folderPath('file/location/folder/on/storage')
+        ->build())
+    ->build();
 ```
 
 </details>
@@ -445,7 +544,16 @@ Return type: void (empty response body)
 $api = new EmailCloud(appKey, appSid);
 
 // Prepare parameters:
-$request = ;
+$request = Models::clientMessageMoveRequest()
+    ->sourceFolder('INBOX')
+    ->destinationFolder('INBOX/SubFolder')
+    ->messageId('5')
+    ->accountLocation(Models::storageFileLocation()
+        ->fileName('email.account')
+        ->storage('First Storage')
+        ->folderPath('file/location/folder/on/storage')
+        ->build())
+    ->build();
 
 // Call method:
 $api->client()->message().move($request);
@@ -474,7 +582,40 @@ See parameter model documentation at [ClientMessageSendRequest](ClientMessageSen
     <summary>Parameter initialization example:</summary>
     
 ```php
-$request = ;
+$request = Models::clientMessageSendRequest()
+    ->message(Models::mailMessageDto()
+        ->value(Models::emailDto()
+            ->attachments(array(
+                Models::attachment()
+                    ->name('some-file.txt')
+                    ->base64Data('U29tZSBmaWxlIGNvbnRlbnQ=')
+                    ->build()))
+            ->body('Some body')
+            ->bodyType('Html')
+            ->deliveryNotificationOptions(array(
+                'OnSuccess',
+                'Delay'))
+            ->from(Models::mailAddress()
+                ->displayName('From Address')
+                ->address('from@aspose.com')
+                ->build())
+            ->htmlBody('<b>Some body</b>')
+            ->isBodyHtml(true)
+            ->isDraft(true)
+            ->subject('Re: Some subject')
+            ->to(array(
+                Models::mailAddress()
+                    ->displayName('To Address')
+                    ->address('to@aspose.com')
+                    ->build()))
+            ->build())
+        ->build())
+    ->accountLocation(Models::storageFileLocation()
+        ->fileName('email.account')
+        ->storage('First Storage')
+        ->folderPath('file/location/folder/on/storage')
+        ->build())
+    ->build();
 ```
 
 </details>
@@ -493,7 +634,40 @@ Return type: void (empty response body)
 $api = new EmailCloud(appKey, appSid);
 
 // Prepare parameters:
-$request = ;
+$request = Models::clientMessageSendRequest()
+    ->message(Models::mailMessageDto()
+        ->value(Models::emailDto()
+            ->attachments(array(
+                Models::attachment()
+                    ->name('some-file.txt')
+                    ->base64Data('U29tZSBmaWxlIGNvbnRlbnQ=')
+                    ->build()))
+            ->body('Some body')
+            ->bodyType('Html')
+            ->deliveryNotificationOptions(array(
+                'OnSuccess',
+                'Delay'))
+            ->from(Models::mailAddress()
+                ->displayName('From Address')
+                ->address('from@aspose.com')
+                ->build())
+            ->htmlBody('<b>Some body</b>')
+            ->isBodyHtml(true)
+            ->isDraft(true)
+            ->subject('Re: Some subject')
+            ->to(array(
+                Models::mailAddress()
+                    ->displayName('To Address')
+                    ->address('to@aspose.com')
+                    ->build()))
+            ->build())
+        ->build())
+    ->accountLocation(Models::storageFileLocation()
+        ->fileName('email.account')
+        ->storage('First Storage')
+        ->folderPath('file/location/folder/on/storage')
+        ->build())
+    ->build();
 
 // Call method:
 $api->client()->message().send($request);
@@ -528,7 +702,7 @@ $request = Models::ClientMessageSendFileRequest()
     ->storage('First Storage')
     ->account_storage_folder('email/account/location/on/storage')
     ->format('Eml')
-    .build();
+    ->build();
 ```
 
 </details>
@@ -580,7 +754,15 @@ See parameter model documentation at [ClientMessageSetIsReadRequest](ClientMessa
     <summary>Parameter initialization example:</summary>
     
 ```php
-$request = ;
+$request = Models::clientMessageSetIsReadRequest()
+    ->isRead(true)
+    ->messageId('5')
+    ->accountLocation(Models::storageFileLocation()
+        ->fileName('email.account')
+        ->storage('First Storage')
+        ->folderPath('file/location/folder/on/storage')
+        ->build())
+    ->build();
 ```
 
 </details>
@@ -599,7 +781,15 @@ Return type: void (empty response body)
 $api = new EmailCloud(appKey, appSid);
 
 // Prepare parameters:
-$request = ;
+$request = Models::clientMessageSetIsReadRequest()
+    ->isRead(true)
+    ->messageId('5')
+    ->accountLocation(Models::storageFileLocation()
+        ->fileName('email.account')
+        ->storage('First Storage')
+        ->folderPath('file/location/folder/on/storage')
+        ->build())
+    ->build();
 
 // Call method:
 $api->client()->message().setIsRead($request);

@@ -23,7 +23,37 @@ See parameter model documentation at [MapiMessageDto](MapiMessageDto.md)
     <summary>Parameter initialization example:</summary>
     
 ```php
-$mapi_message = ;
+$mapi_message = Models::mapiMessageDto()
+    ->messageBody('Some body')
+    ->clientSubmitTime(new DateTime())
+    ->deliveryTime(new DateTime())
+    ->displayTo('To Address')
+    ->flags(array(
+        'MsgFlagRead',
+        'MsgFlagUnsent',
+        'MsgFlagHasAttach'))
+    ->normalizedSubject('Some subject')
+    ->senderAddressType('SMTP')
+    ->senderEmailAddress('from@aspose.com')
+    ->senderName('From Address')
+    ->senderSmtpAddress('from@aspose.com')
+    ->attachments(array(
+        Models::mapiAttachmentDto()
+            ->name('some-file.txt')
+            ->dataBase64('U29tZSBmaWxlIHRleHQ=')
+            ->build()))
+    ->body('Some body')
+    ->messageClass('IPM.Note')
+    ->recipients(array(
+        Models::mapiRecipientDto()
+            ->emailAddress('to@aspose.com')
+            ->addressType('SMTP')
+            ->displayName('To Address')
+            ->recipientType('MapiTo')
+            ->build()))
+    ->subject('Re: Some subject')
+    ->subjectPrefix('Re: ')
+    ->build();
 ```
 
 </details>
@@ -39,7 +69,31 @@ Return type: [**EmailDto**](EmailDto.md)
     <summary>Result example</summary>
 
 ```php
-$result = ;
+$result = Models::emailDto()
+    ->attachments(array(
+        Models::attachment()
+            ->name('some-file.txt')
+            ->base64Data('U29tZSBmaWxlIGNvbnRlbnQ=')
+            ->build()))
+    ->body('Some body')
+    ->bodyType('Html')
+    ->deliveryNotificationOptions(array(
+        'OnSuccess',
+        'Delay'))
+    ->from(Models::mailAddress()
+        ->displayName('From Address')
+        ->address('from@aspose.com')
+        ->build())
+    ->htmlBody('<b>Some body</b>')
+    ->isBodyHtml(true)
+    ->isDraft(true)
+    ->subject('Re: Some subject')
+    ->to(array(
+        Models::mailAddress()
+            ->displayName('To Address')
+            ->address('to@aspose.com')
+            ->build()))
+    ->build();
 ```
 </details>
 
@@ -52,13 +106,67 @@ $result = ;
 $api = new EmailCloud(appKey, appSid);
 
 // Prepare parameters:
-$mapi_message = ;
+$mapi_message = Models::mapiMessageDto()
+    ->messageBody('Some body')
+    ->clientSubmitTime(new DateTime())
+    ->deliveryTime(new DateTime())
+    ->displayTo('To Address')
+    ->flags(array(
+        'MsgFlagRead',
+        'MsgFlagUnsent',
+        'MsgFlagHasAttach'))
+    ->normalizedSubject('Some subject')
+    ->senderAddressType('SMTP')
+    ->senderEmailAddress('from@aspose.com')
+    ->senderName('From Address')
+    ->senderSmtpAddress('from@aspose.com')
+    ->attachments(array(
+        Models::mapiAttachmentDto()
+            ->name('some-file.txt')
+            ->dataBase64('U29tZSBmaWxlIHRleHQ=')
+            ->build()))
+    ->body('Some body')
+    ->messageClass('IPM.Note')
+    ->recipients(array(
+        Models::mapiRecipientDto()
+            ->emailAddress('to@aspose.com')
+            ->addressType('SMTP')
+            ->displayName('To Address')
+            ->recipientType('MapiTo')
+            ->build()))
+    ->subject('Re: Some subject')
+    ->subjectPrefix('Re: ')
+    ->build();
 
 // Call method:
 $result = $api->mapi()->message().asEmailDto($mapi_message);
 
 // Result example:
-$result = ;
+$result = Models::emailDto()
+    ->attachments(array(
+        Models::attachment()
+            ->name('some-file.txt')
+            ->base64Data('U29tZSBmaWxlIGNvbnRlbnQ=')
+            ->build()))
+    ->body('Some body')
+    ->bodyType('Html')
+    ->deliveryNotificationOptions(array(
+        'OnSuccess',
+        'Delay'))
+    ->from(Models::mailAddress()
+        ->displayName('From Address')
+        ->address('from@aspose.com')
+        ->build())
+    ->htmlBody('<b>Some body</b>')
+    ->isBodyHtml(true)
+    ->isDraft(true)
+    ->subject('Re: Some subject')
+    ->to(array(
+        Models::mailAddress()
+            ->displayName('To Address')
+            ->address('to@aspose.com')
+            ->build()))
+    ->build();
 ```
 
 </details>
@@ -85,7 +193,40 @@ See parameter model documentation at [MapiMessageAsFileRequest](MapiMessageAsFil
     <summary>Parameter initialization example:</summary>
     
 ```php
-$request = ;
+$request = Models::mapiMessageAsFileRequest()
+    ->format('Msg')
+    ->value(Models::mapiMessageDto()
+        ->messageBody('Some body')
+        ->clientSubmitTime(new DateTime())
+        ->deliveryTime(new DateTime())
+        ->displayTo('To Address')
+        ->flags(array(
+            'MsgFlagRead',
+            'MsgFlagUnsent',
+            'MsgFlagHasAttach'))
+        ->normalizedSubject('Some subject')
+        ->senderAddressType('SMTP')
+        ->senderEmailAddress('from@aspose.com')
+        ->senderName('From Address')
+        ->senderSmtpAddress('from@aspose.com')
+        ->attachments(array(
+            Models::mapiAttachmentDto()
+                ->name('some-file.txt')
+                ->dataBase64('U29tZSBmaWxlIHRleHQ=')
+                ->build()))
+        ->body('Some body')
+        ->messageClass('IPM.Note')
+        ->recipients(array(
+            Models::mapiRecipientDto()
+                ->emailAddress('to@aspose.com')
+                ->addressType('SMTP')
+                ->displayName('To Address')
+                ->recipientType('MapiTo')
+                ->build()))
+        ->subject('Re: Some subject')
+        ->subjectPrefix('Re: ')
+        ->build())
+    ->build();
 ```
 
 </details>
@@ -106,7 +247,40 @@ Return type: [**\SplFileObject**](\SplFileObject.md)
 $api = new EmailCloud(appKey, appSid);
 
 // Prepare parameters:
-$request = ;
+$request = Models::mapiMessageAsFileRequest()
+    ->format('Msg')
+    ->value(Models::mapiMessageDto()
+        ->messageBody('Some body')
+        ->clientSubmitTime(new DateTime())
+        ->deliveryTime(new DateTime())
+        ->displayTo('To Address')
+        ->flags(array(
+            'MsgFlagRead',
+            'MsgFlagUnsent',
+            'MsgFlagHasAttach'))
+        ->normalizedSubject('Some subject')
+        ->senderAddressType('SMTP')
+        ->senderEmailAddress('from@aspose.com')
+        ->senderName('From Address')
+        ->senderSmtpAddress('from@aspose.com')
+        ->attachments(array(
+            Models::mapiAttachmentDto()
+                ->name('some-file.txt')
+                ->dataBase64('U29tZSBmaWxlIHRleHQ=')
+                ->build()))
+        ->body('Some body')
+        ->messageClass('IPM.Note')
+        ->recipients(array(
+            Models::mapiRecipientDto()
+                ->emailAddress('to@aspose.com')
+                ->addressType('SMTP')
+                ->displayName('To Address')
+                ->recipientType('MapiTo')
+                ->build()))
+        ->subject('Re: Some subject')
+        ->subjectPrefix('Re: ')
+        ->build())
+    ->build();
 
 // Call method:
 $result = $api->mapi()->message().asFile($request);
@@ -139,7 +313,7 @@ See parameter model documentation at [MapiMessageFromFileRequest](MapiMessageFro
 $request = Models::MapiMessageFromFileRequest()
     ->format('Msg')
     ->file(new SplFileObject('/path/to/message.msg'))
-    .build();
+    ->build();
 ```
 
 </details>
@@ -154,7 +328,37 @@ Return type: [**MapiMessageDto**](MapiMessageDto.md)
     <summary>Result example</summary>
 
 ```php
-$result = ;
+$result = Models::mapiMessageDto()
+    ->messageBody('Some body')
+    ->clientSubmitTime(new DateTime())
+    ->deliveryTime(new DateTime())
+    ->displayTo('To Address')
+    ->flags(array(
+        'MsgFlagRead',
+        'MsgFlagUnsent',
+        'MsgFlagHasAttach'))
+    ->normalizedSubject('Some subject')
+    ->senderAddressType('SMTP')
+    ->senderEmailAddress('from@aspose.com')
+    ->senderName('From Address')
+    ->senderSmtpAddress('from@aspose.com')
+    ->attachments(array(
+        Models::mapiAttachmentDto()
+            ->name('some-file.txt')
+            ->dataBase64('U29tZSBmaWxlIHRleHQ=')
+            ->build()))
+    ->body('Some body')
+    ->messageClass('IPM.Note')
+    ->recipients(array(
+        Models::mapiRecipientDto()
+            ->emailAddress('to@aspose.com')
+            ->addressType('SMTP')
+            ->displayName('To Address')
+            ->recipientType('MapiTo')
+            ->build()))
+    ->subject('Re: Some subject')
+    ->subjectPrefix('Re: ')
+    ->build();
 ```
 </details>
 
@@ -174,7 +378,37 @@ $file = ;
 $result = $api->mapi()->message().fromFile($request);
 
 // Result example:
-$result = ;
+$result = Models::mapiMessageDto()
+    ->messageBody('Some body')
+    ->clientSubmitTime(new DateTime())
+    ->deliveryTime(new DateTime())
+    ->displayTo('To Address')
+    ->flags(array(
+        'MsgFlagRead',
+        'MsgFlagUnsent',
+        'MsgFlagHasAttach'))
+    ->normalizedSubject('Some subject')
+    ->senderAddressType('SMTP')
+    ->senderEmailAddress('from@aspose.com')
+    ->senderName('From Address')
+    ->senderSmtpAddress('from@aspose.com')
+    ->attachments(array(
+        Models::mapiAttachmentDto()
+            ->name('some-file.txt')
+            ->dataBase64('U29tZSBmaWxlIHRleHQ=')
+            ->build()))
+    ->body('Some body')
+    ->messageClass('IPM.Note')
+    ->recipients(array(
+        Models::mapiRecipientDto()
+            ->emailAddress('to@aspose.com')
+            ->addressType('SMTP')
+            ->displayName('To Address')
+            ->recipientType('MapiTo')
+            ->build()))
+    ->subject('Re: Some subject')
+    ->subjectPrefix('Re: ')
+    ->build();
 ```
 
 </details>
@@ -207,7 +441,7 @@ $request = Models::MapiMessageGetRequest()
     ->file_name('email.eml')
     ->folder('folder/on/storage')
     ->storage('First Storage')
-    .build();
+    ->build();
 ```
 
 </details>
@@ -222,7 +456,37 @@ Return type: [**MapiMessageDto**](MapiMessageDto.md)
     <summary>Result example</summary>
 
 ```php
-$result = ;
+$result = Models::mapiMessageDto()
+    ->messageBody('Some body')
+    ->clientSubmitTime(new DateTime())
+    ->deliveryTime(new DateTime())
+    ->displayTo('To Address')
+    ->flags(array(
+        'MsgFlagRead',
+        'MsgFlagUnsent',
+        'MsgFlagHasAttach'))
+    ->normalizedSubject('Some subject')
+    ->senderAddressType('SMTP')
+    ->senderEmailAddress('from@aspose.com')
+    ->senderName('From Address')
+    ->senderSmtpAddress('from@aspose.com')
+    ->attachments(array(
+        Models::mapiAttachmentDto()
+            ->name('some-file.txt')
+            ->dataBase64('U29tZSBmaWxlIHRleHQ=')
+            ->build()))
+    ->body('Some body')
+    ->messageClass('IPM.Note')
+    ->recipients(array(
+        Models::mapiRecipientDto()
+            ->emailAddress('to@aspose.com')
+            ->addressType('SMTP')
+            ->displayName('To Address')
+            ->recipientType('MapiTo')
+            ->build()))
+    ->subject('Re: Some subject')
+    ->subjectPrefix('Re: ')
+    ->build();
 ```
 </details>
 
@@ -244,7 +508,37 @@ $storage = ;
 $result = $api->mapi()->message().get($request);
 
 // Result example:
-$result = ;
+$result = Models::mapiMessageDto()
+    ->messageBody('Some body')
+    ->clientSubmitTime(new DateTime())
+    ->deliveryTime(new DateTime())
+    ->displayTo('To Address')
+    ->flags(array(
+        'MsgFlagRead',
+        'MsgFlagUnsent',
+        'MsgFlagHasAttach'))
+    ->normalizedSubject('Some subject')
+    ->senderAddressType('SMTP')
+    ->senderEmailAddress('from@aspose.com')
+    ->senderName('From Address')
+    ->senderSmtpAddress('from@aspose.com')
+    ->attachments(array(
+        Models::mapiAttachmentDto()
+            ->name('some-file.txt')
+            ->dataBase64('U29tZSBmaWxlIHRleHQ=')
+            ->build()))
+    ->body('Some body')
+    ->messageClass('IPM.Note')
+    ->recipients(array(
+        Models::mapiRecipientDto()
+            ->emailAddress('to@aspose.com')
+            ->addressType('SMTP')
+            ->displayName('To Address')
+            ->recipientType('MapiTo')
+            ->build()))
+    ->subject('Re: Some subject')
+    ->subjectPrefix('Re: ')
+    ->build();
 ```
 
 </details>
@@ -271,7 +565,45 @@ See parameter model documentation at [MapiMessageSaveRequest](MapiMessageSaveReq
     <summary>Parameter initialization example:</summary>
     
 ```php
-$request = ;
+$request = Models::mapiMessageSaveRequest()
+    ->format('Msg')
+    ->storageFile(Models::storageFileLocation()
+        ->fileName('message.msg')
+        ->storage('First Storage')
+        ->folderPath('file/location/folder/on/storage')
+        ->build())
+    ->value(Models::mapiMessageDto()
+        ->messageBody('Some body')
+        ->clientSubmitTime(new DateTime())
+        ->deliveryTime(new DateTime())
+        ->displayTo('To Address')
+        ->flags(array(
+            'MsgFlagRead',
+            'MsgFlagUnsent',
+            'MsgFlagHasAttach'))
+        ->normalizedSubject('Some subject')
+        ->senderAddressType('SMTP')
+        ->senderEmailAddress('from@aspose.com')
+        ->senderName('From Address')
+        ->senderSmtpAddress('from@aspose.com')
+        ->attachments(array(
+            Models::mapiAttachmentDto()
+                ->name('some-file.txt')
+                ->dataBase64('U29tZSBmaWxlIHRleHQ=')
+                ->build()))
+        ->body('Some body')
+        ->messageClass('IPM.Note')
+        ->recipients(array(
+            Models::mapiRecipientDto()
+                ->emailAddress('to@aspose.com')
+                ->addressType('SMTP')
+                ->displayName('To Address')
+                ->recipientType('MapiTo')
+                ->build()))
+        ->subject('Re: Some subject')
+        ->subjectPrefix('Re: ')
+        ->build())
+    ->build();
 ```
 
 </details>
@@ -290,7 +622,45 @@ Return type: void (empty response body)
 $api = new EmailCloud(appKey, appSid);
 
 // Prepare parameters:
-$request = ;
+$request = Models::mapiMessageSaveRequest()
+    ->format('Msg')
+    ->storageFile(Models::storageFileLocation()
+        ->fileName('message.msg')
+        ->storage('First Storage')
+        ->folderPath('file/location/folder/on/storage')
+        ->build())
+    ->value(Models::mapiMessageDto()
+        ->messageBody('Some body')
+        ->clientSubmitTime(new DateTime())
+        ->deliveryTime(new DateTime())
+        ->displayTo('To Address')
+        ->flags(array(
+            'MsgFlagRead',
+            'MsgFlagUnsent',
+            'MsgFlagHasAttach'))
+        ->normalizedSubject('Some subject')
+        ->senderAddressType('SMTP')
+        ->senderEmailAddress('from@aspose.com')
+        ->senderName('From Address')
+        ->senderSmtpAddress('from@aspose.com')
+        ->attachments(array(
+            Models::mapiAttachmentDto()
+                ->name('some-file.txt')
+                ->dataBase64('U29tZSBmaWxlIHRleHQ=')
+                ->build()))
+        ->body('Some body')
+        ->messageClass('IPM.Note')
+        ->recipients(array(
+            Models::mapiRecipientDto()
+                ->emailAddress('to@aspose.com')
+                ->addressType('SMTP')
+                ->displayName('To Address')
+                ->recipientType('MapiTo')
+                ->build()))
+        ->subject('Re: Some subject')
+        ->subjectPrefix('Re: ')
+        ->build())
+    ->build();
 
 // Call method:
 $api->mapi()->message().save($request);

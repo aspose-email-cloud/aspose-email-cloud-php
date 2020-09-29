@@ -12,14 +12,12 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$mapiResponseTypePropertyDto = new MapiResponseTypePropertyDto
-{
-    Value = "Accept",
-    Descriptor = new MapiKnownPropertyDescriptor
-    {
-        Name = "ResponseStatus"
-    }
-};
+$mapiResponseTypePropertyDto = Models::mapiResponseTypePropertyDto()
+    ->value('Accept')
+    ->descriptor(Models::mapiKnownPropertyDescriptor()
+        ->name('ResponseStatus')
+        ->build())
+    ->build();
 ```
 
 

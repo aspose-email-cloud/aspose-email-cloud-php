@@ -24,7 +24,7 @@ See parameter model documentation at [EmailConfigDiscoverRequest](EmailConfigDis
 
 ```php
 $request = Models::EmailConfigDiscoverRequest()
-    .build();
+    ->build();
 ```
 
 </details>
@@ -39,7 +39,53 @@ Return type: [**EmailAccountConfigList**](EmailAccountConfigList.md)
     <summary>Result example</summary>
 
 ```php
-$result = ;
+$result = Models::emailAccountConfigList()
+    ->value(array(
+        Models::emailAccountConfig()
+            ->displayName('Google Mail')
+            ->host('imap.gmail.com')
+            ->port(993)
+            ->socketType('SSLAuto')
+            ->authenticationTypes(array(
+                'PasswordCleartext',
+                'OAuth2'))
+            ->extraInfo(array(
+                Models::nameValuePair()
+                    ->name('Enable: You need to enable IMAP access')
+                    ->value('https://mail.google.com/mail/?ui=2&shva=1#settings/fwdandpop')
+                    ->build()))
+            ->build(),
+        Models::emailAccountConfig()
+            ->displayName('Google Mail')
+            ->protocolType('SMTP')
+            ->host('smtp.gmail.com')
+            ->port(465)
+            ->socketType('SSLAuto')
+            ->authenticationTypes(array(
+                'PasswordCleartext',
+                'OAuth2'))
+            ->extraInfo(array(
+                Models::nameValuePair()
+                    ->name('Enable: You need to enable IMAP access')
+                    ->value('https://mail.google.com/mail/?ui=2&shva=1#settings/fwdandpop')
+                    ->build()))
+            ->build(),
+        Models::emailAccountConfig()
+            ->displayName('Google Mail')
+            ->protocolType('POP3')
+            ->host('pop.gmail.com')
+            ->port(995)
+            ->socketType('SSLAuto')
+            ->authenticationTypes(array(
+                'PasswordCleartext',
+                'OAuth2'))
+            ->extraInfo(array(
+                Models::nameValuePair()
+                    ->name('Enable: You need to enable IMAP access')
+                    ->value('https://mail.google.com/mail/?ui=2&shva=1#settings/fwdandpop')
+                    ->build()))
+            ->build()))
+    ->build();
 ```
 </details>
 
@@ -59,7 +105,53 @@ $fast_processing = ;
 $result = $api->emailConfig().discover($request);
 
 // Result example:
-$result = ;
+$result = Models::emailAccountConfigList()
+    ->value(array(
+        Models::emailAccountConfig()
+            ->displayName('Google Mail')
+            ->host('imap.gmail.com')
+            ->port(993)
+            ->socketType('SSLAuto')
+            ->authenticationTypes(array(
+                'PasswordCleartext',
+                'OAuth2'))
+            ->extraInfo(array(
+                Models::nameValuePair()
+                    ->name('Enable: You need to enable IMAP access')
+                    ->value('https://mail.google.com/mail/?ui=2&shva=1#settings/fwdandpop')
+                    ->build()))
+            ->build(),
+        Models::emailAccountConfig()
+            ->displayName('Google Mail')
+            ->protocolType('SMTP')
+            ->host('smtp.gmail.com')
+            ->port(465)
+            ->socketType('SSLAuto')
+            ->authenticationTypes(array(
+                'PasswordCleartext',
+                'OAuth2'))
+            ->extraInfo(array(
+                Models::nameValuePair()
+                    ->name('Enable: You need to enable IMAP access')
+                    ->value('https://mail.google.com/mail/?ui=2&shva=1#settings/fwdandpop')
+                    ->build()))
+            ->build(),
+        Models::emailAccountConfig()
+            ->displayName('Google Mail')
+            ->protocolType('POP3')
+            ->host('pop.gmail.com')
+            ->port(995)
+            ->socketType('SSLAuto')
+            ->authenticationTypes(array(
+                'PasswordCleartext',
+                'OAuth2'))
+            ->extraInfo(array(
+                Models::nameValuePair()
+                    ->name('Enable: You need to enable IMAP access')
+                    ->value('https://mail.google.com/mail/?ui=2&shva=1#settings/fwdandpop')
+                    ->build()))
+            ->build()))
+    ->build();
 ```
 
 </details>
@@ -87,7 +179,13 @@ See parameter model documentation at [EmailConfigDiscoverOauthRequest](EmailConf
     <summary>Parameter initialization example:</summary>
     
 ```php
-$request = ;
+$request = Models::emailConfigDiscoverOauthRequest()
+    ->clientId('ClientId')
+    ->clientSecret('ClientSecret')
+    ->refreshToken('RefreshToken')
+    ->address('example@aspose.com')
+    ->fastProcessing(true)
+    ->build();
 ```
 
 </details>
@@ -103,7 +201,53 @@ Return type: [**EmailAccountConfigList**](EmailAccountConfigList.md)
     <summary>Result example</summary>
 
 ```php
-$result = ;
+$result = Models::emailAccountConfigList()
+    ->value(array(
+        Models::emailAccountConfig()
+            ->displayName('Google Mail')
+            ->host('imap.gmail.com')
+            ->port(993)
+            ->socketType('SSLAuto')
+            ->authenticationTypes(array(
+                'PasswordCleartext',
+                'OAuth2'))
+            ->extraInfo(array(
+                Models::nameValuePair()
+                    ->name('Enable: You need to enable IMAP access')
+                    ->value('https://mail.google.com/mail/?ui=2&shva=1#settings/fwdandpop')
+                    ->build()))
+            ->build(),
+        Models::emailAccountConfig()
+            ->displayName('Google Mail')
+            ->protocolType('SMTP')
+            ->host('smtp.gmail.com')
+            ->port(465)
+            ->socketType('SSLAuto')
+            ->authenticationTypes(array(
+                'PasswordCleartext',
+                'OAuth2'))
+            ->extraInfo(array(
+                Models::nameValuePair()
+                    ->name('Enable: You need to enable IMAP access')
+                    ->value('https://mail.google.com/mail/?ui=2&shva=1#settings/fwdandpop')
+                    ->build()))
+            ->build(),
+        Models::emailAccountConfig()
+            ->displayName('Google Mail')
+            ->protocolType('POP3')
+            ->host('pop.gmail.com')
+            ->port(995)
+            ->socketType('SSLAuto')
+            ->authenticationTypes(array(
+                'PasswordCleartext',
+                'OAuth2'))
+            ->extraInfo(array(
+                Models::nameValuePair()
+                    ->name('Enable: You need to enable IMAP access')
+                    ->value('https://mail.google.com/mail/?ui=2&shva=1#settings/fwdandpop')
+                    ->build()))
+            ->build()))
+    ->build();
 ```
 </details>
 
@@ -116,13 +260,65 @@ $result = ;
 $api = new EmailCloud(appKey, appSid);
 
 // Prepare parameters:
-$request = ;
+$request = Models::emailConfigDiscoverOauthRequest()
+    ->clientId('ClientId')
+    ->clientSecret('ClientSecret')
+    ->refreshToken('RefreshToken')
+    ->address('example@aspose.com')
+    ->fastProcessing(true)
+    ->build();
 
 // Call method:
 $result = $api->emailConfig().discoverOauth($request);
 
 // Result example:
-$result = ;
+$result = Models::emailAccountConfigList()
+    ->value(array(
+        Models::emailAccountConfig()
+            ->displayName('Google Mail')
+            ->host('imap.gmail.com')
+            ->port(993)
+            ->socketType('SSLAuto')
+            ->authenticationTypes(array(
+                'PasswordCleartext',
+                'OAuth2'))
+            ->extraInfo(array(
+                Models::nameValuePair()
+                    ->name('Enable: You need to enable IMAP access')
+                    ->value('https://mail.google.com/mail/?ui=2&shva=1#settings/fwdandpop')
+                    ->build()))
+            ->build(),
+        Models::emailAccountConfig()
+            ->displayName('Google Mail')
+            ->protocolType('SMTP')
+            ->host('smtp.gmail.com')
+            ->port(465)
+            ->socketType('SSLAuto')
+            ->authenticationTypes(array(
+                'PasswordCleartext',
+                'OAuth2'))
+            ->extraInfo(array(
+                Models::nameValuePair()
+                    ->name('Enable: You need to enable IMAP access')
+                    ->value('https://mail.google.com/mail/?ui=2&shva=1#settings/fwdandpop')
+                    ->build()))
+            ->build(),
+        Models::emailAccountConfig()
+            ->displayName('Google Mail')
+            ->protocolType('POP3')
+            ->host('pop.gmail.com')
+            ->port(995)
+            ->socketType('SSLAuto')
+            ->authenticationTypes(array(
+                'PasswordCleartext',
+                'OAuth2'))
+            ->extraInfo(array(
+                Models::nameValuePair()
+                    ->name('Enable: You need to enable IMAP access')
+                    ->value('https://mail.google.com/mail/?ui=2&shva=1#settings/fwdandpop')
+                    ->build()))
+            ->build()))
+    ->build();
 ```
 
 </details>
@@ -149,7 +345,11 @@ See parameter model documentation at [EmailConfigDiscoverPasswordRequest](EmailC
     <summary>Parameter initialization example:</summary>
     
 ```php
-$request = ;
+$request = Models::emailConfigDiscoverPasswordRequest()
+    ->password('password')
+    ->address('example@aspose.com')
+    ->fastProcessing(true)
+    ->build();
 ```
 
 </details>
@@ -165,7 +365,53 @@ Return type: [**EmailAccountConfigList**](EmailAccountConfigList.md)
     <summary>Result example</summary>
 
 ```php
-$result = ;
+$result = Models::emailAccountConfigList()
+    ->value(array(
+        Models::emailAccountConfig()
+            ->displayName('Google Mail')
+            ->host('imap.gmail.com')
+            ->port(993)
+            ->socketType('SSLAuto')
+            ->authenticationTypes(array(
+                'PasswordCleartext',
+                'OAuth2'))
+            ->extraInfo(array(
+                Models::nameValuePair()
+                    ->name('Enable: You need to enable IMAP access')
+                    ->value('https://mail.google.com/mail/?ui=2&shva=1#settings/fwdandpop')
+                    ->build()))
+            ->build(),
+        Models::emailAccountConfig()
+            ->displayName('Google Mail')
+            ->protocolType('SMTP')
+            ->host('smtp.gmail.com')
+            ->port(465)
+            ->socketType('SSLAuto')
+            ->authenticationTypes(array(
+                'PasswordCleartext',
+                'OAuth2'))
+            ->extraInfo(array(
+                Models::nameValuePair()
+                    ->name('Enable: You need to enable IMAP access')
+                    ->value('https://mail.google.com/mail/?ui=2&shva=1#settings/fwdandpop')
+                    ->build()))
+            ->build(),
+        Models::emailAccountConfig()
+            ->displayName('Google Mail')
+            ->protocolType('POP3')
+            ->host('pop.gmail.com')
+            ->port(995)
+            ->socketType('SSLAuto')
+            ->authenticationTypes(array(
+                'PasswordCleartext',
+                'OAuth2'))
+            ->extraInfo(array(
+                Models::nameValuePair()
+                    ->name('Enable: You need to enable IMAP access')
+                    ->value('https://mail.google.com/mail/?ui=2&shva=1#settings/fwdandpop')
+                    ->build()))
+            ->build()))
+    ->build();
 ```
 </details>
 
@@ -178,13 +424,63 @@ $result = ;
 $api = new EmailCloud(appKey, appSid);
 
 // Prepare parameters:
-$request = ;
+$request = Models::emailConfigDiscoverPasswordRequest()
+    ->password('password')
+    ->address('example@aspose.com')
+    ->fastProcessing(true)
+    ->build();
 
 // Call method:
 $result = $api->emailConfig().discoverPassword($request);
 
 // Result example:
-$result = ;
+$result = Models::emailAccountConfigList()
+    ->value(array(
+        Models::emailAccountConfig()
+            ->displayName('Google Mail')
+            ->host('imap.gmail.com')
+            ->port(993)
+            ->socketType('SSLAuto')
+            ->authenticationTypes(array(
+                'PasswordCleartext',
+                'OAuth2'))
+            ->extraInfo(array(
+                Models::nameValuePair()
+                    ->name('Enable: You need to enable IMAP access')
+                    ->value('https://mail.google.com/mail/?ui=2&shva=1#settings/fwdandpop')
+                    ->build()))
+            ->build(),
+        Models::emailAccountConfig()
+            ->displayName('Google Mail')
+            ->protocolType('SMTP')
+            ->host('smtp.gmail.com')
+            ->port(465)
+            ->socketType('SSLAuto')
+            ->authenticationTypes(array(
+                'PasswordCleartext',
+                'OAuth2'))
+            ->extraInfo(array(
+                Models::nameValuePair()
+                    ->name('Enable: You need to enable IMAP access')
+                    ->value('https://mail.google.com/mail/?ui=2&shva=1#settings/fwdandpop')
+                    ->build()))
+            ->build(),
+        Models::emailAccountConfig()
+            ->displayName('Google Mail')
+            ->protocolType('POP3')
+            ->host('pop.gmail.com')
+            ->port(995)
+            ->socketType('SSLAuto')
+            ->authenticationTypes(array(
+                'PasswordCleartext',
+                'OAuth2'))
+            ->extraInfo(array(
+                Models::nameValuePair()
+                    ->name('Enable: You need to enable IMAP access')
+                    ->value('https://mail.google.com/mail/?ui=2&shva=1#settings/fwdandpop')
+                    ->build()))
+            ->build()))
+    ->build();
 ```
 
 </details>

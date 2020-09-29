@@ -11,74 +11,53 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$emailAccountConfigList = new EmailAccountConfigList
-{
-    Value = new List<EmailAccountConfig>
-    {
-        new EmailAccountConfig
-        {
-            DisplayName = "Google Mail",
-            Host = "imap.gmail.com",
-            Port = 993,
-            SocketType = "SSLAuto",
-            AuthenticationTypes = new List<AuthenticationType>
-            {
-                "PasswordCleartext",
-                "OAuth2"
-            },
-            ExtraInfo = new List<NameValuePair>
-            {
-                new NameValuePair
-                {
-                    Name = "Enable: You need to enable IMAP access",
-                    Value = "https://mail.google.com/mail/?ui=2&shva=1#settings/fwdandpop"
-                }
-            }
-        },
-        new EmailAccountConfig
-        {
-            DisplayName = "Google Mail",
-            ProtocolType = "SMTP",
-            Host = "smtp.gmail.com",
-            Port = 465,
-            SocketType = "SSLAuto",
-            AuthenticationTypes = new List<AuthenticationType>
-            {
-                "PasswordCleartext",
-                "OAuth2"
-            },
-            ExtraInfo = new List<NameValuePair>
-            {
-                new NameValuePair
-                {
-                    Name = "Enable: You need to enable IMAP access",
-                    Value = "https://mail.google.com/mail/?ui=2&shva=1#settings/fwdandpop"
-                }
-            }
-        },
-        new EmailAccountConfig
-        {
-            DisplayName = "Google Mail",
-            ProtocolType = "POP3",
-            Host = "pop.gmail.com",
-            Port = 995,
-            SocketType = "SSLAuto",
-            AuthenticationTypes = new List<AuthenticationType>
-            {
-                "PasswordCleartext",
-                "OAuth2"
-            },
-            ExtraInfo = new List<NameValuePair>
-            {
-                new NameValuePair
-                {
-                    Name = "Enable: You need to enable IMAP access",
-                    Value = "https://mail.google.com/mail/?ui=2&shva=1#settings/fwdandpop"
-                }
-            }
-        }
-    }
-};
+$emailAccountConfigList = Models::emailAccountConfigList()
+    ->value(array(
+        Models::emailAccountConfig()
+            ->displayName('Google Mail')
+            ->host('imap.gmail.com')
+            ->port(993)
+            ->socketType('SSLAuto')
+            ->authenticationTypes(array(
+                'PasswordCleartext',
+                'OAuth2'))
+            ->extraInfo(array(
+                Models::nameValuePair()
+                    ->name('Enable: You need to enable IMAP access')
+                    ->value('https://mail.google.com/mail/?ui=2&shva=1#settings/fwdandpop')
+                    ->build()))
+            ->build(),
+        Models::emailAccountConfig()
+            ->displayName('Google Mail')
+            ->protocolType('SMTP')
+            ->host('smtp.gmail.com')
+            ->port(465)
+            ->socketType('SSLAuto')
+            ->authenticationTypes(array(
+                'PasswordCleartext',
+                'OAuth2'))
+            ->extraInfo(array(
+                Models::nameValuePair()
+                    ->name('Enable: You need to enable IMAP access')
+                    ->value('https://mail.google.com/mail/?ui=2&shva=1#settings/fwdandpop')
+                    ->build()))
+            ->build(),
+        Models::emailAccountConfig()
+            ->displayName('Google Mail')
+            ->protocolType('POP3')
+            ->host('pop.gmail.com')
+            ->port(995)
+            ->socketType('SSLAuto')
+            ->authenticationTypes(array(
+                'PasswordCleartext',
+                'OAuth2'))
+            ->extraInfo(array(
+                Models::nameValuePair()
+                    ->name('Enable: You need to enable IMAP access')
+                    ->value('https://mail.google.com/mail/?ui=2&shva=1#settings/fwdandpop')
+                    ->build()))
+            ->build()))
+    ->build();
 ```
 
 

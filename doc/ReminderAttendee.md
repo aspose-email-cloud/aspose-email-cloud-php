@@ -11,10 +11,9 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$reminderAttendee = new ReminderAttendee
-{
-    Address = "attendee@aspose.com"
-};
+$reminderAttendee = Models::reminderAttendee()
+    ->address('attendee@aspose.com')
+    ->build();
 ```
 
 

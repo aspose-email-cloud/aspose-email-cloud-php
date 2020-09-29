@@ -23,7 +23,31 @@ See parameter model documentation at [CalendarAsAlternateRequest](CalendarAsAlte
     <summary>Parameter initialization example:</summary>
     
 ```php
-$request = ;
+$request = Models::calendarAsAlternateRequest()
+    ->value(Models::calendarDto()
+        ->attendees(array(
+            Models::mailAddress()
+                ->displayName('Attendee Name')
+                ->address('attendee@aspose.com')
+                ->participationStatus('Accepted')
+                ->build()))
+        ->description('Some description')
+        ->endDate(new DateTime())
+        ->location('Some location')
+        ->organizer(Models::mailAddress()
+            ->displayName('Organizer Name')
+            ->address('organizer@aspose.com')
+            ->build())
+        ->recurrence(Models::dailyRecurrencePatternDto()
+            ->interval(-1)
+            ->occurs(10)
+            ->weekStart('Monday')
+            ->build())
+        ->startDate(new DateTime())
+        ->summary('Some summary')
+        ->build())
+    ->sequenceId('cf4ffb6c-895d-4e58-bdb4-0a3918e96a43')
+    ->build();
 ```
 
 </details>
@@ -39,7 +63,28 @@ Return type: [**AlternateView**](AlternateView.md)
     <summary>Result example</summary>
 
 ```php
-$result = ;
+$result = Models::alternateView()
+    ->base64Data('<File content represented as Base64 string>')
+    ->contentId('fa7a8948-4af1-432a-b4d9-ee0c28542e75')
+    ->contentType(Models::contentType()
+        ->charSet('utf-8')
+        ->mediaType('text/calendar')
+        ->name('meeting.ics')
+        ->parameters(array(
+            Models::contentTypeParameter()
+                ->name('Method')
+                ->value('REQUEST')
+                ->build(),
+            Models::contentTypeParameter()
+                ->name('Name')
+                ->value('meeting.ics')
+                ->build(),
+            Models::contentTypeParameter()
+                ->name('charset')
+                ->value('utf-8')
+                ->build()))
+        ->build())
+    ->build();
 ```
 </details>
 
@@ -52,13 +97,58 @@ $result = ;
 $api = new EmailCloud(appKey, appSid);
 
 // Prepare parameters:
-$request = ;
+$request = Models::calendarAsAlternateRequest()
+    ->value(Models::calendarDto()
+        ->attendees(array(
+            Models::mailAddress()
+                ->displayName('Attendee Name')
+                ->address('attendee@aspose.com')
+                ->participationStatus('Accepted')
+                ->build()))
+        ->description('Some description')
+        ->endDate(new DateTime())
+        ->location('Some location')
+        ->organizer(Models::mailAddress()
+            ->displayName('Organizer Name')
+            ->address('organizer@aspose.com')
+            ->build())
+        ->recurrence(Models::dailyRecurrencePatternDto()
+            ->interval(-1)
+            ->occurs(10)
+            ->weekStart('Monday')
+            ->build())
+        ->startDate(new DateTime())
+        ->summary('Some summary')
+        ->build())
+    ->sequenceId('cf4ffb6c-895d-4e58-bdb4-0a3918e96a43')
+    ->build();
 
 // Call method:
 $result = $api->calendar().asAlternate($request);
 
 // Result example:
-$result = ;
+$result = Models::alternateView()
+    ->base64Data('<File content represented as Base64 string>')
+    ->contentId('fa7a8948-4af1-432a-b4d9-ee0c28542e75')
+    ->contentType(Models::contentType()
+        ->charSet('utf-8')
+        ->mediaType('text/calendar')
+        ->name('meeting.ics')
+        ->parameters(array(
+            Models::contentTypeParameter()
+                ->name('Method')
+                ->value('REQUEST')
+                ->build(),
+            Models::contentTypeParameter()
+                ->name('Name')
+                ->value('meeting.ics')
+                ->build(),
+            Models::contentTypeParameter()
+                ->name('charset')
+                ->value('utf-8')
+                ->build()))
+        ->build())
+    ->build();
 ```
 
 </details>
@@ -85,7 +175,30 @@ See parameter model documentation at [CalendarAsFileRequest](CalendarAsFileReque
     <summary>Parameter initialization example:</summary>
     
 ```php
-$request = ;
+$request = Models::calendarAsFileRequest()
+    ->value(Models::calendarDto()
+        ->attendees(array(
+            Models::mailAddress()
+                ->displayName('Attendee Name')
+                ->address('attendee@aspose.com')
+                ->participationStatus('Accepted')
+                ->build()))
+        ->description('Some description')
+        ->endDate(new DateTime())
+        ->location('Some location')
+        ->organizer(Models::mailAddress()
+            ->displayName('Organizer Name')
+            ->address('organizer@aspose.com')
+            ->build())
+        ->recurrence(Models::dailyRecurrencePatternDto()
+            ->interval(-1)
+            ->occurs(10)
+            ->weekStart('Monday')
+            ->build())
+        ->startDate(new DateTime())
+        ->summary('Some summary')
+        ->build())
+    ->build();
 ```
 
 </details>
@@ -106,7 +219,30 @@ Return type: [**\SplFileObject**](\SplFileObject.md)
 $api = new EmailCloud(appKey, appSid);
 
 // Prepare parameters:
-$request = ;
+$request = Models::calendarAsFileRequest()
+    ->value(Models::calendarDto()
+        ->attendees(array(
+            Models::mailAddress()
+                ->displayName('Attendee Name')
+                ->address('attendee@aspose.com')
+                ->participationStatus('Accepted')
+                ->build()))
+        ->description('Some description')
+        ->endDate(new DateTime())
+        ->location('Some location')
+        ->organizer(Models::mailAddress()
+            ->displayName('Organizer Name')
+            ->address('organizer@aspose.com')
+            ->build())
+        ->recurrence(Models::dailyRecurrencePatternDto()
+            ->interval(-1)
+            ->occurs(10)
+            ->weekStart('Monday')
+            ->build())
+        ->startDate(new DateTime())
+        ->summary('Some summary')
+        ->build())
+    ->build();
 
 // Call method:
 $result = $api->calendar().asFile($request);
@@ -136,7 +272,28 @@ See parameter model documentation at [CalendarDto](CalendarDto.md)
     <summary>Parameter initialization example:</summary>
     
 ```php
-$calendar_dto = ;
+$calendar_dto = Models::calendarDto()
+    ->attendees(array(
+        Models::mailAddress()
+            ->displayName('Attendee Name')
+            ->address('attendee@aspose.com')
+            ->participationStatus('Accepted')
+            ->build()))
+    ->description('Some description')
+    ->endDate(new DateTime())
+    ->location('Some location')
+    ->organizer(Models::mailAddress()
+        ->displayName('Organizer Name')
+        ->address('organizer@aspose.com')
+        ->build())
+    ->recurrence(Models::dailyRecurrencePatternDto()
+        ->interval(-1)
+        ->occurs(10)
+        ->weekStart('Monday')
+        ->build())
+    ->startDate(new DateTime())
+    ->summary('Some summary')
+    ->build();
 ```
 
 </details>
@@ -152,7 +309,41 @@ Return type: [**MapiCalendarDto**](MapiCalendarDto.md)
     <summary>Result example</summary>
 
 ```php
-$result = ;
+$result = Models::mapiCalendarDto()
+    ->attendees(Models::mapiCalendarAttendeesDto()
+        ->appointmentRecipients(array(
+            Models::mapiRecipientDto()
+                ->emailAddress('organizer@aspose.com')
+                ->addressType('SMTP')
+                ->displayName('Organizer Name')
+                ->recipientType('MapiTo')
+                ->build(),
+            Models::mapiRecipientDto()
+                ->emailAddress('attendee@aspose.com')
+                ->addressType('SMTP')
+                ->displayName('Attendee Name')
+                ->recipientType('MapiTo')
+                ->build()))
+        ->build())
+    ->busyStatus('Tentative')
+    ->clientIntent(array(
+        'Manager'))
+    ->endDate(new DateTime())
+    ->location('Some location')
+    ->recurrence(Models::mapiCalendarEventRecurrenceDto()
+        ->recurrencePattern(Models::mapiCalendarDailyRecurrencePatternDto()
+            ->frequency('Daily')
+            ->occurrenceCount(10)
+            ->weekStartDay('Monday')
+            ->build())
+        ->build())
+    ->startDate(new DateTime())
+    ->organizer(Models::mapiElectronicAddressDto()
+        ->emailAddress('organizer@aspose.com')
+        ->build())
+    ->body('Some description')
+    ->subject('Some summary')
+    ->build();
 ```
 </details>
 
@@ -165,13 +356,68 @@ $result = ;
 $api = new EmailCloud(appKey, appSid);
 
 // Prepare parameters:
-$calendar_dto = ;
+$calendar_dto = Models::calendarDto()
+    ->attendees(array(
+        Models::mailAddress()
+            ->displayName('Attendee Name')
+            ->address('attendee@aspose.com')
+            ->participationStatus('Accepted')
+            ->build()))
+    ->description('Some description')
+    ->endDate(new DateTime())
+    ->location('Some location')
+    ->organizer(Models::mailAddress()
+        ->displayName('Organizer Name')
+        ->address('organizer@aspose.com')
+        ->build())
+    ->recurrence(Models::dailyRecurrencePatternDto()
+        ->interval(-1)
+        ->occurs(10)
+        ->weekStart('Monday')
+        ->build())
+    ->startDate(new DateTime())
+    ->summary('Some summary')
+    ->build();
 
 // Call method:
 $result = $api->calendar().asMapi($calendar_dto);
 
 // Result example:
-$result = ;
+$result = Models::mapiCalendarDto()
+    ->attendees(Models::mapiCalendarAttendeesDto()
+        ->appointmentRecipients(array(
+            Models::mapiRecipientDto()
+                ->emailAddress('organizer@aspose.com')
+                ->addressType('SMTP')
+                ->displayName('Organizer Name')
+                ->recipientType('MapiTo')
+                ->build(),
+            Models::mapiRecipientDto()
+                ->emailAddress('attendee@aspose.com')
+                ->addressType('SMTP')
+                ->displayName('Attendee Name')
+                ->recipientType('MapiTo')
+                ->build()))
+        ->build())
+    ->busyStatus('Tentative')
+    ->clientIntent(array(
+        'Manager'))
+    ->endDate(new DateTime())
+    ->location('Some location')
+    ->recurrence(Models::mapiCalendarEventRecurrenceDto()
+        ->recurrencePattern(Models::mapiCalendarDailyRecurrencePatternDto()
+            ->frequency('Daily')
+            ->occurrenceCount(10)
+            ->weekStartDay('Monday')
+            ->build())
+        ->build())
+    ->startDate(new DateTime())
+    ->organizer(Models::mapiElectronicAddressDto()
+        ->emailAddress('organizer@aspose.com')
+        ->build())
+    ->body('Some description')
+    ->subject('Some summary')
+    ->build();
 ```
 
 </details>
@@ -201,7 +447,7 @@ See parameter model documentation at [CalendarConvertRequest](CalendarConvertReq
 $request = Models::CalendarConvertRequest()
     ->format('Ics')
     ->file(new SplFileObject('/path/to/calendar.msg'))
-    .build();
+    ->build();
 ```
 
 </details>
@@ -255,7 +501,7 @@ See parameter model documentation at [CalendarFromFileRequest](CalendarFromFileR
 ```php
 $request = Models::CalendarFromFileRequest()
     ->file(new SplFileObject('/path/to/calendar.ics'))
-    .build();
+    ->build();
 ```
 
 </details>
@@ -270,7 +516,28 @@ Return type: [**CalendarDto**](CalendarDto.md)
     <summary>Result example</summary>
 
 ```php
-$result = ;
+$result = Models::calendarDto()
+    ->attendees(array(
+        Models::mailAddress()
+            ->displayName('Attendee Name')
+            ->address('attendee@aspose.com')
+            ->participationStatus('Accepted')
+            ->build()))
+    ->description('Some description')
+    ->endDate(new DateTime())
+    ->location('Some location')
+    ->organizer(Models::mailAddress()
+        ->displayName('Organizer Name')
+        ->address('organizer@aspose.com')
+        ->build())
+    ->recurrence(Models::dailyRecurrencePatternDto()
+        ->interval(-1)
+        ->occurs(10)
+        ->weekStart('Monday')
+        ->build())
+    ->startDate(new DateTime())
+    ->summary('Some summary')
+    ->build();
 ```
 </details>
 
@@ -289,7 +556,28 @@ $file = ;
 $result = $api->calendar().fromFile($request);
 
 // Result example:
-$result = ;
+$result = Models::calendarDto()
+    ->attendees(array(
+        Models::mailAddress()
+            ->displayName('Attendee Name')
+            ->address('attendee@aspose.com')
+            ->participationStatus('Accepted')
+            ->build()))
+    ->description('Some description')
+    ->endDate(new DateTime())
+    ->location('Some location')
+    ->organizer(Models::mailAddress()
+        ->displayName('Organizer Name')
+        ->address('organizer@aspose.com')
+        ->build())
+    ->recurrence(Models::dailyRecurrencePatternDto()
+        ->interval(-1)
+        ->occurs(10)
+        ->weekStart('Monday')
+        ->build())
+    ->startDate(new DateTime())
+    ->summary('Some summary')
+    ->build();
 ```
 
 </details>
@@ -321,7 +609,7 @@ $request = Models::CalendarGetRequest()
     ->file_name('calendar.ics')
     ->folder('calendar/location/on/storage')
     ->storage('First Storage')
-    .build();
+    ->build();
 ```
 
 </details>
@@ -336,7 +624,28 @@ Return type: [**CalendarDto**](CalendarDto.md)
     <summary>Result example</summary>
 
 ```php
-$result = ;
+$result = Models::calendarDto()
+    ->attendees(array(
+        Models::mailAddress()
+            ->displayName('Attendee Name')
+            ->address('attendee@aspose.com')
+            ->participationStatus('Accepted')
+            ->build()))
+    ->description('Some description')
+    ->endDate(new DateTime())
+    ->location('Some location')
+    ->organizer(Models::mailAddress()
+        ->displayName('Organizer Name')
+        ->address('organizer@aspose.com')
+        ->build())
+    ->recurrence(Models::dailyRecurrencePatternDto()
+        ->interval(-1)
+        ->occurs(10)
+        ->weekStart('Monday')
+        ->build())
+    ->startDate(new DateTime())
+    ->summary('Some summary')
+    ->build();
 ```
 </details>
 
@@ -357,7 +666,28 @@ $storage = ;
 $result = $api->calendar().get($request);
 
 // Result example:
-$result = ;
+$result = Models::calendarDto()
+    ->attendees(array(
+        Models::mailAddress()
+            ->displayName('Attendee Name')
+            ->address('attendee@aspose.com')
+            ->participationStatus('Accepted')
+            ->build()))
+    ->description('Some description')
+    ->endDate(new DateTime())
+    ->location('Some location')
+    ->organizer(Models::mailAddress()
+        ->displayName('Organizer Name')
+        ->address('organizer@aspose.com')
+        ->build())
+    ->recurrence(Models::dailyRecurrencePatternDto()
+        ->interval(-1)
+        ->occurs(10)
+        ->weekStart('Monday')
+        ->build())
+    ->startDate(new DateTime())
+    ->summary('Some summary')
+    ->build();
 ```
 
 </details>
@@ -390,7 +720,7 @@ $request = Models::CalendarGetAsAlternateRequest()
     ->calendar_action('Create')
     ->folder('calendar/location/on/storage')
     ->storage('First Storage')
-    .build();
+    ->build();
 ```
 
 </details>
@@ -405,7 +735,28 @@ Return type: [**AlternateView**](AlternateView.md)
     <summary>Result example</summary>
 
 ```php
-$result = ;
+$result = Models::alternateView()
+    ->base64Data('<File content represented as Base64 string>')
+    ->contentId('fa7a8948-4af1-432a-b4d9-ee0c28542e75')
+    ->contentType(Models::contentType()
+        ->charSet('utf-8')
+        ->mediaType('text/calendar')
+        ->name('meeting.ics')
+        ->parameters(array(
+            Models::contentTypeParameter()
+                ->name('Method')
+                ->value('REQUEST')
+                ->build(),
+            Models::contentTypeParameter()
+                ->name('Name')
+                ->value('meeting.ics')
+                ->build(),
+            Models::contentTypeParameter()
+                ->name('charset')
+                ->value('utf-8')
+                ->build()))
+        ->build())
+    ->build();
 ```
 </details>
 
@@ -428,7 +779,28 @@ $storage = ;
 $result = $api->calendar().getAsAlternate($request);
 
 // Result example:
-$result = ;
+$result = Models::alternateView()
+    ->base64Data('<File content represented as Base64 string>')
+    ->contentId('fa7a8948-4af1-432a-b4d9-ee0c28542e75')
+    ->contentType(Models::contentType()
+        ->charSet('utf-8')
+        ->mediaType('text/calendar')
+        ->name('meeting.ics')
+        ->parameters(array(
+            Models::contentTypeParameter()
+                ->name('Method')
+                ->value('REQUEST')
+                ->build(),
+            Models::contentTypeParameter()
+                ->name('Name')
+                ->value('meeting.ics')
+                ->build(),
+            Models::contentTypeParameter()
+                ->name('charset')
+                ->value('utf-8')
+                ->build()))
+        ->build())
+    ->build();
 ```
 
 </details>
@@ -461,7 +833,7 @@ $request = Models::CalendarGetAsFileRequest()
     ->format('Ics')
     ->storage('First Storage')
     ->folder('calendar/file/location/on/storage')
-    .build();
+    ->build();
 ```
 
 </details>
@@ -520,7 +892,7 @@ $request = Models::CalendarGetListRequest()
     ->items_per_page(10)
     ->page_number(0)
     ->storage('First Storage')
-    .build();
+    ->build();
 ```
 
 </details>
@@ -535,7 +907,38 @@ Return type: [**CalendarStorageList**](CalendarStorageList.md)
     <summary>Result example</summary>
 
 ```php
-$result = ;
+$result = Models::calendarStorageList()
+    ->value(array(
+        Models::storageModel<CalendarDto>()
+            ->storageFile(Models::storageFileLocation()
+                ->fileName('calendar.ics')
+                ->storage('First Storage')
+                ->folderPath('file/location/folder/on/storage')
+                ->build())
+            ->value(Models::calendarDto()
+                ->attendees(array(
+                    Models::mailAddress()
+                        ->displayName('Attendee Name')
+                        ->address('attendee@aspose.com')
+                        ->participationStatus('Accepted')
+                        ->build()))
+                ->description('Some description')
+                ->endDate(new DateTime())
+                ->location('Some location')
+                ->organizer(Models::mailAddress()
+                    ->displayName('Organizer Name')
+                    ->address('organizer@aspose.com')
+                    ->build())
+                ->recurrence(Models::dailyRecurrencePatternDto()
+                    ->interval(-1)
+                    ->occurs(10)
+                    ->weekStart('Monday')
+                    ->build())
+                ->startDate(new DateTime())
+                ->summary('Some summary')
+                ->build())
+            ->build()))
+    ->build();
 ```
 </details>
 
@@ -557,7 +960,38 @@ $storage = ;
 $result = $api->calendar().getList($request);
 
 // Result example:
-$result = ;
+$result = Models::calendarStorageList()
+    ->value(array(
+        Models::storageModel<CalendarDto>()
+            ->storageFile(Models::storageFileLocation()
+                ->fileName('calendar.ics')
+                ->storage('First Storage')
+                ->folderPath('file/location/folder/on/storage')
+                ->build())
+            ->value(Models::calendarDto()
+                ->attendees(array(
+                    Models::mailAddress()
+                        ->displayName('Attendee Name')
+                        ->address('attendee@aspose.com')
+                        ->participationStatus('Accepted')
+                        ->build()))
+                ->description('Some description')
+                ->endDate(new DateTime())
+                ->location('Some location')
+                ->organizer(Models::mailAddress()
+                    ->displayName('Organizer Name')
+                    ->address('organizer@aspose.com')
+                    ->build())
+                ->recurrence(Models::dailyRecurrencePatternDto()
+                    ->interval(-1)
+                    ->occurs(10)
+                    ->weekStart('Monday')
+                    ->build())
+                ->startDate(new DateTime())
+                ->summary('Some summary')
+                ->build())
+            ->build()))
+    ->build();
 ```
 
 </details>
@@ -584,7 +1018,35 @@ See parameter model documentation at [CalendarSaveRequest](CalendarSaveRequest.m
     <summary>Parameter initialization example:</summary>
     
 ```php
-$request = ;
+$request = Models::calendarSaveRequest()
+    ->storageFile(Models::storageFileLocation()
+        ->fileName('calendar.ics')
+        ->storage('First Storage')
+        ->folderPath('file/location/folder/on/storage')
+        ->build())
+    ->value(Models::calendarDto()
+        ->attendees(array(
+            Models::mailAddress()
+                ->displayName('Attendee Name')
+                ->address('attendee@aspose.com')
+                ->participationStatus('Accepted')
+                ->build()))
+        ->description('Some description')
+        ->endDate(new DateTime())
+        ->location('Some location')
+        ->organizer(Models::mailAddress()
+            ->displayName('Organizer Name')
+            ->address('organizer@aspose.com')
+            ->build())
+        ->recurrence(Models::dailyRecurrencePatternDto()
+            ->interval(-1)
+            ->occurs(10)
+            ->weekStart('Monday')
+            ->build())
+        ->startDate(new DateTime())
+        ->summary('Some summary')
+        ->build())
+    ->build();
 ```
 
 </details>
@@ -603,7 +1065,35 @@ Return type: void (empty response body)
 $api = new EmailCloud(appKey, appSid);
 
 // Prepare parameters:
-$request = ;
+$request = Models::calendarSaveRequest()
+    ->storageFile(Models::storageFileLocation()
+        ->fileName('calendar.ics')
+        ->storage('First Storage')
+        ->folderPath('file/location/folder/on/storage')
+        ->build())
+    ->value(Models::calendarDto()
+        ->attendees(array(
+            Models::mailAddress()
+                ->displayName('Attendee Name')
+                ->address('attendee@aspose.com')
+                ->participationStatus('Accepted')
+                ->build()))
+        ->description('Some description')
+        ->endDate(new DateTime())
+        ->location('Some location')
+        ->organizer(Models::mailAddress()
+            ->displayName('Organizer Name')
+            ->address('organizer@aspose.com')
+            ->build())
+        ->recurrence(Models::dailyRecurrencePatternDto()
+            ->interval(-1)
+            ->occurs(10)
+            ->weekStart('Monday')
+            ->build())
+        ->startDate(new DateTime())
+        ->summary('Some summary')
+        ->build())
+    ->build();
 
 // Call method:
 $api->calendar().save($request);

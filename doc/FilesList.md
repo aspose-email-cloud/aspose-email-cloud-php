@@ -11,19 +11,15 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$filesList = new FilesList
-{
-    Value = new List<StorageFile>
-    {
-        new StorageFile
-        {
-            Name = "file.ext",
-            ModifiedDate = DateTime.Today,
-            Size = 1024,
-            Path = "/path/to/file/on/storage"
-        }
-    }
-};
+$filesList = Models::filesList()
+    ->value(array(
+        Models::storageFile()
+            ->name('file.ext')
+            ->modifiedDate(new DateTime())
+            ->size(1024)
+            ->path('/path/to/file/on/storage')
+            ->build()))
+    ->build();
 ```
 
 

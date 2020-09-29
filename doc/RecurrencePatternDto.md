@@ -15,11 +15,10 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$recurrencePatternDto = new RecurrencePatternDto
-{
-    Interval = -1,
-    WeekStart = "Monday"
-};
+$recurrencePatternDto = Models::recurrencePatternDto()
+    ->interval(-1)
+    ->weekStart('Monday')
+    ->build();
 ```
 
 

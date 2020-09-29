@@ -14,13 +14,12 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$monthlyRecurrencePatternDto = new MonthlyRecurrencePatternDto
-{
-    StartDay = "Monday",
-    StartPosition = "First",
-    Interval = -1,
-    WeekStart = "Monday"
-};
+$monthlyRecurrencePatternDto = Models::monthlyRecurrencePatternDto()
+    ->startDay('Monday')
+    ->startPosition('First')
+    ->interval(-1)
+    ->weekStart('Monday')
+    ->build();
 ```
 
 

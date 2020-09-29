@@ -32,34 +32,28 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$calendarDto = new CalendarDto
-{
-    Attendees = new List<MailAddress>
-    {
-        new MailAddress
-        {
-            DisplayName = "Attendee Name",
-            Address = "attendee@aspose.com",
-            ParticipationStatus = "Accepted"
-        }
-    },
-    Description = "Some description",
-    EndDate = DateTime.Today,
-    Location = "Some location",
-    Organizer = new MailAddress
-    {
-        DisplayName = "Organizer Name",
-        Address = "organizer@aspose.com"
-    },
-    Recurrence = new DailyRecurrencePatternDto
-    {
-        Interval = -1,
-        Occurs = 10,
-        WeekStart = "Monday"
-    },
-    StartDate = DateTime.Today,
-    Summary = "Some summary"
-};
+$calendarDto = Models::calendarDto()
+    ->attendees(array(
+        Models::mailAddress()
+            ->displayName('Attendee Name')
+            ->address('attendee@aspose.com')
+            ->participationStatus('Accepted')
+            ->build()))
+    ->description('Some description')
+    ->endDate(new DateTime())
+    ->location('Some location')
+    ->organizer(Models::mailAddress()
+        ->displayName('Organizer Name')
+        ->address('organizer@aspose.com')
+        ->build())
+    ->recurrence(Models::dailyRecurrencePatternDto()
+        ->interval(-1)
+        ->occurs(10)
+        ->weekStart('Monday')
+        ->build())
+    ->startDate(new DateTime())
+    ->summary('Some summary')
+    ->build();
 ```
 
 

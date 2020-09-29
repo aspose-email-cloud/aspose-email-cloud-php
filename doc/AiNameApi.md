@@ -25,7 +25,7 @@ See parameter model documentation at [AiNameCompleteRequest](AiNameCompleteReque
 ```php
 $request = Models::AiNameCompleteRequest()
     ->name('Dav')
-    .build();
+    ->build();
 ```
 
 </details>
@@ -40,7 +40,17 @@ Return type: [**AiNameWeightedVariants**](AiNameWeightedVariants.md)
     <summary>Result example</summary>
 
 ```php
-$result = ;
+$result = Models::aiNameWeightedVariants()
+    ->names(array(
+        Models::aiNameWeighted()
+            ->name('J. Cane')
+            ->score(1)
+            ->build(),
+        Models::aiNameWeighted()
+            ->name('Mr. Cane')
+            ->score(0.75)
+            ->build()))
+    ->build();
 ```
 </details>
 
@@ -64,7 +74,17 @@ $style = ;
 $result = $api->ai()->name().complete($request);
 
 // Result example:
-$result = ;
+$result = Models::aiNameWeightedVariants()
+    ->names(array(
+        Models::aiNameWeighted()
+            ->name('J. Cane')
+            ->score(1)
+            ->build(),
+        Models::aiNameWeighted()
+            ->name('Mr. Cane')
+            ->score(0.75)
+            ->build()))
+    ->build();
 ```
 
 </details>
@@ -94,7 +114,7 @@ See parameter model documentation at [AiNameExpandRequest](AiNameExpandRequest.m
 ```php
 $request = Models::AiNameExpandRequest()
     ->name('John Cane')
-    .build();
+    ->build();
 ```
 
 </details>
@@ -109,7 +129,17 @@ Return type: [**AiNameWeightedVariants**](AiNameWeightedVariants.md)
     <summary>Result example</summary>
 
 ```php
-$result = ;
+$result = Models::aiNameWeightedVariants()
+    ->names(array(
+        Models::aiNameWeighted()
+            ->name('J. Cane')
+            ->score(1)
+            ->build(),
+        Models::aiNameWeighted()
+            ->name('Mr. Cane')
+            ->score(0.75)
+            ->build()))
+    ->build();
 ```
 </details>
 
@@ -133,7 +163,17 @@ $style = ;
 $result = $api->ai()->name().expand($request);
 
 // Result example:
-$result = ;
+$result = Models::aiNameWeightedVariants()
+    ->names(array(
+        Models::aiNameWeighted()
+            ->name('J. Cane')
+            ->score(1)
+            ->build(),
+        Models::aiNameWeighted()
+            ->name('Mr. Cane')
+            ->score(0.75)
+            ->build()))
+    ->build();
 ```
 
 </details>
@@ -177,7 +217,17 @@ Return type: [**AiNameWeightedVariants**](AiNameWeightedVariants.md)
     <summary>Result example</summary>
 
 ```php
-$result = ;
+$result = Models::aiNameWeightedVariants()
+    ->names(array(
+        Models::aiNameWeighted()
+            ->name('J. Cane')
+            ->score(1)
+            ->build(),
+        Models::aiNameWeighted()
+            ->name('Mr. Cane')
+            ->score(0.75)
+            ->build()))
+    ->build();
 ```
 </details>
 
@@ -196,7 +246,17 @@ $request = ;
 $result = $api->ai()->name().expandParsed($request);
 
 // Result example:
-$result = ;
+$result = Models::aiNameWeightedVariants()
+    ->names(array(
+        Models::aiNameWeighted()
+            ->name('J. Cane')
+            ->score(1)
+            ->build(),
+        Models::aiNameWeighted()
+            ->name('Mr. Cane')
+            ->score(0.75)
+            ->build()))
+    ->build();
 ```
 
 </details>
@@ -226,7 +286,7 @@ See parameter model documentation at [AiNameFormatRequest](AiNameFormatRequest.m
 $request = Models::AiNameFormatRequest()
     ->name('Mr. John Michael Cane')
     ->format('%t%L%f%m')
-    .build();
+    ->build();
 ```
 
 </details>
@@ -241,7 +301,10 @@ Return type: [**AiNameFormatted**](AiNameFormatted.md)
     <summary>Result example</summary>
 
 ```php
-$result = ;
+$result = Models::aiNameFormatted()
+    ->name('Mr. Cane J. M.')
+    ->comments('format: %t%L%f%m; source: parsed format')
+    ->build();
 ```
 </details>
 
@@ -266,7 +329,10 @@ $style = ;
 $result = $api->ai()->name().format($request);
 
 // Result example:
-$result = ;
+$result = Models::aiNameFormatted()
+    ->name('Mr. Cane J. M.')
+    ->comments('format: %t%L%f%m; source: parsed format')
+    ->build();
 ```
 
 </details>
@@ -310,7 +376,10 @@ Return type: [**AiNameFormatted**](AiNameFormatted.md)
     <summary>Result example</summary>
 
 ```php
-$result = ;
+$result = Models::aiNameFormatted()
+    ->name('Mr. Cane J. M.')
+    ->comments('format: %t%L%f%m; source: parsed format')
+    ->build();
 ```
 </details>
 
@@ -329,7 +398,10 @@ $request = ;
 $result = $api->ai()->name().formatParsed($request);
 
 // Result example:
-$result = ;
+$result = Models::aiNameFormatted()
+    ->name('Mr. Cane J. M.')
+    ->comments('format: %t%L%f%m; source: parsed format')
+    ->build();
 ```
 
 </details>
@@ -358,7 +430,7 @@ See parameter model documentation at [AiNameGenderizeRequest](AiNameGenderizeReq
 ```php
 $request = Models::AiNameGenderizeRequest()
     ->name('John Cane')
-    .build();
+    ->build();
 ```
 
 </details>
@@ -490,7 +562,7 @@ See parameter model documentation at [AiNameMatchRequest](AiNameMatchRequest.md)
 $request = Models::AiNameMatchRequest()
     ->name('John Michael Cane')
     ->other_name('Cane J.')
-    .build();
+    ->build();
 ```
 
 </details>
@@ -505,7 +577,14 @@ Return type: [**AiNameMatchResult**](AiNameMatchResult.md)
     <summary>Result example</summary>
 
 ```php
-$result = ;
+$result = Models::aiNameMatchResult()
+    ->similarity(0.6)
+    ->mismatches(array(
+        Models::aiNameMismatch()
+            ->category('Gender')
+            ->explanation('no_match')
+            ->build()))
+    ->build();
 ```
 </details>
 
@@ -530,7 +609,14 @@ $style = ;
 $result = $api->ai()->name().match($request);
 
 // Result example:
-$result = ;
+$result = Models::aiNameMatchResult()
+    ->similarity(0.6)
+    ->mismatches(array(
+        Models::aiNameMismatch()
+            ->category('Gender')
+            ->explanation('no_match')
+            ->build()))
+    ->build();
 ```
 
 </details>
@@ -574,7 +660,14 @@ Return type: [**AiNameMatchResult**](AiNameMatchResult.md)
     <summary>Result example</summary>
 
 ```php
-$result = ;
+$result = Models::aiNameMatchResult()
+    ->similarity(0.6)
+    ->mismatches(array(
+        Models::aiNameMismatch()
+            ->category('Gender')
+            ->explanation('no_match')
+            ->build()))
+    ->build();
 ```
 </details>
 
@@ -593,7 +686,14 @@ $request = ;
 $result = $api->ai()->name().matchParsed($request);
 
 // Result example:
-$result = ;
+$result = Models::aiNameMatchResult()
+    ->similarity(0.6)
+    ->mismatches(array(
+        Models::aiNameMismatch()
+            ->category('Gender')
+            ->explanation('no_match')
+            ->build()))
+    ->build();
 ```
 
 </details>
@@ -624,7 +724,7 @@ $request = Models::AiNameParseRequest()
     ->name('John Cane')
     ->language('eng')
     ->location('USA')
-    .build();
+    ->build();
 ```
 
 </details>
@@ -693,7 +793,7 @@ See parameter model documentation at [AiNameParseEmailAddressRequest](AiNamePars
 ```php
 $request = Models::AiNameParseEmailAddressRequest()
     ->email_address('john-cane@gmail.com')
-    .build();
+    ->build();
 ```
 
 </details>

@@ -22,7 +22,15 @@ See parameter model documentation at [ClientFolderCreateRequest](ClientFolderCre
     <summary>Parameter initialization example:</summary>
     
 ```php
-$request = ;
+$request = Models::clientFolderCreateRequest()
+    ->parentFolder('INBOX/SubFolder/ParentFolder')
+    ->folderName('NewFolder')
+    ->accountLocation(Models::storageFileLocation()
+        ->fileName('email.account')
+        ->storage('First Storage')
+        ->folderPath('file/location/folder/on/storage')
+        ->build())
+    ->build();
 ```
 
 </details>
@@ -41,7 +49,15 @@ Return type: void (empty response body)
 $api = new EmailCloud(appKey, appSid);
 
 // Prepare parameters:
-$request = ;
+$request = Models::clientFolderCreateRequest()
+    ->parentFolder('INBOX/SubFolder/ParentFolder')
+    ->folderName('NewFolder')
+    ->accountLocation(Models::storageFileLocation()
+        ->fileName('email.account')
+        ->storage('First Storage')
+        ->folderPath('file/location/folder/on/storage')
+        ->build())
+    ->build();
 
 // Call method:
 $api->client()->folder().create($request);
@@ -70,7 +86,14 @@ See parameter model documentation at [ClientFolderDeleteRequest](ClientFolderDel
     <summary>Parameter initialization example:</summary>
     
 ```php
-$request = ;
+$request = Models::clientFolderDeleteRequest()
+    ->folder('INBOX/SubFolder/FolderToDelete')
+    ->accountLocation(Models::storageFileLocation()
+        ->fileName('email.account')
+        ->storage('First Storage')
+        ->folderPath('file/location/folder/on/storage')
+        ->build())
+    ->build();
 ```
 
 </details>
@@ -89,7 +112,14 @@ Return type: void (empty response body)
 $api = new EmailCloud(appKey, appSid);
 
 // Prepare parameters:
-$request = ;
+$request = Models::clientFolderDeleteRequest()
+    ->folder('INBOX/SubFolder/FolderToDelete')
+    ->accountLocation(Models::storageFileLocation()
+        ->fileName('email.account')
+        ->storage('First Storage')
+        ->folderPath('file/location/folder/on/storage')
+        ->build())
+    ->build();
 
 // Call method:
 $api->client()->folder().delete($request);
@@ -124,7 +154,7 @@ $request = Models::ClientFolderGetListRequest()
     ->storage('First Storage')
     ->account_storage_folder('email/account/location/on/storage')
     ->parent_folder('INBOX')
-    .build();
+    ->build();
 ```
 
 </details>

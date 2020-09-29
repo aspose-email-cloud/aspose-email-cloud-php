@@ -13,11 +13,10 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$reminderTrigger = new ReminderTrigger
-{
-    DateTime = DateTime.Today,
-    Duration = 600000000
-};
+$reminderTrigger = Models::reminderTrigger()
+    ->dateTime(new DateTime())
+    ->duration(600000000)
+    ->build();
 ```
 
 

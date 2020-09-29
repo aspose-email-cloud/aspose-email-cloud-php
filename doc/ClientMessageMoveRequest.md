@@ -13,18 +13,16 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$clientMessageMoveRequest = new ClientMessageMoveRequest
-{
-    SourceFolder = "INBOX",
-    DestinationFolder = "INBOX/SubFolder",
-    MessageId = "5",
-    AccountLocation = new StorageFileLocation
-    {
-        FileName = "email.account",
-        Storage = "First Storage",
-        FolderPath = "file/location/folder/on/storage"
-    }
-};
+$clientMessageMoveRequest = Models::clientMessageMoveRequest()
+    ->sourceFolder('INBOX')
+    ->destinationFolder('INBOX/SubFolder')
+    ->messageId('5')
+    ->accountLocation(Models::storageFileLocation()
+        ->fileName('email.account')
+        ->storage('First Storage')
+        ->folderPath('file/location/folder/on/storage')
+        ->build())
+    ->build();
 ```
 
 

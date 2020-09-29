@@ -21,20 +21,18 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$postalAddress = new PostalAddress
-{
-    Address = "221b",
-    Category = new EnumWithCustom<PostalAddressCategory>
-    {
+$postalAddress = Models::postalAddress()
+    ->address('221b')
+    ->category(Models::enumWithCustom<PostalAddressCategory>()
         
-    },
-    City = "London",
-    Country = "United Kingdom",
-    IsMailingAddress = true,
-    PostalCode = "NW1 6XE",
-    Preferred = true,
-    Street = "Baker St"
-};
+        ->build())
+    ->city('London')
+    ->country('United Kingdom')
+    ->isMailingAddress(true)
+    ->postalCode('NW1 6XE')
+    ->preferred(true)
+    ->street('Baker St')
+    ->build();
 ```
 
 

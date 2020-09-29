@@ -12,16 +12,14 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$aiBcrImageStorageFile = new AiBcrImageStorageFile
-{
-    File = new StorageFileLocation
-    {
-        FileName = "VCardScanImage.jpg",
-        Storage = "First Storage",
-        FolderPath = "image/location/on/storage"
-    },
-    IsSingle = true
-};
+$aiBcrImageStorageFile = Models::aiBcrImageStorageFile()
+    ->file(Models::storageFileLocation()
+        ->fileName('VCardScanImage.jpg')
+        ->storage('First Storage')
+        ->folderPath('image/location/on/storage')
+        ->build())
+    ->isSingle(true)
+    ->build();
 ```
 
 

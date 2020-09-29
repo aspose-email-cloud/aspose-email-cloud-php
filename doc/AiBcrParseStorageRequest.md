@@ -13,27 +13,21 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$aiBcrParseStorageRequest = new AiBcrParseStorageRequest
-{
-    OutFolder = new StorageFolderLocation
-    {
-        Storage = "First Storage",
-        FolderPath = "VCard/files/produced/by/parser/will/be/placed/here"
-    },
-    Images = new List<AiBcrImageStorageFile>
-    {
-        new AiBcrImageStorageFile
-        {
-            File = new StorageFileLocation
-            {
-                FileName = "VCardScanImage.jpg",
-                Storage = "First Storage",
-                FolderPath = "image/location/on/storage"
-            },
-            IsSingle = true
-        }
-    }
-};
+$aiBcrParseStorageRequest = Models::aiBcrParseStorageRequest()
+    ->outFolder(Models::storageFolderLocation()
+        ->storage('First Storage')
+        ->folderPath('VCard/files/produced/by/parser/will/be/placed/here')
+        ->build())
+    ->images(array(
+        Models::aiBcrImageStorageFile()
+            ->file(Models::storageFileLocation()
+                ->fileName('VCardScanImage.jpg')
+                ->storage('First Storage')
+                ->folderPath('image/location/on/storage')
+                ->build())
+            ->isSingle(true)
+            ->build()))
+    ->build();
 ```
 
 

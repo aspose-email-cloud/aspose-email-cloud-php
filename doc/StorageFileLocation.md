@@ -12,12 +12,11 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$storageFileLocation = new StorageFileLocation
-{
-    FileName = "fileOnStorage.txt",
-    Storage = "First Storage",
-    FolderPath = "file/location/folder/on/storage"
-};
+$storageFileLocation = Models::storageFileLocation()
+    ->fileName('fileOnStorage.txt')
+    ->storage('First Storage')
+    ->folderPath('file/location/folder/on/storage')
+    ->build();
 ```
 
 

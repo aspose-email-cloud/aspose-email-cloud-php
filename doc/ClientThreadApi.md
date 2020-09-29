@@ -22,7 +22,15 @@ See parameter model documentation at [ClientThreadDeleteRequest](ClientThreadDel
     <summary>Parameter initialization example:</summary>
     
 ```php
-$request = ;
+$request = Models::clientThreadDeleteRequest()
+    ->folder('INBOX/SubFolder')
+    ->threadId('5')
+    ->accountLocation(Models::storageFileLocation()
+        ->fileName('email.account')
+        ->storage('First Storage')
+        ->folderPath('file/location/folder/on/storage')
+        ->build())
+    ->build();
 ```
 
 </details>
@@ -41,7 +49,15 @@ Return type: void (empty response body)
 $api = new EmailCloud(appKey, appSid);
 
 // Prepare parameters:
-$request = ;
+$request = Models::clientThreadDeleteRequest()
+    ->folder('INBOX/SubFolder')
+    ->threadId('5')
+    ->accountLocation(Models::storageFileLocation()
+        ->fileName('email.account')
+        ->storage('First Storage')
+        ->folderPath('file/location/folder/on/storage')
+        ->build())
+    ->build();
 
 // Call method:
 $api->client()->thread().delete($request);
@@ -76,7 +92,7 @@ $request = Models::ClientThreadGetListRequest()
     ->account('email.account')
     ->storage('First Storage')
     ->account_storage_folder('email/account/location/on/storage')
-    .build();
+    ->build();
 ```
 
 </details>
@@ -91,7 +107,38 @@ Return type: [**EmailThreadList**](EmailThreadList.md)
     <summary>Result example</summary>
 
 ```php
-$result = ;
+$result = Models::emailThreadList()
+    ->value(array(
+        Models::emailThread()
+            ->id('123')
+            ->subject('Some email subject')
+            ->messages(array(
+                Models::emailDto()
+                    ->date(new DateTime())
+                    ->from(Models::mailAddress()
+                        ->address('from@aspose.com')
+                        ->build())
+                    ->messageId('1')
+                    ->subject('Some email subject')
+                    ->to(array(
+                        Models::mailAddress()
+                            ->address('to@aspose.com')
+                            ->build()))
+                    ->build(),
+                Models::emailDto()
+                    ->date(new DateTime())
+                    ->from(Models::mailAddress()
+                        ->address('from@aspose.com')
+                        ->build())
+                    ->messageId('3')
+                    ->subject('Re: Some email subject')
+                    ->to(array(
+                        Models::mailAddress()
+                            ->address('to@aspose.com')
+                            ->build()))
+                    ->build()))
+            ->build()))
+    ->build();
 ```
 </details>
 
@@ -115,7 +162,38 @@ $messages_cache_limit = ;
 $result = $api->client()->thread().getList($request);
 
 // Result example:
-$result = ;
+$result = Models::emailThreadList()
+    ->value(array(
+        Models::emailThread()
+            ->id('123')
+            ->subject('Some email subject')
+            ->messages(array(
+                Models::emailDto()
+                    ->date(new DateTime())
+                    ->from(Models::mailAddress()
+                        ->address('from@aspose.com')
+                        ->build())
+                    ->messageId('1')
+                    ->subject('Some email subject')
+                    ->to(array(
+                        Models::mailAddress()
+                            ->address('to@aspose.com')
+                            ->build()))
+                    ->build(),
+                Models::emailDto()
+                    ->date(new DateTime())
+                    ->from(Models::mailAddress()
+                        ->address('from@aspose.com')
+                        ->build())
+                    ->messageId('3')
+                    ->subject('Re: Some email subject')
+                    ->to(array(
+                        Models::mailAddress()
+                            ->address('to@aspose.com')
+                            ->build()))
+                    ->build()))
+            ->build()))
+    ->build();
 ```
 
 </details>
@@ -149,7 +227,7 @@ $request = Models::ClientThreadGetMessagesRequest()
     ->folder('INBOX')
     ->storage('First Storage')
     ->account_storage_folder('email/account/location/on/storage')
-    .build();
+    ->build();
 ```
 
 </details>
@@ -214,7 +292,15 @@ See parameter model documentation at [ClientThreadMoveRequest](ClientThreadMoveR
     <summary>Parameter initialization example:</summary>
     
 ```php
-$request = ;
+$request = Models::clientThreadMoveRequest()
+    ->destinationFolder('INBOX/SubFolder')
+    ->threadId('5')
+    ->accountLocation(Models::storageFileLocation()
+        ->fileName('email.account')
+        ->storage('First Storage')
+        ->folderPath('file/location/folder/on/storage')
+        ->build())
+    ->build();
 ```
 
 </details>
@@ -233,7 +319,15 @@ Return type: void (empty response body)
 $api = new EmailCloud(appKey, appSid);
 
 // Prepare parameters:
-$request = ;
+$request = Models::clientThreadMoveRequest()
+    ->destinationFolder('INBOX/SubFolder')
+    ->threadId('5')
+    ->accountLocation(Models::storageFileLocation()
+        ->fileName('email.account')
+        ->storage('First Storage')
+        ->folderPath('file/location/folder/on/storage')
+        ->build())
+    ->build();
 
 // Call method:
 $api->client()->thread().move($request);
@@ -262,7 +356,16 @@ See parameter model documentation at [ClientThreadSetIsReadRequest](ClientThread
     <summary>Parameter initialization example:</summary>
     
 ```php
-$request = ;
+$request = Models::clientThreadSetIsReadRequest()
+    ->isRead(true)
+    ->folder('INBOX')
+    ->threadId('5')
+    ->accountLocation(Models::storageFileLocation()
+        ->fileName('email.account')
+        ->storage('First Storage')
+        ->folderPath('file/location/folder/on/storage')
+        ->build())
+    ->build();
 ```
 
 </details>
@@ -281,7 +384,16 @@ Return type: void (empty response body)
 $api = new EmailCloud(appKey, appSid);
 
 // Prepare parameters:
-$request = ;
+$request = Models::clientThreadSetIsReadRequest()
+    ->isRead(true)
+    ->folder('INBOX')
+    ->threadId('5')
+    ->accountLocation(Models::storageFileLocation()
+        ->fileName('email.account')
+        ->storage('First Storage')
+        ->folderPath('file/location/folder/on/storage')
+        ->build())
+    ->build();
 
 // Call method:
 $api->client()->thread().setIsRead($request);

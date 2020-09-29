@@ -12,18 +12,14 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$aiNameMatchResult = new AiNameMatchResult
-{
-    Similarity = 0.6,
-    Mismatches = new List<AiNameMismatch>
-    {
-        new AiNameMismatch
-        {
-            Category = "Gender",
-            Explanation = "no_match"
-        }
-    }
-};
+$aiNameMatchResult = Models::aiNameMatchResult()
+    ->similarity(0.6)
+    ->mismatches(array(
+        Models::aiNameMismatch()
+            ->category('Gender')
+            ->explanation('no_match')
+            ->build()))
+    ->build();
 ```
 
 

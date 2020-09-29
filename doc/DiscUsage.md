@@ -12,11 +12,10 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$discUsage = new DiscUsage
-{
-    UsedSize = 1048576,
-    TotalSize = 3145728
-};
+$discUsage = Models::discUsage()
+    ->usedSize(1048576)
+    ->totalSize(3145728)
+    ->build();
 ```
 
 

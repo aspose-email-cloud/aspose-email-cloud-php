@@ -12,56 +12,45 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$mapiMessageSaveRequest = new MapiMessageSaveRequest
-{
-    Format = "Msg",
-    StorageFile = new StorageFileLocation
-    {
-        FileName = "message.msg",
-        Storage = "First Storage",
-        FolderPath = "file/location/folder/on/storage"
-    },
-    Value = new MapiMessageDto
-    {
-        MessageBody = "Some body",
-        ClientSubmitTime = DateTime.Today,
-        DeliveryTime = DateTime.Today,
-        DisplayTo = "To Address",
-        Flags = new List<MapiMessageFlag>
-        {
-            "MsgFlagRead",
-            "MsgFlagUnsent",
-            "MsgFlagHasAttach"
-        },
-        NormalizedSubject = "Some subject",
-        SenderAddressType = "SMTP",
-        SenderEmailAddress = "from@aspose.com",
-        SenderName = "From Address",
-        SenderSmtpAddress = "from@aspose.com",
-        Attachments = new List<MapiAttachmentDto>
-        {
-            new MapiAttachmentDto
-            {
-                Name = "some-file.txt",
-                DataBase64 = "U29tZSBmaWxlIHRleHQ="
-            }
-        },
-        Body = "Some body",
-        MessageClass = "IPM.Note",
-        Recipients = new List<MapiRecipientDto>
-        {
-            new MapiRecipientDto
-            {
-                EmailAddress = "to@aspose.com",
-                AddressType = "SMTP",
-                DisplayName = "To Address",
-                RecipientType = "MapiTo"
-            }
-        },
-        Subject = "Re: Some subject",
-        SubjectPrefix = "Re: "
-    }
-};
+$mapiMessageSaveRequest = Models::mapiMessageSaveRequest()
+    ->format('Msg')
+    ->storageFile(Models::storageFileLocation()
+        ->fileName('message.msg')
+        ->storage('First Storage')
+        ->folderPath('file/location/folder/on/storage')
+        ->build())
+    ->value(Models::mapiMessageDto()
+        ->messageBody('Some body')
+        ->clientSubmitTime(new DateTime())
+        ->deliveryTime(new DateTime())
+        ->displayTo('To Address')
+        ->flags(array(
+            'MsgFlagRead',
+            'MsgFlagUnsent',
+            'MsgFlagHasAttach'))
+        ->normalizedSubject('Some subject')
+        ->senderAddressType('SMTP')
+        ->senderEmailAddress('from@aspose.com')
+        ->senderName('From Address')
+        ->senderSmtpAddress('from@aspose.com')
+        ->attachments(array(
+            Models::mapiAttachmentDto()
+                ->name('some-file.txt')
+                ->dataBase64('U29tZSBmaWxlIHRleHQ=')
+                ->build()))
+        ->body('Some body')
+        ->messageClass('IPM.Note')
+        ->recipients(array(
+            Models::mapiRecipientDto()
+                ->emailAddress('to@aspose.com')
+                ->addressType('SMTP')
+                ->displayName('To Address')
+                ->recipientType('MapiTo')
+                ->build()))
+        ->subject('Re: Some subject')
+        ->subjectPrefix('Re: ')
+        ->build())
+    ->build();
 ```
 
 

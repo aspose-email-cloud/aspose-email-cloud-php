@@ -12,13 +12,12 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$taskRegeneratingPatternDto = new TaskRegeneratingPatternDto
-{
-    Interval = 1,
-    Occurs = 2,
-    EndDate = DateTime.Today,
-    WeekStart = "Sunday"
-};
+$taskRegeneratingPatternDto = Models::taskRegeneratingPatternDto()
+    ->interval(1)
+    ->occurs(2)
+    ->endDate(new DateTime())
+    ->weekStart('Sunday')
+    ->build();
 ```
 
 

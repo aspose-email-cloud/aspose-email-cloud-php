@@ -11,10 +11,9 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$mailMessageBase = new MailMessageBase
-{
+$mailMessageBase = Models::mailMessageBase()
     
-};
+    ->build();
 ```
 
 

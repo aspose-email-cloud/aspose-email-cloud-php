@@ -15,13 +15,12 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$storageFile = new StorageFile
-{
-    Name = "file.ext",
-    ModifiedDate = DateTime.Today,
-    Size = 4096,
-    Path = "/storage/path/to"
-};
+$storageFile = Models::storageFile()
+    ->name('file.ext')
+    ->modifiedDate(new DateTime())
+    ->size(4096)
+    ->path('/storage/path/to')
+    ->build();
 ```
 
 

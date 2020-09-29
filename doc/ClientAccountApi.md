@@ -27,7 +27,7 @@ $request = Models::ClientAccountGetRequest()
     ->file_name('email.account')
     ->folder('email/account/location/on/storage')
     ->storage('First Storage')
-    .build();
+    ->build();
 ```
 
 </details>
@@ -42,7 +42,18 @@ Return type: [**EmailClientAccount**](EmailClientAccount.md)
     <summary>Result example</summary>
 
 ```php
-$result = ;
+$result = Models::emailClientAccount()
+    ->host('smtp.example.com')
+    ->port(465)
+    ->securityOptions('SSLAuto')
+    ->protocolType('SMTP')
+    ->credentials(Models::emailClientAccountOauthCredentials()
+        ->clientId('clientId')
+        ->clientSecret('clientSecret')
+        ->refreshToken('refreshToken')
+        ->login('example@example.com')
+        ->build())
+    ->build();
 ```
 </details>
 
@@ -63,7 +74,18 @@ $storage = ;
 $result = $api->client()->account().get($request);
 
 // Result example:
-$result = ;
+$result = Models::emailClientAccount()
+    ->host('smtp.example.com')
+    ->port(465)
+    ->securityOptions('SSLAuto')
+    ->protocolType('SMTP')
+    ->credentials(Models::emailClientAccountOauthCredentials()
+        ->clientId('clientId')
+        ->clientSecret('clientSecret')
+        ->refreshToken('refreshToken')
+        ->login('example@example.com')
+        ->build())
+    ->build();
 ```
 
 </details>
@@ -95,7 +117,7 @@ $request = Models::ClientAccountGetMultiRequest()
     ->file_name('email.multi.account')
     ->folder('email/account/location/on/storage')
     ->storage('First Storage')
-    .build();
+    ->build();
 ```
 
 </details>
@@ -110,7 +132,39 @@ Return type: [**EmailClientMultiAccount**](EmailClientMultiAccount.md)
     <summary>Result example</summary>
 
 ```php
-$result = ;
+$result = Models::emailClientMultiAccount()
+    ->receiveAccounts(array(
+        Models::emailClientAccount()
+            ->host('imap.gmail.com')
+            ->port(993)
+            ->securityOptions('SSLAuto')
+            ->credentials(Models::emailClientAccountPasswordCredentials()
+                ->password('password')
+                ->login('example@gmail.com')
+                ->build())
+            ->build(),
+        Models::emailClientAccount()
+            ->host('exchange@outlook.com')
+            ->port(443)
+            ->protocolType('EWS')
+            ->credentials(Models::emailClientAccountOauthCredentials()
+                ->clientId('clientId')
+                ->clientSecret('clientSecret')
+                ->refreshToken('refreshToken')
+                ->login('example@outlook.com')
+                ->build())
+            ->build()))
+    ->sendAccount(Models::emailClientAccount()
+        ->host('smtp.gmail.com')
+        ->port(465)
+        ->securityOptions('SSLAuto')
+        ->protocolType('SMTP')
+        ->credentials(Models::emailClientAccountPasswordCredentials()
+            ->password('password')
+            ->login('example@gmail.com')
+            ->build())
+        ->build())
+    ->build();
 ```
 </details>
 
@@ -131,7 +185,39 @@ $storage = ;
 $result = $api->client()->account().getMulti($request);
 
 // Result example:
-$result = ;
+$result = Models::emailClientMultiAccount()
+    ->receiveAccounts(array(
+        Models::emailClientAccount()
+            ->host('imap.gmail.com')
+            ->port(993)
+            ->securityOptions('SSLAuto')
+            ->credentials(Models::emailClientAccountPasswordCredentials()
+                ->password('password')
+                ->login('example@gmail.com')
+                ->build())
+            ->build(),
+        Models::emailClientAccount()
+            ->host('exchange@outlook.com')
+            ->port(443)
+            ->protocolType('EWS')
+            ->credentials(Models::emailClientAccountOauthCredentials()
+                ->clientId('clientId')
+                ->clientSecret('clientSecret')
+                ->refreshToken('refreshToken')
+                ->login('example@outlook.com')
+                ->build())
+            ->build()))
+    ->sendAccount(Models::emailClientAccount()
+        ->host('smtp.gmail.com')
+        ->port(465)
+        ->securityOptions('SSLAuto')
+        ->protocolType('SMTP')
+        ->credentials(Models::emailClientAccountPasswordCredentials()
+            ->password('password')
+            ->login('example@gmail.com')
+            ->build())
+        ->build())
+    ->build();
 ```
 
 </details>
@@ -158,7 +244,25 @@ See parameter model documentation at [ClientAccountSaveRequest](ClientAccountSav
     <summary>Parameter initialization example:</summary>
     
 ```php
-$request = ;
+$request = Models::clientAccountSaveRequest()
+    ->storageFile(Models::storageFileLocation()
+        ->fileName('email.account')
+        ->storage('First Storage')
+        ->folderPath('file/location/folder/on/storage')
+        ->build())
+    ->value(Models::emailClientAccount()
+        ->host('smtp.example.com')
+        ->port(465)
+        ->securityOptions('SSLAuto')
+        ->protocolType('SMTP')
+        ->credentials(Models::emailClientAccountOauthCredentials()
+            ->clientId('clientId')
+            ->clientSecret('clientSecret')
+            ->refreshToken('refreshToken')
+            ->login('example@example.com')
+            ->build())
+        ->build())
+    ->build();
 ```
 
 </details>
@@ -177,7 +281,25 @@ Return type: void (empty response body)
 $api = new EmailCloud(appKey, appSid);
 
 // Prepare parameters:
-$request = ;
+$request = Models::clientAccountSaveRequest()
+    ->storageFile(Models::storageFileLocation()
+        ->fileName('email.account')
+        ->storage('First Storage')
+        ->folderPath('file/location/folder/on/storage')
+        ->build())
+    ->value(Models::emailClientAccount()
+        ->host('smtp.example.com')
+        ->port(465)
+        ->securityOptions('SSLAuto')
+        ->protocolType('SMTP')
+        ->credentials(Models::emailClientAccountOauthCredentials()
+            ->clientId('clientId')
+            ->clientSecret('clientSecret')
+            ->refreshToken('refreshToken')
+            ->login('example@example.com')
+            ->build())
+        ->build())
+    ->build();
 
 // Call method:
 $api->client()->account().save($request);
@@ -206,7 +328,46 @@ See parameter model documentation at [ClientAccountSaveMultiRequest](ClientAccou
     <summary>Parameter initialization example:</summary>
     
 ```php
-$request = ;
+$request = Models::clientAccountSaveMultiRequest()
+    ->storageFile(Models::storageFileLocation()
+        ->fileName('email.multi.account')
+        ->storage('First Storage')
+        ->folderPath('file/location/folder/on/storage')
+        ->build())
+    ->value(Models::emailClientMultiAccount()
+        ->receiveAccounts(array(
+            Models::emailClientAccount()
+                ->host('imap.gmail.com')
+                ->port(993)
+                ->securityOptions('SSLAuto')
+                ->credentials(Models::emailClientAccountPasswordCredentials()
+                    ->password('password')
+                    ->login('example@gmail.com')
+                    ->build())
+                ->build(),
+            Models::emailClientAccount()
+                ->host('exchange@outlook.com')
+                ->port(443)
+                ->protocolType('EWS')
+                ->credentials(Models::emailClientAccountOauthCredentials()
+                    ->clientId('clientId')
+                    ->clientSecret('clientSecret')
+                    ->refreshToken('refreshToken')
+                    ->login('example@outlook.com')
+                    ->build())
+                ->build()))
+        ->sendAccount(Models::emailClientAccount()
+            ->host('smtp.gmail.com')
+            ->port(465)
+            ->securityOptions('SSLAuto')
+            ->protocolType('SMTP')
+            ->credentials(Models::emailClientAccountPasswordCredentials()
+                ->password('password')
+                ->login('example@gmail.com')
+                ->build())
+            ->build())
+        ->build())
+    ->build();
 ```
 
 </details>
@@ -225,7 +386,46 @@ Return type: void (empty response body)
 $api = new EmailCloud(appKey, appSid);
 
 // Prepare parameters:
-$request = ;
+$request = Models::clientAccountSaveMultiRequest()
+    ->storageFile(Models::storageFileLocation()
+        ->fileName('email.multi.account')
+        ->storage('First Storage')
+        ->folderPath('file/location/folder/on/storage')
+        ->build())
+    ->value(Models::emailClientMultiAccount()
+        ->receiveAccounts(array(
+            Models::emailClientAccount()
+                ->host('imap.gmail.com')
+                ->port(993)
+                ->securityOptions('SSLAuto')
+                ->credentials(Models::emailClientAccountPasswordCredentials()
+                    ->password('password')
+                    ->login('example@gmail.com')
+                    ->build())
+                ->build(),
+            Models::emailClientAccount()
+                ->host('exchange@outlook.com')
+                ->port(443)
+                ->protocolType('EWS')
+                ->credentials(Models::emailClientAccountOauthCredentials()
+                    ->clientId('clientId')
+                    ->clientSecret('clientSecret')
+                    ->refreshToken('refreshToken')
+                    ->login('example@outlook.com')
+                    ->build())
+                ->build()))
+        ->sendAccount(Models::emailClientAccount()
+            ->host('smtp.gmail.com')
+            ->port(465)
+            ->securityOptions('SSLAuto')
+            ->protocolType('SMTP')
+            ->credentials(Models::emailClientAccountPasswordCredentials()
+                ->password('password')
+                ->login('example@gmail.com')
+                ->build())
+            ->build())
+        ->build())
+    ->build();
 
 // Call method:
 $api->client()->account().saveMulti($request);

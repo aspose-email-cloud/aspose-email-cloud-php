@@ -23,7 +23,46 @@ See parameter model documentation at [ContactAsFileRequest](ContactAsFileRequest
     <summary>Parameter initialization example:</summary>
     
 ```php
-$request = ;
+$request = Models::contactAsFileRequest()
+    ->value(Models::contactDto()
+        ->attachments(array(
+            Models::attachment()
+                ->name('attachment.txt')
+                ->base64Data('U29tZSBmaWxlIGNvbnRlbnQ=')
+                ->build()))
+        ->displayName('Alex Thomas')
+        ->emailAddresses(array(
+            Models::emailAddress()
+                ->category(Models::enumWithCustom<EmailAddressCategory>()
+                    ->value('Custom')
+                    ->description('Partners')
+                    ->build())
+                ->displayName('Alex Thomas Partners')
+                ->preferred(true)
+                ->address('email@aspose.com')
+                ->build()))
+        ->gender('Male')
+        ->givenName('Alex')
+        ->phoneNumbers(array(
+            Models::phoneNumber()
+                ->category(Models::enumWithCustom<PhoneNumberCategory>()
+                    ->value('Office')
+                    ->build())
+                ->number('+49 211 4247 21')
+                ->preferred(true)
+                ->build()))
+        ->profession('GENERAL DIRECTOR')
+        ->surname('Thomas')
+        ->urls(array(
+            Models::url()
+                ->category(Models::enumWithCustom<UrlCategory>()
+                    ->value('Work')
+                    ->build())
+                ->preferred(true)
+                ->href('www.aspose.com')
+                ->build()))
+        ->build())
+    ->build();
 ```
 
 </details>
@@ -44,7 +83,46 @@ Return type: [**\SplFileObject**](\SplFileObject.md)
 $api = new EmailCloud(appKey, appSid);
 
 // Prepare parameters:
-$request = ;
+$request = Models::contactAsFileRequest()
+    ->value(Models::contactDto()
+        ->attachments(array(
+            Models::attachment()
+                ->name('attachment.txt')
+                ->base64Data('U29tZSBmaWxlIGNvbnRlbnQ=')
+                ->build()))
+        ->displayName('Alex Thomas')
+        ->emailAddresses(array(
+            Models::emailAddress()
+                ->category(Models::enumWithCustom<EmailAddressCategory>()
+                    ->value('Custom')
+                    ->description('Partners')
+                    ->build())
+                ->displayName('Alex Thomas Partners')
+                ->preferred(true)
+                ->address('email@aspose.com')
+                ->build()))
+        ->gender('Male')
+        ->givenName('Alex')
+        ->phoneNumbers(array(
+            Models::phoneNumber()
+                ->category(Models::enumWithCustom<PhoneNumberCategory>()
+                    ->value('Office')
+                    ->build())
+                ->number('+49 211 4247 21')
+                ->preferred(true)
+                ->build()))
+        ->profession('GENERAL DIRECTOR')
+        ->surname('Thomas')
+        ->urls(array(
+            Models::url()
+                ->category(Models::enumWithCustom<UrlCategory>()
+                    ->value('Work')
+                    ->build())
+                ->preferred(true)
+                ->href('www.aspose.com')
+                ->build()))
+        ->build())
+    ->build();
 
 // Call method:
 $result = $api->contact().asFile($request);
@@ -74,7 +152,44 @@ See parameter model documentation at [ContactDto](ContactDto.md)
     <summary>Parameter initialization example:</summary>
     
 ```php
-$contact_dto = ;
+$contact_dto = Models::contactDto()
+    ->attachments(array(
+        Models::attachment()
+            ->name('attachment.txt')
+            ->base64Data('U29tZSBmaWxlIGNvbnRlbnQ=')
+            ->build()))
+    ->displayName('Alex Thomas')
+    ->emailAddresses(array(
+        Models::emailAddress()
+            ->category(Models::enumWithCustom<EmailAddressCategory>()
+                ->value('Custom')
+                ->description('Partners')
+                ->build())
+            ->displayName('Alex Thomas Partners')
+            ->preferred(true)
+            ->address('email@aspose.com')
+            ->build()))
+    ->gender('Male')
+    ->givenName('Alex')
+    ->phoneNumbers(array(
+        Models::phoneNumber()
+            ->category(Models::enumWithCustom<PhoneNumberCategory>()
+                ->value('Office')
+                ->build())
+            ->number('+49 211 4247 21')
+            ->preferred(true)
+            ->build()))
+    ->profession('GENERAL DIRECTOR')
+    ->surname('Thomas')
+    ->urls(array(
+        Models::url()
+            ->category(Models::enumWithCustom<UrlCategory>()
+                ->value('Work')
+                ->build())
+            ->preferred(true)
+            ->href('www.aspose.com')
+            ->build()))
+    ->build();
 ```
 
 </details>
@@ -90,7 +205,26 @@ Return type: [**MapiContactDto**](MapiContactDto.md)
     <summary>Result example</summary>
 
 ```php
-$result = ;
+$result = Models::mapiContactDto()
+    ->electronicAddresses(Models::mapiContactElectronicAddressPropertySetDto()
+        ->defaultEmailAddress(Models::mapiContactElectronicAddressDto()
+            ->emailAddress('email@aspose.com')
+            ->build())
+        ->build())
+    ->nameInfo(Models::mapiContactNamePropertySetDto()
+        ->givenName('Alex')
+        ->surname('Thomas')
+        ->build())
+    ->personalInfo(Models::mapiContactPersonalInfoPropertySetDto()
+        ->businessHomePage('www.aspose.com')
+        ->build())
+    ->professionalInfo(Models::mapiContactProfessionalPropertySetDto()
+        ->profession('GENERAL DIRECTOR')
+        ->build())
+    ->telephones(Models::mapiContactTelephonePropertySetDto()
+        ->primaryTelephoneNumber('+49 211 4247 21')
+        ->build())
+    ->build();
 ```
 </details>
 
@@ -103,13 +237,69 @@ $result = ;
 $api = new EmailCloud(appKey, appSid);
 
 // Prepare parameters:
-$contact_dto = ;
+$contact_dto = Models::contactDto()
+    ->attachments(array(
+        Models::attachment()
+            ->name('attachment.txt')
+            ->base64Data('U29tZSBmaWxlIGNvbnRlbnQ=')
+            ->build()))
+    ->displayName('Alex Thomas')
+    ->emailAddresses(array(
+        Models::emailAddress()
+            ->category(Models::enumWithCustom<EmailAddressCategory>()
+                ->value('Custom')
+                ->description('Partners')
+                ->build())
+            ->displayName('Alex Thomas Partners')
+            ->preferred(true)
+            ->address('email@aspose.com')
+            ->build()))
+    ->gender('Male')
+    ->givenName('Alex')
+    ->phoneNumbers(array(
+        Models::phoneNumber()
+            ->category(Models::enumWithCustom<PhoneNumberCategory>()
+                ->value('Office')
+                ->build())
+            ->number('+49 211 4247 21')
+            ->preferred(true)
+            ->build()))
+    ->profession('GENERAL DIRECTOR')
+    ->surname('Thomas')
+    ->urls(array(
+        Models::url()
+            ->category(Models::enumWithCustom<UrlCategory>()
+                ->value('Work')
+                ->build())
+            ->preferred(true)
+            ->href('www.aspose.com')
+            ->build()))
+    ->build();
 
 // Call method:
 $result = $api->contact().asMapi($contact_dto);
 
 // Result example:
-$result = ;
+$result = Models::mapiContactDto()
+    ->electronicAddresses(Models::mapiContactElectronicAddressPropertySetDto()
+        ->defaultEmailAddress(Models::mapiContactElectronicAddressDto()
+            ->emailAddress('email@aspose.com')
+            ->build())
+        ->build())
+    ->nameInfo(Models::mapiContactNamePropertySetDto()
+        ->givenName('Alex')
+        ->surname('Thomas')
+        ->build())
+    ->personalInfo(Models::mapiContactPersonalInfoPropertySetDto()
+        ->businessHomePage('www.aspose.com')
+        ->build())
+    ->professionalInfo(Models::mapiContactProfessionalPropertySetDto()
+        ->profession('GENERAL DIRECTOR')
+        ->build())
+    ->telephones(Models::mapiContactTelephonePropertySetDto()
+        ->primaryTelephoneNumber('+49 211 4247 21')
+        ->build())
+    ->build();
 ```
 
 </details>
@@ -140,7 +330,7 @@ $request = Models::ContactConvertRequest()
     ->to_format('VCard')
     ->from_format('Msg')
     ->file(new SplFileObject('/path/to/contact.msg'))
-    .build();
+    ->build();
 ```
 
 </details>
@@ -196,7 +386,7 @@ See parameter model documentation at [ContactFromFileRequest](ContactFromFileReq
 $request = Models::ContactFromFileRequest()
     ->format('Msg')
     ->file(new SplFileObject('/path/to/contact.msg'))
-    .build();
+    ->build();
 ```
 
 </details>
@@ -211,7 +401,44 @@ Return type: [**ContactDto**](ContactDto.md)
     <summary>Result example</summary>
 
 ```php
-$result = ;
+$result = Models::contactDto()
+    ->attachments(array(
+        Models::attachment()
+            ->name('attachment.txt')
+            ->base64Data('U29tZSBmaWxlIGNvbnRlbnQ=')
+            ->build()))
+    ->displayName('Alex Thomas')
+    ->emailAddresses(array(
+        Models::emailAddress()
+            ->category(Models::enumWithCustom<EmailAddressCategory>()
+                ->value('Custom')
+                ->description('Partners')
+                ->build())
+            ->displayName('Alex Thomas Partners')
+            ->preferred(true)
+            ->address('email@aspose.com')
+            ->build()))
+    ->gender('Male')
+    ->givenName('Alex')
+    ->phoneNumbers(array(
+        Models::phoneNumber()
+            ->category(Models::enumWithCustom<PhoneNumberCategory>()
+                ->value('Office')
+                ->build())
+            ->number('+49 211 4247 21')
+            ->preferred(true)
+            ->build()))
+    ->profession('GENERAL DIRECTOR')
+    ->surname('Thomas')
+    ->urls(array(
+        Models::url()
+            ->category(Models::enumWithCustom<UrlCategory>()
+                ->value('Work')
+                ->build())
+            ->preferred(true)
+            ->href('www.aspose.com')
+            ->build()))
+    ->build();
 ```
 </details>
 
@@ -231,7 +458,44 @@ $file = ;
 $result = $api->contact().fromFile($request);
 
 // Result example:
-$result = ;
+$result = Models::contactDto()
+    ->attachments(array(
+        Models::attachment()
+            ->name('attachment.txt')
+            ->base64Data('U29tZSBmaWxlIGNvbnRlbnQ=')
+            ->build()))
+    ->displayName('Alex Thomas')
+    ->emailAddresses(array(
+        Models::emailAddress()
+            ->category(Models::enumWithCustom<EmailAddressCategory>()
+                ->value('Custom')
+                ->description('Partners')
+                ->build())
+            ->displayName('Alex Thomas Partners')
+            ->preferred(true)
+            ->address('email@aspose.com')
+            ->build()))
+    ->gender('Male')
+    ->givenName('Alex')
+    ->phoneNumbers(array(
+        Models::phoneNumber()
+            ->category(Models::enumWithCustom<PhoneNumberCategory>()
+                ->value('Office')
+                ->build())
+            ->number('+49 211 4247 21')
+            ->preferred(true)
+            ->build()))
+    ->profession('GENERAL DIRECTOR')
+    ->surname('Thomas')
+    ->urls(array(
+        Models::url()
+            ->category(Models::enumWithCustom<UrlCategory>()
+                ->value('Work')
+                ->build())
+            ->preferred(true)
+            ->href('www.aspose.com')
+            ->build()))
+    ->build();
 ```
 
 </details>
@@ -264,7 +528,7 @@ $request = Models::ContactGetRequest()
     ->file_name('contact.vcf')
     ->folder('folder/on/storage')
     ->storage('First Storage')
-    .build();
+    ->build();
 ```
 
 </details>
@@ -279,7 +543,44 @@ Return type: [**ContactDto**](ContactDto.md)
     <summary>Result example</summary>
 
 ```php
-$result = ;
+$result = Models::contactDto()
+    ->attachments(array(
+        Models::attachment()
+            ->name('attachment.txt')
+            ->base64Data('U29tZSBmaWxlIGNvbnRlbnQ=')
+            ->build()))
+    ->displayName('Alex Thomas')
+    ->emailAddresses(array(
+        Models::emailAddress()
+            ->category(Models::enumWithCustom<EmailAddressCategory>()
+                ->value('Custom')
+                ->description('Partners')
+                ->build())
+            ->displayName('Alex Thomas Partners')
+            ->preferred(true)
+            ->address('email@aspose.com')
+            ->build()))
+    ->gender('Male')
+    ->givenName('Alex')
+    ->phoneNumbers(array(
+        Models::phoneNumber()
+            ->category(Models::enumWithCustom<PhoneNumberCategory>()
+                ->value('Office')
+                ->build())
+            ->number('+49 211 4247 21')
+            ->preferred(true)
+            ->build()))
+    ->profession('GENERAL DIRECTOR')
+    ->surname('Thomas')
+    ->urls(array(
+        Models::url()
+            ->category(Models::enumWithCustom<UrlCategory>()
+                ->value('Work')
+                ->build())
+            ->preferred(true)
+            ->href('www.aspose.com')
+            ->build()))
+    ->build();
 ```
 </details>
 
@@ -301,7 +602,44 @@ $storage = ;
 $result = $api->contact().get($request);
 
 // Result example:
-$result = ;
+$result = Models::contactDto()
+    ->attachments(array(
+        Models::attachment()
+            ->name('attachment.txt')
+            ->base64Data('U29tZSBmaWxlIGNvbnRlbnQ=')
+            ->build()))
+    ->displayName('Alex Thomas')
+    ->emailAddresses(array(
+        Models::emailAddress()
+            ->category(Models::enumWithCustom<EmailAddressCategory>()
+                ->value('Custom')
+                ->description('Partners')
+                ->build())
+            ->displayName('Alex Thomas Partners')
+            ->preferred(true)
+            ->address('email@aspose.com')
+            ->build()))
+    ->gender('Male')
+    ->givenName('Alex')
+    ->phoneNumbers(array(
+        Models::phoneNumber()
+            ->category(Models::enumWithCustom<PhoneNumberCategory>()
+                ->value('Office')
+                ->build())
+            ->number('+49 211 4247 21')
+            ->preferred(true)
+            ->build()))
+    ->profession('GENERAL DIRECTOR')
+    ->surname('Thomas')
+    ->urls(array(
+        Models::url()
+            ->category(Models::enumWithCustom<UrlCategory>()
+                ->value('Work')
+                ->build())
+            ->preferred(true)
+            ->href('www.aspose.com')
+            ->build()))
+    ->build();
 ```
 
 </details>
@@ -335,7 +673,7 @@ $request = Models::ContactGetAsFileRequest()
     ->from_format('Msg')
     ->storage('First Storage')
     ->folder('folder/on/storage')
-    .build();
+    ->build();
 ```
 
 </details>
@@ -396,7 +734,7 @@ $request = Models::ContactGetListRequest()
     ->storage('First Storage')
     ->items_per_page(10)
     ->page_number(0)
-    .build();
+    ->build();
 ```
 
 </details>
@@ -411,7 +749,54 @@ Return type: [**ContactStorageList**](ContactStorageList.md)
     <summary>Result example</summary>
 
 ```php
-$result = ;
+$result = Models::contactStorageList()
+    ->value(array(
+        Models::storageModel<ContactDto>()
+            ->storageFile(Models::storageFileLocation()
+                ->fileName('contact.vcf')
+                ->storage('First Storage')
+                ->folderPath('file/location/folder/on/storage')
+                ->build())
+            ->value(Models::contactDto()
+                ->attachments(array(
+                    Models::attachment()
+                        ->name('attachment.txt')
+                        ->base64Data('U29tZSBmaWxlIGNvbnRlbnQ=')
+                        ->build()))
+                ->displayName('Alex Thomas')
+                ->emailAddresses(array(
+                    Models::emailAddress()
+                        ->category(Models::enumWithCustom<EmailAddressCategory>()
+                            ->value('Custom')
+                            ->description('Partners')
+                            ->build())
+                        ->displayName('Alex Thomas Partners')
+                        ->preferred(true)
+                        ->address('email@aspose.com')
+                        ->build()))
+                ->gender('Male')
+                ->givenName('Alex')
+                ->phoneNumbers(array(
+                    Models::phoneNumber()
+                        ->category(Models::enumWithCustom<PhoneNumberCategory>()
+                            ->value('Office')
+                            ->build())
+                        ->number('+49 211 4247 21')
+                        ->preferred(true)
+                        ->build()))
+                ->profession('GENERAL DIRECTOR')
+                ->surname('Thomas')
+                ->urls(array(
+                    Models::url()
+                        ->category(Models::enumWithCustom<UrlCategory>()
+                            ->value('Work')
+                            ->build())
+                        ->preferred(true)
+                        ->href('www.aspose.com')
+                        ->build()))
+                ->build())
+            ->build()))
+    ->build();
 ```
 </details>
 
@@ -434,7 +819,54 @@ $page_number = ;
 $result = $api->contact().getList($request);
 
 // Result example:
-$result = ;
+$result = Models::contactStorageList()
+    ->value(array(
+        Models::storageModel<ContactDto>()
+            ->storageFile(Models::storageFileLocation()
+                ->fileName('contact.vcf')
+                ->storage('First Storage')
+                ->folderPath('file/location/folder/on/storage')
+                ->build())
+            ->value(Models::contactDto()
+                ->attachments(array(
+                    Models::attachment()
+                        ->name('attachment.txt')
+                        ->base64Data('U29tZSBmaWxlIGNvbnRlbnQ=')
+                        ->build()))
+                ->displayName('Alex Thomas')
+                ->emailAddresses(array(
+                    Models::emailAddress()
+                        ->category(Models::enumWithCustom<EmailAddressCategory>()
+                            ->value('Custom')
+                            ->description('Partners')
+                            ->build())
+                        ->displayName('Alex Thomas Partners')
+                        ->preferred(true)
+                        ->address('email@aspose.com')
+                        ->build()))
+                ->gender('Male')
+                ->givenName('Alex')
+                ->phoneNumbers(array(
+                    Models::phoneNumber()
+                        ->category(Models::enumWithCustom<PhoneNumberCategory>()
+                            ->value('Office')
+                            ->build())
+                        ->number('+49 211 4247 21')
+                        ->preferred(true)
+                        ->build()))
+                ->profession('GENERAL DIRECTOR')
+                ->surname('Thomas')
+                ->urls(array(
+                    Models::url()
+                        ->category(Models::enumWithCustom<UrlCategory>()
+                            ->value('Work')
+                            ->build())
+                        ->preferred(true)
+                        ->href('www.aspose.com')
+                        ->build()))
+                ->build())
+            ->build()))
+    ->build();
 ```
 
 </details>
@@ -461,7 +893,51 @@ See parameter model documentation at [ContactSaveRequest](ContactSaveRequest.md)
     <summary>Parameter initialization example:</summary>
     
 ```php
-$request = ;
+$request = Models::contactSaveRequest()
+    ->storageFile(Models::storageFileLocation()
+        ->fileName('contact.vcf')
+        ->storage('First Storage')
+        ->folderPath('file/location/folder/on/storage')
+        ->build())
+    ->value(Models::contactDto()
+        ->attachments(array(
+            Models::attachment()
+                ->name('attachment.txt')
+                ->base64Data('U29tZSBmaWxlIGNvbnRlbnQ=')
+                ->build()))
+        ->displayName('Alex Thomas')
+        ->emailAddresses(array(
+            Models::emailAddress()
+                ->category(Models::enumWithCustom<EmailAddressCategory>()
+                    ->value('Custom')
+                    ->description('Partners')
+                    ->build())
+                ->displayName('Alex Thomas Partners')
+                ->preferred(true)
+                ->address('email@aspose.com')
+                ->build()))
+        ->gender('Male')
+        ->givenName('Alex')
+        ->phoneNumbers(array(
+            Models::phoneNumber()
+                ->category(Models::enumWithCustom<PhoneNumberCategory>()
+                    ->value('Office')
+                    ->build())
+                ->number('+49 211 4247 21')
+                ->preferred(true)
+                ->build()))
+        ->profession('GENERAL DIRECTOR')
+        ->surname('Thomas')
+        ->urls(array(
+            Models::url()
+                ->category(Models::enumWithCustom<UrlCategory>()
+                    ->value('Work')
+                    ->build())
+                ->preferred(true)
+                ->href('www.aspose.com')
+                ->build()))
+        ->build())
+    ->build();
 ```
 
 </details>
@@ -480,7 +956,51 @@ Return type: void (empty response body)
 $api = new EmailCloud(appKey, appSid);
 
 // Prepare parameters:
-$request = ;
+$request = Models::contactSaveRequest()
+    ->storageFile(Models::storageFileLocation()
+        ->fileName('contact.vcf')
+        ->storage('First Storage')
+        ->folderPath('file/location/folder/on/storage')
+        ->build())
+    ->value(Models::contactDto()
+        ->attachments(array(
+            Models::attachment()
+                ->name('attachment.txt')
+                ->base64Data('U29tZSBmaWxlIGNvbnRlbnQ=')
+                ->build()))
+        ->displayName('Alex Thomas')
+        ->emailAddresses(array(
+            Models::emailAddress()
+                ->category(Models::enumWithCustom<EmailAddressCategory>()
+                    ->value('Custom')
+                    ->description('Partners')
+                    ->build())
+                ->displayName('Alex Thomas Partners')
+                ->preferred(true)
+                ->address('email@aspose.com')
+                ->build()))
+        ->gender('Male')
+        ->givenName('Alex')
+        ->phoneNumbers(array(
+            Models::phoneNumber()
+                ->category(Models::enumWithCustom<PhoneNumberCategory>()
+                    ->value('Office')
+                    ->build())
+                ->number('+49 211 4247 21')
+                ->preferred(true)
+                ->build()))
+        ->profession('GENERAL DIRECTOR')
+        ->surname('Thomas')
+        ->urls(array(
+            Models::url()
+                ->category(Models::enumWithCustom<UrlCategory>()
+                    ->value('Work')
+                    ->build())
+                ->preferred(true)
+                ->href('www.aspose.com')
+                ->build()))
+        ->build())
+    ->build();
 
 // Call method:
 $api->contact().save($request);

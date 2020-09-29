@@ -12,11 +12,10 @@ Name | Type | Description | Notes
 
 ## Example
 ```php
-$nameValuePair = new NameValuePair
-{
-    Name = "name",
-    Value = "value"
-};
+$nameValuePair = Models::nameValuePair()
+    ->name('name')
+    ->value('value')
+    ->build();
 ```
 
 
