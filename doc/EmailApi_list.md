@@ -12,4 +12,3 @@ Method | HTTP request | Description
 [**getAsFile**](EmailApi.md#getAsFile) | **GET** /email/as-file | Converts email document from storage to specified format and returns as file
 [**getList**](EmailApi.md#getList) | **GET** /email/list | Get email list from storage folder.
 [**save**](EmailApi.md#save) | **PUT** /email | Save email document to storage.
-

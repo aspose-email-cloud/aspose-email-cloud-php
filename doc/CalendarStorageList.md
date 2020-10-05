@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ```php
 $calendarStorageList = Models::calendarStorageList()
     ->value(array(
-        Models::storageModel<CalendarDto>()
+        Models::storageModelOfCalendarDto()
             ->storageFile(Models::storageFileLocation()
                 ->fileName('calendar.ics')
                 ->storage('First Storage')

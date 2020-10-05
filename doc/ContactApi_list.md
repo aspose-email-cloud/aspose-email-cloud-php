@@ -12,4 +12,3 @@ Method | HTTP request | Description
 [**getAsFile**](ContactApi.md#getAsFile) | **GET** /email/Contact/as-file | Converts contact document from storage to specified format and returns as file
 [**getList**](ContactApi.md#getList) | **GET** /email/Contact/list | Get contact list from storage folder.
 [**save**](ContactApi.md#save) | **PUT** /email/Contact | Save contact to storage.
-

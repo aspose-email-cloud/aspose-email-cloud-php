@@ -139,7 +139,7 @@ $mapi_message = Models::mapiMessageDto()
     ->build();
 
 // Call method:
-$result = $api->mapi()->message().asEmailDto($mapi_message);
+$result = $api->mapi()->message()->asEmailDto($mapi_message);
 
 // Result example:
 $result = Models::emailDto()
@@ -283,7 +283,7 @@ $request = Models::mapiMessageAsFileRequest()
     ->build();
 
 // Call method:
-$result = $api->mapi()->message().asFile($request);
+$result = $api->mapi()->message()->asFile($request);
 ```
 
 </details>
@@ -371,11 +371,13 @@ $result = Models::mapiMessageDto()
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$format = ;
-$file = ;
+$request = Models::MapiMessageFromFileRequest()
+    ->format('Msg')
+    ->file(new SplFileObject('/path/to/message.msg'))
+    ->build();
 
 // Call method:
-$result = $api->mapi()->message().fromFile($request);
+$result = $api->mapi()->message()->fromFile($request);
 
 // Result example:
 $result = Models::mapiMessageDto()
@@ -499,13 +501,15 @@ $result = Models::mapiMessageDto()
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$format = ;
-$file_name = ;
-$folder = ;
-$storage = ;
+$request = Models::MapiMessageGetRequest()
+    ->format('Eml')
+    ->file_name('email.eml')
+    ->folder('folder/on/storage')
+    ->storage('First Storage')
+    ->build();
 
 // Call method:
-$result = $api->mapi()->message().get($request);
+$result = $api->mapi()->message()->get($request);
 
 // Result example:
 $result = Models::mapiMessageDto()
@@ -663,7 +667,7 @@ $request = Models::mapiMessageSaveRequest()
     ->build();
 
 // Call method:
-$api->mapi()->message().save($request);
+$api->mapi()->message()->save($request);
 ```
 
 </details>

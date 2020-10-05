@@ -14,4 +14,3 @@ Method | HTTP request | Description
 [**send**](ClientMessageApi.md#send) | **POST** /email/client/message | Send an email specified by model in request.
 [**sendFile**](ClientMessageApi.md#sendFile) | **POST** /email/client/message/file | Send an email file.
 [**setIsRead**](ClientMessageApi.md#setIsRead) | **PUT** /email/client/message/set-is-read | Mark message as read or unread.
-

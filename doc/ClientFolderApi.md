@@ -60,7 +60,7 @@ $request = Models::clientFolderCreateRequest()
     ->build();
 
 // Call method:
-$api->client()->folder().create($request);
+$api->client()->folder()->create($request);
 ```
 
 </details>
@@ -122,7 +122,7 @@ $request = Models::clientFolderDeleteRequest()
     ->build();
 
 // Call method:
-$api->client()->folder().delete($request);
+$api->client()->folder()->delete($request);
 ```
 
 </details>
@@ -182,13 +182,15 @@ $result = ;
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$account = ;
-$storage = ;
-$account_storage_folder = ;
-$parent_folder = ;
+$request = Models::ClientFolderGetListRequest()
+    ->account('email.multi.account')
+    ->storage('First Storage')
+    ->account_storage_folder('email/account/location/on/storage')
+    ->parent_folder('INBOX')
+    ->build();
 
 // Call method:
-$result = $api->client()->folder().getList($request);
+$result = $api->client()->folder()->getList($request);
 
 // Result example:
 $result = ;

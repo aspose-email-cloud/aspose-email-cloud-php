@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 ```php
 $phoneNumber = Models::phoneNumber()
-    ->category(Models::enumWithCustom<PhoneNumberCategory>()
+    ->category(Models::enumWithCustomOfPhoneNumberCategory()
         ->value('Company')
         ->build())
     ->number('+44 141 628 8900')

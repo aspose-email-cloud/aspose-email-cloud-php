@@ -9,4 +9,3 @@ Method | HTTP request | Description
 [**fromFile**](MapiMessageApi.md#fromFile) | **PUT** /email/MapiMessage/from-file | Converts email file to a MAPI model representation
 [**get**](MapiMessageApi.md#get) | **GET** /email/MapiMessage | Get MAPI message document.
 [**save**](MapiMessageApi.md#save) | **PUT** /email/MapiMessage | Save MAPI message to storage.
-

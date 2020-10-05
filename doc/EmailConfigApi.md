@@ -98,11 +98,11 @@ $result = Models::emailAccountConfigList()
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$address = ;
-$fast_processing = ;
+$request = Models::EmailConfigDiscoverRequest()
+    ->build();
 
 // Call method:
-$result = $api->emailConfig().discover($request);
+$result = $api->emailConfig()->discover($request);
 
 // Result example:
 $result = Models::emailAccountConfigList()
@@ -269,7 +269,7 @@ $request = Models::emailConfigDiscoverOauthRequest()
     ->build();
 
 // Call method:
-$result = $api->emailConfig().discoverOauth($request);
+$result = $api->emailConfig()->discoverOauth($request);
 
 // Result example:
 $result = Models::emailAccountConfigList()
@@ -431,7 +431,7 @@ $request = Models::emailConfigDiscoverPasswordRequest()
     ->build();
 
 // Call method:
-$result = $api->emailConfig().discoverPassword($request);
+$result = $api->emailConfig()->discoverPassword($request);
 
 // Result example:
 $result = Models::emailAccountConfigList()

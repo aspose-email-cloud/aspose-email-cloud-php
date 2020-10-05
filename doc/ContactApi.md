@@ -33,7 +33,7 @@ $request = Models::contactAsFileRequest()
         ->displayName('Alex Thomas')
         ->emailAddresses(array(
             Models::emailAddress()
-                ->category(Models::enumWithCustom<EmailAddressCategory>()
+                ->category(Models::enumWithCustomOfEmailAddressCategory()
                     ->value('Custom')
                     ->description('Partners')
                     ->build())
@@ -45,7 +45,7 @@ $request = Models::contactAsFileRequest()
         ->givenName('Alex')
         ->phoneNumbers(array(
             Models::phoneNumber()
-                ->category(Models::enumWithCustom<PhoneNumberCategory>()
+                ->category(Models::enumWithCustomOfPhoneNumberCategory()
                     ->value('Office')
                     ->build())
                 ->number('+49 211 4247 21')
@@ -55,7 +55,7 @@ $request = Models::contactAsFileRequest()
         ->surname('Thomas')
         ->urls(array(
             Models::url()
-                ->category(Models::enumWithCustom<UrlCategory>()
+                ->category(Models::enumWithCustomOfUrlCategory()
                     ->value('Work')
                     ->build())
                 ->preferred(true)
@@ -93,7 +93,7 @@ $request = Models::contactAsFileRequest()
         ->displayName('Alex Thomas')
         ->emailAddresses(array(
             Models::emailAddress()
-                ->category(Models::enumWithCustom<EmailAddressCategory>()
+                ->category(Models::enumWithCustomOfEmailAddressCategory()
                     ->value('Custom')
                     ->description('Partners')
                     ->build())
@@ -105,7 +105,7 @@ $request = Models::contactAsFileRequest()
         ->givenName('Alex')
         ->phoneNumbers(array(
             Models::phoneNumber()
-                ->category(Models::enumWithCustom<PhoneNumberCategory>()
+                ->category(Models::enumWithCustomOfPhoneNumberCategory()
                     ->value('Office')
                     ->build())
                 ->number('+49 211 4247 21')
@@ -115,7 +115,7 @@ $request = Models::contactAsFileRequest()
         ->surname('Thomas')
         ->urls(array(
             Models::url()
-                ->category(Models::enumWithCustom<UrlCategory>()
+                ->category(Models::enumWithCustomOfUrlCategory()
                     ->value('Work')
                     ->build())
                 ->preferred(true)
@@ -125,7 +125,7 @@ $request = Models::contactAsFileRequest()
     ->build();
 
 // Call method:
-$result = $api->contact().asFile($request);
+$result = $api->contact()->asFile($request);
 ```
 
 </details>
@@ -161,7 +161,7 @@ $contact_dto = Models::contactDto()
     ->displayName('Alex Thomas')
     ->emailAddresses(array(
         Models::emailAddress()
-            ->category(Models::enumWithCustom<EmailAddressCategory>()
+            ->category(Models::enumWithCustomOfEmailAddressCategory()
                 ->value('Custom')
                 ->description('Partners')
                 ->build())
@@ -173,7 +173,7 @@ $contact_dto = Models::contactDto()
     ->givenName('Alex')
     ->phoneNumbers(array(
         Models::phoneNumber()
-            ->category(Models::enumWithCustom<PhoneNumberCategory>()
+            ->category(Models::enumWithCustomOfPhoneNumberCategory()
                 ->value('Office')
                 ->build())
             ->number('+49 211 4247 21')
@@ -183,7 +183,7 @@ $contact_dto = Models::contactDto()
     ->surname('Thomas')
     ->urls(array(
         Models::url()
-            ->category(Models::enumWithCustom<UrlCategory>()
+            ->category(Models::enumWithCustomOfUrlCategory()
                 ->value('Work')
                 ->build())
             ->preferred(true)
@@ -246,7 +246,7 @@ $contact_dto = Models::contactDto()
     ->displayName('Alex Thomas')
     ->emailAddresses(array(
         Models::emailAddress()
-            ->category(Models::enumWithCustom<EmailAddressCategory>()
+            ->category(Models::enumWithCustomOfEmailAddressCategory()
                 ->value('Custom')
                 ->description('Partners')
                 ->build())
@@ -258,7 +258,7 @@ $contact_dto = Models::contactDto()
     ->givenName('Alex')
     ->phoneNumbers(array(
         Models::phoneNumber()
-            ->category(Models::enumWithCustom<PhoneNumberCategory>()
+            ->category(Models::enumWithCustomOfPhoneNumberCategory()
                 ->value('Office')
                 ->build())
             ->number('+49 211 4247 21')
@@ -268,7 +268,7 @@ $contact_dto = Models::contactDto()
     ->surname('Thomas')
     ->urls(array(
         Models::url()
-            ->category(Models::enumWithCustom<UrlCategory>()
+            ->category(Models::enumWithCustomOfUrlCategory()
                 ->value('Work')
                 ->build())
             ->preferred(true)
@@ -277,7 +277,7 @@ $contact_dto = Models::contactDto()
     ->build();
 
 // Call method:
-$result = $api->contact().asMapi($contact_dto);
+$result = $api->contact()->asMapi($contact_dto);
 
 // Result example:
 $result = Models::mapiContactDto()
@@ -350,12 +350,14 @@ Return type: [**\SplFileObject**](\SplFileObject.md)
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$to_format = ;
-$from_format = ;
-$file = ;
+$request = Models::ContactConvertRequest()
+    ->to_format('VCard')
+    ->from_format('Msg')
+    ->file(new SplFileObject('/path/to/contact.msg'))
+    ->build();
 
 // Call method:
-$result = $api->contact().convert($request);
+$result = $api->contact()->convert($request);
 ```
 
 </details>
@@ -410,7 +412,7 @@ $result = Models::contactDto()
     ->displayName('Alex Thomas')
     ->emailAddresses(array(
         Models::emailAddress()
-            ->category(Models::enumWithCustom<EmailAddressCategory>()
+            ->category(Models::enumWithCustomOfEmailAddressCategory()
                 ->value('Custom')
                 ->description('Partners')
                 ->build())
@@ -422,7 +424,7 @@ $result = Models::contactDto()
     ->givenName('Alex')
     ->phoneNumbers(array(
         Models::phoneNumber()
-            ->category(Models::enumWithCustom<PhoneNumberCategory>()
+            ->category(Models::enumWithCustomOfPhoneNumberCategory()
                 ->value('Office')
                 ->build())
             ->number('+49 211 4247 21')
@@ -432,7 +434,7 @@ $result = Models::contactDto()
     ->surname('Thomas')
     ->urls(array(
         Models::url()
-            ->category(Models::enumWithCustom<UrlCategory>()
+            ->category(Models::enumWithCustomOfUrlCategory()
                 ->value('Work')
                 ->build())
             ->preferred(true)
@@ -451,11 +453,13 @@ $result = Models::contactDto()
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$format = ;
-$file = ;
+$request = Models::ContactFromFileRequest()
+    ->format('Msg')
+    ->file(new SplFileObject('/path/to/contact.msg'))
+    ->build();
 
 // Call method:
-$result = $api->contact().fromFile($request);
+$result = $api->contact()->fromFile($request);
 
 // Result example:
 $result = Models::contactDto()
@@ -467,7 +471,7 @@ $result = Models::contactDto()
     ->displayName('Alex Thomas')
     ->emailAddresses(array(
         Models::emailAddress()
-            ->category(Models::enumWithCustom<EmailAddressCategory>()
+            ->category(Models::enumWithCustomOfEmailAddressCategory()
                 ->value('Custom')
                 ->description('Partners')
                 ->build())
@@ -479,7 +483,7 @@ $result = Models::contactDto()
     ->givenName('Alex')
     ->phoneNumbers(array(
         Models::phoneNumber()
-            ->category(Models::enumWithCustom<PhoneNumberCategory>()
+            ->category(Models::enumWithCustomOfPhoneNumberCategory()
                 ->value('Office')
                 ->build())
             ->number('+49 211 4247 21')
@@ -489,7 +493,7 @@ $result = Models::contactDto()
     ->surname('Thomas')
     ->urls(array(
         Models::url()
-            ->category(Models::enumWithCustom<UrlCategory>()
+            ->category(Models::enumWithCustomOfUrlCategory()
                 ->value('Work')
                 ->build())
             ->preferred(true)
@@ -552,7 +556,7 @@ $result = Models::contactDto()
     ->displayName('Alex Thomas')
     ->emailAddresses(array(
         Models::emailAddress()
-            ->category(Models::enumWithCustom<EmailAddressCategory>()
+            ->category(Models::enumWithCustomOfEmailAddressCategory()
                 ->value('Custom')
                 ->description('Partners')
                 ->build())
@@ -564,7 +568,7 @@ $result = Models::contactDto()
     ->givenName('Alex')
     ->phoneNumbers(array(
         Models::phoneNumber()
-            ->category(Models::enumWithCustom<PhoneNumberCategory>()
+            ->category(Models::enumWithCustomOfPhoneNumberCategory()
                 ->value('Office')
                 ->build())
             ->number('+49 211 4247 21')
@@ -574,7 +578,7 @@ $result = Models::contactDto()
     ->surname('Thomas')
     ->urls(array(
         Models::url()
-            ->category(Models::enumWithCustom<UrlCategory>()
+            ->category(Models::enumWithCustomOfUrlCategory()
                 ->value('Work')
                 ->build())
             ->preferred(true)
@@ -593,13 +597,15 @@ $result = Models::contactDto()
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$format = ;
-$file_name = ;
-$folder = ;
-$storage = ;
+$request = Models::ContactGetRequest()
+    ->format('VCard')
+    ->file_name('contact.vcf')
+    ->folder('folder/on/storage')
+    ->storage('First Storage')
+    ->build();
 
 // Call method:
-$result = $api->contact().get($request);
+$result = $api->contact()->get($request);
 
 // Result example:
 $result = Models::contactDto()
@@ -611,7 +617,7 @@ $result = Models::contactDto()
     ->displayName('Alex Thomas')
     ->emailAddresses(array(
         Models::emailAddress()
-            ->category(Models::enumWithCustom<EmailAddressCategory>()
+            ->category(Models::enumWithCustomOfEmailAddressCategory()
                 ->value('Custom')
                 ->description('Partners')
                 ->build())
@@ -623,7 +629,7 @@ $result = Models::contactDto()
     ->givenName('Alex')
     ->phoneNumbers(array(
         Models::phoneNumber()
-            ->category(Models::enumWithCustom<PhoneNumberCategory>()
+            ->category(Models::enumWithCustomOfPhoneNumberCategory()
                 ->value('Office')
                 ->build())
             ->number('+49 211 4247 21')
@@ -633,7 +639,7 @@ $result = Models::contactDto()
     ->surname('Thomas')
     ->urls(array(
         Models::url()
-            ->category(Models::enumWithCustom<UrlCategory>()
+            ->category(Models::enumWithCustomOfUrlCategory()
                 ->value('Work')
                 ->build())
             ->preferred(true)
@@ -693,14 +699,16 @@ Return type: [**\SplFileObject**](\SplFileObject.md)
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$file_name = ;
-$to_format = ;
-$from_format = ;
-$storage = ;
-$folder = ;
+$request = Models::ContactGetAsFileRequest()
+    ->file_name('contact.msg')
+    ->to_format('VCard')
+    ->from_format('Msg')
+    ->storage('First Storage')
+    ->folder('folder/on/storage')
+    ->build();
 
 // Call method:
-$result = $api->contact().getAsFile($request);
+$result = $api->contact()->getAsFile($request);
 ```
 
 </details>
@@ -751,7 +759,7 @@ Return type: [**ContactStorageList**](ContactStorageList.md)
 ```php
 $result = Models::contactStorageList()
     ->value(array(
-        Models::storageModel<ContactDto>()
+        Models::storageModelOfContactDto()
             ->storageFile(Models::storageFileLocation()
                 ->fileName('contact.vcf')
                 ->storage('First Storage')
@@ -766,7 +774,7 @@ $result = Models::contactStorageList()
                 ->displayName('Alex Thomas')
                 ->emailAddresses(array(
                     Models::emailAddress()
-                        ->category(Models::enumWithCustom<EmailAddressCategory>()
+                        ->category(Models::enumWithCustomOfEmailAddressCategory()
                             ->value('Custom')
                             ->description('Partners')
                             ->build())
@@ -778,7 +786,7 @@ $result = Models::contactStorageList()
                 ->givenName('Alex')
                 ->phoneNumbers(array(
                     Models::phoneNumber()
-                        ->category(Models::enumWithCustom<PhoneNumberCategory>()
+                        ->category(Models::enumWithCustomOfPhoneNumberCategory()
                             ->value('Office')
                             ->build())
                         ->number('+49 211 4247 21')
@@ -788,7 +796,7 @@ $result = Models::contactStorageList()
                 ->surname('Thomas')
                 ->urls(array(
                     Models::url()
-                        ->category(Models::enumWithCustom<UrlCategory>()
+                        ->category(Models::enumWithCustomOfUrlCategory()
                             ->value('Work')
                             ->build())
                         ->preferred(true)
@@ -809,19 +817,21 @@ $result = Models::contactStorageList()
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$format = ;
-$folder = ;
-$storage = ;
-$items_per_page = ;
-$page_number = ;
+$request = Models::ContactGetListRequest()
+    ->format('VCard')
+    ->folder('folder/on/storage')
+    ->storage('First Storage')
+    ->items_per_page(10)
+    ->page_number(0)
+    ->build();
 
 // Call method:
-$result = $api->contact().getList($request);
+$result = $api->contact()->getList($request);
 
 // Result example:
 $result = Models::contactStorageList()
     ->value(array(
-        Models::storageModel<ContactDto>()
+        Models::storageModelOfContactDto()
             ->storageFile(Models::storageFileLocation()
                 ->fileName('contact.vcf')
                 ->storage('First Storage')
@@ -836,7 +846,7 @@ $result = Models::contactStorageList()
                 ->displayName('Alex Thomas')
                 ->emailAddresses(array(
                     Models::emailAddress()
-                        ->category(Models::enumWithCustom<EmailAddressCategory>()
+                        ->category(Models::enumWithCustomOfEmailAddressCategory()
                             ->value('Custom')
                             ->description('Partners')
                             ->build())
@@ -848,7 +858,7 @@ $result = Models::contactStorageList()
                 ->givenName('Alex')
                 ->phoneNumbers(array(
                     Models::phoneNumber()
-                        ->category(Models::enumWithCustom<PhoneNumberCategory>()
+                        ->category(Models::enumWithCustomOfPhoneNumberCategory()
                             ->value('Office')
                             ->build())
                         ->number('+49 211 4247 21')
@@ -858,7 +868,7 @@ $result = Models::contactStorageList()
                 ->surname('Thomas')
                 ->urls(array(
                     Models::url()
-                        ->category(Models::enumWithCustom<UrlCategory>()
+                        ->category(Models::enumWithCustomOfUrlCategory()
                             ->value('Work')
                             ->build())
                         ->preferred(true)
@@ -908,7 +918,7 @@ $request = Models::contactSaveRequest()
         ->displayName('Alex Thomas')
         ->emailAddresses(array(
             Models::emailAddress()
-                ->category(Models::enumWithCustom<EmailAddressCategory>()
+                ->category(Models::enumWithCustomOfEmailAddressCategory()
                     ->value('Custom')
                     ->description('Partners')
                     ->build())
@@ -920,7 +930,7 @@ $request = Models::contactSaveRequest()
         ->givenName('Alex')
         ->phoneNumbers(array(
             Models::phoneNumber()
-                ->category(Models::enumWithCustom<PhoneNumberCategory>()
+                ->category(Models::enumWithCustomOfPhoneNumberCategory()
                     ->value('Office')
                     ->build())
                 ->number('+49 211 4247 21')
@@ -930,7 +940,7 @@ $request = Models::contactSaveRequest()
         ->surname('Thomas')
         ->urls(array(
             Models::url()
-                ->category(Models::enumWithCustom<UrlCategory>()
+                ->category(Models::enumWithCustomOfUrlCategory()
                     ->value('Work')
                     ->build())
                 ->preferred(true)
@@ -971,7 +981,7 @@ $request = Models::contactSaveRequest()
         ->displayName('Alex Thomas')
         ->emailAddresses(array(
             Models::emailAddress()
-                ->category(Models::enumWithCustom<EmailAddressCategory>()
+                ->category(Models::enumWithCustomOfEmailAddressCategory()
                     ->value('Custom')
                     ->description('Partners')
                     ->build())
@@ -983,7 +993,7 @@ $request = Models::contactSaveRequest()
         ->givenName('Alex')
         ->phoneNumbers(array(
             Models::phoneNumber()
-                ->category(Models::enumWithCustom<PhoneNumberCategory>()
+                ->category(Models::enumWithCustomOfPhoneNumberCategory()
                     ->value('Office')
                     ->build())
                 ->number('+49 211 4247 21')
@@ -993,7 +1003,7 @@ $request = Models::contactSaveRequest()
         ->surname('Thomas')
         ->urls(array(
             Models::url()
-                ->category(Models::enumWithCustom<UrlCategory>()
+                ->category(Models::enumWithCustomOfUrlCategory()
                     ->value('Work')
                     ->build())
                 ->preferred(true)
@@ -1003,7 +1013,7 @@ $request = Models::contactSaveRequest()
     ->build();
 
 // Call method:
-$api->contact().save($request);
+$api->contact()->save($request);
 ```
 
 </details>

@@ -144,7 +144,7 @@ $mapi_calendar_dto = Models::mapiCalendarDto()
     ->build();
 
 // Call method:
-$result = $api->mapi()->calendar().asCalendarDto($mapi_calendar_dto);
+$result = $api->mapi()->calendar()->asCalendarDto($mapi_calendar_dto);
 
 // Result example:
 $result = Models::calendarDto()
@@ -293,7 +293,7 @@ $request = Models::mapiCalendarAsFileRequest()
     ->build();
 
 // Call method:
-$result = $api->mapi()->calendar().asFile($request);
+$result = $api->mapi()->calendar()->asFile($request);
 ```
 
 </details>
@@ -384,10 +384,12 @@ $result = Models::mapiCalendarDto()
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$file = ;
+$request = Models::MapiCalendarFromFileRequest()
+    ->file(new SplFileObject('/path/to/calendar.msg'))
+    ->build();
 
 // Call method:
-$result = $api->mapi()->calendar().fromFile($request);
+$result = $api->mapi()->calendar()->fromFile($request);
 
 // Result example:
 $result = Models::mapiCalendarDto()
@@ -518,12 +520,14 @@ $result = Models::mapiCalendarDto()
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$file_name = ;
-$folder = ;
-$storage = ;
+$request = Models::MapiCalendarGetRequest()
+    ->file_name('calendar.msg')
+    ->folder('calendar/location/on/storage')
+    ->storage('First Storage')
+    ->build();
 
 // Call method:
-$result = $api->mapi()->calendar().get($request);
+$result = $api->mapi()->calendar()->get($request);
 
 // Result example:
 $result = Models::mapiCalendarDto()
@@ -693,7 +697,7 @@ $request = Models::mapiCalendarSaveRequest()
     ->build();
 
 // Call method:
-$api->mapi()->calendar().save($request);
+$api->mapi()->calendar()->save($request);
 ```
 
 </details>

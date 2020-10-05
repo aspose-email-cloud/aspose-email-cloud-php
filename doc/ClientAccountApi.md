@@ -66,12 +66,14 @@ $result = Models::emailClientAccount()
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$file_name = ;
-$folder = ;
-$storage = ;
+$request = Models::ClientAccountGetRequest()
+    ->file_name('email.account')
+    ->folder('email/account/location/on/storage')
+    ->storage('First Storage')
+    ->build();
 
 // Call method:
-$result = $api->client()->account().get($request);
+$result = $api->client()->account()->get($request);
 
 // Result example:
 $result = Models::emailClientAccount()
@@ -177,12 +179,14 @@ $result = Models::emailClientMultiAccount()
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$file_name = ;
-$folder = ;
-$storage = ;
+$request = Models::ClientAccountGetMultiRequest()
+    ->file_name('email.multi.account')
+    ->folder('email/account/location/on/storage')
+    ->storage('First Storage')
+    ->build();
 
 // Call method:
-$result = $api->client()->account().getMulti($request);
+$result = $api->client()->account()->getMulti($request);
 
 // Result example:
 $result = Models::emailClientMultiAccount()
@@ -302,7 +306,7 @@ $request = Models::clientAccountSaveRequest()
     ->build();
 
 // Call method:
-$api->client()->account().save($request);
+$api->client()->account()->save($request);
 ```
 
 </details>
@@ -428,7 +432,7 @@ $request = Models::clientAccountSaveMultiRequest()
     ->build();
 
 // Call method:
-$api->client()->account().saveMulti($request);
+$api->client()->account()->saveMulti($request);
 ```
 
 </details>

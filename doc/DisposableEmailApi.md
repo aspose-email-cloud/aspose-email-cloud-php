@@ -53,10 +53,12 @@ $result = ;
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$address = ;
+$request = Models::DisposableEmailIsDisposableRequest()
+    ->address('example@mailcatch.com')
+    ->build();
 
 // Call method:
-$result = $api->disposableEmail().isDisposable($request);
+$result = $api->disposableEmail()->isDisposable($request);
 
 // Result example:
 $result = ;

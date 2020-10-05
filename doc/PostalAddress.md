@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 ```php
 $postalAddress = Models::postalAddress()
     ->address('221b')
-    ->category(Models::enumWithCustom<PostalAddressCategory>()
+    ->category(Models::enumWithCustomOfPostalAddressCategory()
         
         ->build())
     ->city('London')

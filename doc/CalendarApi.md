@@ -124,7 +124,7 @@ $request = Models::calendarAsAlternateRequest()
     ->build();
 
 // Call method:
-$result = $api->calendar().asAlternate($request);
+$result = $api->calendar()->asAlternate($request);
 
 // Result example:
 $result = Models::alternateView()
@@ -245,7 +245,7 @@ $request = Models::calendarAsFileRequest()
     ->build();
 
 // Call method:
-$result = $api->calendar().asFile($request);
+$result = $api->calendar()->asFile($request);
 ```
 
 </details>
@@ -380,7 +380,7 @@ $calendar_dto = Models::calendarDto()
     ->build();
 
 // Call method:
-$result = $api->calendar().asMapi($calendar_dto);
+$result = $api->calendar()->asMapi($calendar_dto);
 
 // Result example:
 $result = Models::mapiCalendarDto()
@@ -467,11 +467,13 @@ Return type: [**\SplFileObject**](\SplFileObject.md)
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$format = ;
-$file = ;
+$request = Models::CalendarConvertRequest()
+    ->format('Ics')
+    ->file(new SplFileObject('/path/to/calendar.msg'))
+    ->build();
 
 // Call method:
-$result = $api->calendar().convert($request);
+$result = $api->calendar()->convert($request);
 ```
 
 </details>
@@ -550,10 +552,12 @@ $result = Models::calendarDto()
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$file = ;
+$request = Models::CalendarFromFileRequest()
+    ->file(new SplFileObject('/path/to/calendar.ics'))
+    ->build();
 
 // Call method:
-$result = $api->calendar().fromFile($request);
+$result = $api->calendar()->fromFile($request);
 
 // Result example:
 $result = Models::calendarDto()
@@ -658,12 +662,14 @@ $result = Models::calendarDto()
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$file_name = ;
-$folder = ;
-$storage = ;
+$request = Models::CalendarGetRequest()
+    ->file_name('calendar.ics')
+    ->folder('calendar/location/on/storage')
+    ->storage('First Storage')
+    ->build();
 
 // Call method:
-$result = $api->calendar().get($request);
+$result = $api->calendar()->get($request);
 
 // Result example:
 $result = Models::calendarDto()
@@ -769,14 +775,15 @@ $result = Models::alternateView()
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$file_name = ;
-$calendar_action = ;
-$sequence_id = ;
-$folder = ;
-$storage = ;
+$request = Models::CalendarGetAsAlternateRequest()
+    ->file_name('calendar.ics')
+    ->calendar_action('Create')
+    ->folder('calendar/location/on/storage')
+    ->storage('First Storage')
+    ->build();
 
 // Call method:
-$result = $api->calendar().getAsAlternate($request);
+$result = $api->calendar()->getAsAlternate($request);
 
 // Result example:
 $result = Models::alternateView()
@@ -853,13 +860,15 @@ Return type: [**\SplFileObject**](\SplFileObject.md)
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$file_name = ;
-$format = ;
-$storage = ;
-$folder = ;
+$request = Models::CalendarGetAsFileRequest()
+    ->file_name('calendar.msg')
+    ->format('Ics')
+    ->storage('First Storage')
+    ->folder('calendar/file/location/on/storage')
+    ->build();
 
 // Call method:
-$result = $api->calendar().getAsFile($request);
+$result = $api->calendar()->getAsFile($request);
 ```
 
 </details>
@@ -909,7 +918,7 @@ Return type: [**CalendarStorageList**](CalendarStorageList.md)
 ```php
 $result = Models::calendarStorageList()
     ->value(array(
-        Models::storageModel<CalendarDto>()
+        Models::storageModelOfCalendarDto()
             ->storageFile(Models::storageFileLocation()
                 ->fileName('calendar.ics')
                 ->storage('First Storage')
@@ -951,18 +960,20 @@ $result = Models::calendarStorageList()
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$folder = ;
-$items_per_page = ;
-$page_number = ;
-$storage = ;
+$request = Models::CalendarGetListRequest()
+    ->folder('some/folder/on/storage')
+    ->items_per_page(10)
+    ->page_number(0)
+    ->storage('First Storage')
+    ->build();
 
 // Call method:
-$result = $api->calendar().getList($request);
+$result = $api->calendar()->getList($request);
 
 // Result example:
 $result = Models::calendarStorageList()
     ->value(array(
-        Models::storageModel<CalendarDto>()
+        Models::storageModelOfCalendarDto()
             ->storageFile(Models::storageFileLocation()
                 ->fileName('calendar.ics')
                 ->storage('First Storage')
@@ -1096,7 +1107,7 @@ $request = Models::calendarSaveRequest()
     ->build();
 
 // Call method:
-$api->calendar().save($request);
+$api->calendar()->save($request);
 ```
 
 </details>

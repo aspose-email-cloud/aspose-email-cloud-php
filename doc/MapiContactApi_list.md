@@ -9,4 +9,3 @@ Method | HTTP request | Description
 [**fromFile**](MapiContactApi.md#fromFile) | **PUT** /email/MapiContact/from-file | Converts contact file to a MAPI model representation.
 [**get**](MapiContactApi.md#get) | **GET** /email/MapiContact | Get MAPI contact document.
 [**save**](MapiContactApi.md#save) | **PUT** /email/MapiContact | Save MAPI Contact to storage.
-

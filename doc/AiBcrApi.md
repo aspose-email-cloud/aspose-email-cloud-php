@@ -54,7 +54,7 @@ $result = Models::contactList()
             ->displayName('Alex Thomas')
             ->emailAddresses(array(
                 Models::emailAddress()
-                    ->category(Models::enumWithCustom<EmailAddressCategory>()
+                    ->category(Models::enumWithCustomOfEmailAddressCategory()
                         ->value('Custom')
                         ->description('Partners')
                         ->build())
@@ -66,7 +66,7 @@ $result = Models::contactList()
             ->givenName('Alex')
             ->phoneNumbers(array(
                 Models::phoneNumber()
-                    ->category(Models::enumWithCustom<PhoneNumberCategory>()
+                    ->category(Models::enumWithCustomOfPhoneNumberCategory()
                         ->value('Office')
                         ->build())
                     ->number('+49 211 4247 21')
@@ -76,7 +76,7 @@ $result = Models::contactList()
             ->surname('Thomas')
             ->urls(array(
                 Models::url()
-                    ->category(Models::enumWithCustom<UrlCategory>()
+                    ->category(Models::enumWithCustomOfUrlCategory()
                         ->value('Work')
                         ->build())
                     ->preferred(true)
@@ -96,13 +96,15 @@ $result = Models::contactList()
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$file = ;
-$countries = ;
-$languages = ;
-$is_single = ;
+$request = Models::AiBcrParseRequest()
+    ->file(new SplFileObject('/path/to/image.png'))
+    ->countries('us')
+    ->languages('en')
+    ->is_single(true)
+    ->build();
 
 // Call method:
-$result = $api->ai()->bcr().parse($request);
+$result = $api->ai()->bcr()->parse($request);
 
 // Result example:
 $result = Models::contactList()
@@ -116,7 +118,7 @@ $result = Models::contactList()
             ->displayName('Alex Thomas')
             ->emailAddresses(array(
                 Models::emailAddress()
-                    ->category(Models::enumWithCustom<EmailAddressCategory>()
+                    ->category(Models::enumWithCustomOfEmailAddressCategory()
                         ->value('Custom')
                         ->description('Partners')
                         ->build())
@@ -128,7 +130,7 @@ $result = Models::contactList()
             ->givenName('Alex')
             ->phoneNumbers(array(
                 Models::phoneNumber()
-                    ->category(Models::enumWithCustom<PhoneNumberCategory>()
+                    ->category(Models::enumWithCustomOfPhoneNumberCategory()
                         ->value('Office')
                         ->build())
                     ->number('+49 211 4247 21')
@@ -138,7 +140,7 @@ $result = Models::contactList()
             ->surname('Thomas')
             ->urls(array(
                 Models::url()
-                    ->category(Models::enumWithCustom<UrlCategory>()
+                    ->category(Models::enumWithCustomOfUrlCategory()
                         ->value('Work')
                         ->build())
                     ->preferred(true)
@@ -240,7 +242,7 @@ $request = Models::aiBcrParseStorageRequest()
     ->build();
 
 // Call method:
-$result = $api->ai()->bcr().parseStorage($request);
+$result = $api->ai()->bcr()->parseStorage($request);
 
 // Result example:
 $result = Models::storageFileLocationList()

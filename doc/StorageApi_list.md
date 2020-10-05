@@ -9,4 +9,3 @@ Method | HTTP request | Description
 [**objectExists**](StorageApi.md#objectExists) | **GET** /email/storage/exist/{path} | Check if file or folder exists
 [**exists**](StorageApi.md#exists) | **GET** /email/storage/{storageName}/exist | Check if storage exists
 
-

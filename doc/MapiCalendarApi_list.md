@@ -9,4 +9,3 @@ Method | HTTP request | Description
 [**fromFile**](MapiCalendarApi.md#fromFile) | **PUT** /email/MapiCalendar/from-file | Converts calendar file to a MAPI model representation.
 [**get**](MapiCalendarApi.md#get) | **GET** /email/MapiCalendar | Get MAPI calendar document.
 [**save**](MapiCalendarApi.md#save) | **PUT** /email/MapiCalendar | Save MAPI Calendar to storage.
-

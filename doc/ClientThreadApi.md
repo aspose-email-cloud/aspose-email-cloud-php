@@ -60,7 +60,7 @@ $request = Models::clientThreadDeleteRequest()
     ->build();
 
 // Call method:
-$api->client()->thread().delete($request);
+$api->client()->thread()->delete($request);
 ```
 
 </details>
@@ -151,15 +151,15 @@ $result = Models::emailThreadList()
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$folder = ;
-$account = ;
-$storage = ;
-$account_storage_folder = ;
-$update_folder_cache = ;
-$messages_cache_limit = ;
+$request = Models::ClientThreadGetListRequest()
+    ->folder('INBOX/SubFolder')
+    ->account('email.account')
+    ->storage('First Storage')
+    ->account_storage_folder('email/account/location/on/storage')
+    ->build();
 
 // Call method:
-$result = $api->client()->thread().getList($request);
+$result = $api->client()->thread()->getList($request);
 
 // Result example:
 $result = Models::emailThreadList()
@@ -255,14 +255,16 @@ $result = ;
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$thread_id = ;
-$account = ;
-$folder = ;
-$storage = ;
-$account_storage_folder = ;
+$request = Models::ClientThreadGetMessagesRequest()
+    ->thread_id('5')
+    ->account('email.account')
+    ->folder('INBOX')
+    ->storage('First Storage')
+    ->account_storage_folder('email/account/location/on/storage')
+    ->build();
 
 // Call method:
-$result = $api->client()->thread().getMessages($request);
+$result = $api->client()->thread()->getMessages($request);
 
 // Result example:
 $result = ;
@@ -330,7 +332,7 @@ $request = Models::clientThreadMoveRequest()
     ->build();
 
 // Call method:
-$api->client()->thread().move($request);
+$api->client()->thread()->move($request);
 ```
 
 </details>
@@ -396,7 +398,7 @@ $request = Models::clientThreadSetIsReadRequest()
     ->build();
 
 // Call method:
-$api->client()->thread().setIsRead($request);
+$api->client()->thread()->setIsRead($request);
 ```
 
 </details>

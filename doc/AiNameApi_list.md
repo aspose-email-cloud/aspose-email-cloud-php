@@ -15,4 +15,3 @@ Method | HTTP request | Description
 [**matchParsed**](AiNameApi.md#matchParsed) | **PUT** /email/AiName/match-parsed | Compare people&#39;s parsed names and attributes. Uses options for comparing instructions.
 [**parse**](AiNameApi.md#parse) | **GET** /email/AiName/parse | Parse name to components.
 [**parseEmailAddress**](AiNameApi.md#parseEmailAddress) | **GET** /email/AiName/parse-email-address | Parse person&#39;s name out of an email address.
-

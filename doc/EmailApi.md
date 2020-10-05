@@ -99,7 +99,7 @@ $request = Models::emailAsFileRequest()
     ->build();
 
 // Call method:
-$result = $api->email().asFile($request);
+$result = $api->email()->asFile($request);
 ```
 
 </details>
@@ -236,7 +236,7 @@ $email_dto = Models::emailDto()
     ->build();
 
 // Call method:
-$result = $api->email().asMapi($email_dto);
+$result = $api->email()->asMapi($email_dto);
 
 // Result example:
 $result = Models::mapiMessageDto()
@@ -320,12 +320,14 @@ Return type: [**\SplFileObject**](\SplFileObject.md)
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$from_format = ;
-$to_format = ;
-$file = ;
+$request = Models::EmailConvertRequest()
+    ->from_format('Msg')
+    ->to_format('Mhtml')
+    ->file(new SplFileObject('/path/to/message.msg'))
+    ->build();
 
 // Call method:
-$result = $api->email().convert($request);
+$result = $api->email()->convert($request);
 ```
 
 </details>
@@ -408,11 +410,13 @@ $result = Models::emailDto()
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$format = ;
-$file = ;
+$request = Models::EmailFromFileRequest()
+    ->format('Eml')
+    ->file(new SplFileObject('/path/to/message.eml'))
+    ->build();
 
 // Call method:
-$result = $api->email().fromFile($request);
+$result = $api->email()->fromFile($request);
 
 // Result example:
 $result = Models::emailDto()
@@ -524,13 +528,15 @@ $result = Models::emailDto()
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$format = ;
-$file_name = ;
-$folder = ;
-$storage = ;
+$request = Models::EmailGetRequest()
+    ->format('Eml')
+    ->file_name('email.eml')
+    ->folder('folder/on/storage')
+    ->storage('First Storage')
+    ->build();
 
 // Call method:
-$result = $api->email().get($request);
+$result = $api->email()->get($request);
 
 // Result example:
 $result = Models::emailDto()
@@ -610,13 +616,15 @@ Return type: [**\SplFileObject**](\SplFileObject.md)
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$file_name = ;
-$format = ;
-$storage = ;
-$folder = ;
+$request = Models::EmailGetAsFileRequest()
+    ->file_name('email.eml')
+    ->format('Mhtml')
+    ->storage('First Storage')
+    ->folder('folder/on/storage')
+    ->build();
 
 // Call method:
-$result = $api->email().getAsFile($request);
+$result = $api->email()->getAsFile($request);
 ```
 
 </details>
@@ -712,14 +720,16 @@ $result = Models::emailStorageList()
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$format = ;
-$folder = ;
-$storage = ;
-$items_per_page = ;
-$page_number = ;
+$request = Models::EmailGetListRequest()
+    ->format('Eml')
+    ->folder('folder/on/storage')
+    ->storage('First Storage')
+    ->items_per_page(10)
+    ->page_number(0)
+    ->build();
 
 // Call method:
-$result = $api->email().getList($request);
+$result = $api->email()->getList($request);
 
 // Result example:
 $result = Models::emailStorageList()
@@ -869,7 +879,7 @@ $request = Models::emailSaveRequest()
     ->build();
 
 // Call method:
-$api->email().save($request);
+$api->email()->save($request);
 ```
 
 </details>

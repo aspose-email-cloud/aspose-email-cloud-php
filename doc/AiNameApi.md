@@ -63,15 +63,12 @@ $result = Models::aiNameWeightedVariants()
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$name = ;
-$language = ;
-$location = ;
-$encoding = ;
-$script = ;
-$style = ;
+$request = Models::AiNameCompleteRequest()
+    ->name('Dav')
+    ->build();
 
 // Call method:
-$result = $api->ai()->name().complete($request);
+$result = $api->ai()->name()->complete($request);
 
 // Result example:
 $result = Models::aiNameWeightedVariants()
@@ -152,15 +149,12 @@ $result = Models::aiNameWeightedVariants()
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$name = ;
-$language = ;
-$location = ;
-$encoding = ;
-$script = ;
-$style = ;
+$request = Models::AiNameExpandRequest()
+    ->name('John Cane')
+    ->build();
 
 // Call method:
-$result = $api->ai()->name().expand($request);
+$result = $api->ai()->name()->expand($request);
 
 // Result example:
 $result = Models::aiNameWeightedVariants()
@@ -299,7 +293,7 @@ $request = Models::aiNameParsedRequest()
     ->build();
 
 // Call method:
-$result = $api->ai()->name().expandParsed($request);
+$result = $api->ai()->name()->expandParsed($request);
 
 // Result example:
 $result = Models::aiNameWeightedVariants()
@@ -373,16 +367,13 @@ $result = Models::aiNameFormatted()
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$name = ;
-$language = ;
-$location = ;
-$encoding = ;
-$script = ;
-$format = ;
-$style = ;
+$request = Models::AiNameFormatRequest()
+    ->name('Mr. John Michael Cane')
+    ->format('%t%L%f%m')
+    ->build();
 
 // Call method:
-$result = $api->ai()->name().format($request);
+$result = $api->ai()->name()->format($request);
 
 // Result example:
 $result = Models::aiNameFormatted()
@@ -507,7 +498,7 @@ $request = Models::aiNameParsedRequest()
     ->build();
 
 // Call method:
-$result = $api->ai()->name().formatParsed($request);
+$result = $api->ai()->name()->formatParsed($request);
 
 // Result example:
 $result = Models::aiNameFormatted()
@@ -570,15 +561,12 @@ $result = ;
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$name = ;
-$language = ;
-$location = ;
-$encoding = ;
-$script = ;
-$style = ;
+$request = Models::AiNameGenderizeRequest()
+    ->name('John Cane')
+    ->build();
 
 // Call method:
-$result = $api->ai()->name().genderize($request);
+$result = $api->ai()->name()->genderize($request);
 
 // Result example:
 $result = ;
@@ -697,7 +685,7 @@ $request = Models::aiNameParsedRequest()
     ->build();
 
 // Call method:
-$result = $api->ai()->name().genderizeParsed($request);
+$result = $api->ai()->name()->genderizeParsed($request);
 
 // Result example:
 $result = ;
@@ -765,16 +753,13 @@ $result = Models::aiNameMatchResult()
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$name = ;
-$other_name = ;
-$language = ;
-$location = ;
-$encoding = ;
-$script = ;
-$style = ;
+$request = Models::AiNameMatchRequest()
+    ->name('John Michael Cane')
+    ->other_name('Cane J.')
+    ->build();
 
 // Call method:
-$result = $api->ai()->name().match($request);
+$result = $api->ai()->name()->match($request);
 
 // Result example:
 $result = Models::aiNameMatchResult()
@@ -851,7 +836,7 @@ $api = new EmailCloud($appKey, $appSid);
 $request = ;
 
 // Call method:
-$result = $api->ai()->name().matchParsed($request);
+$result = $api->ai()->name()->matchParsed($request);
 
 // Result example:
 $result = Models::aiNameMatchResult()
@@ -942,15 +927,14 @@ $result = Models::aiNameComponentList()
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$name = ;
-$language = ;
-$location = ;
-$encoding = ;
-$script = ;
-$style = ;
+$request = Models::AiNameParseRequest()
+    ->name('John Cane')
+    ->language('eng')
+    ->location('USA')
+    ->build();
 
 // Call method:
-$result = $api->ai()->name().parse($request);
+$result = $api->ai()->name()->parse($request);
 
 // Result example:
 $result = Models::aiNameComponentList()
@@ -1033,15 +1017,12 @@ $result = ;
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$email_address = ;
-$language = ;
-$location = ;
-$encoding = ;
-$script = ;
-$style = ;
+$request = Models::AiNameParseEmailAddressRequest()
+    ->email_address('john-cane@gmail.com')
+    ->build();
 
 // Call method:
-$result = $api->ai()->name().parseEmailAddress($request);
+$result = $api->ai()->name()->parseEmailAddress($request);
 
 // Result example:
 $result = ;

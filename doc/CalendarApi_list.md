@@ -14,4 +14,3 @@ Method | HTTP request | Description
 [**getAsFile**](CalendarApi.md#getAsFile) | **GET** /email/Calendar/as-file | Converts calendar document from storage to specified format and returns as file.
 [**getList**](CalendarApi.md#getList) | **GET** /email/Calendar/list | Get iCalendar list from storage folder.
 [**save**](CalendarApi.md#save) | **PUT** /email/Calendar | Save iCalendar
-

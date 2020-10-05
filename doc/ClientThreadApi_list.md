@@ -9,4 +9,3 @@ Method | HTTP request | Description
 [**getMessages**](ClientThreadApi.md#getMessages) | **GET** /email/client/thread/messages | Get messages from thread by id. All messages are fully fetched. For accounts with CacheFile only cached messages will be returned.
 [**move**](ClientThreadApi.md#move) | **PUT** /email/client/thread/move | Move thread to another folder.
 [**setIsRead**](ClientThreadApi.md#setIsRead) | **PUT** /email/client/thread/set-is-read | Mark all messages in thread as read or unread.
-

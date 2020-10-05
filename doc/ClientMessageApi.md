@@ -125,7 +125,7 @@ $request = Models::clientMessageAppendRequest()
     ->build();
 
 // Call method:
-$result = $api->client()->message().append($request);
+$result = $api->client()->message()->append($request);
 
 // Result example:
 $result = ;
@@ -190,16 +190,17 @@ $result = ;
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$account = ;
-$file = ;
-$storage = ;
-$account_storage_folder = ;
-$format = ;
-$folder = ;
-$mark_as_sent = ;
+$request = Models::ClientMessageAppendFileRequest()
+    ->account('email.multi.account')
+    ->file(new SplFileObject('/path/to/message.eml'))
+    ->storage('First Storage')
+    ->account_storage_folder('email/account/location/on/storage')
+    ->format('Eml')
+    ->folder('INBOX')
+    ->build();
 
 // Call method:
-$result = $api->client()->message().appendFile($request);
+$result = $api->client()->message()->appendFile($request);
 
 // Result example:
 $result = ;
@@ -267,7 +268,7 @@ $request = Models::clientMessageDeleteRequest()
     ->build();
 
 // Call method:
-$api->client()->message().delete($request);
+$api->client()->message()->delete($request);
 ```
 
 </details>
@@ -332,16 +333,18 @@ $result = Models::mailMessageBase()
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$message_id = ;
-$account = ;
-$folder = ;
-$storage = ;
-$account_storage_folder = ;
-$type = ;
-$format = ;
+$request = Models::ClientMessageFetchRequest()
+    ->message_id('<put your message identifier here>')
+    ->account('email.multi.account')
+    ->folder('INBOX')
+    ->storage('First Storage')
+    ->account_storage_folder('email/account/location/on/storage')
+    ->type('Dto')
+    ->format('Eml')
+    ->build();
 
 // Call method:
-$result = $api->client()->message().fetch($request);
+$result = $api->client()->message()->fetch($request);
 
 // Result example:
 $result = Models::mailMessageBase()
@@ -401,15 +404,17 @@ Return type: [**\SplFileObject**](\SplFileObject.md)
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$message_id = ;
-$account = ;
-$folder = ;
-$storage = ;
-$account_storage_folder = ;
-$format = ;
+$request = Models::ClientMessageFetchFileRequest()
+    ->message_id('<put your message identifier here>')
+    ->account('email.multi.account')
+    ->folder('INBOX')
+    ->storage('First Storage')
+    ->account_storage_folder('email/account/location/on/storage')
+    ->format('Eml')
+    ->build();
 
 // Call method:
-$result = $api->client()->message().fetchFile($request);
+$result = $api->client()->message()->fetchFile($request);
 ```
 
 </details>
@@ -476,17 +481,19 @@ $result = ;
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$folder = ;
-$account = ;
-$query_string = ;
-$storage = ;
-$account_storage_folder = ;
-$recursive = ;
-$type = ;
-$format = ;
+$request = Models::ClientMessageListRequest()
+    ->folder('INBOX')
+    ->account('email.multi.account')
+    ->query_string('('From' Contains '.com')')
+    ->storage('First Storage')
+    ->account_storage_folder('email/account/location/on/storage')
+    ->recursive(true)
+    ->type('Dto')
+    ->format('Eml')
+    ->build();
 
 // Call method:
-$result = $api->client()->message().list($request);
+$result = $api->client()->message()->list($request);
 
 // Result example:
 $result = ;
@@ -556,7 +563,7 @@ $request = Models::clientMessageMoveRequest()
     ->build();
 
 // Call method:
-$api->client()->message().move($request);
+$api->client()->message()->move($request);
 ```
 
 </details>
@@ -670,7 +677,7 @@ $request = Models::clientMessageSendRequest()
     ->build();
 
 // Call method:
-$api->client()->message().send($request);
+$api->client()->message()->send($request);
 ```
 
 </details>
@@ -720,14 +727,16 @@ Return type: void (empty response body)
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$account = ;
-$file = ;
-$storage = ;
-$account_storage_folder = ;
-$format = ;
+$request = Models::ClientMessageSendFileRequest()
+    ->account('email.multi.account')
+    ->file(new SplFileObject('/path/to/message.eml'))
+    ->storage('First Storage')
+    ->account_storage_folder('email/account/location/on/storage')
+    ->format('Eml')
+    ->build();
 
 // Call method:
-$api->client()->message().sendFile($request);
+$api->client()->message()->sendFile($request);
 ```
 
 </details>
@@ -792,7 +801,7 @@ $request = Models::clientMessageSetIsReadRequest()
     ->build();
 
 // Call method:
-$api->client()->message().setIsRead($request);
+$api->client()->message()->setIsRead($request);
 ```
 
 </details>

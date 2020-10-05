@@ -56,10 +56,12 @@ $result = Models::discUsage()
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$storage_name = ;
+$request = Models::GetDiscUsageRequest()
+    ->storage_name('First Storage')
+    ->build();
 
 // Call method:
-$result = $api->cloudStorage()->storage().getDiscUsage($request);
+$result = $api->cloudStorage()->storage()->getDiscUsage($request);
 
 // Result example:
 $result = Models::discUsage()
@@ -134,11 +136,13 @@ $result = Models::fileVersions()
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$path = ;
-$storage_name = ;
+$request = Models::GetFileVersionsRequest()
+    ->path('/storage/path/to/file.ext')
+    ->storage_name('First Storage')
+    ->build();
 
 // Call method:
-$result = $api->cloudStorage()->storage().getFileVersions($request);
+$result = $api->cloudStorage()->storage()->getFileVersions($request);
 
 // Result example:
 $result = Models::fileVersions()
@@ -212,12 +216,13 @@ $result = Models::objectExist()
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$path = ;
-$storage_name = ;
-$version_id = ;
+$request = Models::ObjectExistsRequest()
+    ->path('/storage/path/to/folder/or/file.ext')
+    ->storage_name('First Storage')
+    ->build();
 
 // Call method:
-$result = $api->cloudStorage()->storage().objectExists($request);
+$result = $api->cloudStorage()->storage()->objectExists($request);
 
 // Result example:
 $result = Models::objectExist()
@@ -282,10 +287,12 @@ $result = Models::storageExist()
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$storage_name = ;
+$request = Models::StorageExistsRequest()
+    ->storage_name('First Storage')
+    ->build();
 
 // Call method:
-$result = $api->cloudStorage()->storage().exists($request);
+$result = $api->cloudStorage()->storage()->exists($request);
 
 // Result example:
 $result = Models::storageExist()

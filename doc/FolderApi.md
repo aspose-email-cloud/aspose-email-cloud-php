@@ -45,13 +45,15 @@ Return type: void (empty response body)
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$src_path = ;
-$dest_path = ;
-$src_storage_name = ;
-$dest_storage_name = ;
+$request = Models::CopyFolderRequest()
+    ->src_path('/storage/path/to/source/folder')
+    ->dest_path('/storage/path/to/destination/folder')
+    ->src_storage_name('First Storage')
+    ->dest_storage_name('Other Storage')
+    ->build();
 
 // Call method:
-$api->cloudStorage()->folder().copyFolder($request);
+$api->cloudStorage()->folder()->copyFolder($request);
 ```
 
 </details>
@@ -99,11 +101,13 @@ Return type: void (empty response body)
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$path = ;
-$storage_name = ;
+$request = Models::CreateFolderRequest()
+    ->path('/storage/path/to/new/folder')
+    ->storage_name('First Storage')
+    ->build();
 
 // Call method:
-$api->cloudStorage()->folder().createFolder($request);
+$api->cloudStorage()->folder()->createFolder($request);
 ```
 
 </details>
@@ -152,12 +156,14 @@ Return type: void (empty response body)
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$path = ;
-$storage_name = ;
-$recursive = ;
+$request = Models::DeleteFolderRequest()
+    ->path('/storage/path/to/folder')
+    ->storage_name('First Storage')
+    ->recursive(true)
+    ->build();
 
 // Call method:
-$api->cloudStorage()->folder().deleteFolder($request);
+$api->cloudStorage()->folder()->deleteFolder($request);
 ```
 
 </details>
@@ -224,11 +230,13 @@ $result = Models::filesList()
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$path = ;
-$storage_name = ;
+$request = Models::GetFilesListRequest()
+    ->path('/storage/path/to/folder')
+    ->storage_name('First Storage')
+    ->build();
 
 // Call method:
-$result = $api->cloudStorage()->folder().getFilesList($request);
+$result = $api->cloudStorage()->folder()->getFilesList($request);
 
 // Result example:
 $result = Models::filesList()
@@ -289,13 +297,15 @@ Return type: void (empty response body)
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$src_path = ;
-$dest_path = ;
-$src_storage_name = ;
-$dest_storage_name = ;
+$request = Models::MoveFolderRequest()
+    ->src_path('/storage/path/to/source/folder')
+    ->dest_path('/storage/path/to/destination/folder')
+    ->src_storage_name('First Storage')
+    ->dest_storage_name('Other Storage')
+    ->build();
 
 // Call method:
-$api->cloudStorage()->folder().moveFolder($request);
+$api->cloudStorage()->folder()->moveFolder($request);
 ```
 
 </details>

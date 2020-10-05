@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 ```php
 $url = Models::url()
-    ->category(Models::enumWithCustom<UrlCategory>()
+    ->category(Models::enumWithCustomOfUrlCategory()
         ->value('Work')
         ->build())
     ->preferred(true)

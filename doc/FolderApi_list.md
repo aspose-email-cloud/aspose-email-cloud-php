@@ -9,4 +9,3 @@ Method | HTTP request | Description
 [**deleteFolder**](FolderApi.md#deleteFolder) | **DELETE** /email/storage/folder/{path} | Delete folder
 [**getFilesList**](FolderApi.md#getFilesList) | **GET** /email/storage/folder/{path} | Get all files and folders within a folder
 [**moveFolder**](FolderApi.md#moveFolder) | **PUT** /email/storage/folder/move/{srcPath} | Move folder
-

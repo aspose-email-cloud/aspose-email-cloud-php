@@ -9,4 +9,3 @@ Method | HTTP request | Description
 [**downloadFile**](FileApi.md#downloadFile) | **GET** /email/storage/file/{path} | Download file
 [**moveFile**](FileApi.md#moveFile) | **PUT** /email/storage/file/move/{srcPath} | Move file
 [**uploadFile**](FileApi.md#uploadFile) | **PUT** /email/storage/file/{path} | Upload file
-

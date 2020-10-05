@@ -45,14 +45,15 @@ Return type: void (empty response body)
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$src_path = ;
-$dest_path = ;
-$src_storage_name = ;
-$dest_storage_name = ;
-$version_id = ;
+$request = Models::CopyFileRequest()
+    ->src_path('/storage/path/to/source/file.ext')
+    ->dest_path('/storage/path/to/destination/file.ext')
+    ->src_storage_name('First Storage')
+    ->dest_storage_name('Other Storage')
+    ->build();
 
 // Call method:
-$api->cloudStorage()->file().copyFile($request);
+$api->cloudStorage()->file()->copyFile($request);
 ```
 
 </details>
@@ -100,12 +101,13 @@ Return type: void (empty response body)
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$path = ;
-$storage_name = ;
-$version_id = ;
+$request = Models::DeleteFileRequest()
+    ->path('/storage/path/to/file.ext')
+    ->storage_name('First Storage')
+    ->build();
 
 // Call method:
-$api->cloudStorage()->file().deleteFile($request);
+$api->cloudStorage()->file()->deleteFile($request);
 ```
 
 </details>
@@ -156,12 +158,13 @@ Return type: [**\SplFileObject**](\SplFileObject.md)
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$path = ;
-$storage_name = ;
-$version_id = ;
+$request = Models::DownloadFileRequest()
+    ->path('/storage/path/to/file.ext')
+    ->storage_name('First Storage')
+    ->build();
 
 // Call method:
-$result = $api->cloudStorage()->file().downloadFile($request);
+$result = $api->cloudStorage()->file()->downloadFile($request);
 ```
 
 </details>
@@ -211,14 +214,15 @@ Return type: void (empty response body)
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$src_path = ;
-$dest_path = ;
-$src_storage_name = ;
-$dest_storage_name = ;
-$version_id = ;
+$request = Models::MoveFileRequest()
+    ->src_path('/storage/path/to/source/file.ext')
+    ->dest_path('/storage/path/to/destination/file.ext')
+    ->src_storage_name('First Storage')
+    ->dest_storage_name('Other Storage')
+    ->build();
 
 // Call method:
-$api->cloudStorage()->file().moveFile($request);
+$api->cloudStorage()->file()->moveFile($request);
 ```
 
 </details>
@@ -278,12 +282,14 @@ $result = ;
 $api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$path = ;
-$file = ;
-$storage_name = ;
+$request = Models::UploadFileRequest()
+    ->path('/storage/path/to/file.ext')
+    ->file(new SplFileObject('/local/file/system/path/to/file.ext'))
+    ->storage_name('First Storage')
+    ->build();
 
 // Call method:
-$result = $api->cloudStorage()->file().uploadFile($request);
+$result = $api->cloudStorage()->file()->uploadFile($request);
 
 // Result example:
 $result = ;
