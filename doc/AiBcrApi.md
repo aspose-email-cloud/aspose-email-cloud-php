@@ -17,7 +17,7 @@ $result = $api->ai()->bcr()->parse($request);
 
 Description: parse method request.
 
-See parameter model documentation at [AiBcrParseRequest](AiBcrParseRequest.md)
+See parameter model documentation at [AiBcrParseRequest](AiBcrParseRequest.md).
 
 <details>
     <summary>Parameter initialization example:</summary>
@@ -93,7 +93,7 @@ $result = Models::contactList()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $file = ;
@@ -220,7 +220,7 @@ $result = Models::storageFileLocationList()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $request = Models::aiBcrParseStorageRequest()

@@ -103,7 +103,7 @@ $result = Models::emailDto()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $mapi_message = Models::mapiMessageDto()
@@ -244,7 +244,7 @@ Return type: [**\SplFileObject**](\SplFileObject.md)
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $request = Models::mapiMessageAsFileRequest()
@@ -304,7 +304,7 @@ $result = $api->mapi()->message()->fromFile($request);
 
 Description: fromFile method request.
 
-See parameter model documentation at [MapiMessageFromFileRequest](MapiMessageFromFileRequest.md)
+See parameter model documentation at [MapiMessageFromFileRequest](MapiMessageFromFileRequest.md).
 
 <details>
     <summary>Parameter initialization example:</summary>
@@ -368,7 +368,7 @@ $result = Models::mapiMessageDto()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $format = ;
@@ -430,7 +430,7 @@ $result = $api->mapi()->message()->get($request);
 
 Description: get method request.
 
-See parameter model documentation at [MapiMessageGetRequest](MapiMessageGetRequest.md)
+See parameter model documentation at [MapiMessageGetRequest](MapiMessageGetRequest.md).
 
 <details>
     <summary>Parameter initialization example:</summary>
@@ -496,7 +496,7 @@ $result = Models::mapiMessageDto()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $format = ;
@@ -619,7 +619,7 @@ Return type: void (empty response body)
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $request = Models::mapiMessageSaveRequest()

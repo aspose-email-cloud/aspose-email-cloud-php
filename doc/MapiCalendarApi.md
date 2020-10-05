@@ -104,7 +104,7 @@ $result = Models::calendarDto()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $mapi_calendar_dto = Models::mapiCalendarDto()
@@ -250,7 +250,7 @@ Return type: [**\SplFileObject**](\SplFileObject.md)
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $request = Models::mapiCalendarAsFileRequest()
@@ -314,7 +314,7 @@ $result = $api->mapi()->calendar()->fromFile($request);
 
 Description: fromFile method request.
 
-See parameter model documentation at [MapiCalendarFromFileRequest](MapiCalendarFromFileRequest.md)
+See parameter model documentation at [MapiCalendarFromFileRequest](MapiCalendarFromFileRequest.md).
 
 <details>
     <summary>Parameter initialization example:</summary>
@@ -381,7 +381,7 @@ $result = Models::mapiCalendarDto()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $file = ;
@@ -446,7 +446,7 @@ $result = $api->mapi()->calendar()->get($request);
 
 Description: get method request.
 
-See parameter model documentation at [MapiCalendarGetRequest](MapiCalendarGetRequest.md)
+See parameter model documentation at [MapiCalendarGetRequest](MapiCalendarGetRequest.md).
 
 <details>
     <summary>Parameter initialization example:</summary>
@@ -515,7 +515,7 @@ $result = Models::mapiCalendarDto()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $file_name = ;
@@ -645,7 +645,7 @@ Return type: void (empty response body)
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $request = Models::mapiCalendarSaveRequest()

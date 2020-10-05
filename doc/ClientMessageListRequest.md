@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 $request = Models::clientMessageListRequest()
     ->folder('INBOX')
     ->account('email.multi.account')
-    ->query_string('(&#39;From&#39; Contains &#39;.com&#39;)')
+    ->query_string('('From' Contains '.com')')
     ->storage('First Storage')
     ->account_storage_folder('email/account/location/on/storage')
     ->recursive(true)

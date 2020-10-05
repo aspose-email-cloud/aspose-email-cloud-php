@@ -17,7 +17,7 @@ $result = $api->ai()->name()->complete($request);
 
 Description: complete method request.
 
-See parameter model documentation at [AiNameCompleteRequest](AiNameCompleteRequest.md)
+See parameter model documentation at [AiNameCompleteRequest](AiNameCompleteRequest.md).
 
 <details>
     <summary>Parameter initialization example:</summary>
@@ -60,7 +60,7 @@ $result = Models::aiNameWeightedVariants()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $name = ;
@@ -106,7 +106,7 @@ $result = $api->ai()->name()->expand($request);
 
 Description: expand method request.
 
-See parameter model documentation at [AiNameExpandRequest](AiNameExpandRequest.md)
+See parameter model documentation at [AiNameExpandRequest](AiNameExpandRequest.md).
 
 <details>
     <summary>Parameter initialization example:</summary>
@@ -149,7 +149,7 @@ $result = Models::aiNameWeightedVariants()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $name = ;
@@ -201,7 +201,35 @@ See parameter model documentation at [AiNameParsedRequest](AiNameParsedRequest.m
     <summary>Parameter initialization example:</summary>
     
 ```php
-$request = ;
+$request = Models::aiNameParsedRequest()
+    ->culturalContext(Models::aiNameCulturalContext()
+        ->language('')
+        ->location('')
+        ->script('')
+        ->encoding('')
+        ->build())
+    ->parsedName(array(
+        Models::aiNameComponent()
+            ->value('John')
+            ->category('FirstName')
+            ->score(0.95)
+            ->build(),
+        Models::aiNameComponent()
+            ->value('Cane')
+            ->category('LastName')
+            ->score(0.5)
+            ->position(5)
+            ->build(),
+        Models::aiNameComponent()
+            ->value('%F%L')
+            ->category('Format')
+            ->build(),
+        Models::aiNameComponent()
+            ->value('0.5')
+            ->category('Score')
+            ->score(0.5)
+            ->build()))
+    ->build();
 ```
 
 </details>
@@ -237,10 +265,38 @@ $result = Models::aiNameWeightedVariants()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$request = ;
+$request = Models::aiNameParsedRequest()
+    ->culturalContext(Models::aiNameCulturalContext()
+        ->language('')
+        ->location('')
+        ->script('')
+        ->encoding('')
+        ->build())
+    ->parsedName(array(
+        Models::aiNameComponent()
+            ->value('John')
+            ->category('FirstName')
+            ->score(0.95)
+            ->build(),
+        Models::aiNameComponent()
+            ->value('Cane')
+            ->category('LastName')
+            ->score(0.5)
+            ->position(5)
+            ->build(),
+        Models::aiNameComponent()
+            ->value('%F%L')
+            ->category('Format')
+            ->build(),
+        Models::aiNameComponent()
+            ->value('0.5')
+            ->category('Score')
+            ->score(0.5)
+            ->build()))
+    ->build();
 
 // Call method:
 $result = $api->ai()->name().expandParsed($request);
@@ -277,7 +333,7 @@ $result = $api->ai()->name()->format($request);
 
 Description: format method request.
 
-See parameter model documentation at [AiNameFormatRequest](AiNameFormatRequest.md)
+See parameter model documentation at [AiNameFormatRequest](AiNameFormatRequest.md).
 
 <details>
     <summary>Parameter initialization example:</summary>
@@ -314,7 +370,7 @@ $result = Models::aiNameFormatted()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $name = ;
@@ -360,7 +416,35 @@ See parameter model documentation at [AiNameParsedRequest](AiNameParsedRequest.m
     <summary>Parameter initialization example:</summary>
     
 ```php
-$request = ;
+$request = Models::aiNameParsedRequest()
+    ->culturalContext(Models::aiNameCulturalContext()
+        ->language('')
+        ->location('')
+        ->script('')
+        ->encoding('')
+        ->build())
+    ->parsedName(array(
+        Models::aiNameComponent()
+            ->value('John')
+            ->category('FirstName')
+            ->score(0.95)
+            ->build(),
+        Models::aiNameComponent()
+            ->value('Cane')
+            ->category('LastName')
+            ->score(0.5)
+            ->position(5)
+            ->build(),
+        Models::aiNameComponent()
+            ->value('%F%L')
+            ->category('Format')
+            ->build(),
+        Models::aiNameComponent()
+            ->value('0.5')
+            ->category('Score')
+            ->score(0.5)
+            ->build()))
+    ->build();
 ```
 
 </details>
@@ -389,10 +473,38 @@ $result = Models::aiNameFormatted()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$request = ;
+$request = Models::aiNameParsedRequest()
+    ->culturalContext(Models::aiNameCulturalContext()
+        ->language('')
+        ->location('')
+        ->script('')
+        ->encoding('')
+        ->build())
+    ->parsedName(array(
+        Models::aiNameComponent()
+            ->value('John')
+            ->category('FirstName')
+            ->score(0.95)
+            ->build(),
+        Models::aiNameComponent()
+            ->value('Cane')
+            ->category('LastName')
+            ->score(0.5)
+            ->position(5)
+            ->build(),
+        Models::aiNameComponent()
+            ->value('%F%L')
+            ->category('Format')
+            ->build(),
+        Models::aiNameComponent()
+            ->value('0.5')
+            ->category('Score')
+            ->score(0.5)
+            ->build()))
+    ->build();
 
 // Call method:
 $result = $api->ai()->name().formatParsed($request);
@@ -411,7 +523,7 @@ $result = Models::aiNameFormatted()
 
 Description: Detect person's gender from name string.
 
-Returns: Hypotheses about person&#39;s gender.
+Returns: Hypotheses about person's gender.
 
 Method call example:
 ```php
@@ -422,7 +534,7 @@ $result = $api->ai()->name()->genderize($request);
 
 Description: genderize method request.
 
-See parameter model documentation at [AiNameGenderizeRequest](AiNameGenderizeRequest.md)
+See parameter model documentation at [AiNameGenderizeRequest](AiNameGenderizeRequest.md).
 
 <details>
     <summary>Parameter initialization example:</summary>
@@ -437,7 +549,7 @@ $request = Models::AiNameGenderizeRequest()
 
 ### Result
 
-Description: Hypotheses about person&#39;s gender.
+Description: Hypotheses about person's gender.
 
 Return type: [**AiNameGenderHypothesisList**](AiNameGenderHypothesisList.md)
 
@@ -455,7 +567,7 @@ $result = ;
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $name = ;
@@ -480,7 +592,7 @@ $result = ;
 
 Description: Detect person's gender from parsed name.
 
-Returns: Hypotheses about person&#39;s gender.
+Returns: Hypotheses about person's gender.
 
 Method call example:
 ```php
@@ -497,7 +609,35 @@ See parameter model documentation at [AiNameParsedRequest](AiNameParsedRequest.m
     <summary>Parameter initialization example:</summary>
     
 ```php
-$request = ;
+$request = Models::aiNameParsedRequest()
+    ->culturalContext(Models::aiNameCulturalContext()
+        ->language('')
+        ->location('')
+        ->script('')
+        ->encoding('')
+        ->build())
+    ->parsedName(array(
+        Models::aiNameComponent()
+            ->value('John')
+            ->category('FirstName')
+            ->score(0.95)
+            ->build(),
+        Models::aiNameComponent()
+            ->value('Cane')
+            ->category('LastName')
+            ->score(0.5)
+            ->position(5)
+            ->build(),
+        Models::aiNameComponent()
+            ->value('%F%L')
+            ->category('Format')
+            ->build(),
+        Models::aiNameComponent()
+            ->value('0.5')
+            ->category('Score')
+            ->score(0.5)
+            ->build()))
+    ->build();
 ```
 
 </details>
@@ -505,7 +645,7 @@ $request = ;
 
 ### Result
 
-Description: Hypotheses about person&#39;s gender.
+Description: Hypotheses about person's gender.
 
 Return type: [**AiNameGenderHypothesisList**](AiNameGenderHypothesisList.md)
 
@@ -523,10 +663,38 @@ $result = ;
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
-$request = ;
+$request = Models::aiNameParsedRequest()
+    ->culturalContext(Models::aiNameCulturalContext()
+        ->language('')
+        ->location('')
+        ->script('')
+        ->encoding('')
+        ->build())
+    ->parsedName(array(
+        Models::aiNameComponent()
+            ->value('John')
+            ->category('FirstName')
+            ->score(0.95)
+            ->build(),
+        Models::aiNameComponent()
+            ->value('Cane')
+            ->category('LastName')
+            ->score(0.5)
+            ->position(5)
+            ->build(),
+        Models::aiNameComponent()
+            ->value('%F%L')
+            ->category('Format')
+            ->build(),
+        Models::aiNameComponent()
+            ->value('0.5')
+            ->category('Score')
+            ->score(0.5)
+            ->build()))
+    ->build();
 
 // Call method:
 $result = $api->ai()->name().genderizeParsed($request);
@@ -553,7 +721,7 @@ $result = $api->ai()->name()->match($request);
 
 Description: match method request.
 
-See parameter model documentation at [AiNameMatchRequest](AiNameMatchRequest.md)
+See parameter model documentation at [AiNameMatchRequest](AiNameMatchRequest.md).
 
 <details>
     <summary>Parameter initialization example:</summary>
@@ -594,7 +762,7 @@ $result = Models::aiNameMatchResult()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $name = ;
@@ -677,7 +845,7 @@ $result = Models::aiNameMatchResult()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $request = ;
@@ -714,7 +882,7 @@ $result = $api->ai()->name()->parse($request);
 
 Description: parse method request.
 
-See parameter model documentation at [AiNameParseRequest](AiNameParseRequest.md)
+See parameter model documentation at [AiNameParseRequest](AiNameParseRequest.md).
 
 <details>
     <summary>Parameter initialization example:</summary>
@@ -739,7 +907,29 @@ Return type: [**AiNameComponentList**](AiNameComponentList.md)
     <summary>Result example</summary>
 
 ```php
-$result = ;
+$result = Models::aiNameComponentList()
+    ->value(array(
+        Models::aiNameComponent()
+            ->value('John')
+            ->category('FirstName')
+            ->score(0.95)
+            ->build(),
+        Models::aiNameComponent()
+            ->value('Cane')
+            ->category('LastName')
+            ->score(0.5)
+            ->position(5)
+            ->build(),
+        Models::aiNameComponent()
+            ->value('%F%L')
+            ->category('Format')
+            ->build(),
+        Models::aiNameComponent()
+            ->value('0.5')
+            ->category('Score')
+            ->score(0.5)
+            ->build()))
+    ->build();
 ```
 </details>
 
@@ -749,7 +939,7 @@ $result = ;
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $name = ;
@@ -763,7 +953,29 @@ $style = ;
 $result = $api->ai()->name().parse($request);
 
 // Result example:
-$result = ;
+$result = Models::aiNameComponentList()
+    ->value(array(
+        Models::aiNameComponent()
+            ->value('John')
+            ->category('FirstName')
+            ->score(0.95)
+            ->build(),
+        Models::aiNameComponent()
+            ->value('Cane')
+            ->category('LastName')
+            ->score(0.5)
+            ->position(5)
+            ->build(),
+        Models::aiNameComponent()
+            ->value('%F%L')
+            ->category('Format')
+            ->build(),
+        Models::aiNameComponent()
+            ->value('0.5')
+            ->category('Score')
+            ->score(0.5)
+            ->build()))
+    ->build();
 ```
 
 </details>
@@ -785,7 +997,7 @@ $result = $api->ai()->name()->parseEmailAddress($request);
 
 Description: parseEmailAddress method request.
 
-See parameter model documentation at [AiNameParseEmailAddressRequest](AiNameParseEmailAddressRequest.md)
+See parameter model documentation at [AiNameParseEmailAddressRequest](AiNameParseEmailAddressRequest.md).
 
 <details>
     <summary>Parameter initialization example:</summary>
@@ -818,7 +1030,7 @@ $result = ;
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $email_address = ;

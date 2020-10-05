@@ -17,7 +17,7 @@ $result = $api->emailConfig()->discover($request);
 
 Description: discover method request.
 
-See parameter model documentation at [EmailConfigDiscoverRequest](EmailConfigDiscoverRequest.md)
+See parameter model documentation at [EmailConfigDiscoverRequest](EmailConfigDiscoverRequest.md).
 
 <details>
     <summary>Parameter initialization example:</summary>
@@ -95,7 +95,7 @@ $result = Models::emailAccountConfigList()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $address = ;
@@ -257,7 +257,7 @@ $result = Models::emailAccountConfigList()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $request = Models::emailConfigDiscoverOauthRequest()
@@ -421,7 +421,7 @@ $result = Models::emailAccountConfigList()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $request = Models::emailConfigDiscoverPasswordRequest()

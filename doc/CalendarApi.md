@@ -94,7 +94,7 @@ $result = Models::alternateView()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $request = Models::calendarAsAlternateRequest()
@@ -216,7 +216,7 @@ Return type: [**\SplFileObject**](\SplFileObject.md)
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $request = Models::calendarAsFileRequest()
@@ -353,7 +353,7 @@ $result = Models::mapiCalendarDto()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $calendar_dto = Models::calendarDto()
@@ -438,7 +438,7 @@ $result = $api->calendar()->convert($request);
 
 Description: convert method request.
 
-See parameter model documentation at [CalendarConvertRequest](CalendarConvertRequest.md)
+See parameter model documentation at [CalendarConvertRequest](CalendarConvertRequest.md).
 
 <details>
     <summary>Parameter initialization example:</summary>
@@ -464,7 +464,7 @@ Return type: [**\SplFileObject**](\SplFileObject.md)
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $format = ;
@@ -493,7 +493,7 @@ $result = $api->calendar()->fromFile($request);
 
 Description: fromFile method request.
 
-See parameter model documentation at [CalendarFromFileRequest](CalendarFromFileRequest.md)
+See parameter model documentation at [CalendarFromFileRequest](CalendarFromFileRequest.md).
 
 <details>
     <summary>Parameter initialization example:</summary>
@@ -547,7 +547,7 @@ $result = Models::calendarDto()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $file = ;
@@ -599,7 +599,7 @@ $result = $api->calendar()->get($request);
 
 Description: get method request.
 
-See parameter model documentation at [CalendarGetRequest](CalendarGetRequest.md)
+See parameter model documentation at [CalendarGetRequest](CalendarGetRequest.md).
 
 <details>
     <summary>Parameter initialization example:</summary>
@@ -655,7 +655,7 @@ $result = Models::calendarDto()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $file_name = ;
@@ -709,7 +709,7 @@ $result = $api->calendar()->getAsAlternate($request);
 
 Description: getAsAlternate method request.
 
-See parameter model documentation at [CalendarGetAsAlternateRequest](CalendarGetAsAlternateRequest.md)
+See parameter model documentation at [CalendarGetAsAlternateRequest](CalendarGetAsAlternateRequest.md).
 
 <details>
     <summary>Parameter initialization example:</summary>
@@ -766,7 +766,7 @@ $result = Models::alternateView()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $file_name = ;
@@ -822,7 +822,7 @@ $result = $api->calendar()->getAsFile($request);
 
 Description: getAsFile method request.
 
-See parameter model documentation at [CalendarGetAsFileRequest](CalendarGetAsFileRequest.md)
+See parameter model documentation at [CalendarGetAsFileRequest](CalendarGetAsFileRequest.md).
 
 <details>
     <summary>Parameter initialization example:</summary>
@@ -850,7 +850,7 @@ Return type: [**\SplFileObject**](\SplFileObject.md)
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $file_name = ;
@@ -881,7 +881,7 @@ $result = $api->calendar()->getList($request);
 
 Description: getList method request.
 
-See parameter model documentation at [CalendarGetListRequest](CalendarGetListRequest.md)
+See parameter model documentation at [CalendarGetListRequest](CalendarGetListRequest.md).
 
 <details>
     <summary>Parameter initialization example:</summary>
@@ -948,7 +948,7 @@ $result = Models::calendarStorageList()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $folder = ;
@@ -1062,7 +1062,7 @@ Return type: void (empty response body)
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $request = Models::calendarSaveRequest()

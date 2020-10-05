@@ -67,7 +67,7 @@ Return type: [**\SplFileObject**](\SplFileObject.md)
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $request = Models::emailAsFileRequest()
@@ -206,7 +206,7 @@ $result = Models::mapiMessageDto()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $email_dto = Models::emailDto()
@@ -290,7 +290,7 @@ $result = $api->email()->convert($request);
 
 Description: convert method request.
 
-See parameter model documentation at [EmailConvertRequest](EmailConvertRequest.md)
+See parameter model documentation at [EmailConvertRequest](EmailConvertRequest.md).
 
 <details>
     <summary>Parameter initialization example:</summary>
@@ -317,7 +317,7 @@ Return type: [**\SplFileObject**](\SplFileObject.md)
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $from_format = ;
@@ -347,7 +347,7 @@ $result = $api->email()->fromFile($request);
 
 Description: fromFile method request.
 
-See parameter model documentation at [EmailFromFileRequest](EmailFromFileRequest.md)
+See parameter model documentation at [EmailFromFileRequest](EmailFromFileRequest.md).
 
 <details>
     <summary>Parameter initialization example:</summary>
@@ -405,7 +405,7 @@ $result = Models::emailDto()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $format = ;
@@ -461,7 +461,7 @@ $result = $api->email()->get($request);
 
 Description: get method request.
 
-See parameter model documentation at [EmailGetRequest](EmailGetRequest.md)
+See parameter model documentation at [EmailGetRequest](EmailGetRequest.md).
 
 <details>
     <summary>Parameter initialization example:</summary>
@@ -521,7 +521,7 @@ $result = Models::emailDto()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $format = ;
@@ -579,7 +579,7 @@ $result = $api->email()->getAsFile($request);
 
 Description: getAsFile method request.
 
-See parameter model documentation at [EmailGetAsFileRequest](EmailGetAsFileRequest.md)
+See parameter model documentation at [EmailGetAsFileRequest](EmailGetAsFileRequest.md).
 
 <details>
     <summary>Parameter initialization example:</summary>
@@ -607,7 +607,7 @@ Return type: [**\SplFileObject**](\SplFileObject.md)
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $file_name = ;
@@ -638,7 +638,7 @@ $result = $api->email()->getList($request);
 
 Description: getList method request.
 
-See parameter model documentation at [EmailGetListRequest](EmailGetListRequest.md)
+See parameter model documentation at [EmailGetListRequest](EmailGetListRequest.md).
 
 <details>
     <summary>Parameter initialization example:</summary>
@@ -709,7 +709,7 @@ $result = Models::emailStorageList()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $format = ;
@@ -831,7 +831,7 @@ Return type: void (empty response body)
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $request = Models::emailSaveRequest()

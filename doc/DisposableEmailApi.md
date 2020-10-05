@@ -17,7 +17,7 @@ $result = $api->disposableEmail()->isDisposable($request);
 
 Description: isDisposable method request.
 
-See parameter model documentation at [DisposableEmailIsDisposableRequest](DisposableEmailIsDisposableRequest.md)
+See parameter model documentation at [DisposableEmailIsDisposableRequest](DisposableEmailIsDisposableRequest.md).
 
 <details>
     <summary>Parameter initialization example:</summary>
@@ -50,7 +50,7 @@ $result = ;
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $address = ;

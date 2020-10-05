@@ -16,7 +16,7 @@ $api->cloudStorage()->file()->copyFile($request);
 
 Description: copyFile method request.
 
-See parameter model documentation at [CopyFileRequest](CopyFileRequest.md)
+See parameter model documentation at [CopyFileRequest](CopyFileRequest.md).
 
 <details>
     <summary>Parameter initialization example:</summary>
@@ -42,7 +42,7 @@ Return type: void (empty response body)
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $src_path = ;
@@ -73,7 +73,7 @@ $api->cloudStorage()->file()->deleteFile($request);
 
 Description: deleteFile method request.
 
-See parameter model documentation at [DeleteFileRequest](DeleteFileRequest.md)
+See parameter model documentation at [DeleteFileRequest](DeleteFileRequest.md).
 
 <details>
     <summary>Parameter initialization example:</summary>
@@ -97,7 +97,7 @@ Return type: void (empty response body)
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $path = ;
@@ -127,7 +127,7 @@ $result = $api->cloudStorage()->file()->downloadFile($request);
 
 Description: downloadFile method request.
 
-See parameter model documentation at [DownloadFileRequest](DownloadFileRequest.md)
+See parameter model documentation at [DownloadFileRequest](DownloadFileRequest.md).
 
 <details>
     <summary>Parameter initialization example:</summary>
@@ -153,7 +153,7 @@ Return type: [**\SplFileObject**](\SplFileObject.md)
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $path = ;
@@ -182,7 +182,7 @@ $api->cloudStorage()->file()->moveFile($request);
 
 Description: moveFile method request.
 
-See parameter model documentation at [MoveFileRequest](MoveFileRequest.md)
+See parameter model documentation at [MoveFileRequest](MoveFileRequest.md).
 
 <details>
     <summary>Parameter initialization example:</summary>
@@ -208,7 +208,7 @@ Return type: void (empty response body)
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $src_path = ;
@@ -240,7 +240,7 @@ $result = $api->cloudStorage()->file()->uploadFile($request);
 
 Description: uploadFile method request.
 
-See parameter model documentation at [UploadFileRequest](UploadFileRequest.md)
+See parameter model documentation at [UploadFileRequest](UploadFileRequest.md).
 
 <details>
     <summary>Parameter initialization example:</summary>
@@ -275,7 +275,7 @@ $result = ;
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $path = ;

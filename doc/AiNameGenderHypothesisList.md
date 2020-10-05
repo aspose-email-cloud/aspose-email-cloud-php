@@ -1,6 +1,6 @@
 # AiNameGenderHypothesisList
 
-Hypotheses about person&#39;s gender
+Hypotheses about person's gender
 
 ## Properties
 Name | Type | Description | Notes

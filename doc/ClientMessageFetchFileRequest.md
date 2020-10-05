@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 ## Example
 ```php
 $request = Models::clientMessageFetchFileRequest()
-    ->message_id('&lt;put your message identifier here&gt;')
+    ->message_id('<put your message identifier here>')
     ->account('email.multi.account')
     ->folder('INBOX')
     ->storage('First Storage')

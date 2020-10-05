@@ -46,7 +46,7 @@ Return type: void (empty response body)
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $request = Models::clientThreadDeleteRequest()
@@ -81,7 +81,7 @@ $result = $api->client()->thread()->getList($request);
 
 Description: getList method request.
 
-See parameter model documentation at [ClientThreadGetListRequest](ClientThreadGetListRequest.md)
+See parameter model documentation at [ClientThreadGetListRequest](ClientThreadGetListRequest.md).
 
 <details>
     <summary>Parameter initialization example:</summary>
@@ -148,7 +148,7 @@ $result = Models::emailThreadList()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $folder = ;
@@ -215,7 +215,7 @@ $result = $api->client()->thread()->getMessages($request);
 
 Description: getMessages method request.
 
-See parameter model documentation at [ClientThreadGetMessagesRequest](ClientThreadGetMessagesRequest.md)
+See parameter model documentation at [ClientThreadGetMessagesRequest](ClientThreadGetMessagesRequest.md).
 
 <details>
     <summary>Parameter initialization example:</summary>
@@ -252,7 +252,7 @@ $result = ;
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $thread_id = ;
@@ -316,7 +316,7 @@ Return type: void (empty response body)
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $request = Models::clientThreadMoveRequest()
@@ -381,7 +381,7 @@ Return type: void (empty response body)
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $request = Models::clientThreadSetIsReadRequest()

@@ -17,7 +17,7 @@ $result = $api->cloudStorage()->storage()->getDiscUsage($request);
 
 Description: getDiscUsage method request.
 
-See parameter model documentation at [GetDiscUsageRequest](GetDiscUsageRequest.md)
+See parameter model documentation at [GetDiscUsageRequest](GetDiscUsageRequest.md).
 
 <details>
     <summary>Parameter initialization example:</summary>
@@ -53,7 +53,7 @@ $result = Models::discUsage()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $storage_name = ;
@@ -87,7 +87,7 @@ $result = $api->cloudStorage()->storage()->getFileVersions($request);
 
 Description: getFileVersions method request.
 
-See parameter model documentation at [GetFileVersionsRequest](GetFileVersionsRequest.md)
+See parameter model documentation at [GetFileVersionsRequest](GetFileVersionsRequest.md).
 
 <details>
     <summary>Parameter initialization example:</summary>
@@ -131,7 +131,7 @@ $result = Models::fileVersions()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $path = ;
@@ -173,7 +173,7 @@ $result = $api->cloudStorage()->storage()->objectExists($request);
 
 Description: objectExists method request.
 
-See parameter model documentation at [ObjectExistsRequest](ObjectExistsRequest.md)
+See parameter model documentation at [ObjectExistsRequest](ObjectExistsRequest.md).
 
 <details>
     <summary>Parameter initialization example:</summary>
@@ -209,7 +209,7 @@ $result = Models::objectExist()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $path = ;
@@ -244,7 +244,7 @@ $result = $api->cloudStorage()->storage()->exists($request);
 
 Description: exists method request.
 
-See parameter model documentation at [StorageExistsRequest](StorageExistsRequest.md)
+See parameter model documentation at [StorageExistsRequest](StorageExistsRequest.md).
 
 <details>
     <summary>Parameter initialization example:</summary>
@@ -279,7 +279,7 @@ $result = Models::storageExist()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $storage_name = ;

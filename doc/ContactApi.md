@@ -80,7 +80,7 @@ Return type: [**\SplFileObject**](\SplFileObject.md)
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $request = Models::contactAsFileRequest()
@@ -234,7 +234,7 @@ $result = Models::mapiContactDto()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $contact_dto = Models::contactDto()
@@ -320,7 +320,7 @@ $result = $api->contact()->convert($request);
 
 Description: convert method request.
 
-See parameter model documentation at [ContactConvertRequest](ContactConvertRequest.md)
+See parameter model documentation at [ContactConvertRequest](ContactConvertRequest.md).
 
 <details>
     <summary>Parameter initialization example:</summary>
@@ -347,7 +347,7 @@ Return type: [**\SplFileObject**](\SplFileObject.md)
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $to_format = ;
@@ -377,7 +377,7 @@ $result = $api->contact()->fromFile($request);
 
 Description: fromFile method request.
 
-See parameter model documentation at [ContactFromFileRequest](ContactFromFileRequest.md)
+See parameter model documentation at [ContactFromFileRequest](ContactFromFileRequest.md).
 
 <details>
     <summary>Parameter initialization example:</summary>
@@ -448,7 +448,7 @@ $result = Models::contactDto()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $format = ;
@@ -517,7 +517,7 @@ $result = $api->contact()->get($request);
 
 Description: get method request.
 
-See parameter model documentation at [ContactGetRequest](ContactGetRequest.md)
+See parameter model documentation at [ContactGetRequest](ContactGetRequest.md).
 
 <details>
     <summary>Parameter initialization example:</summary>
@@ -590,7 +590,7 @@ $result = Models::contactDto()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $format = ;
@@ -661,7 +661,7 @@ $result = $api->contact()->getAsFile($request);
 
 Description: getAsFile method request.
 
-See parameter model documentation at [ContactGetAsFileRequest](ContactGetAsFileRequest.md)
+See parameter model documentation at [ContactGetAsFileRequest](ContactGetAsFileRequest.md).
 
 <details>
     <summary>Parameter initialization example:</summary>
@@ -690,7 +690,7 @@ Return type: [**\SplFileObject**](\SplFileObject.md)
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $file_name = ;
@@ -722,7 +722,7 @@ $result = $api->contact()->getList($request);
 
 Description: getList method request.
 
-See parameter model documentation at [ContactGetListRequest](ContactGetListRequest.md)
+See parameter model documentation at [ContactGetListRequest](ContactGetListRequest.md).
 
 <details>
     <summary>Parameter initialization example:</summary>
@@ -806,7 +806,7 @@ $result = Models::contactStorageList()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $format = ;
@@ -953,7 +953,7 @@ Return type: void (empty response body)
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $request = Models::contactSaveRequest()

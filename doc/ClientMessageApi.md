@@ -84,7 +84,7 @@ $result = ;
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $request = Models::clientMessageAppendRequest()
@@ -149,7 +149,7 @@ $result = $api->client()->message()->appendFile($request);
 
 Description: appendFile method request.
 
-See parameter model documentation at [ClientMessageAppendFileRequest](ClientMessageAppendFileRequest.md)
+See parameter model documentation at [ClientMessageAppendFileRequest](ClientMessageAppendFileRequest.md).
 
 <details>
     <summary>Parameter initialization example:</summary>
@@ -187,7 +187,7 @@ $result = ;
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $account = ;
@@ -253,7 +253,7 @@ Return type: void (empty response body)
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $request = Models::clientMessageDeleteRequest()
@@ -288,14 +288,14 @@ $result = $api->client()->message()->fetch($request);
 
 Description: fetch method request.
 
-See parameter model documentation at [ClientMessageFetchRequest](ClientMessageFetchRequest.md)
+See parameter model documentation at [ClientMessageFetchRequest](ClientMessageFetchRequest.md).
 
 <details>
     <summary>Parameter initialization example:</summary>
 
 ```php
 $request = Models::ClientMessageFetchRequest()
-    ->message_id('&lt;put your message identifier here&gt;')
+    ->message_id('<put your message identifier here>')
     ->account('email.multi.account')
     ->folder('INBOX')
     ->storage('First Storage')
@@ -329,7 +329,7 @@ $result = Models::mailMessageBase()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $message_id = ;
@@ -368,14 +368,14 @@ $result = $api->client()->message()->fetchFile($request);
 
 Description: fetchFile method request.
 
-See parameter model documentation at [ClientMessageFetchFileRequest](ClientMessageFetchFileRequest.md)
+See parameter model documentation at [ClientMessageFetchFileRequest](ClientMessageFetchFileRequest.md).
 
 <details>
     <summary>Parameter initialization example:</summary>
 
 ```php
 $request = Models::ClientMessageFetchFileRequest()
-    ->message_id('&lt;put your message identifier here&gt;')
+    ->message_id('<put your message identifier here>')
     ->account('email.multi.account')
     ->folder('INBOX')
     ->storage('First Storage')
@@ -398,7 +398,7 @@ Return type: [**\SplFileObject**](\SplFileObject.md)
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $message_id = ;
@@ -433,7 +433,7 @@ $result = $api->client()->message()->list($request);
 
 Description: list method request.
 
-See parameter model documentation at [ClientMessageListRequest](ClientMessageListRequest.md)
+See parameter model documentation at [ClientMessageListRequest](ClientMessageListRequest.md).
 
 <details>
     <summary>Parameter initialization example:</summary>
@@ -442,7 +442,7 @@ See parameter model documentation at [ClientMessageListRequest](ClientMessageLis
 $request = Models::ClientMessageListRequest()
     ->folder('INBOX')
     ->account('email.multi.account')
-    ->query_string('(&#39;From&#39; Contains &#39;.com&#39;)')
+    ->query_string('('From' Contains '.com')')
     ->storage('First Storage')
     ->account_storage_folder('email/account/location/on/storage')
     ->recursive(true)
@@ -473,7 +473,7 @@ $result = ;
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $folder = ;
@@ -541,7 +541,7 @@ Return type: void (empty response body)
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $request = Models::clientMessageMoveRequest()
@@ -631,7 +631,7 @@ Return type: void (empty response body)
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $request = Models::clientMessageSendRequest()
@@ -690,7 +690,7 @@ $api->client()->message()->sendFile($request);
 
 Description: sendFile method request.
 
-See parameter model documentation at [ClientMessageSendFileRequest](ClientMessageSendFileRequest.md)
+See parameter model documentation at [ClientMessageSendFileRequest](ClientMessageSendFileRequest.md).
 
 <details>
     <summary>Parameter initialization example:</summary>
@@ -717,7 +717,7 @@ Return type: void (empty response body)
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $account = ;
@@ -778,7 +778,7 @@ Return type: void (empty response body)
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $request = Models::clientMessageSetIsReadRequest()

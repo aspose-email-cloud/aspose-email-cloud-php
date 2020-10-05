@@ -46,7 +46,7 @@ Return type: void (empty response body)
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $request = Models::clientFolderCreateRequest()
@@ -109,7 +109,7 @@ Return type: void (empty response body)
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $request = Models::clientFolderDeleteRequest()
@@ -143,7 +143,7 @@ $result = $api->client()->folder()->getList($request);
 
 Description: getList method request.
 
-See parameter model documentation at [ClientFolderGetListRequest](ClientFolderGetListRequest.md)
+See parameter model documentation at [ClientFolderGetListRequest](ClientFolderGetListRequest.md).
 
 <details>
     <summary>Parameter initialization example:</summary>
@@ -179,7 +179,7 @@ $result = ;
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud(appKey, appSid);
+$api = new EmailCloud($appKey, $appSid);
 
 // Prepare parameters:
 $account = ;
