@@ -1,8 +1,10 @@
 # MapiMessageDto
 
+Represents an Outlook Message format document.
+
 ## Properties
 Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+---- | ---- | ----------- | -----
 **message_body** | **string** | Message text | [optional] 
 **client_submit_time** | [**\DateTime**](\DateTime.md) | Date and time the message sender submitted a message. | 
 **conversation_topic** | **string** | Topic of the first message in a conversation thread. | [optional] 
@@ -31,6 +33,42 @@ Name | Type | Description | Notes
 
  Parent class: [MapiMessageItemBaseDto](MapiMessageItemBaseDto.md)
 
-[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
+## Example
+```php
+$mapiMessageDto = Models::mapiMessageDto()
+    ->messageBody('Some body')
+    ->clientSubmitTime(new DateTime())
+    ->deliveryTime(new DateTime())
+    ->displayTo('To Address')
+    ->flags(array(
+        'MsgFlagRead',
+        'MsgFlagUnsent',
+        'MsgFlagHasAttach'))
+    ->normalizedSubject('Some subject')
+    ->senderAddressType('SMTP')
+    ->senderEmailAddress('from@aspose.com')
+    ->senderName('From Address')
+    ->senderSmtpAddress('from@aspose.com')
+    ->attachments(array(
+        Models::mapiAttachmentDto()
+            ->name('some-file.txt')
+            ->dataBase64('U29tZSBmaWxlIHRleHQ=')
+            ->build()))
+    ->body('Some body')
+    ->messageClass('IPM.Note')
+    ->recipients(array(
+        Models::mapiRecipientDto()
+            ->emailAddress('to@aspose.com')
+            ->addressType('SMTP')
+            ->displayName('To Address')
+            ->recipientType('MapiTo')
+            ->build()))
+    ->subject('Re: Some subject')
+    ->subjectPrefix('Re: ')
+    ->build();
+```
+
+
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 

@@ -270,11 +270,9 @@ class ClientFolderCreateRequest extends ClientAccountBaseRequest
      */
     public function setFolderName($folder_name)
     {
-
         if ((strlen($folder_name) < 1)) {
             throw new \InvalidArgumentException('invalid length for $folder_name when calling ClientFolderCreateRequest., must be bigger than or equal to 1.');
         }
-
         $this->container['folder_name'] = $folder_name;
 
         return $this;

@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for calendarGetList" operation.
+ * Request model for CalendarApi::getList operation.
  */
 class CalendarGetListRequest
 {
@@ -41,12 +41,20 @@ class CalendarGetListRequest
      * @param int $page_number Page number.
      * @param string $storage Storage name.
      */
-    public function __construct($folder, $items_per_page = null, $page_number = null, $storage = null)             
+    public function __construct($folder = null, $items_per_page = null, $page_number = null, $storage = null)             
     {
-        $this->folder = $folder;
-        $this->items_per_page = $items_per_page;
-        $this->page_number = $page_number;
-        $this->storage = $storage;
+        if ($folder != null) {
+            $this->folder = $folder;
+        }
+        if ($items_per_page != null) {
+            $this->items_per_page = $items_per_page;
+        }
+        if ($page_number != null) {
+            $this->page_number = $page_number;
+        }
+        if ($storage != null) {
+            $this->storage = $storage;
+        }
     }
 
     /**
@@ -69,3 +77,4 @@ class CalendarGetListRequest
      */
     public $storage;
 }
+

@@ -1,8 +1,10 @@
 # MapiCalendarDto
 
+Represents the mapi calendar object
+
 ## Properties
 Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+---- | ---- | ----------- | -----
 **appointment_counter_proposal** | **bool** | Value indicating whether a Meeting Response object is a counter proposal. | 
 **attendees** | [**\Aspose\Email\Model\MapiCalendarAttendeesDto**](MapiCalendarAttendeesDto.md) | Attendees | [optional] 
 **busy_status** | **string** | Enumerates the mapi calendar possible busy status Enum, available values: Free, Tentative, Busy, OutOfOffice | 
@@ -24,6 +26,46 @@ Name | Type | Description | Notes
 
  Parent class: [MapiMessageItemBaseDto](MapiMessageItemBaseDto.md)
 
-[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
+## Example
+```php
+$mapiCalendarDto = Models::mapiCalendarDto()
+    ->attendees(Models::mapiCalendarAttendeesDto()
+        ->appointmentRecipients(array(
+            Models::mapiRecipientDto()
+                ->emailAddress('organizer@aspose.com')
+                ->addressType('SMTP')
+                ->displayName('Organizer Name')
+                ->recipientType('MapiTo')
+                ->build(),
+            Models::mapiRecipientDto()
+                ->emailAddress('attendee@aspose.com')
+                ->addressType('SMTP')
+                ->displayName('Attendee Name')
+                ->recipientType('MapiTo')
+                ->build()))
+        ->build())
+    ->busyStatus('Tentative')
+    ->clientIntent(array(
+        'Manager'))
+    ->endDate(new DateTime())
+    ->location('Some location')
+    ->recurrence(Models::mapiCalendarEventRecurrenceDto()
+        ->recurrencePattern(Models::mapiCalendarDailyRecurrencePatternDto()
+            ->frequency('Daily')
+            ->occurrenceCount(10)
+            ->weekStartDay('Monday')
+            ->build())
+        ->build())
+    ->startDate(new DateTime())
+    ->organizer(Models::mapiElectronicAddressDto()
+        ->emailAddress('organizer@aspose.com')
+        ->build())
+    ->body('Some description')
+    ->subject('Some summary')
+    ->build();
+```
+
+
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 

@@ -237,11 +237,9 @@ class ClientThreadBaseRequest extends ClientAccountBaseRequest
      */
     public function setThreadId($thread_id)
     {
-
         if ((strlen($thread_id) < 1)) {
             throw new \InvalidArgumentException('invalid length for $thread_id when calling ClientThreadBaseRequest., must be bigger than or equal to 1.');
         }
-
         $this->container['thread_id'] = $thread_id;
 
         return $this;

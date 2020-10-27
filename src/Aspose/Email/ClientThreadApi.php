@@ -53,7 +53,6 @@ class ClientThreadApi extends ApiBase
         parent::__construct($client, $config, $selector);
     }
 
-            
     /**
      * Operation delete
      *
@@ -171,7 +170,7 @@ class ClientThreadApi extends ApiBase
         $path = '/email/client/thread';
         return $this->toClientRequest('DELETE', $httpBody, $path, [], [], [], false, $headers, []);
     }
-            
+
     /**
      * Operation getList
      *
@@ -333,7 +332,7 @@ class ClientThreadApi extends ApiBase
             $headerParams
         );
     }
-            
+
     /**
      * Operation getMessages
      *
@@ -492,7 +491,7 @@ class ClientThreadApi extends ApiBase
             $headerParams
         );
     }
-            
+
     /**
      * Operation move
      *
@@ -610,7 +609,7 @@ class ClientThreadApi extends ApiBase
         $path = '/email/client/thread/move';
         return $this->toClientRequest('PUT', $httpBody, $path, [], [], [], false, $headers, []);
     }
-            
+
     /**
      * Operation setIsRead
      *

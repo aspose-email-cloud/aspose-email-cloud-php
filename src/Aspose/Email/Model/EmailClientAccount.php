@@ -321,11 +321,9 @@ class EmailClientAccount implements ArrayAccess
      */
     public function setHost($host)
     {
-
         if ((strlen($host) < 1)) {
             throw new \InvalidArgumentException('invalid length for $host when calling EmailClientAccount., must be bigger than or equal to 1.');
         }
-
         $this->container['host'] = $host;
 
         return $this;
@@ -350,14 +348,12 @@ class EmailClientAccount implements ArrayAccess
      */
     public function setPort($port)
     {
-
         if (($port > 2147483647)) {
             throw new \InvalidArgumentException('invalid value for $port when calling EmailClientAccount., must be smaller than or equal to 2147483647.');
         }
         if (($port < 1)) {
             throw new \InvalidArgumentException('invalid value for $port when calling EmailClientAccount., must be bigger than or equal to 1.');
         }
-
         $this->container['port'] = $port;
 
         return $this;

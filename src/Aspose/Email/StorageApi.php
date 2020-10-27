@@ -53,7 +53,6 @@ class StorageApi extends ApiBase
         parent::__construct($client, $config, $selector);
     }
 
-            
     /**
      * Operation getDiscUsage
      *
@@ -188,7 +187,7 @@ class StorageApi extends ApiBase
             $headerParams
         );
     }
-            
+
     /**
      * Operation getFileVersions
      *
@@ -335,7 +334,7 @@ class StorageApi extends ApiBase
             $headerParams
         );
     }
-            
+
     /**
      * Operation objectExists
      *
@@ -485,7 +484,7 @@ class StorageApi extends ApiBase
             $headerParams
         );
     }
-            
+
     /**
      * Operation exists
      *

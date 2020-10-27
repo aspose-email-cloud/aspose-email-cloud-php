@@ -1,8 +1,10 @@
 # EmailDto
 
+Email message representation.
+
 ## Properties
 Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+---- | ---- | ----------- | -----
 **alternate_views** | [**\Aspose\Email\Model\AlternateView[]**](AlternateView.md) | Collection of alternate views of message. | [optional] 
 **attachments** | [**\Aspose\Email\Model\Attachment[]**](Attachment.md) | Email message attachments. | [optional] 
 **bcc** | [**\Aspose\Email\Model\MailAddress[]**](MailAddress.md) | BCC recipients. | [optional] 
@@ -38,6 +40,35 @@ Name | Type | Description | Notes
 
 
 
-[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
+## Example
+```php
+$emailDto = Models::emailDto()
+    ->attachments(array(
+        Models::attachment()
+            ->name('some-file.txt')
+            ->base64Data('U29tZSBmaWxlIGNvbnRlbnQ=')
+            ->build()))
+    ->body('Some body')
+    ->bodyType('Html')
+    ->deliveryNotificationOptions(array(
+        'OnSuccess',
+        'Delay'))
+    ->from(Models::mailAddress()
+        ->displayName('From Address')
+        ->address('from@aspose.com')
+        ->build())
+    ->htmlBody('<b>Some body</b>')
+    ->isBodyHtml(true)
+    ->isDraft(true)
+    ->subject('Re: Some subject')
+    ->to(array(
+        Models::mailAddress()
+            ->displayName('To Address')
+            ->address('to@aspose.com')
+            ->build()))
+    ->build();
+```
 
+
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 

@@ -53,7 +53,6 @@ class ClientFolderApi extends ApiBase
         parent::__construct($client, $config, $selector);
     }
 
-            
     /**
      * Operation create
      *
@@ -171,7 +170,7 @@ class ClientFolderApi extends ApiBase
         $path = '/email/client/folder';
         return $this->toClientRequest('PUT', $httpBody, $path, [], [], [], false, $headers, []);
     }
-            
+
     /**
      * Operation delete
      *
@@ -289,7 +288,7 @@ class ClientFolderApi extends ApiBase
         $path = '/email/client/folder';
         return $this->toClientRequest('DELETE', $httpBody, $path, [], [], [], false, $headers, []);
     }
-            
+
     /**
      * Operation getList
      *

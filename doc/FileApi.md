@@ -1,165 +1,301 @@
-# Aspose\Email\FileApi
+# FileApi ($emailCloud->cloudStorage()->file())
 
-            
-# **copyFile**
+File operations controller
+
+## **copyFile**
+
+Description: Copy file
+
+
+Method call example:
 ```php
-function copyFile(
-    CopyFileRequest $request
-): 
-```
-Copy file
-
-### Return type
-
-void (empty response body)
-
-### Request parameters
-```php
-$request = new CopyFileRequest(
-    $src_path,
-    $dest_path,
-    $src_storage_name,
-    $dest_storage_name,
-    $version_id
-);
+$api->cloudStorage()->file()->copyFile($request);
 ```
 
+### Parameter: request
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **src_path** | **string**| Source file path e.g. &#39;/folder/file.ext&#39; |
- **dest_path** | **string**| Destination file path |
- **src_storage_name** | **string**| Source storage name | [optional]
- **dest_storage_name** | **string**| Destination storage name | [optional]
- **version_id** | **string**| File version ID to copy | [optional]
+Description: copyFile method request.
+
+See parameter model documentation at [CopyFileRequest](CopyFileRequest.md).
+
+<details>
+    <summary>Parameter initialization example:</summary>
+
+```php
+$request = Models::CopyFileRequest()
+    ->src_path('/storage/path/to/source/file.ext')
+    ->dest_path('/storage/path/to/destination/file.ext')
+    ->src_storage_name('First Storage')
+    ->dest_storage_name('Other Storage')
+    ->build();
+```
+
+</details>
+
+### Result
+
+Return type: void (empty response body)
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```php
+$api = new EmailCloud($appKey, $appSid);
+
+// Prepare parameters:
+$request = Models::CopyFileRequest()
+    ->src_path('/storage/path/to/source/file.ext')
+    ->dest_path('/storage/path/to/destination/file.ext')
+    ->src_storage_name('First Storage')
+    ->dest_storage_name('Other Storage')
+    ->build();
+
+// Call method:
+$api->cloudStorage()->file()->copyFile($request);
+```
+
+</details>
 
 [[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-            
-# **deleteFile**
+## **deleteFile**
+
+Description: Delete file
+
+
+Method call example:
 ```php
-function deleteFile(
-    DeleteFileRequest $request
-): 
-```
-Delete file
-
-### Return type
-
-void (empty response body)
-
-### Request parameters
-```php
-$request = new DeleteFileRequest(
-    $path,
-    $storage_name,
-    $version_id
-);
+$api->cloudStorage()->file()->deleteFile($request);
 ```
 
+### Parameter: request
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **path** | **string**| File path e.g. &#39;/folder/file.ext&#39; |
- **storage_name** | **string**| Storage name | [optional]
- **version_id** | **string**| File version ID to delete | [optional]
+Description: deleteFile method request.
+
+See parameter model documentation at [DeleteFileRequest](DeleteFileRequest.md).
+
+<details>
+    <summary>Parameter initialization example:</summary>
+
+```php
+$request = Models::DeleteFileRequest()
+    ->path('/storage/path/to/file.ext')
+    ->storage_name('First Storage')
+    ->build();
+```
+
+</details>
+
+### Result
+
+Return type: void (empty response body)
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```php
+$api = new EmailCloud($appKey, $appSid);
+
+// Prepare parameters:
+$request = Models::DeleteFileRequest()
+    ->path('/storage/path/to/file.ext')
+    ->storage_name('First Storage')
+    ->build();
+
+// Call method:
+$api->cloudStorage()->file()->deleteFile($request);
+```
+
+</details>
 
 [[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-            
-# **downloadFile**
+## **downloadFile**
+
+Description: Download file
+
+Returns: The raw data of the file.
+
+Method call example:
 ```php
-function downloadFile(
-    DownloadFileRequest $request
-): \SplFileObject 
-```
-Download file
-
-### Return type
-
-[**\SplFileObject**](\SplFileObject.md)
-
-### Request parameters
-```php
-$request = new DownloadFileRequest(
-    $path,
-    $storage_name,
-    $version_id
-);
+$result = $api->cloudStorage()->file()->downloadFile($request);
 ```
 
+### Parameter: request
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **path** | **string**| File path e.g. &#39;/folder/file.ext&#39; |
- **storage_name** | **string**| Storage name | [optional]
- **version_id** | **string**| File version ID to download | [optional]
+Description: downloadFile method request.
+
+See parameter model documentation at [DownloadFileRequest](DownloadFileRequest.md).
+
+<details>
+    <summary>Parameter initialization example:</summary>
+
+```php
+$request = Models::DownloadFileRequest()
+    ->path('/storage/path/to/file.ext')
+    ->storage_name('First Storage')
+    ->build();
+```
+
+</details>
+
+### Result
+
+Description: The raw data of the file.
+
+Return type: [**\SplFileObject**](\SplFileObject.md)
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```php
+$api = new EmailCloud($appKey, $appSid);
+
+// Prepare parameters:
+$request = Models::DownloadFileRequest()
+    ->path('/storage/path/to/file.ext')
+    ->storage_name('First Storage')
+    ->build();
+
+// Call method:
+$result = $api->cloudStorage()->file()->downloadFile($request);
+```
+
+</details>
 
 [[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-            
-# **moveFile**
+## **moveFile**
+
+Description: Move file
+
+
+Method call example:
 ```php
-function moveFile(
-    MoveFileRequest $request
-): 
-```
-Move file
-
-### Return type
-
-void (empty response body)
-
-### Request parameters
-```php
-$request = new MoveFileRequest(
-    $src_path,
-    $dest_path,
-    $src_storage_name,
-    $dest_storage_name,
-    $version_id
-);
+$api->cloudStorage()->file()->moveFile($request);
 ```
 
+### Parameter: request
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **src_path** | **string**| Source file path e.g. &#39;/src.ext&#39; |
- **dest_path** | **string**| Destination file path e.g. &#39;/dest.ext&#39; |
- **src_storage_name** | **string**| Source storage name | [optional]
- **dest_storage_name** | **string**| Destination storage name | [optional]
- **version_id** | **string**| File version ID to move | [optional]
+Description: moveFile method request.
+
+See parameter model documentation at [MoveFileRequest](MoveFileRequest.md).
+
+<details>
+    <summary>Parameter initialization example:</summary>
+
+```php
+$request = Models::MoveFileRequest()
+    ->src_path('/storage/path/to/source/file.ext')
+    ->dest_path('/storage/path/to/destination/file.ext')
+    ->src_storage_name('First Storage')
+    ->dest_storage_name('Other Storage')
+    ->build();
+```
+
+</details>
+
+### Result
+
+Return type: void (empty response body)
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```php
+$api = new EmailCloud($appKey, $appSid);
+
+// Prepare parameters:
+$request = Models::MoveFileRequest()
+    ->src_path('/storage/path/to/source/file.ext')
+    ->dest_path('/storage/path/to/destination/file.ext')
+    ->src_storage_name('First Storage')
+    ->dest_storage_name('Other Storage')
+    ->build();
+
+// Call method:
+$api->cloudStorage()->file()->moveFile($request);
+```
+
+</details>
 
 [[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-            
-# **uploadFile**
+## **uploadFile**
+
+Description: Upload file
+
+Returns: Empty error list if the upload is successful.
+
+Method call example:
 ```php
-function uploadFile(
-    UploadFileRequest $request
-): FilesUploadResult 
-```
-Upload file
-
-### Return type
-
-[**FilesUploadResult**](FilesUploadResult.md)
-
-### Request parameters
-```php
-$request = new UploadFileRequest(
-    $path,
-    $file,
-    $storage_name
-);
+$result = $api->cloudStorage()->file()->uploadFile($request);
 ```
 
+### Parameter: request
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **path** | **string**| Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header. |
- **file** | **\SplFileObject**| File to upload |
- **storage_name** | **string**| Storage name | [optional]
+Description: uploadFile method request.
+
+See parameter model documentation at [UploadFileRequest](UploadFileRequest.md).
+
+<details>
+    <summary>Parameter initialization example:</summary>
+
+```php
+$request = Models::UploadFileRequest()
+    ->path('/storage/path/to/file.ext')
+    ->file(new SplFileObject('/local/file/system/path/to/file.ext'))
+    ->storage_name('First Storage')
+    ->build();
+```
+
+</details>
+
+### Result
+
+Description: Empty error list if the upload is successful.
+
+Return type: [**FilesUploadResult**](FilesUploadResult.md)
+
+<details>
+    <summary>Result example</summary>
+
+```php
+$result = ;
+```
+</details>
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```php
+$api = new EmailCloud($appKey, $appSid);
+
+// Prepare parameters:
+$request = Models::UploadFileRequest()
+    ->path('/storage/path/to/file.ext')
+    ->file(new SplFileObject('/local/file/system/path/to/file.ext'))
+    ->storage_name('First Storage')
+    ->build();
+
+// Call method:
+$result = $api->cloudStorage()->file()->uploadFile($request);
+
+// Result example:
+$result = ;
+```
+
+</details>
 
 [[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 

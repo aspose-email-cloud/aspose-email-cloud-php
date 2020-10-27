@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for objectExists" operation.
+ * Request model for StorageApi::objectExists operation.
  */
 class ObjectExistsRequest
 {
@@ -40,11 +40,17 @@ class ObjectExistsRequest
      * @param string $storage_name Storage name
      * @param string $version_id File version ID
      */
-    public function __construct($path, $storage_name = null, $version_id = null)             
+    public function __construct($path = null, $storage_name = null, $version_id = null)             
     {
-        $this->path = $path;
-        $this->storage_name = $storage_name;
-        $this->version_id = $version_id;
+        if ($path != null) {
+            $this->path = $path;
+        }
+        if ($storage_name != null) {
+            $this->storage_name = $storage_name;
+        }
+        if ($version_id != null) {
+            $this->version_id = $version_id;
+        }
     }
 
     /**

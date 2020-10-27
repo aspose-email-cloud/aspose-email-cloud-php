@@ -1,345 +1,1084 @@
-# Aspose\Email\AiNameApi
+# AiNameApi ($emailCloud->ai()->name())
 
-            
-# **complete**
+AI Name operations.
+
+## **complete**
+
+Description: The call proposes k most probable names for given starting characters.
+
+Returns: List of name variations.
+
+Method call example:
 ```php
-function complete(
-    AiNameCompleteRequest $request
-): AiNameWeightedVariants 
-```
-The call proposes k most probable names for given starting characters.
-
-### Return type
-
-[**AiNameWeightedVariants**](AiNameWeightedVariants.md)
-
-### Request parameters
-```php
-$request = new AiNameCompleteRequest(
-    $name,
-    $language,
-    $location,
-    $encoding,
-    $script,
-    $style
-);
+$result = $api->ai()->name()->complete($request);
 ```
 
+### Parameter: request
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **string**| A name to complete. |
- **language** | **string**| An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \&quot;it\&quot; or \&quot;ita\&quot; for Italian). | [optional] [default to ]
- **location** | **string**| A geographic code such as an ISO-3166 two letter country code, for example \&quot;FR\&quot; for France. | [optional] [default to ]
- **encoding** | **string**| A character encoding name. | [optional] [default to ]
- **script** | **string**| A writing system code; starts with the ISO-15924 script name. | [optional] [default to ]
- **style** | **string**| Name writing style. Enum, available values: Formal, Informal, Legal, Academic | [optional] [default to 0]
+Description: complete method request.
+
+See parameter model documentation at [AiNameCompleteRequest](AiNameCompleteRequest.md).
+
+<details>
+    <summary>Parameter initialization example:</summary>
+
+```php
+$request = Models::AiNameCompleteRequest()
+    ->name('Dav')
+    ->build();
+```
+
+</details>
+
+### Result
+
+Description: List of name variations.
+
+Return type: [**AiNameWeightedVariants**](AiNameWeightedVariants.md)
+
+<details>
+    <summary>Result example</summary>
+
+```php
+$result = Models::aiNameWeightedVariants()
+    ->names(array(
+        Models::aiNameWeighted()
+            ->name('J. Cane')
+            ->score(1)
+            ->build(),
+        Models::aiNameWeighted()
+            ->name('Mr. Cane')
+            ->score(0.75)
+            ->build()))
+    ->build();
+```
+</details>
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```php
+$api = new EmailCloud($appKey, $appSid);
+
+// Prepare parameters:
+$request = Models::AiNameCompleteRequest()
+    ->name('Dav')
+    ->build();
+
+// Call method:
+$result = $api->ai()->name()->complete($request);
+
+// Result example:
+$result = Models::aiNameWeightedVariants()
+    ->names(array(
+        Models::aiNameWeighted()
+            ->name('J. Cane')
+            ->score(1)
+            ->build(),
+        Models::aiNameWeighted()
+            ->name('Mr. Cane')
+            ->score(0.75)
+            ->build()))
+    ->build();
+```
+
+</details>
 
 [[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-            
-# **expand**
+## **expand**
+
+Description: Expands a person's name into a list of possible alternatives using options for expanding instructions.
+
+Returns: List of name variations.
+
+Method call example:
 ```php
-function expand(
-    AiNameExpandRequest $request
-): AiNameWeightedVariants 
-```
-Expands a person's name into a list of possible alternatives using options for expanding instructions.
-
-### Return type
-
-[**AiNameWeightedVariants**](AiNameWeightedVariants.md)
-
-### Request parameters
-```php
-$request = new AiNameExpandRequest(
-    $name,
-    $language,
-    $location,
-    $encoding,
-    $script,
-    $style
-);
+$result = $api->ai()->name()->expand($request);
 ```
 
+### Parameter: request
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **string**| A name to expand. |
- **language** | **string**| An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \&quot;it\&quot; or \&quot;ita\&quot; for Italian). | [optional] [default to ]
- **location** | **string**| A geographic code such as an ISO-3166 two letter country code, for example \&quot;FR\&quot; for France. | [optional] [default to ]
- **encoding** | **string**| A character encoding name. | [optional] [default to ]
- **script** | **string**| A writing system code; starts with the ISO-15924 script name. | [optional] [default to ]
- **style** | **string**| Name writing style. Enum, available values: Formal, Informal, Legal, Academic | [optional] [default to 0]
+Description: expand method request.
+
+See parameter model documentation at [AiNameExpandRequest](AiNameExpandRequest.md).
+
+<details>
+    <summary>Parameter initialization example:</summary>
+
+```php
+$request = Models::AiNameExpandRequest()
+    ->name('John Cane')
+    ->build();
+```
+
+</details>
+
+### Result
+
+Description: List of name variations.
+
+Return type: [**AiNameWeightedVariants**](AiNameWeightedVariants.md)
+
+<details>
+    <summary>Result example</summary>
+
+```php
+$result = Models::aiNameWeightedVariants()
+    ->names(array(
+        Models::aiNameWeighted()
+            ->name('J. Cane')
+            ->score(1)
+            ->build(),
+        Models::aiNameWeighted()
+            ->name('Mr. Cane')
+            ->score(0.75)
+            ->build()))
+    ->build();
+```
+</details>
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```php
+$api = new EmailCloud($appKey, $appSid);
+
+// Prepare parameters:
+$request = Models::AiNameExpandRequest()
+    ->name('John Cane')
+    ->build();
+
+// Call method:
+$result = $api->ai()->name()->expand($request);
+
+// Result example:
+$result = Models::aiNameWeightedVariants()
+    ->names(array(
+        Models::aiNameWeighted()
+            ->name('J. Cane')
+            ->score(1)
+            ->build(),
+        Models::aiNameWeighted()
+            ->name('Mr. Cane')
+            ->score(0.75)
+            ->build()))
+    ->build();
+```
+
+</details>
 
 [[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-            
-# expandParsed
+## expandParsed
 
+Description: Expands a person's parsed name into a list of possible alternatives using options for expanding instructions.
+
+Returns: List of name variations.
+
+Method call example:
 ```php
-function expandParsed(
-    AiNameParsedRequest $request
-): AiNameWeightedVariants 
+$result = $api->ai()->name()->expandParsed($request);
 ```
 
-Expands a person's parsed name into a list of possible alternatives using options for expanding instructions.
+### Parameter: request
 
-### Return type
-
-[**AiNameWeightedVariants**](AiNameWeightedVariants.md)
-
-### request Parameter
+Description: Parsed name with options.
 
 See parameter model documentation at [AiNameParsedRequest](AiNameParsedRequest.md)
 
+<details>
+    <summary>Parameter initialization example:</summary>
+    
+```php
+$request = Models::aiNameParsedRequest()
+    ->parsedName(array(
+        Models::aiNameComponent()
+            ->value('John')
+            ->category('FirstName')
+            ->score(0.95)
+            ->build(),
+        Models::aiNameComponent()
+            ->value('Cane')
+            ->category('LastName')
+            ->score(0.5)
+            ->position(5)
+            ->build(),
+        Models::aiNameComponent()
+            ->value('%F%L')
+            ->category('Format')
+            ->build(),
+        Models::aiNameComponent()
+            ->value('0.5')
+            ->category('Score')
+            ->score(0.5)
+            ->build()))
+    ->build();
+```
+
+</details>
+
+
+### Result
+
+Description: List of name variations.
+
+Return type: [**AiNameWeightedVariants**](AiNameWeightedVariants.md)
+
+<details>
+    <summary>Result example</summary>
+
+```php
+$result = Models::aiNameWeightedVariants()
+    ->names(array(
+        Models::aiNameWeighted()
+            ->name('J. Cane')
+            ->score(1)
+            ->build(),
+        Models::aiNameWeighted()
+            ->name('Mr. Cane')
+            ->score(0.75)
+            ->build()))
+    ->build();
+```
+</details>
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```php
+$api = new EmailCloud($appKey, $appSid);
+
+// Prepare parameters:
+$request = Models::aiNameParsedRequest()
+    ->parsedName(array(
+        Models::aiNameComponent()
+            ->value('John')
+            ->category('FirstName')
+            ->score(0.95)
+            ->build(),
+        Models::aiNameComponent()
+            ->value('Cane')
+            ->category('LastName')
+            ->score(0.5)
+            ->position(5)
+            ->build(),
+        Models::aiNameComponent()
+            ->value('%F%L')
+            ->category('Format')
+            ->build(),
+        Models::aiNameComponent()
+            ->value('0.5')
+            ->category('Score')
+            ->score(0.5)
+            ->build()))
+    ->build();
+
+// Call method:
+$result = $api->ai()->name()->expandParsed($request);
+
+// Result example:
+$result = Models::aiNameWeightedVariants()
+    ->names(array(
+        Models::aiNameWeighted()
+            ->name('J. Cane')
+            ->score(1)
+            ->build(),
+        Models::aiNameWeighted()
+            ->name('Mr. Cane')
+            ->score(0.75)
+            ->build()))
+    ->build();
+```
+
+</details>
+
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
-            
-# **format**
+## **format**
+
+Description: Formats a person's name in correct case and name order using options for formatting instructions.
+
+Returns: Formatted name.
+
+Method call example:
 ```php
-function format(
-    AiNameFormatRequest $request
-): AiNameFormatted 
-```
-Formats a person's name in correct case and name order using options for formatting instructions.
-
-### Return type
-
-[**AiNameFormatted**](AiNameFormatted.md)
-
-### Request parameters
-```php
-$request = new AiNameFormatRequest(
-    $name,
-    $language,
-    $location,
-    $encoding,
-    $script,
-    $format,
-    $style
-);
+$result = $api->ai()->name()->format($request);
 ```
 
+### Parameter: request
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **string**| A name to format. |
- **language** | **string**| An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \&quot;it\&quot; or \&quot;ita\&quot; for Italian). | [optional] [default to ]
- **location** | **string**| A geographic code such as an ISO-3166 two letter country code, for example \&quot;FR\&quot; for France. | [optional] [default to ]
- **encoding** | **string**| A character encoding name. | [optional] [default to ]
- **script** | **string**| A writing system code; starts with the ISO-15924 script name. | [optional] [default to ]
- **format** | **string**| Format of the name. Predefined format can be used by ID, or custom format can be specified. Predefined formats:      /format/default/ (&#x3D; &#39;%t%F%m%N%L%p&#39;)     /format/FN+LN/ (&#x3D; &#39;%F%L&#39;)     /format/title+FN+LN/ (&#x3D; &#39;%t%F%L&#39;)     /format/FN+MN+LN/ (&#x3D; &#39;%F%M%N%L&#39;)     /format/title+FN+MN+LN/ (&#x3D; &#39;%t%F%M%N%L&#39;)     /format/FN+MI+LN/ (&#x3D; &#39;%F%m%N%L&#39;)     /format/title+FN+MI+LN/ (&#x3D; &#39;%t%F%m%N%L&#39;)     /format/LN/ (&#x3D; &#39;%L&#39;)     /format/title+LN/ (&#x3D; &#39;%t%L&#39;)     /format/LN+FN+MN/ (&#x3D; &#39;%L,%F%M%N&#39;)     /format/LN+title+FN+MN/ (&#x3D; &#39;%L,%t%F%M%N&#39;)     /format/LN+FN+MI/ (&#x3D; &#39;%L,%F%m%N&#39;)     /format/LN+title+FN+MI/ (&#x3D; &#39;%L,%t%F%m%N&#39;)  Custom format string - custom combination of characters and the next term placeholders:      &#39;%t&#39; - Title (prefix)     &#39;%F&#39; - First name     &#39;%f&#39; - First initial     &#39;%M&#39; - Middle name(s)     &#39;%m&#39; - Middle initial(s)     &#39;%N&#39; - Nickname     &#39;%L&#39; - Last name     &#39;%l&#39; - Last initial     &#39;%p&#39; - Postfix  If no value for format option was provided, its default value is &#39;%t%F%m%N%L%p&#39; | [optional] [default to ]
- **style** | **string**| Name writing style. Enum, available values: Formal, Informal, Legal, Academic | [optional] [default to 0]
+Description: format method request.
+
+See parameter model documentation at [AiNameFormatRequest](AiNameFormatRequest.md).
+
+<details>
+    <summary>Parameter initialization example:</summary>
+
+```php
+$request = Models::AiNameFormatRequest()
+    ->name('Mr. John Michael Cane')
+    ->format('%t%L%f%m')
+    ->build();
+```
+
+</details>
+
+### Result
+
+Description: Formatted name.
+
+Return type: [**AiNameFormatted**](AiNameFormatted.md)
+
+<details>
+    <summary>Result example</summary>
+
+```php
+$result = Models::aiNameFormatted()
+    ->name('Mr. Cane J. M.')
+    ->comments('format: %t%L%f%m; source: parsed format')
+    ->build();
+```
+</details>
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```php
+$api = new EmailCloud($appKey, $appSid);
+
+// Prepare parameters:
+$request = Models::AiNameFormatRequest()
+    ->name('Mr. John Michael Cane')
+    ->format('%t%L%f%m')
+    ->build();
+
+// Call method:
+$result = $api->ai()->name()->format($request);
+
+// Result example:
+$result = Models::aiNameFormatted()
+    ->name('Mr. Cane J. M.')
+    ->comments('format: %t%L%f%m; source: parsed format')
+    ->build();
+```
+
+</details>
 
 [[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-            
-# formatParsed
+## formatParsed
 
+Description: Formats a person's parsed name in correct case and name order using options for formatting instructions.
+
+Returns: Formatted name.
+
+Method call example:
 ```php
-function formatParsed(
-    AiNameParsedRequest $request
-): AiNameFormatted 
+$result = $api->ai()->name()->formatParsed($request);
 ```
 
-Formats a person's parsed name in correct case and name order using options for formatting instructions.
+### Parameter: request
 
-### Return type
-
-[**AiNameFormatted**](AiNameFormatted.md)
-
-### request Parameter
+Description: Parsed name with options.
 
 See parameter model documentation at [AiNameParsedRequest](AiNameParsedRequest.md)
 
+<details>
+    <summary>Parameter initialization example:</summary>
+    
+```php
+$request = Models::aiNameParsedRequest()
+    ->parsedName(array(
+        Models::aiNameComponent()
+            ->value('John')
+            ->category('FirstName')
+            ->score(0.95)
+            ->build(),
+        Models::aiNameComponent()
+            ->value('Cane')
+            ->category('LastName')
+            ->score(0.5)
+            ->position(5)
+            ->build(),
+        Models::aiNameComponent()
+            ->value('%F%L')
+            ->category('Format')
+            ->build(),
+        Models::aiNameComponent()
+            ->value('0.5')
+            ->category('Score')
+            ->score(0.5)
+            ->build()))
+    ->build();
+```
+
+</details>
+
+
+### Result
+
+Description: Formatted name.
+
+Return type: [**AiNameFormatted**](AiNameFormatted.md)
+
+<details>
+    <summary>Result example</summary>
+
+```php
+$result = Models::aiNameFormatted()
+    ->name('Mr. Cane J. M.')
+    ->comments('format: %t%L%f%m; source: parsed format')
+    ->build();
+```
+</details>
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```php
+$api = new EmailCloud($appKey, $appSid);
+
+// Prepare parameters:
+$request = Models::aiNameParsedRequest()
+    ->parsedName(array(
+        Models::aiNameComponent()
+            ->value('John')
+            ->category('FirstName')
+            ->score(0.95)
+            ->build(),
+        Models::aiNameComponent()
+            ->value('Cane')
+            ->category('LastName')
+            ->score(0.5)
+            ->position(5)
+            ->build(),
+        Models::aiNameComponent()
+            ->value('%F%L')
+            ->category('Format')
+            ->build(),
+        Models::aiNameComponent()
+            ->value('0.5')
+            ->category('Score')
+            ->score(0.5)
+            ->build()))
+    ->build();
+
+// Call method:
+$result = $api->ai()->name()->formatParsed($request);
+
+// Result example:
+$result = Models::aiNameFormatted()
+    ->name('Mr. Cane J. M.')
+    ->comments('format: %t%L%f%m; source: parsed format')
+    ->build();
+```
+
+</details>
+
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
-            
-# **genderize**
+## **genderize**
+
+Description: Detect person's gender from name string.
+
+Returns: Hypotheses about person's gender.
+
+Method call example:
 ```php
-function genderize(
-    AiNameGenderizeRequest $request
-): AiNameGenderHypothesisList 
-```
-Detect person's gender from name string.
-
-### Return type
-
-[**AiNameGenderHypothesisList**](AiNameGenderHypothesisList.md)
-
-### Request parameters
-```php
-$request = new AiNameGenderizeRequest(
-    $name,
-    $language,
-    $location,
-    $encoding,
-    $script,
-    $style
-);
+$result = $api->ai()->name()->genderize($request);
 ```
 
+### Parameter: request
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **string**| A name to genderize. |
- **language** | **string**| An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \&quot;it\&quot; or \&quot;ita\&quot; for Italian). | [optional] [default to ]
- **location** | **string**| A geographic code such as an ISO-3166 two letter country code, for example \&quot;FR\&quot; for France. | [optional] [default to ]
- **encoding** | **string**| A character encoding name. | [optional] [default to ]
- **script** | **string**| A writing system code; starts with the ISO-15924 script name. | [optional] [default to ]
- **style** | **string**| Name writing style. Enum, available values: Formal, Informal, Legal, Academic | [optional] [default to 0]
+Description: genderize method request.
+
+See parameter model documentation at [AiNameGenderizeRequest](AiNameGenderizeRequest.md).
+
+<details>
+    <summary>Parameter initialization example:</summary>
+
+```php
+$request = Models::AiNameGenderizeRequest()
+    ->name('John Cane')
+    ->build();
+```
+
+</details>
+
+### Result
+
+Description: Hypotheses about person's gender.
+
+Return type: [**AiNameGenderHypothesisList**](AiNameGenderHypothesisList.md)
+
+<details>
+    <summary>Result example</summary>
+
+```php
+$result = ;
+```
+</details>
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```php
+$api = new EmailCloud($appKey, $appSid);
+
+// Prepare parameters:
+$request = Models::AiNameGenderizeRequest()
+    ->name('John Cane')
+    ->build();
+
+// Call method:
+$result = $api->ai()->name()->genderize($request);
+
+// Result example:
+$result = ;
+```
+
+</details>
 
 [[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-            
-# genderizeParsed
+## genderizeParsed
 
+Description: Detect person's gender from parsed name.
+
+Returns: Hypotheses about person's gender.
+
+Method call example:
 ```php
-function genderizeParsed(
-    AiNameParsedRequest $request
-): AiNameGenderHypothesisList 
+$result = $api->ai()->name()->genderizeParsed($request);
 ```
 
-Detect person's gender from parsed name.
+### Parameter: request
 
-### Return type
-
-[**AiNameGenderHypothesisList**](AiNameGenderHypothesisList.md)
-
-### request Parameter
+Description: Gender detection request data.
 
 See parameter model documentation at [AiNameParsedRequest](AiNameParsedRequest.md)
 
+<details>
+    <summary>Parameter initialization example:</summary>
+    
+```php
+$request = Models::aiNameParsedRequest()
+    ->parsedName(array(
+        Models::aiNameComponent()
+            ->value('John')
+            ->category('FirstName')
+            ->score(0.95)
+            ->build(),
+        Models::aiNameComponent()
+            ->value('Cane')
+            ->category('LastName')
+            ->score(0.5)
+            ->position(5)
+            ->build(),
+        Models::aiNameComponent()
+            ->value('%F%L')
+            ->category('Format')
+            ->build(),
+        Models::aiNameComponent()
+            ->value('0.5')
+            ->category('Score')
+            ->score(0.5)
+            ->build()))
+    ->build();
+```
+
+</details>
+
+
+### Result
+
+Description: Hypotheses about person's gender.
+
+Return type: [**AiNameGenderHypothesisList**](AiNameGenderHypothesisList.md)
+
+<details>
+    <summary>Result example</summary>
+
+```php
+$result = ;
+```
+</details>
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```php
+$api = new EmailCloud($appKey, $appSid);
+
+// Prepare parameters:
+$request = Models::aiNameParsedRequest()
+    ->parsedName(array(
+        Models::aiNameComponent()
+            ->value('John')
+            ->category('FirstName')
+            ->score(0.95)
+            ->build(),
+        Models::aiNameComponent()
+            ->value('Cane')
+            ->category('LastName')
+            ->score(0.5)
+            ->position(5)
+            ->build(),
+        Models::aiNameComponent()
+            ->value('%F%L')
+            ->category('Format')
+            ->build(),
+        Models::aiNameComponent()
+            ->value('0.5')
+            ->category('Score')
+            ->score(0.5)
+            ->build()))
+    ->build();
+
+// Call method:
+$result = $api->ai()->name()->genderizeParsed($request);
+
+// Result example:
+$result = ;
+```
+
+</details>
+
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
-            
-# **match**
+## **match**
+
+Description: Compare people's names. Uses options for comparing instructions.
+
+Returns: Match result.
+
+Method call example:
 ```php
-function match(
-    AiNameMatchRequest $request
-): AiNameMatchResult 
-```
-Compare people's names. Uses options for comparing instructions.
-
-### Return type
-
-[**AiNameMatchResult**](AiNameMatchResult.md)
-
-### Request parameters
-```php
-$request = new AiNameMatchRequest(
-    $name,
-    $other_name,
-    $language,
-    $location,
-    $encoding,
-    $script,
-    $style
-);
+$result = $api->ai()->name()->match($request);
 ```
 
+### Parameter: request
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **string**| A name to match. |
- **other_name** | **string**| Another name to match. |
- **language** | **string**| An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \&quot;it\&quot; or \&quot;ita\&quot; for Italian). | [optional] [default to ]
- **location** | **string**| A geographic code such as an ISO-3166 two letter country code, for example \&quot;FR\&quot; for France. | [optional] [default to ]
- **encoding** | **string**| A character encoding name. | [optional] [default to ]
- **script** | **string**| A writing system code; starts with the ISO-15924 script name. | [optional] [default to ]
- **style** | **string**| Name writing style. Enum, available values: Formal, Informal, Legal, Academic | [optional] [default to 0]
+Description: match method request.
+
+See parameter model documentation at [AiNameMatchRequest](AiNameMatchRequest.md).
+
+<details>
+    <summary>Parameter initialization example:</summary>
+
+```php
+$request = Models::AiNameMatchRequest()
+    ->name('John Michael Cane')
+    ->other_name('Cane J.')
+    ->build();
+```
+
+</details>
+
+### Result
+
+Description: Match result.
+
+Return type: [**AiNameMatchResult**](AiNameMatchResult.md)
+
+<details>
+    <summary>Result example</summary>
+
+```php
+$result = Models::aiNameMatchResult()
+    ->similarity(0.6)
+    ->mismatches(array(
+        Models::aiNameMismatch()
+            ->category('Gender')
+            ->explanation('no_match')
+            ->build()))
+    ->build();
+```
+</details>
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```php
+$api = new EmailCloud($appKey, $appSid);
+
+// Prepare parameters:
+$request = Models::AiNameMatchRequest()
+    ->name('John Michael Cane')
+    ->other_name('Cane J.')
+    ->build();
+
+// Call method:
+$result = $api->ai()->name()->match($request);
+
+// Result example:
+$result = Models::aiNameMatchResult()
+    ->similarity(0.6)
+    ->mismatches(array(
+        Models::aiNameMismatch()
+            ->category('Gender')
+            ->explanation('no_match')
+            ->build()))
+    ->build();
+```
+
+</details>
 
 [[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-            
-# matchParsed
+## matchParsed
 
+Description: Compare people's parsed names and attributes. Uses options for comparing instructions.
+
+Returns: Match result.
+
+Method call example:
 ```php
-function matchParsed(
-    AiNameMatchParsedRequest $request
-): AiNameMatchResult 
+$result = $api->ai()->name()->matchParsed($request);
 ```
 
-Compare people's parsed names and attributes. Uses options for comparing instructions.
+### Parameter: request
 
-### Return type
-
-[**AiNameMatchResult**](AiNameMatchResult.md)
-
-### request Parameter
+Description: Parsed names to match.
 
 See parameter model documentation at [AiNameMatchParsedRequest](AiNameMatchParsedRequest.md)
 
+<details>
+    <summary>Parameter initialization example:</summary>
+    
+```php
+$request = Models::aiNameMatchParsedRequest()
+    ->otherParsedName(array(
+        Models::aiNameComponent()
+            ->value('J')
+            ->category('FirstInitial')
+            ->score(1)
+            ->build(),
+        Models::aiNameComponent()
+            ->value('Cane')
+            ->category('LastName')
+            ->score(0.5)
+            ->position(3)
+            ->build(),
+        Models::aiNameComponent()
+            ->value('%f%L')
+            ->category('Format')
+            ->build(),
+        Models::aiNameComponent()
+            ->value('0.5')
+            ->category('Score')
+            ->score(0.5)
+            ->build()))
+    ->parsedName(array(
+        Models::aiNameComponent()
+            ->value('John')
+            ->category('FirstName')
+            ->score(0.95)
+            ->build(),
+        Models::aiNameComponent()
+            ->value('Cane')
+            ->category('LastName')
+            ->score(0.5)
+            ->position(5)
+            ->build(),
+        Models::aiNameComponent()
+            ->value('%F%L')
+            ->category('Format')
+            ->build(),
+        Models::aiNameComponent()
+            ->value('0.5')
+            ->category('Score')
+            ->score(0.5)
+            ->build()))
+    ->build();
+```
+
+</details>
+
+
+### Result
+
+Description: Match result.
+
+Return type: [**AiNameMatchResult**](AiNameMatchResult.md)
+
+<details>
+    <summary>Result example</summary>
+
+```php
+$result = Models::aiNameMatchResult()
+    ->similarity(0.6)
+    ->mismatches(array(
+        Models::aiNameMismatch()
+            ->category('Gender')
+            ->explanation('no_match')
+            ->build()))
+    ->build();
+```
+</details>
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```php
+$api = new EmailCloud($appKey, $appSid);
+
+// Prepare parameters:
+$request = Models::aiNameMatchParsedRequest()
+    ->otherParsedName(array(
+        Models::aiNameComponent()
+            ->value('J')
+            ->category('FirstInitial')
+            ->score(1)
+            ->build(),
+        Models::aiNameComponent()
+            ->value('Cane')
+            ->category('LastName')
+            ->score(0.5)
+            ->position(3)
+            ->build(),
+        Models::aiNameComponent()
+            ->value('%f%L')
+            ->category('Format')
+            ->build(),
+        Models::aiNameComponent()
+            ->value('0.5')
+            ->category('Score')
+            ->score(0.5)
+            ->build()))
+    ->parsedName(array(
+        Models::aiNameComponent()
+            ->value('John')
+            ->category('FirstName')
+            ->score(0.95)
+            ->build(),
+        Models::aiNameComponent()
+            ->value('Cane')
+            ->category('LastName')
+            ->score(0.5)
+            ->position(5)
+            ->build(),
+        Models::aiNameComponent()
+            ->value('%F%L')
+            ->category('Format')
+            ->build(),
+        Models::aiNameComponent()
+            ->value('0.5')
+            ->category('Score')
+            ->score(0.5)
+            ->build()))
+    ->build();
+
+// Call method:
+$result = $api->ai()->name()->matchParsed($request);
+
+// Result example:
+$result = Models::aiNameMatchResult()
+    ->similarity(0.6)
+    ->mismatches(array(
+        Models::aiNameMismatch()
+            ->category('Gender')
+            ->explanation('no_match')
+            ->build()))
+    ->build();
+```
+
+</details>
+
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
-            
-# **parse**
+## **parse**
+
+Description: Parse name to components.
+
+Returns: List of name components.
+
+Method call example:
 ```php
-function parse(
-    AiNameParseRequest $request
-): AiNameComponentList 
-```
-Parse name to components.
-
-### Return type
-
-[**AiNameComponentList**](AiNameComponentList.md)
-
-### Request parameters
-```php
-$request = new AiNameParseRequest(
-    $name,
-    $language,
-    $location,
-    $encoding,
-    $script,
-    $style
-);
+$result = $api->ai()->name()->parse($request);
 ```
 
+### Parameter: request
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **string**| A name to parse. |
- **language** | **string**| An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \&quot;it\&quot; or \&quot;ita\&quot; for Italian). | [optional] [default to ]
- **location** | **string**| A geographic code such as an ISO-3166 two letter country code, for example \&quot;FR\&quot; for France. | [optional] [default to ]
- **encoding** | **string**| A character encoding name. | [optional] [default to ]
- **script** | **string**| A writing system code; starts with the ISO-15924 script name. | [optional] [default to ]
- **style** | **string**| Name writing style. Enum, available values: Formal, Informal, Legal, Academic | [optional] [default to 0]
+Description: parse method request.
+
+See parameter model documentation at [AiNameParseRequest](AiNameParseRequest.md).
+
+<details>
+    <summary>Parameter initialization example:</summary>
+
+```php
+$request = Models::AiNameParseRequest()
+    ->name('John Cane')
+    ->language('eng')
+    ->location('USA')
+    ->build();
+```
+
+</details>
+
+### Result
+
+Description: List of name components.
+
+Return type: [**AiNameComponentList**](AiNameComponentList.md)
+
+<details>
+    <summary>Result example</summary>
+
+```php
+$result = Models::aiNameComponentList()
+    ->value(array(
+        Models::aiNameComponent()
+            ->value('John')
+            ->category('FirstName')
+            ->score(0.95)
+            ->build(),
+        Models::aiNameComponent()
+            ->value('Cane')
+            ->category('LastName')
+            ->score(0.5)
+            ->position(5)
+            ->build(),
+        Models::aiNameComponent()
+            ->value('%F%L')
+            ->category('Format')
+            ->build(),
+        Models::aiNameComponent()
+            ->value('0.5')
+            ->category('Score')
+            ->score(0.5)
+            ->build()))
+    ->build();
+```
+</details>
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```php
+$api = new EmailCloud($appKey, $appSid);
+
+// Prepare parameters:
+$request = Models::AiNameParseRequest()
+    ->name('John Cane')
+    ->language('eng')
+    ->location('USA')
+    ->build();
+
+// Call method:
+$result = $api->ai()->name()->parse($request);
+
+// Result example:
+$result = Models::aiNameComponentList()
+    ->value(array(
+        Models::aiNameComponent()
+            ->value('John')
+            ->category('FirstName')
+            ->score(0.95)
+            ->build(),
+        Models::aiNameComponent()
+            ->value('Cane')
+            ->category('LastName')
+            ->score(0.5)
+            ->position(5)
+            ->build(),
+        Models::aiNameComponent()
+            ->value('%F%L')
+            ->category('Format')
+            ->build(),
+        Models::aiNameComponent()
+            ->value('0.5')
+            ->category('Score')
+            ->score(0.5)
+            ->build()))
+    ->build();
+```
+
+</details>
 
 [[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-            
-# **parseEmailAddress**
+## **parseEmailAddress**
+
+Description: Parse person's name out of an email address.
+
+Returns: Match result.
+
+Method call example:
 ```php
-function parseEmailAddress(
-    AiNameParseEmailAddressRequest $request
-): AiNameExtractedList 
-```
-Parse person's name out of an email address.
-
-### Return type
-
-[**AiNameExtractedList**](AiNameExtractedList.md)
-
-### Request parameters
-```php
-$request = new AiNameParseEmailAddressRequest(
-    $email_address,
-    $language,
-    $location,
-    $encoding,
-    $script,
-    $style
-);
+$result = $api->ai()->name()->parseEmailAddress($request);
 ```
 
+### Parameter: request
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **email_address** | **string**| Email address to parse. |
- **language** | **string**| An ISO-639 code of the language; either 639-1 or 639-3 (e.g. \&quot;it\&quot; or \&quot;ita\&quot; for Italian). | [optional] [default to ]
- **location** | **string**| A geographic code such as an ISO-3166 two letter country code, for example \&quot;FR\&quot; for France. | [optional] [default to ]
- **encoding** | **string**| A character encoding name. | [optional] [default to ]
- **script** | **string**| A writing system code; starts with the ISO-15924 script name. | [optional] [default to ]
- **style** | **string**| Name writing style. Enum, available values: Formal, Informal, Legal, Academic | [optional] [default to 0]
+Description: parseEmailAddress method request.
+
+See parameter model documentation at [AiNameParseEmailAddressRequest](AiNameParseEmailAddressRequest.md).
+
+<details>
+    <summary>Parameter initialization example:</summary>
+
+```php
+$request = Models::AiNameParseEmailAddressRequest()
+    ->email_address('john-cane@gmail.com')
+    ->build();
+```
+
+</details>
+
+### Result
+
+Description: Match result.
+
+Return type: [**AiNameExtractedList**](AiNameExtractedList.md)
+
+<details>
+    <summary>Result example</summary>
+
+```php
+$result = ;
+```
+</details>
+
+### Complete example
+
+<details>
+    <summary>Method call example:</summary>
+
+```php
+$api = new EmailCloud($appKey, $appSid);
+
+// Prepare parameters:
+$request = Models::AiNameParseEmailAddressRequest()
+    ->email_address('john-cane@gmail.com')
+    ->build();
+
+// Call method:
+$result = $api->ai()->name()->parseEmailAddress($request);
+
+// Result example:
+$result = ;
+```
+
+</details>
 
 [[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 

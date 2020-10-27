@@ -1,8 +1,10 @@
 # MapiContactDto
 
+Represents outlook contact information.
+
 ## Properties
 Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+---- | ---- | ----------- | -----
 **electronic_addresses** | [**\Aspose\Email\Model\MapiContactElectronicAddressPropertySetDto**](MapiContactElectronicAddressPropertySetDto.md) | Specify properties for up to three different e-mail addresses and three different fax addresses. | [optional] 
 **events** | [**\Aspose\Email\Model\MapiContactEventPropertySetDto**](MapiContactEventPropertySetDto.md) | Specify events associated with a contact. | [optional] 
 **name_info** | [**\Aspose\Email\Model\MapiContactNamePropertySetDto**](MapiContactNamePropertySetDto.md) | The properties are used to specify the name of the person represented by the contact. | [optional] 
@@ -15,6 +17,31 @@ Name | Type | Description | Notes
 
  Parent class: [MapiMessageItemBaseDto](MapiMessageItemBaseDto.md)
 
-[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
+## Example
+```php
+$mapiContactDto = Models::mapiContactDto()
+    ->electronicAddresses(Models::mapiContactElectronicAddressPropertySetDto()
+        ->defaultEmailAddress(Models::mapiContactElectronicAddressDto()
+            ->emailAddress('email@aspose.com')
+            ->build())
+        ->build())
+    ->nameInfo(Models::mapiContactNamePropertySetDto()
+        ->givenName('Alex')
+        ->surname('Thomas')
+        ->build())
+    ->personalInfo(Models::mapiContactPersonalInfoPropertySetDto()
+        ->businessHomePage('www.aspose.com')
+        ->build())
+    ->professionalInfo(Models::mapiContactProfessionalPropertySetDto()
+        ->profession('GENERAL DIRECTOR')
+        ->build())
+    ->telephones(Models::mapiContactTelephonePropertySetDto()
+        ->primaryTelephoneNumber('+49 211 4247 21')
+        ->build())
+    ->build();
+```
+
+
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 

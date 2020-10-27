@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for getDiscUsage" operation.
+ * Request model for StorageApi::getDiscUsage operation.
  */
 class GetDiscUsageRequest
 {
@@ -40,7 +40,9 @@ class GetDiscUsageRequest
      */
     public function __construct($storage_name = null)             
     {
-        $this->storage_name = $storage_name;
+        if ($storage_name != null) {
+            $this->storage_name = $storage_name;
+        }
     }
 
     /**

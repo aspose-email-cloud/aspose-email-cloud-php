@@ -262,11 +262,9 @@ class DiscoverEmailConfigRequest implements ArrayAccess
      */
     public function setAddress($address)
     {
-
         if ((strlen($address) < 1)) {
             throw new \InvalidArgumentException('invalid length for $address when calling DiscoverEmailConfigRequest., must be bigger than or equal to 1.');
         }
-
         $this->container['address'] = $address;
 
         return $this;

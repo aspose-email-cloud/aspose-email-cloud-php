@@ -1,8 +1,10 @@
 # MapiContactNamePropertySetDto
 
+The properties are used to specify the name of the person represented by the contact
+
 ## Properties
 Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+---- | ---- | ----------- | -----
 **display_name** | **string** | Full name of the contact | [optional] 
 **display_name_prefix** | **string** | Title of the contact | [optional] 
 **file_under** | **string** | Name under which to file this contact when displaying a list of contacts | [optional] 
@@ -16,6 +18,6 @@ Name | Type | Description | Notes
 
 
 
-[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
