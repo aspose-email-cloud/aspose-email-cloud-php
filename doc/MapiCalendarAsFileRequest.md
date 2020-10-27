@@ -1,13 +1,57 @@
 # MapiCalendarAsFileRequest
 
+Convert MapiCalendar to file request.
+
 ## Properties
 Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+---- | ---- | ----------- | -----
 **format** | **string** | Calendar file format Enum, available values: Ics, Msg | 
 **value** | [**\Aspose\Email\Model\MapiCalendarDto**](MapiCalendarDto.md) | MAPI calendar model. | 
 
 
 
-[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
+## Example
+```php
+$mapiCalendarAsFileRequest = Models::mapiCalendarAsFileRequest()
+    ->format('Msg')
+    ->value(Models::mapiCalendarDto()
+        ->attendees(Models::mapiCalendarAttendeesDto()
+            ->appointmentRecipients(array(
+                Models::mapiRecipientDto()
+                    ->emailAddress('organizer@aspose.com')
+                    ->addressType('SMTP')
+                    ->displayName('Organizer Name')
+                    ->recipientType('MapiTo')
+                    ->build(),
+                Models::mapiRecipientDto()
+                    ->emailAddress('attendee@aspose.com')
+                    ->addressType('SMTP')
+                    ->displayName('Attendee Name')
+                    ->recipientType('MapiTo')
+                    ->build()))
+            ->build())
+        ->busyStatus('Tentative')
+        ->clientIntent(array(
+            'Manager'))
+        ->endDate(new DateTime())
+        ->location('Some location')
+        ->recurrence(Models::mapiCalendarEventRecurrenceDto()
+            ->recurrencePattern(Models::mapiCalendarDailyRecurrencePatternDto()
+                ->frequency('Daily')
+                ->occurrenceCount(10)
+                ->weekStartDay('Monday')
+                ->build())
+            ->build())
+        ->startDate(new DateTime())
+        ->organizer(Models::mapiElectronicAddressDto()
+            ->emailAddress('organizer@aspose.com')
+            ->build())
+        ->body('Some description')
+        ->subject('Some summary')
+        ->build())
+    ->build();
+```
 
+
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 

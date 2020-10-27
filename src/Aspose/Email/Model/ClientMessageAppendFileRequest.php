@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for clientMessageAppendFile" operation.
+ * Request model for ClientMessageApi::appendFile operation.
  */
 class ClientMessageAppendFileRequest
 {
@@ -44,15 +44,29 @@ class ClientMessageAppendFileRequest
      * @param string $folder Path to folder on email server to append message to.
      * @param bool $mark_as_sent Determines that appended message should be market as sent or not.
      */
-    public function __construct($account, $file, $storage = null, $account_storage_folder = null, $format = null, $folder = null, $mark_as_sent = null)             
+    public function __construct($account = null, $file = null, $storage = null, $account_storage_folder = null, $format = null, $folder = null, $mark_as_sent = null)             
     {
-        $this->account = $account;
-        $this->file = $file;
-        $this->storage = $storage;
-        $this->account_storage_folder = $account_storage_folder;
-        $this->format = $format;
-        $this->folder = $folder;
-        $this->mark_as_sent = $mark_as_sent;
+        if ($account != null) {
+            $this->account = $account;
+        }
+        if ($file != null) {
+            $this->file = $file;
+        }
+        if ($storage != null) {
+            $this->storage = $storage;
+        }
+        if ($account_storage_folder != null) {
+            $this->account_storage_folder = $account_storage_folder;
+        }
+        if ($format != null) {
+            $this->format = $format;
+        }
+        if ($folder != null) {
+            $this->folder = $folder;
+        }
+        if ($mark_as_sent != null) {
+            $this->mark_as_sent = $mark_as_sent;
+        }
     }
 
     /**

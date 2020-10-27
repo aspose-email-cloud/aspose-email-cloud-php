@@ -53,7 +53,6 @@ class EmailConfigApi extends ApiBase
         parent::__construct($client, $config, $selector);
     }
 
-            
     /**
      * Operation discover
      *
@@ -197,7 +196,7 @@ class EmailConfigApi extends ApiBase
             $headerParams
         );
     }
-            
+
     /**
      * Operation discoverOauth
      *
@@ -319,7 +318,7 @@ class EmailConfigApi extends ApiBase
         $path = '/email/config/discover/oauth';
         return $this->toClientRequest('PUT', $httpBody, $path, [], [], [], false, $headers, []);
     }
-            
+
     /**
      * Operation discoverPassword
      *

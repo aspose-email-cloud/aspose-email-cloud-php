@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for contactFromFile" operation.
+ * Request model for ContactApi::fromFile operation.
  */
 class ContactFromFileRequest
 {
@@ -39,10 +39,14 @@ class ContactFromFileRequest
      * @param string $format File format Enum, available values: VCard, WebDav, Msg
      * @param \SplFileObject $file File to convert
      */
-    public function __construct($format, $file)             
+    public function __construct($format = null, $file = null)             
     {
-        $this->format = $format;
-        $this->file = $file;
+        if ($format != null) {
+            $this->format = $format;
+        }
+        if ($file != null) {
+            $this->file = $file;
+        }
     }
 
     /**

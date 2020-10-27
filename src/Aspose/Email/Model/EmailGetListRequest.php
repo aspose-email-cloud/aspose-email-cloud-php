@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for emailGetList" operation.
+ * Request model for EmailApi::getList operation.
  */
 class EmailGetListRequest
 {
@@ -42,13 +42,23 @@ class EmailGetListRequest
      * @param int $items_per_page Count of items on page.
      * @param int $page_number Page number.
      */
-    public function __construct($format, $folder = null, $storage = null, $items_per_page = null, $page_number = null)             
+    public function __construct($format = null, $folder = null, $storage = null, $items_per_page = null, $page_number = null)             
     {
-        $this->format = $format;
-        $this->folder = $folder;
-        $this->storage = $storage;
-        $this->items_per_page = $items_per_page;
-        $this->page_number = $page_number;
+        if ($format != null) {
+            $this->format = $format;
+        }
+        if ($folder != null) {
+            $this->folder = $folder;
+        }
+        if ($storage != null) {
+            $this->storage = $storage;
+        }
+        if ($items_per_page != null) {
+            $this->items_per_page = $items_per_page;
+        }
+        if ($page_number != null) {
+            $this->page_number = $page_number;
+        }
     }
 
     /**
@@ -76,3 +86,4 @@ class EmailGetListRequest
      */
     public $page_number;
 }
+

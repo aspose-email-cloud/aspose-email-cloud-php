@@ -252,11 +252,9 @@ class EmailClientAccountCredentials implements ArrayAccess
      */
     public function setLogin($login)
     {
-
         if ((strlen($login) < 1)) {
             throw new \InvalidArgumentException('invalid length for $login when calling EmailClientAccountCredentials., must be bigger than or equal to 1.');
         }
-
         $this->container['login'] = $login;
 
         return $this;

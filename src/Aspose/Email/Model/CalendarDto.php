@@ -655,11 +655,9 @@ class CalendarDto implements ArrayAccess
      */
     public function setLocation($location)
     {
-
         if ((strlen($location) < 1)) {
             throw new \InvalidArgumentException('invalid length for $location when calling CalendarDto., must be bigger than or equal to 1.');
         }
-
         $this->container['location'] = $location;
 
         return $this;

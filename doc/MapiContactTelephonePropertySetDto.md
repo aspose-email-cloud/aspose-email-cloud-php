@@ -1,8 +1,10 @@
 # MapiContactTelephonePropertySetDto
 
+Specify optional telephone numbers for the contact.
+
 ## Properties
 Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+---- | ---- | ----------- | -----
 **is_empty** | **bool** | Shows if MapiContactTelephonePropertySet is empty | 
 **default_telephone_number** | **string** | Default value of electronic address Uses when user does not set any electronic address if UseAutocomplete property is set 'true' | [optional] 
 **use_autocomplete** | **bool** | Indicates that one electronic address is completed automatically in case if user does not set any electronic address | 
@@ -25,6 +27,6 @@ Name | Type | Description | Notes
 
 
 
-[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 

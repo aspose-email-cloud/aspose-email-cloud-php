@@ -53,7 +53,6 @@ class EmailApi extends ApiBase
         parent::__construct($client, $config, $selector);
     }
 
-            
     /**
      * Operation asFile
      *
@@ -175,7 +174,7 @@ class EmailApi extends ApiBase
         $path = '/email/as-file';
         return $this->toClientRequest('PUT', $httpBody, $path, [], [], [], false, $headers, []);
     }
-            
+
     /**
      * Operation asMapi
      *
@@ -297,7 +296,7 @@ class EmailApi extends ApiBase
         $path = '/email/as-mapi';
         return $this->toClientRequest('PUT', $httpBody, $path, [], [], [], false, $headers, []);
     }
-            
+
     /**
      * Operation convert
      *
@@ -465,7 +464,7 @@ class EmailApi extends ApiBase
             $headerParams
         );
     }
-            
+
     /**
      * Operation fromFile
      *
@@ -624,7 +623,7 @@ class EmailApi extends ApiBase
             $headerParams
         );
     }
-            
+
     /**
      * Operation get
      *
@@ -780,7 +779,7 @@ class EmailApi extends ApiBase
             $headerParams
         );
     }
-            
+
     /**
      * Operation getAsFile
      *
@@ -936,7 +935,7 @@ class EmailApi extends ApiBase
             $headerParams
         );
     }
-            
+
     /**
      * Operation getList
      *
@@ -1089,7 +1088,7 @@ class EmailApi extends ApiBase
             $headerParams
         );
     }
-            
+
     /**
      * Operation save
      *

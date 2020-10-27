@@ -3,7 +3,7 @@
 All URIs are relative to *https://api.aspose.cloud/v4.0*
 
 Method | HTTP request | Description
-------------- | ------------- | -------------
+------ | ------------ | -----------
 [**asAlternate**](CalendarApi.md#asAlternate) | **PUT** /email/Calendar/as-alternate | Convert iCalendar to AlternateView
 [**asFile**](CalendarApi.md#asFile) | **PUT** /email/Calendar/as-file | Converts calendar model to specified format and returns as file.
 [**asMapi**](CalendarApi.md#asMapi) | **PUT** /email/Calendar/as-mapi | Converts CalendarDto to MapiCalendarDto.
@@ -14,5 +14,3 @@ Method | HTTP request | Description
 [**getAsFile**](CalendarApi.md#getAsFile) | **GET** /email/Calendar/as-file | Converts calendar document from storage to specified format and returns as file.
 [**getList**](CalendarApi.md#getList) | **GET** /email/Calendar/list | Get iCalendar list from storage folder.
 [**save**](CalendarApi.md#save) | **PUT** /email/Calendar | Save iCalendar
-
-            

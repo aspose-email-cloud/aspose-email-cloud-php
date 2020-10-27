@@ -291,11 +291,9 @@ class ContactPhoto implements ArrayAccess
      */
     public function setBase64Data($base64_data)
     {
-
         if ((strlen($base64_data) < 1)) {
             throw new \InvalidArgumentException('invalid length for $base64_data when calling ContactPhoto., must be bigger than or equal to 1.');
         }
-
         $this->container['base64_data'] = $base64_data;
 
         return $this;

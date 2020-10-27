@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for emailConvert" operation.
+ * Request model for EmailApi::convert operation.
  */
 class EmailConvertRequest
 {
@@ -40,11 +40,17 @@ class EmailConvertRequest
      * @param string $to_format File format to convert from Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
      * @param \SplFileObject $file File to convert
      */
-    public function __construct($from_format, $to_format, $file)             
+    public function __construct($from_format = null, $to_format = null, $file = null)             
     {
-        $this->from_format = $from_format;
-        $this->to_format = $to_format;
-        $this->file = $file;
+        if ($from_format != null) {
+            $this->from_format = $from_format;
+        }
+        if ($to_format != null) {
+            $this->to_format = $to_format;
+        }
+        if ($file != null) {
+            $this->file = $file;
+        }
     }
 
     /**

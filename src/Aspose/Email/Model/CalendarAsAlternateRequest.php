@@ -286,11 +286,9 @@ class CalendarAsAlternateRequest implements ArrayAccess
      */
     public function setAction($action)
     {
-
         if ((strlen($action) < 1)) {
             throw new \InvalidArgumentException('invalid length for $action when calling CalendarAsAlternateRequest., must be bigger than or equal to 1.');
         }
-
         $this->container['action'] = $action;
 
         return $this;

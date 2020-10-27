@@ -1,8 +1,10 @@
 # MapiCalendarTimeZoneInfoDto
 
+Represents the mapi calendar time zone rule.
+
 ## Properties
 Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+---- | ---- | ----------- | -----
 **bias** | **int** | Time zone's offset in minutes from UTC. | 
 **daylight_bias** | **int** | Offset in minutes from lBias during daylight saving time. | 
 **daylight_date** | [**\Aspose\Email\Model\MapiCalendarTimeZoneRuleDto**](MapiCalendarTimeZoneRuleDto.md) | Date and local time that indicate when to begin using the DaylightBias. | [optional] 
@@ -13,6 +15,6 @@ Name | Type | Description | Notes
 
 
 
-[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
+[[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
 
