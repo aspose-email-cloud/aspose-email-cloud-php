@@ -1,314 +1,157 @@
-# FolderApi ($emailCloud->cloudStorage()->folder())
+# Aspose\Email\FolderApi
 
-Folder operations controller
-
-## **copyFolder**
-
-Description: Copy folder
-
-
-Method call example:
+            
+# **copyFolder**
 ```php
-$api->cloudStorage()->folder()->copyFolder($request);
+function copyFolder(
+    CopyFolderRequest $request
+): 
+```
+Copy folder
+
+### Return type
+
+void (empty response body)
+
+### Request parameters
+```php
+$request = new CopyFolderRequest(
+    $src_path,
+    $dest_path,
+    $src_storage_name,
+    $dest_storage_name
+);
 ```
 
-### Parameter: request
 
-Description: copyFolder method request.
-
-See parameter model documentation at [CopyFolderRequest](CopyFolderRequest.md).
-
-<details>
-    <summary>Parameter initialization example:</summary>
-
-```php
-$request = Models::CopyFolderRequest()
-    ->src_path('/storage/path/to/source/folder')
-    ->dest_path('/storage/path/to/destination/folder')
-    ->src_storage_name('First Storage')
-    ->dest_storage_name('Other Storage')
-    ->build();
-```
-
-</details>
-
-### Result
-
-Return type: void (empty response body)
-
-### Complete example
-
-<details>
-    <summary>Method call example:</summary>
-
-```php
-$api = new EmailCloud($appKey, $appSid);
-
-// Prepare parameters:
-$request = Models::CopyFolderRequest()
-    ->src_path('/storage/path/to/source/folder')
-    ->dest_path('/storage/path/to/destination/folder')
-    ->src_storage_name('First Storage')
-    ->dest_storage_name('Other Storage')
-    ->build();
-
-// Call method:
-$api->cloudStorage()->folder()->copyFolder($request);
-```
-
-</details>
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **src_path** | **string**| Source folder path e.g. &#39;/src&#39; |
+ **dest_path** | **string**| Destination folder path e.g. &#39;/dst&#39; |
+ **src_storage_name** | **string**| Source storage name | [optional]
+ **dest_storage_name** | **string**| Destination storage name | [optional]
 
 [[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-## **createFolder**
-
-Description: Create the folder
-
-
-Method call example:
+            
+# **createFolder**
 ```php
-$api->cloudStorage()->folder()->createFolder($request);
+function createFolder(
+    CreateFolderRequest $request
+): 
+```
+Create the folder
+
+### Return type
+
+void (empty response body)
+
+### Request parameters
+```php
+$request = new CreateFolderRequest(
+    $path,
+    $storage_name
+);
 ```
 
-### Parameter: request
 
-Description: createFolder method request.
-
-See parameter model documentation at [CreateFolderRequest](CreateFolderRequest.md).
-
-<details>
-    <summary>Parameter initialization example:</summary>
-
-```php
-$request = Models::CreateFolderRequest()
-    ->path('/storage/path/to/new/folder')
-    ->storage_name('First Storage')
-    ->build();
-```
-
-</details>
-
-### Result
-
-Return type: void (empty response body)
-
-### Complete example
-
-<details>
-    <summary>Method call example:</summary>
-
-```php
-$api = new EmailCloud($appKey, $appSid);
-
-// Prepare parameters:
-$request = Models::CreateFolderRequest()
-    ->path('/storage/path/to/new/folder')
-    ->storage_name('First Storage')
-    ->build();
-
-// Call method:
-$api->cloudStorage()->folder()->createFolder($request);
-```
-
-</details>
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **path** | **string**| Folder path to create e.g. &#39;folder_1/folder_2/&#39; |
+ **storage_name** | **string**| Storage name | [optional]
 
 [[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-## **deleteFolder**
-
-Description: Delete folder
-
-
-Method call example:
+            
+# **deleteFolder**
 ```php
-$api->cloudStorage()->folder()->deleteFolder($request);
+function deleteFolder(
+    DeleteFolderRequest $request
+): 
+```
+Delete folder
+
+### Return type
+
+void (empty response body)
+
+### Request parameters
+```php
+$request = new DeleteFolderRequest(
+    $path,
+    $storage_name,
+    $recursive
+);
 ```
 
-### Parameter: request
 
-Description: deleteFolder method request.
-
-See parameter model documentation at [DeleteFolderRequest](DeleteFolderRequest.md).
-
-<details>
-    <summary>Parameter initialization example:</summary>
-
-```php
-$request = Models::DeleteFolderRequest()
-    ->path('/storage/path/to/folder')
-    ->storage_name('First Storage')
-    ->recursive(true)
-    ->build();
-```
-
-</details>
-
-### Result
-
-Return type: void (empty response body)
-
-### Complete example
-
-<details>
-    <summary>Method call example:</summary>
-
-```php
-$api = new EmailCloud($appKey, $appSid);
-
-// Prepare parameters:
-$request = Models::DeleteFolderRequest()
-    ->path('/storage/path/to/folder')
-    ->storage_name('First Storage')
-    ->recursive(true)
-    ->build();
-
-// Call method:
-$api->cloudStorage()->folder()->deleteFolder($request);
-```
-
-</details>
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **path** | **string**| Folder path e.g. &#39;/folder&#39; |
+ **storage_name** | **string**| Storage name | [optional]
+ **recursive** | **bool**| Enable to delete folders, subfolders and files | [optional] [default to false]
 
 [[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-## **getFilesList**
-
-Description: Get all files and folders within a folder
-
-Returns: Returns all files and folders contained by the folder.
-
-Method call example:
+            
+# **getFilesList**
 ```php
-$result = $api->cloudStorage()->folder()->getFilesList($request);
+function getFilesList(
+    GetFilesListRequest $request
+): FilesList 
+```
+Get all files and folders within a folder
+
+### Return type
+
+[**FilesList**](FilesList.md)
+
+### Request parameters
+```php
+$request = new GetFilesListRequest(
+    $path,
+    $storage_name
+);
 ```
 
-### Parameter: request
 
-Description: getFilesList method request.
-
-See parameter model documentation at [GetFilesListRequest](GetFilesListRequest.md).
-
-<details>
-    <summary>Parameter initialization example:</summary>
-
-```php
-$request = Models::GetFilesListRequest()
-    ->path('/storage/path/to/folder')
-    ->storage_name('First Storage')
-    ->build();
-```
-
-</details>
-
-### Result
-
-Description: Returns all files and folders contained by the folder.
-
-Return type: [**FilesList**](FilesList.md)
-
-<details>
-    <summary>Result example</summary>
-
-```php
-$result = Models::filesList()
-    ->value(array(
-        Models::storageFile()
-            ->name('file.ext')
-            ->modifiedDate(new DateTime())
-            ->size(1024)
-            ->path('/path/to/file/on/storage')
-            ->build()))
-    ->build();
-```
-</details>
-
-### Complete example
-
-<details>
-    <summary>Method call example:</summary>
-
-```php
-$api = new EmailCloud($appKey, $appSid);
-
-// Prepare parameters:
-$request = Models::GetFilesListRequest()
-    ->path('/storage/path/to/folder')
-    ->storage_name('First Storage')
-    ->build();
-
-// Call method:
-$result = $api->cloudStorage()->folder()->getFilesList($request);
-
-// Result example:
-$result = Models::filesList()
-    ->value(array(
-        Models::storageFile()
-            ->name('file.ext')
-            ->modifiedDate(new DateTime())
-            ->size(1024)
-            ->path('/path/to/file/on/storage')
-            ->build()))
-    ->build();
-```
-
-</details>
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **path** | **string**| Folder path e.g. &#39;/folder&#39; |
+ **storage_name** | **string**| Storage name | [optional]
 
 [[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-## **moveFolder**
-
-Description: Move folder
-
-
-Method call example:
+            
+# **moveFolder**
 ```php
-$api->cloudStorage()->folder()->moveFolder($request);
+function moveFolder(
+    MoveFolderRequest $request
+): 
+```
+Move folder
+
+### Return type
+
+void (empty response body)
+
+### Request parameters
+```php
+$request = new MoveFolderRequest(
+    $src_path,
+    $dest_path,
+    $src_storage_name,
+    $dest_storage_name
+);
 ```
 
-### Parameter: request
 
-Description: moveFolder method request.
-
-See parameter model documentation at [MoveFolderRequest](MoveFolderRequest.md).
-
-<details>
-    <summary>Parameter initialization example:</summary>
-
-```php
-$request = Models::MoveFolderRequest()
-    ->src_path('/storage/path/to/source/folder')
-    ->dest_path('/storage/path/to/destination/folder')
-    ->src_storage_name('First Storage')
-    ->dest_storage_name('Other Storage')
-    ->build();
-```
-
-</details>
-
-### Result
-
-Return type: void (empty response body)
-
-### Complete example
-
-<details>
-    <summary>Method call example:</summary>
-
-```php
-$api = new EmailCloud($appKey, $appSid);
-
-// Prepare parameters:
-$request = Models::MoveFolderRequest()
-    ->src_path('/storage/path/to/source/folder')
-    ->dest_path('/storage/path/to/destination/folder')
-    ->src_storage_name('First Storage')
-    ->dest_storage_name('Other Storage')
-    ->build();
-
-// Call method:
-$api->cloudStorage()->folder()->moveFolder($request);
-```
-
-</details>
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **src_path** | **string**| Folder path to move e.g. &#39;/folder&#39; |
+ **dest_path** | **string**| Destination folder path to move to e.g &#39;/dst&#39; |
+ **src_storage_name** | **string**| Source storage name | [optional]
+ **dest_storage_name** | **string**| Destination storage name | [optional]
 
 [[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 

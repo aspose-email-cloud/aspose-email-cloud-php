@@ -53,6 +53,7 @@ class DisposableEmailApi extends ApiBase
         parent::__construct($client, $config, $selector);
     }
 
+            
     /**
      * Operation isDisposable
      *

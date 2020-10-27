@@ -1,10 +1,8 @@
 # MapiContactOtherPropertySetDto
 
-The properties are used to specify additional properties of contact.
-
 ## Properties
 Name | Type | Description | Notes
----- | ---- | ----------- | -----
+------------ | ------------- | ------------- | -------------
 **private** | **bool** | Indicates whether the end-user wants this message object hidden from other users who have access to the message object. | 
 **journal** | **bool** | Specifies whether to create a journal for each action associated with this contact. | 
 **reminder_time** | [**\DateTime**](\DateTime.md) | Specifies the initial signal time for a reminder. | 
@@ -16,6 +14,6 @@ Name | Type | Description | Notes
 
 
 
-
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
+
 

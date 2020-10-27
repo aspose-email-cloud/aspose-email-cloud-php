@@ -1,1021 +1,225 @@
-# ContactApi ($emailCloud->contact())
+# Aspose\Email\ContactApi
 
-Contact document operations. Supported formats: VCard, MSG, WebDav
+            
+# asFile
 
-## asFile
-
-Description: Converts contact model to specified format and returns as file
-
-Returns: File stream in specified format
-
-Method call example:
 ```php
-$result = $api->contact()->asFile($request);
+function asFile(
+    ContactAsFileRequest $request
+): \SplFileObject 
 ```
 
-### Parameter: request
+Converts contact model to specified format and returns as file
 
-Description: Contact model and format to convert
+### Return type
+
+[**\SplFileObject**](\SplFileObject.md)
+
+### request Parameter
 
 See parameter model documentation at [ContactAsFileRequest](ContactAsFileRequest.md)
 
-<details>
-    <summary>Parameter initialization example:</summary>
-    
-```php
-$request = Models::contactAsFileRequest()
-    ->value(Models::contactDto()
-        ->attachments(array(
-            Models::attachment()
-                ->name('attachment.txt')
-                ->base64Data('U29tZSBmaWxlIGNvbnRlbnQ=')
-                ->build()))
-        ->displayName('Alex Thomas')
-        ->emailAddresses(array(
-            Models::emailAddress()
-                ->category(Models::enumWithCustomOfEmailAddressCategory()
-                    ->value('Custom')
-                    ->description('Partners')
-                    ->build())
-                ->displayName('Alex Thomas Partners')
-                ->preferred(true)
-                ->address('email@aspose.com')
-                ->build()))
-        ->gender('Male')
-        ->givenName('Alex')
-        ->phoneNumbers(array(
-            Models::phoneNumber()
-                ->category(Models::enumWithCustomOfPhoneNumberCategory()
-                    ->value('Office')
-                    ->build())
-                ->number('+49 211 4247 21')
-                ->preferred(true)
-                ->build()))
-        ->profession('GENERAL DIRECTOR')
-        ->surname('Thomas')
-        ->urls(array(
-            Models::url()
-                ->category(Models::enumWithCustomOfUrlCategory()
-                    ->value('Work')
-                    ->build())
-                ->preferred(true)
-                ->href('www.aspose.com')
-                ->build()))
-        ->build())
-    ->build();
-```
-
-</details>
-
-
-### Result
-
-Description: File stream in specified format
-
-Return type: [**\SplFileObject**](\SplFileObject.md)
-
-### Complete example
-
-<details>
-    <summary>Method call example:</summary>
-
-```php
-$api = new EmailCloud($appKey, $appSid);
-
-// Prepare parameters:
-$request = Models::contactAsFileRequest()
-    ->value(Models::contactDto()
-        ->attachments(array(
-            Models::attachment()
-                ->name('attachment.txt')
-                ->base64Data('U29tZSBmaWxlIGNvbnRlbnQ=')
-                ->build()))
-        ->displayName('Alex Thomas')
-        ->emailAddresses(array(
-            Models::emailAddress()
-                ->category(Models::enumWithCustomOfEmailAddressCategory()
-                    ->value('Custom')
-                    ->description('Partners')
-                    ->build())
-                ->displayName('Alex Thomas Partners')
-                ->preferred(true)
-                ->address('email@aspose.com')
-                ->build()))
-        ->gender('Male')
-        ->givenName('Alex')
-        ->phoneNumbers(array(
-            Models::phoneNumber()
-                ->category(Models::enumWithCustomOfPhoneNumberCategory()
-                    ->value('Office')
-                    ->build())
-                ->number('+49 211 4247 21')
-                ->preferred(true)
-                ->build()))
-        ->profession('GENERAL DIRECTOR')
-        ->surname('Thomas')
-        ->urls(array(
-            Models::url()
-                ->category(Models::enumWithCustomOfUrlCategory()
-                    ->value('Work')
-                    ->build())
-                ->preferred(true)
-                ->href('www.aspose.com')
-                ->build()))
-        ->build())
-    ->build();
-
-// Call method:
-$result = $api->contact()->asFile($request);
-```
-
-</details>
-
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
-## asMapi
+            
+# asMapi
 
-Description: Converts ContactDto to MapiContactDto.
-
-Returns: MAPI model contact representation
-
-Method call example:
 ```php
-$result = $api->contact()->asMapi($contact_dto);
+function asMapi(
+    ContactDto $contact_dto
+): MapiContactDto 
 ```
 
-### Parameter: contact_dto
+Converts ContactDto to MapiContactDto.
 
-Description: Contact model to convert
+### Return type
+
+[**MapiContactDto**](MapiContactDto.md)
+
+### contact_dto Parameter
 
 See parameter model documentation at [ContactDto](ContactDto.md)
 
-<details>
-    <summary>Parameter initialization example:</summary>
-    
-```php
-$contact_dto = Models::contactDto()
-    ->attachments(array(
-        Models::attachment()
-            ->name('attachment.txt')
-            ->base64Data('U29tZSBmaWxlIGNvbnRlbnQ=')
-            ->build()))
-    ->displayName('Alex Thomas')
-    ->emailAddresses(array(
-        Models::emailAddress()
-            ->category(Models::enumWithCustomOfEmailAddressCategory()
-                ->value('Custom')
-                ->description('Partners')
-                ->build())
-            ->displayName('Alex Thomas Partners')
-            ->preferred(true)
-            ->address('email@aspose.com')
-            ->build()))
-    ->gender('Male')
-    ->givenName('Alex')
-    ->phoneNumbers(array(
-        Models::phoneNumber()
-            ->category(Models::enumWithCustomOfPhoneNumberCategory()
-                ->value('Office')
-                ->build())
-            ->number('+49 211 4247 21')
-            ->preferred(true)
-            ->build()))
-    ->profession('GENERAL DIRECTOR')
-    ->surname('Thomas')
-    ->urls(array(
-        Models::url()
-            ->category(Models::enumWithCustomOfUrlCategory()
-                ->value('Work')
-                ->build())
-            ->preferred(true)
-            ->href('www.aspose.com')
-            ->build()))
-    ->build();
-```
-
-</details>
-
-
-### Result
-
-Description: MAPI model contact representation
-
-Return type: [**MapiContactDto**](MapiContactDto.md)
-
-<details>
-    <summary>Result example</summary>
-
-```php
-$result = Models::mapiContactDto()
-    ->electronicAddresses(Models::mapiContactElectronicAddressPropertySetDto()
-        ->defaultEmailAddress(Models::mapiContactElectronicAddressDto()
-            ->emailAddress('email@aspose.com')
-            ->build())
-        ->build())
-    ->nameInfo(Models::mapiContactNamePropertySetDto()
-        ->givenName('Alex')
-        ->surname('Thomas')
-        ->build())
-    ->personalInfo(Models::mapiContactPersonalInfoPropertySetDto()
-        ->businessHomePage('www.aspose.com')
-        ->build())
-    ->professionalInfo(Models::mapiContactProfessionalPropertySetDto()
-        ->profession('GENERAL DIRECTOR')
-        ->build())
-    ->telephones(Models::mapiContactTelephonePropertySetDto()
-        ->primaryTelephoneNumber('+49 211 4247 21')
-        ->build())
-    ->build();
-```
-</details>
-
-### Complete example
-
-<details>
-    <summary>Method call example:</summary>
-
-```php
-$api = new EmailCloud($appKey, $appSid);
-
-// Prepare parameters:
-$contact_dto = Models::contactDto()
-    ->attachments(array(
-        Models::attachment()
-            ->name('attachment.txt')
-            ->base64Data('U29tZSBmaWxlIGNvbnRlbnQ=')
-            ->build()))
-    ->displayName('Alex Thomas')
-    ->emailAddresses(array(
-        Models::emailAddress()
-            ->category(Models::enumWithCustomOfEmailAddressCategory()
-                ->value('Custom')
-                ->description('Partners')
-                ->build())
-            ->displayName('Alex Thomas Partners')
-            ->preferred(true)
-            ->address('email@aspose.com')
-            ->build()))
-    ->gender('Male')
-    ->givenName('Alex')
-    ->phoneNumbers(array(
-        Models::phoneNumber()
-            ->category(Models::enumWithCustomOfPhoneNumberCategory()
-                ->value('Office')
-                ->build())
-            ->number('+49 211 4247 21')
-            ->preferred(true)
-            ->build()))
-    ->profession('GENERAL DIRECTOR')
-    ->surname('Thomas')
-    ->urls(array(
-        Models::url()
-            ->category(Models::enumWithCustomOfUrlCategory()
-                ->value('Work')
-                ->build())
-            ->preferred(true)
-            ->href('www.aspose.com')
-            ->build()))
-    ->build();
-
-// Call method:
-$result = $api->contact()->asMapi($contact_dto);
-
-// Result example:
-$result = Models::mapiContactDto()
-    ->electronicAddresses(Models::mapiContactElectronicAddressPropertySetDto()
-        ->defaultEmailAddress(Models::mapiContactElectronicAddressDto()
-            ->emailAddress('email@aspose.com')
-            ->build())
-        ->build())
-    ->nameInfo(Models::mapiContactNamePropertySetDto()
-        ->givenName('Alex')
-        ->surname('Thomas')
-        ->build())
-    ->personalInfo(Models::mapiContactPersonalInfoPropertySetDto()
-        ->businessHomePage('www.aspose.com')
-        ->build())
-    ->professionalInfo(Models::mapiContactProfessionalPropertySetDto()
-        ->profession('GENERAL DIRECTOR')
-        ->build())
-    ->telephones(Models::mapiContactTelephonePropertySetDto()
-        ->primaryTelephoneNumber('+49 211 4247 21')
-        ->build())
-    ->build();
-```
-
-</details>
-
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
-## **convert**
-
-Description: Converts contact document to specified format and returns as file
-
-Returns: File stream in specified destination format
-
-Method call example:
+            
+# **convert**
 ```php
-$result = $api->contact()->convert($request);
+function convert(
+    ContactConvertRequest $request
+): \SplFileObject 
+```
+Converts contact document to specified format and returns as file
+
+### Return type
+
+[**\SplFileObject**](\SplFileObject.md)
+
+### Request parameters
+```php
+$request = new ContactConvertRequest(
+    $to_format,
+    $from_format,
+    $file
+);
 ```
 
-### Parameter: request
 
-Description: convert method request.
-
-See parameter model documentation at [ContactConvertRequest](ContactConvertRequest.md).
-
-<details>
-    <summary>Parameter initialization example:</summary>
-
-```php
-$request = Models::ContactConvertRequest()
-    ->to_format('VCard')
-    ->from_format('Msg')
-    ->file(new SplFileObject('/path/to/contact.msg'))
-    ->build();
-```
-
-</details>
-
-### Result
-
-Description: File stream in specified destination format
-
-Return type: [**\SplFileObject**](\SplFileObject.md)
-
-### Complete example
-
-<details>
-    <summary>Method call example:</summary>
-
-```php
-$api = new EmailCloud($appKey, $appSid);
-
-// Prepare parameters:
-$request = Models::ContactConvertRequest()
-    ->to_format('VCard')
-    ->from_format('Msg')
-    ->file(new SplFileObject('/path/to/contact.msg'))
-    ->build();
-
-// Call method:
-$result = $api->contact()->convert($request);
-```
-
-</details>
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **to_format** | **string**| File format to convert to Enum, available values: VCard, WebDav, Msg |
+ **from_format** | **string**| File format to convert from Enum, available values: VCard, WebDav, Msg |
+ **file** | **\SplFileObject**| File to convert |
 
 [[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-## **fromFile**
-
-Description: Converts contact document to a model representation
-
-Returns: Contact model
-
-Method call example:
+            
+# **fromFile**
 ```php
-$result = $api->contact()->fromFile($request);
+function fromFile(
+    ContactFromFileRequest $request
+): ContactDto 
+```
+Converts contact document to a model representation
+
+### Return type
+
+[**ContactDto**](ContactDto.md)
+
+### Request parameters
+```php
+$request = new ContactFromFileRequest(
+    $format,
+    $file
+);
 ```
 
-### Parameter: request
 
-Description: fromFile method request.
-
-See parameter model documentation at [ContactFromFileRequest](ContactFromFileRequest.md).
-
-<details>
-    <summary>Parameter initialization example:</summary>
-
-```php
-$request = Models::ContactFromFileRequest()
-    ->format('Msg')
-    ->file(new SplFileObject('/path/to/contact.msg'))
-    ->build();
-```
-
-</details>
-
-### Result
-
-Description: Contact model
-
-Return type: [**ContactDto**](ContactDto.md)
-
-<details>
-    <summary>Result example</summary>
-
-```php
-$result = Models::contactDto()
-    ->attachments(array(
-        Models::attachment()
-            ->name('attachment.txt')
-            ->base64Data('U29tZSBmaWxlIGNvbnRlbnQ=')
-            ->build()))
-    ->displayName('Alex Thomas')
-    ->emailAddresses(array(
-        Models::emailAddress()
-            ->category(Models::enumWithCustomOfEmailAddressCategory()
-                ->value('Custom')
-                ->description('Partners')
-                ->build())
-            ->displayName('Alex Thomas Partners')
-            ->preferred(true)
-            ->address('email@aspose.com')
-            ->build()))
-    ->gender('Male')
-    ->givenName('Alex')
-    ->phoneNumbers(array(
-        Models::phoneNumber()
-            ->category(Models::enumWithCustomOfPhoneNumberCategory()
-                ->value('Office')
-                ->build())
-            ->number('+49 211 4247 21')
-            ->preferred(true)
-            ->build()))
-    ->profession('GENERAL DIRECTOR')
-    ->surname('Thomas')
-    ->urls(array(
-        Models::url()
-            ->category(Models::enumWithCustomOfUrlCategory()
-                ->value('Work')
-                ->build())
-            ->preferred(true)
-            ->href('www.aspose.com')
-            ->build()))
-    ->build();
-```
-</details>
-
-### Complete example
-
-<details>
-    <summary>Method call example:</summary>
-
-```php
-$api = new EmailCloud($appKey, $appSid);
-
-// Prepare parameters:
-$request = Models::ContactFromFileRequest()
-    ->format('Msg')
-    ->file(new SplFileObject('/path/to/contact.msg'))
-    ->build();
-
-// Call method:
-$result = $api->contact()->fromFile($request);
-
-// Result example:
-$result = Models::contactDto()
-    ->attachments(array(
-        Models::attachment()
-            ->name('attachment.txt')
-            ->base64Data('U29tZSBmaWxlIGNvbnRlbnQ=')
-            ->build()))
-    ->displayName('Alex Thomas')
-    ->emailAddresses(array(
-        Models::emailAddress()
-            ->category(Models::enumWithCustomOfEmailAddressCategory()
-                ->value('Custom')
-                ->description('Partners')
-                ->build())
-            ->displayName('Alex Thomas Partners')
-            ->preferred(true)
-            ->address('email@aspose.com')
-            ->build()))
-    ->gender('Male')
-    ->givenName('Alex')
-    ->phoneNumbers(array(
-        Models::phoneNumber()
-            ->category(Models::enumWithCustomOfPhoneNumberCategory()
-                ->value('Office')
-                ->build())
-            ->number('+49 211 4247 21')
-            ->preferred(true)
-            ->build()))
-    ->profession('GENERAL DIRECTOR')
-    ->surname('Thomas')
-    ->urls(array(
-        Models::url()
-            ->category(Models::enumWithCustomOfUrlCategory()
-                ->value('Work')
-                ->build())
-            ->preferred(true)
-            ->href('www.aspose.com')
-            ->build()))
-    ->build();
-```
-
-</details>
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **format** | **string**| File format Enum, available values: VCard, WebDav, Msg |
+ **file** | **\SplFileObject**| File to convert |
 
 [[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-## **get**
-
-Description: Get contact document from storage.
-
-Returns: Contact document.
-
-Method call example:
+            
+# **get**
 ```php
-$result = $api->contact()->get($request);
+function get(
+    ContactGetRequest $request
+): ContactDto 
+```
+Get contact document from storage.
+
+### Return type
+
+[**ContactDto**](ContactDto.md)
+
+### Request parameters
+```php
+$request = new ContactGetRequest(
+    $format,
+    $file_name,
+    $folder,
+    $storage
+);
 ```
 
-### Parameter: request
 
-Description: get method request.
-
-See parameter model documentation at [ContactGetRequest](ContactGetRequest.md).
-
-<details>
-    <summary>Parameter initialization example:</summary>
-
-```php
-$request = Models::ContactGetRequest()
-    ->format('VCard')
-    ->file_name('contact.vcf')
-    ->folder('folder/on/storage')
-    ->storage('First Storage')
-    ->build();
-```
-
-</details>
-
-### Result
-
-Description: Contact document.
-
-Return type: [**ContactDto**](ContactDto.md)
-
-<details>
-    <summary>Result example</summary>
-
-```php
-$result = Models::contactDto()
-    ->attachments(array(
-        Models::attachment()
-            ->name('attachment.txt')
-            ->base64Data('U29tZSBmaWxlIGNvbnRlbnQ=')
-            ->build()))
-    ->displayName('Alex Thomas')
-    ->emailAddresses(array(
-        Models::emailAddress()
-            ->category(Models::enumWithCustomOfEmailAddressCategory()
-                ->value('Custom')
-                ->description('Partners')
-                ->build())
-            ->displayName('Alex Thomas Partners')
-            ->preferred(true)
-            ->address('email@aspose.com')
-            ->build()))
-    ->gender('Male')
-    ->givenName('Alex')
-    ->phoneNumbers(array(
-        Models::phoneNumber()
-            ->category(Models::enumWithCustomOfPhoneNumberCategory()
-                ->value('Office')
-                ->build())
-            ->number('+49 211 4247 21')
-            ->preferred(true)
-            ->build()))
-    ->profession('GENERAL DIRECTOR')
-    ->surname('Thomas')
-    ->urls(array(
-        Models::url()
-            ->category(Models::enumWithCustomOfUrlCategory()
-                ->value('Work')
-                ->build())
-            ->preferred(true)
-            ->href('www.aspose.com')
-            ->build()))
-    ->build();
-```
-</details>
-
-### Complete example
-
-<details>
-    <summary>Method call example:</summary>
-
-```php
-$api = new EmailCloud($appKey, $appSid);
-
-// Prepare parameters:
-$request = Models::ContactGetRequest()
-    ->format('VCard')
-    ->file_name('contact.vcf')
-    ->folder('folder/on/storage')
-    ->storage('First Storage')
-    ->build();
-
-// Call method:
-$result = $api->contact()->get($request);
-
-// Result example:
-$result = Models::contactDto()
-    ->attachments(array(
-        Models::attachment()
-            ->name('attachment.txt')
-            ->base64Data('U29tZSBmaWxlIGNvbnRlbnQ=')
-            ->build()))
-    ->displayName('Alex Thomas')
-    ->emailAddresses(array(
-        Models::emailAddress()
-            ->category(Models::enumWithCustomOfEmailAddressCategory()
-                ->value('Custom')
-                ->description('Partners')
-                ->build())
-            ->displayName('Alex Thomas Partners')
-            ->preferred(true)
-            ->address('email@aspose.com')
-            ->build()))
-    ->gender('Male')
-    ->givenName('Alex')
-    ->phoneNumbers(array(
-        Models::phoneNumber()
-            ->category(Models::enumWithCustomOfPhoneNumberCategory()
-                ->value('Office')
-                ->build())
-            ->number('+49 211 4247 21')
-            ->preferred(true)
-            ->build()))
-    ->profession('GENERAL DIRECTOR')
-    ->surname('Thomas')
-    ->urls(array(
-        Models::url()
-            ->category(Models::enumWithCustomOfUrlCategory()
-                ->value('Work')
-                ->build())
-            ->preferred(true)
-            ->href('www.aspose.com')
-            ->build()))
-    ->build();
-```
-
-</details>
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **format** | **string**| Contact document format. Enum, available values: VCard, WebDav, Msg |
+ **file_name** | **string**| Contact document file name. |
+ **folder** | **string**| Path to folder in storage. | [optional]
+ **storage** | **string**| Storage name. | [optional]
 
 [[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-## **getAsFile**
-
-Description: Converts contact document from storage to specified format and returns as file
-
-Returns: File stream in specified format
-
-Method call example:
+            
+# **getAsFile**
 ```php
-$result = $api->contact()->getAsFile($request);
+function getAsFile(
+    ContactGetAsFileRequest $request
+): \SplFileObject 
+```
+Converts contact document from storage to specified format and returns as file
+
+### Return type
+
+[**\SplFileObject**](\SplFileObject.md)
+
+### Request parameters
+```php
+$request = new ContactGetAsFileRequest(
+    $file_name,
+    $to_format,
+    $from_format,
+    $storage,
+    $folder
+);
 ```
 
-### Parameter: request
 
-Description: getAsFile method request.
-
-See parameter model documentation at [ContactGetAsFileRequest](ContactGetAsFileRequest.md).
-
-<details>
-    <summary>Parameter initialization example:</summary>
-
-```php
-$request = Models::ContactGetAsFileRequest()
-    ->file_name('contact.msg')
-    ->to_format('VCard')
-    ->from_format('Msg')
-    ->storage('First Storage')
-    ->folder('folder/on/storage')
-    ->build();
-```
-
-</details>
-
-### Result
-
-Description: File stream in specified format
-
-Return type: [**\SplFileObject**](\SplFileObject.md)
-
-### Complete example
-
-<details>
-    <summary>Method call example:</summary>
-
-```php
-$api = new EmailCloud($appKey, $appSid);
-
-// Prepare parameters:
-$request = Models::ContactGetAsFileRequest()
-    ->file_name('contact.msg')
-    ->to_format('VCard')
-    ->from_format('Msg')
-    ->storage('First Storage')
-    ->folder('folder/on/storage')
-    ->build();
-
-// Call method:
-$result = $api->contact()->getAsFile($request);
-```
-
-</details>
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file_name** | **string**| Calendar document file name |
+ **to_format** | **string**| File format Enum, available values: VCard, WebDav, Msg |
+ **from_format** | **string**| File format to convert from Enum, available values: VCard, WebDav, Msg |
+ **storage** | **string**| Storage name | [optional]
+ **folder** | **string**| Path to folder in storage | [optional]
 
 [[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-## **getList**
-
-Description: Get contact list from storage folder.
-
-Returns: Contact list.
-
-Method call example:
+            
+# **getList**
 ```php
-$result = $api->contact()->getList($request);
+function getList(
+    ContactGetListRequest $request
+): ContactStorageList 
+```
+Get contact list from storage folder.
+
+### Return type
+
+[**ContactStorageList**](ContactStorageList.md)
+
+### Request parameters
+```php
+$request = new ContactGetListRequest(
+    $format,
+    $folder,
+    $storage,
+    $items_per_page,
+    $page_number
+);
 ```
 
-### Parameter: request
 
-Description: getList method request.
-
-See parameter model documentation at [ContactGetListRequest](ContactGetListRequest.md).
-
-<details>
-    <summary>Parameter initialization example:</summary>
-
-```php
-$request = Models::ContactGetListRequest()
-    ->format('VCard')
-    ->folder('folder/on/storage')
-    ->storage('First Storage')
-    ->items_per_page(10)
-    ->page_number(0)
-    ->build();
-```
-
-</details>
-
-### Result
-
-Description: Contact list.
-
-Return type: [**ContactStorageList**](ContactStorageList.md)
-
-<details>
-    <summary>Result example</summary>
-
-```php
-$result = Models::contactStorageList()
-    ->value(array(
-        Models::storageModelOfContactDto()
-            ->storageFile(Models::storageFileLocation()
-                ->fileName('contact.vcf')
-                ->storage('First Storage')
-                ->folderPath('file/location/folder/on/storage')
-                ->build())
-            ->value(Models::contactDto()
-                ->attachments(array(
-                    Models::attachment()
-                        ->name('attachment.txt')
-                        ->base64Data('U29tZSBmaWxlIGNvbnRlbnQ=')
-                        ->build()))
-                ->displayName('Alex Thomas')
-                ->emailAddresses(array(
-                    Models::emailAddress()
-                        ->category(Models::enumWithCustomOfEmailAddressCategory()
-                            ->value('Custom')
-                            ->description('Partners')
-                            ->build())
-                        ->displayName('Alex Thomas Partners')
-                        ->preferred(true)
-                        ->address('email@aspose.com')
-                        ->build()))
-                ->gender('Male')
-                ->givenName('Alex')
-                ->phoneNumbers(array(
-                    Models::phoneNumber()
-                        ->category(Models::enumWithCustomOfPhoneNumberCategory()
-                            ->value('Office')
-                            ->build())
-                        ->number('+49 211 4247 21')
-                        ->preferred(true)
-                        ->build()))
-                ->profession('GENERAL DIRECTOR')
-                ->surname('Thomas')
-                ->urls(array(
-                    Models::url()
-                        ->category(Models::enumWithCustomOfUrlCategory()
-                            ->value('Work')
-                            ->build())
-                        ->preferred(true)
-                        ->href('www.aspose.com')
-                        ->build()))
-                ->build())
-            ->build()))
-    ->build();
-```
-</details>
-
-### Complete example
-
-<details>
-    <summary>Method call example:</summary>
-
-```php
-$api = new EmailCloud($appKey, $appSid);
-
-// Prepare parameters:
-$request = Models::ContactGetListRequest()
-    ->format('VCard')
-    ->folder('folder/on/storage')
-    ->storage('First Storage')
-    ->items_per_page(10)
-    ->page_number(0)
-    ->build();
-
-// Call method:
-$result = $api->contact()->getList($request);
-
-// Result example:
-$result = Models::contactStorageList()
-    ->value(array(
-        Models::storageModelOfContactDto()
-            ->storageFile(Models::storageFileLocation()
-                ->fileName('contact.vcf')
-                ->storage('First Storage')
-                ->folderPath('file/location/folder/on/storage')
-                ->build())
-            ->value(Models::contactDto()
-                ->attachments(array(
-                    Models::attachment()
-                        ->name('attachment.txt')
-                        ->base64Data('U29tZSBmaWxlIGNvbnRlbnQ=')
-                        ->build()))
-                ->displayName('Alex Thomas')
-                ->emailAddresses(array(
-                    Models::emailAddress()
-                        ->category(Models::enumWithCustomOfEmailAddressCategory()
-                            ->value('Custom')
-                            ->description('Partners')
-                            ->build())
-                        ->displayName('Alex Thomas Partners')
-                        ->preferred(true)
-                        ->address('email@aspose.com')
-                        ->build()))
-                ->gender('Male')
-                ->givenName('Alex')
-                ->phoneNumbers(array(
-                    Models::phoneNumber()
-                        ->category(Models::enumWithCustomOfPhoneNumberCategory()
-                            ->value('Office')
-                            ->build())
-                        ->number('+49 211 4247 21')
-                        ->preferred(true)
-                        ->build()))
-                ->profession('GENERAL DIRECTOR')
-                ->surname('Thomas')
-                ->urls(array(
-                    Models::url()
-                        ->category(Models::enumWithCustomOfUrlCategory()
-                            ->value('Work')
-                            ->build())
-                        ->preferred(true)
-                        ->href('www.aspose.com')
-                        ->build()))
-                ->build())
-            ->build()))
-    ->build();
-```
-
-</details>
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **format** | **string**| Contact document format. Enum, available values: VCard, WebDav, Msg |
+ **folder** | **string**| Path to folder in storage. | [optional]
+ **storage** | **string**| Storage name. | [optional]
+ **items_per_page** | **int**| Count of items on page. | [optional] [default to 10]
+ **page_number** | **int**| Page number. | [optional] [default to 0]
 
 [[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-## save
+            
+# save
 
-Description: Save contact to storage.
-
-
-Method call example:
 ```php
-$api->contact()->save($request);
+function save(
+    ContactSaveRequest $request
+): 
 ```
 
-### Parameter: request
+Save contact to storage.
 
-Description: Create/Update contact request.
+### Return type
+
+void (empty response body)
+
+### request Parameter
 
 See parameter model documentation at [ContactSaveRequest](ContactSaveRequest.md)
-
-<details>
-    <summary>Parameter initialization example:</summary>
-    
-```php
-$request = Models::contactSaveRequest()
-    ->storageFile(Models::storageFileLocation()
-        ->fileName('contact.vcf')
-        ->storage('First Storage')
-        ->folderPath('file/location/folder/on/storage')
-        ->build())
-    ->value(Models::contactDto()
-        ->attachments(array(
-            Models::attachment()
-                ->name('attachment.txt')
-                ->base64Data('U29tZSBmaWxlIGNvbnRlbnQ=')
-                ->build()))
-        ->displayName('Alex Thomas')
-        ->emailAddresses(array(
-            Models::emailAddress()
-                ->category(Models::enumWithCustomOfEmailAddressCategory()
-                    ->value('Custom')
-                    ->description('Partners')
-                    ->build())
-                ->displayName('Alex Thomas Partners')
-                ->preferred(true)
-                ->address('email@aspose.com')
-                ->build()))
-        ->gender('Male')
-        ->givenName('Alex')
-        ->phoneNumbers(array(
-            Models::phoneNumber()
-                ->category(Models::enumWithCustomOfPhoneNumberCategory()
-                    ->value('Office')
-                    ->build())
-                ->number('+49 211 4247 21')
-                ->preferred(true)
-                ->build()))
-        ->profession('GENERAL DIRECTOR')
-        ->surname('Thomas')
-        ->urls(array(
-            Models::url()
-                ->category(Models::enumWithCustomOfUrlCategory()
-                    ->value('Work')
-                    ->build())
-                ->preferred(true)
-                ->href('www.aspose.com')
-                ->build()))
-        ->build())
-    ->build();
-```
-
-</details>
-
-
-### Result
-
-Return type: void (empty response body)
-
-### Complete example
-
-<details>
-    <summary>Method call example:</summary>
-
-```php
-$api = new EmailCloud($appKey, $appSid);
-
-// Prepare parameters:
-$request = Models::contactSaveRequest()
-    ->storageFile(Models::storageFileLocation()
-        ->fileName('contact.vcf')
-        ->storage('First Storage')
-        ->folderPath('file/location/folder/on/storage')
-        ->build())
-    ->value(Models::contactDto()
-        ->attachments(array(
-            Models::attachment()
-                ->name('attachment.txt')
-                ->base64Data('U29tZSBmaWxlIGNvbnRlbnQ=')
-                ->build()))
-        ->displayName('Alex Thomas')
-        ->emailAddresses(array(
-            Models::emailAddress()
-                ->category(Models::enumWithCustomOfEmailAddressCategory()
-                    ->value('Custom')
-                    ->description('Partners')
-                    ->build())
-                ->displayName('Alex Thomas Partners')
-                ->preferred(true)
-                ->address('email@aspose.com')
-                ->build()))
-        ->gender('Male')
-        ->givenName('Alex')
-        ->phoneNumbers(array(
-            Models::phoneNumber()
-                ->category(Models::enumWithCustomOfPhoneNumberCategory()
-                    ->value('Office')
-                    ->build())
-                ->number('+49 211 4247 21')
-                ->preferred(true)
-                ->build()))
-        ->profession('GENERAL DIRECTOR')
-        ->surname('Thomas')
-        ->urls(array(
-            Models::url()
-                ->category(Models::enumWithCustomOfUrlCategory()
-                    ->value('Work')
-                    ->build())
-                ->preferred(true)
-                ->href('www.aspose.com')
-                ->build()))
-        ->build())
-    ->build();
-
-// Call method:
-$api->contact()->save($request);
-```
-
-</details>
 
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)

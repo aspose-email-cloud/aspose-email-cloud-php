@@ -1,406 +1,134 @@
-# ClientThreadApi ($emailCloud->client()->thread())
+# Aspose\Email\ClientThreadApi
 
-Email client thread operations.
+            
+# delete
 
-## delete
-
-Description: Delete thread by id. All messages from thread will also be deleted.
-
-
-Method call example:
 ```php
-$api->client()->thread()->delete($request);
+function delete(
+    ClientThreadDeleteRequest $request
+): 
 ```
 
-### Parameter: request
+Delete thread by id. All messages from thread will also be deleted.
 
-Description: Delete email thread request.
+### Return type
+
+void (empty response body)
+
+### request Parameter
 
 See parameter model documentation at [ClientThreadDeleteRequest](ClientThreadDeleteRequest.md)
 
-<details>
-    <summary>Parameter initialization example:</summary>
-    
-```php
-$request = Models::clientThreadDeleteRequest()
-    ->folder('INBOX/SubFolder')
-    ->threadId('5')
-    ->accountLocation(Models::storageFileLocation()
-        ->fileName('email.account')
-        ->storage('First Storage')
-        ->folderPath('file/location/folder/on/storage')
-        ->build())
-    ->build();
-```
-
-</details>
-
-
-### Result
-
-Return type: void (empty response body)
-
-### Complete example
-
-<details>
-    <summary>Method call example:</summary>
-
-```php
-$api = new EmailCloud($appKey, $appSid);
-
-// Prepare parameters:
-$request = Models::clientThreadDeleteRequest()
-    ->folder('INBOX/SubFolder')
-    ->threadId('5')
-    ->accountLocation(Models::storageFileLocation()
-        ->fileName('email.account')
-        ->storage('First Storage')
-        ->folderPath('file/location/folder/on/storage')
-        ->build())
-    ->build();
-
-// Call method:
-$api->client()->thread()->delete($request);
-```
-
-</details>
-
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
-## **getList**
-
-Description: Get message threads from folder. All messages are partly fetched (without email body and some other fields).
-
-Returns: List of threads
-
-Method call example:
+            
+# **getList**
 ```php
-$result = $api->client()->thread()->getList($request);
+function getList(
+    ClientThreadGetListRequest $request
+): EmailThreadList 
+```
+Get message threads from folder. All messages are partly fetched (without email body and some other fields).
+
+### Return type
+
+[**EmailThreadList**](EmailThreadList.md)
+
+### Request parameters
+```php
+$request = new ClientThreadGetListRequest(
+    $folder,
+    $account,
+    $storage,
+    $account_storage_folder,
+    $update_folder_cache,
+    $messages_cache_limit
+);
 ```
 
-### Parameter: request
 
-Description: getList method request.
-
-See parameter model documentation at [ClientThreadGetListRequest](ClientThreadGetListRequest.md).
-
-<details>
-    <summary>Parameter initialization example:</summary>
-
-```php
-$request = Models::ClientThreadGetListRequest()
-    ->folder('INBOX/SubFolder')
-    ->account('email.account')
-    ->storage('First Storage')
-    ->account_storage_folder('email/account/location/on/storage')
-    ->build();
-```
-
-</details>
-
-### Result
-
-Description: List of threads
-
-Return type: [**EmailThreadList**](EmailThreadList.md)
-
-<details>
-    <summary>Result example</summary>
-
-```php
-$result = Models::emailThreadList()
-    ->value(array(
-        Models::emailThread()
-            ->id('123')
-            ->subject('Some email subject')
-            ->messages(array(
-                Models::emailDto()
-                    ->date(new DateTime())
-                    ->from(Models::mailAddress()
-                        ->address('from@aspose.com')
-                        ->build())
-                    ->messageId('1')
-                    ->subject('Some email subject')
-                    ->to(array(
-                        Models::mailAddress()
-                            ->address('to@aspose.com')
-                            ->build()))
-                    ->build(),
-                Models::emailDto()
-                    ->date(new DateTime())
-                    ->from(Models::mailAddress()
-                        ->address('from@aspose.com')
-                        ->build())
-                    ->messageId('3')
-                    ->subject('Re: Some email subject')
-                    ->to(array(
-                        Models::mailAddress()
-                            ->address('to@aspose.com')
-                            ->build()))
-                    ->build()))
-            ->build()))
-    ->build();
-```
-</details>
-
-### Complete example
-
-<details>
-    <summary>Method call example:</summary>
-
-```php
-$api = new EmailCloud($appKey, $appSid);
-
-// Prepare parameters:
-$request = Models::ClientThreadGetListRequest()
-    ->folder('INBOX/SubFolder')
-    ->account('email.account')
-    ->storage('First Storage')
-    ->account_storage_folder('email/account/location/on/storage')
-    ->build();
-
-// Call method:
-$result = $api->client()->thread()->getList($request);
-
-// Result example:
-$result = Models::emailThreadList()
-    ->value(array(
-        Models::emailThread()
-            ->id('123')
-            ->subject('Some email subject')
-            ->messages(array(
-                Models::emailDto()
-                    ->date(new DateTime())
-                    ->from(Models::mailAddress()
-                        ->address('from@aspose.com')
-                        ->build())
-                    ->messageId('1')
-                    ->subject('Some email subject')
-                    ->to(array(
-                        Models::mailAddress()
-                            ->address('to@aspose.com')
-                            ->build()))
-                    ->build(),
-                Models::emailDto()
-                    ->date(new DateTime())
-                    ->from(Models::mailAddress()
-                        ->address('from@aspose.com')
-                        ->build())
-                    ->messageId('3')
-                    ->subject('Re: Some email subject')
-                    ->to(array(
-                        Models::mailAddress()
-                            ->address('to@aspose.com')
-                            ->build()))
-                    ->build()))
-            ->build()))
-    ->build();
-```
-
-</details>
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **folder** | **string**| A folder in email account. |
+ **account** | **string**| Email account |
+ **storage** | **string**| Storage name where account file located | [optional]
+ **account_storage_folder** | **string**| Folder in storage where account file located | [optional]
+ **update_folder_cache** | **bool**| This parameter is only used in accounts with CacheFile. If true - get new messages and update threads cache for given folder. If false, get only threads from cache without any calls to an email account | [optional] [default to true]
+ **messages_cache_limit** | **int**| Limit messages cache size if CacheFile is used. Ignored in accounts without limits support | [optional] [default to 200]
 
 [[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-## **getMessages**
-
-Description: Get messages from thread by id. All messages are fully fetched. For accounts with CacheFile only cached messages will be returned.
-
-Returns: Requested thread with fully fetched messages
-
-Method call example:
+            
+# **getMessages**
 ```php
-$result = $api->client()->thread()->getMessages($request);
+function getMessages(
+    ClientThreadGetMessagesRequest $request
+): EmailList 
+```
+Get messages from thread by id. All messages are fully fetched. For accounts with CacheFile only cached messages will be returned.
+
+### Return type
+
+[**EmailList**](EmailList.md)
+
+### Request parameters
+```php
+$request = new ClientThreadGetMessagesRequest(
+    $thread_id,
+    $account,
+    $folder,
+    $storage,
+    $account_storage_folder
+);
 ```
 
-### Parameter: request
 
-Description: getMessages method request.
-
-See parameter model documentation at [ClientThreadGetMessagesRequest](ClientThreadGetMessagesRequest.md).
-
-<details>
-    <summary>Parameter initialization example:</summary>
-
-```php
-$request = Models::ClientThreadGetMessagesRequest()
-    ->thread_id('5')
-    ->account('email.account')
-    ->folder('INBOX')
-    ->storage('First Storage')
-    ->account_storage_folder('email/account/location/on/storage')
-    ->build();
-```
-
-</details>
-
-### Result
-
-Description: Requested thread with fully fetched messages
-
-Return type: [**EmailList**](EmailList.md)
-
-<details>
-    <summary>Result example</summary>
-
-```php
-$result = ;
-```
-</details>
-
-### Complete example
-
-<details>
-    <summary>Method call example:</summary>
-
-```php
-$api = new EmailCloud($appKey, $appSid);
-
-// Prepare parameters:
-$request = Models::ClientThreadGetMessagesRequest()
-    ->thread_id('5')
-    ->account('email.account')
-    ->folder('INBOX')
-    ->storage('First Storage')
-    ->account_storage_folder('email/account/location/on/storage')
-    ->build();
-
-// Call method:
-$result = $api->client()->thread()->getMessages($request);
-
-// Result example:
-$result = ;
-```
-
-</details>
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **thread_id** | **string**| Thread identifier |
+ **account** | **string**| Email account |
+ **folder** | **string**| Specifies account folder to get thread from | [optional]
+ **storage** | **string**| Storage name where account file located | [optional]
+ **account_storage_folder** | **string**| Folder in storage where account file located | [optional]
 
 [[Back to top]](#)  [[Back to README]](README.md) [[Back to Model list]](Models.md)
 
-## move
+            
+# move
 
-Description: Move thread to another folder.
-
-
-Method call example:
 ```php
-$api->client()->thread()->move($request);
+function move(
+    ClientThreadMoveRequest $request
+): 
 ```
 
-### Parameter: request
+Move thread to another folder.
 
-Description: Move thread request.
+### Return type
+
+void (empty response body)
+
+### request Parameter
 
 See parameter model documentation at [ClientThreadMoveRequest](ClientThreadMoveRequest.md)
 
-<details>
-    <summary>Parameter initialization example:</summary>
-    
-```php
-$request = Models::clientThreadMoveRequest()
-    ->destinationFolder('INBOX/SubFolder')
-    ->threadId('5')
-    ->accountLocation(Models::storageFileLocation()
-        ->fileName('email.account')
-        ->storage('First Storage')
-        ->folderPath('file/location/folder/on/storage')
-        ->build())
-    ->build();
-```
-
-</details>
-
-
-### Result
-
-Return type: void (empty response body)
-
-### Complete example
-
-<details>
-    <summary>Method call example:</summary>
-
-```php
-$api = new EmailCloud($appKey, $appSid);
-
-// Prepare parameters:
-$request = Models::clientThreadMoveRequest()
-    ->destinationFolder('INBOX/SubFolder')
-    ->threadId('5')
-    ->accountLocation(Models::storageFileLocation()
-        ->fileName('email.account')
-        ->storage('First Storage')
-        ->folderPath('file/location/folder/on/storage')
-        ->build())
-    ->build();
-
-// Call method:
-$api->client()->thread()->move($request);
-```
-
-</details>
-
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)
-## setIsRead
+            
+# setIsRead
 
-Description: Mark all messages in thread as read or unread.
-
-
-Method call example:
 ```php
-$api->client()->thread()->setIsRead($request);
+function setIsRead(
+    ClientThreadSetIsReadRequest $request
+): 
 ```
 
-### Parameter: request
+Mark all messages in thread as read or unread.
 
-Description: Email account specifier and IsRead flag.
+### Return type
+
+void (empty response body)
+
+### request Parameter
 
 See parameter model documentation at [ClientThreadSetIsReadRequest](ClientThreadSetIsReadRequest.md)
-
-<details>
-    <summary>Parameter initialization example:</summary>
-    
-```php
-$request = Models::clientThreadSetIsReadRequest()
-    ->isRead(true)
-    ->folder('INBOX')
-    ->threadId('5')
-    ->accountLocation(Models::storageFileLocation()
-        ->fileName('email.account')
-        ->storage('First Storage')
-        ->folderPath('file/location/folder/on/storage')
-        ->build())
-    ->build();
-```
-
-</details>
-
-
-### Result
-
-Return type: void (empty response body)
-
-### Complete example
-
-<details>
-    <summary>Method call example:</summary>
-
-```php
-$api = new EmailCloud($appKey, $appSid);
-
-// Prepare parameters:
-$request = Models::clientThreadSetIsReadRequest()
-    ->isRead(true)
-    ->folder('INBOX')
-    ->threadId('5')
-    ->accountLocation(Models::storageFileLocation()
-        ->fileName('email.account')
-        ->storage('First Storage')
-        ->folderPath('file/location/folder/on/storage')
-        ->build())
-    ->build();
-
-// Call method:
-$api->client()->thread()->setIsRead($request);
-```
-
-</details>
 
 [[Back to top]](#) [[Back to Model list]](Models.md) [[Back to README]](README.md)

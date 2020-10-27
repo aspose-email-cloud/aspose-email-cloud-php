@@ -53,6 +53,7 @@ class AiNameApi extends ApiBase
         parent::__construct($client, $config, $selector);
     }
 
+            
     /**
      * Operation complete
      *
@@ -208,7 +209,7 @@ class AiNameApi extends ApiBase
             $headerParams
         );
     }
-
+            
     /**
      * Operation expand
      *
@@ -364,7 +365,7 @@ class AiNameApi extends ApiBase
             $headerParams
         );
     }
-
+            
     /**
      * Operation expandParsed
      *
@@ -486,7 +487,7 @@ class AiNameApi extends ApiBase
         $path = '/email/AiName/expand-parsed';
         return $this->toClientRequest('PUT', $httpBody, $path, [], [], [], false, $headers, []);
     }
-
+            
     /**
      * Operation format
      *
@@ -645,7 +646,7 @@ class AiNameApi extends ApiBase
             $headerParams
         );
     }
-
+            
     /**
      * Operation formatParsed
      *
@@ -767,7 +768,7 @@ class AiNameApi extends ApiBase
         $path = '/email/AiName/format-parsed';
         return $this->toClientRequest('PUT', $httpBody, $path, [], [], [], false, $headers, []);
     }
-
+            
     /**
      * Operation genderize
      *
@@ -923,7 +924,7 @@ class AiNameApi extends ApiBase
             $headerParams
         );
     }
-
+            
     /**
      * Operation genderizeParsed
      *
@@ -1045,7 +1046,7 @@ class AiNameApi extends ApiBase
         $path = '/email/AiName/genderize-parsed';
         return $this->toClientRequest('PUT', $httpBody, $path, [], [], [], false, $headers, []);
     }
-
+            
     /**
      * Operation match
      *
@@ -1210,7 +1211,7 @@ class AiNameApi extends ApiBase
             $headerParams
         );
     }
-
+            
     /**
      * Operation matchParsed
      *
@@ -1332,7 +1333,7 @@ class AiNameApi extends ApiBase
         $path = '/email/AiName/match-parsed';
         return $this->toClientRequest('PUT', $httpBody, $path, [], [], [], false, $headers, []);
     }
-
+            
     /**
      * Operation parse
      *
@@ -1488,7 +1489,7 @@ class AiNameApi extends ApiBase
             $headerParams
         );
     }
-
+            
     /**
      * Operation parseEmailAddress
      *

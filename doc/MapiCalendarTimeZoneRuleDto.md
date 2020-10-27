@@ -1,10 +1,8 @@
 # MapiCalendarTimeZoneRuleDto
 
-Represents time zone rule that indicate when to begin using the Standard/Daylight time.
-
 ## Properties
 Name | Type | Description | Notes
----- | ---- | ----------- | -----
+------------ | ------------- | ------------- | -------------
 **date** | [**\DateTime**](\DateTime.md) | Date and time that indicate when to begin using the Standard/Daylight time. | 
 **day_of_week** | **string** | Day of week. Enum, available values: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday | 
 **hour** | **int** | Hour. | 
@@ -17,6 +15,6 @@ Name | Type | Description | Notes
 
 
 
-
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
+
 

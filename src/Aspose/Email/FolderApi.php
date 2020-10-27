@@ -53,6 +53,7 @@ class FolderApi extends ApiBase
         parent::__construct($client, $config, $selector);
     }
 
+            
     /**
      * Operation copyFolder
      *
@@ -207,7 +208,7 @@ class FolderApi extends ApiBase
             $headerParams
         );
     }
-
+            
     /**
      * Operation createFolder
      *
@@ -350,7 +351,7 @@ class FolderApi extends ApiBase
             $headerParams
         );
     }
-
+            
     /**
      * Operation deleteFolder
      *
@@ -496,7 +497,7 @@ class FolderApi extends ApiBase
             $headerParams
         );
     }
-
+            
     /**
      * Operation getFilesList
      *
@@ -643,7 +644,7 @@ class FolderApi extends ApiBase
             $headerParams
         );
     }
-
+            
     /**
      * Operation moveFolder
      *

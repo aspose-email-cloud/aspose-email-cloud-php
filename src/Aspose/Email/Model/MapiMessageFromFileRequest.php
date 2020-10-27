@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for MapiMessageApi::fromFile operation.
+ * Request model for mapiMessageFromFile" operation.
  */
 class MapiMessageFromFileRequest
 {
@@ -39,14 +39,10 @@ class MapiMessageFromFileRequest
      * @param string $format File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
      * @param \SplFileObject $file File to convert
      */
-    public function __construct($format = null, $file = null)             
+    public function __construct($format, $file)             
     {
-        if ($format != null) {
-            $this->format = $format;
-        }
-        if ($file != null) {
-            $this->file = $file;
-        }
+        $this->format = $format;
+        $this->file = $file;
     }
 
     /**

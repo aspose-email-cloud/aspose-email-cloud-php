@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for AiNameApi::match operation.
+ * Request model for aiNameMatch" operation.
  */
 class AiNameMatchRequest
 {
@@ -44,29 +44,15 @@ class AiNameMatchRequest
      * @param string $script A writing system code; starts with the ISO-15924 script name.
      * @param string $style Name writing style. Enum, available values: Formal, Informal, Legal, Academic
      */
-    public function __construct($name = null, $other_name = null, $language = null, $location = null, $encoding = null, $script = null, $style = null)             
+    public function __construct($name, $other_name, $language = null, $location = null, $encoding = null, $script = null, $style = null)             
     {
-        if ($name != null) {
-            $this->name = $name;
-        }
-        if ($other_name != null) {
-            $this->other_name = $other_name;
-        }
-        if ($language != null) {
-            $this->language = $language;
-        }
-        if ($location != null) {
-            $this->location = $location;
-        }
-        if ($encoding != null) {
-            $this->encoding = $encoding;
-        }
-        if ($script != null) {
-            $this->script = $script;
-        }
-        if ($style != null) {
-            $this->style = $style;
-        }
+        $this->name = $name;
+        $this->other_name = $other_name;
+        $this->language = $language;
+        $this->location = $location;
+        $this->encoding = $encoding;
+        $this->script = $script;
+        $this->style = $style;
     }
 
     /**

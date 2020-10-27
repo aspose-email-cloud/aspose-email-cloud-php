@@ -53,6 +53,7 @@ class ClientAccountApi extends ApiBase
         parent::__construct($client, $config, $selector);
     }
 
+            
     /**
      * Operation get
      *
@@ -199,7 +200,7 @@ class ClientAccountApi extends ApiBase
             $headerParams
         );
     }
-
+            
     /**
      * Operation getMulti
      *
@@ -346,7 +347,7 @@ class ClientAccountApi extends ApiBase
             $headerParams
         );
     }
-
+            
     /**
      * Operation save
      *
@@ -464,7 +465,7 @@ class ClientAccountApi extends ApiBase
         $path = '/email/client/account';
         return $this->toClientRequest('PUT', $httpBody, $path, [], [], [], false, $headers, []);
     }
-
+            
     /**
      * Operation saveMulti
      *

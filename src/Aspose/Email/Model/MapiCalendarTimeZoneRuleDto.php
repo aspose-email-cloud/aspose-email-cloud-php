@@ -485,12 +485,14 @@ class MapiCalendarTimeZoneRuleDto implements ArrayAccess
      */
     public function setMonth($month)
     {
+
         if (($month > 12)) {
             throw new \InvalidArgumentException('invalid value for $month when calling MapiCalendarTimeZoneRuleDto., must be smaller than or equal to 12.');
         }
         if (($month < 0)) {
             throw new \InvalidArgumentException('invalid value for $month when calling MapiCalendarTimeZoneRuleDto., must be bigger than or equal to 0.');
         }
+
         $this->container['month'] = $month;
 
         return $this;

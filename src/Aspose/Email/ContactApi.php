@@ -53,6 +53,7 @@ class ContactApi extends ApiBase
         parent::__construct($client, $config, $selector);
     }
 
+            
     /**
      * Operation asFile
      *
@@ -174,7 +175,7 @@ class ContactApi extends ApiBase
         $path = '/email/Contact/as-file';
         return $this->toClientRequest('PUT', $httpBody, $path, [], [], [], false, $headers, []);
     }
-
+            
     /**
      * Operation asMapi
      *
@@ -296,7 +297,7 @@ class ContactApi extends ApiBase
         $path = '/email/Contact/as-mapi';
         return $this->toClientRequest('PUT', $httpBody, $path, [], [], [], false, $headers, []);
     }
-
+            
     /**
      * Operation convert
      *
@@ -464,7 +465,7 @@ class ContactApi extends ApiBase
             $headerParams
         );
     }
-
+            
     /**
      * Operation fromFile
      *
@@ -623,7 +624,7 @@ class ContactApi extends ApiBase
             $headerParams
         );
     }
-
+            
     /**
      * Operation get
      *
@@ -779,7 +780,7 @@ class ContactApi extends ApiBase
             $headerParams
         );
     }
-
+            
     /**
      * Operation getAsFile
      *
@@ -944,7 +945,7 @@ class ContactApi extends ApiBase
             $headerParams
         );
     }
-
+            
     /**
      * Operation getList
      *
@@ -1097,7 +1098,7 @@ class ContactApi extends ApiBase
             $headerParams
         );
     }
-
+            
     /**
      * Operation save
      *

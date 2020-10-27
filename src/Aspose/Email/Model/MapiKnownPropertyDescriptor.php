@@ -237,9 +237,11 @@ class MapiKnownPropertyDescriptor extends MapiPropertyDescriptor
      */
     public function setName($name)
     {
+
         if ((strlen($name) < 1)) {
             throw new \InvalidArgumentException('invalid length for $name when calling MapiKnownPropertyDescriptor., must be bigger than or equal to 1.');
         }
+
         $this->container['name'] = $name;
 
         return $this;

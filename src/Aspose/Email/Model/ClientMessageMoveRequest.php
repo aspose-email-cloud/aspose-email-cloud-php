@@ -273,9 +273,11 @@ class ClientMessageMoveRequest extends ClientMessageBaseRequest
      */
     public function setDestinationFolder($destination_folder)
     {
+
         if ((strlen($destination_folder) < 1)) {
             throw new \InvalidArgumentException('invalid length for $destination_folder when calling ClientMessageMoveRequest., must be bigger than or equal to 1.');
         }
+
         $this->container['destination_folder'] = $destination_folder;
 
         return $this;

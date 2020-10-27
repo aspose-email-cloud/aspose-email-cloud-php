@@ -246,9 +246,11 @@ class EnumWithCustomOfEventCategory implements ArrayAccess
      */
     public function setValue($value)
     {
+
         if ((strlen($value) < 1)) {
             throw new \InvalidArgumentException('invalid length for $value when calling EnumWithCustomOfEventCategory., must be bigger than or equal to 1.');
         }
+
         $this->container['value'] = $value;
 
         return $this;

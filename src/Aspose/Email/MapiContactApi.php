@@ -53,6 +53,7 @@ class MapiContactApi extends ApiBase
         parent::__construct($client, $config, $selector);
     }
 
+            
     /**
      * Operation asContactDto
      *
@@ -174,7 +175,7 @@ class MapiContactApi extends ApiBase
         $path = '/email/MapiContact/as-contact-dto';
         return $this->toClientRequest('PUT', $httpBody, $path, [], [], [], false, $headers, []);
     }
-
+            
     /**
      * Operation asFile
      *
@@ -296,7 +297,7 @@ class MapiContactApi extends ApiBase
         $path = '/email/MapiContact/as-file';
         return $this->toClientRequest('PUT', $httpBody, $path, [], [], [], false, $headers, []);
     }
-
+            
     /**
      * Operation fromFile
      *
@@ -455,7 +456,7 @@ class MapiContactApi extends ApiBase
             $headerParams
         );
     }
-
+            
     /**
      * Operation get
      *
@@ -611,7 +612,7 @@ class MapiContactApi extends ApiBase
             $headerParams
         );
     }
-
+            
     /**
      * Operation save
      *

@@ -252,9 +252,11 @@ class MailMessageBase64 extends MailMessageBase
      */
     public function setValueBase64($value_base64)
     {
+
         if ((strlen($value_base64) < 1)) {
             throw new \InvalidArgumentException('invalid length for $value_base64 when calling MailMessageBase64., must be bigger than or equal to 1.');
         }
+
         $this->container['value_base64'] = $value_base64;
 
         return $this;

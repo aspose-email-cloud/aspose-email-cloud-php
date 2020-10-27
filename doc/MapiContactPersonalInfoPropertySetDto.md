@@ -1,10 +1,8 @@
 # MapiContactPersonalInfoPropertySetDto
 
-Specify other additional contact information.
-
 ## Properties
 Name | Type | Description | Notes
----- | ---- | ----------- | -----
+------------ | ------------- | ------------- | -------------
 **spouse_name** | **string** | Specifies the name of the contact's spouse/partner | [optional] 
 **personal_home_page** | **string** | Specifies the contact's personal web page URL | [optional] 
 **language** | **string** | Specifies the language that the contact uses | [optional] 
@@ -27,6 +25,6 @@ Name | Type | Description | Notes
 
 
 
-
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
+
 

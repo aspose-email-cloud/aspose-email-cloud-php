@@ -240,9 +240,11 @@ class EmailClientAccountPasswordCredentials extends EmailClientAccountCredential
      */
     public function setPassword($password)
     {
+
         if ((strlen($password) < 1)) {
             throw new \InvalidArgumentException('invalid length for $password when calling EmailClientAccountPasswordCredentials., must be bigger than or equal to 1.');
         }
+
         $this->container['password'] = $password;
 
         return $this;

@@ -242,9 +242,11 @@ class EmailConfigDiscoverPasswordRequest extends DiscoverEmailConfigRequest
      */
     public function setPassword($password)
     {
+
         if ((strlen($password) < 1)) {
             throw new \InvalidArgumentException('invalid length for $password when calling EmailConfigDiscoverPasswordRequest., must be bigger than or equal to 1.');
         }
+
         $this->container['password'] = $password;
 
         return $this;

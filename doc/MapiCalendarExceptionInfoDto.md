@@ -1,10 +1,8 @@
 # MapiCalendarExceptionInfoDto
 
-An exception specifies changes to an instance of a recurring series.
-
 ## Properties
 Name | Type | Description | Notes
----- | ---- | ----------- | -----
+------------ | ------------- | ------------- | -------------
 **attachments** | [**\Aspose\Email\Model\MapiAttachmentDto[]**](MapiAttachmentDto.md) | Attachments in the recurrence exception. | [optional] 
 **body** | **string** | Body. | [optional] 
 **busy_status** | **string** | Enumerates the mapi calendar possible busy status Enum, available values: Free, Tentative, Busy, OutOfOffice | 
@@ -22,6 +20,6 @@ Name | Type | Description | Notes
 
 
 
-
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
+
 

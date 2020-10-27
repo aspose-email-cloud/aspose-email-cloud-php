@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for AiNameApi::parseEmailAddress operation.
+ * Request model for aiNameParseEmailAddress" operation.
  */
 class AiNameParseEmailAddressRequest
 {
@@ -43,26 +43,14 @@ class AiNameParseEmailAddressRequest
      * @param string $script A writing system code; starts with the ISO-15924 script name.
      * @param string $style Name writing style. Enum, available values: Formal, Informal, Legal, Academic
      */
-    public function __construct($email_address = null, $language = null, $location = null, $encoding = null, $script = null, $style = null)             
+    public function __construct($email_address, $language = null, $location = null, $encoding = null, $script = null, $style = null)             
     {
-        if ($email_address != null) {
-            $this->email_address = $email_address;
-        }
-        if ($language != null) {
-            $this->language = $language;
-        }
-        if ($location != null) {
-            $this->location = $location;
-        }
-        if ($encoding != null) {
-            $this->encoding = $encoding;
-        }
-        if ($script != null) {
-            $this->script = $script;
-        }
-        if ($style != null) {
-            $this->style = $style;
-        }
+        $this->email_address = $email_address;
+        $this->language = $language;
+        $this->location = $location;
+        $this->encoding = $encoding;
+        $this->script = $script;
+        $this->style = $style;
     }
 
     /**
@@ -95,4 +83,3 @@ class AiNameParseEmailAddressRequest
      */
     public $style;
 }
-

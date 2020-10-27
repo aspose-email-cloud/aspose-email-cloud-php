@@ -1,10 +1,8 @@
 # MapiContactPhysicalAddressDto
 
-Refers to the group of properties that define physical address for a contact.
-
 ## Properties
 Name | Type | Description | Notes
----- | ---- | ----------- | -----
+------------ | ------------- | ------------- | -------------
 **is_mailing_address** | **bool** | Gets or sets a value indicating whether this address is mailing address | 
 **street** | **string** | Specifies the street portion of the contact's address | [optional] 
 **city** | **string** | Specifies the city or locality portion of the contact's address | [optional] 
@@ -17,6 +15,6 @@ Name | Type | Description | Notes
 
 
 
-
 [[Back to Model list]](README.md#documentation-for-models) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to README]](README.md)
+
 

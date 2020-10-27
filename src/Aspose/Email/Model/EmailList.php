@@ -54,6 +54,7 @@ class EmailList extends ListResponseOfEmailDto
      * @var string[]
      */
     protected static $swaggerTypes = [
+        
     ];
 
     /**
@@ -62,6 +63,7 @@ class EmailList extends ListResponseOfEmailDto
      * @var string[]
      */
     protected static $swaggerFormats = [
+        
     ];
 
     /**
@@ -91,6 +93,7 @@ class EmailList extends ListResponseOfEmailDto
      * @var string[]
      */
     protected static $attributeMap = [
+        
     ];
 
     /**
@@ -99,6 +102,7 @@ class EmailList extends ListResponseOfEmailDto
      * @var string[]
      */
     protected static $setters = [
+        
     ];
 
     /**
@@ -107,6 +111,7 @@ class EmailList extends ListResponseOfEmailDto
      * @var string[]
      */
     protected static $getters = [
+        
     ];
 
     /**

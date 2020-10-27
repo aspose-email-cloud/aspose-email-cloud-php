@@ -53,6 +53,7 @@ class ClientMessageApi extends ApiBase
         parent::__construct($client, $config, $selector);
     }
 
+            
     /**
      * Operation append
      *
@@ -174,7 +175,7 @@ class ClientMessageApi extends ApiBase
         $path = '/email/client/message/append';
         return $this->toClientRequest('POST', $httpBody, $path, [], [], [], false, $headers, []);
     }
-
+            
     /**
      * Operation appendFile
      *
@@ -348,7 +349,7 @@ class ClientMessageApi extends ApiBase
             $headerParams
         );
     }
-
+            
     /**
      * Operation delete
      *
@@ -466,7 +467,7 @@ class ClientMessageApi extends ApiBase
         $path = '/email/client/message';
         return $this->toClientRequest('DELETE', $httpBody, $path, [], [], [], false, $headers, []);
     }
-
+            
     /**
      * Operation fetch
      *
@@ -631,7 +632,7 @@ class ClientMessageApi extends ApiBase
             $headerParams
         );
     }
-
+            
     /**
      * Operation fetchFile
      *
@@ -793,7 +794,7 @@ class ClientMessageApi extends ApiBase
             $headerParams
         );
     }
-
+            
     /**
      * Operation list
      *
@@ -961,7 +962,7 @@ class ClientMessageApi extends ApiBase
             $headerParams
         );
     }
-
+            
     /**
      * Operation move
      *
@@ -1079,7 +1080,7 @@ class ClientMessageApi extends ApiBase
         $path = '/email/client/message/move';
         return $this->toClientRequest('PUT', $httpBody, $path, [], [], [], false, $headers, []);
     }
-
+            
     /**
      * Operation send
      *
@@ -1197,7 +1198,7 @@ class ClientMessageApi extends ApiBase
         $path = '/email/client/message';
         return $this->toClientRequest('POST', $httpBody, $path, [], [], [], false, $headers, []);
     }
-
+            
     /**
      * Operation sendFile
      *
@@ -1361,7 +1362,7 @@ class ClientMessageApi extends ApiBase
             $headerParams
         );
     }
-
+            
     /**
      * Operation setIsRead
      *

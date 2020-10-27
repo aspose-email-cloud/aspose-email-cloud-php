@@ -29,7 +29,7 @@
 namespace Aspose\Email\Model;
 
 /**
- * Request model for FileApi::downloadFile operation.
+ * Request model for downloadFile" operation.
  */
 class DownloadFileRequest
 {
@@ -40,17 +40,11 @@ class DownloadFileRequest
      * @param string $storage_name Storage name
      * @param string $version_id File version ID to download
      */
-    public function __construct($path = null, $storage_name = null, $version_id = null)             
+    public function __construct($path, $storage_name = null, $version_id = null)             
     {
-        if ($path != null) {
-            $this->path = $path;
-        }
-        if ($storage_name != null) {
-            $this->storage_name = $storage_name;
-        }
-        if ($version_id != null) {
-            $this->version_id = $version_id;
-        }
+        $this->path = $path;
+        $this->storage_name = $storage_name;
+        $this->version_id = $version_id;
     }
 
     /**

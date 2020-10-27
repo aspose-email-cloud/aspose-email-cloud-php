@@ -53,6 +53,7 @@ class MapiCalendarApi extends ApiBase
         parent::__construct($client, $config, $selector);
     }
 
+            
     /**
      * Operation asCalendarDto
      *
@@ -174,7 +175,7 @@ class MapiCalendarApi extends ApiBase
         $path = '/email/MapiCalendar/as-calendar-dto';
         return $this->toClientRequest('PUT', $httpBody, $path, [], [], [], false, $headers, []);
     }
-
+            
     /**
      * Operation asFile
      *
@@ -296,7 +297,7 @@ class MapiCalendarApi extends ApiBase
         $path = '/email/MapiCalendar/as-file';
         return $this->toClientRequest('PUT', $httpBody, $path, [], [], [], false, $headers, []);
     }
-
+            
     /**
      * Operation fromFile
      *
@@ -444,7 +445,7 @@ class MapiCalendarApi extends ApiBase
             $headerParams
         );
     }
-
+            
     /**
      * Operation get
      *
@@ -591,7 +592,7 @@ class MapiCalendarApi extends ApiBase
             $headerParams
         );
     }
-
+            
     /**
      * Operation save
      *
