@@ -63,7 +63,7 @@ $result = Models::emailClientAccount()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud($appKey, $appSid);
+$api = new EmailCloud($clientSecret, $clientId);
 
 // Prepare parameters:
 $request = Models::ClientAccountGetRequest()
@@ -176,7 +176,7 @@ $result = Models::emailClientMultiAccount()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud($appKey, $appSid);
+$api = new EmailCloud($clientSecret, $clientId);
 
 // Prepare parameters:
 $request = Models::ClientAccountGetMultiRequest()
@@ -282,7 +282,7 @@ Return type: void (empty response body)
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud($appKey, $appSid);
+$api = new EmailCloud($clientSecret, $clientId);
 
 // Prepare parameters:
 $request = Models::clientAccountSaveRequest()
@@ -387,7 +387,7 @@ Return type: void (empty response body)
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud($appKey, $appSid);
+$api = new EmailCloud($clientSecret, $clientId);
 
 // Prepare parameters:
 $request = Models::clientAccountSaveMultiRequest()

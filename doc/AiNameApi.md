@@ -60,7 +60,7 @@ $result = Models::aiNameWeightedVariants()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud($appKey, $appSid);
+$api = new EmailCloud($clientSecret, $clientId);
 
 // Prepare parameters:
 $request = Models::AiNameCompleteRequest()
@@ -146,7 +146,7 @@ $result = Models::aiNameWeightedVariants()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud($appKey, $appSid);
+$api = new EmailCloud($clientSecret, $clientId);
 
 // Prepare parameters:
 $request = Models::AiNameExpandRequest()
@@ -253,7 +253,7 @@ $result = Models::aiNameWeightedVariants()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud($appKey, $appSid);
+$api = new EmailCloud($clientSecret, $clientId);
 
 // Prepare parameters:
 $request = Models::aiNameParsedRequest()
@@ -352,7 +352,7 @@ $result = Models::aiNameFormatted()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud($appKey, $appSid);
+$api = new EmailCloud($clientSecret, $clientId);
 
 // Prepare parameters:
 $request = Models::AiNameFormatRequest()
@@ -446,7 +446,7 @@ $result = Models::aiNameFormatted()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud($appKey, $appSid);
+$api = new EmailCloud($clientSecret, $clientId);
 
 // Prepare parameters:
 $request = Models::aiNameParsedRequest()
@@ -534,7 +534,7 @@ $result = ;
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud($appKey, $appSid);
+$api = new EmailCloud($clientSecret, $clientId);
 
 // Prepare parameters:
 $request = Models::AiNameGenderizeRequest()
@@ -621,7 +621,7 @@ $result = ;
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud($appKey, $appSid);
+$api = new EmailCloud($clientSecret, $clientId);
 
 // Prepare parameters:
 $request = Models::aiNameParsedRequest()
@@ -714,7 +714,7 @@ $result = Models::aiNameMatchResult()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud($appKey, $appSid);
+$api = new EmailCloud($clientSecret, $clientId);
 
 // Prepare parameters:
 $request = Models::AiNameMatchRequest()
@@ -837,7 +837,7 @@ $result = Models::aiNameMatchResult()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud($appKey, $appSid);
+$api = new EmailCloud($clientSecret, $clientId);
 
 // Prepare parameters:
 $request = Models::aiNameMatchParsedRequest()
@@ -974,7 +974,7 @@ $result = Models::aiNameComponentList()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud($appKey, $appSid);
+$api = new EmailCloud($clientSecret, $clientId);
 
 // Prepare parameters:
 $request = Models::AiNameParseRequest()
@@ -1064,7 +1064,7 @@ $result = ;
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud($appKey, $appSid);
+$api = new EmailCloud($clientSecret, $clientId);
 
 // Prepare parameters:
 $request = Models::AiNameParseEmailAddressRequest()

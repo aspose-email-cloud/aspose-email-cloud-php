@@ -7,7 +7,8 @@
 This SDK allows you to work with Aspose.Email Cloud REST APIs in your PHP applications quickly and easily, with zero initial cost.
 
 [Aspose.Email Cloud home](https://products.aspose.cloud/email/family)
-[API Reference](https://apireference.aspose.cloud/email/)
+
+[Swagger UI](https://apireference.aspose.cloud/email/)
 
 # Cloud Email Processing Features
 Aspose.Email Cloud is a REST API for creating email applications that work with standard email file formats. This SDK:
@@ -22,26 +23,21 @@ Aspose.Email Cloud is a REST API for creating email applications that work with 
 - Email configuration discovery.
 - Disposable email address detection.
 
-## New features in version 20.10
+## What's new in version 20.12
 
-Aspose.Email Cloud 20.10.0 comes with SDK improvements:
+Aspose.Email Cloud 20.12.0 comes with SDK breaking change:
 
-- Typescript, PHP, Java SDKs now have model builders to simplify their initialization.
-- All SDK methods now have code examples with parameters initialization.
-- Some models now have initialization examples for all SDKs.
-- SDK reference documentation with examples now available at url [docs.aspose.cloud/email/reference-api](https://docs.aspose.cloud/email/reference-api/) 
+AppKey renamed to ClientSecret, AppSID renamed to ClientId.
 
-See [Release notes](https://docs.aspose.cloud/email/aspose-email-cloud-20-10-release-notes/).
+See [Release notes](https://docs.aspose.cloud/email/aspose-email-cloud-20-12-release-notes/).
 
 ## How to use the SDK?
 The complete source code is available in the [GIT repository](https://github.com/aspose-email-cloud/aspose-email-cloud-php/tree/master/src/Aspose/Email).
 
-Use [SDK tutorials](https://docs.aspose.cloud/email/sdk-tutorials/).
-
-SDK reference documentation is available in [this README](https://github.com/aspose-email-cloud/aspose-email-cloud-php/blob/master/doc/README.md).
+Use [SDK tutorials](https://docs.aspose.cloud/email/sdk-tutorials/) and [SDK reference documentation](https://docs.aspose.cloud/email/reference-api/).
 
 ### Prerequisites
-To use this SDK, you need an App SID and an App Key; they can be looked up at [Aspose Cloud Dashboard](https://dashboard.aspose.cloud/#/apps) (it requires free registration in Aspose Cloud for this).
+To use this SDK, you need a Client id and a Client secret; they can be looked up at [Aspose Cloud Dashboard](https://dashboard.aspose.cloud/#/apps) (it requires free registration in Aspose Cloud for this).
 
 ### Installation
 You can either directly use SDK in your project via source code or get [Packagegist distribution](https://packagist.org/packages/aspose/aspose-email-cloud).
@@ -56,8 +52,8 @@ To use the API, you should create an EmailCloud object:
 ```php
 $configuration = new Configuration(); // Aspose\Email\Configuration
 $configuration
-    ->setAppKey($_ENV["Your App Key"])
-    ->setAppSid($_ENV["Your App SID"]);
+    ->setClientSecret("Your Client secret")
+    ->setClientId("Your Client id");
 $api = new EmailCloud($configuration);
 ```
 
@@ -74,4 +70,4 @@ $contact = $result->getValue()[0];
 $parsedDisplayName = $contact->getDisplayName();
 ```
 
-[Product Page](https://products.aspose.cloud/email/php) | [Documentation](https://docs.aspose.cloud/email/) | [Demo](https://products.aspose.app/email/family) | [API Reference](https://apireference.aspose.cloud/email/) | [Blog](https://blog.aspose.cloud/category/email/) | [Free support](https://forum.aspose.cloud/c/email) | [Free trial](https://dashboard.aspose.cloud/#/apps)
+[Product Page](https://products.aspose.cloud/email/php) | [Documentation](https://docs.aspose.cloud/email/) | [Demo](https://products.aspose.app/email/family) | [Swagger UI](https://apireference.aspose.cloud/email/) | [Blog](https://blog.aspose.cloud/category/email/) | [Free support](https://forum.aspose.cloud/c/email) | [Free trial](https://dashboard.aspose.cloud/#/apps) | [SDK reference documentation](https://docs.aspose.cloud/email/reference-api)

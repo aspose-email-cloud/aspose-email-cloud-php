@@ -84,7 +84,7 @@ $result = ;
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud($appKey, $appSid);
+$api = new EmailCloud($clientSecret, $clientId);
 
 // Prepare parameters:
 $request = Models::clientMessageAppendRequest()
@@ -187,7 +187,7 @@ $result = ;
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud($appKey, $appSid);
+$api = new EmailCloud($clientSecret, $clientId);
 
 // Prepare parameters:
 $request = Models::ClientMessageAppendFileRequest()
@@ -254,7 +254,7 @@ Return type: void (empty response body)
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud($appKey, $appSid);
+$api = new EmailCloud($clientSecret, $clientId);
 
 // Prepare parameters:
 $request = Models::clientMessageDeleteRequest()
@@ -330,7 +330,7 @@ $result = Models::mailMessageBase()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud($appKey, $appSid);
+$api = new EmailCloud($clientSecret, $clientId);
 
 // Prepare parameters:
 $request = Models::ClientMessageFetchRequest()
@@ -401,7 +401,7 @@ Return type: [**\SplFileObject**](\SplFileObject.md)
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud($appKey, $appSid);
+$api = new EmailCloud($clientSecret, $clientId);
 
 // Prepare parameters:
 $request = Models::ClientMessageFetchFileRequest()
@@ -478,7 +478,7 @@ $result = ;
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud($appKey, $appSid);
+$api = new EmailCloud($clientSecret, $clientId);
 
 // Prepare parameters:
 $request = Models::ClientMessageListRequest()
@@ -548,7 +548,7 @@ Return type: void (empty response body)
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud($appKey, $appSid);
+$api = new EmailCloud($clientSecret, $clientId);
 
 // Prepare parameters:
 $request = Models::clientMessageMoveRequest()
@@ -638,7 +638,7 @@ Return type: void (empty response body)
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud($appKey, $appSid);
+$api = new EmailCloud($clientSecret, $clientId);
 
 // Prepare parameters:
 $request = Models::clientMessageSendRequest()
@@ -724,7 +724,7 @@ Return type: void (empty response body)
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud($appKey, $appSid);
+$api = new EmailCloud($clientSecret, $clientId);
 
 // Prepare parameters:
 $request = Models::ClientMessageSendFileRequest()
@@ -787,7 +787,7 @@ Return type: void (empty response body)
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud($appKey, $appSid);
+$api = new EmailCloud($clientSecret, $clientId);
 
 // Prepare parameters:
 $request = Models::clientMessageSetIsReadRequest()

@@ -42,7 +42,7 @@ Return type: void (empty response body)
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud($appKey, $appSid);
+$api = new EmailCloud($clientSecret, $clientId);
 
 // Prepare parameters:
 $request = Models::CopyFileRequest()
@@ -98,7 +98,7 @@ Return type: void (empty response body)
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud($appKey, $appSid);
+$api = new EmailCloud($clientSecret, $clientId);
 
 // Prepare parameters:
 $request = Models::DeleteFileRequest()
@@ -155,7 +155,7 @@ Return type: [**\SplFileObject**](\SplFileObject.md)
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud($appKey, $appSid);
+$api = new EmailCloud($clientSecret, $clientId);
 
 // Prepare parameters:
 $request = Models::DownloadFileRequest()
@@ -211,7 +211,7 @@ Return type: void (empty response body)
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud($appKey, $appSid);
+$api = new EmailCloud($clientSecret, $clientId);
 
 // Prepare parameters:
 $request = Models::MoveFileRequest()
@@ -279,7 +279,7 @@ $result = ;
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud($appKey, $appSid);
+$api = new EmailCloud($clientSecret, $clientId);
 
 // Prepare parameters:
 $request = Models::UploadFileRequest()

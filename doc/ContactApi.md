@@ -80,7 +80,7 @@ Return type: [**\SplFileObject**](\SplFileObject.md)
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud($appKey, $appSid);
+$api = new EmailCloud($clientSecret, $clientId);
 
 // Prepare parameters:
 $request = Models::contactAsFileRequest()
@@ -234,7 +234,7 @@ $result = Models::mapiContactDto()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud($appKey, $appSid);
+$api = new EmailCloud($clientSecret, $clientId);
 
 // Prepare parameters:
 $contact_dto = Models::contactDto()
@@ -347,7 +347,7 @@ Return type: [**\SplFileObject**](\SplFileObject.md)
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud($appKey, $appSid);
+$api = new EmailCloud($clientSecret, $clientId);
 
 // Prepare parameters:
 $request = Models::ContactConvertRequest()
@@ -450,7 +450,7 @@ $result = Models::contactDto()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud($appKey, $appSid);
+$api = new EmailCloud($clientSecret, $clientId);
 
 // Prepare parameters:
 $request = Models::ContactFromFileRequest()
@@ -594,7 +594,7 @@ $result = Models::contactDto()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud($appKey, $appSid);
+$api = new EmailCloud($clientSecret, $clientId);
 
 // Prepare parameters:
 $request = Models::ContactGetRequest()
@@ -696,7 +696,7 @@ Return type: [**\SplFileObject**](\SplFileObject.md)
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud($appKey, $appSid);
+$api = new EmailCloud($clientSecret, $clientId);
 
 // Prepare parameters:
 $request = Models::ContactGetAsFileRequest()
@@ -814,7 +814,7 @@ $result = Models::contactStorageList()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud($appKey, $appSid);
+$api = new EmailCloud($clientSecret, $clientId);
 
 // Prepare parameters:
 $request = Models::ContactGetListRequest()
@@ -963,7 +963,7 @@ Return type: void (empty response body)
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud($appKey, $appSid);
+$api = new EmailCloud($clientSecret, $clientId);
 
 // Prepare parameters:
 $request = Models::contactSaveRequest()

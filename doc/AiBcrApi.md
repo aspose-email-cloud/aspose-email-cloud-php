@@ -93,7 +93,7 @@ $result = Models::contactList()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud($appKey, $appSid);
+$api = new EmailCloud($clientSecret, $clientId);
 
 // Prepare parameters:
 $request = Models::AiBcrParseRequest()
@@ -222,7 +222,7 @@ $result = Models::storageFileLocationList()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud($appKey, $appSid);
+$api = new EmailCloud($clientSecret, $clientId);
 
 // Prepare parameters:
 $request = Models::aiBcrParseStorageRequest()

@@ -24,6 +24,7 @@ See parameter model documentation at [EmailConfigDiscoverRequest](EmailConfigDis
 
 ```php
 $request = Models::EmailConfigDiscoverRequest()
+    ->address('address@gmail.com')
     ->build();
 ```
 
@@ -95,10 +96,11 @@ $result = Models::emailAccountConfigList()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud($appKey, $appSid);
+$api = new EmailCloud($clientSecret, $clientId);
 
 // Prepare parameters:
 $request = Models::EmailConfigDiscoverRequest()
+    ->address('address@gmail.com')
     ->build();
 
 // Call method:
@@ -257,7 +259,7 @@ $result = Models::emailAccountConfigList()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud($appKey, $appSid);
+$api = new EmailCloud($clientSecret, $clientId);
 
 // Prepare parameters:
 $request = Models::emailConfigDiscoverOauthRequest()
@@ -421,7 +423,7 @@ $result = Models::emailAccountConfigList()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud($appKey, $appSid);
+$api = new EmailCloud($clientSecret, $clientId);
 
 // Prepare parameters:
 $request = Models::emailConfigDiscoverPasswordRequest()

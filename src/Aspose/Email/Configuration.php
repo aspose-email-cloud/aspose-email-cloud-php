@@ -48,13 +48,13 @@ class Configuration
     protected $apiKeys = [];
     
     /**
-     * AppKey for API
+     * Client secret for API
      *
      */
     protected $clientSecret = '';
     
     /**
-     * AppSid for API
+     * Client secret for API
      * @var string
      */
     protected $clientId = '';
@@ -167,7 +167,7 @@ class Configuration
     }
 
     /**
-     * Sets AppSid
+     * Sets Client id
      *
      * @param string $clientId
      *
@@ -180,7 +180,7 @@ class Configuration
     }
     
     /**
-     * Gets AppSid
+     * Gets Client id
      * @return $clientId
      */
     public function getClientId(): string
@@ -189,7 +189,7 @@ class Configuration
     }
 
     /**
-     * Sets AppKey
+     * Sets Client secret
      *
      * @param string $clientSecret
      *
@@ -202,7 +202,7 @@ class Configuration
     }
     
     /**
-     * Gets AppKey
+     * Gets Client secret
      * @return $clientSecret
      */
     public function getClientSecret(): string

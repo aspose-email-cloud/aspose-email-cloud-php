@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 ## Example
 ```php
 $request = Models::emailConfigDiscoverRequest()
+    ->address('address@gmail.com')
     ->build();
 ```
 

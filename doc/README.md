@@ -1,12 +1,12 @@
 # Reference documentation for Aspose.Email Cloud API
 
 `EmailCloud` is the main API class. It provides an access to all of Aspose.Email Cloud functions.
-`AppKey` and `AppSid` credentials should be obtained from [dashboard](https://dashboard.aspose.cloud/#/) to use `EmailCloud`:
+`ClientSecret` and `ClientId` credentials should be obtained from [dashboard](https://dashboard.aspose.cloud/#/) to use `EmailCloud`:
 
 ```php
 $configuration = (new \Aspose\Email\Configuration())
-    ->setClientSecret("Your App Key")
-    ->setClientId("Your App SID");
+    ->setClientSecret("Your Client secret")
+    ->setClientId("Your Client id");
 
 $emailCloud = new \Aspose\Email\EmailCloud($configuration);
 ```

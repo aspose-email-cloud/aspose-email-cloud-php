@@ -53,7 +53,7 @@ $result = Models::discUsage()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud($appKey, $appSid);
+$api = new EmailCloud($clientSecret, $clientId);
 
 // Prepare parameters:
 $request = Models::GetDiscUsageRequest()
@@ -133,7 +133,7 @@ $result = Models::fileVersions()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud($appKey, $appSid);
+$api = new EmailCloud($clientSecret, $clientId);
 
 // Prepare parameters:
 $request = Models::GetFileVersionsRequest()
@@ -213,7 +213,7 @@ $result = Models::objectExist()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud($appKey, $appSid);
+$api = new EmailCloud($clientSecret, $clientId);
 
 // Prepare parameters:
 $request = Models::ObjectExistsRequest()
@@ -284,7 +284,7 @@ $result = Models::storageExist()
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud($appKey, $appSid);
+$api = new EmailCloud($clientSecret, $clientId);
 
 // Prepare parameters:
 $request = Models::StorageExistsRequest()
