@@ -5,8 +5,8 @@
 
 ```php
 $configuration = (new \Aspose\Email\Configuration())
-    ->setAppKey("Your App Key")
-    ->setAppSid("Your App SID");
+    ->setClientSecret("Your App Key")
+    ->setClientId("Your App SID");
 
 $emailCloud = new \Aspose\Email\EmailCloud($configuration);
 ```

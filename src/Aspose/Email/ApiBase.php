@@ -43,7 +43,7 @@ class ApiBase
   
     protected $headerSelector;
 
-    protected function __construct($client, $config, $selector)
+    protected function __construct($client, Configuration $config, $selector)
     {
         $this->client = $client;
         $this->config = $config;
@@ -125,9 +125,9 @@ class ApiBase
         $postData =
             "grant_type=client_credentials" .
             "&client_id=" .
-            $this->config->getAppSid() .
+            $this->config->getClientId() .
             "&client_secret=" .
-            $this->config->getAppKey();
+            $this->config->getClientSecret();
         $response = $this->client->send(new Request('POST', $requestUrl, $headers, $postData));
         $result = json_decode($response->getBody()->getContents(), true);
         $this->config->setAccessToken($result["access_token"]);

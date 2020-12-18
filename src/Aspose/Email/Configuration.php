@@ -51,13 +51,13 @@ class Configuration
      * AppKey for API
      *
      */
-    protected $appKey = '';
+    protected $clientSecret = '';
     
     /**
      * AppSid for API
      * @var string
      */
-    protected $appSid = '';
+    protected $clientId = '';
 
     /**
      * Associate array to store API prefix (e.g. Bearer)
@@ -165,49 +165,49 @@ class Configuration
         $this->apiKeys[$apiKeyIdentifier] = $key;
         return $this;
     }
-    
+
     /**
      * Sets AppSid
      *
-     * @param string $appSid
+     * @param string $clientId
      *
      * @return $this
      */
-    public function setAppSid($appSid)
+    public function setClientId(string $clientId): Configuration
     {
-        $this->appSid = $appSid;
+        $this->clientId = $clientId;
         return $this;
     }
     
     /**
      * Gets AppSid
-     * @return $appSid
+     * @return $clientId
      */
-    public function getAppSid()
+    public function getClientId(): string
     {
-        return $this->appSid;
+        return $this->clientId;
     }
-    
+
     /**
      * Sets AppKey
      *
-     * @param string $appKey
+     * @param string $clientSecret
      *
      * @return $this
      */
-    public function setAppKey($appKey)
+    public function setClientSecret(string $clientSecret): Configuration
     {
-        $this->appKey = $appKey;
+        $this->clientSecret = $clientSecret;
         return $this;
     }
     
     /**
      * Gets AppKey
-     * @return $appKey
+     * @return $clientSecret
      */
-    public function getAppKey()
+    public function getClientSecret(): string
     {
-        return $this->appKey;
+        return $this->clientSecret;
     }
 
     /**
