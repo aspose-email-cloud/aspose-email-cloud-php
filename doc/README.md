@@ -22,7 +22,7 @@ API | Description
 [$emailCloud->**calendar()**](CalendarApi_list.md) | iCalendar document operations.
 [$emailCloud->**contact()**](ContactApi_list.md) | Contact document operations. Supported formats: VCard, MSG, WebDav
 [$emailCloud->**email()**](EmailApi_list.md) | Email document (*.eml) operations.
-[$emailCloud->**disposableEmail()**](DisposableEmailApi_list.md) | Check email address is disposable operations
+[$emailCloud->**disposableEmail()**](DisposableEmailApi_list.md) | Checks if an email is a disposable one
 [$emailCloud->**emailConfig()**](EmailConfigApi_list.md) | Email server configuration discovery.
 
 

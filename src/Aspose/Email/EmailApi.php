@@ -56,7 +56,7 @@ class EmailApi extends ApiBase
     /**
      * Operation asFile
      *
-     * Converts Email model to specified format and returns as file.
+     * Converts Email model to a specified format and returns as a file.
      *
      * @param Model\EmailAsFileRequest $request Email model and format to convert.
      *
@@ -78,7 +78,7 @@ class EmailApi extends ApiBase
     /**
      * Operation asFileWithHttpInfo
      *
-     * Converts Email model to specified format and returns as file.
+     * Converts Email model to a specified format and returns as a file.
      *
      * @param Model\EmailAsFileRequest $request Email model and format to convert.
      *
@@ -99,7 +99,7 @@ class EmailApi extends ApiBase
     /**
      * Operation asFileAsync
      *
-     * Converts Email model to specified format and returns as file.
+     * Converts Email model to a specified format and returns as a file.
      *
      * @param Model\EmailAsFileRequest $request Email model and format to convert.
      *
@@ -119,7 +119,7 @@ class EmailApi extends ApiBase
     /**
      * Operation asFileAsyncWithHttpInfo
      *
-     * Converts Email model to specified format and returns as file.
+     * Converts Email model to a specified format and returns as a file.
      *
      * @param Model\EmailAsFileRequest $request Email model and format to convert.
      *

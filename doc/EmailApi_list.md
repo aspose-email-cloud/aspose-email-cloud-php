@@ -4,7 +4,7 @@ All URIs are relative to *https://api.aspose.cloud/v4.0*
 
 Method | HTTP request | Description
 ------ | ------------ | -----------
-[**asFile**](EmailApi.md#asFile) | **PUT** /email/as-file | Converts Email model to specified format and returns as file.
+[**asFile**](EmailApi.md#asFile) | **PUT** /email/as-file | Converts Email model to a specified format and returns as a file.
 [**asMapi**](EmailApi.md#asMapi) | **PUT** /email/as-mapi | Converts EmailDto to MapiMessageDto.
 [**convert**](EmailApi.md#convert) | **PUT** /email/convert | Converts email document to specified format and returns as file
 [**fromFile**](EmailApi.md#fromFile) | **PUT** /email/from-file | Converts email document to a model representation

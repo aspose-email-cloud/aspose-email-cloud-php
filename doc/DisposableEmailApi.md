@@ -1,6 +1,6 @@
 # DisposableEmailApi ($emailCloud->disposableEmail())
 
-Check email address is disposable operations
+Checks if an email is a disposable one
 
 ## **isDisposable**
 
