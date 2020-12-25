@@ -1,12 +1,12 @@
 # Reference documentation for Aspose.Email Cloud API
 
 `EmailCloud` is the main API class. It provides an access to all of Aspose.Email Cloud functions.
-`AppKey` and `AppSid` credentials should be obtained from [dashboard](https://dashboard.aspose.cloud/#/) to use `EmailCloud`:
+`ClientSecret` and `ClientId` credentials should be obtained from [dashboard](https://dashboard.aspose.cloud/#/) to use `EmailCloud`:
 
 ```php
 $configuration = (new \Aspose\Email\Configuration())
-    ->setAppKey("Your App Key")
-    ->setAppSid("Your App SID");
+    ->setClientSecret("Your Client secret")
+    ->setClientId("Your Client id");
 
 $emailCloud = new \Aspose\Email\EmailCloud($configuration);
 ```
@@ -22,7 +22,7 @@ API | Description
 [$emailCloud->**calendar()**](CalendarApi_list.md) | iCalendar document operations.
 [$emailCloud->**contact()**](ContactApi_list.md) | Contact document operations. Supported formats: VCard, MSG, WebDav
 [$emailCloud->**email()**](EmailApi_list.md) | Email document (*.eml) operations.
-[$emailCloud->**disposableEmail()**](DisposableEmailApi_list.md) | Check email address is disposable operations
+[$emailCloud->**disposableEmail()**](DisposableEmailApi_list.md) | Checks if an email is a disposable one
 [$emailCloud->**emailConfig()**](EmailConfigApi_list.md) | Email server configuration discovery.
 
 

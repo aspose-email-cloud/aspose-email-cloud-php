@@ -1,6 +1,6 @@
 # DisposableEmailApi ($emailCloud->disposableEmail())
 
-Check email address is disposable operations
+Checks if an email is a disposable one
 
 ## **isDisposable**
 
@@ -50,7 +50,7 @@ $result = ;
     <summary>Method call example:</summary>
 
 ```php
-$api = new EmailCloud($appKey, $appSid);
+$api = new EmailCloud($clientSecret, $clientId);
 
 // Prepare parameters:
 $request = Models::DisposableEmailIsDisposableRequest()

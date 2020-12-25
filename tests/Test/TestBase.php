@@ -27,8 +27,8 @@ class TestBase extends TestCase
         self::$folder = uniqid();
         $configuration = new Configuration();
         $configuration
-            ->setAppKey($_ENV["appKey"])
-            ->setAppSid($_ENV["appSid"])
+            ->setClientSecret($_ENV["clientSecret"])
+            ->setClientId($_ENV["clientId"])
             ->setHost($_ENV["apiBaseUrl"]);
         if (array_key_exists("authUrl", $_ENV)) {
             $configuration->setAuthUrl($_ENV["authUrl"]);
