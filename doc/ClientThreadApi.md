@@ -296,6 +296,7 @@ See parameter model documentation at [ClientThreadMoveRequest](ClientThreadMoveR
 ```php
 $request = Models::clientThreadMoveRequest()
     ->destinationFolder('INBOX/SubFolder')
+    ->sourceFolder('INBOX')
     ->threadId('5')
     ->accountLocation(Models::storageFileLocation()
         ->fileName('email.account')
@@ -323,6 +324,7 @@ $api = new EmailCloud($clientSecret, $clientId);
 // Prepare parameters:
 $request = Models::clientThreadMoveRequest()
     ->destinationFolder('INBOX/SubFolder')
+    ->sourceFolder('INBOX')
     ->threadId('5')
     ->accountLocation(Models::storageFileLocation()
         ->fileName('email.account')
