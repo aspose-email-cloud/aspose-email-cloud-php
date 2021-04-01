@@ -92,5 +92,15 @@ class ClientThreadMoveRequestBuilder
         $this->model->setDestinationFolder($destinationFolder);
         return $this;
     }
+    /**
+     * Sets sourceFolder
+     * @param string $sourceFolder Email account folder to move thread from.
+     * @return $this
+     */
+    public function sourceFolder($sourceFolder)
+    {
+        $this->model->setSourceFolder($sourceFolder);
+        return $this;
+    }
 }
 

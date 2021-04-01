@@ -54,7 +54,8 @@ class ClientThreadMoveRequest extends ClientThreadBaseRequest
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'destination_folder' => 'string'
+        'destination_folder' => 'string',
+        'source_folder' => 'string'
     ];
 
     /**
@@ -63,7 +64,8 @@ class ClientThreadMoveRequest extends ClientThreadBaseRequest
      * @var string[]
      */
     protected static $swaggerFormats = [
-        'destination_folder' => null
+        'destination_folder' => null,
+        'source_folder' => null
     ];
 
     /**
@@ -93,7 +95,8 @@ class ClientThreadMoveRequest extends ClientThreadBaseRequest
      * @var string[]
      */
     protected static $attributeMap = [
-        'destination_folder' => 'destinationFolder'
+        'destination_folder' => 'destinationFolder',
+        'source_folder' => 'sourceFolder'
     ];
 
     /**
@@ -102,7 +105,8 @@ class ClientThreadMoveRequest extends ClientThreadBaseRequest
      * @var string[]
      */
     protected static $setters = [
-        'destination_folder' => 'setDestinationFolder'
+        'destination_folder' => 'setDestinationFolder',
+        'source_folder' => 'setSourceFolder'
     ];
 
     /**
@@ -111,7 +115,8 @@ class ClientThreadMoveRequest extends ClientThreadBaseRequest
      * @var string[]
      */
     protected static $getters = [
-        'destination_folder' => 'getDestinationFolder'
+        'destination_folder' => 'getDestinationFolder',
+        'source_folder' => 'getSourceFolder'
     ];
 
     /**
@@ -166,18 +171,22 @@ class ClientThreadMoveRequest extends ClientThreadBaseRequest
      * @param \Aspose\Email\Model\StorageFileLocation $account_location Email client account configuration location on storage.
      * @param string $thread_id Thread identifier.
      * @param string $destination_folder Email account folder to move thread to.
+     * @param string $source_folder Email account folder to move thread from.
      */
     public function __construct(
         $account_location = null,
         $thread_id = null,
-        $destination_folder = null
+        $destination_folder = null,
+        $source_folder = null
     ) {
         parent::__construct();
         $this->container['destination_folder'] = null;
+        $this->container['source_folder'] = null;
 
         if ($account_location != null) $this->setAccountLocation($account_location);
         if ($thread_id != null) $this->setThreadId($thread_id);
         if ($destination_folder != null) $this->setDestinationFolder($destination_folder);
+        if ($source_folder != null) $this->setSourceFolder($source_folder);
     }
 
     /**
@@ -244,6 +253,30 @@ class ClientThreadMoveRequest extends ClientThreadBaseRequest
             throw new \InvalidArgumentException('invalid length for $destination_folder when calling ClientThreadMoveRequest., must be bigger than or equal to 1.');
         }
         $this->container['destination_folder'] = $destination_folder;
+
+        return $this;
+    }
+
+    /**
+     * Gets source_folder
+     *
+     * @return string
+     */
+    public function getSourceFolder()
+    {
+        return $this->container['source_folder'];
+    }
+
+    /**
+     * Sets source_folder
+     *
+     * @param string $source_folder Email account folder to move thread from.
+     *
+     * @return $this
+     */
+    public function setSourceFolder($source_folder)
+    {
+        $this->container['source_folder'] = $source_folder;
 
         return $this;
     }

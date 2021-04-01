@@ -22,36 +22,12 @@ Aspose.Email Cloud is a REST API for creating email applications that work with 
 - Email configuration discovery.
 - Disposable email address detection.
 
-## Enhancements in Version 20.12
+## Enhancements in Version 21.3
 
-Aspose.Email Cloud 20.12.0 comes with SDK breaking changes:
-- AppKey renamed to ClientSecret.
-- AppSID renamed to ClientId.
+- IMAP native threads support added to the built-in Email client.
+- New field ClientThreadMoveRequest.SourceFolder added to specify a folder to move a thread from.
 
-Some [SDK reference documentation](https://docs.aspose.cloud/email/reference-api/) improvements were made.
-
-## Enhancements in Version 20.10
-
-- All SDK functions are divided into groups (Email, Calendar, Contact, Client, Ai, Mapi, etc.).
-- Unified file API provided for supported file types (Save, Get, Convert, AsFile, FromFile, AsMapi/AsDto).
-- HierarchicalObject based API is removed.
-- All models are stored in one folder/namespace.
-- The request models are simplified
-
-## Enhancements in Version 20.9
-- Lets developers manipulate different emails' formats such as Outlook MSG, EML, VCard, and iCalendar files.
-- Supports AI functions:
-  - Business card recognition.
-  - The Name API for parsing and handling personal names.
-- Has a built-in email client. This client provides:
-  - Unified REST API for different email protocols: IMAP, POP3, SMTP, EWS, WebDav.
-  - Virtual multi-account.
-  - Message threads (POP3 accounts are also supported).
-- Email configuration discovery.
-- Disposable email address detection.
-
-
-See [Release notes](https://docs.aspose.cloud/email/release-notes/).
+See [Release notes](https://docs.aspose.cloud/email/aspose-email-cloud-21-3-release-notes/).
 
 ## How to use the SDK?
 The complete source code is available in the [GIT repository](https://github.com/aspose-email-cloud/aspose-email-cloud-php/tree/master/src/Aspose/Email).
