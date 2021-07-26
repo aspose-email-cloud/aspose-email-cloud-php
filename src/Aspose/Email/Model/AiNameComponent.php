@@ -223,9 +223,25 @@ class AiNameComponent implements ArrayAccess
         if ($this->container['score'] === null) {
             $invalidProperties[] = "'score' can't be null";
         }
+        if (($this->container['score'] > 1.0)) {
+            $invalidProperties[] = "invalid value for 'score', must be smaller than or equal to 1.0.";
+        }
+
+        if (($this->container['score'] < 0.0)) {
+            $invalidProperties[] = "invalid value for 'score', must be bigger than or equal to 0.0.";
+        }
+
         if ($this->container['position'] === null) {
             $invalidProperties[] = "'position' can't be null";
         }
+        if (($this->container['position'] > 2147483647)) {
+            $invalidProperties[] = "invalid value for 'position', must be smaller than or equal to 2147483647.";
+        }
+
+        if (($this->container['position'] < 0)) {
+            $invalidProperties[] = "invalid value for 'position', must be bigger than or equal to 0.";
+        }
+
         return $invalidProperties;
     }
 
@@ -244,7 +260,19 @@ class AiNameComponent implements ArrayAccess
         if ($this->container['score'] === null) {
             return false;
         }
+        if ($this->container['score'] > 1.0) {
+            return false;
+        }
+        if ($this->container['score'] < 0.0) {
+            return false;
+        }
         if ($this->container['position'] === null) {
+            return false;
+        }
+        if ($this->container['position'] > 2147483647) {
+            return false;
+        }
+        if ($this->container['position'] < 0) {
             return false;
         }
         return true;
@@ -318,6 +346,12 @@ class AiNameComponent implements ArrayAccess
      */
     public function setScore($score)
     {
+        if (($score > 1.0)) {
+            throw new \InvalidArgumentException('invalid value for $score when calling AiNameComponent., must be smaller than or equal to 1.0.');
+        }
+        if (($score < 0.0)) {
+            throw new \InvalidArgumentException('invalid value for $score when calling AiNameComponent., must be bigger than or equal to 0.0.');
+        }
         $this->container['score'] = $score;
 
         return $this;
@@ -342,6 +376,12 @@ class AiNameComponent implements ArrayAccess
      */
     public function setPosition($position)
     {
+        if (($position > 2147483647)) {
+            throw new \InvalidArgumentException('invalid value for $position when calling AiNameComponent., must be smaller than or equal to 2147483647.');
+        }
+        if (($position < 0)) {
+            throw new \InvalidArgumentException('invalid value for $position when calling AiNameComponent., must be bigger than or equal to 0.');
+        }
         $this->container['position'] = $position;
 
         return $this;
