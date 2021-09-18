@@ -37,7 +37,7 @@ class CalendarGetAsFileRequest
      * Initializes a new instance of the CalendarGetAsFileRequest class.
      *  
      * @param string $file_name Calendar document file name.
-     * @param string $format File format. Enum, available values: Ics, Msg
+     * @param string $format File format./nEnum, available values: Ics, Msg
      * @param string $storage Storage name.
      * @param string $folder Path to folder in storage.
      */
@@ -63,7 +63,7 @@ class CalendarGetAsFileRequest
     public $file_name;
 
     /**
-     * File format. Enum, available values: Ics, Msg
+     * File format./nEnum, available values: Ics, Msg
      */
     public $format;
 

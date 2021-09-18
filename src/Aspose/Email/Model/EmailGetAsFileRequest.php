@@ -37,7 +37,7 @@ class EmailGetAsFileRequest
      * Initializes a new instance of the EmailGetAsFileRequest class.
      *  
      * @param string $file_name Email document file name
-     * @param string $format File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
+     * @param string $format File format./nEnum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
      * @param string $storage Storage name
      * @param string $folder Path to folder in storage
      */
@@ -63,7 +63,7 @@ class EmailGetAsFileRequest
     public $file_name;
 
     /**
-     * File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
+     * File format./nEnum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
      */
     public $format;
 

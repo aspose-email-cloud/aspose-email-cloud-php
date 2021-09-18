@@ -66,7 +66,7 @@ class EnumWithCustomOfUrlCategoryBuilder
 
     /**
      * Sets value
-     * @param string $value Url category. Enum, available values: Profile, HomePage, Home, Work, Blog, Ftp, Custom
+     * @param string $value Url category./nEnum, available values: Profile, HomePage, Home, Work, Blog, Ftp, Custom
      * @return $this
      */
     public function value($value)

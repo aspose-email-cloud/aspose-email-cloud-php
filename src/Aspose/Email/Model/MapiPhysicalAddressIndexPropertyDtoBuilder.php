@@ -74,7 +74,7 @@ class MapiPhysicalAddressIndexPropertyDtoBuilder
     }
     /**
      * Sets value
-     * @param string $value Identifies the display types for physical addresses. Enum, available values: None, Home, Business, Other
+     * @param string $value Identifies the display types for physical addresses./nEnum, available values: None, Home, Business, Other
      * @return $this
      */
     public function value($value)

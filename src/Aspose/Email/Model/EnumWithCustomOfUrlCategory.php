@@ -175,7 +175,7 @@ class EnumWithCustomOfUrlCategory implements ArrayAccess
     /**
      * Initializes a new instance of the EnumWithCustomOfUrlCategory class.
      *  
-     * @param string $value Url category. Enum, available values: Profile, HomePage, Home, Work, Blog, Ftp, Custom
+     * @param string $value Url category./nEnum, available values: Profile, HomePage, Home, Work, Blog, Ftp, Custom
      * @param string $description 
      */
     public function __construct(
@@ -240,7 +240,7 @@ class EnumWithCustomOfUrlCategory implements ArrayAccess
     /**
      * Sets value
      *
-     * @param string $value Url category. Enum, available values: Profile, HomePage, Home, Work, Blog, Ftp, Custom
+     * @param string $value Url category./nEnum, available values: Profile, HomePage, Home, Work, Blog, Ftp, Custom
      *
      * @return $this
      */

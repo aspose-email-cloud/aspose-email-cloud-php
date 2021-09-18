@@ -60,7 +60,7 @@ class MapiContactFromFileRequestBuilder
 
     /**
      * Sets format
-     * @param string $format File format Enum, available values: VCard, WebDav, Msg
+     * @param string $format File format./nEnum, available values: VCard, WebDav, Msg
      * @return $this
      */
     public function format($format)

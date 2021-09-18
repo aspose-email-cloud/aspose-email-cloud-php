@@ -86,7 +86,7 @@ class MailAddressBuilder
     }
     /**
      * Sets participationStatus
-     * @param string $participationStatus Identifies the participation status for the calendar user. Enum, available values: NeedsAction, Accepted, Declined, Tentative, Delegated
+     * @param string $participationStatus Identifies the participation status for the calendar user./nEnum, available values: NeedsAction, Accepted, Declined, Tentative, Delegated
      * @return $this
      */
     public function participationStatus($participationStatus)

@@ -42,7 +42,7 @@ class AiNameFormatRequest
      * @param string $encoding A character encoding name.
      * @param string $script A writing system code; starts with the ISO-15924 script name.
      * @param string $format Format of the name. Predefined format can be used by ID, or custom format can be specified. Predefined formats:      /format/default/ (= '%t%F%m%N%L%p')     /format/FN+LN/ (= '%F%L')     /format/title+FN+LN/ (= '%t%F%L')     /format/FN+MN+LN/ (= '%F%M%N%L')     /format/title+FN+MN+LN/ (= '%t%F%M%N%L')     /format/FN+MI+LN/ (= '%F%m%N%L')     /format/title+FN+MI+LN/ (= '%t%F%m%N%L')     /format/LN/ (= '%L')     /format/title+LN/ (= '%t%L')     /format/LN+FN+MN/ (= '%L,%F%M%N')     /format/LN+title+FN+MN/ (= '%L,%t%F%M%N')     /format/LN+FN+MI/ (= '%L,%F%m%N')     /format/LN+title+FN+MI/ (= '%L,%t%F%m%N')  Custom format string - custom combination of characters and the next term placeholders:      '%t' - Title (prefix)     '%F' - First name     '%f' - First initial     '%M' - Middle name(s)     '%m' - Middle initial(s)     '%N' - Nickname     '%L' - Last name     '%l' - Last initial     '%p' - Postfix  If no value for format option was provided, its default value is '%t%F%m%N%L%p'
-     * @param string $style Name writing style. Enum, available values: Formal, Informal, Legal, Academic
+     * @param string $style Name writing style./nEnum, available values: Formal, Informal, Legal, Academic
      */
     public function __construct($name = null, $language = null, $location = null, $encoding = null, $script = null, $format = null, $style = null)             
     {
@@ -100,7 +100,7 @@ class AiNameFormatRequest
     public $format;
 
     /**
-     * Name writing style. Enum, available values: Formal, Informal, Legal, Academic
+     * Name writing style./nEnum, available values: Formal, Informal, Legal, Academic
      */
     public $style;
 }

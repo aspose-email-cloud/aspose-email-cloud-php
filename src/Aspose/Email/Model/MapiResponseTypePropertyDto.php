@@ -165,7 +165,7 @@ class MapiResponseTypePropertyDto extends MapiPropertyDto
      *  
      * @param \Aspose\Email\Model\MapiPropertyDescriptor $descriptor Property descriptor
      * @param string $discriminator 
-     * @param string $value Represents the types of recipient responses that are received for a meeting. Enum, available values: Unknown, Organizer, Tentative, Accept, Decline, NoResponseReceived
+     * @param string $value Represents the types of recipient responses that are received for a meeting./nEnum, available values: Unknown, Organizer, Tentative, Accept, Decline, NoResponseReceived
      */
     public function __construct(
         $descriptor = null
@@ -227,7 +227,7 @@ class MapiResponseTypePropertyDto extends MapiPropertyDto
     /**
      * Sets value
      *
-     * @param string $value Represents the types of recipient responses that are received for a meeting. Enum, available values: Unknown, Organizer, Tentative, Accept, Decline, NoResponseReceived
+     * @param string $value Represents the types of recipient responses that are received for a meeting./nEnum, available values: Unknown, Organizer, Tentative, Accept, Decline, NoResponseReceived
      *
      * @return $this
      */

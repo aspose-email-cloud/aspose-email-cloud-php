@@ -288,14 +288,14 @@ class MapiMessageDto extends MapiMessageItemBaseDto
      * @param string $body Message text.
      * @param string $body_html Gets the BodyRtf of the message converted to HTML, if present, otherwise an empty string.
      * @param string $body_rtf RTF formatted message text.
-     * @param string $body_type The content type of message body. Enum, available values: PlainText, Html, Rtf
+     * @param string $body_type The content type of message body./nEnum, available values: PlainText, Html, Rtf
      * @param string[] $categories Contains keywords or categories for the message object.
      * @param string[] $companies Contains the names of the companies that are associated with an item.
      * @param string $item_id The item id, uses with a server.
      * @param string $message_class Case-sensitive string that identifies the sender-defined message class, such as IPM.Note. The message class specifies the type, purpose, or content of the message.
      * @param string $mileage Contains the mileage information that is associated with an item.
      * @param \Aspose\Email\Model\MapiRecipientDto[] $recipients Recipients of the message.
-     * @param string $sensitivity Contains values that indicate the message sensitivity. Enum, available values: None, Personal, Private, CompanyConfidential
+     * @param string $sensitivity Contains values that indicate the message sensitivity./nEnum, available values: None, Personal, Private, CompanyConfidential
      * @param string $subject Subject of the message.
      * @param string $subject_prefix Subject prefix that typically indicates some action on a message, such as \"FW: \" for forwarding.
      * @param \Aspose\Email\Model\MapiPropertyDto[] $properties List of MAPI properties
@@ -309,10 +309,10 @@ class MapiMessageDto extends MapiMessageItemBaseDto
      * @param string $display_name Display name for the message.
      * @param string $display_name_prefix Prefix of the display name.
      * @param string $display_to List of the display names of the primary (To) message recipients, separated by semicolons (;).
-     * @param string[] $flags Message flags. Items: Mapi message flags. Enum, available values: MsgFlagZero, MsgFlagRead, MsgFlagUnmodified, MsgFlagSubmit, MsgFlagUnsent, MsgFlagHasAttach, MsgFlagFromMe, MsgFlagAssociated, MsgFlagResend, MsgFlagNotifyRead, MsgFlagNotifyUnread, MsgFlagEverRead, MsgFlagOriginX400, MsgFlagOriginInternet, MsgFlagOriginMiscExt
+     * @param string[] $flags Message flags. Items: Mapi message flags./nEnum, available values: MsgFlagZero, MsgFlagRead, MsgFlagUnmodified, MsgFlagSubmit, MsgFlagUnsent, MsgFlagHasAttach, MsgFlagFromMe, MsgFlagAssociated, MsgFlagResend, MsgFlagNotifyRead, MsgFlagNotifyUnread, MsgFlagEverRead, MsgFlagOriginX400, MsgFlagOriginInternet, MsgFlagOriginMiscExt
      * @param map[string,string] $headers Transport message headers
      * @param string $internet_message_id Internet message id of the message.
-     * @param string $message_format Represents outlook message format. Enum, available values: Ascii, Unicode
+     * @param string $message_format Represents outlook message format./nEnum, available values: Ascii, Unicode
      * @param string $normalized_subject Normalized subject of the message.
      * @param bool $read_receipt_requested Value indicating whether the read receipt is requested.
      * @param string $reply_to Reply to names.
@@ -722,7 +722,7 @@ class MapiMessageDto extends MapiMessageItemBaseDto
     /**
      * Sets flags
      *
-     * @param string[] $flags Message flags. Items: Mapi message flags. Enum, available values: MsgFlagZero, MsgFlagRead, MsgFlagUnmodified, MsgFlagSubmit, MsgFlagUnsent, MsgFlagHasAttach, MsgFlagFromMe, MsgFlagAssociated, MsgFlagResend, MsgFlagNotifyRead, MsgFlagNotifyUnread, MsgFlagEverRead, MsgFlagOriginX400, MsgFlagOriginInternet, MsgFlagOriginMiscExt
+     * @param string[] $flags Message flags. Items: Mapi message flags./nEnum, available values: MsgFlagZero, MsgFlagRead, MsgFlagUnmodified, MsgFlagSubmit, MsgFlagUnsent, MsgFlagHasAttach, MsgFlagFromMe, MsgFlagAssociated, MsgFlagResend, MsgFlagNotifyRead, MsgFlagNotifyUnread, MsgFlagEverRead, MsgFlagOriginX400, MsgFlagOriginInternet, MsgFlagOriginMiscExt
      *
      * @return $this
      */
@@ -794,7 +794,7 @@ class MapiMessageDto extends MapiMessageItemBaseDto
     /**
      * Sets message_format
      *
-     * @param string $message_format Represents outlook message format. Enum, available values: Ascii, Unicode
+     * @param string $message_format Represents outlook message format./nEnum, available values: Ascii, Unicode
      *
      * @return $this
      */

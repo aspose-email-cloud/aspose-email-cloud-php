@@ -176,7 +176,7 @@ class ContactAsFileRequest implements ArrayAccess
     /**
      * Initializes a new instance of the ContactAsFileRequest class.
      *  
-     * @param string $format Enumerates contact formats. Enum, available values: VCard, WebDav, Msg
+     * @param string $format Enumerates contact formats./nEnum, available values: VCard, WebDav, Msg
      * @param \Aspose\Email\Model\ContactDto $value Contact model.
      */
     public function __construct(
@@ -240,7 +240,7 @@ class ContactAsFileRequest implements ArrayAccess
     /**
      * Sets format
      *
-     * @param string $format Enumerates contact formats. Enum, available values: VCard, WebDav, Msg
+     * @param string $format Enumerates contact formats./nEnum, available values: VCard, WebDav, Msg
      *
      * @return $this
      */

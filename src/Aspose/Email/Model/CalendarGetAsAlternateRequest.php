@@ -37,7 +37,7 @@ class CalendarGetAsAlternateRequest
      * Initializes a new instance of the CalendarGetAsAlternateRequest class.
      *  
      * @param string $file_name iCalendar file name in storage
-     * @param string $calendar_action iCalendar method type Enum, available values: Create, Update, Cancel
+     * @param string $calendar_action iCalendar method type./nEnum, available values: Create, Update, Cancel
      * @param string $sequence_id The sequence id
      * @param string $folder Path to folder in storage
      * @param string $storage Storage name
@@ -67,7 +67,7 @@ class CalendarGetAsAlternateRequest
     public $file_name;
 
     /**
-     * iCalendar method type Enum, available values: Create, Update, Cancel
+     * iCalendar method type./nEnum, available values: Create, Update, Cancel
      */
     public $calendar_action;
 

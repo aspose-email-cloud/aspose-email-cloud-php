@@ -76,7 +76,7 @@ class MapiCalendarTimeZoneRuleDtoBuilder
     }
     /**
      * Sets dayOfWeek
-     * @param string $dayOfWeek Day of week. Enum, available values: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
+     * @param string $dayOfWeek Day of week./nEnum, available values: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
      * @return $this
      */
     public function dayOfWeek($dayOfWeek)
@@ -126,7 +126,7 @@ class MapiCalendarTimeZoneRuleDtoBuilder
     }
     /**
      * Sets position
-     * @param string $position Day positions, typically found in a month. Enum, available values: None, First, Second, Third, Fourth, Last
+     * @param string $position Day positions, typically found in a month./nEnum, available values: None, First, Second, Third, Fourth, Last
      * @return $this
      */
     public function position($position)

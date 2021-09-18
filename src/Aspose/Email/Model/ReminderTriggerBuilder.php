@@ -86,7 +86,7 @@ class ReminderTriggerBuilder
     }
     /**
      * Sets related
-     * @param string $related Specify the relationship of the alarm trigger with respect to the start or end of the event. Enum, available values: Start, End
+     * @param string $related Specify the relationship of the alarm trigger with respect to the start or end of the event./nEnum, available values: Start, End
      * @return $this
      */
     public function related($related)

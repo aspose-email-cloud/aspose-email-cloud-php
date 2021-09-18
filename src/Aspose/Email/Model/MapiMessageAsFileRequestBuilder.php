@@ -66,7 +66,7 @@ class MapiMessageAsFileRequestBuilder
 
     /**
      * Sets format
-     * @param string $format Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
+     * @param string $format Email document format./nEnum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
      * @return $this
      */
     public function format($format)

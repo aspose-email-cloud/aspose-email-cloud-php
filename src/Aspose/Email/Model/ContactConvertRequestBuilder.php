@@ -60,7 +60,7 @@ class ContactConvertRequestBuilder
 
     /**
      * Sets to_format
-     * @param string $to_format File format to convert to Enum, available values: VCard, WebDav, Msg
+     * @param string $to_format File format to convert to./nEnum, available values: VCard, WebDav, Msg
      * @return $this
      */
     public function to_format($to_format)
@@ -70,7 +70,7 @@ class ContactConvertRequestBuilder
     }
     /**
      * Sets from_format
-     * @param string $from_format File format to convert from Enum, available values: VCard, WebDav, Msg
+     * @param string $from_format File format to convert from./nEnum, available values: VCard, WebDav, Msg
      * @return $this
      */
     public function from_format($from_format)

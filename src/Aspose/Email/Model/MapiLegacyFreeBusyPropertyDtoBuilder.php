@@ -74,7 +74,7 @@ class MapiLegacyFreeBusyPropertyDtoBuilder
     }
     /**
      * Sets value
-     * @param string $value Represents the free/busy status for a calendar event. Enum, available values: Free, Tentative, Busy, Oof, WorkingElsewhere, NoData
+     * @param string $value Represents the free/busy status for a calendar event./nEnum, available values: Free, Tentative, Busy, Oof, WorkingElsewhere, NoData
      * @return $this
      */
     public function value($value)

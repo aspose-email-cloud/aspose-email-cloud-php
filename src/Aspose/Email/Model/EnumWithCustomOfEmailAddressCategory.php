@@ -175,7 +175,7 @@ class EnumWithCustomOfEmailAddressCategory implements ArrayAccess
     /**
      * Initializes a new instance of the EnumWithCustomOfEmailAddressCategory class.
      *  
-     * @param string $value Represents category for an email address. Enum, available values: Home, Work, Custom, Email1, Email2, Email3
+     * @param string $value Represents category for an email address./nEnum, available values: Home, Work, Custom, Email1, Email2, Email3
      * @param string $description 
      */
     public function __construct(
@@ -240,7 +240,7 @@ class EnumWithCustomOfEmailAddressCategory implements ArrayAccess
     /**
      * Sets value
      *
-     * @param string $value Represents category for an email address. Enum, available values: Home, Work, Custom, Email1, Email2, Email3
+     * @param string $value Represents category for an email address./nEnum, available values: Home, Work, Custom, Email1, Email2, Email3
      *
      * @return $this
      */

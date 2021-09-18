@@ -87,7 +87,9 @@ class EmailDto implements ArrayAccess
         'subject_encoding' => 'string',
         'time_zone_offset' => 'int',
         'to' => '\Aspose\Email\Model\MailAddress[]',
-        'x_mailer' => 'string'
+        'x_mailer' => 'string',
+        'epilogue' => 'string',
+        'preamble' => 'string'
     ];
 
     /**
@@ -127,7 +129,9 @@ class EmailDto implements ArrayAccess
         'subject_encoding' => null,
         'time_zone_offset' => 'int64',
         'to' => null,
-        'x_mailer' => null
+        'x_mailer' => null,
+        'epilogue' => null,
+        'preamble' => null
     ];
 
     /**
@@ -188,7 +192,9 @@ class EmailDto implements ArrayAccess
         'subject_encoding' => 'subjectEncoding',
         'time_zone_offset' => 'timeZoneOffset',
         'to' => 'to',
-        'x_mailer' => 'xMailer'
+        'x_mailer' => 'xMailer',
+        'epilogue' => 'epilogue',
+        'preamble' => 'preamble'
     ];
 
     /**
@@ -228,7 +234,9 @@ class EmailDto implements ArrayAccess
         'subject_encoding' => 'setSubjectEncoding',
         'time_zone_offset' => 'setTimeZoneOffset',
         'to' => 'setTo',
-        'x_mailer' => 'setXMailer'
+        'x_mailer' => 'setXMailer',
+        'epilogue' => 'setEpilogue',
+        'preamble' => 'setPreamble'
     ];
 
     /**
@@ -268,7 +276,9 @@ class EmailDto implements ArrayAccess
         'subject_encoding' => 'getSubjectEncoding',
         'time_zone_offset' => 'getTimeZoneOffset',
         'to' => 'getTo',
-        'x_mailer' => 'getXMailer'
+        'x_mailer' => 'getXMailer',
+        'epilogue' => 'getEpilogue',
+        'preamble' => 'getPreamble'
     ];
 
     /**
@@ -331,10 +341,10 @@ class EmailDto implements ArrayAccess
      * @param \Aspose\Email\Model\MailAddress[] $bcc BCC recipients.
      * @param string $body Email message body as plain text.
      * @param string $body_encoding Body encoding.
-     * @param string $body_type The content type of message body. Enum, available values: PlainText, Html, Rtf
+     * @param string $body_type The content type of message body./nEnum, available values: PlainText, Html, Rtf
      * @param \Aspose\Email\Model\MailAddress[] $cc CC recipients.
      * @param \DateTime $date Message date.
-     * @param string[] $delivery_notification_options Delivery notifications. Items: Email delivery notification options. Enum, available values: Delay, Never, None, OnFailure, OnSuccess
+     * @param string[] $delivery_notification_options Delivery notifications. Items: Email delivery notification options./nEnum, available values: Delay, Never, None, OnFailure, OnSuccess
      * @param \Aspose\Email\Model\MailAddress $from From address.
      * @param map[string,string] $headers Document headers.
      * @param string $html_body HTML body.
@@ -347,17 +357,19 @@ class EmailDto implements ArrayAccess
      * @param string $message_id Message id.
      * @param bool $original_is_tnef Indicates whether original EML message is in TNEF format. Read only.
      * @param string $preferred_text_encoding Preferred encoding.
-     * @param string $priority Email priority status. Enum, available values: High, Low, Normal
+     * @param string $priority Email priority status./nEnum, available values: High, Low, Normal
      * @param \Aspose\Email\Model\MailAddress[] $read_receipt_to Read receipt addresses.
      * @param \Aspose\Email\Model\MailAddress[] $reply_to_list The list of addresses to reply to for the mail message.
      * @param \Aspose\Email\Model\MailAddress $reverse_path ReversePath address.
      * @param \Aspose\Email\Model\MailAddress $sender Sender address.
-     * @param string $sensitivity Specifies the sensitivity of a MailMessage. Enum, available values: None, Normal, Personal, Private, CompanyConfidential
+     * @param string $sensitivity Specifies the sensitivity of a MailMessage./nEnum, available values: None, Normal, Personal, Private, CompanyConfidential
      * @param string $subject Message subject.
      * @param string $subject_encoding Subject encoding.
      * @param int $time_zone_offset Coordinated Universal Time (UTC) offset for the message dates. This property defines the time zone difference, between the local time and UTC represented as count of ticks (10 000 per millisecond).
      * @param \Aspose\Email\Model\MailAddress[] $to The address collection that contains the recipients of message.
      * @param string $x_mailer The X-Mailer the software that created the e-mail message.
+     * @param string $epilogue Gets or sets an epilogue text. It is located after the last boundary.
+     * @param string $preamble Gets or sets a preamble text. It is located before the first boundary and generally includes an explanatory note to non-MIME conformant readers.
      */
     public function __construct(
         $alternate_views = null,
@@ -391,7 +403,9 @@ class EmailDto implements ArrayAccess
         $subject_encoding = null,
         $time_zone_offset = null,
         $to = null,
-        $x_mailer = null
+        $x_mailer = null,
+        $epilogue = null,
+        $preamble = null
     ) {
         $this->container['alternate_views'] = null;
         $this->container['attachments'] = null;
@@ -425,6 +439,8 @@ class EmailDto implements ArrayAccess
         $this->container['time_zone_offset'] = null;
         $this->container['to'] = null;
         $this->container['x_mailer'] = null;
+        $this->container['epilogue'] = null;
+        $this->container['preamble'] = null;
 
         if ($alternate_views != null) $this->setAlternateViews($alternate_views);
         if ($attachments != null) $this->setAttachments($attachments);
@@ -458,6 +474,8 @@ class EmailDto implements ArrayAccess
         if ($time_zone_offset != null) $this->setTimeZoneOffset($time_zone_offset);
         if ($to != null) $this->setTo($to);
         if ($x_mailer != null) $this->setXMailer($x_mailer);
+        if ($epilogue != null) $this->setEpilogue($epilogue);
+        if ($preamble != null) $this->setPreamble($preamble);
     }
 
     /**
@@ -672,7 +690,7 @@ class EmailDto implements ArrayAccess
     /**
      * Sets body_type
      *
-     * @param string $body_type The content type of message body. Enum, available values: PlainText, Html, Rtf
+     * @param string $body_type The content type of message body./nEnum, available values: PlainText, Html, Rtf
      *
      * @return $this
      */
@@ -744,7 +762,7 @@ class EmailDto implements ArrayAccess
     /**
      * Sets delivery_notification_options
      *
-     * @param string[] $delivery_notification_options Delivery notifications. Items: Email delivery notification options. Enum, available values: Delay, Never, None, OnFailure, OnSuccess
+     * @param string[] $delivery_notification_options Delivery notifications. Items: Email delivery notification options./nEnum, available values: Delay, Never, None, OnFailure, OnSuccess
      *
      * @return $this
      */
@@ -1056,7 +1074,7 @@ class EmailDto implements ArrayAccess
     /**
      * Sets priority
      *
-     * @param string $priority Email priority status. Enum, available values: High, Low, Normal
+     * @param string $priority Email priority status./nEnum, available values: High, Low, Normal
      *
      * @return $this
      */
@@ -1176,7 +1194,7 @@ class EmailDto implements ArrayAccess
     /**
      * Sets sensitivity
      *
-     * @param string $sensitivity Specifies the sensitivity of a MailMessage. Enum, available values: None, Normal, Personal, Private, CompanyConfidential
+     * @param string $sensitivity Specifies the sensitivity of a MailMessage./nEnum, available values: None, Normal, Personal, Private, CompanyConfidential
      *
      * @return $this
      */
@@ -1303,6 +1321,54 @@ class EmailDto implements ArrayAccess
     public function setXMailer($x_mailer)
     {
         $this->container['x_mailer'] = $x_mailer;
+
+        return $this;
+    }
+
+    /**
+     * Gets epilogue
+     *
+     * @return string
+     */
+    public function getEpilogue()
+    {
+        return $this->container['epilogue'];
+    }
+
+    /**
+     * Sets epilogue
+     *
+     * @param string $epilogue Gets or sets an epilogue text. It is located after the last boundary.
+     *
+     * @return $this
+     */
+    public function setEpilogue($epilogue)
+    {
+        $this->container['epilogue'] = $epilogue;
+
+        return $this;
+    }
+
+    /**
+     * Gets preamble
+     *
+     * @return string
+     */
+    public function getPreamble()
+    {
+        return $this->container['preamble'];
+    }
+
+    /**
+     * Sets preamble
+     *
+     * @param string $preamble Gets or sets a preamble text. It is located before the first boundary and generally includes an explanatory note to non-MIME conformant readers.
+     *
+     * @return $this
+     */
+    public function setPreamble($preamble)
+    {
+        $this->container['preamble'] = $preamble;
 
         return $this;
     }

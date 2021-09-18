@@ -36,7 +36,7 @@ class MapiMessageFromFileRequest
     /**
      * Initializes a new instance of the MapiMessageFromFileRequest class.
      *  
-     * @param string $format File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
+     * @param string $format File format./nEnum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
      * @param \SplFileObject $file File to convert
      */
     public function __construct($format = null, $file = null)             
@@ -50,7 +50,7 @@ class MapiMessageFromFileRequest
     }
 
     /**
-     * File format Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
+     * File format./nEnum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
      */
     public $format;
 

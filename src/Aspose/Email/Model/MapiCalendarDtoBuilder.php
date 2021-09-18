@@ -114,7 +114,7 @@ class MapiCalendarDtoBuilder
     }
     /**
      * Sets bodyType
-     * @param string $bodyType The content type of message body. Enum, available values: PlainText, Html, Rtf
+     * @param string $bodyType The content type of message body./nEnum, available values: PlainText, Html, Rtf
      * @return $this
      */
     public function bodyType($bodyType)
@@ -184,7 +184,7 @@ class MapiCalendarDtoBuilder
     }
     /**
      * Sets sensitivity
-     * @param string $sensitivity Contains values that indicate the message sensitivity. Enum, available values: None, Personal, Private, CompanyConfidential
+     * @param string $sensitivity Contains values that indicate the message sensitivity./nEnum, available values: None, Personal, Private, CompanyConfidential
      * @return $this
      */
     public function sensitivity($sensitivity)
@@ -244,7 +244,7 @@ class MapiCalendarDtoBuilder
     }
     /**
      * Sets busyStatus
-     * @param string $busyStatus Enumerates the mapi calendar possible busy status Enum, available values: Free, Tentative, Busy, OutOfOffice
+     * @param string $busyStatus Enumerates the mapi calendar possible busy status./nEnum, available values: Free, Tentative, Busy, OutOfOffice
      * @return $this
      */
     public function busyStatus($busyStatus)
@@ -254,7 +254,7 @@ class MapiCalendarDtoBuilder
     }
     /**
      * Sets clientIntent
-     * @param string[] $clientIntent Actions the user has taken on this Meeting object. Items: Enumerates the actions the user can taken on the Meeting object Enum, available values: Manager, Delegate, DeletedWithNoResponse, DeletedExceptionWithNoResponse, RespondedTentative, RespondedAccept, RespondedDecline, ModifiedStartTime, ModifiedEndTime, ModifiedLocation, RespondedExceptionDecline, Canceled, ExceptionCanceled
+     * @param string[] $clientIntent Actions the user has taken on this Meeting object. Items: Enumerates the actions the user can taken on the Meeting object./nEnum, available values: Manager, Delegate, DeletedWithNoResponse, DeletedExceptionWithNoResponse, RespondedTentative, RespondedAccept, RespondedDecline, ModifiedStartTime, ModifiedEndTime, ModifiedLocation, RespondedExceptionDecline, Canceled, ExceptionCanceled
      * @return $this
      */
     public function clientIntent($clientIntent)

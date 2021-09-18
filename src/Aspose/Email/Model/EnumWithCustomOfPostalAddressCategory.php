@@ -175,7 +175,7 @@ class EnumWithCustomOfPostalAddressCategory implements ArrayAccess
     /**
      * Initializes a new instance of the EnumWithCustomOfPostalAddressCategory class.
      *  
-     * @param string $value Address category. Enum, available values: Home, Work, Custom
+     * @param string $value Address category./nEnum, available values: Home, Work, Custom
      * @param string $description 
      */
     public function __construct(
@@ -240,7 +240,7 @@ class EnumWithCustomOfPostalAddressCategory implements ArrayAccess
     /**
      * Sets value
      *
-     * @param string $value Address category. Enum, available values: Home, Work, Custom
+     * @param string $value Address category./nEnum, available values: Home, Work, Custom
      *
      * @return $this
      */

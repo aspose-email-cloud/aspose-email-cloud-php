@@ -96,7 +96,7 @@ class MapiRecipientDtoBuilder
     }
     /**
      * Sets recipientType
-     * @param string $recipientType Represent the PR_RECIPIENT_TYPE property which contains the recipient type for a message recipient. Enum, available values: Unknown, MapiBcc, MapiCc, MapiP1, MapiSubmitted, MapiTo
+     * @param string $recipientType Represent the PR_RECIPIENT_TYPE property which contains the recipient type for a message recipient./nEnum, available values: Unknown, MapiBcc, MapiCc, MapiP1, MapiSubmitted, MapiTo
      * @return $this
      */
     public function recipientType($recipientType)

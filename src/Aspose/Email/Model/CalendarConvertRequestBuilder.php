@@ -60,7 +60,7 @@ class CalendarConvertRequestBuilder
 
     /**
      * Sets format
-     * @param string $format File format. Enum, available values: Ics, Msg
+     * @param string $format File format./nEnum, available values: Ics, Msg
      * @return $this
      */
     public function format($format)

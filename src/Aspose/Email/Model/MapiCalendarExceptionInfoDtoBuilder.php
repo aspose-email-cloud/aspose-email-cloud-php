@@ -86,7 +86,7 @@ class MapiCalendarExceptionInfoDtoBuilder
     }
     /**
      * Sets busyStatus
-     * @param string $busyStatus Enumerates the mapi calendar possible busy status Enum, available values: Free, Tentative, Busy, OutOfOffice
+     * @param string $busyStatus Enumerates the mapi calendar possible busy status./nEnum, available values: Free, Tentative, Busy, OutOfOffice
      * @return $this
      */
     public function busyStatus($busyStatus)
@@ -126,7 +126,7 @@ class MapiCalendarExceptionInfoDtoBuilder
     }
     /**
      * Sets meetingType
-     * @param string $meetingType Enumerates the appointment state Enum, available values: Meeting, Received, Canceled
+     * @param string $meetingType Enumerates the appointment state./nEnum, available values: Meeting, Received, Canceled
      * @return $this
      */
     public function meetingType($meetingType)
@@ -146,7 +146,7 @@ class MapiCalendarExceptionInfoDtoBuilder
     }
     /**
      * Sets overrideFlags
-     * @param string[] $overrideFlags Override flags. Items: Specifies what data in the MapiCalendarOverride structure has a value different from the recurring series. Enum, available values: Subject, MeetingType, ReminderDelta, Reminder, Location, BusyStatus, Attachment, Subtype, AppointmentColor, ExceptionalBody
+     * @param string[] $overrideFlags Override flags. Items: Specifies what data in the MapiCalendarOverride structure has a value different from the recurring series./nEnum, available values: Subject, MeetingType, ReminderDelta, Reminder, Location, BusyStatus, Attachment, Subtype, AppointmentColor, ExceptionalBody
      * @return $this
      */
     public function overrideFlags($overrideFlags)

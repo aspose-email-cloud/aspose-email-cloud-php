@@ -189,7 +189,7 @@ class MapiRecipientDto implements ArrayAccess
      * @param string $email_address Email address of the message recipient or sender.
      * @param string $address_type Type of the address of the message recipient or sender.
      * @param string $display_name Display name of the message recipient or sender.
-     * @param string $recipient_type Represent the PR_RECIPIENT_TYPE property which contains the recipient type for a message recipient. Enum, available values: Unknown, MapiBcc, MapiCc, MapiP1, MapiSubmitted, MapiTo
+     * @param string $recipient_type Represent the PR_RECIPIENT_TYPE property which contains the recipient type for a message recipient./nEnum, available values: Unknown, MapiBcc, MapiCc, MapiP1, MapiSubmitted, MapiTo
      */
     public function __construct(
         $email_address = null,
@@ -324,7 +324,7 @@ class MapiRecipientDto implements ArrayAccess
     /**
      * Sets recipient_type
      *
-     * @param string $recipient_type Represent the PR_RECIPIENT_TYPE property which contains the recipient type for a message recipient. Enum, available values: Unknown, MapiBcc, MapiCc, MapiP1, MapiSubmitted, MapiTo
+     * @param string $recipient_type Represent the PR_RECIPIENT_TYPE property which contains the recipient type for a message recipient./nEnum, available values: Unknown, MapiBcc, MapiCc, MapiP1, MapiSubmitted, MapiTo
      *
      * @return $this
      */

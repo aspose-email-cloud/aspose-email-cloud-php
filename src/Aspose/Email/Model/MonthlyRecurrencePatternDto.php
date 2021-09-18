@@ -176,11 +176,11 @@ class MonthlyRecurrencePatternDto extends RecurrencePatternDto
      * @param int $interval Number of recurrence units.
      * @param int $occurs Number of occurrences of the recurrence pattern.
      * @param \DateTime $end_date End date.
-     * @param string $week_start Represents the day of the week. Enum, available values: None, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, Day, WeekDay, WeekendDay
+     * @param string $week_start Represents the day of the week./nEnum, available values: None, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, Day, WeekDay, WeekendDay
      * @param string $discriminator 
-     * @param string $start_day Represents the day of the week. Enum, available values: None, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, Day, WeekDay, WeekendDay
+     * @param string $start_day Represents the day of the week./nEnum, available values: None, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, Day, WeekDay, WeekendDay
      * @param int $start_offset Start offset.
-     * @param string $start_position Day positions, typically found in a month. Enum, available values: None, First, Second, Third, Fourth, Last
+     * @param string $start_position Day positions, typically found in a month./nEnum, available values: None, First, Second, Third, Fourth, Last
      */
     public function __construct(
         $interval = null,
@@ -266,7 +266,7 @@ class MonthlyRecurrencePatternDto extends RecurrencePatternDto
     /**
      * Sets start_day
      *
-     * @param string $start_day Represents the day of the week. Enum, available values: None, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, Day, WeekDay, WeekendDay
+     * @param string $start_day Represents the day of the week./nEnum, available values: None, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, Day, WeekDay, WeekendDay
      *
      * @return $this
      */
@@ -314,7 +314,7 @@ class MonthlyRecurrencePatternDto extends RecurrencePatternDto
     /**
      * Sets start_position
      *
-     * @param string $start_position Day positions, typically found in a month. Enum, available values: None, First, Second, Third, Fourth, Last
+     * @param string $start_position Day positions, typically found in a month./nEnum, available values: None, First, Second, Third, Fourth, Last
      *
      * @return $this
      */

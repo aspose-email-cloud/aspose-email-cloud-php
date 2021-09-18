@@ -64,7 +64,7 @@ class MapiContactPhotoDtoBuilder
 
     /**
      * Sets photoImageFormat
-     * @param string $photoImageFormat MapiContact photo image format. Enum, available values: Undefined, Jpeg, Gif, Wmf, Bmp, Tiff
+     * @param string $photoImageFormat MapiContact photo image format./nEnum, available values: Undefined, Jpeg, Gif, Wmf, Bmp, Tiff
      * @return $this
      */
     public function photoImageFormat($photoImageFormat)

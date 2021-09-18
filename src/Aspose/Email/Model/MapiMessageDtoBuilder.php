@@ -114,7 +114,7 @@ class MapiMessageDtoBuilder
     }
     /**
      * Sets bodyType
-     * @param string $bodyType The content type of message body. Enum, available values: PlainText, Html, Rtf
+     * @param string $bodyType The content type of message body./nEnum, available values: PlainText, Html, Rtf
      * @return $this
      */
     public function bodyType($bodyType)
@@ -184,7 +184,7 @@ class MapiMessageDtoBuilder
     }
     /**
      * Sets sensitivity
-     * @param string $sensitivity Contains values that indicate the message sensitivity. Enum, available values: None, Personal, Private, CompanyConfidential
+     * @param string $sensitivity Contains values that indicate the message sensitivity./nEnum, available values: None, Personal, Private, CompanyConfidential
      * @return $this
      */
     public function sensitivity($sensitivity)
@@ -314,7 +314,7 @@ class MapiMessageDtoBuilder
     }
     /**
      * Sets flags
-     * @param string[] $flags Message flags. Items: Mapi message flags. Enum, available values: MsgFlagZero, MsgFlagRead, MsgFlagUnmodified, MsgFlagSubmit, MsgFlagUnsent, MsgFlagHasAttach, MsgFlagFromMe, MsgFlagAssociated, MsgFlagResend, MsgFlagNotifyRead, MsgFlagNotifyUnread, MsgFlagEverRead, MsgFlagOriginX400, MsgFlagOriginInternet, MsgFlagOriginMiscExt
+     * @param string[] $flags Message flags. Items: Mapi message flags./nEnum, available values: MsgFlagZero, MsgFlagRead, MsgFlagUnmodified, MsgFlagSubmit, MsgFlagUnsent, MsgFlagHasAttach, MsgFlagFromMe, MsgFlagAssociated, MsgFlagResend, MsgFlagNotifyRead, MsgFlagNotifyUnread, MsgFlagEverRead, MsgFlagOriginX400, MsgFlagOriginInternet, MsgFlagOriginMiscExt
      * @return $this
      */
     public function flags($flags)
@@ -344,7 +344,7 @@ class MapiMessageDtoBuilder
     }
     /**
      * Sets messageFormat
-     * @param string $messageFormat Represents outlook message format. Enum, available values: Ascii, Unicode
+     * @param string $messageFormat Represents outlook message format./nEnum, available values: Ascii, Unicode
      * @return $this
      */
     public function messageFormat($messageFormat)

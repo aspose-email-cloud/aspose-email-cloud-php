@@ -116,7 +116,7 @@ class EmailDtoBuilder
     }
     /**
      * Sets bodyType
-     * @param string $bodyType The content type of message body. Enum, available values: PlainText, Html, Rtf
+     * @param string $bodyType The content type of message body./nEnum, available values: PlainText, Html, Rtf
      * @return $this
      */
     public function bodyType($bodyType)
@@ -146,7 +146,7 @@ class EmailDtoBuilder
     }
     /**
      * Sets deliveryNotificationOptions
-     * @param string[] $deliveryNotificationOptions Delivery notifications. Items: Email delivery notification options. Enum, available values: Delay, Never, None, OnFailure, OnSuccess
+     * @param string[] $deliveryNotificationOptions Delivery notifications. Items: Email delivery notification options./nEnum, available values: Delay, Never, None, OnFailure, OnSuccess
      * @return $this
      */
     public function deliveryNotificationOptions($deliveryNotificationOptions)
@@ -276,7 +276,7 @@ class EmailDtoBuilder
     }
     /**
      * Sets priority
-     * @param string $priority Email priority status. Enum, available values: High, Low, Normal
+     * @param string $priority Email priority status./nEnum, available values: High, Low, Normal
      * @return $this
      */
     public function priority($priority)
@@ -326,7 +326,7 @@ class EmailDtoBuilder
     }
     /**
      * Sets sensitivity
-     * @param string $sensitivity Specifies the sensitivity of a MailMessage. Enum, available values: None, Normal, Personal, Private, CompanyConfidential
+     * @param string $sensitivity Specifies the sensitivity of a MailMessage./nEnum, available values: None, Normal, Personal, Private, CompanyConfidential
      * @return $this
      */
     public function sensitivity($sensitivity)
@@ -382,6 +382,26 @@ class EmailDtoBuilder
     public function xMailer($xMailer)
     {
         $this->model->setXMailer($xMailer);
+        return $this;
+    }
+    /**
+     * Sets epilogue
+     * @param string $epilogue Gets or sets an epilogue text. It is located after the last boundary.
+     * @return $this
+     */
+    public function epilogue($epilogue)
+    {
+        $this->model->setEpilogue($epilogue);
+        return $this;
+    }
+    /**
+     * Sets preamble
+     * @param string $preamble Gets or sets a preamble text. It is located before the first boundary and generally includes an explanatory note to non-MIME conformant readers.
+     * @return $this
+     */
+    public function preamble($preamble)
+    {
+        $this->model->setPreamble($preamble);
         return $this;
     }
 }

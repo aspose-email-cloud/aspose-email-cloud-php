@@ -36,7 +36,7 @@ class ContactFromFileRequest
     /**
      * Initializes a new instance of the ContactFromFileRequest class.
      *  
-     * @param string $format File format Enum, available values: VCard, WebDav, Msg
+     * @param string $format File format./nEnum, available values: VCard, WebDav, Msg
      * @param \SplFileObject $file File to convert
      */
     public function __construct($format = null, $file = null)             
@@ -50,7 +50,7 @@ class ContactFromFileRequest
     }
 
     /**
-     * File format Enum, available values: VCard, WebDav, Msg
+     * File format./nEnum, available values: VCard, WebDav, Msg
      */
     public $format;
 

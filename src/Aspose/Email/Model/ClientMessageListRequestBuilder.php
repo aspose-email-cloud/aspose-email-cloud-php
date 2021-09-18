@@ -120,7 +120,7 @@ class ClientMessageListRequestBuilder
     }
     /**
      * Sets type
-     * @param string $type MailMessageBase type. Using this property you can get messages in different formats (as EmailDto, MapiMessageDto or a file represented as Base64 string).              Enum, available values: Dto, Mapi, Base64
+     * @param string $type MailMessageBase type. Using this property you can get messages in different formats (as EmailDto, MapiMessageDto or a file represented as Base64 string)./nEnum, available values: Dto, Mapi, Base64
      * @return $this
      */
     public function type($type)
@@ -130,7 +130,7 @@ class ClientMessageListRequestBuilder
     }
     /**
      * Sets format
-     * @param string $format Base64 data format. Used only if type is set to Base64. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
+     * @param string $format Base64 data format. Used only if type is set to Base64./nEnum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
      * @return $this
      */
     public function format($format)

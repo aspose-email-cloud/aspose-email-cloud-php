@@ -77,7 +77,9 @@ class CalendarDto implements ArrayAccess
         'start_time_zone' => 'string',
         'status' => 'string',
         'summary' => 'string',
-        'transparency' => 'string'
+        'transparency' => 'string',
+        'class' => 'string',
+        'microsoft_importance' => 'string'
     ];
 
     /**
@@ -107,7 +109,9 @@ class CalendarDto implements ArrayAccess
         'start_time_zone' => null,
         'status' => null,
         'summary' => null,
-        'transparency' => null
+        'transparency' => null,
+        'class' => null,
+        'microsoft_importance' => null
     ];
 
     /**
@@ -158,7 +162,9 @@ class CalendarDto implements ArrayAccess
         'start_time_zone' => 'startTimeZone',
         'status' => 'status',
         'summary' => 'summary',
-        'transparency' => 'transparency'
+        'transparency' => 'transparency',
+        'class' => 'class',
+        'microsoft_importance' => 'microsoftImportance'
     ];
 
     /**
@@ -188,7 +194,9 @@ class CalendarDto implements ArrayAccess
         'start_time_zone' => 'setStartTimeZone',
         'status' => 'setStatus',
         'summary' => 'setSummary',
-        'transparency' => 'setTransparency'
+        'transparency' => 'setTransparency',
+        'class' => 'setClass',
+        'microsoft_importance' => 'setMicrosoftImportance'
     ];
 
     /**
@@ -218,7 +226,9 @@ class CalendarDto implements ArrayAccess
         'start_time_zone' => 'getStartTimeZone',
         'status' => 'getStatus',
         'summary' => 'getSummary',
-        'transparency' => 'getTransparency'
+        'transparency' => 'getTransparency',
+        'class' => 'getClass',
+        'microsoft_importance' => 'getMicrosoftImportance'
     ];
 
     /**
@@ -281,12 +291,12 @@ class CalendarDto implements ArrayAccess
      * @param string $description Description.
      * @param \DateTime $end_date End date.
      * @param string $end_time_zone End time zone.
-     * @param string[] $flags Appointment flags. Items: Enumerates iCalendar flags. Enum, available values: None, AllDayEvent
+     * @param string[] $flags Appointment flags. Items: Enumerates iCalendar flags./nEnum, available values: None, AllDayEvent
      * @param bool $is_description_html Indicates if description is in HTML format.
      * @param string $location Location.
-     * @param string $method Defines the iCalendar object method type associated with the calendar document. Enum, available values: None, Publish, Request, Reply, Add, Cancel, Refresh, Counter, DeclineCounter
-     * @param string $microsoft_busy_status Specifies the BUSY status. Enum, available values: NotDefined, Free, Tentative, Busy, Oof
-     * @param string $microsoft_intended_status Specifies the INTENDED status. Enum, available values: NotDefined, Free, Tentative, Busy, Oof
+     * @param string $method Defines the iCalendar object method type associated with the calendar document./nEnum, available values: None, Publish, Request, Reply, Add, Cancel, Refresh, Counter, DeclineCounter
+     * @param string $microsoft_busy_status Specifies the BUSY status./nEnum, available values: NotDefined, Free, Tentative, Busy, Oof
+     * @param string $microsoft_intended_status Specifies the INTENDED status./nEnum, available values: NotDefined, Free, Tentative, Busy, Oof
      * @param \Aspose\Email\Model\MailAddress[] $optional_attendees Optional attendees.
      * @param \Aspose\Email\Model\MailAddress $organizer Event organizer.
      * @param string $recurrence_string Deprecated, use 'Recurrence' property. String representation of recurrence pattern (See iCalendar RFC, \"Recurrence rule\" section). For example:               For daily recurrence:         \"FREQ=DAILY;COUNT=10;WKST=MO\"                   For monthly recurrence:         \"BYSETPOS=1;BYDAY=MO,TU,WE,TH,FR;FREQ=MONTHLY;INTERVAL=10;WKST=MO\"                   For yearly recurrence:         \"BYMONTHDAY=30;BYMONTH=1;FREQ=YEARLY;WKST=MO\"
@@ -295,9 +305,11 @@ class CalendarDto implements ArrayAccess
      * @param string $sequence_id The sequence id. Read only.
      * @param \DateTime $start_date Start date.
      * @param string $start_time_zone Start time zone.
-     * @param string $status Defines the overall status or confirmation for the calendar document. Enum, available values: NotDefined, Cancelled, Tentative, Confirmed
+     * @param string $status Defines the overall status or confirmation for the calendar document./nEnum, available values: NotDefined, Cancelled, Tentative, Confirmed
      * @param string $summary Summary.
-     * @param string $transparency Specifies whether or not this appointment is intended to be visible in availability searches. Enum, available values: NotDefined, Transparent, Opaque
+     * @param string $transparency Specifies whether or not this appointment is intended to be visible in availability searches./nEnum, available values: NotDefined, Transparent, Opaque
+     * @param string $class Defines the access classification for the calendar./nEnum, available values: Public, Private, Confidential, NotDefined
+     * @param string $microsoft_importance Specifies the importance of a calendar object./nEnum, available values: Low, Normal, High, NotDefined
      */
     public function __construct(
         $attachments = null,
@@ -321,7 +333,9 @@ class CalendarDto implements ArrayAccess
         $start_time_zone = null,
         $status = null,
         $summary = null,
-        $transparency = null
+        $transparency = null,
+        $class = null,
+        $microsoft_importance = null
     ) {
         $this->container['attachments'] = null;
         $this->container['attendees'] = null;
@@ -345,6 +359,8 @@ class CalendarDto implements ArrayAccess
         $this->container['status'] = null;
         $this->container['summary'] = null;
         $this->container['transparency'] = null;
+        $this->container['class'] = null;
+        $this->container['microsoft_importance'] = null;
 
         if ($attachments != null) $this->setAttachments($attachments);
         if ($attendees != null) $this->setAttendees($attendees);
@@ -368,6 +384,8 @@ class CalendarDto implements ArrayAccess
         if ($status != null) $this->setStatus($status);
         if ($summary != null) $this->setSummary($summary);
         if ($transparency != null) $this->setTransparency($transparency);
+        if ($class != null) $this->setClass($class);
+        if ($microsoft_importance != null) $this->setMicrosoftImportance($microsoft_importance);
     }
 
     /**
@@ -416,6 +434,12 @@ class CalendarDto implements ArrayAccess
         if ($this->container['transparency'] === null) {
             $invalidProperties[] = "'transparency' can't be null";
         }
+        if ($this->container['class'] === null) {
+            $invalidProperties[] = "'class' can't be null";
+        }
+        if ($this->container['microsoft_importance'] === null) {
+            $invalidProperties[] = "'microsoft_importance' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -462,6 +486,12 @@ class CalendarDto implements ArrayAccess
             return false;
         }
         if ($this->container['transparency'] === null) {
+            return false;
+        }
+        if ($this->container['class'] === null) {
+            return false;
+        }
+        if ($this->container['microsoft_importance'] === null) {
             return false;
         }
         return true;
@@ -601,7 +631,7 @@ class CalendarDto implements ArrayAccess
     /**
      * Sets flags
      *
-     * @param string[] $flags Appointment flags. Items: Enumerates iCalendar flags. Enum, available values: None, AllDayEvent
+     * @param string[] $flags Appointment flags. Items: Enumerates iCalendar flags./nEnum, available values: None, AllDayEvent
      *
      * @return $this
      */
@@ -676,7 +706,7 @@ class CalendarDto implements ArrayAccess
     /**
      * Sets method
      *
-     * @param string $method Defines the iCalendar object method type associated with the calendar document. Enum, available values: None, Publish, Request, Reply, Add, Cancel, Refresh, Counter, DeclineCounter
+     * @param string $method Defines the iCalendar object method type associated with the calendar document./nEnum, available values: None, Publish, Request, Reply, Add, Cancel, Refresh, Counter, DeclineCounter
      *
      * @return $this
      */
@@ -700,7 +730,7 @@ class CalendarDto implements ArrayAccess
     /**
      * Sets microsoft_busy_status
      *
-     * @param string $microsoft_busy_status Specifies the BUSY status. Enum, available values: NotDefined, Free, Tentative, Busy, Oof
+     * @param string $microsoft_busy_status Specifies the BUSY status./nEnum, available values: NotDefined, Free, Tentative, Busy, Oof
      *
      * @return $this
      */
@@ -724,7 +754,7 @@ class CalendarDto implements ArrayAccess
     /**
      * Sets microsoft_intended_status
      *
-     * @param string $microsoft_intended_status Specifies the INTENDED status. Enum, available values: NotDefined, Free, Tentative, Busy, Oof
+     * @param string $microsoft_intended_status Specifies the INTENDED status./nEnum, available values: NotDefined, Free, Tentative, Busy, Oof
      *
      * @return $this
      */
@@ -940,7 +970,7 @@ class CalendarDto implements ArrayAccess
     /**
      * Sets status
      *
-     * @param string $status Defines the overall status or confirmation for the calendar document. Enum, available values: NotDefined, Cancelled, Tentative, Confirmed
+     * @param string $status Defines the overall status or confirmation for the calendar document./nEnum, available values: NotDefined, Cancelled, Tentative, Confirmed
      *
      * @return $this
      */
@@ -988,13 +1018,61 @@ class CalendarDto implements ArrayAccess
     /**
      * Sets transparency
      *
-     * @param string $transparency Specifies whether or not this appointment is intended to be visible in availability searches. Enum, available values: NotDefined, Transparent, Opaque
+     * @param string $transparency Specifies whether or not this appointment is intended to be visible in availability searches./nEnum, available values: NotDefined, Transparent, Opaque
      *
      * @return $this
      */
     public function setTransparency($transparency)
     {
         $this->container['transparency'] = $transparency;
+
+        return $this;
+    }
+
+    /**
+     * Gets class
+     *
+     * @return string
+     */
+    public function getClass()
+    {
+        return $this->container['class'];
+    }
+
+    /**
+     * Sets class
+     *
+     * @param string $class Defines the access classification for the calendar./nEnum, available values: Public, Private, Confidential, NotDefined
+     *
+     * @return $this
+     */
+    public function setClass($class)
+    {
+        $this->container['class'] = $class;
+
+        return $this;
+    }
+
+    /**
+     * Gets microsoft_importance
+     *
+     * @return string
+     */
+    public function getMicrosoftImportance()
+    {
+        return $this->container['microsoft_importance'];
+    }
+
+    /**
+     * Sets microsoft_importance
+     *
+     * @param string $microsoft_importance Specifies the importance of a calendar object./nEnum, available values: Low, Normal, High, NotDefined
+     *
+     * @return $this
+     */
+    public function setMicrosoftImportance($microsoft_importance)
+    {
+        $this->container['microsoft_importance'] = $microsoft_importance;
 
         return $this;
     }

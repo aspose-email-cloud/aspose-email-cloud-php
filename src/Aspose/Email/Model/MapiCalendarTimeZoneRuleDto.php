@@ -212,12 +212,12 @@ class MapiCalendarTimeZoneRuleDto implements ArrayAccess
      * Initializes a new instance of the MapiCalendarTimeZoneRuleDto class.
      *  
      * @param \DateTime $date Date and time that indicate when to begin using the Standard/Daylight time.
-     * @param string $day_of_week Day of week. Enum, available values: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
+     * @param string $day_of_week Day of week./nEnum, available values: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
      * @param int $hour Hour.
      * @param int $milliseconds Milliseconds.
      * @param int $minute Minute.
      * @param int $month Month.
-     * @param string $position Day positions, typically found in a month. Enum, available values: None, First, Second, Third, Fourth, Last
+     * @param string $position Day positions, typically found in a month./nEnum, available values: None, First, Second, Third, Fourth, Last
      * @param int $seconds Seconds.
      * @param int $year Year.
      */
@@ -383,7 +383,7 @@ class MapiCalendarTimeZoneRuleDto implements ArrayAccess
     /**
      * Sets day_of_week
      *
-     * @param string $day_of_week Day of week. Enum, available values: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
+     * @param string $day_of_week Day of week./nEnum, available values: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
      *
      * @return $this
      */
@@ -509,7 +509,7 @@ class MapiCalendarTimeZoneRuleDto implements ArrayAccess
     /**
      * Sets position
      *
-     * @param string $position Day positions, typically found in a month. Enum, available values: None, First, Second, Third, Fourth, Last
+     * @param string $position Day positions, typically found in a month./nEnum, available values: None, First, Second, Third, Fourth, Last
      *
      * @return $this
      */

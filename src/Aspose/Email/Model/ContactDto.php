@@ -356,9 +356,9 @@ class ContactDto implements ArrayAccess
      * @param \Aspose\Email\Model\EmailAddress[] $email_addresses Person's email addresses.
      * @param \Aspose\Email\Model\CustomerEvent[] $events Person's events.
      * @param string $file_as A name used for sorting.
-     * @param string $file_as_mapping Specifies how to generate and recompute the value of the dispidFileAs property when other contact name properties change. Coincides MS-OXPROPS revision 16.2 from 7/31/2014. Enum, available values: Empty, DisplayName, FirstName, LastName, Organization, LastFirstMiddle, OrgLastFirstMiddle, LastFirstMiddleOrg, LastFirstMiddle2, LastFirstMiddle3, OrgLastFirstMiddle2, OrgLastFirstMiddle3, LastFirstMiddleOrg2, LastFirstMiddleOrg3, LastFirstMiddleGen, FirstMiddleLastGen, LastFirstMiddleGen2, BestMatch, AccordingToLocale, None
+     * @param string $file_as_mapping Specifies how to generate and recompute the value of the dispidFileAs property when other contact name properties change. Coincides MS-OXPROPS revision 16.2 from 7/31/2014./nEnum, available values: Empty, DisplayName, FirstName, LastName, Organization, LastFirstMiddle, OrgLastFirstMiddle, LastFirstMiddleOrg, LastFirstMiddle2, LastFirstMiddle3, OrgLastFirstMiddle2, OrgLastFirstMiddle3, LastFirstMiddleOrg2, LastFirstMiddleOrg3, LastFirstMiddleGen, FirstMiddleLastGen, LastFirstMiddleGen2, BestMatch, AccordingToLocale, None
      * @param string $free_busy_location URL path from which a client can retrieve free/busy information for the contact as an iCal file.
-     * @param string $gender Enum defines gender of a person. Enum, available values: Unspecified, Female, Male
+     * @param string $gender Enum defines gender of a person./nEnum, available values: Unspecified, Female, Male
      * @param string $given_name Person's given name.
      * @param string $government_id_number Government id number.
      * @param string $hobbies Person's hobbies.
@@ -370,7 +370,7 @@ class ContactDto implements ArrayAccess
      * @param string $middle_name Person's middle name.
      * @param string $nickname Person's nickname.
      * @param string $notes Notes.
-     * @param string $notes_format Defines format of a text. Enum, available values: Text, Html
+     * @param string $notes_format Defines format of a text./nEnum, available values: Text, Html
      * @param string $office_location Office location.
      * @param string $organizational_id_number Contains an identifier for the mail user used within the mail user's organization.
      * @param \Aspose\Email\Model\PhoneNumber[] $phone_numbers Person's phone numbers.
@@ -792,7 +792,7 @@ class ContactDto implements ArrayAccess
     /**
      * Sets file_as_mapping
      *
-     * @param string $file_as_mapping Specifies how to generate and recompute the value of the dispidFileAs property when other contact name properties change. Coincides MS-OXPROPS revision 16.2 from 7/31/2014. Enum, available values: Empty, DisplayName, FirstName, LastName, Organization, LastFirstMiddle, OrgLastFirstMiddle, LastFirstMiddleOrg, LastFirstMiddle2, LastFirstMiddle3, OrgLastFirstMiddle2, OrgLastFirstMiddle3, LastFirstMiddleOrg2, LastFirstMiddleOrg3, LastFirstMiddleGen, FirstMiddleLastGen, LastFirstMiddleGen2, BestMatch, AccordingToLocale, None
+     * @param string $file_as_mapping Specifies how to generate and recompute the value of the dispidFileAs property when other contact name properties change. Coincides MS-OXPROPS revision 16.2 from 7/31/2014./nEnum, available values: Empty, DisplayName, FirstName, LastName, Organization, LastFirstMiddle, OrgLastFirstMiddle, LastFirstMiddleOrg, LastFirstMiddle2, LastFirstMiddle3, OrgLastFirstMiddle2, OrgLastFirstMiddle3, LastFirstMiddleOrg2, LastFirstMiddleOrg3, LastFirstMiddleGen, FirstMiddleLastGen, LastFirstMiddleGen2, BestMatch, AccordingToLocale, None
      *
      * @return $this
      */
@@ -840,7 +840,7 @@ class ContactDto implements ArrayAccess
     /**
      * Sets gender
      *
-     * @param string $gender Enum defines gender of a person. Enum, available values: Unspecified, Female, Male
+     * @param string $gender Enum defines gender of a person./nEnum, available values: Unspecified, Female, Male
      *
      * @return $this
      */
@@ -1128,7 +1128,7 @@ class ContactDto implements ArrayAccess
     /**
      * Sets notes_format
      *
-     * @param string $notes_format Defines format of a text. Enum, available values: Text, Html
+     * @param string $notes_format Defines format of a text./nEnum, available values: Text, Html
      *
      * @return $this
      */

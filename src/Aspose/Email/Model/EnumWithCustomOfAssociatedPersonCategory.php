@@ -175,7 +175,7 @@ class EnumWithCustomOfAssociatedPersonCategory implements ArrayAccess
     /**
      * Initializes a new instance of the EnumWithCustomOfAssociatedPersonCategory class.
      *  
-     * @param string $value Associated person's category. Enum, available values: Spouse, Child, Mother, Father, Parent, Brother, Sister, Friend, Relative, Manager, Assistant, ReferredBy, Partner, DomesticPartner, Custom
+     * @param string $value Associated person's category./nEnum, available values: Spouse, Child, Mother, Father, Parent, Brother, Sister, Friend, Relative, Manager, Assistant, ReferredBy, Partner, DomesticPartner, Custom
      * @param string $description 
      */
     public function __construct(
@@ -240,7 +240,7 @@ class EnumWithCustomOfAssociatedPersonCategory implements ArrayAccess
     /**
      * Sets value
      *
-     * @param string $value Associated person's category. Enum, available values: Spouse, Child, Mother, Father, Parent, Brother, Sister, Friend, Relative, Manager, Assistant, ReferredBy, Partner, DomesticPartner, Custom
+     * @param string $value Associated person's category./nEnum, available values: Spouse, Child, Mother, Father, Parent, Brother, Sister, Friend, Relative, Manager, Assistant, ReferredBy, Partner, DomesticPartner, Custom
      *
      * @return $this
      */

@@ -110,7 +110,7 @@ class AiNameGenderizeRequestBuilder
     }
     /**
      * Sets style
-     * @param string $style Name writing style. Enum, available values: Formal, Informal, Legal, Academic
+     * @param string $style Name writing style./nEnum, available values: Formal, Informal, Legal, Academic
      * @return $this
      */
     public function style($style)

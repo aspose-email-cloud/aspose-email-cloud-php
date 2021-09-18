@@ -66,7 +66,7 @@ class EnumWithCustomOfEmailAddressCategoryBuilder
 
     /**
      * Sets value
-     * @param string $value Represents category for an email address. Enum, available values: Home, Work, Custom, Email1, Email2, Email3
+     * @param string $value Represents category for an email address./nEnum, available values: Home, Work, Custom, Email1, Email2, Email3
      * @return $this
      */
     public function value($value)
