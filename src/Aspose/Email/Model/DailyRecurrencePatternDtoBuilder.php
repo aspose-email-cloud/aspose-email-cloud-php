@@ -94,7 +94,7 @@ class DailyRecurrencePatternDtoBuilder
     }
     /**
      * Sets weekStart
-     * @param string $weekStart Represents the day of the week./nEnum, available values: None, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, Day, WeekDay, WeekendDay
+     * @param string $weekStart Represents the day of the week. Enum, available values: None, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, Day, WeekDay, WeekendDay
      * @return $this
      */
     public function weekStart($weekStart)

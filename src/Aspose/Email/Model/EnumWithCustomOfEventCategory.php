@@ -175,7 +175,7 @@ class EnumWithCustomOfEventCategory implements ArrayAccess
     /**
      * Initializes a new instance of the EnumWithCustomOfEventCategory class.
      *  
-     * @param string $value Event category./nEnum, available values: Custom, Birthday, Anniversary
+     * @param string $value Event category. Enum, available values: Custom, Birthday, Anniversary
      * @param string $description 
      */
     public function __construct(
@@ -240,7 +240,7 @@ class EnumWithCustomOfEventCategory implements ArrayAccess
     /**
      * Sets value
      *
-     * @param string $value Event category./nEnum, available values: Custom, Birthday, Anniversary
+     * @param string $value Event category. Enum, available values: Custom, Birthday, Anniversary
      *
      * @return $this
      */

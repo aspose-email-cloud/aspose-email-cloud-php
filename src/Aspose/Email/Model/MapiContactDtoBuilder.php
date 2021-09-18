@@ -114,7 +114,7 @@ class MapiContactDtoBuilder
     }
     /**
      * Sets bodyType
-     * @param string $bodyType The content type of message body./nEnum, available values: PlainText, Html, Rtf
+     * @param string $bodyType The content type of message body. Enum, available values: PlainText, Html, Rtf
      * @return $this
      */
     public function bodyType($bodyType)
@@ -184,7 +184,7 @@ class MapiContactDtoBuilder
     }
     /**
      * Sets sensitivity
-     * @param string $sensitivity Contains values that indicate the message sensitivity./nEnum, available values: None, Personal, Private, CompanyConfidential
+     * @param string $sensitivity Contains values that indicate the message sensitivity. Enum, available values: None, Personal, Private, CompanyConfidential
      * @return $this
      */
     public function sensitivity($sensitivity)

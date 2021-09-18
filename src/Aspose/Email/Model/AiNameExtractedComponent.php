@@ -176,7 +176,7 @@ class AiNameExtractedComponent implements ArrayAccess
     /**
      * Initializes a new instance of the AiNameExtractedComponent class.
      *  
-     * @param string $category Extracted from email address name component category./nEnum, available values: Unknown, GivenName, Surname, SomeName, NoName, Initial
+     * @param string $category Extracted from email address name component category. Enum, available values: Unknown, GivenName, Surname, SomeName, NoName, Initial
      * @param string $value Extracted value
      */
     public function __construct(
@@ -234,7 +234,7 @@ class AiNameExtractedComponent implements ArrayAccess
     /**
      * Sets category
      *
-     * @param string $category Extracted from email address name component category./nEnum, available values: Unknown, GivenName, Surname, SomeName, NoName, Initial
+     * @param string $category Extracted from email address name component category. Enum, available values: Unknown, GivenName, Surname, SomeName, NoName, Initial
      *
      * @return $this
      */

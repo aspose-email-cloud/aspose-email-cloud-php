@@ -181,7 +181,7 @@ class AiNameMismatch implements ArrayAccess
     /**
      * Initializes a new instance of the AiNameMismatch class.
      *  
-     * @param string $category Mismatch type./nEnum, available values: Unknown, FirstName, MiddleName, MiddleLastName, MiddleNickname, Gender, Context
+     * @param string $category Mismatch type. Enum, available values: Unknown, FirstName, MiddleName, MiddleLastName, MiddleNickname, Gender, Context
      * @param double $similarity Similarity score
      * @param string $explanation Explanation or mismatch subtype
      */
@@ -249,7 +249,7 @@ class AiNameMismatch implements ArrayAccess
     /**
      * Sets category
      *
-     * @param string $category Mismatch type./nEnum, available values: Unknown, FirstName, MiddleName, MiddleLastName, MiddleNickname, Gender, Context
+     * @param string $category Mismatch type. Enum, available values: Unknown, FirstName, MiddleName, MiddleLastName, MiddleNickname, Gender, Context
      *
      * @return $this
      */

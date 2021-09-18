@@ -74,7 +74,7 @@ class MapiImportancePropertyDtoBuilder
     }
     /**
      * Sets value
-     * @param string $value Levels of importance for an item./nEnum, available values: Low, Normal, High
+     * @param string $value Levels of importance for an item. Enum, available values: Low, Normal, High
      * @return $this
      */
     public function value($value)

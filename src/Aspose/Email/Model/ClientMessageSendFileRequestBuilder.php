@@ -100,7 +100,7 @@ class ClientMessageSendFileRequestBuilder
     }
     /**
      * Sets format
-     * @param string $format Email file format./nEnum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
+     * @param string $format Email file format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
      * @return $this
      */
     public function format($format)

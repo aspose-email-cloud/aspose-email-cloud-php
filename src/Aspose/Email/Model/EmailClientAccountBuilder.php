@@ -86,7 +86,7 @@ class EmailClientAccountBuilder
     }
     /**
      * Sets securityOptions
-     * @param string $securityOptions Email account security mode./nEnum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
+     * @param string $securityOptions Email account security mode. Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
      * @return $this
      */
     public function securityOptions($securityOptions)
@@ -96,7 +96,7 @@ class EmailClientAccountBuilder
     }
     /**
      * Sets protocolType
-     * @param string $protocolType Type of connection protocol./nEnum, available values: IMAP, POP3, SMTP, EWS, WebDav
+     * @param string $protocolType Type of connection protocol. Enum, available values: IMAP, POP3, SMTP, EWS, WebDav
      * @return $this
      */
     public function protocolType($protocolType)

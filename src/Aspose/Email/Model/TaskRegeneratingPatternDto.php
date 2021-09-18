@@ -166,9 +166,9 @@ class TaskRegeneratingPatternDto extends RecurrencePatternDto
      * @param int $interval Number of recurrence units.
      * @param int $occurs Number of occurrences of the recurrence pattern.
      * @param \DateTime $end_date End date.
-     * @param string $week_start Represents the day of the week./nEnum, available values: None, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, Day, WeekDay, WeekendDay
+     * @param string $week_start Represents the day of the week. Enum, available values: None, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, Day, WeekDay, WeekendDay
      * @param string $discriminator 
-     * @param string $regenerating_type Enumerates the types of regenerating pattern./nEnum, available values: Daily, Weekly, Monthly, Yearly
+     * @param string $regenerating_type Enumerates the types of regenerating pattern. Enum, available values: Daily, Weekly, Monthly, Yearly
      */
     public function __construct(
         $interval = null,
@@ -236,7 +236,7 @@ class TaskRegeneratingPatternDto extends RecurrencePatternDto
     /**
      * Sets regenerating_type
      *
-     * @param string $regenerating_type Enumerates the types of regenerating pattern./nEnum, available values: Daily, Weekly, Monthly, Yearly
+     * @param string $regenerating_type Enumerates the types of regenerating pattern. Enum, available values: Daily, Weekly, Monthly, Yearly
      *
      * @return $this
      */

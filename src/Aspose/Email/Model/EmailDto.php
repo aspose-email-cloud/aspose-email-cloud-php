@@ -341,10 +341,10 @@ class EmailDto implements ArrayAccess
      * @param \Aspose\Email\Model\MailAddress[] $bcc BCC recipients.
      * @param string $body Email message body as plain text.
      * @param string $body_encoding Body encoding.
-     * @param string $body_type The content type of message body./nEnum, available values: PlainText, Html, Rtf
+     * @param string $body_type The content type of message body. Enum, available values: PlainText, Html, Rtf
      * @param \Aspose\Email\Model\MailAddress[] $cc CC recipients.
      * @param \DateTime $date Message date.
-     * @param string[] $delivery_notification_options Delivery notifications. Items: Email delivery notification options./nEnum, available values: Delay, Never, None, OnFailure, OnSuccess
+     * @param string[] $delivery_notification_options Delivery notifications. Items: Email delivery notification options. Enum, available values: Delay, Never, None, OnFailure, OnSuccess
      * @param \Aspose\Email\Model\MailAddress $from From address.
      * @param map[string,string] $headers Document headers.
      * @param string $html_body HTML body.
@@ -357,12 +357,12 @@ class EmailDto implements ArrayAccess
      * @param string $message_id Message id.
      * @param bool $original_is_tnef Indicates whether original EML message is in TNEF format. Read only.
      * @param string $preferred_text_encoding Preferred encoding.
-     * @param string $priority Email priority status./nEnum, available values: High, Low, Normal
+     * @param string $priority Email priority status. Enum, available values: High, Low, Normal
      * @param \Aspose\Email\Model\MailAddress[] $read_receipt_to Read receipt addresses.
      * @param \Aspose\Email\Model\MailAddress[] $reply_to_list The list of addresses to reply to for the mail message.
      * @param \Aspose\Email\Model\MailAddress $reverse_path ReversePath address.
      * @param \Aspose\Email\Model\MailAddress $sender Sender address.
-     * @param string $sensitivity Specifies the sensitivity of a MailMessage./nEnum, available values: None, Normal, Personal, Private, CompanyConfidential
+     * @param string $sensitivity Specifies the sensitivity of a MailMessage. Enum, available values: None, Normal, Personal, Private, CompanyConfidential
      * @param string $subject Message subject.
      * @param string $subject_encoding Subject encoding.
      * @param int $time_zone_offset Coordinated Universal Time (UTC) offset for the message dates. This property defines the time zone difference, between the local time and UTC represented as count of ticks (10 000 per millisecond).
@@ -690,7 +690,7 @@ class EmailDto implements ArrayAccess
     /**
      * Sets body_type
      *
-     * @param string $body_type The content type of message body./nEnum, available values: PlainText, Html, Rtf
+     * @param string $body_type The content type of message body. Enum, available values: PlainText, Html, Rtf
      *
      * @return $this
      */
@@ -762,7 +762,7 @@ class EmailDto implements ArrayAccess
     /**
      * Sets delivery_notification_options
      *
-     * @param string[] $delivery_notification_options Delivery notifications. Items: Email delivery notification options./nEnum, available values: Delay, Never, None, OnFailure, OnSuccess
+     * @param string[] $delivery_notification_options Delivery notifications. Items: Email delivery notification options. Enum, available values: Delay, Never, None, OnFailure, OnSuccess
      *
      * @return $this
      */
@@ -1074,7 +1074,7 @@ class EmailDto implements ArrayAccess
     /**
      * Sets priority
      *
-     * @param string $priority Email priority status./nEnum, available values: High, Low, Normal
+     * @param string $priority Email priority status. Enum, available values: High, Low, Normal
      *
      * @return $this
      */
@@ -1194,7 +1194,7 @@ class EmailDto implements ArrayAccess
     /**
      * Sets sensitivity
      *
-     * @param string $sensitivity Specifies the sensitivity of a MailMessage./nEnum, available values: None, Normal, Personal, Private, CompanyConfidential
+     * @param string $sensitivity Specifies the sensitivity of a MailMessage. Enum, available values: None, Normal, Personal, Private, CompanyConfidential
      *
      * @return $this
      */

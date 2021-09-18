@@ -182,7 +182,7 @@ class CalendarAsAlternateRequest implements ArrayAccess
      * Initializes a new instance of the CalendarAsAlternateRequest class.
      *  
      * @param \Aspose\Email\Model\CalendarDto $value iCalendar document model
-     * @param string $action iCalendar actions./nEnum, available values: Create, Update, Cancel
+     * @param string $action iCalendar actions. Enum, available values: Create, Update, Cancel
      * @param string $sequence_id iCalendar sequence id
      */
     public function __construct(
@@ -280,7 +280,7 @@ class CalendarAsAlternateRequest implements ArrayAccess
     /**
      * Sets action
      *
-     * @param string $action iCalendar actions./nEnum, available values: Create, Update, Cancel
+     * @param string $action iCalendar actions. Enum, available values: Create, Update, Cancel
      *
      * @return $this
      */

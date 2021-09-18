@@ -66,7 +66,7 @@ class CalendarReminderBuilder
 
     /**
      * Sets action
-     * @param string $action Defines the action to be invoked when an alarm is triggered./nEnum, available values: Audio, Display, Email, Procedure, None
+     * @param string $action Defines the action to be invoked when an alarm is triggered. Enum, available values: Audio, Display, Email, Procedure, None
      * @return $this
      */
     public function action($action)

@@ -176,7 +176,7 @@ class AiNameGenderHypothesis implements ArrayAccess
     /**
      * Initializes a new instance of the AiNameGenderHypothesis class.
      *  
-     * @param string $gender Recognized name gender./nEnum, available values: Male, Female, Unknown
+     * @param string $gender Recognized name gender. Enum, available values: Male, Female, Unknown
      * @param double $score Hypothesis score
      */
     public function __construct(
@@ -240,7 +240,7 @@ class AiNameGenderHypothesis implements ArrayAccess
     /**
      * Sets gender
      *
-     * @param string $gender Recognized name gender./nEnum, available values: Male, Female, Unknown
+     * @param string $gender Recognized name gender. Enum, available values: Male, Female, Unknown
      *
      * @return $this
      */

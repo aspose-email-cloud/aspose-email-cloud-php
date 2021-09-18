@@ -36,7 +36,7 @@ class ContactGetRequest
     /**
      * Initializes a new instance of the ContactGetRequest class.
      *  
-     * @param string $format Contact document format./nEnum, available values: VCard, WebDav, Msg
+     * @param string $format Contact document format. Enum, available values: VCard, WebDav, Msg
      * @param string $file_name Contact document file name.
      * @param string $folder Path to folder in storage.
      * @param string $storage Storage name.
@@ -58,7 +58,7 @@ class ContactGetRequest
     }
 
     /**
-     * Contact document format./nEnum, available values: VCard, WebDav, Msg
+     * Contact document format. Enum, available values: VCard, WebDav, Msg
      */
     public $format;
 

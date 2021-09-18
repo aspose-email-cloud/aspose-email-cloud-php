@@ -84,7 +84,7 @@ class MapiCalendarSaveRequestBuilder
     }
     /**
      * Sets format
-     * @param string $format Calendar file format./nEnum, available values: Ics, Msg
+     * @param string $format Calendar file format. Enum, available values: Ics, Msg
      * @return $this
      */
     public function format($format)

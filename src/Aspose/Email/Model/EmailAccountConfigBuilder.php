@@ -76,7 +76,7 @@ class EmailAccountConfigBuilder
     }
     /**
      * Sets protocolType
-     * @param string $protocolType Type of connection protocol./nEnum, available values: IMAP, POP3, SMTP, EWS, WebDav
+     * @param string $protocolType Type of connection protocol. Enum, available values: IMAP, POP3, SMTP, EWS, WebDav
      * @return $this
      */
     public function protocolType($protocolType)
@@ -106,7 +106,7 @@ class EmailAccountConfigBuilder
     }
     /**
      * Sets socketType
-     * @param string $socketType Email account security mode./nEnum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
+     * @param string $socketType Email account security mode. Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
      * @return $this
      */
     public function socketType($socketType)
@@ -116,7 +116,7 @@ class EmailAccountConfigBuilder
     }
     /**
      * Sets authenticationTypes
-     * @param string[] $authenticationTypes Supported authentication types. Items: Email account authentication types./nEnum, available values: NoAuth, OAuth2, PasswordCleartext, PasswordEncrypted, SmtpAfterPop, ClientIpAddress
+     * @param string[] $authenticationTypes Supported authentication types. Items: Email account authentication types. Enum, available values: NoAuth, OAuth2, PasswordCleartext, PasswordEncrypted, SmtpAfterPop, ClientIpAddress
      * @return $this
      */
     public function authenticationTypes($authenticationTypes)

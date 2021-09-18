@@ -36,7 +36,7 @@ class CalendarConvertRequest
     /**
      * Initializes a new instance of the CalendarConvertRequest class.
      *  
-     * @param string $format File format./nEnum, available values: Ics, Msg
+     * @param string $format File format. Enum, available values: Ics, Msg
      * @param \SplFileObject $file File to convert
      */
     public function __construct($format = null, $file = null)             
@@ -50,7 +50,7 @@ class CalendarConvertRequest
     }
 
     /**
-     * File format./nEnum, available values: Ics, Msg
+     * File format. Enum, available values: Ics, Msg
      */
     public $format;
 

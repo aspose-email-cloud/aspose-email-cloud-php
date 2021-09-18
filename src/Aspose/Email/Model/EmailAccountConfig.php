@@ -207,11 +207,11 @@ class EmailAccountConfig implements ArrayAccess
      * Initializes a new instance of the EmailAccountConfig class.
      *  
      * @param string $display_name Email account display name
-     * @param string $protocol_type Type of connection protocol./nEnum, available values: IMAP, POP3, SMTP, EWS, WebDav
+     * @param string $protocol_type Type of connection protocol. Enum, available values: IMAP, POP3, SMTP, EWS, WebDav
      * @param string $host Email account host.
      * @param int $port Port.
-     * @param string $socket_type Email account security mode./nEnum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
-     * @param string[] $authentication_types Supported authentication types. Items: Email account authentication types./nEnum, available values: NoAuth, OAuth2, PasswordCleartext, PasswordEncrypted, SmtpAfterPop, ClientIpAddress
+     * @param string $socket_type Email account security mode. Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
+     * @param string[] $authentication_types Supported authentication types. Items: Email account authentication types. Enum, available values: NoAuth, OAuth2, PasswordCleartext, PasswordEncrypted, SmtpAfterPop, ClientIpAddress
      * @param \Aspose\Email\Model\NameValuePair[] $extra_info Extra account information.
      * @param bool $is_validated Determines that configuration validated. Set to false if validation skipped.
      */
@@ -324,7 +324,7 @@ class EmailAccountConfig implements ArrayAccess
     /**
      * Sets protocol_type
      *
-     * @param string $protocol_type Type of connection protocol./nEnum, available values: IMAP, POP3, SMTP, EWS, WebDav
+     * @param string $protocol_type Type of connection protocol. Enum, available values: IMAP, POP3, SMTP, EWS, WebDav
      *
      * @return $this
      */
@@ -396,7 +396,7 @@ class EmailAccountConfig implements ArrayAccess
     /**
      * Sets socket_type
      *
-     * @param string $socket_type Email account security mode./nEnum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
+     * @param string $socket_type Email account security mode. Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
      *
      * @return $this
      */
@@ -420,7 +420,7 @@ class EmailAccountConfig implements ArrayAccess
     /**
      * Sets authentication_types
      *
-     * @param string[] $authentication_types Supported authentication types. Items: Email account authentication types./nEnum, available values: NoAuth, OAuth2, PasswordCleartext, PasswordEncrypted, SmtpAfterPop, ClientIpAddress
+     * @param string[] $authentication_types Supported authentication types. Items: Email account authentication types. Enum, available values: NoAuth, OAuth2, PasswordCleartext, PasswordEncrypted, SmtpAfterPop, ClientIpAddress
      *
      * @return $this
      */

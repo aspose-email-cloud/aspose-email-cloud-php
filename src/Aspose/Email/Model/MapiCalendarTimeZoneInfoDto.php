@@ -206,7 +206,7 @@ class MapiCalendarTimeZoneInfoDto implements ArrayAccess
      * @param \Aspose\Email\Model\MapiCalendarTimeZoneRuleDto $daylight_date Date and local time that indicate when to begin using the DaylightBias.
      * @param int $standard_bias Offset in minutes from lBias during standard time.
      * @param \Aspose\Email\Model\MapiCalendarTimeZoneRuleDto $standard_date Date and local time that indicate when to begin using the StandardBias.
-     * @param string[] $time_zone_flags Individual bit flags that specify information about this TimeZoneRule. Items: Enumerates the individual bit flags that specify information about TimeZoneRule./nEnum, available values: TzRuleFlagRecurCurrentTzReg, TzRuleFlagEffectiveTzReg
+     * @param string[] $time_zone_flags Individual bit flags that specify information about this TimeZoneRule. Items: Enumerates the individual bit flags that specify information about TimeZoneRule. Enum, available values: TzRuleFlagRecurCurrentTzReg, TzRuleFlagEffectiveTzReg
      * @param int $year Year in which this rule is scheduled to take effect.
      */
     public function __construct(
@@ -417,7 +417,7 @@ class MapiCalendarTimeZoneInfoDto implements ArrayAccess
     /**
      * Sets time_zone_flags
      *
-     * @param string[] $time_zone_flags Individual bit flags that specify information about this TimeZoneRule. Items: Enumerates the individual bit flags that specify information about TimeZoneRule./nEnum, available values: TzRuleFlagRecurCurrentTzReg, TzRuleFlagEffectiveTzReg
+     * @param string[] $time_zone_flags Individual bit flags that specify information about this TimeZoneRule. Items: Enumerates the individual bit flags that specify information about TimeZoneRule. Enum, available values: TzRuleFlagRecurCurrentTzReg, TzRuleFlagEffectiveTzReg
      *
      * @return $this
      */

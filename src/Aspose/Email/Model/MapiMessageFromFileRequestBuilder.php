@@ -60,7 +60,7 @@ class MapiMessageFromFileRequestBuilder
 
     /**
      * Sets format
-     * @param string $format File format./nEnum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
+     * @param string $format File format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
      * @return $this
      */
     public function format($format)

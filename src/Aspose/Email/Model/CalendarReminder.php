@@ -206,7 +206,7 @@ class CalendarReminder implements ArrayAccess
     /**
      * Initializes a new instance of the CalendarReminder class.
      *  
-     * @param string $action Defines the action to be invoked when an alarm is triggered./nEnum, available values: Audio, Display, Email, Procedure, None
+     * @param string $action Defines the action to be invoked when an alarm is triggered. Enum, available values: Audio, Display, Email, Procedure, None
      * @param string[] $attachments Collection of Reminder Attachments. Could be an absolute URI or Base64 string representation of attachment content
      * @param \Aspose\Email\Model\ReminderAttendee[] $attendees Contains collection of ReminderAttendee objects.
      * @param string $description Provides a more complete description of the alarm.
@@ -294,7 +294,7 @@ class CalendarReminder implements ArrayAccess
     /**
      * Sets action
      *
-     * @param string $action Defines the action to be invoked when an alarm is triggered./nEnum, available values: Audio, Display, Email, Procedure, None
+     * @param string $action Defines the action to be invoked when an alarm is triggered. Enum, available values: Audio, Display, Email, Procedure, None
      *
      * @return $this
      */

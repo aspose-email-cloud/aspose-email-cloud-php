@@ -41,7 +41,7 @@ class AiNameCompleteRequest
      * @param string $location A geographic code such as an ISO-3166 two letter country code, for example \"FR\" for France.
      * @param string $encoding A character encoding name.
      * @param string $script A writing system code; starts with the ISO-15924 script name.
-     * @param string $style Name writing style./nEnum, available values: Formal, Informal, Legal, Academic
+     * @param string $style Name writing style. Enum, available values: Formal, Informal, Legal, Academic
      */
     public function __construct($name = null, $language = null, $location = null, $encoding = null, $script = null, $style = null)             
     {
@@ -91,7 +91,7 @@ class AiNameCompleteRequest
     public $script;
 
     /**
-     * Name writing style./nEnum, available values: Formal, Informal, Legal, Academic
+     * Name writing style. Enum, available values: Formal, Informal, Legal, Academic
      */
     public $style;
 }

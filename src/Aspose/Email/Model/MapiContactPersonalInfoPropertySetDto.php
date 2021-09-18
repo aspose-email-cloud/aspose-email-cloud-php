@@ -277,7 +277,7 @@ class MapiContactPersonalInfoPropertySetDto implements ArrayAccess
      * @param string $business_home_page Specifies the contact's business web page URL
      * @param string $ftp_site Specifies the contact's File Transfer Protocol (FTP) URL
      * @param string $computer_network_name Specifies the name of the network to which the contact's computer is connected
-     * @param string $gender Gender of the contact./nEnum, available values: Unspecified, Female, Male
+     * @param string $gender Gender of the contact. Enum, available values: Unspecified, Female, Male
      * @param string $referred_by_name Specifies the name of the person who referred this contact to the user
      * @param string[] $children Contains a list of names of children.
      */
@@ -771,7 +771,7 @@ class MapiContactPersonalInfoPropertySetDto implements ArrayAccess
     /**
      * Sets gender
      *
-     * @param string $gender Gender of the contact./nEnum, available values: Unspecified, Female, Male
+     * @param string $gender Gender of the contact. Enum, available values: Unspecified, Female, Male
      *
      * @return $this
      */

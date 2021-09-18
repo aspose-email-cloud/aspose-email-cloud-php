@@ -74,7 +74,7 @@ class MapiResponseTypePropertyDtoBuilder
     }
     /**
      * Sets value
-     * @param string $value Represents the types of recipient responses that are received for a meeting./nEnum, available values: Unknown, Organizer, Tentative, Accept, Decline, NoResponseReceived
+     * @param string $value Represents the types of recipient responses that are received for a meeting. Enum, available values: Unknown, Organizer, Tentative, Accept, Decline, NoResponseReceived
      * @return $this
      */
     public function value($value)

@@ -165,7 +165,7 @@ class MapiLegacyFreeBusyPropertyDto extends MapiPropertyDto
      *  
      * @param \Aspose\Email\Model\MapiPropertyDescriptor $descriptor Property descriptor
      * @param string $discriminator 
-     * @param string $value Represents the free/busy status for a calendar event./nEnum, available values: Free, Tentative, Busy, Oof, WorkingElsewhere, NoData
+     * @param string $value Represents the free/busy status for a calendar event. Enum, available values: Free, Tentative, Busy, Oof, WorkingElsewhere, NoData
      */
     public function __construct(
         $descriptor = null
@@ -227,7 +227,7 @@ class MapiLegacyFreeBusyPropertyDto extends MapiPropertyDto
     /**
      * Sets value
      *
-     * @param string $value Represents the free/busy status for a calendar event./nEnum, available values: Free, Tentative, Busy, Oof, WorkingElsewhere, NoData
+     * @param string $value Represents the free/busy status for a calendar event. Enum, available values: Free, Tentative, Busy, Oof, WorkingElsewhere, NoData
      *
      * @return $this
      */

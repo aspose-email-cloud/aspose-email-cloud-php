@@ -165,7 +165,7 @@ class ContactSaveRequest extends StorageModelOfContactDto
      *  
      * @param \Aspose\Email\Model\StorageFileLocation $storage_file 
      * @param \Aspose\Email\Model\ContactDto $value 
-     * @param string $format Enumerates contact formats./nEnum, available values: VCard, WebDav, Msg
+     * @param string $format Enumerates contact formats. Enum, available values: VCard, WebDav, Msg
      */
     public function __construct(
         $storage_file = null,
@@ -227,7 +227,7 @@ class ContactSaveRequest extends StorageModelOfContactDto
     /**
      * Sets format
      *
-     * @param string $format Enumerates contact formats./nEnum, available values: VCard, WebDav, Msg
+     * @param string $format Enumerates contact formats. Enum, available values: VCard, WebDav, Msg
      *
      * @return $this
      */

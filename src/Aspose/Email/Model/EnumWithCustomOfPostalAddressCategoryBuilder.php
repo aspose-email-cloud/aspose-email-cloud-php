@@ -66,7 +66,7 @@ class EnumWithCustomOfPostalAddressCategoryBuilder
 
     /**
      * Sets value
-     * @param string $value Address category./nEnum, available values: Home, Work, Custom
+     * @param string $value Address category. Enum, available values: Home, Work, Custom
      * @return $this
      */
     public function value($value)

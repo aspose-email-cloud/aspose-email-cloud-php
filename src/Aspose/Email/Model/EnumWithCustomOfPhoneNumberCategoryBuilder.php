@@ -66,7 +66,7 @@ class EnumWithCustomOfPhoneNumberCategoryBuilder
 
     /**
      * Sets value
-     * @param string $value Phone number category./nEnum, available values: Custom, Home, Work, Office, Mobile, Fax, HomeFax, WorkFax, Pager, Car, Isdn, Telex, Callback, Radio, Company, TtyTdd, Assistant, Primary
+     * @param string $value Phone number category. Enum, available values: Custom, Home, Work, Office, Mobile, Fax, HomeFax, WorkFax, Pager, Car, Isdn, Telex, Callback, Radio, Company, TtyTdd, Assistant, Primary
      * @return $this
      */
     public function value($value)

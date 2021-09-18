@@ -94,7 +94,7 @@ class TaskRegeneratingPatternDtoBuilder
     }
     /**
      * Sets weekStart
-     * @param string $weekStart Represents the day of the week./nEnum, available values: None, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, Day, WeekDay, WeekendDay
+     * @param string $weekStart Represents the day of the week. Enum, available values: None, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, Day, WeekDay, WeekendDay
      * @return $this
      */
     public function weekStart($weekStart)
@@ -104,7 +104,7 @@ class TaskRegeneratingPatternDtoBuilder
     }
     /**
      * Sets regeneratingType
-     * @param string $regeneratingType Enumerates the types of regenerating pattern./nEnum, available values: Daily, Weekly, Monthly, Yearly
+     * @param string $regeneratingType Enumerates the types of regenerating pattern. Enum, available values: Daily, Weekly, Monthly, Yearly
      * @return $this
      */
     public function regeneratingType($regeneratingType)

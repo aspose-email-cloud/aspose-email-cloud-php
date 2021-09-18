@@ -66,7 +66,7 @@ class AiNameExtractedComponentBuilder
 
     /**
      * Sets category
-     * @param string $category Extracted from email address name component category./nEnum, available values: Unknown, GivenName, Surname, SomeName, NoName, Initial
+     * @param string $category Extracted from email address name component category. Enum, available values: Unknown, GivenName, Surname, SomeName, NoName, Initial
      * @return $this
      */
     public function category($category)

@@ -36,8 +36,8 @@ class EmailConvertRequest
     /**
      * Initializes a new instance of the EmailConvertRequest class.
      *  
-     * @param string $from_format File format to convert from./nEnum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
-     * @param string $to_format File format to convert to./nEnum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
+     * @param string $from_format File format to convert from. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
+     * @param string $to_format File format to convert to. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
      * @param \SplFileObject $file File to convert
      */
     public function __construct($from_format = null, $to_format = null, $file = null)             
@@ -54,12 +54,12 @@ class EmailConvertRequest
     }
 
     /**
-     * File format to convert from./nEnum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
+     * File format to convert from. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
      */
     public $from_format;
 
     /**
-     * File format to convert to./nEnum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
+     * File format to convert to. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
      */
     public $to_format;
 

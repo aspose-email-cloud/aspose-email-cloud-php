@@ -66,7 +66,7 @@ class MapiCalendarRecurrencePatternDtoBuilder
 
     /**
      * Sets calendarType
-     * @param string $calendarType Enumerated the calendar type of the mapi recurrence./nEnum, available values: Default, CalGregorian, CalGregorianUs, CalJapan, CalTaiwan, CalKorea, CalHijri, CalThai, CalHebrew, CalGregorianMeFrench, CalGregorianArabic, CalGregorianXLitEnglish, CalGregorianXLitFrench, CalLunarJapanese, CalChineseLunar, CalSaka, CalLunarEtoChn, CalLunarEtoKor, CalLunarRokuyou, CalLunarKorean, CalUmAlQura
+     * @param string $calendarType Enumerated the calendar type of the mapi recurrence. Enum, available values: Default, CalGregorian, CalGregorianUs, CalJapan, CalTaiwan, CalKorea, CalHijri, CalThai, CalHebrew, CalGregorianMeFrench, CalGregorianArabic, CalGregorianXLitEnglish, CalGregorianXLitFrench, CalLunarJapanese, CalChineseLunar, CalSaka, CalLunarEtoChn, CalLunarEtoKor, CalLunarRokuyou, CalLunarKorean, CalUmAlQura
      * @return $this
      */
     public function calendarType($calendarType)
@@ -96,7 +96,7 @@ class MapiCalendarRecurrencePatternDtoBuilder
     }
     /**
      * Sets endType
-     * @param string $endType Enumerates the ending type for the recurrence./nEnum, available values: None, EndAfterDate, EndAfterNOccurrences, NeverEnd
+     * @param string $endType Enumerates the ending type for the recurrence. Enum, available values: None, EndAfterDate, EndAfterNOccurrences, NeverEnd
      * @return $this
      */
     public function endType($endType)
@@ -116,7 +116,7 @@ class MapiCalendarRecurrencePatternDtoBuilder
     }
     /**
      * Sets frequency
-     * @param string $frequency Enumerates mapi calendar recurrence frequency./nEnum, available values: None, Daily, Weekly, Monthly, Yearly
+     * @param string $frequency Enumerates mapi calendar recurrence frequency. Enum, available values: None, Daily, Weekly, Monthly, Yearly
      * @return $this
      */
     public function frequency($frequency)
@@ -146,7 +146,7 @@ class MapiCalendarRecurrencePatternDtoBuilder
     }
     /**
      * Sets patternType
-     * @param string $patternType Enumerates the mapi calendar recurrence pattern types./nEnum, available values: Day, Week, Month, MonthEnd, MonthNth, HjMonth, HjMonthNth, HjMonthEnd
+     * @param string $patternType Enumerates the mapi calendar recurrence pattern types. Enum, available values: Day, Week, Month, MonthEnd, MonthNth, HjMonth, HjMonthNth, HjMonthEnd
      * @return $this
      */
     public function patternType($patternType)
@@ -186,7 +186,7 @@ class MapiCalendarRecurrencePatternDtoBuilder
     }
     /**
      * Sets weekStartDay
-     * @param string $weekStartDay Day of week./nEnum, available values: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
+     * @param string $weekStartDay Day of week. Enum, available values: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday
      * @return $this
      */
     public function weekStartDay($weekStartDay)

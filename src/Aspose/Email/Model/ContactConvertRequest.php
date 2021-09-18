@@ -36,8 +36,8 @@ class ContactConvertRequest
     /**
      * Initializes a new instance of the ContactConvertRequest class.
      *  
-     * @param string $to_format File format to convert to./nEnum, available values: VCard, WebDav, Msg
-     * @param string $from_format File format to convert from./nEnum, available values: VCard, WebDav, Msg
+     * @param string $to_format File format to convert to. Enum, available values: VCard, WebDav, Msg
+     * @param string $from_format File format to convert from. Enum, available values: VCard, WebDav, Msg
      * @param \SplFileObject $file File to convert
      */
     public function __construct($to_format = null, $from_format = null, $file = null)             
@@ -54,12 +54,12 @@ class ContactConvertRequest
     }
 
     /**
-     * File format to convert to./nEnum, available values: VCard, WebDav, Msg
+     * File format to convert to. Enum, available values: VCard, WebDav, Msg
      */
     public $to_format;
 
     /**
-     * File format to convert from./nEnum, available values: VCard, WebDav, Msg
+     * File format to convert from. Enum, available values: VCard, WebDav, Msg
      */
     public $from_format;
 

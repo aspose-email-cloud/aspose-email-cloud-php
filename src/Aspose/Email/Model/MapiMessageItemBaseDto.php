@@ -256,14 +256,14 @@ class MapiMessageItemBaseDto implements ArrayAccess
      * @param string $body Message text.
      * @param string $body_html Gets the BodyRtf of the message converted to HTML, if present, otherwise an empty string.
      * @param string $body_rtf RTF formatted message text.
-     * @param string $body_type The content type of message body./nEnum, available values: PlainText, Html, Rtf
+     * @param string $body_type The content type of message body. Enum, available values: PlainText, Html, Rtf
      * @param string[] $categories Contains keywords or categories for the message object.
      * @param string[] $companies Contains the names of the companies that are associated with an item.
      * @param string $item_id The item id, uses with a server.
      * @param string $message_class Case-sensitive string that identifies the sender-defined message class, such as IPM.Note. The message class specifies the type, purpose, or content of the message.
      * @param string $mileage Contains the mileage information that is associated with an item.
      * @param \Aspose\Email\Model\MapiRecipientDto[] $recipients Recipients of the message.
-     * @param string $sensitivity Contains values that indicate the message sensitivity./nEnum, available values: None, Personal, Private, CompanyConfidential
+     * @param string $sensitivity Contains values that indicate the message sensitivity. Enum, available values: None, Personal, Private, CompanyConfidential
      * @param string $subject Subject of the message.
      * @param string $subject_prefix Subject prefix that typically indicates some action on a message, such as \"FW: \" for forwarding.
      * @param \Aspose\Email\Model\MapiPropertyDto[] $properties List of MAPI properties
@@ -500,7 +500,7 @@ class MapiMessageItemBaseDto implements ArrayAccess
     /**
      * Sets body_type
      *
-     * @param string $body_type The content type of message body./nEnum, available values: PlainText, Html, Rtf
+     * @param string $body_type The content type of message body. Enum, available values: PlainText, Html, Rtf
      *
      * @return $this
      */
@@ -668,7 +668,7 @@ class MapiMessageItemBaseDto implements ArrayAccess
     /**
      * Sets sensitivity
      *
-     * @param string $sensitivity Contains values that indicate the message sensitivity./nEnum, available values: None, Personal, Private, CompanyConfidential
+     * @param string $sensitivity Contains values that indicate the message sensitivity. Enum, available values: None, Personal, Private, CompanyConfidential
      *
      * @return $this
      */

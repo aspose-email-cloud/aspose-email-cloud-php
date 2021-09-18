@@ -176,7 +176,7 @@ class MapiCalendarAsFileRequest implements ArrayAccess
     /**
      * Initializes a new instance of the MapiCalendarAsFileRequest class.
      *  
-     * @param string $format Calendar file format./nEnum, available values: Ics, Msg
+     * @param string $format Calendar file format. Enum, available values: Ics, Msg
      * @param \Aspose\Email\Model\MapiCalendarDto $value MAPI calendar model.
      */
     public function __construct(
@@ -240,7 +240,7 @@ class MapiCalendarAsFileRequest implements ArrayAccess
     /**
      * Sets format
      *
-     * @param string $format Calendar file format./nEnum, available values: Ics, Msg
+     * @param string $format Calendar file format. Enum, available values: Ics, Msg
      *
      * @return $this
      */

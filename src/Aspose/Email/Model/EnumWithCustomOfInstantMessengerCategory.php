@@ -175,7 +175,7 @@ class EnumWithCustomOfInstantMessengerCategory implements ArrayAccess
     /**
      * Initializes a new instance of the EnumWithCustomOfInstantMessengerCategory class.
      *  
-     * @param string $value Instant messenger address category./nEnum, available values: GoogleTalk, Aim, Yahoo, Skype, Qq, Msn, Icq, Jabber, Custom, ImAddress1, ImAddress2, ImAddress3
+     * @param string $value Instant messenger address category. Enum, available values: GoogleTalk, Aim, Yahoo, Skype, Qq, Msn, Icq, Jabber, Custom, ImAddress1, ImAddress2, ImAddress3
      * @param string $description 
      */
     public function __construct(
@@ -240,7 +240,7 @@ class EnumWithCustomOfInstantMessengerCategory implements ArrayAccess
     /**
      * Sets value
      *
-     * @param string $value Instant messenger address category./nEnum, available values: GoogleTalk, Aim, Yahoo, Skype, Qq, Msn, Icq, Jabber, Custom, ImAddress1, ImAddress2, ImAddress3
+     * @param string $value Instant messenger address category. Enum, available values: GoogleTalk, Aim, Yahoo, Skype, Qq, Msn, Icq, Jabber, Custom, ImAddress1, ImAddress2, ImAddress3
      *
      * @return $this
      */

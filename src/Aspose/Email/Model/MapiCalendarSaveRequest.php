@@ -165,7 +165,7 @@ class MapiCalendarSaveRequest extends StorageModelOfMapiCalendarDto
      *  
      * @param \Aspose\Email\Model\StorageFileLocation $storage_file 
      * @param \Aspose\Email\Model\MapiCalendarDto $value 
-     * @param string $format Calendar file format./nEnum, available values: Ics, Msg
+     * @param string $format Calendar file format. Enum, available values: Ics, Msg
      */
     public function __construct(
         $storage_file = null,
@@ -227,7 +227,7 @@ class MapiCalendarSaveRequest extends StorageModelOfMapiCalendarDto
     /**
      * Sets format
      *
-     * @param string $format Calendar file format./nEnum, available values: Ics, Msg
+     * @param string $format Calendar file format. Enum, available values: Ics, Msg
      *
      * @return $this
      */

@@ -94,7 +94,7 @@ class MonthlyRecurrencePatternDtoBuilder
     }
     /**
      * Sets weekStart
-     * @param string $weekStart Represents the day of the week./nEnum, available values: None, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, Day, WeekDay, WeekendDay
+     * @param string $weekStart Represents the day of the week. Enum, available values: None, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, Day, WeekDay, WeekendDay
      * @return $this
      */
     public function weekStart($weekStart)
@@ -104,7 +104,7 @@ class MonthlyRecurrencePatternDtoBuilder
     }
     /**
      * Sets startDay
-     * @param string $startDay Represents the day of the week./nEnum, available values: None, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, Day, WeekDay, WeekendDay
+     * @param string $startDay Represents the day of the week. Enum, available values: None, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, Day, WeekDay, WeekendDay
      * @return $this
      */
     public function startDay($startDay)
@@ -124,7 +124,7 @@ class MonthlyRecurrencePatternDtoBuilder
     }
     /**
      * Sets startPosition
-     * @param string $startPosition Day positions, typically found in a month./nEnum, available values: None, First, Second, Third, Fourth, Last
+     * @param string $startPosition Day positions, typically found in a month. Enum, available values: None, First, Second, Third, Fourth, Last
      * @return $this
      */
     public function startPosition($startPosition)

@@ -66,7 +66,7 @@ class EnumWithCustomOfEventCategoryBuilder
 
     /**
      * Sets value
-     * @param string $value Event category./nEnum, available values: Custom, Birthday, Anniversary
+     * @param string $value Event category. Enum, available values: Custom, Birthday, Anniversary
      * @return $this
      */
     public function value($value)

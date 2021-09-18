@@ -188,7 +188,7 @@ class MailAddress implements ArrayAccess
      *  
      * @param string $display_name Display name
      * @param string $address Address
-     * @param string $participation_status Identifies the participation status for the calendar user./nEnum, available values: NeedsAction, Accepted, Declined, Tentative, Delegated
+     * @param string $participation_status Identifies the participation status for the calendar user. Enum, available values: NeedsAction, Accepted, Declined, Tentative, Delegated
      * @param string $original_address_string The original e-mail address string
      */
     public function __construct(
@@ -300,7 +300,7 @@ class MailAddress implements ArrayAccess
     /**
      * Sets participation_status
      *
-     * @param string $participation_status Identifies the participation status for the calendar user./nEnum, available values: NeedsAction, Accepted, Declined, Tentative, Delegated
+     * @param string $participation_status Identifies the participation status for the calendar user. Enum, available values: NeedsAction, Accepted, Declined, Tentative, Delegated
      *
      * @return $this
      */

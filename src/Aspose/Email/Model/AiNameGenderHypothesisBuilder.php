@@ -66,7 +66,7 @@ class AiNameGenderHypothesisBuilder
 
     /**
      * Sets gender
-     * @param string $gender Recognized name gender./nEnum, available values: Male, Female, Unknown
+     * @param string $gender Recognized name gender. Enum, available values: Male, Female, Unknown
      * @return $this
      */
     public function gender($gender)

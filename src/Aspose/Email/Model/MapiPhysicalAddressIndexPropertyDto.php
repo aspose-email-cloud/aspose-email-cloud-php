@@ -165,7 +165,7 @@ class MapiPhysicalAddressIndexPropertyDto extends MapiPropertyDto
      *  
      * @param \Aspose\Email\Model\MapiPropertyDescriptor $descriptor Property descriptor
      * @param string $discriminator 
-     * @param string $value Identifies the display types for physical addresses./nEnum, available values: None, Home, Business, Other
+     * @param string $value Identifies the display types for physical addresses. Enum, available values: None, Home, Business, Other
      */
     public function __construct(
         $descriptor = null
@@ -227,7 +227,7 @@ class MapiPhysicalAddressIndexPropertyDto extends MapiPropertyDto
     /**
      * Sets value
      *
-     * @param string $value Identifies the display types for physical addresses./nEnum, available values: None, Home, Business, Other
+     * @param string $value Identifies the display types for physical addresses. Enum, available values: None, Home, Business, Other
      *
      * @return $this
      */

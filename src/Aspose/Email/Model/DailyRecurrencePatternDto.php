@@ -161,7 +161,7 @@ class DailyRecurrencePatternDto extends RecurrencePatternDto
      * @param int $interval Number of recurrence units.
      * @param int $occurs Number of occurrences of the recurrence pattern.
      * @param \DateTime $end_date End date.
-     * @param string $week_start Represents the day of the week./nEnum, available values: None, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, Day, WeekDay, WeekendDay
+     * @param string $week_start Represents the day of the week. Enum, available values: None, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, Day, WeekDay, WeekendDay
      * @param string $discriminator 
      */
     public function __construct(

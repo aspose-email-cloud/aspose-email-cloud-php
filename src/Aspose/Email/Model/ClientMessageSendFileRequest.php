@@ -40,7 +40,7 @@ class ClientMessageSendFileRequest
      * @param \SplFileObject $file File to send
      * @param string $storage Storage name where account file located.
      * @param string $account_storage_folder Folder in storage where account file located.
-     * @param string $format Email file format./nEnum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
+     * @param string $format Email file format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
      */
     public function __construct($account = null, $file = null, $storage = null, $account_storage_folder = null, $format = null)             
     {
@@ -82,7 +82,7 @@ class ClientMessageSendFileRequest
     public $account_storage_folder;
 
     /**
-     * Email file format./nEnum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
+     * Email file format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
      */
     public $format;
 }

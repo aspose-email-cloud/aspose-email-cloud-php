@@ -66,7 +66,7 @@ class AiNameMismatchBuilder
 
     /**
      * Sets category
-     * @param string $category Mismatch type./nEnum, available values: Unknown, FirstName, MiddleName, MiddleLastName, MiddleNickname, Gender, Context
+     * @param string $category Mismatch type. Enum, available values: Unknown, FirstName, MiddleName, MiddleLastName, MiddleNickname, Gender, Context
      * @return $this
      */
     public function category($category)

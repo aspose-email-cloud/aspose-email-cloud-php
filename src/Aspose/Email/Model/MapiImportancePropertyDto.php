@@ -165,7 +165,7 @@ class MapiImportancePropertyDto extends MapiPropertyDto
      *  
      * @param \Aspose\Email\Model\MapiPropertyDescriptor $descriptor Property descriptor
      * @param string $discriminator 
-     * @param string $value Levels of importance for an item./nEnum, available values: Low, Normal, High
+     * @param string $value Levels of importance for an item. Enum, available values: Low, Normal, High
      */
     public function __construct(
         $descriptor = null
@@ -227,7 +227,7 @@ class MapiImportancePropertyDto extends MapiPropertyDto
     /**
      * Sets value
      *
-     * @param string $value Levels of importance for an item./nEnum, available values: Low, Normal, High
+     * @param string $value Levels of importance for an item. Enum, available values: Low, Normal, High
      *
      * @return $this
      */

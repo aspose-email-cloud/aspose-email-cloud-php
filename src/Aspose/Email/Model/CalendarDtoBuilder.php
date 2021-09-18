@@ -116,7 +116,7 @@ class CalendarDtoBuilder
     }
     /**
      * Sets flags
-     * @param string[] $flags Appointment flags. Items: Enumerates iCalendar flags./nEnum, available values: None, AllDayEvent
+     * @param string[] $flags Appointment flags. Items: Enumerates iCalendar flags. Enum, available values: None, AllDayEvent
      * @return $this
      */
     public function flags($flags)
@@ -146,7 +146,7 @@ class CalendarDtoBuilder
     }
     /**
      * Sets method
-     * @param string $method Defines the iCalendar object method type associated with the calendar document./nEnum, available values: None, Publish, Request, Reply, Add, Cancel, Refresh, Counter, DeclineCounter
+     * @param string $method Defines the iCalendar object method type associated with the calendar document. Enum, available values: None, Publish, Request, Reply, Add, Cancel, Refresh, Counter, DeclineCounter
      * @return $this
      */
     public function method($method)
@@ -156,7 +156,7 @@ class CalendarDtoBuilder
     }
     /**
      * Sets microsoftBusyStatus
-     * @param string $microsoftBusyStatus Specifies the BUSY status./nEnum, available values: NotDefined, Free, Tentative, Busy, Oof
+     * @param string $microsoftBusyStatus Specifies the BUSY status. Enum, available values: NotDefined, Free, Tentative, Busy, Oof
      * @return $this
      */
     public function microsoftBusyStatus($microsoftBusyStatus)
@@ -166,7 +166,7 @@ class CalendarDtoBuilder
     }
     /**
      * Sets microsoftIntendedStatus
-     * @param string $microsoftIntendedStatus Specifies the INTENDED status./nEnum, available values: NotDefined, Free, Tentative, Busy, Oof
+     * @param string $microsoftIntendedStatus Specifies the INTENDED status. Enum, available values: NotDefined, Free, Tentative, Busy, Oof
      * @return $this
      */
     public function microsoftIntendedStatus($microsoftIntendedStatus)
@@ -256,7 +256,7 @@ class CalendarDtoBuilder
     }
     /**
      * Sets status
-     * @param string $status Defines the overall status or confirmation for the calendar document./nEnum, available values: NotDefined, Cancelled, Tentative, Confirmed
+     * @param string $status Defines the overall status or confirmation for the calendar document. Enum, available values: NotDefined, Cancelled, Tentative, Confirmed
      * @return $this
      */
     public function status($status)
@@ -276,7 +276,7 @@ class CalendarDtoBuilder
     }
     /**
      * Sets transparency
-     * @param string $transparency Specifies whether or not this appointment is intended to be visible in availability searches./nEnum, available values: NotDefined, Transparent, Opaque
+     * @param string $transparency Specifies whether or not this appointment is intended to be visible in availability searches. Enum, available values: NotDefined, Transparent, Opaque
      * @return $this
      */
     public function transparency($transparency)
@@ -286,7 +286,7 @@ class CalendarDtoBuilder
     }
     /**
      * Sets class
-     * @param string $class Defines the access classification for the calendar./nEnum, available values: Public, Private, Confidential, NotDefined
+     * @param string $class Defines the access classification for the calendar. Enum, available values: Public, Private, Confidential, NotDefined
      * @return $this
      */
     public function class($class)
@@ -296,7 +296,7 @@ class CalendarDtoBuilder
     }
     /**
      * Sets microsoftImportance
-     * @param string $microsoftImportance Specifies the importance of a calendar object./nEnum, available values: Low, Normal, High, NotDefined
+     * @param string $microsoftImportance Specifies the importance of a calendar object. Enum, available values: Low, Normal, High, NotDefined
      * @return $this
      */
     public function microsoftImportance($microsoftImportance)

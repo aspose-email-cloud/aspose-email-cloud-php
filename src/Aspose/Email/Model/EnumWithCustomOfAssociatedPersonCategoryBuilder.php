@@ -66,7 +66,7 @@ class EnumWithCustomOfAssociatedPersonCategoryBuilder
 
     /**
      * Sets value
-     * @param string $value Associated person's category./nEnum, available values: Spouse, Child, Mother, Father, Parent, Brother, Sister, Friend, Relative, Manager, Assistant, ReferredBy, Partner, DomesticPartner, Custom
+     * @param string $value Associated person's category. Enum, available values: Spouse, Child, Mother, Father, Parent, Brother, Sister, Friend, Relative, Manager, Assistant, ReferredBy, Partner, DomesticPartner, Custom
      * @return $this
      */
     public function value($value)

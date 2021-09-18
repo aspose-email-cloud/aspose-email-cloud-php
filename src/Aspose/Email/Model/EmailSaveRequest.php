@@ -165,7 +165,7 @@ class EmailSaveRequest extends StorageModelOfEmailDto
      *  
      * @param \Aspose\Email\Model\StorageFileLocation $storage_file 
      * @param \Aspose\Email\Model\EmailDto $value 
-     * @param string $format Email document format./nEnum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
+     * @param string $format Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
      */
     public function __construct(
         $storage_file = null,
@@ -227,7 +227,7 @@ class EmailSaveRequest extends StorageModelOfEmailDto
     /**
      * Sets format
      *
-     * @param string $format Email document format./nEnum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
+     * @param string $format Email document format. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
      *
      * @return $this
      */

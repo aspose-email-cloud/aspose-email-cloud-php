@@ -70,7 +70,7 @@ class CalendarGetAsAlternateRequestBuilder
     }
     /**
      * Sets calendar_action
-     * @param string $calendar_action iCalendar method type./nEnum, available values: Create, Update, Cancel
+     * @param string $calendar_action iCalendar method type. Enum, available values: Create, Update, Cancel
      * @return $this
      */
     public function calendar_action($calendar_action)
