@@ -26,17 +26,17 @@
   ],
   "config": {
     "platform": {
-      "php": "7.3"
+      "php": "8.0"
     }
   },
   "require": {
-    "php": ">=7.3",
+    "php": ">=8.0",
     "ext-json": "*",
-    "guzzlehttp/guzzle": "^6.2"
+    "guzzlehttp/guzzle": "6.5.5"
   },
   "require-dev": {
-    "squizlabs/php_codesniffer": "3.*",
-    "phpunit/phpunit": "^8.4"
+    "squizlabs/php_codesniffer": "3.5.6",
+    "phpunit/phpunit": "^8.5.20"
   },
   "autoload": {
     "psr-0": {
