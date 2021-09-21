@@ -28,8 +28,6 @@
 
 namespace Aspose\Email;
 
-use PHPUnit\Framework\Constraint\IsEmpty;
-
 /**
  * ObjectSerializer
  */
@@ -172,13 +170,14 @@ class ObjectSerializer
     public static function toString($value)
     {
         $matches = [];
-        preg_match("/^[1-9][0-9]$/", $value, $matches);
-        if (!empty($matches) &&
-            date(\DATE_ATOM, $matches[0]) instanceof \DateTime) { // datetime in ISO8601 format
-            return date(\DATE_ATOM, $matches[0]);
-        } else {
-            return $value;
+        preg_match("/^[1-9][0-9]*$/", $value, $matches);
+        if (!empty($matches)) {
+            $datetime = date(\DATE_ATOM, $matches[0]);
+            if ($datetime instanceof \DateTime) { // datetime in ISO8601 format
+                return $datetime;
+            }
         }
+        return $value;
     }
 
     /**
