@@ -226,7 +226,7 @@ class MapiContactPersonalInfoPropertySetDtoBuilder
     }
     /**
      * Sets gender
-     * @param string $gender Gender of the contact Enum, available values: Unspecified, Female, Male
+     * @param string $gender Gender of the contact. Enum, available values: Unspecified, Female, Male
      * @return $this
      */
     public function gender($gender)

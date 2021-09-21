@@ -86,7 +86,7 @@ class MapiCalendarExceptionInfoDtoBuilder
     }
     /**
      * Sets busyStatus
-     * @param string $busyStatus Enumerates the mapi calendar possible busy status Enum, available values: Free, Tentative, Busy, OutOfOffice
+     * @param string $busyStatus Enumerates the mapi calendar possible busy status. Enum, available values: Free, Tentative, Busy, OutOfOffice
      * @return $this
      */
     public function busyStatus($busyStatus)
@@ -126,7 +126,7 @@ class MapiCalendarExceptionInfoDtoBuilder
     }
     /**
      * Sets meetingType
-     * @param string $meetingType Enumerates the appointment state Enum, available values: Meeting, Received, Canceled
+     * @param string $meetingType Enumerates the appointment state. Enum, available values: Meeting, Received, Canceled
      * @return $this
      */
     public function meetingType($meetingType)

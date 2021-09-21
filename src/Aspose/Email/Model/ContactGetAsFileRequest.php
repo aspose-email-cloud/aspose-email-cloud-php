@@ -37,8 +37,8 @@ class ContactGetAsFileRequest
      * Initializes a new instance of the ContactGetAsFileRequest class.
      *  
      * @param string $file_name Calendar document file name
-     * @param string $to_format File format Enum, available values: VCard, WebDav, Msg
-     * @param string $from_format File format to convert from Enum, available values: VCard, WebDav, Msg
+     * @param string $to_format File format. Enum, available values: VCard, WebDav, Msg
+     * @param string $from_format File format to convert from. Enum, available values: VCard, WebDav, Msg
      * @param string $storage Storage name
      * @param string $folder Path to folder in storage
      */
@@ -67,12 +67,12 @@ class ContactGetAsFileRequest
     public $file_name;
 
     /**
-     * File format Enum, available values: VCard, WebDav, Msg
+     * File format. Enum, available values: VCard, WebDav, Msg
      */
     public $to_format;
 
     /**
-     * File format to convert from Enum, available values: VCard, WebDav, Msg
+     * File format to convert from. Enum, available values: VCard, WebDav, Msg
      */
     public $from_format;
 

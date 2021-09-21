@@ -41,7 +41,7 @@ class ClientMessageFetchRequest
      * @param string $folder Account folder to fetch from (should be specified for some protocols such as IMAP)
      * @param string $storage Storage name where account file located.
      * @param string $account_storage_folder Folder in storage where account file located.
-     * @param string $type MailMessageBase type. Using this property you can fetch message in different formats (as EmailDto, MapiMessageDto or a file represented as Base64 string).              Enum, available values: Dto, Mapi, Base64
+     * @param string $type MailMessageBase type. Using this property you can fetch message in different formats (as EmailDto, MapiMessageDto or a file represented as Base64 string). Enum, available values: Dto, Mapi, Base64
      * @param string $format Base64 data format. Used only if type is set to Base64. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
      */
     public function __construct($message_id = null, $account = null, $folder = null, $storage = null, $account_storage_folder = null, $type = null, $format = null)             
@@ -95,7 +95,7 @@ class ClientMessageFetchRequest
     public $account_storage_folder;
 
     /**
-     * MailMessageBase type. Using this property you can fetch message in different formats (as EmailDto, MapiMessageDto or a file represented as Base64 string).              Enum, available values: Dto, Mapi, Base64
+     * MailMessageBase type. Using this property you can fetch message in different formats (as EmailDto, MapiMessageDto or a file represented as Base64 string). Enum, available values: Dto, Mapi, Base64
      */
     public $type;
 

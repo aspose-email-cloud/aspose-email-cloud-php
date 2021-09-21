@@ -267,8 +267,8 @@ class MapiCalendarDto extends MapiMessageItemBaseDto
      * @param string $discriminator 
      * @param bool $appointment_counter_proposal Value indicating whether a Meeting Response object is a counter proposal.
      * @param \Aspose\Email\Model\MapiCalendarAttendeesDto $attendees Attendees
-     * @param string $busy_status Enumerates the mapi calendar possible busy status Enum, available values: Free, Tentative, Busy, OutOfOffice
-     * @param string[] $client_intent Actions the user has taken on this Meeting object. Items: Enumerates the actions the user can taken on the Meeting object Enum, available values: Manager, Delegate, DeletedWithNoResponse, DeletedExceptionWithNoResponse, RespondedTentative, RespondedAccept, RespondedDecline, ModifiedStartTime, ModifiedEndTime, ModifiedLocation, RespondedExceptionDecline, Canceled, ExceptionCanceled
+     * @param string $busy_status Enumerates the mapi calendar possible busy status. Enum, available values: Free, Tentative, Busy, OutOfOffice
+     * @param string[] $client_intent Actions the user has taken on this Meeting object. Items: Enumerates the actions the user can taken on the Meeting object. Enum, available values: Manager, Delegate, DeletedWithNoResponse, DeletedExceptionWithNoResponse, RespondedTentative, RespondedAccept, RespondedDecline, ModifiedStartTime, ModifiedEndTime, ModifiedLocation, RespondedExceptionDecline, Canceled, ExceptionCanceled
      * @param \DateTime $end_date End date and time of the event. If the date is not set, default value for DateTime is returned.
      * @param \Aspose\Email\Model\MapiCalendarTimeZoneDto $end_date_time_zone Time zone information that indicates the time zone of the EndDate property.
      * @param bool $is_all_day Value indicating whether the event is an all-day event.
@@ -515,7 +515,7 @@ class MapiCalendarDto extends MapiMessageItemBaseDto
     /**
      * Sets busy_status
      *
-     * @param string $busy_status Enumerates the mapi calendar possible busy status Enum, available values: Free, Tentative, Busy, OutOfOffice
+     * @param string $busy_status Enumerates the mapi calendar possible busy status. Enum, available values: Free, Tentative, Busy, OutOfOffice
      *
      * @return $this
      */
@@ -539,7 +539,7 @@ class MapiCalendarDto extends MapiMessageItemBaseDto
     /**
      * Sets client_intent
      *
-     * @param string[] $client_intent Actions the user has taken on this Meeting object. Items: Enumerates the actions the user can taken on the Meeting object Enum, available values: Manager, Delegate, DeletedWithNoResponse, DeletedExceptionWithNoResponse, RespondedTentative, RespondedAccept, RespondedDecline, ModifiedStartTime, ModifiedEndTime, ModifiedLocation, RespondedExceptionDecline, Canceled, ExceptionCanceled
+     * @param string[] $client_intent Actions the user has taken on this Meeting object. Items: Enumerates the actions the user can taken on the Meeting object. Enum, available values: Manager, Delegate, DeletedWithNoResponse, DeletedExceptionWithNoResponse, RespondedTentative, RespondedAccept, RespondedDecline, ModifiedStartTime, ModifiedEndTime, ModifiedLocation, RespondedExceptionDecline, Canceled, ExceptionCanceled
      *
      * @return $this
      */

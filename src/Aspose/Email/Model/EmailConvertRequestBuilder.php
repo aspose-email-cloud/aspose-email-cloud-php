@@ -60,7 +60,7 @@ class EmailConvertRequestBuilder
 
     /**
      * Sets from_format
-     * @param string $from_format File format to convert to Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
+     * @param string $from_format File format to convert from. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
      * @return $this
      */
     public function from_format($from_format)
@@ -70,7 +70,7 @@ class EmailConvertRequestBuilder
     }
     /**
      * Sets to_format
-     * @param string $to_format File format to convert from Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
+     * @param string $to_format File format to convert to. Enum, available values: Eml, Msg, MsgUnicode, Mhtml, Html, Tnef, Oft
      * @return $this
      */
     public function to_format($to_format)

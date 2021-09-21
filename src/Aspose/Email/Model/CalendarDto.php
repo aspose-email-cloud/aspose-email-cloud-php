@@ -77,7 +77,9 @@ class CalendarDto implements ArrayAccess
         'start_time_zone' => 'string',
         'status' => 'string',
         'summary' => 'string',
-        'transparency' => 'string'
+        'transparency' => 'string',
+        'class' => 'string',
+        'microsoft_importance' => 'string'
     ];
 
     /**
@@ -107,7 +109,9 @@ class CalendarDto implements ArrayAccess
         'start_time_zone' => null,
         'status' => null,
         'summary' => null,
-        'transparency' => null
+        'transparency' => null,
+        'class' => null,
+        'microsoft_importance' => null
     ];
 
     /**
@@ -158,7 +162,9 @@ class CalendarDto implements ArrayAccess
         'start_time_zone' => 'startTimeZone',
         'status' => 'status',
         'summary' => 'summary',
-        'transparency' => 'transparency'
+        'transparency' => 'transparency',
+        'class' => 'class',
+        'microsoft_importance' => 'microsoftImportance'
     ];
 
     /**
@@ -188,7 +194,9 @@ class CalendarDto implements ArrayAccess
         'start_time_zone' => 'setStartTimeZone',
         'status' => 'setStatus',
         'summary' => 'setSummary',
-        'transparency' => 'setTransparency'
+        'transparency' => 'setTransparency',
+        'class' => 'setClass',
+        'microsoft_importance' => 'setMicrosoftImportance'
     ];
 
     /**
@@ -218,7 +226,9 @@ class CalendarDto implements ArrayAccess
         'start_time_zone' => 'getStartTimeZone',
         'status' => 'getStatus',
         'summary' => 'getSummary',
-        'transparency' => 'getTransparency'
+        'transparency' => 'getTransparency',
+        'class' => 'getClass',
+        'microsoft_importance' => 'getMicrosoftImportance'
     ];
 
     /**
@@ -298,6 +308,8 @@ class CalendarDto implements ArrayAccess
      * @param string $status Defines the overall status or confirmation for the calendar document. Enum, available values: NotDefined, Cancelled, Tentative, Confirmed
      * @param string $summary Summary.
      * @param string $transparency Specifies whether or not this appointment is intended to be visible in availability searches. Enum, available values: NotDefined, Transparent, Opaque
+     * @param string $class Defines the access classification for the calendar. Enum, available values: Public, Private, Confidential, NotDefined
+     * @param string $microsoft_importance Specifies the importance of a calendar object. Enum, available values: Low, Normal, High, NotDefined
      */
     public function __construct(
         $attachments = null,
@@ -321,7 +333,9 @@ class CalendarDto implements ArrayAccess
         $start_time_zone = null,
         $status = null,
         $summary = null,
-        $transparency = null
+        $transparency = null,
+        $class = null,
+        $microsoft_importance = null
     ) {
         $this->container['attachments'] = null;
         $this->container['attendees'] = null;
@@ -345,6 +359,8 @@ class CalendarDto implements ArrayAccess
         $this->container['status'] = null;
         $this->container['summary'] = null;
         $this->container['transparency'] = null;
+        $this->container['class'] = null;
+        $this->container['microsoft_importance'] = null;
 
         if ($attachments != null) $this->setAttachments($attachments);
         if ($attendees != null) $this->setAttendees($attendees);
@@ -368,6 +384,8 @@ class CalendarDto implements ArrayAccess
         if ($status != null) $this->setStatus($status);
         if ($summary != null) $this->setSummary($summary);
         if ($transparency != null) $this->setTransparency($transparency);
+        if ($class != null) $this->setClass($class);
+        if ($microsoft_importance != null) $this->setMicrosoftImportance($microsoft_importance);
     }
 
     /**
@@ -416,6 +434,12 @@ class CalendarDto implements ArrayAccess
         if ($this->container['transparency'] === null) {
             $invalidProperties[] = "'transparency' can't be null";
         }
+        if ($this->container['class'] === null) {
+            $invalidProperties[] = "'class' can't be null";
+        }
+        if ($this->container['microsoft_importance'] === null) {
+            $invalidProperties[] = "'microsoft_importance' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -462,6 +486,12 @@ class CalendarDto implements ArrayAccess
             return false;
         }
         if ($this->container['transparency'] === null) {
+            return false;
+        }
+        if ($this->container['class'] === null) {
+            return false;
+        }
+        if ($this->container['microsoft_importance'] === null) {
             return false;
         }
         return true;
@@ -995,6 +1025,54 @@ class CalendarDto implements ArrayAccess
     public function setTransparency($transparency)
     {
         $this->container['transparency'] = $transparency;
+
+        return $this;
+    }
+
+    /**
+     * Gets class
+     *
+     * @return string
+     */
+    public function getClass()
+    {
+        return $this->container['class'];
+    }
+
+    /**
+     * Sets class
+     *
+     * @param string $class Defines the access classification for the calendar. Enum, available values: Public, Private, Confidential, NotDefined
+     *
+     * @return $this
+     */
+    public function setClass($class)
+    {
+        $this->container['class'] = $class;
+
+        return $this;
+    }
+
+    /**
+     * Gets microsoft_importance
+     *
+     * @return string
+     */
+    public function getMicrosoftImportance()
+    {
+        return $this->container['microsoft_importance'];
+    }
+
+    /**
+     * Sets microsoft_importance
+     *
+     * @param string $microsoft_importance Specifies the importance of a calendar object. Enum, available values: Low, Normal, High, NotDefined
+     *
+     * @return $this
+     */
+    public function setMicrosoftImportance($microsoft_importance)
+    {
+        $this->container['microsoft_importance'] = $microsoft_importance;
 
         return $this;
     }

@@ -238,11 +238,11 @@ class MapiCalendarExceptionInfoDto implements ArrayAccess
      *  
      * @param \Aspose\Email\Model\MapiAttachmentDto[] $attachments Attachments in the recurrence exception.
      * @param string $body Body.
-     * @param string $busy_status Enumerates the mapi calendar possible busy status Enum, available values: Free, Tentative, Busy, OutOfOffice
+     * @param string $busy_status Enumerates the mapi calendar possible busy status. Enum, available values: Free, Tentative, Busy, OutOfOffice
      * @param \DateTime $end_date_time End date.
      * @param bool $has_attachment Value of this field specifies whether the Exception Embedded Message object contains attachments.
      * @param string $location Location.
-     * @param string $meeting_type Enumerates the appointment state Enum, available values: Meeting, Received, Canceled
+     * @param string $meeting_type Enumerates the appointment state. Enum, available values: Meeting, Received, Canceled
      * @param \DateTime $original_start_date Original start date.
      * @param string[] $override_flags Override flags. Items: Specifies what data in the MapiCalendarOverride structure has a value different from the recurring series. Enum, available values: Subject, MeetingType, ReminderDelta, Reminder, Location, BusyStatus, Attachment, Subtype, AppointmentColor, ExceptionalBody
      * @param int $reminder_delta Reminder delta.
@@ -438,7 +438,7 @@ class MapiCalendarExceptionInfoDto implements ArrayAccess
     /**
      * Sets busy_status
      *
-     * @param string $busy_status Enumerates the mapi calendar possible busy status Enum, available values: Free, Tentative, Busy, OutOfOffice
+     * @param string $busy_status Enumerates the mapi calendar possible busy status. Enum, available values: Free, Tentative, Busy, OutOfOffice
      *
      * @return $this
      */
@@ -534,7 +534,7 @@ class MapiCalendarExceptionInfoDto implements ArrayAccess
     /**
      * Sets meeting_type
      *
-     * @param string $meeting_type Enumerates the appointment state Enum, available values: Meeting, Received, Canceled
+     * @param string $meeting_type Enumerates the appointment state. Enum, available values: Meeting, Received, Canceled
      *
      * @return $this
      */

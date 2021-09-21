@@ -284,5 +284,25 @@ class CalendarDtoBuilder
         $this->model->setTransparency($transparency);
         return $this;
     }
+    /**
+     * Sets class
+     * @param string $class Defines the access classification for the calendar. Enum, available values: Public, Private, Confidential, NotDefined
+     * @return $this
+     */
+    public function class($class)
+    {
+        $this->model->setClass($class);
+        return $this;
+    }
+    /**
+     * Sets microsoftImportance
+     * @param string $microsoftImportance Specifies the importance of a calendar object. Enum, available values: Low, Normal, High, NotDefined
+     * @return $this
+     */
+    public function microsoftImportance($microsoftImportance)
+    {
+        $this->model->setMicrosoftImportance($microsoftImportance);
+        return $this;
+    }
 }
 

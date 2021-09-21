@@ -106,7 +106,7 @@ class EmailAccountConfigBuilder
     }
     /**
      * Sets socketType
-     * @param string $socketType Email account security mode Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
+     * @param string $socketType Email account security mode. Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
      * @return $this
      */
     public function socketType($socketType)

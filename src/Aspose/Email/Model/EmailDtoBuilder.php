@@ -384,5 +384,25 @@ class EmailDtoBuilder
         $this->model->setXMailer($xMailer);
         return $this;
     }
+    /**
+     * Sets epilogue
+     * @param string $epilogue Gets or sets an epilogue text. It is located after the last boundary.
+     * @return $this
+     */
+    public function epilogue($epilogue)
+    {
+        $this->model->setEpilogue($epilogue);
+        return $this;
+    }
+    /**
+     * Sets preamble
+     * @param string $preamble Gets or sets a preamble text. It is located before the first boundary and generally includes an explanatory note to non-MIME conformant readers.
+     * @return $this
+     */
+    public function preamble($preamble)
+    {
+        $this->model->setPreamble($preamble);
+        return $this;
+    }
 }
 

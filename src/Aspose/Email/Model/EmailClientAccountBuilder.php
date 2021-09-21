@@ -86,7 +86,7 @@ class EmailClientAccountBuilder
     }
     /**
      * Sets securityOptions
-     * @param string $securityOptions Email account security mode Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
+     * @param string $securityOptions Email account security mode. Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
      * @return $this
      */
     public function securityOptions($securityOptions)

@@ -244,7 +244,7 @@ class MapiCalendarDtoBuilder
     }
     /**
      * Sets busyStatus
-     * @param string $busyStatus Enumerates the mapi calendar possible busy status Enum, available values: Free, Tentative, Busy, OutOfOffice
+     * @param string $busyStatus Enumerates the mapi calendar possible busy status. Enum, available values: Free, Tentative, Busy, OutOfOffice
      * @return $this
      */
     public function busyStatus($busyStatus)
@@ -254,7 +254,7 @@ class MapiCalendarDtoBuilder
     }
     /**
      * Sets clientIntent
-     * @param string[] $clientIntent Actions the user has taken on this Meeting object. Items: Enumerates the actions the user can taken on the Meeting object Enum, available values: Manager, Delegate, DeletedWithNoResponse, DeletedExceptionWithNoResponse, RespondedTentative, RespondedAccept, RespondedDecline, ModifiedStartTime, ModifiedEndTime, ModifiedLocation, RespondedExceptionDecline, Canceled, ExceptionCanceled
+     * @param string[] $clientIntent Actions the user has taken on this Meeting object. Items: Enumerates the actions the user can taken on the Meeting object. Enum, available values: Manager, Delegate, DeletedWithNoResponse, DeletedExceptionWithNoResponse, RespondedTentative, RespondedAccept, RespondedDecline, ModifiedStartTime, ModifiedEndTime, ModifiedLocation, RespondedExceptionDecline, Canceled, ExceptionCanceled
      * @return $this
      */
     public function clientIntent($clientIntent)

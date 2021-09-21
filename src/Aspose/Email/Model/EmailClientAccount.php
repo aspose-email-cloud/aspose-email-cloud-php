@@ -198,7 +198,7 @@ class EmailClientAccount implements ArrayAccess
      *  
      * @param string $host Mail server host name or IP address
      * @param int $port Mail server port
-     * @param string $security_options Email account security mode Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
+     * @param string $security_options Email account security mode. Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
      * @param string $protocol_type Type of connection protocol. Enum, available values: IMAP, POP3, SMTP, EWS, WebDav
      * @param \Aspose\Email\Model\EmailClientAccountCredentials $credentials Email client account credentials
      * @param \Aspose\Email\Model\StorageFileLocation $cache_file File with messages cache. Used to provide extra functions, which are not supported by account
@@ -372,7 +372,7 @@ class EmailClientAccount implements ArrayAccess
     /**
      * Sets security_options
      *
-     * @param string $security_options Email account security mode Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
+     * @param string $security_options Email account security mode. Enum, available values: None, SSLExplicit, SSLImplicit, SSLAuto, Auto
      *
      * @return $this
      */

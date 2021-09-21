@@ -176,7 +176,7 @@ class CalendarAsFileRequest implements ArrayAccess
     /**
      * Initializes a new instance of the CalendarAsFileRequest class.
      *  
-     * @param string $format Calendar file format Enum, available values: Ics, Msg
+     * @param string $format Calendar file format. Enum, available values: Ics, Msg
      * @param \Aspose\Email\Model\CalendarDto $value iCalendar model
      */
     public function __construct(
@@ -240,7 +240,7 @@ class CalendarAsFileRequest implements ArrayAccess
     /**
      * Sets format
      *
-     * @param string $format Calendar file format Enum, available values: Ics, Msg
+     * @param string $format Calendar file format. Enum, available values: Ics, Msg
      *
      * @return $this
      */

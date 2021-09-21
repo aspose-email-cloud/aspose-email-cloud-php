@@ -116,7 +116,7 @@ class MapiCalendarTimeZoneInfoDtoBuilder
     }
     /**
      * Sets timeZoneFlags
-     * @param string[] $timeZoneFlags Individual bit flags that specify information about this TimeZoneRule. Items: Enumerates the individual bit flags that specify information about TimeZoneRule Enum, available values: TzRuleFlagRecurCurrentTzReg, TzRuleFlagEffectiveTzReg
+     * @param string[] $timeZoneFlags Individual bit flags that specify information about this TimeZoneRule. Items: Enumerates the individual bit flags that specify information about TimeZoneRule. Enum, available values: TzRuleFlagRecurCurrentTzReg, TzRuleFlagEffectiveTzReg
      * @return $this
      */
     public function timeZoneFlags($timeZoneFlags)
