@@ -21,9 +21,9 @@ jobs:
 
     - name: Run tests
       env:
-        clientId: ${{secrets.appSid}}
-        clientSecret: ${{secrets.appKey}}
-        apiBaseUrl: "https://api-qa.aspose.cloud"
+        clientId: ${{secrets.appSidProd}}
+        clientSecret: ${{secrets.appKeyProd}}
+        apiBaseUrl: "https://api.aspose.cloud"
       run: |
         sed -i "s|replaceClientSecret|$clientSecret|g" tests/phpunit.xml
         sed -i "s|replaceClientId|$clientId|g" tests/phpunit.xml
