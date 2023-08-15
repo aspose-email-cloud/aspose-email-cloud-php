@@ -43,7 +43,7 @@ class ContactTest extends TestBase
         $mapi = $api->contact()->asFile(new ContactAsFileRequest('Msg', $contactDto));
         $vcard = $api->contact()->convert(new ContactConvertRequest('VCard', 'Msg', $mapi));
         $fileContent = $vcard->fread($vcard->getSize());
-        $this->assertRegExp("/" . $contactDto->getSurname() . "/", $fileContent);
+        $this->assertMatchesRegularExpression("/" . $contactDto->getSurname() . "/", $fileContent);
         $dto = $api->contact()->fromFile(new ContactFromFileRequest('VCard', $vcard));
         $this->assertEquals($contactDto->getSurname(), $dto->getSurname());
     }

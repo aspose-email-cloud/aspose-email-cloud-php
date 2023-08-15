@@ -79,7 +79,9 @@ class CalendarDto implements ArrayAccess
         'summary' => 'string',
         'transparency' => 'string',
         'class' => 'string',
-        'microsoft_importance' => 'string'
+        'microsoft_importance' => 'string',
+        'html_description' => 'string',
+        'date_time_stamp' => '\DateTime'
     ];
 
     /**
@@ -111,7 +113,9 @@ class CalendarDto implements ArrayAccess
         'summary' => null,
         'transparency' => null,
         'class' => null,
-        'microsoft_importance' => null
+        'microsoft_importance' => null,
+        'html_description' => null,
+        'date_time_stamp' => 'date-time'
     ];
 
     /**
@@ -164,7 +168,9 @@ class CalendarDto implements ArrayAccess
         'summary' => 'summary',
         'transparency' => 'transparency',
         'class' => 'class',
-        'microsoft_importance' => 'microsoftImportance'
+        'microsoft_importance' => 'microsoftImportance',
+        'html_description' => 'htmlDescription',
+        'date_time_stamp' => 'dateTimeStamp'
     ];
 
     /**
@@ -196,7 +202,9 @@ class CalendarDto implements ArrayAccess
         'summary' => 'setSummary',
         'transparency' => 'setTransparency',
         'class' => 'setClass',
-        'microsoft_importance' => 'setMicrosoftImportance'
+        'microsoft_importance' => 'setMicrosoftImportance',
+        'html_description' => 'setHtmlDescription',
+        'date_time_stamp' => 'setDateTimeStamp'
     ];
 
     /**
@@ -228,7 +236,9 @@ class CalendarDto implements ArrayAccess
         'summary' => 'getSummary',
         'transparency' => 'getTransparency',
         'class' => 'getClass',
-        'microsoft_importance' => 'getMicrosoftImportance'
+        'microsoft_importance' => 'getMicrosoftImportance',
+        'html_description' => 'getHtmlDescription',
+        'date_time_stamp' => 'getDateTimeStamp'
     ];
 
     /**
@@ -310,6 +320,8 @@ class CalendarDto implements ArrayAccess
      * @param string $transparency Specifies whether or not this appointment is intended to be visible in availability searches. Enum, available values: NotDefined, Transparent, Opaque
      * @param string $class Defines the access classification for the calendar. Enum, available values: Public, Private, Confidential, NotDefined
      * @param string $microsoft_importance Specifies the importance of a calendar object. Enum, available values: Low, Normal, High, NotDefined
+     * @param string $html_description HTML representation of description.
+     * @param \DateTime $date_time_stamp Date/time that the instance of the iCalendar object was created.
      */
     public function __construct(
         $attachments = null,
@@ -335,7 +347,9 @@ class CalendarDto implements ArrayAccess
         $summary = null,
         $transparency = null,
         $class = null,
-        $microsoft_importance = null
+        $microsoft_importance = null,
+        $html_description = null,
+        $date_time_stamp = null
     ) {
         $this->container['attachments'] = null;
         $this->container['attendees'] = null;
@@ -361,6 +375,8 @@ class CalendarDto implements ArrayAccess
         $this->container['transparency'] = null;
         $this->container['class'] = null;
         $this->container['microsoft_importance'] = null;
+        $this->container['html_description'] = null;
+        $this->container['date_time_stamp'] = null;
 
         if ($attachments != null) $this->setAttachments($attachments);
         if ($attendees != null) $this->setAttendees($attendees);
@@ -386,6 +402,8 @@ class CalendarDto implements ArrayAccess
         if ($transparency != null) $this->setTransparency($transparency);
         if ($class != null) $this->setClass($class);
         if ($microsoft_importance != null) $this->setMicrosoftImportance($microsoft_importance);
+        if ($html_description != null) $this->setHtmlDescription($html_description);
+        if ($date_time_stamp != null) $this->setDateTimeStamp($date_time_stamp);
     }
 
     /**
@@ -440,6 +458,9 @@ class CalendarDto implements ArrayAccess
         if ($this->container['microsoft_importance'] === null) {
             $invalidProperties[] = "'microsoft_importance' can't be null";
         }
+        if ($this->container['date_time_stamp'] === null) {
+            $invalidProperties[] = "'date_time_stamp' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -492,6 +513,9 @@ class CalendarDto implements ArrayAccess
             return false;
         }
         if ($this->container['microsoft_importance'] === null) {
+            return false;
+        }
+        if ($this->container['date_time_stamp'] === null) {
             return false;
         }
         return true;
@@ -1073,6 +1097,54 @@ class CalendarDto implements ArrayAccess
     public function setMicrosoftImportance($microsoft_importance)
     {
         $this->container['microsoft_importance'] = $microsoft_importance;
+
+        return $this;
+    }
+
+    /**
+     * Gets html_description
+     *
+     * @return string
+     */
+    public function getHtmlDescription()
+    {
+        return $this->container['html_description'];
+    }
+
+    /**
+     * Sets html_description
+     *
+     * @param string $html_description HTML representation of description.
+     *
+     * @return $this
+     */
+    public function setHtmlDescription($html_description)
+    {
+        $this->container['html_description'] = $html_description;
+
+        return $this;
+    }
+
+    /**
+     * Gets date_time_stamp
+     *
+     * @return \DateTime
+     */
+    public function getDateTimeStamp()
+    {
+        return $this->container['date_time_stamp'];
+    }
+
+    /**
+     * Sets date_time_stamp
+     *
+     * @param \DateTime $date_time_stamp Date/time that the instance of the iCalendar object was created.
+     *
+     * @return $this
+     */
+    public function setDateTimeStamp($date_time_stamp)
+    {
+        $this->container['date_time_stamp'] = $date_time_stamp;
 
         return $this;
     }

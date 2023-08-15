@@ -42,7 +42,7 @@ class MapiCalendarTest extends TestBase
             $mapiCalendar
         ));
         $fileContent = $ics->fread($ics->getSize());
-        $this->assertRegExp("/" . $mapiCalendar->getLocation() . "/", $fileContent);
+        $this->assertMatchesRegularExpression("/" . $mapiCalendar->getLocation() . "/", $fileContent);
 
         $mapiCalendarConverted = $api->mapi()->calendar()->fromFile(new MapiCalendarFromFileRequest($ics));
         $this->assertEquals($mapiCalendar->getLocation(), $mapiCalendarConverted->getLocation());

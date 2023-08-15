@@ -22,7 +22,7 @@ class EmailTest extends TestBase
         $mapi = $api->email()->asFile(new EmailAsFileRequest('Msg', $emailDto));
         $eml = $api->email()->convert(new EmailConvertRequest('Msg', 'Eml', $mapi));
         $fileContent = $eml->fread($eml->getSize());
-        $this->assertRegExp("/" . $emailDto->getFrom()->getAddress() . "/", $fileContent);
+        $this->assertMatchesRegularExpression("/" . $emailDto->getFrom()->getAddress() . "/", $fileContent);
         $dto = $api->email()->fromFile(new EmailFromFileRequest('Eml', $eml));
         $this->assertEquals($emailDto->getFrom()->getAddress(), $dto->getFrom()->getAddress());
     }

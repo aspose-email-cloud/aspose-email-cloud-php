@@ -36,7 +36,7 @@ class MapiMessageTest extends TestBase
             $mapiMessage
         ));
         $fileContent = $emlFile->fread($emlFile->getSize());
-        $this->assertRegExp("/" . $mapiMessage->getSubject() . "/", $fileContent);
+        $this->assertMatchesRegularExpression("/" . $mapiMessage->getSubject() . "/", $fileContent);
 
         $mapiMessageConverted = $api->mapi()->message()->fromFile(new MapiMessageFromFileRequest("Eml", $emlFile));
         $this->assertEquals($mapiMessage->getSubject(), $mapiMessageConverted->getSubject());

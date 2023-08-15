@@ -41,7 +41,7 @@ class OtherTest extends TestBase
         $calendarTempFile =
             self::api()->cloudStorage()->file()->downloadFile(new DownloadFileRequest($storagePath, self::$storage));
         $fileContent = $calendarTempFile->fread($calendarTempFile->getSize());
-        $this->assertRegExp("/Access-A-Ride/", $fileContent);
+        $this->assertMatchesRegularExpression("/Access-A-Ride/", $fileContent);
     }
 
     /**

@@ -45,7 +45,7 @@ class MapiContactTest extends TestBase
             $mapiContact
         ));
         $fileContent = $vcardFile->fread($vcardFile->getSize());
-        $this->assertRegExp("/" . $mapiContact->getNameInfo()->getGivenName() . "/", $fileContent);
+        $this->assertMatchesRegularExpression("/" . $mapiContact->getNameInfo()->getGivenName() . "/", $fileContent);
         $mapiContactConverted = $api->mapi()->contact()->fromFile(new MapiContactFromFileRequest("VCard", $vcardFile));
         $this->assertEquals($mapiContact->getNameInfo()->getSurname(), $mapiContactConverted
             ->getNameInfo()->getSurname());

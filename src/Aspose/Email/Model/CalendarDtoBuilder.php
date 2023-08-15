@@ -304,5 +304,25 @@ class CalendarDtoBuilder
         $this->model->setMicrosoftImportance($microsoftImportance);
         return $this;
     }
+    /**
+     * Sets htmlDescription
+     * @param string $htmlDescription HTML representation of description.
+     * @return $this
+     */
+    public function htmlDescription($htmlDescription)
+    {
+        $this->model->setHtmlDescription($htmlDescription);
+        return $this;
+    }
+    /**
+     * Sets dateTimeStamp
+     * @param \DateTime $dateTimeStamp Date/time that the instance of the iCalendar object was created.
+     * @return $this
+     */
+    public function dateTimeStamp($dateTimeStamp)
+    {
+        $this->model->setDateTimeStamp($dateTimeStamp);
+        return $this;
+    }
 }
 

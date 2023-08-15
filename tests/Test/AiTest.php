@@ -146,7 +146,7 @@ class AiTest extends TestBase
             self::$storage
         ));
         $fileContent = $contactTempFile->fread($contactTempFile->getSize());
-        $this->assertRegExp("/Thomas/", $fileContent);
+        $this->assertMatchesRegularExpression("/Thomas/", $fileContent);
     }
 
     /**
@@ -163,6 +163,6 @@ class AiTest extends TestBase
         ));
         $this->assertEquals(1, count($result->getValue()));
         $displayName = $result->getValue()[0]->getDisplayName();
-        $this->assertRegExp("/Thomas/", $displayName);
+        $this->assertMatchesRegularExpression("/Thomas/", $displayName);
     }
 }

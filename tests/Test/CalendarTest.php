@@ -58,7 +58,7 @@ class CalendarTest extends TestBase
             new DownloadFileRequest(self::$folder . "/" . $emailFile, self::$storage)
         );
         $downloadedContent = $downloaded->fread($downloaded->getSize());
-        $this->assertRegExp("/organizer@aspose.com/", $downloadedContent);
+        $this->assertMatchesRegularExpression("/organizer@aspose.com/", $downloadedContent);
     }
 
     /**
@@ -76,7 +76,7 @@ class CalendarTest extends TestBase
         //ICS is a text format. We can read it to a string and check that it
         //contains specified location as a substring:
         $fileContent = $ics->fread($ics->getSize());
-        $this->assertRegExp("/" . $calendarDto->getLocation() . "/", $fileContent);
+        $this->assertMatchesRegularExpression("/" . $calendarDto->getLocation() . "/", $fileContent);
         //We can also convert the file back to a CalendarDto
         $dto = $api->calendar()->fromFile(new CalendarFromFileRequest($ics));
         $this->assertEquals($calendarDto->getLocation(), $dto->getLocation());
