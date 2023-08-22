@@ -2,7 +2,7 @@
 /*
  * --------------------------------------------------------------------------------------------------------------------
  * <copyright company="Aspose" file="MapiCalendarYearlyAndMonthlyRecurrencePatternDtoBuilder.php">
- *   Copyright (c) 2018-2020 Aspose.Email for Cloud
+ *   Copyright (c) 2018-2023 Aspose Pty Ltd. All rights reserved.
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
