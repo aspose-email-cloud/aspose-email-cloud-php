@@ -3,24 +3,23 @@
   "name": "aspose/aspose-email-cloud",
   "type": "library",
   "license": "MIT",
-  "keywords": [
-    "aspose",
-    "php",
-    "aspose cloud"
-  ],
   "homepage": "https://github.com/aspose-email-cloud/aspose-email-cloud-php",
+  "keywords": [
+    "Aspose", "PHP", "Aspose Cloud",
+    "Aspose.Email", "Aspose.Email-Cloud", "Cloud", "REST", "API", "MSG", "EML", "MHTML", "HTML", "VCF", "ICS", "TNEF", "EMLX",
+    "iCalendar", "MAPI", "vCard", "Email Conversion", "Convert", "Converter", "Read Email Message", "Calendar", "Email Attachment",
+    "Contact Card", "Image to vCard", "Virtual Card", "Search Email", "SMTP", "POP3", "IMAP", "EWS", "WebDav", "SSL Explicit",
+    "SSL Implicit", "SSL", "iCalendar", "Email Validation", "OAuth2.0", "Message Thread", "iCalendar Conversion",
+    "vCard Conversion", "Email Conversion", "MIME", "Flag Email", "Email Client", "Exchange", "Name API", "name parser",
+    "name matcher", "name", "BCR", "contact scan", "business card", "Outlook", "EML to MSG", "MSG to EML", "EML to MHTML",
+    "MSG to MHTML", "ICS to MSG", "MSG to ICS", "VCF to MSG", "MSG to VCF", "Disposable email", "email configuration discovery",
+    "autodiscover", "email configuration"
+  ],
   "authors": [
     {
-      "name": "vs-aspose",
-      "homepage": "https://github.com/aspose-email-cloud"
-    },
-    {
-      "name": "Vladislav-Koliesnikov",
-      "homepage": "https://github.com/aspose-email-cloud"
-    },
-    {
-      "name": "Marat-Gumerov",
-      "homepage": "https://github.com/aspose-email-cloud"
+      "name": "Aspose",
+      "homepage": "https://products.aspose.cloud/email/",
+      "email": "aspose.email.team@gmail.com"
     }
   ],
   "config": {
